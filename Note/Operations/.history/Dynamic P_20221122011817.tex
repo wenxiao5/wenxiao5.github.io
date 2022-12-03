@@ -1,0 +1,59 @@
+\documentclass[11pt]{elegantbook}
+\definecolor{structurecolor}{RGB}{40,58,129}
+\linespread{1.6}
+\setlength{\footskip}{20pt}
+\setlength{\parindent}{0pt}
+\newcommand{\argmax}{\operatornamewithlimits{argmax}}
+\newcommand{\argmin}{\operatornamewithlimits{argmin}}
+\elegantnewtheorem{proof}{Proof}{}{Proof}
+\elegantnewtheorem{claim}{Claim}{prostyle}{Claim}
+\DeclareMathOperator{\col}{col}
+\title{\textbf{Dynamic Programming}}
+\author{Wenxiao Yang}
+\institute{Department of Mathematics, University of Illinois at Urbana-Champaign}
+\date{2022}
+\setcounter{tocdepth}{2}
+\cover{cover.jpg}
+\extrainfo{All models are wrong, but some are useful.}
+
+% modify the color in the middle of titlepage
+\definecolor{customcolor}{RGB}{32,178,170}
+\colorlet{coverlinecolor}{customcolor}
+\usepackage{cprotect}
+
+\addbibresource[location=local]{reference.bib} % bib
+
+\begin{document}
+
+\maketitle
+\frontmatter
+\tableofcontents
+\mainmatter
+
+
+\chapter{Multi-Armed Bandits}
+\section{Multi-Armed Bandit Problem}
+\begin{definition}[Multi-Armed Bandit Problem]
+    A decision-maker ("gambler") chooses one of $n$ actions ("arms") in each time step. Chosen arm produces random payoff from unknown distribution. Goal: Maximize expected total payoff.
+\end{definition}
+
+Every time, the DM pulls an arm $i\in A$, then he observes a reward $r_t$ which follows a distribution.
+\begin{enumerate}[$\bullet$]
+    \item Each arm has a \textbf{type} that \underline{determines its payoff distribution}.
+    \item Gambler has a \underline{prior distribution} over \textbf{types} for each arm.
+    \item \textbf{Types} are independent random variables.
+    \item Objective: maximize expected discounted reward $\sum_{t=0}^\infty \gamma^t r_t$
+\end{enumerate}
+After pulling arm $i$ some number of times, gambler has a posterior distribution over types. Call this the \textbf{state} of arm $i$ (i.e., the posterior distribution over types after getting informtaion).
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

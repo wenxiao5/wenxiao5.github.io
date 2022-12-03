@@ -1,0 +1,205 @@
+%!TEX program = xelatex
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{authblk}
+\usepackage{ctex}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{verbatim}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{indentfirst}
+\usepackage{amssymb}
+\setlength{\parindent}{0pt}
+\usetikzlibrary{shapes,snakes}
+\newcommand{\argmax}{\operatornamewithlimits{argmax}}
+\newcommand{\argmin}{\operatornamewithlimits{argmin}}
+\DeclareMathOperator{\col}{col}
+\usepackage{booktabs}
+\newtheorem{theorem}{Theorem}
+\newtheorem{note}{Note}
+\newtheorem{definition}{Definition}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{example}{Example}
+\newtheorem{corollary}{Corollary}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{hyperref}
+\newcommand{\code}{	exttt}
+\geometry{a4paper,scale=0.8}
+\title{Analysis}
+\author[*]{Wenxiao Yang}
+\affil[*]{Department of Mathematics, University of Illinois at Urbana-Champaign}
+\date{2022}
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Sequence}
+\subsection{General Definitions}
+Sequences $\left\{x_{k}\right\}_{k=1}, \ldots$ or $\left\{x_{k}\right\}, x_{k} \in \mathbb{R}^{n}$
+\begin{definition}[Convergence: note $x_{k} \rightarrow x, \lim _{k \rightarrow \infty} x_{k}=x$]
+    Given $\varepsilon>0, \quad \exists N_{\varepsilon}$ s.t. $$\quad\left\|x_{k}-x\right\|<\varepsilon \quad \forall k \geqslant N_{\varepsilon}$$
+\end{definition}
+
+\begin{definition}[Cauchy Sequence]
+    $\{x_k\}$ is Cauchy if given $\varepsilon>0, \quad \exists N_{\varepsilon}$ s.t.
+    $$\left\|x_{k}-x_{m}\right\|<\varepsilon,\  \forall k, m \geqslant N_{\varepsilon} \text {. }$$
+\end{definition}
+\textbf{Note:}$$\left\{x_{k}\right\} \text { converges } \Longleftrightarrow\left\{x_{k}\right\} \text { is Cauchy}$$
+
+
+\begin{definition}[Subsequence]
+Infinite subset of $\{x_k\}$: $\{x_k:k\in \mathcal{K} \}\text{ or } \{x_k\}_\mathcal{K} $, where $\mathcal{K} $ is subset of $\mathbb{Z}^+$.
+\end{definition}
+
+\begin{definition}[Limit point]
+$x$ is a limit point of $\left\{x_{k}\right\}$ if $\exists \text { a subsequence of }\left\{x_{k}\right\} \text { that converges to } x$.
+\end{definition}
+
+\begin{definition}[Bounded Sequence]
+    $$\left\|x_{k}\right\| \leqslant b, \forall k$$
+\end{definition}
+
+Results about Bounded sequences:
+
+1. Every bounded has at least one limit point.
+
+2. A bounded sequence converges iff it has a \textbf{unique limit point}.
+
+\subsection{Scalar sequences}
+\textbf{\underline{Scalar sequences}} $\left\{x_{k}\right\}, x_{k} \in \mathbb{R}$:
+\begin{proposition}
+    If $\left\{x_{k}\right\}$ is bounded above(below) and non-decreasing(non-increasing) it \textbf{converges}.
+\end{proposition}
+
+\begin{proposition}
+    The largest(smallest) limit point of $\left\{x_{k}\right\}$ is $\lim _{k \rightarrow \infty}\sup x_{k}$ ($\lim _{k \rightarrow \infty}\inf x_{k}$)
+\end{proposition}
+
+\begin{proposition}
+    $\left\{x_{k}\right\}$ converges $\Longleftrightarrow-\infty<\lim _{k \rightarrow \infty} \inf x_{k}=\lim _{k \rightarrow \infty}\sup x_{k}<\infty$
+\end{proposition}
+
+\begin{definition}[Continunity]
+    \quad
+    
+    A real-valued function $f$ is continuous at $x$ if for every $\left\{x_{k}\right\}$ converging to $x$ satisfies that $\lim _{k \rightarrow \infty} f\left(x_{k}\right)=f(x)$.
+
+    Equivalent: given $\varepsilon>0, \exists \delta>0$ s.t.
+    $|f(x)-f(y)|<\varepsilon \quad \forall\|y-x\|<\delta$
+
+\end{definition}
+
+$f$ is contimuons if it is contimuons at all points $x$
+
+Definition (coercive) A real-valued function $f: \mathcal{A} \rightarrow \mathbb{R}$ is coercive if for every $\left\{x_{k}\right\} \subset \&$ s.t. $\left\|x_{k}\right\| \rightarrow \infty, f\left(x_{k}\right) \rightarrow \infty$
+
+Examples 1) $x \in \mathbb{R}^{2}, f(x)=x_{1}^{2}+x_{2}^{2}-$ coercive
+
+2) $x \in \mathbb{R}, f(x)=1-e^{-|x|}-$ not coercive
+
+3) $x \in \mathbb{R}^{2}, f(x)=x_{1}^{2}+x_{2}^{2}-2 x_{1} x_{2}$
+
+$=\left(x_{1}-x_{2}\right)^{2}-$ not coercive Closed and open sets
+
+A set \& $\subseteq \mathbb{R}^{n}$ is open if $\forall x \in \&$ we can dran a ball around $x$ that is contanicd in $\&$,
+
+le. $\forall x \in \&, \exists \varepsilon>0$ s.t.
+
+$\{y:\|y-x\|<\varepsilon\} \leq-8$
+
+$+\frac{1}{1} z$
+
+\& is closed if \&c is open
+
+$\equiv$ if \& contans all limit points of all sequences in \&
+
+Examples $(1,2)=\{x \in \mathbb{R}: 1<x<2\}-$ open
+
+$\mathbb{R}$ is both
+
+$(-\infty, 1)=\{x \in \mathbb{R}: x<1\}-$ open
+
+open and closed $[1, \infty)$ is closed because complement open
+
+$(1,2]$ is neither open nor closed
+
+Compact Set $\mathcal{L} \subseteq \mathbb{R}^{n}$ is compact of it is closed and bermded. A is bounded if $\exists M$ s.t. $\|x\| \leqslant M \quad \forall x \in-\&$
+
+Examples
+
+$[1,2]=\{x \in \mathbb{R}: 1 \leqslant x \leqslant 2\}$
+
+$\left\{x \in \mathbb{R}^{2}\right.$
+of scalars
+
+$\left.x_{1}^{2}+x_{2}^{2} \leqslant 4\right\}$
+
+Extrema of sets of scalars Let A $C \mathbb{R}$.
+
+- The infinum of A, or inf A is largest $y$ s.t. $y \leqslant x, \forall x \in A$. If no such $y$ exists, inf $A=-\infty$
+
+- Similar definition for supremum of $f$ or sup $A$.
+
+- If $\operatorname{mif} A=x^{*}$ for some $x^{*} \in A$, then
+
+$x^{*}=$ min $A$ or minimem of $A$.
+
+- similarly max A or maximum of A. Examples 1) $\begin{aligned} A=[1,2], & \text { inf } A=\min A=1 \\ \text { anp } A=\max A=2 \end{aligned}$
+
+$$
+\begin{array}{ll}
+\text { 2) } A=(1,2], & \text { inf } A=1, \text { not achieved } \\
+\text { 3) } A=(1, \infty), & \text { sup } A=m x A=2 \\
+\text { sup } A=\text { no maximum } &
+\end{array}
+$$
+
+Extrema I Functiono Let $\ \subseteq \mathbb{R}^{n}, f: \& \rightarrow \mathbb{R}$
+
+$$
+\begin{aligned}
+&\operatorname{inif}_{x \in \&} f(x)=\operatorname{mif}\{f(x): x \in \&\} . \\
+&\text { If } \exists x^{*} \in \& \text { s.t. inf } f(x)=f\left(x^{*}\right) \text { Then }
+\end{aligned}
+$$
+
+$f$ achieves (attains) its minimum and
+
+$$
+f\left(x^{*}\right)=\min _{x \in \mathcal{L}} f(x)
+$$
+
+$x^{*}$ is called a minimizer of $f$, written as
+
+$$
+x^{*} \in \arg \min _{x \in \mathcal{L}} f(x) {\text { If } x^{*} \text { is unigne we write } x^{*}=\arg \min _{x \in s} f(x).}
+$$
+
+Similarly, supremum and maximum of $f$.
+
+$$
+\text { Example 1 } \begin{aligned}
+& f(x)=x, \quad x \in(-1,2) \\
+& \text { sup } f(x)=2 \text {, neither achleved } \\
+& \text { inf } f(x)=-1
+\end{aligned}
+$$
+
+Exanple 2 $f(x)=x^{2}, x \in \mathbb{R}$
+
+$$
+\begin{aligned}
+&f(x)=x^{2}, x \in \mathbb{R} \\
+&\text { inf } f(x)=\min f(x)=0, x^{*}=0 \\
+&\text { sip } f(x)=\infty, \text { mox doen wot exist. }
+\end{aligned}
+$$
+
+
+\end{document}

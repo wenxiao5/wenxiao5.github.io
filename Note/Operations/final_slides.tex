@@ -1,0 +1,281 @@
+\documentclass{beamer}
+%
+% Choose how your presentation looks.
+%
+% For more themes, color themes and font themes, see:
+% http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
+%
+\mode<presentation>
+{
+  \usetheme{default}      % or try Darmstadt, Madrid, Warsaw, ...
+  \usecolortheme{default}
+  \usepackage{beamerthemesplit}% or try albatross, beaver, crane, ...
+  \usefonttheme{default}  % or try serif, structurebold, ...
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+} 
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+
+\title[Multi-Stage Choice Model \hspace{0.5cm}\insertframenumber/\inserttotalframenumber]{Multi-Stage Choice Model (with Decision Theory Foundation)}
+\author{Wenxiao Yang}
+\institute{University of Illinois at Urbana-Champaign\\Department of Mathematics}
+\date{2022-05-04}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% Uncomment these lines for an automatically generated outline.
+%\begin{frame}{Outline}
+%  \tableofcontents
+%\end{frame}
+
+%\section{Introduction}
+
+\begin{frame}{Rational Inattention Foundation for Multinomial Logit Model}
+
+\begin{itemize}
+  \item Matějka, F., \& McKay, A. (2015). Rational inattention to discrete choices: A new foundation for the multinomial logit model. American Economic Review, 105(1), 272-98.
+  
+  (Too complicated, the proof can be simplified to the format below. However, the proof cost function over purchase probability is omitted in this paper and I can't reproduce it.)
+  \item Ben Hebert Stanford Graduate School of Business: Rational Inattention Theory and Evidence (presentation at Israel Institute for Advanced Studies $https://www.youtube.com/watch?v=l4gx_3KxHzo$).
+  
+\end{itemize}
+
+\vskip 0.2cm
+
+
+\end{frame}
+
+%\section{Problem Statement}
+
+\begin{frame}{Rational Inattention Foundation for Multinomial Logit Model}
+\begin{itemize}
+  \item Gabaix, X. (2019). Behavioral inattention. In Handbook of Behavioral Economics: Applications and Foundations 1 (Vol. 2, pp. 261-343). North-Holland.
+  
+  (Don't have full proof, change the cost function in the first paper to Kullback–Leibler distance (which is also deduced from information theory, I will use this setting))
+\end{itemize}
+\textit{I also adjust some settings to make it close to assortment optimization settings (and can be easily understood).}
+
+\end{frame}
+%\section{Multi-segment Mufflers}
+
+\begin{frame}{Model}
+\begin{itemize}
+  \item A consumer makes an action on action set $A=\{1,...,N\}$ (Buy which product)
+  \item A consumer makes an action on action set $A=\{1,...,N\}$ (Buy which product)
+  \item \textbf{If consumer knows $\mathbf{v}$}, this problem is simply:
+  \begin{equation}
+    \begin{aligned}
+      i^{\*}\in \argmax_i v_i
+    \end{aligned}
+    \nonumber
+  \end{equation}
+  However, we need to discuss the situation that the consumer doesn't know $\mathbf{v}$. She has to infer the $\mathbf{v}$ from some information.
+  \item \textbf{When consumer doesn't know $\mathbf{v}$}, she has belief $b\in \Delta(V)$. ($\Delta(V)$ is the set of all possibility distributions on $V$) Then,
+  \begin{equation}
+    \begin{aligned}
+      i^{\*}(b)\in \argmax_i  \mathbb{E}_b[v_i]
+    \end{aligned}
+    \nonumber
+  \end{equation}
+  (Choose the product with the highest expected value under belief $b$) Set the map from beliefs to utility (not actual utility, the utility under belief) is
+  \begin{equation}
+    \begin{aligned}
+      \pi(b)=\max_i\mathbb{E}_b[v_i]
+    \end{aligned}
+    \nonumber
+  \end{equation}
+\end{itemize}
+
+\end{frame}
+%\section{Space Constraints}
+
+\begin{frame}{}
+
+\begin{itemize}
+  \item The related boundary constraints for the mufflers are specified.
+\end{itemize}
+
+\end{frame}
+%\section{Derivation of Four Pole Matrices and an expression for STL}
+\begin{frame}{Derivation of Four Pole Matrices and an expression for STL}
+
+\begin{itemize}
+  \item For the ease of theoretical derivation on muffler, two kinds of muffler elements, are identified,\item On the basis of plane wave theorem, a transfer matrix between inlet and outlet can then be deduced in each muffler element
+\end{itemize}
+\vskip 0.1cm
+
+\begin{figure}
+
+\caption{\label{fig:your-figure5}Four poles matrix between point 1 and
+point 2 with mean flow}
+\end{figure}
+\end{frame}
+%\subsection{Derivation of Four Pole Matrices....2}
+
+\begin{frame}{Derivation of Four Pole Matrices....2}
+
+Four poles matrix between point 2 and point 3 with mean flow is:
+\begin{figure}
+
+\caption{\label{fig:your-figure6}Four poles matrix between point 2 and
+point 3 with mean flow}
+\end{figure}
+\begin{figure}
+
+\caption{\label{fig:your-figure7}Space constraints for two-segments muffler}
+\end{figure}
+
+\end{frame}
+
+%\subsection{Derivation of Expression for STL....3}
+
+\begin{frame}{Derivation of Expression for STL....3}
+After multiplying all the above matrices, we will obtain the final transfer matrix
+\vskip 0.75cm
+$$
+\left[ \begin{array}{c} $$p_{1}$$\\$$\rho_{0}c_{0}u_{1}$$ \end{array} \right] = \begin{bmatrix} $$T^{*}_{11}$$ & $$T^{*}_{12}$$\\$$T^{*}_{21}$$&$$T^{*}_{22}$$ \end{bmatrix} \times \left[ \begin{array}{c} $$p_{4}$$\\$$\rho_{0}c_{0}u_{4}$$ \end{array} \right]
+$$
+\vskip 0.75cm
+The sound transmission loss (STL) of muffler is defined as
+\begin{figure}
+
+\caption{\label{fig:your-figure8}Final expression for STL}
+\end{figure}
+\end{frame}
+%\section{Genetic Algorithm}
+
+\begin{frame}{Genetic Algorithm}
+
+\begin{itemize}
+  \item Search algorithms based on the mechanics of natural selection and natural genetics
+  \item Based on “survival of fittest” concept
+  \item Simulates the process of evolution
+  \item KEY IDEA: “Evolution is an optimizing process”
+\end{itemize}
+\vskip 0.1cm
+\begin{figure}
+
+\caption{\label{fig:your-figure9}The Evolution cycle}
+\end{figure}
+\end{frame}
+%\subsection{Genetic Algorithm : Initialization}
+
+\begin{frame}{Genetic Algorithm : Initialization}
+
+\begin{itemize}
+  \item Population, whose individuals represent solution
+to problems
+\item ($d_{1}$,$d_{2}$)=(5.4064,3.8005) is a member in our population!
+\item A member/Design vector ($d_{1}$,$d_{2}$)=(5.4064,3.8005) may be represented using binary numbers like this
+
+\end{itemize}
+\begin{figure}
+
+\caption{\label{fig:your-figure10} Design vector coded to string structure}
+\end{figure}
+\end{frame}
+%\subsection{Choosing the parents, Ranking the g}
+
+\begin{frame}{Genetic Algorithm : Ranking the Genomes}
+
+\begin{itemize}
+  \item Each individual/ String is evaluated to find the fitness value
+
+\item Roulette Wheel Selection is implemented
+
+\end{itemize}
+\begin{figure}
+
+\caption{\label{fig:your-figure12} A roulette wheel marked for five individuals according to their fitness [ Figure Courtesy: Optimization for Engineering Design: Algorithms and Examples, Kalyanmoy Deb ]}
+\end{figure}
+\end{frame}
+\begin{frame}{Genetic Algorithm : Reproduction Operators}
+\begin{block}{Single Point Crossover}
+\begin{itemize}
+  \item Each chromosome of parent is divided into two parts and then joined stochastically
+\end{itemize}
+\end{block}
+\begin{figure}
+
+\caption{\label{fig:your-figure13} Single point Crossover}
+\end{figure}
+\begin{block}{Mutation}
+\begin{itemize}
+  \item To make sure that sufficient variety of strings are there to assure that GA will go through the entire problem space
+  \item Prevents premature convergence
+\end{itemize}
+\end{block}
+\end{frame}
+\begin{frame}{Genetic Algorithm : Reproduction Operators...2}
+\begin{block}{Elitism}
+\begin{itemize}
+  \item The elitism scheme to keep best gene in the parent generations
+  \item To prevent the best gene from the disappearing and improve the accuracy of
+optimization during reproduction
+\end{itemize}
+\end{block}
+\end{frame}
+\begin{frame}{A numerical case of noise elimination}
+\begin{block}{}
+\begin{itemize}
+  \item With the spectrum analysis in sound, it is found that the sound energy at 500 Hz is highly remarkable.\item The minimal diameters at each segment are specified to be no less than 0.0762
+m
+\item The design volume flow rate is confined to 0.8 CMS.
+\item For optimization of a Two segments muffler, 3 parameters were selected
+\begin{itemize}
+\item Diameter, $D_{1}$
+\item Diameter, $D_{2}$
+\item Length, $L_{1}$
+\end{itemize}
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{Results and Discussion}
+\begin{itemize}
+\item The maximal value of STL is 38.5 dB
+\end{itemize}
+\begin{figure}
+
+\caption{\label{fig:your-figure13}Tabulation of finally obtained  results}
+\end{figure}
+\begin{figure}
+
+\caption{\label{fig:your-figure13} Optimal shape in a two segment muffler}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Results and Discussion...2}
+\begin{itemize}
+\item The performance curves for different GA control parameter are plotted.
+\end{itemize}
+\begin{figure}
+
+\caption{\label{fig:your-figure14} STL of two-segments muffler at four sets of GA parameters.}
+\end{figure}
+\end{frame}
+\begin{frame}{Conclusion}
+\begin{itemize}
+\item Because of no first derivative and starting design data of objective function as required in traditional gradient method, GA becomes easier.
+\item The case study reveals that by increasing the segments in muffler, the performance in STL can be improved efficiently.
+\item Results are sensitive to the GA control parameters like, probability of crossover $p_{c}$ and probability of mutation $p_{m}$
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{Thanks}
+\begin{center}
+
+
+\end{center}
+\end{frame}
+%\section{Some \LaTeX{} Examples}
+
+%\subsection{Tables and Figures}
+\end{document}

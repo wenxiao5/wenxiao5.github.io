@@ -1,0 +1,348 @@
+%!TEX program = xelatex
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[title]{appendix}
+\usepackage{authblk}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{verbatim}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{enumerate}
+\usepackage{indentfirst}
+\usepackage{amssymb}
+\usepackage{makecell}
+\setlength{\parindent}{0pt}
+\usetikzlibrary{shapes,snakes}
+\newcommand{\argmax}{\operatornamewithlimits{argmax}}
+\newcommand{\argmin}{\operatornamewithlimits{argmin}}
+\DeclareMathOperator{\col}{col}
+\usepackage{booktabs}
+\newtheorem{theorem}{Theorem}
+\newtheorem{note}{Note}
+\newtheorem{definition}{Definition}
+\newtheorem{proposition}{Proposition}
+\newtheorem{claim}{Claim}
+\newtheorem{lemma}{Lemma}
+\newtheorem{example}{Example}
+\newtheorem{corollary}{Corollary}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{hyperref}
+\newcommand{\code}{	exttt}
+\geometry{a4paper,scale=0.8}
+\title{Sequential Assortment Optimization}
+\author[*]{Wenxiao Yang}
+\affil[*]{Department of Mathematics, University of Illinois at Urbana-Champaign}
+\date{2022}
+\begin{document}
+\maketitle
+
+
+\section{Rational Inattention Foundation for Multinomial Logit Model}
+\subsection{References:}
+
+Matějka, F., \& McKay, A. (2015). Rational inattention to discrete choices: A new foundation for the multinomial logit model. American Economic Review, 105(1), 272-98.
+
+(Too complicated, the proof can be simplified to the format below. However, the proof cost function over purchase probability is omitted in this paper and I can't reproduce it.)
+
+Ben Hebert Stanford Graduate School of Business: Rational Inattention Theory and Evidence (presentation at Israel Institute for Advanced Studies $https://www.youtube.com/watch?v=l4gx_3KxHzo$).
+
+Gabaix, X. (2019). Behavioral inattention. In Handbook of Behavioral Economics: Applications and Foundations 1 (Vol. 2, pp. 261-343). North-Holland.
+
+(Don't have full proof, change the cost function in the first paper to Kullback–Leibler distance (which is also deduced from information theory, I will use this setting))
+
+\textit{I also adjust some settings to make it close to assortment optimization settings (and can be easily understood).}
+
+\subsection{Model}
+A consumer makes an action on action set $A=\{1,...,N\}$ (Buy which product)
+
+$V\subset \mathbb{R}^N$ is the set of states of nature, $\mathbf{v}$ is a state of nature in $V$ (The reality: products' values to the consumer.)
+
+The consumer makes an action $i\in A$ at state $\mathbf{v}$ and get utility $v_i$.
+
+\textbf{If consumer knows $\mathbf{v}$}, this problem is simply: $$i^*\in \argmax_i v_i$$ However, we need to discuss the situation that the consumer doesn't know $\mathbf{v}$. She has to infer the $\mathbf{v}$ from some information.
+
+\textbf{When consumer doesn't know $\mathbf{v}$}, she has belief $b\in \Delta(V)$. ($\Delta(V)$ is the set of all possibility distributions on $V$) Then, $$i^*(b)\in \argmax_i  \mathbb{E}_b[v_i]$$ (Choose the product with the highest expected value under belief $b$) Set the map from beliefs to utility (not actual utility, the utility under belief) is $$\pi(b)=\max_i\mathbb{E}_b[v_i]$$
+
+Now, suppose the consumer can choose to pay attention to change the belief $b_0$(original belief) by getting additional information (signal) $s\in S$ ($S$ is the set of all possible signals that can be gained by paying more attention by the consumer.) Then, the consumer gets a posterior belief $b_s\in \Delta(V)$ after observing $s$.
+
+When the consumer pay attention to get more information in different state $\mathbf{v}$, the signal $s$ is generated with different probability. The consumer can also get different information about $\mathbf{v}$ under different signal $s$. (When the state is good, the signal is more likely to be good. Inversely, when the signal is good, the state is more likely to be good.)
+
+The consumer uses an \textbf{information strategy} to deal with the information (represented by the joint distribution of $s,\mathbf{v}$, $f(s,\mathbf{v})$), which represents how the consumer transform information between signal $s$ and $\mathbf{v}$.
+
+To fulfill the consistency requirement, the original belief without any information $$b_{0,\mathbf{v}}=f_V(\mathbf{v})=\int_sf(s,\mathbf{v})ds$$ is the marginal distribution over $\mathbf{v}$ (i.e., $f_V(\mathbf{v})$). (It is a restriction to $f(s,\mathbf{v})$)
+
+The updated posterior belief $$b_{s,\mathbf{v}}=f(\mathbf{v}|s)=\frac{f(s,\mathbf{v})}{f_S(s)}$$
+
+The optimization problem for the consumer is
+\begin{equation}
+    \begin{aligned}
+        \max_{f}\int_s \pi(b_s)f_S(s)ds-\hat{c}(f)
+    \end{aligned}
+    \nonumber
+\end{equation}
+$\hat{c}(f)$ is the cost of paying attention, which will be discussed later.
+
+For strategy $f$, the set of signals that lead to purchasing product $i$ is $S_i=\{s:i^*(b_s)=i\}$
+
+Probability of selecting $i$ condition on state $\mathbf{v}$
+\begin{equation}
+    \begin{aligned}
+        P_i(\mathbf{v})=\int_{s\in S_i}f(s|\mathbf{v})ds
+    \end{aligned}
+    \nonumber
+\end{equation}
+The unconditional probability of selecting $i$
+\begin{equation}
+    \begin{aligned}
+        P_i^0=\int_{\mathbf{v}}P_i(\mathbf{v})f_V(\mathbf{v})d\mathbf{v}=\int_{\mathbf{v}}\int_{s\in S_i}f(s|\mathbf{v})dsf_V(\mathbf{v})d\mathbf{v}=\int_{\mathbf{v}}\int_{s\in S_i}f(s,\mathbf{v})dsd\mathbf{v}
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+Then, we can infer that
+\begin{equation}
+    \begin{aligned}
+        \int_s \pi(b_s)f_S(s)ds
+        &=\sum_{i=1}^N\int_{s\in S_i}\mathbb{E}_{b_s}[v_i] f_S(s)ds\\
+        &=\sum_{i=1}^N\int_{s\in S_i}\int_v f(\mathbf{v}|s) v_i d\mathbf{v} f_S(s)ds\\
+        &=\sum_{i=1}^N\int_{s\in S_i}\int_v f(s,\mathbf{v}) v_i d\mathbf{v} ds\\
+        &=\sum_{i=1}^N\int_{s\in S_i}\int_v f(s|\mathbf{v})f_V(\mathbf{v}) v_i d\mathbf{v} ds\\
+        &=\sum_{i=1}^N\int_v P_i(\mathbf{v})f_V(\mathbf{v}) v_i d\mathbf{v}
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+Now the optimization problem can be transformed to selecting optimal $\{P_i(\mathbf{v})\}_{\mathbf{v}\in V}$.
+
+Now let's consider the cost function of attention. We use the entropy based cost function to measure the effect of the \textbf{information strategy} $\{f(s,\mathbf{v})\}_{s\in S,\mathbf{v}\in V}$ (Now replaced by $\{P_i(\mathbf{v})\}_{\mathbf{v}\in V}$).
+
+Actually $P_i(\mathbf{v})$ is a strategy production (consumer infer expected weights of $\mathbf{v}$ from $s$, which will generate final outcome $P_i(\mathbf{v})$, on the contrary, we can infer weight $\mathbf{v}$ from $\{P_i(\mathbf{v})\}_{\mathbf{v}\in V}$)
+
+If $P_i(\mathbf{v})=P_i^0,\forall \mathbf{v}\in V$, signal (information) $s$ has no effect on final outcome (i.e. the consumer don't pay any attention, she makes decisions based on prior beliefs). If $P_i(\mathbf{v})$ differs from $P_i^0$, signal $s$ will have stronger effect on final outcome (i.e, the consumer pay some attention to process information to adjust decisions).
+
+Hence, We measure the cost from paying attention by how the $P_i(\mathbf{v})$ deviates from $P_i^0$. If the $P_i(\mathbf{v})$ deviation is larger, the \textbf{information strategy} is more effective, which may cost more attention (i.e. higher cost). We use an entropy based Kullback-Leibler distance,
+\begin{equation}
+    \begin{aligned}
+        \hat{c}(f)\equiv \lambda\sum_{i=1}^N\int_\mathbf{v}P_{i}(\mathbf{v})\log\left(\frac{P_{i}(\mathbf{v})}{P^0_{i}}\right)f_V(\mathbf{v})d\mathbf{v}
+    \end{aligned}
+    \nonumber
+\end{equation}
+$\lambda$ is the unit cost of paying attention.
+
+Then, the optimization problem is
+\begin{equation}
+    \begin{aligned}
+        \max_{\{P_i(\mathbf{v})\}_{\mathbf{v}\in V},i=1,...N}\quad &\sum_{i=1}^N\int_v P_i(\mathbf{v})f_V(\mathbf{v}) v_i d\mathbf{v}-\lambda\sum_{i=1}^N\int_\mathbf{v}P_{i}(\mathbf{v})\log\left(\frac{P_{i}(\mathbf{v})}{P^0_{i}}\right)f_V(\mathbf{v})d\mathbf{v}\\
+        s.t.\quad &\sum_{i=1}^NP_i(\mathbf{v})=1,\forall \mathbf{v}\in V
+    \end{aligned}
+    \nonumber
+\end{equation}
+Lagrangian:
+\begin{equation}
+    \begin{aligned}
+        L=\sum_{i=1}^N\int_v P_i(\mathbf{v})f_V(\mathbf{v}) v_i d\mathbf{v}-\lambda\sum_{i=1}^N\int_\mathbf{v}P_{i}(\mathbf{v})\log\left(\frac{P_{i}(\mathbf{v})}{P^0_{i}}\right)f_V(\mathbf{v})d\mathbf{v}+\int_\mathbf{v}\mu(\mathbf{v})(\sum_{i=1}^NP_i(\mathbf{v})-1)f_V(\mathbf{v})d\mathbf{v}
+    \end{aligned}
+    \nonumber
+\end{equation}
+With respect to $P_i(\mathbf{v})$:
+\begin{equation}
+    \begin{aligned}
+        &f_V(\mathbf{v})v_i-\lambda(1+\log\left(\frac{P_i(\mathbf{v})}{P_i^0}\right)f_V(\mathbf{v})+\mu(\mathbf{v})f_V(\mathbf{v})=0\\
+        \Rightarrow &P_i(\mathbf{v})=P_i^0e^{\frac{v_i+\mu(\mathbf{v})-\lambda}{\lambda}}=\frac{P_i^0e^{\frac{v_i}{\lambda}}}{\sum_{j=1}^NP_j^0e^{\frac{v_j}{\lambda}}}
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+This is the foundation of MNL model in microeconomics. This is a reasonable model in one stage problem. Will it still be reasonable in multi-stage problem? If yes, I want to show it. If not, I want to derive a new model based on this foundation.
+
+\section{Multi-stage Choice Model}
+Xu, Y., \& Wang, Z. (2018). Assortment optimization for a multi-stage choice model. Available at SSRN 3243742.
+
+Use MNL model to analyze multi-stage choice model, a consumer makes current decision with considering future impact. (consumer purchase at most one in each stage)
+
+Gao, P., Ma, Y., Chen, N., Gallego, G., Li, A., Rusmevichientong, P., \& Topaloglu, H. (2021). Assortment optimization and pricing under the multinomial logit model with impatient customers: Sequential recommendation and selection. Operations research, 69(5), 1509-1532.
+
+Dividing products into $n$ partitions, consumer will purchase once exists a product better than non-purchase (the consumer won't consider the future products). Also use MNL model.
+
+
+
+
+
+
+
+
+
+\section{Model}
+Set of all products $A=\{1,...,N\}$. There are at most $T$ stages, we use $\{A_t\}_{t=1}^T$ to denote the sequence of assortments over $T$ stages. Each stage has $n$ products ($nT= N$). Assortment in different stages are disjoint, $A_k\cap A_l=\emptyset,\forall k\neq l$.
+
+We assume a product's profits to the platform doesn't have relation to its values to consumers.
+
+State of nature at stage $t$ is $\mathbf{v}^t=\{v^t_0,v_1^t,v_2^t,...,v_n^t,v_{n+1}^t\}\in \bar{V}$, where $\bar{V}=\{v_0\}\cup V\cup \mathbb{R}$, where $v_i^t,i=1,..,m$ denote the payoffs of product $i$ in $S_t$, $v^t_0\equiv v_0$ is the value of leaving the platform, $v_{n+1}^t$ is the expected value of entering next stage.
+
+The setting of beliefs and information strategy is similar to former settings. $b^t_{\cdot,\mathbf{v}}$ is the belief at stage $t$. $f^t$ is the information strategy at stage $t$.
+
+$\pi(b)=\max_i\mathbb{E}_b[v_i]$. $i^*(b)\in \argmax_i  \mathbb{E}_b[v_i]$.
+
+$$b^t_{0,\mathbf{v}}=f^t_V(\mathbf{v})=\int_sf^t(s,\mathbf{v})ds$$
+
+The updated posterior belief $$b^t_{s,\mathbf{v}}=f^t(\mathbf{v}|s)=\frac{f^t(s,\mathbf{v})}{f^t_S(s)}$$
+
+The optimization problem for the consumer is
+\begin{equation}
+    \begin{aligned}
+        \Pi_t=\max_{f^t}\int_s \pi(b^t_s)f^t_S(s)ds-\hat{c}(f^t)
+    \end{aligned}
+    \nonumber
+\end{equation}
+$\hat{c}(f^t)$ is the cost of paying attention.
+
+Considering the discount factor $\gamma\in[0,1]$, $v_{n+1}^t=\gamma\Pi_{t+1}$.
+
+For strategy $f^t$, the set of signals that lead to purchasing product $i$ is $S^t_i=\{s:i^*(b^t_s)=i\}$
+
+Probability of selecting $i$ condition on state $\mathbf{v}$
+\begin{equation}
+    \begin{aligned}
+        P^t_i(\mathbf{v})=\int_{s\in S^t_i}f^t(s|\mathbf{v})ds
+    \end{aligned}
+    \nonumber
+\end{equation}
+The unconditional probability of selecting $i$
+\begin{equation}
+    \begin{aligned}
+        ({P_i^t})^0=\int_{\mathbf{v}}P^t_i(\mathbf{v})f^t_V(\mathbf{v})d\mathbf{v}=\int_{\mathbf{v}}\int_{s\in S^t_i}f^t(s|\mathbf{v})dsf^t_V(\mathbf{v})d\mathbf{v}=\int_{\mathbf{v}}\int_{s\in S^t_i}f^t(s,\mathbf{v})dsd\mathbf{v}
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+Then, we can infer that
+\begin{equation}
+    \begin{aligned}
+        \int_s \pi(b^t_s)f^t_S(s)ds
+        &=\sum_{i=0}^{n+1}\int_{s\in S^t_i}\mathbb{E}_{b^t_s}[v_i] f^t_S(s)ds\\
+        &=\sum_{i=0}^{n+1}\int_{s\in S^t_i}\int_v f^t(\mathbf{v}|s) v_i d\mathbf{v} f^t_S(s)ds\\
+        &=\sum_{i=0}^{n+1}\int_{s\in S^t_i}\int_v f^t(s|\mathbf{v})f^t_V(\mathbf{v}) v_i d\mathbf{v} ds\\
+        &=\sum_{i=0}^{n+1}\int_\mathbf{v} P^t_i(\mathbf{v})f^t_V(\mathbf{v}) v_i d\mathbf{v}\\
+        &=\sum_{i=1}^{n}\int_\mathbf{v} P^t_i(\mathbf{v})f^t_V(\mathbf{v}) v_i d\mathbf{v}+({P_{0}^t})^0 v_0+({P_{n+1}^t})^0 \gamma\Pi_{t+1}
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+We still use the entropy based Kullback-Leibler distance to measure the cost,
+\begin{equation}
+    \begin{aligned}
+        \hat{c}(f^t)\equiv \lambda\sum_{i=0}^{n+1}\int_\mathbf{v}P^t_{i}(\mathbf{v})\log\left(\frac{P^t_{i}(\mathbf{v})}{(P^t_{i})^0}\right)f^t_V(\mathbf{v})d\mathbf{v}
+    \end{aligned}
+    \nonumber
+\end{equation}
+Then, the optimization problem is
+\begin{equation}
+    \begin{aligned}
+        \Pi_t=\max_{\{P^t_i(\mathbf{v})\}_{\mathbf{v}\in \bar{V}},i=1,...n+1}\quad &\sum_{i=0}^{n+1}\int_\mathbf{v} P^t_i(\mathbf{v})f^t_V(\mathbf{v}) v_i d\mathbf{v}-\lambda\sum_{i=0}^{n+1}\int_\mathbf{v}P^t_{i}(\mathbf{v})\log\left(\frac{P^t_{i}(\mathbf{v})}{(P^t_{i})^0}\right)f^t_V(\mathbf{v})d\mathbf{v}\\
+        s.t.\quad &\sum_{i=0}^{n+1}P^t_i(\mathbf{v})=1,\forall \mathbf{v}\in \bar{V}
+    \end{aligned}
+    \nonumber
+\end{equation}
+By using Lagrangian, we can solve that
+
+(with respect to $P_i^t(\textbf{v})$)
+\begin{equation}
+    \begin{aligned}
+        &f^t_V(\mathbf{v})v_i-\lambda(1+\log\left(\frac{P^t_i(\mathbf{v})}{(P^t_i)^0}\right)f^t_V(\mathbf{v})+\mu(\mathbf{v})f^t_V(\mathbf{v})=0\\
+        \Rightarrow &P^t_i(\mathbf{v})=(P_i^t)^0e^{\frac{v_i+\mu(\mathbf{v})-\lambda}{\lambda}}=\frac{(P_i^t)^0e^{\frac{v_i}{\lambda}}}{\sum_{j=0}^{n+1}(P_j^t)^0e^{\frac{v_j}{\lambda}}}
+    \end{aligned}
+    \nonumber
+\end{equation}
+Since $v_{n+1}=\gamma\Pi_{t+1}$
+\begin{equation}
+    \begin{aligned}
+        P^t_i(\mathbf{v})=\frac{(P_i^t)^0e^{\frac{v_i}{\lambda}}}{(P_0^t)^0e^{\frac{v_0}{\lambda}}+\sum_{j=1}^{n}(P_j^t)^0e^{\frac{v_j}{\lambda}}+(P_{n+1}^t)^0e^{\frac{\gamma\Pi_{t+1}}{\lambda}}}
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+It is reasonable to set the prior beliefs of purchasing product $i=1,...,n$ are the same, i.e., $(P_i^t)^0=\frac{1-(P_0^t)^0-(P_{n+1}^t)^0}{n},\forall i=1,...n$. $(P_{n+1}^t)^0$ is the prior belief of entering next stage, which is the expected probability that $\gamma\Pi_{t+1}>\max\{v_0,v_1,...,v_n\}$, $(P_0^t)^0$ is the probability that $v_0\geq \max\{\gamma\Pi_{t+1},v_1,...,v_n\}$ Here we assume when leave the platform and enter the next stage is indifferent for the consumer, i.e.,$v_0=\gamma\Pi_{t+1}$, the consumer prefer to leave the platform. (risk-aversion)
+
+To simplify the form, we set $q^t$, where $q^t=\max\{v^t_1,...,v^t_n\}$ follows a distribution $Q^t$, $Q^t(x)=\int_{\textbf{v}\in\{\textbf{v}:\max \textbf{v}\leq x\}}f^t_V(\textbf{v})d\textbf{v}$
+
+We use $p^t_0$ to denote $(P_0^t)^0$, $p_i^t=p^t$ to denote $(P_i^t)^0, i=1,...,n$ and $p_{n+1}^t=p^t_*$ to denote $(P_{n+1}^t)^0$ in the following analysis.
+
+\begin{equation}
+    \begin{aligned}
+        P^t_i(\mathbf{v})=\frac{p_i^te^{\frac{v_0}{\lambda}}}{p_0^te^{\frac{v_0}{\lambda}}+p^t\sum_{j=1}^{n}e^{\frac{v_j}{\lambda}}+p_*^te^{\frac{\gamma\Pi_{t+1}}{\lambda}}},\quad i=0,1...,n+1
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+\begin{equation}
+    \begin{aligned}
+        p_*^t&=Prob(\gamma\Pi_{t+1}>v_0\text{ and }q^t<\gamma\Pi_{t+1})\\
+        p_0^t&=Prob(v_0\geq \gamma\Pi_{t+1}\text{ and }q^t<v_0)\\
+    \end{aligned}
+    \nonumber
+\end{equation}
+\begin{lemma}
+    $p_0^t$ and $p_*^t$ can't be nonzero at the same time.
+\end{lemma}
+
+\subsubsection*{For $\{t:\gamma\Pi_{t+1}>v_0\}$}
+The prior purchase probability is
+\begin{equation}
+    \begin{aligned}
+        p_0^t=0,\  p^t=\frac{1-Q^t(\gamma\Pi_{t+1})}{n},\ p_*^t=Q^t(\gamma\Pi_{t+1})
+    \end{aligned}
+    \nonumber
+\end{equation}
+Then the purchase probability is
+\begin{equation}
+    \begin{aligned}
+        P^t_0(\mathbf{v})&=0\\
+        P^t_i(\mathbf{v})&=\frac{(1-Q^t(\gamma\Pi_{t+1}))e^{\frac{v_i}{\lambda}}}{(1-Q^t(\gamma\Pi_{t+1}))\sum_{j=1}^{n}e^{\frac{v_j}{\lambda}}+nQ^t(\gamma\Pi_{t+1})e^{\frac{\gamma\Pi_{t+1}}{\lambda}}},\quad i=1...,n\\
+        P^t_{n+1}(\mathbf{v})&=\frac{nQ^t(\gamma\Pi_{t+1})e^{\frac{\gamma\Pi_{t+1}}{\lambda}}}{(1-Q^t(\gamma\Pi_{t+1}))\sum_{j=1}^{n}e^{\frac{v_j}{\lambda}}+nQ^t(\gamma\Pi_{t+1})e^{\frac{\gamma\Pi_{t+1}}{\lambda}}}
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+\subsubsection*{For $\{t:\gamma\Pi_{t+1}\leq v_0\}$: Stop at this stage}
+The prior purchase probability is
+\begin{equation}
+    \begin{aligned}
+        p_0^t=Q^t(v_0),\  p^t=\frac{1-Q^t(v_0)}{n},\ p_*^t=0
+    \end{aligned}
+    \nonumber
+\end{equation}
+Then the purchase probability is
+\begin{equation}
+    \begin{aligned}
+        P^t_0(\mathbf{v})&=\frac{nQ^t(v_0)e^{\frac{v_0}{\lambda}}}{(1-Q^t(v_0))\sum_{j=1}^{n}e^{\frac{v_j}{\lambda}}+nQ^t(v_0)e^{\frac{v_0}{\lambda}}}\\
+        P^t_i(\mathbf{v})&=\frac{(1-Q^t(v_0))e^{\frac{v_i}{\lambda}}}{(1-Q^t(v_0))\sum_{j=1}^{n}e^{\frac{v_j}{\lambda}}+nQ^t(v_0)e^{\frac{v_0}{\lambda}}},\quad i=1...,n\\
+        P^t_{n+1}(\mathbf{v})&=0
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
