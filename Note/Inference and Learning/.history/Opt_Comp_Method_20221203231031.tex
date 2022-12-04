@@ -2185,19 +2185,8 @@ Wolfe's theorem guarantees a range of acceptable $t_k$ values.
 \end{example}
 
 \subsection{Picking descent directions}
-The only requirement of finding $\vec{p}^{(k)}$ is \textit{Criterion 2}: $$\vec{p}^{(k)}\cdot \nabla f(\vec{x}^{(k)})<0$$
-Some ideas/strategies for choosing decent directions:
-\begin{enumerate}[(1)]
-    \item For any positive definite matrix $Q$, choosing $\vec{p}^{(k)}=-Q \nabla f(\vec{x}^{(k)})$ will work.
-    \begin{equation}
-        \begin{aligned}
-            \nabla f(\vec{x}^{(k)})\cdot \vec{p}^{(k)}&=\nabla f(\vec{x}^{(k)})\cdot\left(-Q \nabla f(\vec{x}^{(k)})\right)\\
-            &=-\nabla f(\vec{x}^{(k)})^TQ\nabla f(\vec{x}^{(k)})<0
-        \end{aligned}
-        \nonumber
-    \end{equation}
-    \item 
-\end{enumerate}
+The only requirement of finding $\vec{p}^{(k)}$ is
+
 
 
 

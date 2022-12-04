@@ -2173,31 +2173,9 @@ One approach that we can use to find an acceptable $t_k$ is:
 \end{enumerate}
 Wolfe's theorem guarantees a range of acceptable $t_k$ values.
 
-\begin{example}[ (One helpful trick)]
-    Once we've found a value of $t_k$ that is too small, $t_s$, and a value that is too large $t_l$, we know $$[a_k,b_k]\subseteq [t_s,t_e]$$
-    and we can start just cutting this interval in half, by repeating the following steps:
-    \begin{enumerate}[(1)]
-        \item Guess $t_a=\frac{t_s+t_l}{2}$
-        \item If $t_a$ is too large, set $t_l=t_a$ and restart.
-        \item If $t_a$ is too small, set $t_s=t_a$ and restart.
-        \item If $t_a$ works, we're done.
-    \end{enumerate}
-\end{example}
 
-\subsection{Picking descent directions}
-The only requirement of finding $\vec{p}^{(k)}$ is \textit{Criterion 2}: $$\vec{p}^{(k)}\cdot \nabla f(\vec{x}^{(k)})<0$$
-Some ideas/strategies for choosing decent directions:
-\begin{enumerate}[(1)]
-    \item For any positive definite matrix $Q$, choosing $\vec{p}^{(k)}=-Q \nabla f(\vec{x}^{(k)})$ will work.
-    \begin{equation}
-        \begin{aligned}
-            \nabla f(\vec{x}^{(k)})\cdot \vec{p}^{(k)}&=\nabla f(\vec{x}^{(k)})\cdot\left(-Q \nabla f(\vec{x}^{(k)})\right)\\
-            &=-\nabla f(\vec{x}^{(k)})^TQ\nabla f(\vec{x}^{(k)})<0
-        \end{aligned}
-        \nonumber
-    \end{equation}
-    \item 
-\end{enumerate}
+
+
 
 
 
