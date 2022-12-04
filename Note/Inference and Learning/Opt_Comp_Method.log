@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.21)  3 DEC 2022 23:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.21)  4 DEC 2022 16:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1341,7 +1341,7 @@ Package hyperref Info: Option `pageanchor' set `false' on input line 27.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<cover.jpg, id=332, 602.25pt x 301.125pt>
+<cover.jpg, id=336, 602.25pt x 301.125pt>
 File: cover.jpg Graphic file (type jpg)
 <use cover.jpg>
 Package pdftex.def Info: cover.jpg  used on input line 27.
@@ -2571,12 +2571,12 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 939.
 
-<projection1.png, id=654, 545.03625pt x 235.88126pt>
+<projection1.png, id=660, 545.03625pt x 235.88126pt>
 File: projection1.png Graphic file (type png)
 <use projection1.png>
 Package pdftex.def Info: projection1.png  used on input line 947.
 (pdftex.def)             Requested size: 272.51746pt x 117.94034pt.
-<projection2.png, id=656, 543.02875pt x 196.735pt>
+<projection2.png, id=662, 543.02875pt x 196.735pt>
 File: projection2.png Graphic file (type png)
 <use projection2.png>
 Package pdftex.def Info: projection2.png  used on input line 954.
@@ -2740,7 +2740,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 986.
 
-<obtuse.png, id=665, 1674.255pt x 503.8825pt>
+<obtuse.png, id=671, 1674.255pt x 503.8825pt>
 File: obtuse.png Graphic file (type png)
 <use obtuse.png>
 Package pdftex.def Info: obtuse.png  used on input line 996.
@@ -2793,7 +2793,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{equation.3.1.1
                    \relax 
 l.1017     \begin{equation}
                            
-<projection3.png, id=675, 702.625pt x 356.33125pt>
+<projection3.png, id=681, 702.625pt x 356.33125pt>
 File: projection3.png Graphic file (type png)
 <use projection3.png>
 Package pdftex.def Info: projection3.png  used on input line 1029.
@@ -2956,7 +2956,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1068.
 
-<proj1.png, id=685, 522.95375pt x 364.36125pt>
+<proj1.png, id=691, 522.95375pt x 364.36125pt>
 File: proj1.png Graphic file (type png)
 <use proj1.png>
 Package pdftex.def Info: proj1.png  used on input line 1103.
@@ -3807,29 +3807,34 @@ l.2067 \chapter
 Chapter 7.
 [44
 
-] [45] [46] [47] (./Opt_Comp_Method.aux)
+] [45] [46] [47
+pdfTeX warning (ext4): destination with the same identifier (name{equation.7.2.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.2210 
+       ] [48] (./Opt_Comp_Method.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `Opt_Comp_Method.out' has not changed.
-(rerunfilecheck)             Checksum: 04FDAF88033C7F7AC97D402B608B8C44;21843.
+(rerunfilecheck)             Checksum: CA677280A35D6D9B815AAC56E6D77C10;22015.
 Package logreq Info: Writing requests to 'Opt_Comp_Method.run.xml'.
 \openout1 = `Opt_Comp_Method.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 42018 strings out of 475075
- 824212 string characters out of 5779003
+ 42030 strings out of 475075
+ 824340 string characters out of 5779003
  1727238 words of memory out of 5000000
- 62394 multiletter control sequences out of 15000+600000
- 501863 words of font info for 111 fonts, out of 8000000 for 9000
+ 62398 multiletter control sequences out of 15000+600000
+ 502792 words of font info for 114 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  102i,16n,136p,823b,1331s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/newtx/ztmbi.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on Opt_Comp_Method.pdf (51 pages, 1210728 bytes).
+{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/newtx/ztmbi.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
+Output written on Opt_Comp_Method.pdf (52 pages, 1222687 bytes).
 PDF statistics:
- 1046 PDF objects out of 1200 (max. 8388607)
- 920 compressed objects within 10 object streams
- 294 named destinations out of 1000 (max. 500000)
- 739 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1065 PDF objects out of 1200 (max. 8388607)
+ 936 compressed objects within 10 object streams
+ 299 named destinations out of 1000 (max. 500000)
+ 747 words of extra memory for PDF output out of 10000 (max. 10000000)
 

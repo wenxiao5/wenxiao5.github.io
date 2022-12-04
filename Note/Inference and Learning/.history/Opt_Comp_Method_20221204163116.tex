@@ -2204,23 +2204,9 @@ Some ideas/strategies for choosing decent directions:
         \end{aligned}
         \nonumber
     \end{equation}
-    which is a decent method when $\nabla^2 f(\vec{x}^{(k)})$ is positive definite. Hence, the form will work when $f$ is strictly convex function.
-
-    To solve this problem when $\nabla^2 f(\vec{x}^{(k)})$ is not positive definite, we can try to "fix" the problem by choosing a slightly different $Q$.
-    
-    Suppose that the eigenvalues of $\nabla^2 f(\vec{x}^{(k)})$ are $\lambda_1\leq \lambda_2\leq \cdots\leq \lambda_n$. Then the eigenvalues of $\nabla^2 f(\vec{x}^{(k)})+\mu I$ are $$\lambda_1+\mu\leq \lambda_2+\mu\leq \cdots\leq \lambda_n+\mu$$ Hence, we can pick $\mu>-\lambda_1$, then $\nabla^2 f(\vec{x}^{(k)})+\mu I$ will be positive definite, and we can set $\vec{p}^{(k)}=-Q^{-1}\nabla f(\vec{x}^{(k)})$, where $Q=\nabla^2 f(\vec{x}^{(k)})+\mu I$.
+    which is a decent method when $\nabla^2 f(\vec{x}^{(k)})$ is positive definite.
 \end{enumerate}
 
-\subsection{Methods Summary}
-Altogether, here is the way an iterative step of a descent method might go.
-\begin{enumerate}
-    \item Compute $\nabla^2 f(\vec{x}^{(k)})$, and find some $\mu_k$ such that $\nabla^2 f(\vec{x}^{(k)})+\mu_k I \succ 0$.
-    \item Choose a descent direction $\mathbf{p}^{(k)}$ by solving
-    $$
-    \left(\nabla^2 f(\vec{x}^{(k)})+\mu_k I\right) \vec{p}^{(k)}=-\nabla f(\vec{x}^{(k)})$$
-    \item Choose a step size $t_k$ by trying $t_k=1$ and then increasing or decreasing $t_k$ until criteria 3 and 4 are both satisfied.
-    \item Set the next point to $\vec{x}^{(k+1)}=\vec{x}^{(k)}+t_k \vec{p}^{(k)}$.
-\end{enumerate}
 
 
 

@@ -2217,7 +2217,7 @@ Altogether, here is the way an iterative step of a descent method might go.
     \item Compute $\nabla^2 f(\vec{x}^{(k)})$, and find some $\mu_k$ such that $\nabla^2 f(\vec{x}^{(k)})+\mu_k I \succ 0$.
     \item Choose a descent direction $\mathbf{p}^{(k)}$ by solving
     $$
-    \left(\nabla^2 f(\vec{x}^{(k)})+\mu_k I\right) \vec{p}^{(k)}=-\nabla f(\vec{x}^{(k)})$$
+    \left(\nabla^2 f(\vec{x}^{(k)})+\mu I\right) \vec{p}^{(k)}=-\nabla f(\vec{x}^{(k)})$$
     \item Choose a step size $t_k$ by trying $t_k=1$ and then increasing or decreasing $t_k$ until criteria 3 and 4 are both satisfied.
     \item Set the next point to $\vec{x}^{(k+1)}=\vec{x}^{(k)}+t_k \vec{p}^{(k)}$.
 \end{enumerate}
