@@ -93,30 +93,31 @@
 \contentsline {subsection}{\numberline {7.4.1} Systematic scan Gibbs sampler}{41}{subsection.7.4.1}%
 \contentsline {subsection}{\numberline {7.4.2} Random Scan Gibbs sampler}{42}{subsection.7.4.2}%
 \contentsline {subsection}{\numberline {7.4.3}Example: Bivariate Normal Distribution}{43}{subsection.7.4.3}%
-\contentsline {section}{\numberline {7.5}A Linear Algebraic Condition for Convergence}{43}{section.7.5}%
-\contentsline {chapter}{\numberline {8}Poisson Process}{45}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Basics of Poisson Process}{45}{section.8.1}%
-\contentsline {subsection}{\numberline {8.1.1}Counting Process}{45}{subsection.8.1.1}%
-\contentsline {subsection}{\numberline {8.1.2}Poisson Distribution}{45}{subsection.8.1.2}%
-\contentsline {subsection}{\numberline {8.1.3}Definition of Poisson Process}{46}{subsection.8.1.3}%
-\contentsline {section}{\numberline {8.2}Inter-Arrival Times}{46}{section.8.2}%
-\contentsline {subsection}{\numberline {8.2.1}First arrival time: Exponential distribution $Exp(\lambda )$}{46}{subsection.8.2.1}%
-\contentsline {subsection}{\numberline {8.2.2}$k^{th}$ arrival time: Gamma distribution $Gamma(n,\lambda )$}{47}{subsection.8.2.2}%
-\contentsline {subsection}{\numberline {8.2.3}Memorylessness of the Exponential Random Variable}{48}{subsection.8.2.3}%
-\contentsline {section}{\numberline {8.3}Conditioning on the number of arrivals in a Poisson Process: Uniform}{48}{section.8.3}%
-\contentsline {section}{\numberline {8.4}Superposition}{51}{section.8.4}%
-\contentsline {subsection}{\numberline {8.4.1}Independent Poisson variables: $\DOTSB \sum@ \slimits@ _{i=1}^n Y_i\sim \textnormal {Poi}\left (\DOTSB \sum@ \slimits@ _{i=1}^n\lambda _i\right )$}{51}{subsection.8.4.1}%
-\contentsline {subsection}{\numberline {8.4.2}Superposition Theorem: PP with $\lambda _1$ + PP with $\lambda _2$ = PP with $\lambda _1+\lambda _2$}{52}{subsection.8.4.2}%
-\contentsline {subsection}{\numberline {8.4.3}Probability of type 1 event before type 2 event: $\frac {\lambda _1}{\lambda _1+\lambda _2}$}{52}{subsection.8.4.3}%
-\contentsline {section}{\numberline {8.5}Thinning: PP can be divided into two independent PP}{53}{section.8.5}%
-\contentsline {section}{\numberline {8.6}Variants of Poisson process}{55}{section.8.6}%
-\contentsline {subsection}{\numberline {8.6.1}Spatial Poisson Process (dimension $\geq 2$)}{55}{subsection.8.6.1}%
-\contentsline {subsection}{\numberline {8.6.2}Non Homogeneous Poisson Process}{56}{subsection.8.6.2}%
-\contentsline {chapter}{\numberline {9}Brownian Motion}{57}{chapter.9}%
-\contentsline {section}{\numberline {9.1}Brownian Motion}{57}{section.9.1}%
-\contentsline {subsection}{\numberline {9.1.1}Definition}{57}{subsection.9.1.1}%
-\contentsline {subsection}{\numberline {9.1.2}Sufficient Condition for BM}{57}{subsection.9.1.2}%
-\contentsline {subsection}{\numberline {9.1.3}Standard Brownian Motion and Transformations}{58}{subsection.9.1.3}%
-\contentsline {subsection}{\numberline {9.1.4}Brownian Motion as a limit of Random Walk}{58}{subsection.9.1.4}%
-\contentsline {section}{\numberline {9.2} Gaussian Process}{58}{section.9.2}%
-\contentsline {section}{\numberline {9.3}Transformations and Properties}{59}{section.9.3}%
+\contentsline {subsection}{\numberline {7.4.4}Example: Potts model (Ising model)}{43}{subsection.7.4.4}%
+\contentsline {section}{\numberline {7.5}A Linear Algebraic Condition for Convergence}{44}{section.7.5}%
+\contentsline {chapter}{\numberline {8}Poisson Process}{46}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Basics of Poisson Process}{46}{section.8.1}%
+\contentsline {subsection}{\numberline {8.1.1}Counting Process}{46}{subsection.8.1.1}%
+\contentsline {subsection}{\numberline {8.1.2}Poisson Distribution}{46}{subsection.8.1.2}%
+\contentsline {subsection}{\numberline {8.1.3}Definition of Poisson Process}{47}{subsection.8.1.3}%
+\contentsline {section}{\numberline {8.2}Inter-Arrival Times}{47}{section.8.2}%
+\contentsline {subsection}{\numberline {8.2.1}First arrival time: Exponential distribution $Exp(\lambda )$}{47}{subsection.8.2.1}%
+\contentsline {subsection}{\numberline {8.2.2}$k^{th}$ arrival time: Gamma distribution $Gamma(n,\lambda )$}{48}{subsection.8.2.2}%
+\contentsline {subsection}{\numberline {8.2.3}Memorylessness of the Exponential Random Variable}{49}{subsection.8.2.3}%
+\contentsline {section}{\numberline {8.3}Conditioning on the number of arrivals in a Poisson Process: Uniform}{49}{section.8.3}%
+\contentsline {section}{\numberline {8.4}Superposition}{52}{section.8.4}%
+\contentsline {subsection}{\numberline {8.4.1}Independent Poisson variables: $\DOTSB \sum@ \slimits@ _{i=1}^n Y_i\sim \textnormal {Poi}\left (\DOTSB \sum@ \slimits@ _{i=1}^n\lambda _i\right )$}{52}{subsection.8.4.1}%
+\contentsline {subsection}{\numberline {8.4.2}Superposition Theorem: PP with $\lambda _1$ + PP with $\lambda _2$ = PP with $\lambda _1+\lambda _2$}{53}{subsection.8.4.2}%
+\contentsline {subsection}{\numberline {8.4.3}Probability of type 1 event before type 2 event: $\frac {\lambda _1}{\lambda _1+\lambda _2}$}{53}{subsection.8.4.3}%
+\contentsline {section}{\numberline {8.5}Thinning: PP can be divided into two independent PP}{54}{section.8.5}%
+\contentsline {section}{\numberline {8.6}Variants of Poisson process}{56}{section.8.6}%
+\contentsline {subsection}{\numberline {8.6.1}Spatial Poisson Process (dimension $\geq 2$)}{56}{subsection.8.6.1}%
+\contentsline {subsection}{\numberline {8.6.2}Non Homogeneous Poisson Process}{57}{subsection.8.6.2}%
+\contentsline {chapter}{\numberline {9}Brownian Motion}{58}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Brownian Motion}{58}{section.9.1}%
+\contentsline {subsection}{\numberline {9.1.1}Definition}{58}{subsection.9.1.1}%
+\contentsline {subsection}{\numberline {9.1.2}Sufficient Condition for BM}{58}{subsection.9.1.2}%
+\contentsline {subsection}{\numberline {9.1.3}Standard Brownian Motion and Transformations}{59}{subsection.9.1.3}%
+\contentsline {subsection}{\numberline {9.1.4}Brownian Motion as a limit of Random Walk}{59}{subsection.9.1.4}%
+\contentsline {section}{\numberline {9.2} Gaussian Process}{59}{section.9.2}%
+\contentsline {section}{\numberline {9.3}Transformations and Properties}{60}{section.9.3}%

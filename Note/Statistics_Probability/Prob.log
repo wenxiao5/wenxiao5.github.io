@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.21)  1 DEC 2022 12:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.21)  11 DEC 2022 23:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/yangwenxiao/Desktop/Note/Statistics_Probability/Prob
-(/Users/yangwenxiao/Desktop/Note/Statistics_Probability/Prob.tex
+**/Users/yangwenxiao/Desktop/个人主页wenxiao5.github.io/Note/Statistics_Probability/Prob
+(/Users/yangwenxiao/Desktop/个人主页wenxiao5.github.io/Note/Statistics_Probability/Prob.tex
 LaTeX2e <2022-06-01> patch level 5
 L3 programming layer <2022-08-30> (/usr/local/texlive/2022/texmf-dist/tex/latex/elegantbook/elegantbook.cls
 Document Class: elegantbook 2022/04/09 v4.3 ElegantBook document class
@@ -1338,7 +1338,7 @@ Package hyperref Info: Option `pageanchor' set `false' on input line 28.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<cover.jpg, id=521, 602.25pt x 301.125pt>
+<cover.jpg, id=525, 602.25pt x 301.125pt>
 File: cover.jpg Graphic file (type jpg)
 <use cover.jpg>
 Package pdftex.def Info: cover.jpg  used on input line 28.
@@ -1388,9 +1388,9 @@ LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
 (Font)              scaled to size 10.0pt on input line 57.
 [2] [3]
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 8.0pt on input line 108.
+(Font)              scaled to size 8.0pt on input line 109.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 6.0pt on input line 108.
+(Font)              scaled to size 6.0pt on input line 109.
  [4])
 \tf@toc=\write9
 \openout9 = `Prob.toc'.
@@ -1918,13 +1918,13 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 384.
 
-<wLLN.png, id=882, 885.3075pt x 274.02374pt>
+<wLLN.png, id=889, 885.3075pt x 274.02374pt>
 File: wLLN.png Graphic file (type png)
 <use wLLN.png>
 Package pdftex.def Info: wLLN.png  used on input line 390.
 (pdftex.def)             Requested size: 265.5943pt x 82.20775pt.
 [10]
-<sLLN.png, id=892, 882.29625pt x 209.78375pt>
+<sLLN.png, id=898, 882.29625pt x 209.78375pt>
 File: sLLN.png Graphic file (type png)
 <use sLLN.png>
 Package pdftex.def Info: sLLN.png  used on input line 398.
@@ -2375,7 +2375,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{equation.3.9.2
                                                   \__shipout_drop_firstpage_...
 l.861 ...|E|}=\frac{deg(v)}{\sum_{v\in V}deg(v)}$$
                                                   ]
-<bipartite.png, id=1008, 684.5575pt x 716.6775pt>
+<bipartite.png, id=1014, 684.5575pt x 716.6775pt>
 File: bipartite.png Graphic file (type png)
 <use bipartite.png>
 Package pdftex.def Info: bipartite.png  used on input line 865.
@@ -2797,7 +2797,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{equation.5.1.1
                    \relax 
 l.1102 \begin{equation}
                        
-<pgf.png, id=1055, 1971.365pt x 851.18pt>
+<pgf.png, id=1061, 1971.365pt x 851.18pt>
 File: pgf.png Graphic file (type png)
 <use pgf.png>
 Package pdftex.def Info: pgf.png  used on input line 1127.
@@ -3117,40 +3117,15 @@ Chapter 7.
 [39
 
 ] [40] [41] [42] [43]
-Overfull \hbox (15.28242pt too wide) in paragraph at lines 1435--1437
+Overfull \hbox (15.28242pt too wide) in paragraph at lines 1456--1458
 \OT1/ntxtlf/m/n/10.95 where $\OML/cmm/m/it/10.95 D$ \OT1/ntxtlf/m/n/10.95 has di-ag-o-nal en-tries $\OT1/cmr/m/n/10.95 1\OML/cmm/m/it/10.95 ; ^^U[]; [] ; ^^U[]$\OT1/ntxtlf/m/n/10.95 . Now, for any in-te-ger $\OML/cmm/m/it/10.95 n \OMS/cmsy/m/n/10.95 ^^U \OT1/cmr/m/n/10.95 1$\OT1/ntxtlf/m/n/10.95 , we can com-pute $\OML/cmm/m/it/10.95 P[] \OT1/cmr/m/n/10.95 = [] \OML/cmm/m/it/10.95 D[] []$\OT1/ntxtlf/m/n/10.95 .
  []
 
-[44]
+[44] [45]
 Chapter 8.
-[45
+[46
 
 ]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1510.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lambda' on input line 1510.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1510.
-
-[46]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1531.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 1531.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1531.
-
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1531.
@@ -3163,255 +3138,280 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1531.
 
-[47] [48] [49] [50
+[47]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1552.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 1552.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1552.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1552.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\lambda' on input line 1552.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1552.
+
+[48] [49] [50] [51
 pdfTeX warning (ext4): destination with the same identifier (name{equation.8.3.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1650 \end{equation}
+l.1671 \end{equation}
                      
 pdfTeX warning (ext4): destination with the same identifier (name{equation.8.3.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1650 \end{equation}
+l.1671 \end{equation}
                      ]
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1666.
+(Font)              scaled to size 12.0pt on input line 1687.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1666.
+(hyperref)                removing `math shift' on input line 1687.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sum@' on input line 1666.
+(hyperref)                removing `\sum@' on input line 1687.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\slimits@' on input line 1666.
+(hyperref)                removing `\slimits@' on input line 1687.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1666.
+(hyperref)                removing `subscript' on input line 1687.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 1666.
+(hyperref)                removing `superscript' on input line 1687.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1666.
+(hyperref)                removing `subscript' on input line 1687.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sim' on input line 1666.
+(hyperref)                removing `\sim' on input line 1687.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\left' on input line 1666.
+(hyperref)                removing `\left' on input line 1687.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sum@' on input line 1666.
+(hyperref)                removing `\sum@' on input line 1687.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\slimits@' on input line 1666.
+(hyperref)                removing `\slimits@' on input line 1687.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1666.
+(hyperref)                removing `subscript' on input line 1687.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 1666.
+(hyperref)                removing `superscript' on input line 1687.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lambda' on input line 1666.
+(hyperref)                removing `\lambda' on input line 1687.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1666.
+(hyperref)                removing `subscript' on input line 1687.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\right' on input line 1666.
+(hyperref)                removing `\right' on input line 1687.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1666.
+(hyperref)                removing `math shift' on input line 1687.
 
-[51
+[52
 pdfTeX warning (ext4): destination with the same identifier (name{equation.8.3.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1675 \end{proof}
+l.1696 \end{proof}
                   ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1677.
+(hyperref)                removing `math shift' on input line 1698.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lambda' on input line 1677.
+(hyperref)                removing `\lambda' on input line 1698.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1677.
+(hyperref)                removing `subscript' on input line 1698.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1677.
+(hyperref)                removing `math shift' on input line 1698.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1677.
+(hyperref)                removing `math shift' on input line 1698.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lambda' on input line 1677.
+(hyperref)                removing `\lambda' on input line 1698.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1677.
+(hyperref)                removing `subscript' on input line 1698.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1677.
+(hyperref)                removing `math shift' on input line 1698.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1677.
+(hyperref)                removing `math shift' on input line 1698.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lambda' on input line 1677.
+(hyperref)                removing `\lambda' on input line 1698.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1677.
+(hyperref)                removing `subscript' on input line 1698.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lambda' on input line 1677.
+(hyperref)                removing `\lambda' on input line 1698.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1677.
+(hyperref)                removing `subscript' on input line 1698.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1677.
+(hyperref)                removing `math shift' on input line 1698.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1689.
+(hyperref)                removing `math shift' on input line 1710.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\begingroup' on input line 1689.
+(hyperref)                removing `\begingroup' on input line 1710.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lambda' on input line 1689.
+(hyperref)                removing `\lambda' on input line 1710.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1689.
+(hyperref)                removing `subscript' on input line 1710.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\endgroup' on input line 1689.
+(hyperref)                removing `\endgroup' on input line 1710.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@@over' on input line 1689.
+(hyperref)                removing `\@@over' on input line 1710.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lambda' on input line 1689.
+(hyperref)                removing `\lambda' on input line 1710.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1689.
+(hyperref)                removing `subscript' on input line 1710.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lambda' on input line 1689.
+(hyperref)                removing `\lambda' on input line 1710.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1689.
+(hyperref)                removing `subscript' on input line 1710.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1689.
+(hyperref)                removing `math shift' on input line 1710.
 
-[52] [53] [54
+[53] [54] [55
 pdfTeX warning (ext4): destination with the same identifier (name{equation.8.5.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1782 \end{example}
+l.1803 \end{example}
                     ]
 pdfTeX warning (ext4): destination with the same identifier (name{equation.8.5.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1787     \begin{equation}
+l.1808     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.8.5.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1787     \begin{equation}
+l.1808     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.8.5.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1787     \begin{equation}
+l.1808     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.8.5.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1787     \begin{equation}
+l.1808     \begin{equation}
                            
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1796.
+(hyperref)                removing `math shift' on input line 1817.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\geq' on input line 1796.
+(hyperref)                removing `\geq' on input line 1817.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1796.
+(hyperref)                removing `math shift' on input line 1817.
 
-[55] [56]
+[56] [57]
 Chapter 9.
-[57
+[58
 
-] [58] [59] (./Prob.aux)
+] [59] [60] (./Prob.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `Prob.out' has not changed.
-(rerunfilecheck)             Checksum: 310FAEC43B0771F334DCC9A143B8B61C;35607.
+(rerunfilecheck)             Checksum: FC4FF8AE278CB2D4C99AB323E1603C06;35890.
 Package logreq Info: Writing requests to 'Prob.run.xml'.
 \openout1 = `Prob.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 42255 strings out of 475075
- 827544 string characters out of 5779003
+ 42262 strings out of 475075
+ 827717 string characters out of 5779003
  1730174 words of memory out of 5000000
- 62533 multiletter control sequences out of 15000+600000
+ 62534 multiletter control sequences out of 15000+600000
  509476 words of font info for 130 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 102i,21n,136p,1163b,1460s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 102i,21n,136p,1194b,1460s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/newtx/ztmbi.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on Prob.pdf (65 pages, 2907181 bytes).
+Output written on Prob.pdf (66 pages, 2909640 bytes).
 PDF statistics:
- 1449 PDF objects out of 1728 (max. 8388607)
- 1300 compressed objects within 13 object streams
- 380 named destinations out of 1000 (max. 500000)
- 1110 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1465 PDF objects out of 1728 (max. 8388607)
+ 1314 compressed objects within 14 object streams
+ 386 named destinations out of 1000 (max. 500000)
+ 1118 words of extra memory for PDF output out of 10000 (max. 10000000)
 
