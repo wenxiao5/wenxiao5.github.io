@@ -1,61 +1,63 @@
-\contentsline {section}{\numberline {1}Vector Space}{4}{section.1}%
-\contentsline {subsection}{\numberline {1.1}Vector Space $(V,+,\times )$ (over a field $\mathbb {F}$)}{4}{subsection.1.1}%
-\contentsline {subsection}{\numberline {1.2}A field is a vector space over its subfield}{4}{subsection.1.2}%
-\contentsline {subsection}{\numberline {1.3} Vector subspace}{4}{subsection.1.3}%
-\contentsline {subsection}{\numberline {1.4}Linear independent, Linear combination}{4}{subsection.1.4}%
-\contentsline {subsection}{\numberline {1.5}span V, basis, dimension}{4}{subsection.1.5}%
-\contentsline {subsection}{\numberline {1.6}Standard basis vectors}{5}{subsection.1.6}%
-\contentsline {subsection}{\numberline {1.7}Linear transformation}{5}{subsection.1.7}%
-\contentsline {subsection}{\numberline {1.8}一个线性变换对应一个矩阵, 线性变换矩阵相乘仍为线性变换矩阵}{5}{subsection.1.8}%
-\contentsline {subsection}{\numberline {1.9}GL(V): invertible linear transformations $V \rightarrow V$}{6}{subsection.1.9}%
-\contentsline {section}{\numberline {2}Basic Definition}{6}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Square Matrix $A_{n\times n}$: $det(A)$, singular}{6}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Orthogonal Vectors}{6}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Orthonormal Vectors}{6}{subsection.2.3}%
-\contentsline {section}{\numberline {3}Eigenvalues Related}{6}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Eigenvalues, Eigenvectors Definition}{6}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Diagonalizable Matrix}{7}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Eigen Decomposition of Symmetric Matrices Results}{7}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Diagonalization of Real Symmetric Matrices}{8}{subsection.3.4}%
-\contentsline {subsubsection}{\numberline {3.4.1}Proposition: $\lambda _{\min }\|x\|^2\leq x^TAx\leq \lambda _{\max }\|x\|^2$}{8}{subsubsection.3.4.1}%
-\contentsline {subsubsection}{\numberline {3.4.2}Proposition: $\lambda ^2$ is the eigenvalue of $A^2$ and $A^TA$}{8}{subsubsection.3.4.2}%
-\contentsline {subsection}{\numberline {3.5}Trace}{9}{subsection.3.5}%
-\contentsline {subsection}{\numberline {3.6}Jacobian matrix}{9}{subsection.3.6}%
-\contentsline {subsection}{\numberline {3.7}Hessian matrix}{9}{subsection.3.7}%
-\contentsline {subsection}{\numberline {3.8}Positive Definite Matrices}{10}{subsection.3.8}%
-\contentsline {subsubsection}{\numberline {3.8.1}Definition}{10}{subsubsection.3.8.1}%
-\contentsline {subsubsection}{\numberline {3.8.2}Condition number (for PD matrix)}{10}{subsubsection.3.8.2}%
-\contentsline {subsubsection}{\numberline {3.8.3}Diagonal matrix situation}{10}{subsubsection.3.8.3}%
-\contentsline {subsubsection}{\numberline {3.8.4}Using eigenvalues}{10}{subsubsection.3.8.4}%
-\contentsline {subsubsection}{\numberline {3.8.5}Sylvester’s Criterion}{11}{subsubsection.3.8.5}%
-\contentsline {subsection}{\numberline {3.9}Matrix Norm (Induced Norm) and Spectral Radius}{12}{subsection.3.9}%
-\contentsline {section}{\numberline {4}Euclidean geometry basics}{13}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Norm}{13}{subsection.4.1}%
-\contentsline {subsubsection}{\numberline {4.1.1}Vector's Norm}{13}{subsubsection.4.1.1}%
-\contentsline {subsubsection}{\numberline {4.1.2}Matrix's Norm}{13}{subsubsection.4.1.2}%
-\contentsline {subsubsection}{\numberline {4.1.3}Difference between Spectral Radius and Spectral Norm}{14}{subsubsection.4.1.3}%
-\contentsline {subsection}{\numberline {4.2} Euclidean distance, inner product}{14}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}General Inner Products}{14}{subsection.4.3}%
-\contentsline {subsubsection}{\numberline {4.3.1} Inner Product}{14}{subsubsection.4.3.1}%
-\contentsline {subsubsection}{\numberline {4.3.2}Theorem: $*$ is inner product iff $\vec {x}*\vec {y}=\vec {x}^T H \vec {y}$ for some symmetric $H$}{15}{subsubsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.4} Isometry}{16}{subsection.4.4}%
-\contentsline {subsection}{\numberline {4.5} Linear isometries i.e. orthogonal group}{16}{subsection.4.5}%
-\contentsline {subsection}{\numberline {4.6}Special orthogonal group}{16}{subsection.4.6}%
-\contentsline {subsection}{\numberline {4.7}translation}{16}{subsection.4.7}%
-\contentsline {subsection}{\numberline {4.8}All isometries can be represented by a composition of \textit {a translation} and \textit {an orthogonal transformation}}{17}{subsection.4.8}%
-\contentsline {section}{\numberline {5}Algebra Computation}{17}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Hessian Matrix}{17}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Taylor expansion}{17}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3} Random Vectors}{17}{subsection.5.3}%
-\contentsline {subsection}{\numberline {5.4} Matrix Multiplication}{18}{subsection.5.4}%
-\contentsline {subsection}{\numberline {5.5}矩阵求导}{18}{subsection.5.5}%
-\contentsline {subsection}{\numberline {5.6}矩阵求逆}{19}{subsection.5.6}%
-\contentsline {subsubsection}{\numberline {5.6.1}Woodbury matrix identity}{19}{subsubsection.5.6.1}%
-\contentsline {subsection}{\numberline {5.7}Linear Regression: Least Square}{20}{subsection.5.7}%
-\contentsline {subsubsection}{\numberline {5.7.1}Normal Equations}{20}{subsubsection.5.7.1}%
-\contentsline {subsection}{\numberline {5.8}LU Decomposition (Restricted to Square)}{20}{subsection.5.8}%
-\contentsline {subsection}{\numberline {5.9}SVD: Singular Value Decomposition}{21}{subsection.5.9}%
-\contentsline {subsubsection}{\numberline {5.9.1}Pseudoinverse}{21}{subsubsection.5.9.1}%
-\contentsline {subsubsection}{\numberline {5.9.2}Analysis about $A^TA$ and $AA^T$}{22}{subsubsection.5.9.2}%
-\contentsline {subsubsection}{\numberline {5.9.3}Solve Normal Equations}{22}{subsubsection.5.9.3}%
-\contentsline {subsubsection}{\numberline {5.9.4}Low-Rank Approximation}{23}{subsubsection.5.9.4}%
+\contentsline {chapter}{\numberline {1}Vector Space}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Vector Space $(V,+,\times )$ (over a field $\mathbb {F}$)}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}A field is a vector space over its subfield}{1}{section.1.2}%
+\contentsline {section}{\numberline {1.3} Vector subspace}{1}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Linear independent, Linear combination}{1}{section.1.4}%
+\contentsline {section}{\numberline {1.5}span V, basis, dimension}{1}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Standard basis vectors}{2}{section.1.6}%
+\contentsline {section}{\numberline {1.7}Linear transformation}{2}{section.1.7}%
+\contentsline {section}{\numberline {1.8}A Linear Transformation Correponds to a Matrix}{3}{section.1.8}%
+\contentsline {section}{\numberline {1.9}GL(V): invertible linear transformations $V \rightarrow V$}{3}{section.1.9}%
+\contentsline {chapter}{\numberline {2}Basic Definition}{4}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Square Matrix $A_{n\times n}$: $det(A)$, singular}{4}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Orthogonal Vectors}{4}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Orthonormal Vectors}{4}{section.2.3}%
+\contentsline {chapter}{\numberline {3}Eigenvalues Related}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Eigenvalues, Eigenvectors Definition}{5}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Diagonalizable Matrix}{5}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Eigen Decomposition of Symmetric Matrices Results}{6}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Diagonalization of Real Symmetric Matrices}{6}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Proposition: $\lambda _{\min }\|x\|^2\leq x^TAx\leq \lambda _{\max }\|x\|^2$}{7}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Proposition: $\lambda ^2$ is the eigenvalue of $A^2$ and $A^TA$}{7}{subsection.3.4.2}%
+\contentsline {section}{\numberline {3.5}Trace}{7}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Jacobian matrix}{8}{section.3.6}%
+\contentsline {section}{\numberline {3.7}Hessian matrix}{8}{section.3.7}%
+\contentsline {section}{\numberline {3.8}Positive Definite Matrices}{8}{section.3.8}%
+\contentsline {subsection}{\numberline {3.8.1}Definition}{8}{subsection.3.8.1}%
+\contentsline {subsection}{\numberline {3.8.2}Condition number (for PD matrix)}{9}{subsection.3.8.2}%
+\contentsline {subsection}{\numberline {3.8.3}Diagonal matrix situation}{9}{subsection.3.8.3}%
+\contentsline {subsection}{\numberline {3.8.4}Using eigenvalues}{10}{subsection.3.8.4}%
+\contentsline {subsection}{\numberline {3.8.5}Sylvester’s Criterion}{10}{subsection.3.8.5}%
+\contentsline {section}{\numberline {3.9}Matrix Norm (Induced Norm) and Spectral Radius}{11}{section.3.9}%
+\contentsline {chapter}{\numberline {4}Euclidean geometry basics}{13}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Norm}{13}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Vector's Norm}{13}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Matrix's Norm}{13}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.3}Difference between Spectral Radius and Spectral Norm}{14}{subsection.4.1.3}%
+\contentsline {section}{\numberline {4.2} Euclidean distance, inner product}{14}{section.4.2}%
+\contentsline {section}{\numberline {4.3}General Inner Products}{15}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1} Inner Product}{15}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Theorem: $*$ is inner product iff $\vec {x}*\vec {y}=\vec {x}^T H \vec {y}$ for some symmetric $H$}{15}{subsection.4.3.2}%
+\contentsline {section}{\numberline {4.4} Isometry}{16}{section.4.4}%
+\contentsline {section}{\numberline {4.5} Linear isometries i.e. orthogonal group}{17}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Special orthogonal group}{17}{section.4.6}%
+\contentsline {section}{\numberline {4.7}translation}{17}{section.4.7}%
+\contentsline {section}{\numberline {4.8}All isometries can be represented by a composition of \textit {a translation} and \textit {an orthogonal transformation}}{18}{section.4.8}%
+\contentsline {chapter}{\numberline {5}Algebra Computation}{19}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Hessian Matrix}{19}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Taylor's Expansion}{19}{section.5.2}%
+\contentsline {section}{\numberline {5.3} Random Vectors and Random Matrices}{19}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Mean}{19}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Variance, Covariance}{20}{subsection.5.3.2}%
+\contentsline {section}{\numberline {5.4} Matrix Multiplication}{21}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Matrix Derivation}{21}{section.5.5}%
+\contentsline {section}{\numberline {5.6}Matrix Inversion}{23}{section.5.6}%
+\contentsline {subsection}{\numberline {5.6.1}Woodbury matrix identity}{23}{subsection.5.6.1}%
+\contentsline {section}{\numberline {5.7}Linear Regression: Least Square}{23}{section.5.7}%
+\contentsline {subsection}{\numberline {5.7.1}Normal Equations}{23}{subsection.5.7.1}%
+\contentsline {section}{\numberline {5.8}LU Decomposition (Restricted to Square)}{24}{section.5.8}%
+\contentsline {section}{\numberline {5.9}SVD: Singular Value Decomposition}{25}{section.5.9}%
+\contentsline {subsection}{\numberline {5.9.1}Pseudo-inverse}{25}{subsection.5.9.1}%
+\contentsline {subsection}{\numberline {5.9.2}Analysis of $A^TA$ and $AA^T$}{26}{subsection.5.9.2}%
+\contentsline {subsection}{\numberline {5.9.3}Solve Normal Equations}{27}{subsection.5.9.3}%
+\contentsline {subsection}{\numberline {5.9.4}Low-Rank Approximation}{27}{subsection.5.9.4}%
