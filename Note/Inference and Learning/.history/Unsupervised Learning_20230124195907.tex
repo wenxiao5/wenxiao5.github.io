@@ -1,0 +1,53 @@
+\documentclass[11pt]{elegantbook}
+\definecolor{structurecolor}{RGB}{40,58,129}
+\linespread{1.6}
+\setlength{\footskip}{20pt}
+\setlength{\parindent}{0pt}
+\newcommand{\argmax}{\operatornamewithlimits{argmax}}
+\newcommand{\argmin}{\operatornamewithlimits{argmin}}
+\elegantnewtheorem{proof}{Proof}{}{Proof}
+\elegantnewtheorem{claim}{Claim}{prostyle}{Claim}
+\DeclareMathOperator{\col}{col}
+\title{\textbf{Unsupervised Learning}}
+\author{Wenxiao Yang}
+\institute{Department of Mathematics, University of Illinois at Urbana-Champaign}
+\date{}
+\setcounter{tocdepth}{2}
+\cover{cover.jpg}
+\extrainfo{All models are wrong, but some are useful.}
+
+% modify the color in the middle of titlepage
+\definecolor{customcolor}{RGB}{32,178,170}
+\colorlet{coverlinecolor}{customcolor}
+\usepackage{cprotect}
+
+\addbibresource[location=local]{reference.bib} % bib
+
+\begin{document}
+
+\maketitle
+\frontmatter
+\tableofcontents
+\mainmatter
+
+\chapter{Clustering}
+General Goal of \textbf{Clustering Algorithm}:
+\begin{enumerate}[$\circ$]
+    \item the "similarity" of the objects in the same cluster is \underline{maximized} while
+    \item the "similarity" of objects in different clusters is \underline{minimized}.
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

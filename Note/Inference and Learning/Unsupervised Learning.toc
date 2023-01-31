@@ -1,0 +1,17 @@
+\contentsline {chapter}{\numberline {1}Clustering}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}K-Means}{1}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}K-Means Clustering Optimization Problem}{1}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Lloyd's Algorithm}{2}{subsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.1.3}Benefits and Drawbacks}{2}{subsection.1.1.3}%
+\contentsline {subsection}{\numberline {1.1.4}Elbow Method}{3}{subsection.1.1.4}%
+\contentsline {section}{\numberline {1.2}Types of Clusters Definitions}{4}{section.1.2}%
+\contentsline {section}{\numberline {1.3}K-Medians}{6}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}K-Medians Clustering Optimization Problem}{6}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}K-Medians Heuristic Algorithm}{7}{subsection.1.3.2}%
+\contentsline {section}{\numberline {1.4}K-Medoids}{7}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}K-Medoids Clustering Optimization Problem}{7}{subsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.4.2}K-Medoids Clustering Algorithm}{8}{subsection.1.4.2}%
+\contentsline {subsection}{\numberline {1.4.3}K-Medoids vs. K-Means}{8}{subsection.1.4.3}%
+\contentsline {section}{\numberline {1.5}Types of Clustering Algorithms Results}{9}{section.1.5}%
+\contentsline {subsection}{\numberline {1.5.1}Partitional vs. Hierarchical Clustering Results}{9}{subsection.1.5.1}%
+\contentsline {subsection}{\numberline {1.5.2}Exclusive vs. Overlapping vs. Fuzzy Clustering Results}{10}{subsection.1.5.2}%

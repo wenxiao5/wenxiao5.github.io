@@ -1,0 +1,174 @@
+\documentclass[11pt]{elegantbook}
+\definecolor{structurecolor}{RGB}{40,58,129}
+\linespread{1.6}
+\setlength{\footskip}{20pt}
+\setlength{\parindent}{0pt}
+\newcommand{\argmax}{\operatornamewithlimits{argmax}}
+\newcommand{\argmin}{\operatornamewithlimits{argmin}}
+\elegantnewtheorem{proof}{Proof}{}{Proof}
+\elegantnewtheorem{claim}{Claim}{prostyle}{Claim}
+\DeclareMathOperator{\col}{col}
+\title{\textbf{STAT 426}}
+\author{Wenxiao Yang}
+\institute{Department of Mathematics, University of Illinois at Urbana-Champaign}
+\date{}
+\setcounter{tocdepth}{2}
+\cover{cover.jpg}
+\extrainfo{All models are wrong, but some are useful.}
+
+% modify the color in the middle of titlepage
+\definecolor{customcolor}{RGB}{32,178,170}
+\colorlet{coverlinecolor}{customcolor}
+\usepackage{cprotect}
+
+\addbibresource[location=local]{reference.bib} % bib
+
+\begin{document}
+
+\maketitle
+\frontmatter
+\tableofcontents
+\mainmatter
+
+\chapter{Basic of Categorical Data}
+\section{Variable Measurement}
+\begin{center}\begin{figure}[htbp]
+    \centering
+    \includegraphics[scale=0.3]{p1.png}
+    \caption{Variable Type}
+    \label{}
+\end{figure}\end{center}
+\begin{enumerate}[a)]
+    \item Nominal: Categories do not have a natural order. Ex. blood type, gender.
+    \item Ordinal: Categories have a natural order. Ex. low/middle/high education level
+    \item Interval: There is a numerical distance (difference between two different values is meaningful) between any two values.
+    Ex. blood pressure level, 100 blood pressure doesn't mean the double degree of 50 pressure.
+    \item Ratio: An interval variable where ratios are valid (presence of absolute zero, i.e. zero is meaningful). Ex. weight, 4g is double degree of 2g, distance run by an athlete.
+\end{enumerate}
+\subsection*{Levels of measurements}
+A variable's level of measurement determines the statistical methods to be used for its analysis.
+\begin{center}
+    Variables hierarchy: Ratio $>$ Interval $>$ Ordinal $>$ Nominal
+\end{center}
+Statistical methods applied to variables at a lower level can be used with variables at a higher level, but the contrary is not true.
+
+\section{Statistical Inference for Categorical Data}
+There is a distribution $F(\beta)$ with p.d.f. (p.m.f.) $f(x\mid\beta)$, where $\beta$ a generic unknown parameter and $\hat{\beta}$ the parameter estimate.
+\subsection{Maximum likelihood Estimation (MLE)}
+Given a set of observations $\vec{x}=(x_1,...,x_n)$, the likelihood function of these observations with parameter $\beta$ is $l(\vec{x}\mid\beta)$. We want to find parameter $\hat{\beta}$ that maximizes the likelihood function,$$\hat{\beta}=\arg\max_{\beta} l(\vec{x}\mid\beta)$$
+which is also equivalent to maximizing the logarithm of the likelihood function $L(\vec{x}\mid\beta) = \log(l(\vec{x}\mid\beta))$, $$\hat{\beta}=\arg\max_{\beta}L(\vec{x}\mid\beta)$$
+
+\begin{definition}[score function]
+    The score function is $$u(\beta,\vec{x})=\nabla_{\beta} L(\vec{x}\mid \beta)=\frac{\nabla_{\beta} l(\vec{x}\mid \beta)}{l(\vec{x}\mid \beta)}$$
+\end{definition}
+\begin{lemma}[mean of score function]
+    The mean of score function is $0$,
+    $$\mathbb{E}_{\vec{x}}u(\beta,\vec{x})=0$$
+\end{lemma}
+\begin{proof}
+    \begin{equation}
+        \begin{aligned}
+            \mathbb{E}_{\vec{x}}u(\beta,\vec{x})&=\int_{\vec{x}}l(\vec{x}\mid \beta)\frac{\nabla_{\beta} l(\vec{x}\mid \beta)}{l(\vec{x}\mid \beta)}d \vec{x}\\
+            &=\int_{\vec{x}}\nabla_{\beta} l(\vec{x}\mid \beta)d \vec{x}\\
+            &=\nabla_{\beta}\left(\int_{\vec{x}}l(\vec{x}\mid \beta)d \vec{x}\right)\\
+            &=\nabla_{\beta}1=0
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{proof}
+
+\begin{lemma}[variance of score function]
+    The variance of the score function is $$\textnormal{Var}_{\vec{x}}(u(\beta, \vec{x}))= \mathbb{E}_{\vec{x}}\left(u(\beta, \vec{x})u(\beta, \vec{x})^T\right)$$
+\end{lemma}
+\begin{proof}
+    Prove by the zero mean.
+\end{proof}
+
+\begin{definition}[Fisher information]
+    The (Fisher) information is $$\iota(\beta)=-\mathbb{E}_{\vec{x}}\left[\nabla^2_\beta L(\vec{x}\mid\beta)\right]$$
+\end{definition}
+\begin{lemma}
+    The Fisher information is equal to the variance of score function.
+    $$\textnormal{Var}_{\vec{x}}(u(\beta, \vec{x}))=\mathbb{E}_{\vec{x}}\left(u(\beta,\vec{x})u(\beta,\vec{x})^T\right)=-\mathbb{E}_{\vec{x}}\left[\nabla^2_\beta L(\vec{x}\mid\beta)\right]=\iota(\beta)$$
+\end{lemma}
+\begin{proof}
+    \begin{equation}
+        \begin{aligned}
+            \mathbb{E}_{\vec{x}}\left[\nabla^2_\beta L(\vec{x}\mid\beta)\right]=\mathbb{E}_{\vec{x}}\left(\frac{\partial \frac{\nabla_{\beta} l(\vec{x}\mid \beta)}{l(\vec{x}\mid \beta)}}{\partial \beta}\right)=\mathbb{E}_{\vec{x}}\left(\frac{\nabla^2_{\beta} l(\vec{x}\mid \beta)}{l(\vec{x}\mid \beta)}-\frac{\nabla_{\beta} l(\vec{x}\mid \beta)\nabla_{\beta} l(\vec{x}\mid \beta)^T}{(l(\vec{x}\mid \beta))^2} \right)
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    where $\mathbb{E}_{\vec{x}}\left(\frac{\nabla^2_{\beta} l(\vec{x}\mid \beta)}{l(\vec{x}\mid \beta)}\right)=\int_{\vec{x}}l(\vec{x}\mid \beta)\frac{\nabla^2_{\beta} l(\vec{x}\mid \beta)}{l(\vec{x}\mid \beta)}d \vec{x}=\int_{\vec{x}}\nabla^2_{\beta} l(\vec{x}\mid \beta)d \vec{x}=\nabla^2_{\beta}\int_{\vec{x}} l(\vec{x}\mid \beta)d \vec{x}=\nabla^2_{\beta} 1=0$
+    Hence, $$\mathbb{E}_{\vec{x}}\left[\nabla^2_\beta L(\vec{x}\mid\beta)\right]=-\mathbb{E}_{\vec{x}}\left(\frac{\nabla_{\beta} l(\vec{x}\mid \beta)\nabla_{\beta} l(\vec{x}\mid \beta)^T}{(l(\vec{x}\mid \beta))^2} \right)=-\mathbb{E}_{\vec{x}}\left(u(\beta,\vec{x})u(\beta,\vec{x})^T\right)$$
+\end{proof}
+
+\begin{proposition}
+    When the sample $x$ is made up of i.i.d. observations, the covariance matrix of the maximum likelihood estimator $\hat{\beta}$ is approximately equal to the inverse of the information matrix. $$\textnormal{Cov}(\hat{\beta})\approx(\iota(\beta))^{-1}$$
+\end{proposition}
+Hence, the covariance matrix can be estimated as $(\iota(\hat{\beta}))^{-1}$. Similarly, \textit{SE} is estimated by $\sqrt{(\iota(\hat{\beta}))^{-1}}$.
+
+\subsection{Likelihood Inference}
+We want to test
+\begin{equation}
+    \begin{aligned}
+        H_0:\beta=\beta_0\quad\quad H_\alpha:\beta\neq \beta_0
+    \end{aligned}
+    \nonumber
+\end{equation}
+or form a confidence interval (CI) for $\beta$.
+
+\begin{definition}[Wald Test]
+    The Wald statistic:
+    \begin{equation}
+        \begin{aligned}
+            z_W=\frac{\hat{\beta}-\beta_0}{SE}=\frac{\hat{\beta}-\beta_0}{\sqrt{(\iota(\hat{\beta}))^{-1}}}
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    where $\textit{SE}=\sqrt{(\iota(\hat{\beta}))^{-1}}$.\\
+    Usually, as $n \rightarrow \infty$, $z_W \stackrel{d}{\longrightarrow} N(0,1)$ under $H_0:\beta=\beta_0$.\\
+    So we reject the $H_0$ if $|z_W|\geq z_{\frac{\alpha}{2}}$ for a two-sided level $\alpha$ test.
+
+    The Wald test also has a \underline{chi-squared form}, using
+    \begin{equation}
+        \begin{aligned}
+            z_W^2=\frac{(\hat{\beta}-\beta_0)^2}{(\iota(\hat{\beta}))^{-1}}\sim \chi_1^2\quad \textnormal{(under $H_0$)}
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{definition}
+
+\begin{definition}[Likelihood Ratio Test]
+    Let $$\Lambda=\frac{l(\vec{x}\mid\beta_0)}{l(\vec{x}\mid\hat{\beta})}$$
+    where $l(\vec{x}\mid\hat{\beta})=\max_{\beta}l(\vec{x}\mid\beta)$, so the ratio $\Lambda\in [0,1]$.\\
+    The \textbf{likelihood-ratio test (LRT) chi-squared statistic}:
+    \begin{equation}
+        \begin{aligned}
+            -2\ln\Lambda=-2\left(L(\beta_0)-L(\hat{\beta})\right)
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    It has an approximate $\chi_1^2$ distribution under $H_0 : \beta = \beta_0$, and otherwise tends to be larger.\\
+    Thus, reject $H_0$ if $$-2\ln\Lambda\geq\chi_1^2(\alpha)$$
+\end{definition}
+
+\begin{definition}[Score Test]
+    The \textbf{score statistic}: $$z_S=\frac{u(\beta_0)}{\sqrt{\iota(\beta_0)}}$$
+    As $n \rightarrow \infty$, $z_S \stackrel{d}{\longrightarrow} N(0,1)$ under $H_0:\beta=\beta_0$. Otherwise, it tends to be further from zero.\\
+    Thus, reject $H_0$ if $|z_S|\geq z_{\frac{\alpha}{2}}$.\\
+    There is also a chi-squared form:
+    \begin{equation}
+        \begin{aligned}
+            z_S^2=\frac{u(\beta_0)^2}{\iota(\beta_0)}\sim \chi_1^2\quad \textnormal{(under $H_0$)}
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{definition}
+
+
+
+
+
+
+
+\end{document}

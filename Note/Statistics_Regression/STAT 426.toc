@@ -1,0 +1,17 @@
+\contentsline {chapter}{\numberline {1}Basic of Categorical Data}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Variable Measurement}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Statistical Inference for Categorical Data}{2}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Maximum likelihood Estimation (MLE)}{2}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Likelihood Inference (Wald, Likelihood-Ratio, Score)}{3}{subsection.1.2.2}%
+\contentsline {chapter}{\numberline {2}Association in Contingency Tables}{6}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Association in Two-Way Contingency Tables}{6}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Distribution}{6}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Independent / Homogeneity}{6}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}Descriptive Statistics}{7}{subsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.1.4}Sampling Models (Examples)}{7}{subsection.2.1.4}%
+\contentsline {subsection}{\numberline {2.1.5}Measuring Inhomogeneity}{7}{subsection.2.1.5}%
+\contentsline {section}{\numberline {2.2}Conditional Association in Three-Way Tables}{8}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Conditional Association}{8}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Simpson's Paradox}{9}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Conditional Independence, Marginal Independence}{10}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}Homogeneous Association}{10}{subsection.2.2.4}%
