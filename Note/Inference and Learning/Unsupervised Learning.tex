@@ -577,13 +577,76 @@ Adjusted rand index can actually be negative for two clusterings that have very 
 \end{enumerate}
 
 
+\chapter{Checking Clustering
+Conditions with $t$-SNE Plots}
+\section{$t$-SNE: $t$-Distributed Stochastic Neighbor Embedding}
 
+We want to use $t$-SNE plots help us visualize some aspects of the underlying clustering structure of the data.
 
+\subsection{Goal}
+\textbf{\underline{Goal}}: project multidimensional data onto a $2$ or $3$-dimensional plane while preserving \textbf{clustering structure} of the dataset.
 
+We want to use $t$-SNE plots help us visualize some aspects of the underlying clustering structure of the data:
+\begin{enumerate}
+    \item Whether there \underline{exists} a \textbf{clustering structure} in the data.
+    \item Approximation of the \textbf{number of clusters}.
+    \item Approximation of the \textbf{cluster shapes}.
+    \item Approximate \textbf{number of objects} in each cluster.
+    \item Approximation of whether clusters are
+    \textbf{separated} or not.
+    \item Approximation how any \textbf{pre-assigned class labels} \underline{associate} with the underlying \textbf{clustering structure of the data}.
+    \item Approximation of how any \textbf{cluster labels (from a clustering algorithm)} associate with the \textbf{underlying clustering structure of the data suggested by the t-SNE algorithm}.
+\end{enumerate}
 
+\subsection{Input/Output for the Algorithm}
+\textbf{Input:}
+\begin{enumerate}[$\bullet$]
+    \item \underline{Dataset} of $m$ objects $X=\{\vec{x}_1,\vec{x}_2,...,\vec{x}_m\}$, where each object $\vec{x}_i=(x_{i1},x_{i2},...x_{in})$ has $n$ numerical attributes.
+    \item \underline{Number of Dimensions:} Dimension of the data you want to project the data onto (usually 2).
+    \item \underline{Number of Iterations:} maximum number of iterations for the algorithm.\\
+    \textit{How to select:} (1). At least 200; (2). Automatically set to 1000 in Python (which tends to work for many, but not all datasets); (3). Keep iterating until you see a stable configuration of the shapes.
+    \item \underline{Perplexity}, which says (loosely) how to balance attention between local and global aspects of your data. The parameter is, in a sense, a guess about the number of close neighbors each point has.\\
+    \textit{How to select:} (1). Works best when $5 \leq$ perplexity $\leq 50$; (2). Perplexity $<$ \underline{number of objects}.
+\end{enumerate}
+\begin{center}\begin{figure}[htbp]
+    \centering
+    \includegraphics[scale=0.5]{tsne_example_of_output.png}
+    \caption{Example of Output}
+    \label{}
+\end{figure}\end{center}
 
-
-
+\subsection{Main Idea of The Algorithm}
+\begin{enumerate}
+    \item \textbf{\underline{Optimization Problem:}} Given an original high dimensional dataset, we need to solve an optimization for the optimal value of the decision variables that represent the low-dimensional projected coordinates for each observation in the original dataset.\\
+    $\vec{x}_i=[x_{1,1},...,x_{1,n}] \Rightarrow \vec{y}_i=[y_{i,1},y_{i,2}],\ i=1,2...,m$.
+    \begin{center}\begin{figure}[htbp]
+        \centering
+        \includegraphics[scale=0.4]{OP_tsne.png}
+        \includegraphics[scale=0.4]{OP_tsne_2.png}
+        \caption{Optimization Problem}
+        \label{}
+    \end{figure}\end{center}
+    \item \textbf{\underline{Crates a Similarity matrix $P$ for the Points in the Original Dataset:}}
+    Similarity between a given point $\vec{x}_i$ and another point $\vec{x}_j$ is a function of a normal distribution centered at $\vec{x}_i$ with a standard deviation $\sigma_i$ that changes based on the point and how many "neighbors" you think each point in the dataset has. Each entry of the matrix is the \textbf{similarity} between $i$ and $j$.
+    \begin{equation}
+        \begin{aligned}
+        p_{i j}= & \frac{1}{2m}\left(p_{j \mid i}+p_{i \mid j}\right) \\
+        & \bullet p_{j \mid i}=\frac{\exp \left(-\frac{\left\|\vec{x}_i-\vec{x}_j\right\|^2}{2 \sigma_i^2}\right)}{\sum_{k \neq i} \exp \left(-\frac{\left\|\vec{x}_i-\vec{x}_k\right\|^2}{2 \sigma_i^2}\right)} \\
+        & \bullet p_{i \mid j}=\frac{\exp \left(-\frac{\left\|\vec{x}_i-\vec{x}_j\right\|^2}{2 \sigma_j^2}\right)}{\sum_{k \neq j} \exp \left(-\frac{\left\|\vec{x}_j-\vec{x}_k\right\|^2}{2 \sigma_j^2}\right)}
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    \item \textbf{\underline{Creates a Similarity Matrix $Q$ for the Points (i.e., Decision Variables we are Trying to Solve for)} in the \underline{Projected Dataset}:} Similarity between a given point $\vec{y}_i$ and another point $\vec{y}_j$ is a function about $t$-distribution centered at $\vec{y}_i$.
+    $$q_{ij}=\frac{(1+\|\vec{y}_i-\vec{y}_j\|^2)^{-1}}{\sum_{k\neq l}(1+\|\vec{y}_k-\vec{y}_j\|^2)^{-1}}$$
+    \item Solve the optimization problem:
+    \begin{equation}
+        \begin{aligned}
+            \min_{\{\vec{y}_i\}_{i=1}^m}\textnormal{dist}(P,Q)=D_{KL}(P\| Q)=\sum_i\sum_j p_{ij}\log\frac{p_{ij}}{q_{ij}}
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    A heuristic solution to this optimization problem can be found via a \underline{Gradient Descent algorithm}.
+\end{enumerate}
 
 
 
