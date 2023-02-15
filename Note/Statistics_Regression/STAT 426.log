@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.22)  8 FEB 2023 14:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.22)  14 FEB 2023 11:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1331,7 +1331,7 @@ Package hyperref Info: Option `pageanchor' set `false' on input line 28.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<cover.jpg, id=111, 602.25pt x 301.125pt>
+<cover.jpg, id=119, 602.25pt x 301.125pt>
 File: cover.jpg Graphic file (type jpg)
 <use cover.jpg>
 Package pdftex.def Info: cover.jpg  used on input line 28.
@@ -1373,7 +1373,7 @@ LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
 
 ]
 Chapter 1.
-<p1.png, id=165, 797.98125pt x 533.995pt>
+<p1.png, id=178, 797.98125pt x 533.995pt>
 File: p1.png Graphic file (type png)
 <use p1.png>
 Package pdftex.def Info: p1.png  used on input line 37.
@@ -1758,7 +1758,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{equation.2.2.1
                                                   \__shipout_drop_firstpage_...
 l.548     \item T
                  here are conditional associations ($\theta_{XY(k)} \neq 1$)...]
-<Simpson's Paradox.png, id=276, 1738.495pt x 507.8975pt>
+<Simpson's Paradox.png, id=289, 1738.495pt x 507.8975pt>
 File: Simpson's Paradox.png Graphic file (type png)
 <use Simpson's Paradox.png>
 Package pdftex.def Info: Simpson's Paradox.png  used on input line 554.
@@ -1803,29 +1803,33 @@ pdfTeX warning (ext4): destination with the same identifier (name{equation.2.2.1
 <to be read again> 
                    \relax 
 l.578     \begin{equation}
-                           [13 <./Simpson's Paradox.png>] (./STAT 426.aux)
+                           [13 <./Simpson's Paradox.png>]
+Chapter 3.
+[14
+
+] (./STAT 426.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `"STAT 426".out' has not changed.
-(rerunfilecheck)             Checksum: 66F1989D0577B55C658F8A656AEAF7C8;4879.
+(rerunfilecheck)             Checksum: ACA4AC56D9446B005A5A543771924EE7;5203.
 Package logreq Info: Writing requests to '"STAT 426".run.xml'.
 \openout1 = `"STAT 426.run.xml"'.
 
  ) 
 Here is how much of TeX's memory you used:
- 41637 strings out of 476091
- 818531 string characters out of 5791542
+ 41646 strings out of 476091
+ 818643 string characters out of 5791542
  1887330 words of memory out of 5000000
- 61215 multiletter control sequences out of 15000+600000
+ 61219 multiletter control sequences out of 15000+600000
  540662 words of font info for 99 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  102i,16n,136p,764b,1333s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/newtx/ztmbi.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on "STAT 426.pdf" (15 pages, 1551304 bytes).
+Output written on "STAT 426.pdf" (16 pages, 1555520 bytes).
 PDF statistics:
- 375 PDF objects out of 1000 (max. 8388607)
- 303 compressed objects within 4 object streams
- 88 named destinations out of 1000 (max. 500000)
- 284 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 394 PDF objects out of 1000 (max. 8388607)
+ 321 compressed objects within 4 object streams
+ 93 named destinations out of 1000 (max. 500000)
+ 300 words of extra memory for PDF output out of 10000 (max. 10000000)
 

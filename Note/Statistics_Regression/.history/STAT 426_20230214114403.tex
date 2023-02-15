@@ -586,17 +586,15 @@ Some counter-intuitive but possible situations:
 
 \chapter{Generalized Linear Models}
 \section{Introduction}
-A linear model $Y=\alpha+\sum_{i=1}^p \beta_i x_i +\varepsilon$ is usually not appropriate if $Y$ is binary or a count.
+A linear model
+\begin{equation}
+    \begin{aligned}
+        Y=\alpha+\sum_{i=1}^p \beta_i x_i +\varepsilon
+    \end{aligned}
+    \nonumber
+\end{equation}
 
-We seek to model independent observations $Y_1,...,Y_n$ of a \textbf{response variable}, in terms of corresponding vectors $\vec{x}_i=(x_{i1},...,x_{ip}),i=1,...,n$ of values of $p$ \textbf{explanatory variables}.
 
-\begin{definition}[Generalized Linear Models]
-\begin{enumerate}[(1)]
-    \item \underline{Random component:} density of $Y_i$ from a \textbf{natural exponential family} $$f(y_i;\theta_i)=a(\theta_i)b(y_i)\textnormal{exp}(y_i Q(\theta_i))$$
-    where $Q(\theta_i)$ is the \textbf{natural parameter}.
-    \item 
-\end{enumerate}
-\end{definition}
 
 
 
