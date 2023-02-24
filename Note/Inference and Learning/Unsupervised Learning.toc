@@ -35,3 +35,14 @@
 \contentsline {subsection}{\numberline {3.1.1}Goal}{18}{subsection.3.1.1}%
 \contentsline {subsection}{\numberline {3.1.2}Input/Output for the Algorithm}{18}{subsection.3.1.2}%
 \contentsline {subsection}{\numberline {3.1.3}Main Idea of The Algorithm}{19}{subsection.3.1.3}%
+\contentsline {chapter}{\numberline {4}Hierarchical Clustering}{21}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Agglomerative and Divisive Hierarchical Clustering Algorithms}{21}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Agglomerative Hierarchical Clustering}{21}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}General Algorithm for Agglomerative Hierarchical Clustering}{21}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}with Single Linkage}{22}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}with Complete Linkage}{22}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.4}with Average Linkage}{23}{subsection.4.2.4}%
+\contentsline {subsection}{\numberline {4.2.5}with Ward's Linkage}{23}{subsection.4.2.5}%
+\contentsline {section}{\numberline {4.3}Divisive Hierarchical Clustering}{24}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}General Algorithm for Divisive Hierarchical Clustering}{24}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}with the Bisecting $k$-Means Algorithm}{24}{subsection.4.3.2}%

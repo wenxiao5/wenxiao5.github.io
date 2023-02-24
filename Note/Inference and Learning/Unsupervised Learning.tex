@@ -651,6 +651,105 @@ We want to use $t$-SNE plots help us visualize some aspects of the underlying cl
 
 Algorithm is heavy on both time and space resources $O(n^2)$. Computationally ineffective for datasets with more than $10000$ observations.
 
+\chapter{Hierarchical Clustering}
+\section{Agglomerative and Divisive Hierarchical Clustering Algorithms}
+\textbf{Hierarchical clustering algorithms} allow us to display a series of nested clusterings, graphically displayed in a dendrogram.
+\begin{center}\begin{figure}[htbp]
+    \centering
+    \includegraphics[scale=0.2]{Hierarchical Clustering.png}
+    \caption{Hierarchical Clustering Example}
+    \label{}
+\end{figure}\end{center}
+
+\begin{enumerate}
+    \item An \textbf{\underline{ agglomerative hierarchical clustering algorithm}} starts with all objects \textbf{apart in singleton clusters} and then iteratively joins clusters together until all objects
+    are in the same cluster.
+    \item A \textbf{\underline{ divisive hierarchical clustering algorithm}} starts with all objects \textbf{together} and then iteratively divides clusters together until all objects
+    are apart
+    in singleton clusters.
+\end{enumerate}
+
+\section{Agglomerative Hierarchical Clustering}
+\subsection{General Algorithm for Agglomerative Hierarchical Clustering}
+\begin{enumerate}[1.]
+    \item Create an \textbf{initial proximity matrix of clusters} by calculating the proximity of all objects to each other.
+    \begin{center}\begin{figure}[htbp]
+        \centering
+        \includegraphics[scale=0.25]{PM.png}
+        \caption{Proximity Matrix}
+        \label{}
+    \end{figure}\end{center}
+    \item \textbf{Repeat:}
+    \subitem Merge the clusters in the current proximity matrix of the clusters that have the smallest proximity.
+    \subitem Update the proximity matrix to reflect the proximity between the new merged cluster and the remaining clusters.
+    \item \textbf{Until} only one cluster remains.
+\end{enumerate}
+
+\subsection{with Single Linkage}
+
+In \textbf{single linkage algorithms}, the \textbf{proximity between two clusters} is defined as the proximity between the two \underline{closest} points in the two clusters.
+
+\subsubsection*{Downsides of using hierarchical agglomerative clustering with single linkage proximity measure}
+\begin{enumerate}
+    \item Not as effective in identifying the "main clusters" in datasets where the clusters are not well separated.
+    \item Sensitive to outliers and noise. It will in these cases sometimes detect the presence of outliers and noise at the expense of detecting the actual clustering structure.
+    \item Algorithm is more computationally complex than k-means.
+\end{enumerate}
+
+\subsubsection*{Benefits of using hierarchical agglomerative clustering with single linkage proximity measure}
+\begin{enumerate}
+    \item You can use it as another means to detect outliers and noise in your dataset.
+    \item It can detect:
+    \subitem non-convex clusters
+    \subitem Clusters of different sparsities
+    \subitem Clusters with different number of objects in them
+\end{enumerate}
+
+\subsection{with Complete Linkage}
+In \textbf{complete linkage algorithms}, the \textbf{proximity between two clusters} is defined as the proximity between the two \underline{furthest away} points in the two clusters.
+\subsubsection*{Downsides of using hierarchical agglomerative clustering with complete linkage proximity measure}
+\begin{enumerate}[1.]
+    \item Tends to split larger clusters, never enabling the algorithm to completely separate the main clusters that we're looking for.
+    \item Tends to favor spherical clusters
+    \item It tends not to detect noise or outliers.
+    \item Has a higher computational complexity than k-means.
+\end{enumerate}
+\subsubsection*{Benefits of using hierarchical agglomerative clustering with complete linkage proximity measure}
+\begin{enumerate}[1.]
+    \item It is more robust to noise and outliers.
+    \item It does work better for clusters that are not well separated.
+\end{enumerate}
+
+\subsection{with Average Linkage}
+In \textbf{average linkage algorithms}, the \textbf{proximity between two clusters} is defined as \underline{the average distance} between all pairs of points in the two clusters.
+
+\subsubsection*{Why use average linkage agglomerative hierarchical clustering?}
+\begin{enumerate}[1.]
+    \item Average linkage strikes a "middle ground" solution in between the results of complete linkage and single linkage.
+    \item Less sensitive to noise and outliers than single linkage (but more so than complete linkage).
+    \item Less effective at identifying non-convex clusters (or those that are of different sparsities and sizes) than single linkage, but more effective than complete linkage.
+    \item Less effective at identifying non well separated clusters than complete linkage (but more effective than single linkage).
+    \item Less prone to split large clusters than complete linkage, but more prone than single linkage.
+\end{enumerate}
+
+\subsection{with Ward's Linkage}
+In \textbf{Ward's linkage algorithms}, the \textbf{proximity between two clusters} is defined as the change in  \underline{objective function} we get when merging the two clusters.\\
+(Most common objective function value to use for Ward's linkage is \textbf{inertia}. The initial inertia value of the clustering with all singleton clusters is $0$)
+
+\subsubsection*{Benefits of using Ward's linkage in agglomerative hierarchical clustering.}
+\begin{enumerate}[1.]
+    \item Tends to identify spherical clusters really well
+\end{enumerate}
+\subsubsection*{Drawbacks of using Ward's linkage in agglomerative hierarchical clustering.}
+\begin{enumerate}[1.]
+    \item Tends to favor the same types of clusters that k-means tends to favor (because they both use inertia to define what a cluster is).
+    \subitem Spherical clusters.
+    \subitem Well separated clusters.
+    \subitem Clusters with equal sparsities and the same size.
+    \subitem Know the number of clusters that you want
+    \subitem Numerical attributes
+    \item Also sensitive to noise and outliers
+\end{enumerate}
 
 
 
@@ -658,16 +757,47 @@ Algorithm is heavy on both time and space resources $O(n^2)$. Computationally in
 
 
 
+\section{Divisive Hierarchical Clustering}
+\subsection{General Algorithm for Divisive Hierarchical Clustering}
+\begin{enumerate}[1.]
+    \item Split the dataset into 2 or more clusters.
+    \item \textbf{Repeat:}
+    Select two or more clusters in the current clustering and split each of them into two or more clusters.
+    \item \textbf{Until} all objects are in singleton clusters (i.e. clusters of size one).
+\end{enumerate}
 
+\subsection{with the Bisecting $k$-Means Algorithm}
+\textbf{\underline{Input:}}
+\begin{enumerate}[$\bullet$]
+    \item Dataset of $m$ objects $X=\{\vec{x}_1,\vec{x}_2,...,\vec{x}_m\}$, where each object $\vec{x}_i=(x_{i1},x_{i2},...x_{in})$ has $n$ numerical attributes.
+    \item Final Number of Desired Clusters in Final Clustering: $K$ [if you don't want the algorithm to end with all
+    objects in singleton clusters]
+\end{enumerate}
+\textbf{\underline{Algorithm:}}
+\begin{enumerate}[1.]
+    \item \textbf{Initialize} the list of clusters to contain \textbf{the cluster consisting of all points}.
+    \item \textbf{Repeat:}
+    \subitem[a.] \textbf{Remove a cluster} from the list of clusters\\ (Algorithm specification: how do we select the cluster?)
+    \subitem[b.] for $i = 1$ to \underline{\textit{number of trials}} do: Bisect the selected cluster using k-means algorithm (asking for k=2 clusters).
+    \subitem[c.] Select the clustering from 2b with \textbf{the lowest inertia}.
+    \subitem[d.] Add the two clusters from the clustering selected in 2c to the list of clusters.
+    \item Until the list of clusters contains the $K$ that we want.
+\end{enumerate}
+\textbf{Common ways to choose which cluster to split.}
+\begin{enumerate}[1.]
+    \item Choose the cluster with the most amount of points in it. (Benefit: you'll end up with more balanced clusters)
+    \item Choose the clusters with the highest inertia. (Benefit: you'll end up with a clustering with lower inertia)
+\end{enumerate}
 
-
-
-
-
-
-
-
-
+\subsubsection*{Why use Bisecting k-means over k-means?}
+\begin{enumerate}[-]
+    \item Bisecting k-means FORCES there to be a nested clustering structure of your returned clusterings. Just using k-means multiple times (asking for $k=2,3,4, \ldots$ clusters) does not force a nested cluster relationship.
+    \item If $k$ is large, then bisecting k-means can find the clustering with $k$ clusters faster than k-means by itself.
+\end{enumerate}
+\subsubsection*{Cons of Bisecting k-means}
+\begin{enumerate}[-]
+    \item Bisecting k-means tends to be more computationally complex (than k-means) when the desired cluster number $\mathrm{k}$ is small.
+\end{enumerate}
 
 
 
