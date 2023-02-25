@@ -12,9 +12,10 @@ body {
   color: rgb(41, 5, 77);
   background-color: rgb(246, 241, 241);
   text-align:left; /* for IE */
-  background-image:url('picture/background.jpeg');
+  background-image:url('picture/BG.JPEG');
   background-repeat:no-repeat;
   background-size:cover;
+  background-attachment:fixed;
   margin-left: auto;
   margin-right: auto;
   padding-left:  88px;
@@ -47,7 +48,7 @@ body {
 	padding-left: 2em;
 	padding-right: 2em;
     border: none;
-    background: rgb(246, 241, 241, 0.7);
+    background: rgb(246, 241, 241, 0.95);
     text-align: left;
     vertical-align: top;
 }
@@ -68,7 +69,7 @@ pre, tt {
 }
 
 a, a > tt {
-	color: #073149;
+	color: #074a70;
 	text-decoration: none;
 	font-weight: bold;
 }
