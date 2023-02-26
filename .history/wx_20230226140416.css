@@ -16,13 +16,13 @@ body {
   background-repeat:no-repeat;
   background-size:cover;
   background-attachment:fixed;
-  margin-left: auto;
+  margin-left: 0;
   margin-right: auto;
-  padding-left:  180px;
-  padding-right: 180px;
+  padding-left:  88px;
+  padding-right: 88px;
   padding-top: 30px;
   padding-bottom: 30px;
-  max-width: auto;
+  max-width: 960px;
 }
 
 #layout-menu {
