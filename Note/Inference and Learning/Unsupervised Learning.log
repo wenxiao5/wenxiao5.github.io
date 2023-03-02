@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.22)  24 FEB 2023 13:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.22)  2 MAR 2023 16:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1208,6 +1208,9 @@ LaTeX Warning: Label `' multiply defined.
 
 LaTeX Warning: Label `' multiply defined.
 
+
+LaTeX Warning: Label `' multiply defined.
+
 )
 \openout1 = `"Unsupervised Learning.aux"'.
 
@@ -1355,7 +1358,7 @@ Package hyperref Info: Option `pageanchor' set `false' on input line 28.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<cover.jpg, id=224, 602.25pt x 301.125pt>
+<cover.jpg, id=256, 602.25pt x 301.125pt>
 File: cover.jpg Graphic file (type jpg)
 <use cover.jpg>
 Package pdftex.def Info: cover.jpg  used on input line 28.
@@ -1411,34 +1414,34 @@ LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
 
 
 ] [2]
-<elbow plot.png, id=374, 419.166pt x 327.3831pt>
+<elbow plot.png, id=422, 419.166pt x 327.3831pt>
 File: elbow plot.png Graphic file (type png)
 <use elbow plot.png>
 Package pdftex.def Info: elbow plot.png  used on input line 127.
 (pdftex.def)             Requested size: 209.58249pt x 163.69115pt.
  [3 <./elbow plot.png>] [4]
-<well-separated.png, id=402, 550.055pt x 1011.78pt>
+<well-separated.png, id=450, 550.055pt x 1011.78pt>
 File: well-separated.png Graphic file (type png)
 <use well-separated.png>
 Package pdftex.def Info: well-separated.png  used on input line 170.
 (pdftex.def)             Requested size: 137.51341pt x 252.94438pt.
-<density-based.png, id=403, 957.5775pt x 640.3925pt>
+<density-based.png, id=451, 957.5775pt x 640.3925pt>
 File: density-based.png Graphic file (type png)
 <use density-based.png>
 Package pdftex.def Info: density-based.png  used on input line 171.
 (pdftex.def)             Requested size: 239.39378pt x 160.09773pt.
-<Contiguity-based.png, id=404, 1339.0025pt x 911.405pt>
+<Contiguity-based.png, id=452, 1339.0025pt x 911.405pt>
 File: Contiguity-based.png Graphic file (type png)
 <use Contiguity-based.png>
 Package pdftex.def Info: Contiguity-based.png  used on input line 173.
 (pdftex.def)             Requested size: 267.79576pt x 182.27777pt.
  [5 <./well-separated.png> <./density-based.png> <./Contiguity-based.png>]
-<prototype-based.png, id=413, 987.69pt x 672.5125pt>
+<prototype-based.png, id=461, 987.69pt x 672.5125pt>
 File: prototype-based.png Graphic file (type png)
 <use prototype-based.png>
 Package pdftex.def Info: prototype-based.png  used on input line 183.
 (pdftex.def)             Requested size: 227.16393pt x 154.67462pt.
-<prototype-based2.png, id=414, 1280.785pt x 857.2025pt>
+<prototype-based2.png, id=462, 1280.785pt x 857.2025pt>
 File: prototype-based2.png Graphic file (type png)
 <use prototype-based2.png>
 Package pdftex.def Info: prototype-based2.png  used on input line 184.
@@ -1458,14 +1461,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 296--297
 
  []
 
-<Hierarchical Clustering.png, id=450, 1310.8975pt x 877.2775pt>
+<Hierarchical Clustering.png, id=498, 1310.8975pt x 877.2775pt>
 File: Hierarchical Clustering.png Graphic file (type png)
 <use Hierarchical Clustering.png>
 Package pdftex.def Info: Hierarchical Clustering.png  used on input line 300.
 (pdftex.def)             Requested size: 327.72357pt x 219.31883pt.
 [9 <./Hierarchical Clustering.png>] [10]
 Chapter 2.
-<HS.png, id=473, 1842.885pt x 1332.98pt>
+<HS.png, id=521, 1842.885pt x 1332.98pt>
 File: HS.png Graphic file (type png)
 <use HS.png>
 Package pdftex.def Info: HS.png  used on input line 364.
@@ -1473,7 +1476,7 @@ Package pdftex.def Info: HS.png  used on input line 364.
 [11
 
 ] [12 <./HS.png>]
-<proximity matrix.png, id=499, 1603.9925pt x 684.5575pt>
+<proximity matrix.png, id=547, 1603.9925pt x 684.5575pt>
 File: proximity matrix.png Graphic file (type png)
 <use proximity matrix.png>
 Package pdftex.def Info: proximity matrix.png  used on input line 389.
@@ -1484,13 +1487,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{equation.2.2.1
                                                   \__shipout_drop_firstpage_...
 l.423     \end{matrix}\right.$$
                                 <./proximity matrix.png>]
-<Silhouette Plots.png, id=511, 2013.5225pt x 1142.2675pt>
+<Silhouette Plots.png, id=559, 2013.5225pt x 1142.2675pt>
 File: Silhouette Plots.png Graphic file (type png)
 <use Silhouette Plots.png>
 Package pdftex.def Info: Silhouette Plots.png  used on input line 428.
 (pdftex.def)             Requested size: 402.69737pt x 228.44945pt.
  [14 <./Silhouette Plots.png>]
-<Average Silhouette Score Plot.png, id=522, 1065.9825pt x 991.705pt>
+<Average Silhouette Score Plot.png, id=571, 1065.9825pt x 991.705pt>
 File: Average Silhouette Score Plot.png Graphic file (type png)
 <use Average Silhouette Score Plot.png>
 Package pdftex.def Info: Average Silhouette Score Plot.png  used on input line 468.
@@ -1566,7 +1569,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 582.
 
-<tsne_example_of_output.png, id=560, 850.17625pt x 382.42876pt>
+<tsne_example_of_output.png, id=608, 850.17625pt x 382.42876pt>
 File: tsne_example_of_output.png Graphic file (type png)
 <use tsne_example_of_output.png>
 Package pdftex.def Info: tsne_example_of_output.png  used on input line 613.
@@ -1574,12 +1577,12 @@ Package pdftex.def Info: tsne_example_of_output.png  used on input line 613.
 [18
 
 ]
-<OP_tsne.png, id=576, 568.1225pt x 374.39874pt>
+<OP_tsne.png, id=624, 568.1225pt x 374.39874pt>
 File: OP_tsne.png Graphic file (type png)
 <use OP_tsne.png>
 Package pdftex.def Info: OP_tsne.png  used on input line 624.
 (pdftex.def)             Requested size: 227.24496pt x 149.75684pt.
-<OP_tsne_2.png, id=577, 837.1275pt x 363.3575pt>
+<OP_tsne_2.png, id=625, 837.1275pt x 363.3575pt>
 File: OP_tsne_2.png Graphic file (type png)
 <use OP_tsne_2.png>
 Package pdftex.def Info: OP_tsne_2.png  used on input line 625.
@@ -1595,7 +1598,7 @@ File: Hierarchical Clustering.png Graphic file (type png)
 <use Hierarchical Clustering.png>
 Package pdftex.def Info: Hierarchical Clustering.png  used on input line 659.
 (pdftex.def)             Requested size: 262.17485pt x 175.4524pt.
-<PM.png, id=594, 776.9025pt x 515.9275pt>
+<PM.png, id=642, 776.9025pt x 515.9275pt>
 File: PM.png Graphic file (type png)
 <use PM.png>
 Package pdftex.def Info: PM.png  used on input line 678.
@@ -1618,29 +1621,61 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 769.
 
-[24] [25] (./Unsupervised Learning.aux)
+[24] [25]
+Chapter 5.
+[26
+
+]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 863.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 863.
+
+<kmodes.png, id=712, 1764.5925pt x 1467.4825pt>
+File: kmodes.png Graphic file (type png)
+<use kmodes.png>
+Package pdftex.def Info: kmodes.png  used on input line 867.
+(pdftex.def)             Requested size: 352.91225pt x 293.4913pt.
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 880.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 880.
+
+[27]
+<kprototype.png, id=723, 2005.4925pt x 1644.1425pt>
+File: kprototype.png Graphic file (type png)
+<use kprototype.png>
+Package pdftex.def Info: kprototype.png  used on input line 884.
+(pdftex.def)             Requested size: 401.0914pt x 328.82268pt.
+ [28 <./kmodes.png>] [29 <./kprototype.png>] (./Unsupervised Learning.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `"Unsupervised Learning".out' has not changed.
-(rerunfilecheck)             Checksum: C0DDEDFF227D816500416EA190E5CED4;13586.
+(rerunfilecheck)             Checksum: 6B80D3B5928209FB561BE39B5898B9BA;16685.
 Package logreq Info: Writing requests to '"Unsupervised Learning".run.xml'.
 \openout1 = `"Unsupervised Learning.run.xml"'.
 
  ) 
 Here is how much of TeX's memory you used:
- 41922 strings out of 476091
- 822975 string characters out of 5791542
+ 41983 strings out of 476091
+ 823812 string characters out of 5791542
  1873330 words of memory out of 5000000
- 61333 multiletter control sequences out of 15000+600000
- 549295 words of font info for 127 fonts, out of 8000000 for 9000
+ 61364 multiletter control sequences out of 15000+600000
+ 551136 words of font info for 133 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  102i,17n,136p,878b,1329s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/newtx/ztmbi.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on "Unsupervised Learning.pdf" (28 pages, 4373418 bytes).
+{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/newtx/ztmbi.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
+Output written on "Unsupervised Learning.pdf" (32 pages, 4771715 bytes).
 PDF statistics:
- 777 PDF objects out of 1000 (max. 8388607)
- 659 compressed objects within 7 object streams
- 237 named destinations out of 1000 (max. 500000)
- 573 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 882 PDF objects out of 1000 (max. 8388607)
+ 747 compressed objects within 8 object streams
+ 259 named destinations out of 1000 (max. 500000)
+ 647 words of extra memory for PDF output out of 10000 (max. 10000000)
 

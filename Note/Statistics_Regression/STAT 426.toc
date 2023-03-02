@@ -11,27 +11,35 @@
 \contentsline {subsection}{\numberline {2.1.4}Independent / Homogeneity}{7}{subsection.2.1.4}%
 \contentsline {subsection}{\numberline {2.1.5}Measuring Inhomogeneity}{7}{subsection.2.1.5}%
 \contentsline {subsection}{\numberline {2.1.6}Delta Method}{9}{subsection.2.1.6}%
-\contentsline {subsection}{\numberline {2.1.7}Testing Independence: $X^2$ and $G^2$ Test}{9}{subsection.2.1.7}%
-\contentsline {subsection}{\numberline {2.1.8}Testing Independence: Fisher's Exact Test}{11}{subsection.2.1.8}%
+\contentsline {subsection}{\numberline {2.1.7}Testing Independence by Residuals: $X^2$ Test (Pearson)}{9}{subsection.2.1.7}%
+\contentsline {subsection}{\numberline {2.1.8}Testing Independence: $G^2$ Test (Likelihood Ratio)}{11}{subsection.2.1.8}%
+\contentsline {subsection}{\numberline {2.1.9}Testing Independence: Fisher's Exact Test}{11}{subsection.2.1.9}%
 \contentsline {section}{\numberline {2.2}Conditional Association in Three-Way Tables}{12}{section.2.2}%
 \contentsline {subsection}{\numberline {2.2.1}Conditional Association}{12}{subsection.2.2.1}%
 \contentsline {subsection}{\numberline {2.2.2}Simpson's Paradox}{13}{subsection.2.2.2}%
 \contentsline {subsection}{\numberline {2.2.3}Conditional Independence, Marginal Independence}{13}{subsection.2.2.3}%
-\contentsline {subsection}{\numberline {2.2.4}Homogeneous Association}{13}{subsection.2.2.4}%
-\contentsline {chapter}{\numberline {3}Generalized Linear Models}{14}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Introduction}{14}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Definition}{14}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Fitting GLMs}{15}{subsection.3.1.2}%
-\contentsline {section}{\numberline {3.2}Binary and Binomial Responses}{15}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Binary Regression}{15}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Grouped Data: Binomial Response}{16}{subsection.3.2.2}%
-\contentsline {section}{\numberline {3.3}Count Responses}{17}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Poisson Regression}{17}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Rate Models}{18}{subsection.3.3.2}%
-\contentsline {section}{\numberline {3.4}Coefficient and Model Inferences}{19}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Wald Inference}{19}{subsection.3.4.1}%
-\contentsline {subsubsection}{\numberline {3.4.1.1}(Fisher) Information Matrix}{19}{subsubsection.3.4.1.1}%
-\contentsline {subsubsection}{\numberline {3.4.1.2}Wald Inference}{20}{subsubsection.3.4.1.2}%
-\contentsline {subsection}{\numberline {3.4.2}Likelihood-Ratio Test}{21}{subsection.3.4.2}%
-\contentsline {subsubsection}{\numberline {3.4.2.1} Deviance and Goodness of Fit}{21}{subsubsection.3.4.2.1}%
-\contentsline {subsubsection}{\numberline {3.4.2.2}Goodness of Fit Test / Likelihood-Ratio Test}{21}{subsubsection.3.4.2.2}%
+\contentsline {subsection}{\numberline {2.2.4}Homogeneous Association}{14}{subsection.2.2.4}%
+\contentsline {chapter}{\numberline {3}Generalized Linear Models}{15}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Introduction}{15}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Definition}{15}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Fitting GLMs}{16}{subsection.3.1.2}%
+\contentsline {section}{\numberline {3.2}Binary and Binomial Responses}{16}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Binary Regression}{16}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Grouped Data: Binomial Response}{17}{subsection.3.2.2}%
+\contentsline {section}{\numberline {3.3}Count Responses}{18}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Poisson Regression}{18}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Rate Models}{19}{subsection.3.3.2}%
+\contentsline {section}{\numberline {3.4}Coefficient and Model Inferences}{20}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Wald Inference}{20}{subsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.1.1}(Fisher) Information Matrix}{20}{subsubsection.3.4.1.1}%
+\contentsline {subsubsection}{\numberline {3.4.1.2}Wald Inference}{21}{subsubsection.3.4.1.2}%
+\contentsline {subsection}{\numberline {3.4.2}Deviance and Likelihood-Ratio Test}{22}{subsection.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.2.1} Deviance and Goodness of Fit}{22}{subsubsection.3.4.2.1}%
+\contentsline {subsubsection}{\numberline {3.4.2.2}Goodness of Fit Test / Likelihood-Ratio Test}{22}{subsubsection.3.4.2.2}%
+\contentsline {subsection}{\numberline {3.4.3}Nested Model Comparison}{23}{subsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.4.4}Residuals}{24}{subsection.3.4.4}%
+\contentsline {subsection}{\numberline {3.4.5}Overdispersion}{25}{subsection.3.4.5}%
+\contentsline {section}{\numberline {3.5}Logistic Regression}{26}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Parameter Interpretation}{26}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Inference}{27}{subsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.5.3}Testing Goodness of Fit}{28}{subsection.3.5.3}%

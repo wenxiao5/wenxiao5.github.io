@@ -46,3 +46,11 @@
 \contentsline {section}{\numberline {4.3}Divisive Hierarchical Clustering}{24}{section.4.3}%
 \contentsline {subsection}{\numberline {4.3.1}General Algorithm for Divisive Hierarchical Clustering}{24}{subsection.4.3.1}%
 \contentsline {subsection}{\numberline {4.3.2}with the Bisecting $k$-Means Algorithm}{24}{subsection.4.3.2}%
+\contentsline {chapter}{\numberline {5}Categorical Data Clustering}{26}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Dataset Clustering with Categorical Variables}{26}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1} t-SNE Algorithm - Using a Distance Matrix Input}{26}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Creating a Distance Matrix for Datasets with Categorical Variables}{26}{subsection.5.1.2}%
+\contentsline {section}{\numberline {5.2}Partitional Clustering Algorithms for Datasets with Categorical Variables}{27}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Just Categorical Variables: $k$-Modes Clustering Algorithm}{27}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Numerical and Categorical Variables: $k$-Prototypes Clustering Algorithm}{28}{subsection.5.2.2}%
+\contentsline {section}{\numberline {5.3}Hierarchical Clustering Algorithms for Datasets with Categorical Variables}{28}{section.5.3}%
