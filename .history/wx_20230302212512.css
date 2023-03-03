@@ -143,23 +143,17 @@ h1, h2, h3 {
 h1 {
 	font-size: 200%;
 	color: transparent;
-	background: linear-gradient(to right, #fff, #ad0202, #0D0D0D);
+	background: linear-gradient(to right, #fff, #BF391B, #0D0D0D);
 	-webkit-text-fill-color: transparent;
 	background-clip: text;
 	-webkit-background-clip: text;
 	position: relative;
-	letter-spacing: 0.2rem;
+	letter-spacing: 0.3rem;
 }
 
 h2 {
 	padding-top: 0.8em;
 	font-size: 125%;
-	color: transparent;
-	background: linear-gradient(to right, #d71702, #2e0000, #0D0D0D);
-	-webkit-text-fill-color: transparent;
-	background-clip: text;
-	-webkit-background-clip: text;
-	position: relative;
 }
 
 h2 + h3 {
