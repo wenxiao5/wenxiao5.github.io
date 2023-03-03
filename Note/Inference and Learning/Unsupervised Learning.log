@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.22)  2 MAR 2023 16:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.22)  2 MAR 2023 19:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1211,6 +1211,12 @@ LaTeX Warning: Label `' multiply defined.
 
 LaTeX Warning: Label `' multiply defined.
 
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
 )
 \openout1 = `"Unsupervised Learning.aux"'.
 
@@ -1358,7 +1364,7 @@ Package hyperref Info: Option `pageanchor' set `false' on input line 28.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<cover.jpg, id=256, 602.25pt x 301.125pt>
+<cover.jpg, id=252, 602.25pt x 301.125pt>
 File: cover.jpg Graphic file (type jpg)
 <use cover.jpg>
 Package pdftex.def Info: cover.jpg  used on input line 28.
@@ -1414,34 +1420,34 @@ LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
 
 
 ] [2]
-<elbow plot.png, id=422, 419.166pt x 327.3831pt>
+<elbow plot.png, id=416, 419.166pt x 327.3831pt>
 File: elbow plot.png Graphic file (type png)
 <use elbow plot.png>
 Package pdftex.def Info: elbow plot.png  used on input line 127.
 (pdftex.def)             Requested size: 209.58249pt x 163.69115pt.
  [3 <./elbow plot.png>] [4]
-<well-separated.png, id=450, 550.055pt x 1011.78pt>
+<well-separated.png, id=444, 550.055pt x 1011.78pt>
 File: well-separated.png Graphic file (type png)
 <use well-separated.png>
 Package pdftex.def Info: well-separated.png  used on input line 170.
 (pdftex.def)             Requested size: 137.51341pt x 252.94438pt.
-<density-based.png, id=451, 957.5775pt x 640.3925pt>
+<density-based.png, id=445, 957.5775pt x 640.3925pt>
 File: density-based.png Graphic file (type png)
 <use density-based.png>
 Package pdftex.def Info: density-based.png  used on input line 171.
 (pdftex.def)             Requested size: 239.39378pt x 160.09773pt.
-<Contiguity-based.png, id=452, 1339.0025pt x 911.405pt>
+<Contiguity-based.png, id=446, 1339.0025pt x 911.405pt>
 File: Contiguity-based.png Graphic file (type png)
 <use Contiguity-based.png>
 Package pdftex.def Info: Contiguity-based.png  used on input line 173.
 (pdftex.def)             Requested size: 267.79576pt x 182.27777pt.
  [5 <./well-separated.png> <./density-based.png> <./Contiguity-based.png>]
-<prototype-based.png, id=461, 987.69pt x 672.5125pt>
+<prototype-based.png, id=455, 987.69pt x 672.5125pt>
 File: prototype-based.png Graphic file (type png)
 <use prototype-based.png>
 Package pdftex.def Info: prototype-based.png  used on input line 183.
 (pdftex.def)             Requested size: 227.16393pt x 154.67462pt.
-<prototype-based2.png, id=462, 1280.785pt x 857.2025pt>
+<prototype-based2.png, id=456, 1280.785pt x 857.2025pt>
 File: prototype-based2.png Graphic file (type png)
 <use prototype-based2.png>
 Package pdftex.def Info: prototype-based2.png  used on input line 184.
@@ -1461,221 +1467,214 @@ Underfull \hbox (badness 10000) in paragraph at lines 296--297
 
  []
 
-<Hierarchical Clustering.png, id=498, 1310.8975pt x 877.2775pt>
+<Hierarchical Clustering.png, id=492, 1310.8975pt x 877.2775pt>
 File: Hierarchical Clustering.png Graphic file (type png)
 <use Hierarchical Clustering.png>
 Package pdftex.def Info: Hierarchical Clustering.png  used on input line 300.
 (pdftex.def)             Requested size: 327.72357pt x 219.31883pt.
 [9 <./Hierarchical Clustering.png>] [10]
 Chapter 2.
-<HS.png, id=521, 1842.885pt x 1332.98pt>
-File: HS.png Graphic file (type png)
-<use HS.png>
-Package pdftex.def Info: HS.png  used on input line 364.
-(pdftex.def)             Requested size: 460.72012pt x 333.24419pt.
+<metric1.png, id=515, 1953.2975pt x 1551.7975pt>
+File: metric1.png Graphic file (type png)
+<use metric1.png>
+Package pdftex.def Info: metric1.png  used on input line 337.
+(pdftex.def)             Requested size: 449.24898pt x 356.90591pt.
+<metric2.png, id=516, 1951.29pt x 576.1525pt>
+File: metric2.png Graphic file (type png)
+<use metric2.png>
+Package pdftex.def Info: metric2.png  used on input line 338.
+(pdftex.def)             Requested size: 448.78726pt x 132.51228pt.
 [11
 
-] [12 <./HS.png>]
-<proximity matrix.png, id=547, 1603.9925pt x 684.5575pt>
+ <./metric1.png> <./metric2.png>]
+<HS.png, id=523, 1842.885pt x 1332.98pt>
+File: HS.png Graphic file (type png)
+<use HS.png>
+Package pdftex.def Info: HS.png  used on input line 376.
+(pdftex.def)             Requested size: 460.72012pt x 333.24419pt.
+ [12] [13 <./HS.png>]
+<proximity matrix.png, id=549, 1603.9925pt x 684.5575pt>
 File: proximity matrix.png Graphic file (type png)
 <use proximity matrix.png>
-Package pdftex.def Info: proximity matrix.png  used on input line 389.
+Package pdftex.def Info: proximity matrix.png  used on input line 401.
 (pdftex.def)             Requested size: 288.70619pt x 123.21503pt.
- [13
+ [14
 pdfTeX warning (ext4): destination with the same identifier (name{equation.2.2.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.423     \end{matrix}\right.$$
+l.435     \end{matrix}\right.$$
                                 <./proximity matrix.png>]
-<Silhouette Plots.png, id=559, 2013.5225pt x 1142.2675pt>
+<Silhouette Plots.png, id=561, 2013.5225pt x 1142.2675pt>
 File: Silhouette Plots.png Graphic file (type png)
 <use Silhouette Plots.png>
-Package pdftex.def Info: Silhouette Plots.png  used on input line 428.
+Package pdftex.def Info: Silhouette Plots.png  used on input line 440.
 (pdftex.def)             Requested size: 402.69737pt x 228.44945pt.
- [14 <./Silhouette Plots.png>]
-<Average Silhouette Score Plot.png, id=571, 1065.9825pt x 991.705pt>
+ [15 <./Silhouette Plots.png>]
+<Average Silhouette Score Plot.png, id=573, 1065.9825pt x 991.705pt>
 File: Average Silhouette Score Plot.png Graphic file (type png)
 <use Average Silhouette Score Plot.png>
-Package pdftex.def Info: Average Silhouette Score Plot.png  used on input line 468.
+Package pdftex.def Info: Average Silhouette Score Plot.png  used on input line 480.
 (pdftex.def)             Requested size: 213.19272pt x 198.33748pt.
- [15 <./Average Silhouette Score Plot.png>]
+ [16 <./Average Silhouette Score Plot.png>]
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/it' will be
-(Font)              scaled to size 8.0pt on input line 493.
+(Font)              scaled to size 8.0pt on input line 505.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/it' will be
-(Font)              scaled to size 6.0pt on input line 493.
- [16]
+(Font)              scaled to size 6.0pt on input line 505.
+ [17]
 pdfTeX warning (ext4): destination with the same identifier (name{equation.2.4.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.518     \begin{equation}
+l.530     \begin{equation}
                           
 pdfTeX warning (ext4): destination with the same identifier (name{equation.2.4.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.518     \begin{equation}
+l.530     \begin{equation}
                           
 pdfTeX warning (ext4): destination with the same identifier (name{equation.2.4.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.518     \begin{equation}
+l.530     \begin{equation}
                           
 pdfTeX warning (ext4): destination with the same identifier (name{equation.2.4.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.518     \begin{equation}
+l.530     \begin{equation}
                           
 pdfTeX warning (ext4): destination with the same identifier (name{equation.2.4.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.531 \begin{equation}
+l.543 \begin{equation}
                       
 pdfTeX warning (ext4): destination with the same identifier (name{equation.2.4.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.531 \begin{equation}
+l.543 \begin{equation}
                       
 pdfTeX warning (ext4): destination with the same identifier (name{equation.2.4.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.531 \begin{equation}
+l.543 \begin{equation}
                       
 pdfTeX warning (ext4): destination with the same identifier (name{equation.2.4.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.531 \begin{equation}
-                       [17]
-Chapter 3.
+l.543 \begin{equation}
+                      
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 581.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 581.
+(hyperref)                removing `math shift' on input line 592.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 582.
+(hyperref)                removing `math shift' on input line 592.
 
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 582.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 582.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 582.
-
-<tsne_example_of_output.png, id=608, 850.17625pt x 382.42876pt>
+[18]
+<tsne_example_of_output.png, id=610, 850.17625pt x 382.42876pt>
 File: tsne_example_of_output.png Graphic file (type png)
 <use tsne_example_of_output.png>
-Package pdftex.def Info: tsne_example_of_output.png  used on input line 613.
+Package pdftex.def Info: tsne_example_of_output.png  used on input line 624.
 (pdftex.def)             Requested size: 425.08708pt x 191.2139pt.
-[18
-
-]
-<OP_tsne.png, id=624, 568.1225pt x 374.39874pt>
+ [19]
+<OP_tsne.png, id=626, 568.1225pt x 374.39874pt>
 File: OP_tsne.png Graphic file (type png)
 <use OP_tsne.png>
-Package pdftex.def Info: OP_tsne.png  used on input line 624.
+Package pdftex.def Info: OP_tsne.png  used on input line 635.
 (pdftex.def)             Requested size: 227.24496pt x 149.75684pt.
-<OP_tsne_2.png, id=625, 837.1275pt x 363.3575pt>
+<OP_tsne_2.png, id=627, 837.1275pt x 363.3575pt>
 File: OP_tsne_2.png Graphic file (type png)
 <use OP_tsne_2.png>
-Package pdftex.def Info: OP_tsne_2.png  used on input line 625.
+Package pdftex.def Info: OP_tsne_2.png  used on input line 636.
 (pdftex.def)             Requested size: 334.84506pt x 145.34041pt.
- [19 <./tsne_example_of_output.png>] [20
-pdfTeX warning (ext4): destination with the same identifier (name{equation.3.1.1}) has been already used, duplicate ignored
+ [20 <./tsne_example_of_output.png> <./OP_tsne.png> <./OP_tsne_2.png>] [21
+pdfTeX warning (ext4): destination with the same identifier (name{equation.2.6.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.654 \chapter
-              {Hierarchical Clustering} <./OP_tsne.png> <./OP_tsne_2.png>]
-Chapter 4.
+l.665 \chapter
+              {Hierarchical Clustering}]
+Chapter 3.
 File: Hierarchical Clustering.png Graphic file (type png)
 <use Hierarchical Clustering.png>
-Package pdftex.def Info: Hierarchical Clustering.png  used on input line 659.
+Package pdftex.def Info: Hierarchical Clustering.png  used on input line 670.
 (pdftex.def)             Requested size: 262.17485pt x 175.4524pt.
-<PM.png, id=642, 776.9025pt x 515.9275pt>
+<PM.png, id=644, 776.9025pt x 515.9275pt>
 File: PM.png Graphic file (type png)
 <use PM.png>
-Package pdftex.def Info: PM.png  used on input line 678.
+Package pdftex.def Info: PM.png  used on input line 689.
 (pdftex.def)             Requested size: 194.22514pt x 128.98155pt.
-[21
+[22
 
-] [22 <./PM.png>]
-Overfull \hbox (1.1452pt too wide) in paragraph at lines 736--738
+] [23 <./PM.png>]
+Overfull \hbox (1.1452pt too wide) in paragraph at lines 747--749
 []\OT1/ntxtlf/m/n/10.95 In \OT1/ntxtlf/b/n/10.95 Ward's link-age al-go-rithms\OT1/ntxtlf/m/n/10.95 , the \OT1/ntxtlf/b/n/10.95 prox-im-ity be-tween two clus-ters \OT1/ntxtlf/m/n/10.95 is de-fined as the change in $[]$
  []
 
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 739.
-[23]
+(Font)              scaled to size 12.0pt on input line 750.
+[24]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 769.
+(hyperref)                removing `math shift' on input line 780.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 769.
+(hyperref)                removing `math shift' on input line 780.
 
-[24] [25]
-Chapter 5.
-[26
+[25] [26]
+Chapter 4.
+[27
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 863.
+(hyperref)                removing `math shift' on input line 874.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 863.
+(hyperref)                removing `math shift' on input line 874.
 
-<kmodes.png, id=712, 1764.5925pt x 1467.4825pt>
+<kmodes.png, id=714, 1764.5925pt x 1467.4825pt>
 File: kmodes.png Graphic file (type png)
 <use kmodes.png>
-Package pdftex.def Info: kmodes.png  used on input line 867.
+Package pdftex.def Info: kmodes.png  used on input line 878.
 (pdftex.def)             Requested size: 352.91225pt x 293.4913pt.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 880.
+(hyperref)                removing `math shift' on input line 891.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 880.
+(hyperref)                removing `math shift' on input line 891.
 
-[27]
-<kprototype.png, id=723, 2005.4925pt x 1644.1425pt>
+[28]
+<kprototype.png, id=726, 2005.4925pt x 1644.1425pt>
 File: kprototype.png Graphic file (type png)
 <use kprototype.png>
-Package pdftex.def Info: kprototype.png  used on input line 884.
+Package pdftex.def Info: kprototype.png  used on input line 895.
 (pdftex.def)             Requested size: 401.0914pt x 328.82268pt.
- [28 <./kmodes.png>] [29 <./kprototype.png>] (./Unsupervised Learning.aux)
+ [29 <./kmodes.png>] [30 <./kprototype.png>] (./Unsupervised Learning.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `"Unsupervised Learning".out' has not changed.
-(rerunfilecheck)             Checksum: 6B80D3B5928209FB561BE39B5898B9BA;16685.
+(rerunfilecheck)             Checksum: AD8D5110993FECC9D6B904A3FA1670DA;16405.
 Package logreq Info: Writing requests to '"Unsupervised Learning".run.xml'.
 \openout1 = `"Unsupervised Learning.run.xml"'.
 
  ) 
 Here is how much of TeX's memory you used:
- 41983 strings out of 476091
- 823812 string characters out of 5791542
+ 41987 strings out of 476091
+ 823885 string characters out of 5791542
  1873330 words of memory out of 5000000
- 61364 multiletter control sequences out of 15000+600000
- 551136 words of font info for 133 fonts, out of 8000000 for 9000
+ 61367 multiletter control sequences out of 15000+600000
+ 549118 words of font info for 125 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  102i,17n,136p,878b,1329s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/newtx/ztmbi.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on "Unsupervised Learning.pdf" (32 pages, 4771715 bytes).
+Output written on "Unsupervised Learning.pdf" (33 pages, 5085697 bytes).
 PDF statistics:
- 882 PDF objects out of 1000 (max. 8388607)
- 747 compressed objects within 8 object streams
+ 884 PDF objects out of 1000 (max. 8388607)
+ 744 compressed objects within 8 object streams
  259 named destinations out of 1000 (max. 500000)
- 647 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 649 words of extra memory for PDF output out of 10000 (max. 10000000)
 

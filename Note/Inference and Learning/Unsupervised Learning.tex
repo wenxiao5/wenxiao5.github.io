@@ -332,6 +332,18 @@ K-Medoids is more computationally complex than k-means:
 
 
 \chapter{Clustering Evaluation Metrics}
+\begin{center}\begin{figure}[htbp]
+    \centering
+    \includegraphics[scale=0.23]{metric1.png}
+    \includegraphics[scale=0.23]{metric2.png}
+    \caption{Evaluation Metrics}
+    \label{}
+\end{figure}\end{center}
+
+
+
+
+
 \section{Clusterability Evaluation Metric: Is the dataset clusterable?}
 \begin{definition}
     A dataset is \textbf{clusterable} if there exist some distinct groupings of observations in a dataset.
@@ -577,9 +589,8 @@ Adjusted rand index can actually be negative for two clusterings that have very 
 \end{enumerate}
 
 
-\chapter{Checking Clustering
-Conditions with $t$-SNE Plots}
-\section{$t$-SNE: $t$-Distributed Stochastic Neighbor Embedding}
+\section{'Clusterable'?  and 'Correct' Number of Clusters: $t$-SNE}
+$t$-SNE is $t$-Distributed Stochastic Neighbor Embedding
 
 We want to use $t$-SNE plots help us visualize some aspects of the underlying clustering structure of the data.
 
@@ -886,8 +897,9 @@ When our dataset is comprised of \textbf{categorical AND numerical variables}, w
     \label{}
 \end{figure}\end{center}
 
-\section{Hierarchical Clustering Algorithms for Datasets with Categorical Variables}
 
+\section{Hierarchical Clustering Algorithms for Datasets with Categorical Variables}
+We only need to change the distance metric by distance matrix for categorical data that showed above.
 
 
 

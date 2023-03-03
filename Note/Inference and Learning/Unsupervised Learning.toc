@@ -16,41 +16,40 @@
 \contentsline {subsection}{\numberline {1.5.1}Partitional vs. Hierarchical Clustering Results}{9}{subsection.1.5.1}%
 \contentsline {subsection}{\numberline {1.5.2}Exclusive vs. Overlapping vs. Fuzzy Clustering Results}{10}{subsection.1.5.2}%
 \contentsline {chapter}{\numberline {2}Clustering Evaluation Metrics}{11}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Clusterability Evaluation Metric: Is the dataset clusterable?}{11}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Hopkin's Statistics}{11}{subsection.2.1.1}%
-\contentsline {section}{\numberline {2.2}Unsupervised Clustering Evaluation Metrics: How cohesive and well separated are the clusters in the clustering?}{12}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Definition}{12}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Graph-based view of cohesion and separation for a clustering}{13}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}Silhouette Coefficients (Scores)}{13}{subsection.2.2.3}%
-\contentsline {subsection}{\numberline {2.2.4}Prototype-Based View of Cohesion and Separation for a Clustering}{14}{subsection.2.2.4}%
-\contentsline {section}{\numberline {2.3}Cluster Number Evaluation Metrics: What is the 'correct' number of clusters?}{15}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}General Elbow Plot Method}{15}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}Average Silhouette Score Plot Method}{15}{subsection.2.3.2}%
-\contentsline {section}{\numberline {2.4}Supervised Clustering Evaluation Metrics: How similar is the clustering to a set of (external) pre-assigned class labels?}{16}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}Rand Index and Jaccard Coefficient of Two Partitions}{16}{subsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.4.2}Adjusted Rand Index}{17}{subsection.2.4.2}%
-\contentsline {section}{\numberline {2.5}Clustering Comparison Metrics: Which clustering is better for a given dataset?}{17}{section.2.5}%
-\contentsline {chapter}{\numberline {3}Checking Clustering Conditions with $t$-SNE Plots}{18}{chapter.3}%
-\contentsline {section}{\numberline {3.1}$t$-SNE: $t$-Distributed Stochastic Neighbor Embedding}{18}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Goal}{18}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Input/Output for the Algorithm}{18}{subsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.1.3}Main Idea of The Algorithm}{19}{subsection.3.1.3}%
-\contentsline {chapter}{\numberline {4}Hierarchical Clustering}{21}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Agglomerative and Divisive Hierarchical Clustering Algorithms}{21}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Agglomerative Hierarchical Clustering}{21}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}General Algorithm for Agglomerative Hierarchical Clustering}{21}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}with Single Linkage}{22}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.2.3}with Complete Linkage}{22}{subsection.4.2.3}%
-\contentsline {subsection}{\numberline {4.2.4}with Average Linkage}{23}{subsection.4.2.4}%
-\contentsline {subsection}{\numberline {4.2.5}with Ward's Linkage}{23}{subsection.4.2.5}%
-\contentsline {section}{\numberline {4.3}Divisive Hierarchical Clustering}{24}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}General Algorithm for Divisive Hierarchical Clustering}{24}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}with the Bisecting $k$-Means Algorithm}{24}{subsection.4.3.2}%
-\contentsline {chapter}{\numberline {5}Categorical Data Clustering}{26}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Dataset Clustering with Categorical Variables}{26}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1} t-SNE Algorithm - Using a Distance Matrix Input}{26}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Creating a Distance Matrix for Datasets with Categorical Variables}{26}{subsection.5.1.2}%
-\contentsline {section}{\numberline {5.2}Partitional Clustering Algorithms for Datasets with Categorical Variables}{27}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Just Categorical Variables: $k$-Modes Clustering Algorithm}{27}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Numerical and Categorical Variables: $k$-Prototypes Clustering Algorithm}{28}{subsection.5.2.2}%
-\contentsline {section}{\numberline {5.3}Hierarchical Clustering Algorithms for Datasets with Categorical Variables}{28}{section.5.3}%
+\contentsline {section}{\numberline {2.1}Clusterability Evaluation Metric: Is the dataset clusterable?}{12}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Hopkin's Statistics}{12}{subsection.2.1.1}%
+\contentsline {section}{\numberline {2.2}Unsupervised Clustering Evaluation Metrics: How cohesive and well separated are the clusters in the clustering?}{13}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Definition}{13}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Graph-based view of cohesion and separation for a clustering}{14}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Silhouette Coefficients (Scores)}{14}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}Prototype-Based View of Cohesion and Separation for a Clustering}{15}{subsection.2.2.4}%
+\contentsline {section}{\numberline {2.3}Cluster Number Evaluation Metrics: What is the 'correct' number of clusters?}{16}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}General Elbow Plot Method}{16}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Average Silhouette Score Plot Method}{16}{subsection.2.3.2}%
+\contentsline {section}{\numberline {2.4}Supervised Clustering Evaluation Metrics: How similar is the clustering to a set of (external) pre-assigned class labels?}{17}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Rand Index and Jaccard Coefficient of Two Partitions}{17}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Adjusted Rand Index}{18}{subsection.2.4.2}%
+\contentsline {section}{\numberline {2.5}Clustering Comparison Metrics: Which clustering is better for a given dataset?}{18}{section.2.5}%
+\contentsline {section}{\numberline {2.6}'Clusterable'? and 'Correct' Number of Clusters: $t$-SNE}{19}{section.2.6}%
+\contentsline {subsection}{\numberline {2.6.1}Goal}{19}{subsection.2.6.1}%
+\contentsline {subsection}{\numberline {2.6.2}Input/Output for the Algorithm}{19}{subsection.2.6.2}%
+\contentsline {subsection}{\numberline {2.6.3}Main Idea of The Algorithm}{20}{subsection.2.6.3}%
+\contentsline {chapter}{\numberline {3}Hierarchical Clustering}{22}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Agglomerative and Divisive Hierarchical Clustering Algorithms}{22}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Agglomerative Hierarchical Clustering}{22}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}General Algorithm for Agglomerative Hierarchical Clustering}{22}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}with Single Linkage}{23}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}with Complete Linkage}{23}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}with Average Linkage}{24}{subsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.2.5}with Ward's Linkage}{24}{subsection.3.2.5}%
+\contentsline {section}{\numberline {3.3}Divisive Hierarchical Clustering}{25}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}General Algorithm for Divisive Hierarchical Clustering}{25}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}with the Bisecting $k$-Means Algorithm}{25}{subsection.3.3.2}%
+\contentsline {chapter}{\numberline {4}Categorical Data Clustering}{27}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Dataset Clustering with Categorical Variables}{27}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1} t-SNE Algorithm - Using a Distance Matrix Input}{27}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Creating a Distance Matrix for Datasets with Categorical Variables}{27}{subsection.4.1.2}%
+\contentsline {section}{\numberline {4.2}Partitional Clustering Algorithms for Datasets with Categorical Variables}{28}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Just Categorical Variables: $k$-Modes Clustering Algorithm}{28}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Numerical and Categorical Variables: $k$-Prototypes Clustering Algorithm}{29}{subsection.4.2.2}%
+\contentsline {section}{\numberline {4.3}Hierarchical Clustering Algorithms for Datasets with Categorical Variables}{29}{section.4.3}%
