@@ -148,6 +148,7 @@ h1 {
 	background-clip: text;
 	-webkit-background-clip: text;
 	position: relative;
+	letter-spacing: 0.2rem;
 }
 
 h2 {
