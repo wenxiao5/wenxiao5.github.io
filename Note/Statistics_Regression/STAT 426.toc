@@ -39,7 +39,16 @@
 \contentsline {subsection}{\numberline {3.4.3}Nested Model Comparison}{23}{subsection.3.4.3}%
 \contentsline {subsection}{\numberline {3.4.4}Residuals}{24}{subsection.3.4.4}%
 \contentsline {subsection}{\numberline {3.4.5}Overdispersion}{25}{subsection.3.4.5}%
-\contentsline {section}{\numberline {3.5}Logistic Regression}{26}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}Parameter Interpretation}{26}{subsection.3.5.1}%
-\contentsline {subsection}{\numberline {3.5.2}Inference}{27}{subsection.3.5.2}%
-\contentsline {subsection}{\numberline {3.5.3}Testing Goodness of Fit}{28}{subsection.3.5.3}%
+\contentsline {chapter}{\numberline {4}Logistic Regression}{27}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Parameter Interpretation}{27}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Interpretation $\beta $}{27}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Interpretation $\alpha $}{27}{subsection.4.1.2}%
+\contentsline {section}{\numberline {4.2}Inference}{27}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Testing}{28}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Estimation}{28}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Testing Goodness of Fit; Remarks on Grouping}{28}{subsection.4.2.3}%
+\contentsline {section}{\numberline {4.3}Categorical Predictors}{29}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Interpretation of $\beta $}{29}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}MLE Estimations}{30}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Testing}{30}{subsection.4.3.3}%
+\contentsline {section}{\numberline {4.4}Multiple Logistic Regression}{31}{section.4.4}%

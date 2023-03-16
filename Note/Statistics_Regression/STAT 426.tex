@@ -1167,8 +1167,8 @@ We can use the $\hat{\phi}$ to scale the GLM asymptotic covariance of $\hat{\bol
 
 \textbf{Remark:} Similar adjustments apply to likelihood-type and score-type inferences.
 
-\section{Logistic Regression}
-\subsection{Parameter Interpretation}
+\chapter{Logistic Regression}
+\section{Parameter Interpretation}
 Suppose we observe $0 / 1$ (Bernoulli) response $Y$ and quantitative explanatory variable $X$.
 Let
 $$
@@ -1182,7 +1182,7 @@ i.e.
 $$
 \operatorname{logit}(\pi(x))=\ln \left(\frac{\pi(x)}{1-\pi(x)}\right)=\alpha+\beta x
 $$
-\subsubsection*{Interpretation $\beta$}
+\subsection{Interpretation $\beta$}
 Note: $\text {odds of } Y=1=\frac{\pi(x)}{1-\pi(x)}=e^{\alpha+\beta x}$\\
 Odds ratio for $Y=1$ at $x+1$ versus at $x$: $\frac{e^{\alpha+\beta(x+1)}}{e^{\alpha+\beta x}}=e^\beta$, which doesn't depend on $x$.\\
 So $\beta$ is the \textbf{log-odds ratio for the effect of increasing $X$ by one unit}.
@@ -1198,14 +1198,15 @@ $\beta$ determines nature of $X-Y$ relationship:
     Can show
 \end{enumerate}
 
-\subsubsection*{Interpretation $\alpha$}
+\subsection{Interpretation $\alpha$}
 Interpreting $\alpha$ can be more difficult: it's the log-odds when $x = 0$.
 
 If a mean-centered version of $X$ is used ($\mathbb{E}X=0$), $\alpha$ is the log-odds at the sample mean of the original $X$.
 
-\subsection{Inference}
+\section{Inference}
 Assume independently-sampled data pairs $(x_i,y_i), i=1,...,N$. Let $\hat{\alpha},\hat{\beta}$ be the MLEs.
 
+\subsection{Testing}
 We still use three testing methods: 1. Wald; 2. Likelihood ratio; 3. Score (“Rao”).
 
 Eg: Wald $z$-statistic for
@@ -1222,6 +1223,7 @@ Similarly, we can form a Wald $\mathrm{Cl}$ for $\beta$: $(L,U)$.
 
 Then, odds ratio $e^\beta$ for increasing $x$ by one unit is estimated by $e^{\hat{\beta}}$ and has CI $(e^L,e^U)$.
 
+\subsection{Estimation}
 Estimated logistic curve:
 $$
 \hat{\pi}(x)=\operatorname{logit}^{-1}(\hat{\alpha}+\hat{\beta} x)
@@ -1249,7 +1251,7 @@ $$
 $$
 can be transformed (inverse logit) to a Wald $\mathrm{Cl}$ for $\pi\left(x_0\right)$.
 
-\subsection{Testing Goodness of Fit}
+\subsection{Testing Goodness of Fit; Remarks on Grouping}
 Various strategies:
 \begin{enumerate}[$\bullet$]
     \item Test an added higher-order term, e.g. test $\beta_2 = 0$ in the quadratic $$\alpha + \beta_1 x + \beta_2 x^2$$
@@ -1264,6 +1266,141 @@ Various strategies:
         \item Note: “Fitted values” from R are still the probabilities $\hat{\pi}(x_i)$ (rather than estimated means $n_i\hat{\pi}(x_i)$).
     \end{enumerate}
 \end{enumerate}
+
+\section{Categorical Predictors}
+Consider categorical $X$ with $I$ categories.
+
+After grouping, we obtain an $I \times 2$ table:
+
+\begin{center}
+    \begin{tabular}{cc|c|c|}
+        \multicolumn{2}{c}{ } & \multicolumn{1}{c}{ success } & \multicolumn{1}{c}{ failure } \\
+        \cline { 3 - 4 } & $1$ & $Y_1$ & $n_1-Y_1$ \\
+        $X$ category & $\vdots$ & $\vdots$ & $\vdots$ \\
+        & $\vdots$ & $\vdots$ & $\vdots$ \\
+        & $I$ & $Y_I$ & $n_I-Y_I$ \\
+        \cline { 3 - 4 }
+        \multicolumn{2}{c}{ } & \multicolumn{1}{c}{ } & \multicolumn{1}{c}{} \\
+    \end{tabular}
+\end{center}
+Then $Y_i$ are i.i.d. variables following the binomial distribution.
+$$
+Y_i \sim \operatorname{binomial}\left(n_i, \pi_i\right) \quad i=1, \ldots, I
+$$
+\subsection{Interpretation of $\beta$}
+Code $X$ using $I - 1$ indicator variables $\tilde{X}_i=[\tilde{x}_{i2},\tilde{x}_{i3},\cdots,\tilde{x}_{iI}]$ (No indicator variable for row $1$ to avoid redundancy.):
+\begin{equation}
+    \begin{aligned}
+        \tilde{x}_{ij}=\left\{\begin{matrix}
+            1,&\textnormal{ if }j=i\\
+            0,&\textnormal{ otherwise}
+        \end{matrix}\right.
+    \end{aligned}
+    \nonumber
+\end{equation}
+For logistic regression,
+$$
+\begin{aligned}
+\operatorname{logit}\left(\pi_i\right) & =\alpha+\beta_2 \tilde{x}_{i 2}+\cdots+\beta_I \tilde{x}_{i I} \\
+& =\alpha+\beta_i
+\end{aligned}
+$$
+if we define $\beta_1 \equiv 0$. Then
+$$
+\begin{gathered}
+\alpha=\operatorname{logit}\left(\pi_1\right) \\
+\beta_i=\operatorname{logit}\left(\pi_i\right)-\operatorname{logit}\left(\pi_1\right)=\ln \left(\frac{\pi_i /\left(1-\pi_i\right)}{\pi_1 /\left(1-\pi_1\right)}\right) \\
+=\text { log-odds ratio from category } i \text { to category } 1
+\end{gathered}
+$$
+Similarly,
+\begin{equation}
+    \begin{aligned}
+        \textnormal{$\beta_i-\beta_{i^{\prime}}=$ log-odds ratio from category $i$ to category $i^{\prime}$}
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+\subsection{MLE Estimations}
+MLEs of the $\pi_i$ s are
+$$
+\hat{\pi}_i=p_i=\frac{y_i}{n_i}
+$$
+and MLEs of $\alpha$ and $\beta_i$ are obtained from the empirical (or sample) logits
+$$
+\operatorname{logit}\left(\hat{\pi}_i\right)
+$$
+Letting $\beta_1 \equiv 0 \equiv \hat{\beta}_1$, we find
+$$
+\hat{\alpha}=\operatorname{logit}\left(\hat{\pi}_1\right) \quad \hat{\beta}_i=\operatorname{logit}\left(\hat{\pi}_i\right)-\hat{\alpha}
+$$
+For $i<i^{\prime}$,
+$$
+\hat{\beta}_i-\hat{\beta}_{i^{\prime}}\textnormal{ is the empirical log-odds ratio for the sub-table with only rows $i$ and $i^{\prime}$.}
+$$
+Note:
+\begin{enumerate}[1.]
+    \item If $y_i = 0$ or $y_i = n_i$, then $\operatorname{logit}\left(\hat{\pi}_i\right)$ does not exist, and thus neither does the MLE for the logistic regression.
+    \item This model is saturated, so a deviance-based goodness of fit test is not available.
+\end{enumerate}
+
+\subsection{Testing}
+Testing for any $X$ effect is testing
+$$
+\begin{aligned}
+& H_0: \beta_2=\cdots=\beta_I=0 \quad\left(\equiv \beta_1\right) \\
+& H_a: \text {not all } \beta_i \text { s equal (including $\beta_1$)}
+\end{aligned}
+$$
+A LRT based on
+$$
+M_0: \operatorname{logit}\left(\pi_i\right)=\alpha \quad M_1: \operatorname{logit}\left(\pi_i\right)=\alpha+\beta_i
+$$
+uses $G^2\left(M_0 \mid M_1\right)$, which equals the $G^2$ statistic for testing independence/homogeneity in the $I \times 2$ table.
+
+Alternative: The Pearson $X^2$ statistic.
+
+\textbf{Remark:} When $X$ is ordinal, can sometimes improve power by assigning numerical scores $x_i^*$ to the $X$ levels and then using the linear logit model $$\textnormal{logit}(\pi_i)=\alpha+\beta x_i^*$$
+
+\section{Multiple Logistic Regression}
+Allow $p$ explanatory variables:
+$$
+\operatorname{logit}(\pi(\boldsymbol{x}))=\alpha+\beta_1 x_1+\cdots+\beta_p x_p
+$$
+Increasing just $x_j$ by 1 increases the logit by $\beta_j$, so
+$$
+e^{\beta_j}=\text { odds ratio at } x_j+1 \text { relative to } x_j
+$$
+(all other variables held fixed)
+
+More generally, consider adding $\Delta x_j$ to $x_j, j=1, \ldots, p$. Using matrix notation let
+$$
+\mathbf{x}=\left(\begin{array}{c}
+1 \\
+x_1 \\
+\vdots \\
+x_p
+\end{array}\right) \quad \boldsymbol{\delta}=\left(\begin{array}{c}
+0 \\
+\Delta x_1 \\
+\vdots \\
+\Delta x_p
+\end{array}\right) \quad \boldsymbol{\beta}=\left(\begin{array}{c}
+\alpha \\
+\beta_1 \\
+\vdots \\
+\beta_p
+\end{array}\right)
+$$
+\begin{enumerate}[$\bullet$]
+    \item In this notation, $\operatorname{logit}(\pi(\mathbf{x}))=\mathbf{x}^T \boldsymbol{\beta}$
+    \item Adding $\boldsymbol{\delta}$ to $\mathrm{x}$ adds $\boldsymbol{\delta}^T \boldsymbol{\beta}$ to the logit, so
+    $$
+    e^{\boldsymbol{\delta}^T \boldsymbol{\beta}}=\text { odds ratio at } \mathbf{x}+\boldsymbol{\delta} \text { relative to } \mathbf{x}
+    $$
+\end{enumerate}
+
+
 
 
 
