@@ -1371,8 +1371,7 @@ Allow $p$ explanatory variables:
     \end{aligned}
     \nonumber
 \end{equation}
-$"\text{odds of } Y=1"=\frac{\pi(\boldsymbol{x})}{1-\pi(\boldsymbol{x})}=e^{\alpha+\beta_1 x_1+\cdots+\beta_p x_p}$.
-
+$"\text {odds of } Y=1"=\frac{\pi(x)}{1-\pi(x)}=e^{\alpha+\beta x}$
 Increasing just $x_j$ by 1 increases the logit by $\beta_j$, so
 $$
 e^{\beta_j}=\text { odds ratio at } x_j+1 \text { relative to } x_j
@@ -1406,57 +1405,8 @@ $$
     $$
 \end{enumerate}
 
-\section{Matrix-Vector Formulation of Estimation}
-$$
-Y_i \sim \text { indep. binomial }\left(n_i, \pi\left(\boldsymbol{x}_i\right)\right)
-$$
-where $\boldsymbol{x}_i$ is the column vector of explanatory variable values for observation $i$, and (typically) a 1 for the intercept, and
-$$
-\operatorname{logit}\left(\pi\left(\boldsymbol{x}_i\right)\right)=\eta_i=\boldsymbol{x}_i^T \boldsymbol{\beta}
-$$
-Let
-$$
-\begin{aligned}
-\boldsymbol{Y} & =\text { column vector with } i \text { th element } Y_i \\
-\boldsymbol{X} & =\text { matrix with } \boldsymbol{x}_i^T \text { as } i \text { th row } \\
-\boldsymbol{\eta} & =\text { column vector with } i \text { th element } \eta_i
-\end{aligned}
-$$
-
-\subsection*{Log-Likelihood}
-Note:$\boldsymbol{\eta}=\boldsymbol{X} \boldsymbol{\beta}$, $\pi\left(\boldsymbol{x}_i\right)=\frac{e^{\eta_i}}{1+e^{\eta_i}}$, and
-\begin{equation}
-    \begin{aligned}
-        l(\boldsymbol{\beta})&=\prod_{i}\begin{pmatrix}
-            n_i\\
-            y_i
-        \end{pmatrix} \pi\left(\boldsymbol{x}_i\right)^{y_i} (1-\pi\left(\boldsymbol{x}_i\right))^{n_i-y_i}\\
-        L(\boldsymbol{\beta})&=\sum_{i}\left[ y_i\ln\pi\left(\boldsymbol{x}_i\right)+(n_i-y_i)\ln(1-\pi\left(\boldsymbol{x}_i\right))\right]\\
-        &=\sum_{i}\left[ y_i(\eta_i-\ln\left(1+e^{\eta_i}\right))-(n_i-y_i)\ln\left(1+e^{\eta_i}\right)\right]\\
-        &=\sum_{i}\left[y_i\eta_i-n_i\ln\left(1+e^{\eta_i}\right)\right]
-    \end{aligned}
-    \nonumber
-\end{equation}
-The log-likelihood (binomial response) is
-$$
-L(\boldsymbol{\beta})=\boldsymbol{y}^T \boldsymbol{X} \boldsymbol{\beta}-\sum_i n_i \ln \left(1+e^{\eta_i}\right)
-$$
-where $\boldsymbol{y}$ is the observed version of $\boldsymbol{Y}$.
 
 
-The score vector is
-$$
-\begin{aligned}
-\boldsymbol{u}(\boldsymbol{\beta})=\nabla L(\boldsymbol{\beta}) & =\boldsymbol{X}^T \boldsymbol{y}-\sum_i n_i \boldsymbol{x}_i \pi\left(\boldsymbol{x}_i\right) \\
-& =\boldsymbol{X}^T \boldsymbol{y}-\boldsymbol{X}^T \boldsymbol{\mu}
-\end{aligned}
-$$
-where $\boldsymbol{\mu}=E(\boldsymbol{Y})$
-This equals $\mathbf{0}$ at the MLE, giving the likelihood equations
-$$
-\boldsymbol{X}^T \boldsymbol{y}=\boldsymbol{X}^T \hat{\boldsymbol{\mu}}
-$$
-(Note: $\boldsymbol{y}-\hat{\boldsymbol{\mu}}$ is orthogonal to the columns of $\boldsymbol{X}$, just like in linear regression.)
 
 
 \end{document}

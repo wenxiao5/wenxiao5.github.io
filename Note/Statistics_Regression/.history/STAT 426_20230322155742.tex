@@ -1422,18 +1422,14 @@ $$
 \boldsymbol{\eta} & =\text { column vector with } i \text { th element } \eta_i
 \end{aligned}
 $$
-
-\subsection*{Log-Likelihood}
-Note:$\boldsymbol{\eta}=\boldsymbol{X} \boldsymbol{\beta}$, $\pi\left(\boldsymbol{x}_i\right)=\frac{e^{\eta_i}}{1+e^{\eta_i}}$, and
+Note:$\boldsymbol{\eta}=\boldsymbol{X} \boldsymbol{\beta}$, $\pi\left(\boldsymbol{x}_i\right)=\frac{e^{\eta_i}}{1+e^{\eta_i}}$ and
 \begin{equation}
     \begin{aligned}
         l(\boldsymbol{\beta})&=\prod_{i}\begin{pmatrix}
             n_i\\
             y_i
         \end{pmatrix} \pi\left(\boldsymbol{x}_i\right)^{y_i} (1-\pi\left(\boldsymbol{x}_i\right))^{n_i-y_i}\\
-        L(\boldsymbol{\beta})&=\sum_{i}\left[ y_i\ln\pi\left(\boldsymbol{x}_i\right)+(n_i-y_i)\ln(1-\pi\left(\boldsymbol{x}_i\right))\right]\\
-        &=\sum_{i}\left[ y_i(\eta_i-\ln\left(1+e^{\eta_i}\right))-(n_i-y_i)\ln\left(1+e^{\eta_i}\right)\right]\\
-        &=\sum_{i}\left[y_i\eta_i-n_i\ln\left(1+e^{\eta_i}\right)\right]
+        L(\boldsymbol{\beta})&=\sum_{i}\left[ y_i\ln\pi\left(\boldsymbol{x}_i\right)+(n_i-y_i)\ln(1-\pi\left(\boldsymbol{x}_i\right))\right]
     \end{aligned}
     \nonumber
 \end{equation}
@@ -1442,21 +1438,6 @@ $$
 L(\boldsymbol{\beta})=\boldsymbol{y}^T \boldsymbol{X} \boldsymbol{\beta}-\sum_i n_i \ln \left(1+e^{\eta_i}\right)
 $$
 where $\boldsymbol{y}$ is the observed version of $\boldsymbol{Y}$.
-
-
-The score vector is
-$$
-\begin{aligned}
-\boldsymbol{u}(\boldsymbol{\beta})=\nabla L(\boldsymbol{\beta}) & =\boldsymbol{X}^T \boldsymbol{y}-\sum_i n_i \boldsymbol{x}_i \pi\left(\boldsymbol{x}_i\right) \\
-& =\boldsymbol{X}^T \boldsymbol{y}-\boldsymbol{X}^T \boldsymbol{\mu}
-\end{aligned}
-$$
-where $\boldsymbol{\mu}=E(\boldsymbol{Y})$
-This equals $\mathbf{0}$ at the MLE, giving the likelihood equations
-$$
-\boldsymbol{X}^T \boldsymbol{y}=\boldsymbol{X}^T \hat{\boldsymbol{\mu}}
-$$
-(Note: $\boldsymbol{y}-\hat{\boldsymbol{\mu}}$ is orthogonal to the columns of $\boldsymbol{X}$, just like in linear regression.)
 
 
 \end{document}

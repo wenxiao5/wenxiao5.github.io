@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.22)  7 MAR 2023 00:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.22)  22 MAR 2023 16:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1337,7 +1337,7 @@ Package hyperref Info: Option `pageanchor' set `false' on input line 28.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<cover.jpg, id=232, 602.25pt x 301.125pt>
+<cover.jpg, id=236, 602.25pt x 301.125pt>
 File: cover.jpg Graphic file (type jpg)
 <use cover.jpg>
 Package pdftex.def Info: cover.jpg  used on input line 28.
@@ -1381,7 +1381,7 @@ LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
 (Font)              scaled to size 10.0pt on input line 31.
  [2]
 Chapter 1.
-<p1.png, id=350, 797.98125pt x 533.995pt>
+<p1.png, id=356, 797.98125pt x 533.995pt>
 File: p1.png Graphic file (type png)
 <use p1.png>
 Package pdftex.def Info: p1.png  used on input line 37.
@@ -1752,7 +1752,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 500--519
  []
 
 [12]
-<Simpson's Paradox.png, id=459, 1738.495pt x 507.8975pt>
+<Simpson's Paradox.png, id=465, 1738.495pt x 507.8975pt>
 File: Simpson's Paradox.png Graphic file (type png)
 <use Simpson's Paradox.png>
 Package pdftex.def Info: Simpson's Paradox.png  used on input line 571.
@@ -1802,13 +1802,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{equation.3.2.1
                    \relax 
 l.683         \begin{equation}
                               
-<logit.png, id=491, 1614.03pt x 608.2725pt>
+<logit.png, id=497, 1614.03pt x 608.2725pt>
 File: logit.png Graphic file (type png)
 <use logit.png>
 Package pdftex.def Info: logit.png  used on input line 692.
 (pdftex.def)             Requested size: 290.51286pt x 109.48433pt.
  [17 <./logit.png>]
-<logl.png, id=502, 1893.0725pt x 778.91pt>
+<logl.png, id=508, 1893.0725pt x 778.91pt>
 File: logl.png Graphic file (type png)
 <use logl.png>
 Package pdftex.def Info: logl.png  used on input line 790.
@@ -1983,29 +1983,29 @@ pdfTeX warning (ext4): destination with the same identifier (name{equation.4.3.1
 <to be read again> 
                    \relax 
 l.1317 \begin{equation}
-                        [30] [31] (./STAT 426.aux)
+                        [30] [31] [32] (./STAT 426.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `"STAT 426".out' has not changed.
-(rerunfilecheck)             Checksum: 6BFFCD517B6F14D4B46E34D3F2070C07;10646.
+(rerunfilecheck)             Checksum: 15901806F98F4F382DC99749D1A73C7F;11105.
 Package logreq Info: Writing requests to '"STAT 426".run.xml'.
 \openout1 = `"STAT 426.run.xml"'.
 
  ) 
 Here is how much of TeX's memory you used:
- 41812 strings out of 476091
- 820906 string characters out of 5791542
+ 41816 strings out of 476091
+ 820958 string characters out of 5791542
  1887330 words of memory out of 5000000
- 61292 multiletter control sequences out of 15000+600000
+ 61293 multiletter control sequences out of 15000+600000
  544810 words of font info for 111 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  102i,16n,136p,764b,1472s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on "STAT 426.pdf" (34 pages, 1717882 bytes).
+Output written on "STAT 426.pdf" (35 pages, 1723226 bytes).
 PDF statistics:
- 719 PDF objects out of 1000 (max. 8388607)
- 611 compressed objects within 7 object streams
- 174 named destinations out of 1000 (max. 500000)
- 534 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 731 PDF objects out of 1000 (max. 8388607)
+ 622 compressed objects within 7 object streams
+ 177 named destinations out of 1000 (max. 500000)
+ 542 words of extra memory for PDF output out of 10000 (max. 10000000)
 
