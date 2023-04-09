@@ -59,3 +59,14 @@
 \contentsline {section}{\numberline {5.2}Principal component analysis- general goals}{32}{section.5.2}%
 \contentsline {section}{\numberline {5.3}Process of PCA}{33}{section.5.3}%
 \contentsline {section}{\numberline {5.4}How Do We Choose $p<n$?}{33}{section.5.4}%
+\contentsline {chapter}{\numberline {6}Gaussian Mixture Models}{35}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Why use model-based clustering?}{35}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Overview of Mixture Models}{35}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Gaussian Mixture Models}{36}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Step 1: Finding each $\vec {\mu }_k$ and $\vec {\Sigma }_k$ with maximum likelihood estimation}{36}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}Step 2: Estimate the probability by $\vec {\mu }_k$ and $\vec {\Sigma }_k$}{37}{subsection.6.3.2}%
+\contentsline {subsection}{\numberline {6.3.3}Expectation Maximization (EM) Algorithm for GMM}{37}{subsection.6.3.3}%
+\contentsline {section}{\numberline {6.4}Benefits/Drawbacks of Gaussian Mixture Model Clustering (with EM Algorithm)}{38}{section.6.4}%
+\contentsline {section}{\numberline {6.5}How to choose the number of clusters in a Gaussian Mixture Model}{39}{section.6.5}%
+\contentsline {subsection}{\numberline {6.5.1}Evaluation Metric 1: Akaike Information Criterion (AIC)}{39}{subsection.6.5.1}%
+\contentsline {subsection}{\numberline {6.5.2}Evaluation Metric 2: Bayes Information Criterion (BIC)}{39}{subsection.6.5.2}%

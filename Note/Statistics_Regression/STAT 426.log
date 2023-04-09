@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.22)  29 MAR 2023 18:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.22)  5 APR 2023 19:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1193,6 +1193,12 @@ LaTeX Warning: Label `' multiply defined.
 
 LaTeX Warning: Label `' multiply defined.
 
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
 )
 \openout1 = `"STAT 426.aux"'.
 
@@ -1340,7 +1346,7 @@ Package hyperref Info: Option `pageanchor' set `false' on input line 28.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<cover.jpg, id=316, 602.25pt x 301.125pt>
+<cover.jpg, id=332, 602.25pt x 301.125pt>
 File: cover.jpg Graphic file (type jpg)
 <use cover.jpg>
 Package pdftex.def Info: cover.jpg  used on input line 28.
@@ -1385,7 +1391,7 @@ LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
 
  [3]
 Chapter 1.
-<p1.png, id=482, 797.98125pt x 533.995pt>
+<p1.png, id=506, 797.98125pt x 533.995pt>
 File: p1.png Graphic file (type png)
 <use p1.png>
 Package pdftex.def Info: p1.png  used on input line 37.
@@ -1756,7 +1762,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 500--519
  []
 
 [12]
-<Simpson's Paradox.png, id=589, 1738.495pt x 507.8975pt>
+<Simpson's Paradox.png, id=613, 1738.495pt x 507.8975pt>
 File: Simpson's Paradox.png Graphic file (type png)
 <use Simpson's Paradox.png>
 Package pdftex.def Info: Simpson's Paradox.png  used on input line 571.
@@ -1806,13 +1812,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{equation.3.2.1
                    \relax 
 l.683         \begin{equation}
                               
-<logit.png, id=621, 1614.03pt x 608.2725pt>
+<logit.png, id=645, 1614.03pt x 608.2725pt>
 File: logit.png Graphic file (type png)
 <use logit.png>
 Package pdftex.def Info: logit.png  used on input line 692.
 (pdftex.def)             Requested size: 290.51286pt x 109.48433pt.
  [17 <./logit.png>]
-<logl.png, id=632, 1893.0725pt x 778.91pt>
+<logl.png, id=656, 1893.0725pt x 778.91pt>
 File: logl.png Graphic file (type png)
 <use logl.png>
 Package pdftex.def Info: logl.png  used on input line 790.
@@ -2013,34 +2019,46 @@ pdfTeX warning (ext4): destination with the same identifier (name{equation.5.3.1
                    \relax 
 l.1476 \begin{equation}
                         [34] [35] [36] [37] [38] [39] [40] [41]
-<ROC.png, id=785, 872.25874pt x 853.1875pt>
+<ROC.png, id=809, 872.25874pt x 853.1875pt>
 File: ROC.png Graphic file (type png)
 <use ROC.png>
 Package pdftex.def Info: ROC.png  used on input line 1861.
 (pdftex.def)             Requested size: 218.06415pt x 213.29636pt.
- [42 <./ROC.png>] (./STAT 426.aux)
+ [42 <./ROC.png>] [43] [44]
+<complete separation.png, id=832, 550.055pt x 509.905pt>
+File: complete separation.png Graphic file (type png)
+<use complete separation.png>
+Package pdftex.def Info: complete separation.png  used on input line 2002.
+(pdftex.def)             Requested size: 165.01776pt x 152.97267pt.
+ [45 <./complete separation.png>]
+<quasi-complete separation.png, id=839, 555.07375pt x 516.93124pt>
+File: quasi-complete separation.png Graphic file (type png)
+<use quasi-complete separation.png>
+Package pdftex.def Info: quasi-complete separation.png  used on input line 2020.
+(pdftex.def)             Requested size: 166.52339pt x 155.08057pt.
+ [46 <./quasi-complete separation.png>] [47] (./STAT 426.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `"STAT 426".out' has not changed.
-(rerunfilecheck)             Checksum: D5C209BB366E299F2BC231D12191D2CB;15204.
+(rerunfilecheck)             Checksum: C035931E42B22B72718BDFBBC807DE35;16329.
 Package logreq Info: Writing requests to '"STAT 426".run.xml'.
 \openout1 = `"STAT 426.run.xml"'.
 
  ) 
 Here is how much of TeX's memory you used:
- 41909 strings out of 476091
- 822226 string characters out of 5791542
+ 41955 strings out of 476091
+ 823063 string characters out of 5791542
  1887330 words of memory out of 5000000
- 61334 multiletter control sequences out of 15000+600000
+ 61356 multiletter control sequences out of 15000+600000
  544810 words of font info for 111 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  102i,16n,136p,764b,1472s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on "STAT 426.pdf" (46 pages, 1792168 bytes).
+Output written on "STAT 426.pdf" (51 pages, 1829520 bytes).
 PDF statistics:
- 935 PDF objects out of 1000 (max. 8388607)
- 811 compressed objects within 9 object streams
- 228 named destinations out of 1000 (max. 500000)
- 707 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1001 PDF objects out of 1200 (max. 8388607)
+ 868 compressed objects within 9 object streams
+ 250 named destinations out of 1000 (max. 500000)
+ 749 words of extra memory for PDF output out of 10000 (max. 10000000)
 

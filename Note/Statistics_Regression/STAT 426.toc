@@ -73,3 +73,7 @@
 \contentsline {subsection}{\numberline {5.8.1}Strength of Association}{40}{subsection.5.8.1}%
 \contentsline {subsection}{\numberline {5.8.2}Performance of Model as a Classifier}{41}{subsection.5.8.2}%
 \contentsline {subsection}{\numberline {5.8.3}Receiver Operating Characteristic (ROC) Curves}{42}{subsection.5.8.3}%
+\contentsline {section}{\numberline {5.9}Cochran-Mantel-Haenszel Tests for Common Odds Ratios}{42}{section.5.9}%
+\contentsline {subsection}{\numberline {5.9.1}Model-Based: Logistic Regression}{43}{subsection.5.9.1}%
+\contentsline {subsection}{\numberline {5.9.2}Non-Model-Based: CMH}{44}{subsection.5.9.2}%
+\contentsline {section}{\numberline {5.10}Existence of the MLE in Logistic Regression}{45}{section.5.10}%
