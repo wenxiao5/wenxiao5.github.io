@@ -77,3 +77,12 @@
 \contentsline {subsection}{\numberline {5.9.1}Model-Based: Logistic Regression}{43}{subsection.5.9.1}%
 \contentsline {subsection}{\numberline {5.9.2}Non-Model-Based: CMH}{44}{subsection.5.9.2}%
 \contentsline {section}{\numberline {5.10}Existence of the MLE in Logistic Regression}{45}{section.5.10}%
+\contentsline {chapter}{\numberline {6}Multinomial Regression Models}{48}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Settings}{48}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Goal}{48}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Formats for Multinomial Response Data}{48}{subsection.6.1.2}%
+\contentsline {section}{\numberline {6.2}Nominal Responses}{49}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Baseline-Category Logistic Model}{49}{subsection.6.2.1}%
+\contentsline {section}{\numberline {6.3}Ordinal Responses}{50}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Proportional Odds Model}{50}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}Latent Variable Formulation}{52}{subsection.6.3.2}%

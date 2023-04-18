@@ -70,3 +70,6 @@
 \contentsline {section}{\numberline {6.5}How to choose the number of clusters in a Gaussian Mixture Model}{39}{section.6.5}%
 \contentsline {subsection}{\numberline {6.5.1}Evaluation Metric 1: Akaike Information Criterion (AIC)}{39}{subsection.6.5.1}%
 \contentsline {subsection}{\numberline {6.5.2}Evaluation Metric 2: Bayes Information Criterion (BIC)}{39}{subsection.6.5.2}%
+\contentsline {chapter}{\numberline {7}Nonnegative Matrix Factorization (NMF)}{40}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Goals of NMF}{40}{section.7.1}%
+\contentsline {section}{\numberline {7.2}NMF Optimization - Unsupervised Case}{40}{section.7.2}%
