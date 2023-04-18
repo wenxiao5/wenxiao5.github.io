@@ -2320,8 +2320,6 @@ Other Links
 
 \chapter{Log-linear Models}
 \section{Log-linear Models for Two-Way Contingency Tables}
-
-\subsection{Independence Model}
 Consider an $I \times J$ table with population cell means $\mu_{ij}$ for $X=i\in\{1,2,...,I\}$, $Y=j\in\{1,2,...,J\}$.
 
 If $X$ and $Y$ are \textnormal{independent}, then the cell means have the structure:
@@ -2331,26 +2329,24 @@ If $X$ and $Y$ are \textnormal{independent}, then the cell means have the struct
     \end{aligned}
     \nonumber
 \end{equation}
-\begin{definition}[Independence Model]
-    Taking natural logs yields a \textbf{log-linear model}:
+Taking natural logs yields a \textbf{log-linear model}:
+\begin{equation}
+    \begin{aligned}
+        \log(\mu_{ij})&=\log(\mu)+\log(\alpha_i)+\log(\beta_j)\\
+        &=\lambda+\lambda_i^X+\lambda_j^Y
+    \end{aligned}
+    \nonumber
+\end{equation}
+\begin{enumerate}[$\bullet$]
+    \item The independence model is equivalent to an \textbf{additive log-linear model} with row effects $\lambda_i^X$ and column effects $\lambda_j^Y$.
+    \item As usual, we impose constraints to make the parameters identifiable, e.g., reference category constraints of the form
     \begin{equation}
         \begin{aligned}
-            \log(\mu_{ij})&=\log(\mu)+\log(\alpha_i)+\log(\beta_j)\\
-            &=\lambda+\lambda_i^X+\lambda_j^Y
+            \lambda_I^X=0=\lambda_J^Y
         \end{aligned}
         \nonumber
     \end{equation}
-    \begin{enumerate}[$\bullet$]
-        \item The independence model is equivalent to an \textbf{additive log-linear model} with row effects $\lambda_i^X$ and column effects $\lambda_j^Y$.
-        \item As usual, we impose constraints to make the parameters identifiable, e.g., reference category constraints of the form
-        \begin{equation}
-            \begin{aligned}
-                \lambda_I^X=0=\lambda_J^Y
-            \end{aligned}
-            \nonumber
-        \end{equation}
-    \end{enumerate}
-\end{definition}
+\end{enumerate}
 Consider an $I \times 2$ table:
 $$
 \begin{aligned}
@@ -2366,82 +2362,29 @@ Similarly, consider a baseline logit model for an $I \times J$ table:
 \begin{equation}
     \begin{aligned}
         \log \left[\frac{P(Y=j \mid X=i)}{P(Y=J \mid X=i)}\right]
-        & =\log \left[\frac{\mu_{i j} /\sum_{k=1}^J\mu_{i k}}{\mu_{iJ} /\sum_{k=1}^J\mu_{ik}}\right]  =\log \left(\mu_{i j}\right)-\log \left(\mu_{i J}\right) \\
-        & =\left(\lambda+\lambda_i^X+\lambda_j^Y\right)-\left(\lambda+\lambda_i^X+\lambda_J^Y\right)=\lambda_j^Y-\lambda_J^Y
+        & =\log \left[\frac{\mu_{i j} /\sum_{k=1}^J\mu_{i k}}{\mu_{iJ} /\sum_{k=1}^J\mu_{ik}}\right] \\
+        & =\log \left(\mu_{i j}\right)-\log \left(\mu_{i J}\right) \\
+        & =\left(\lambda+\lambda_i^X+\lambda_1^Y\right)-\left(\lambda+\lambda_i^X+\lambda_2^Y\right)=\lambda_1^Y-\lambda_2^Y
     \end{aligned}
     \nonumber
 \end{equation}
-Again, we see that the logit parameters relate to the log-linear model parameters, giving an expression \textbf{independent of the value of $X$ in the additive case}.
 
-\subsection{Dependence Model}
-\begin{definition}[Dependence Model]
-    To build \textbf{dependence} into the model we need to include interaction terms:
-    \begin{equation}
-        \begin{aligned}
-            \log(\mu_{ij})
-            &=\lambda+\lambda_i^X+\lambda_j^Y+\lambda_{ij}^{XY}
-        \end{aligned}
-        \nonumber
-    \end{equation}
-    imposing additional estimability constraints such as
-    \begin{equation}
-        \begin{aligned}
-            \lambda_{Ij}^{XY}=\lambda_{iJ}^{XY}=0
-        \end{aligned}
-        \nonumber
-    \end{equation}
-    \begin{enumerate}[$\bullet$]
-        \item The model above is the \textbf{saturated model}.
-        \item The independence hypothesis is equivalent to the hypothesis $$H_{\textnormal{Indep}}:\lambda_{ij}^{XY}=0,\quad \forall i,j$$
-    \end{enumerate}
-\end{definition}
 
-\textbf{Connection with odds ratios:}
 
-Consider the $2 \times 2$ case:
-$$
-\begin{aligned}
-\log (\theta) & =\log \left(\frac{\mu_{11} / \mu_{12}}{\mu_{21} / \mu_{22}}\right) \\
-& =\log \left(\mu_{11}\right)-\log \left(\mu_{12}\right)-\log \left(\mu_{21}\right)+\log \left(\mu_{22}\right) \\
-& =\lambda_{11}^{X Y}-\lambda_{12}^{X Y}-\lambda_{21}^{X Y}+\lambda_{22}^{X Y}
-\end{aligned}
-$$
-because all the other terms cancel. Therefore,
-$$
-\theta=\exp \left(\lambda_{11}^{X Y}-\lambda_{12}^{X Y}-\lambda_{21}^{X Y}+\lambda_{22}^{X Y}\right),
-$$
-and $\theta=1$ if the interaction terms are all $0$.
 
-\textbf{Connection to Multinomial Cell Probabilities:}
 
-We can go from expected cell counts $\mu_{i j}$ to multinomial cell probabilities $\pi_{i j}$ by dividing by the total:
-$$
-\begin{aligned}
-\pi_{i j} & =\frac{\mu_{i j}}{\sum_{a=1}^I \sum_{b=1}^J \mu_{a b}} \\
-& =\frac{\exp \left(\lambda+\lambda_i^X+\lambda_j^Y+\lambda_{i j}^{X Y}\right)}{\sum_{a=1}^I \sum_{b=1}^J \exp \left(\lambda+\lambda_a^X+\lambda_b^Y+\lambda_{a b}^{X Y}\right)} \\
-& =\frac{\exp \left(\lambda_i^X+\lambda_j^Y+\lambda_{i j}^{X Y}\right)}{\sum_{a=1}^I \sum_{b=1}^J \exp \left(\lambda_a^X+\lambda_b^Y+\lambda_{a b}^{X Y}\right)}
-\end{aligned}
-$$
-The constant multiplier $e^\lambda$, which is related to the overall total $n$, cancels out of the ratio.
 
-\subsection{Log-Likelihood for the Model}
-Suppose the observed cell counts for $N_{ij}$ are $n_{ij}$. We consider the cell counts to be observed values of independent random variables $N_{ij} \sim \textnormal{Poisson}(\mu_{ij})$.
 
-The likelihood is
-\begin{equation}
-    \begin{aligned}
-        l(\boldsymbol{\mu})=\prod_{ij}\frac{e^{-\mu_{ij}}\mu_{ij}^{n_{ij}}}{n_{ij}!}
-    \end{aligned}
-    \nonumber
-\end{equation}
-with log-likelihood kernel
-\begin{equation}
-    \begin{aligned}
-        L(\boldsymbol{\mu})&=\sum_{ij}n_{ij}\log(\mu_{ij})-\sum_{ij}\mu_{ij}\\
-        &=
-    \end{aligned}
-    \nonumber
-\end{equation}
+
+
+
+
+
+
+
+
+
+
 
 
 
