@@ -2438,10 +2438,204 @@ with log-likelihood kernel
 \begin{equation}
     \begin{aligned}
         L(\boldsymbol{\mu})&=\sum_{ij}n_{ij}\log(\mu_{ij})-\sum_{ij}\mu_{ij}\\
-        &=
+        &=\sum_{ij}n_{ij}\left(\lambda+\lambda_i^X+\lambda_j^Y+\lambda_{ij}^{XY}\right)-\sum_{ij}e^{\lambda+\lambda_i^X+\lambda_j^Y+\lambda_{ij}^{XY}}\\
+        &=n\lambda + \sum_{i}n_{i+}\lambda_i^X+\sum_j n_{+j}\lambda_j^Y + \sum_{ij}n_{ij}\lambda_{ij}^{XY}-\sum_{ij}e^{\lambda+\lambda_i^X+\lambda_j^Y+\lambda_{ij}^{XY}}
     \end{aligned}
     \nonumber
 \end{equation}
+\textbf{Under independence hypothesis:}
+\begin{enumerate}[$\bullet$]
+    \item Under the \textbf{independence hypothesis} the log-likelihood simplifies to
+    \begin{equation}
+        \begin{aligned}
+            L(\boldsymbol{\mu})=n\lambda + \sum_{i}n_{i+}\lambda_i^X+\sum_j n_{+j}\lambda_j^Y -\sum_{ij}e^{\lambda+\lambda_i^X+\lambda_j^Y}
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    so the marginal counts $n_{i+}$ and $n_{+j}$ are sufficient statistics and the MLE can be computed from them.
+    \item In this case, it can be shown that the MLE gives the familiar expression for the expected cell counts
+    \begin{equation}
+        \begin{aligned}
+            \hat{\mu}_{ij}=e^{\hat{\lambda}+\hat{\lambda}_i^X+\hat{\lambda}_j^Y}=\frac{n_{i+}n_{+j}}{n}
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    \item The specific expressions for the terms $\hat{\lambda},\hat{\lambda}_i^X,\hat{\lambda}_j^Y$ also depend on the constraints imposed.
+    \item Under the saturated model the cell means $\mu_{ij}$ are unconstrained, so each cell's contribution to the log-likelihood can be maximized separately. In this case we have
+    \begin{equation}
+        \begin{aligned}
+            \frac{\partial L(\boldsymbol{\mu})}{\partial \mu_{ij}}=\frac{\partial}{\partial \mu_{ij}}\left(n_{ij}\log(\mu_{ij})-\mu_{ij}\right)=\frac{n_{ij}}{\mu_{ij}}-1
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    Equating to zero yields $$\hat{\mu}^{\textnormal{sat}}_{ij}=n_{ij}$$
+    \item The saturated model simply reproduces the cell counts. The specific forms of the estimates $\hat{\lambda},\hat{\lambda}_i^X,\hat{\lambda}_j^Y$ can be worked out using these equations and the constraints.
+\end{enumerate}
+
+\subsection{Ordinal Association Model}
+If $X$ and $Y$ are ordinal categorical variables, we may consider using scores $u_1, u_2, \ldots, u_I$ for $X$ and $v_1, v_2, \ldots, v_J$ for $Y$ to specify an ordinal association model:
+$$
+\log \left(\mu_{i j}\right)=\lambda+\lambda_i^X+\lambda_j^Y+u_i * v_j * \beta
+$$
+where $\beta$ is the ordinal association parameter.
+\begin{enumerate}[$\bullet$]
+    \item We still treat the main effects as factor variables to match the margins of the table.
+    \item With this model the null hypothesis of independence is
+    $$
+    H_{\text {Indep }}: \beta=0
+    $$
+    \item To test the fit of this model, compare its deviance to that of the saturated model to obtain the $G^2$ goodness of fit test.
+\end{enumerate}
+
+\section{Log-linear Models for Three-Way Contingency Tables}
+\subsection{Dependence in Three-Way Tables}
+When three or more variables are cross-classified multiple kinds of \textbf{dependence} and \textbf{conditional independence} can arise. We consider three-way tables to keep things from getting too complicated; the essential ideas extend to multi-way tables in general. The \textbf{log-linear model} approach allows us to model a wide range of dependencies between variables with streamlined notation unified GLM-based computation.
+\begin{enumerate}[$\bullet$]
+    \item Consider $I \times J \times K$ contingency table for the categorical response variables $X$, $Y$, and $Z$.
+    \item We can envision the data as a set of $K$ different $I \times J$ tables for $XY$, one for each level of $Z$, or as $I$ different $J\times K$ tables, or as $J$ different $I \times K$ tables.
+    \item Some types of independence allow explicit calculation of expected tables based on partial marginal tables, e.g., \textbf{mutual independence models} and certain \textbf{conditional independence models}.
+    \item Other more complex types of partial independence may have no such explicit formulas, yet we can easily compute the expected cell counts and test \textbf{goodness of fit} using GLM software.
+\end{enumerate}
+
+\subsection{Sampling Models for Cell Counts}
+Let $N_{i j k}$ denote the random cell count for the triplet
+$$
+(X=i, Y=j, Z=k)
+$$
+for $i=1,2, \ldots, I, j=1,2, \ldots, J$, and $k=1,2, \ldots, K$.\\
+We consider two, closely related models.
+\begin{enumerate}[(1)]
+    \item \textbf{Independent Poisson:} $N_{i j k}$ independently distributed as Poisson $\left(\mu_{i j k}\right)$; the counts in the table have no fixed totals, and the overall total $N$ for the table is random.
+    \item \textbf{Multinomial:} $N_{i j k}$ jointly distributed as $\operatorname{Multinomial}(n, \boldsymbol{\pi})$, where $n$ is the fixed total for the table, and $\boldsymbol{\pi}$ is the vector of all $I J K$ cell probabilities $\pi_{i j k}$ in some particular order.
+\end{enumerate}
+\textbf{Connection between Poisson and Multinomial:} Conditional on the total $N=n$, independent Poisson counts with mean vector $\boldsymbol{\mu}$ have a joint multinomial distribution with probability vector
+$$
+\boldsymbol{\pi}=\frac{\boldsymbol{\mu}}{\mu_{+}} \quad \text { where } \quad \mu_{+}=\mathbf{1}^{\boldsymbol{T}} \boldsymbol{\mu}=\sum_i \sum_j \sum_k \mu_{i j k}
+$$
+\begin{enumerate}[$\bullet$]
+    \item For ML estimation and inference on $\boldsymbol{\pi}$, it is important to note that the independent Poisson model and conditional multinomial model have \underline{the same log-likelihood kernel} for $\boldsymbol{\pi}$:
+    $$
+    \begin{array}{r}
+    L_{\text {Pois }}\left(\boldsymbol{\pi}, \mu_{+}\right)=\sum_i \sum_j \sum_k n_{i j k} \log \left(\pi_{i j k}\right)+n \log \left(\mu_{+}\right)-\mu_{+} \\
+    =L_{\text {Multinom }}(\boldsymbol{\pi})+n \log \left(\mu_{+}\right)-\mu_{+}
+    \end{array}
+    $$
+\end{enumerate}
+\textbf{Computational implications:}
+\begin{enumerate}[$\bullet$]
+    \item For the log-linear models we consider, the independent Poisson model places no restriction on $\mu_+$, therefore its MLE is $\hat{\mu}_+ = n$;
+    \item Due to the common kernel, the MLE $\hat{\boldsymbol{\pi}}$ will be the same for the independent Poisson model as for the conditional multinomial model.
+    \item A practical consequence is that we can use Poisson regression to fit the model, even if the conditional multinomial model is appropriate, because it gives the same estimates and inferences for $\boldsymbol{\pi}$.
+\end{enumerate}
+
+\subsection{Types of Dependence}
+Consider several independence conditions expressed using the cell probabilities
+$$
+\pi_{i j k}=P(X=i, Y=j, Z=k)
+$$
+and log-linear models
+$$
+\log \left(\mu_{i j k}\right)=\boldsymbol{X} \boldsymbol{\beta}
+$$
+Subscript + indicates summing probabilities over that index.
+\begin{definition}[Mutual Independence]
+    $X \perp Y \perp Z$ or $(X, Y, Z)$\\
+    Cell probability: $\pi_{i j k}=\pi_{i++} \pi_{+j+} \pi_{++k}$\\
+    Cell mean: $\log \left(\mu_{i j k}\right)=\lambda+\lambda_i^X+\lambda_j^Y+\lambda_k^Z$
+\end{definition}
+
+\begin{definition}[One variable jointly independent of the other two]
+    $Y \perp (X,Z)$ or $(XZ, Y)$\\
+    Cell probability: $\pi_{i j k}=\pi_{i+k} \pi_{+j+}$\\
+    Cell mean: $\log \left(\mu_{i j k}\right)=\lambda+\lambda_i^X+\lambda_j^Y+\lambda_k^Z+\lambda_{ik}^{XZ}$
+\end{definition}
+
+\begin{definition}[Conditional independence]
+    $X \perp Y\mid Z$ or $(XZ,YZ)$\\
+    Cell probability: $\pi_{i j k}=\pi_{i+\mid k} \pi_{+j\mid k}=\frac{\pi_{i+k} \pi_{+jk}}{\pi_{++k}}$\\
+    Cell mean: $\log \left(\mu_{i j k}\right)=\lambda+\lambda_i^X+\lambda_j^Y+\lambda_k^Z+\lambda_{ik}^{XZ}+\lambda_{jk}^{YZ}$
+\end{definition}
+
+\begin{definition}[Homogeneous Association]
+    All pairs dependent or $(XY, XZ, YZ)$\\
+    Cell probability: No expression\\
+    Cell mean: $\log(\mu_{ijk})=\lambda+\lambda_i^X+\lambda_j^Y+\lambda_k^Z+\lambda_{ij}^{XY}+\lambda_{ik}^{XZ}+\lambda_{jk}^{YZ}$
+\end{definition}
+Why \textbf{homogeneous} association? Consider local conditional log-odds ratios for $X$ and $Y$ given $Z$:
+\begin{equation}
+    \begin{aligned}
+        \log\left(\theta_{ij(k)}\right)=\log\left(\frac{\mu_{ijk}\mu_{i+1,j+1,k}}{\mu_{i,j+1,k}\mu_{i+1,j,k}}\right)=\lambda_{ij}^{XY}+\lambda_{i+1,j+1}^{XY}-\lambda_{i,j+1}^{XY}-\lambda_{i+1,j}^{XY}
+    \end{aligned}
+    \nonumber
+\end{equation}
+This does not depend on $Z$, so the conditional odds ratios are equal:
+\begin{equation}
+    \begin{aligned}
+        \theta_{ij(1)}=\theta_{ij(2)}=\cdots \theta_{ij(K)}
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+\begin{definition}[Three-way Interaction]
+    Three-way dependence ($XYZ$)\\
+    Cell probability: $\pi_{ijk}$\\
+    Cell mean: $\log(\mu_{ijk})=\lambda+\lambda_i^X+\lambda_j^Y+\lambda_k^Z+\lambda_{ij}^{XY}+\lambda_{ik}^{XZ}+\lambda_{jk}^{YZ}+\lambda_{ijk}^{XYZ}$
+\end{definition}
+This is the \textbf{saturated} model. Conditional odds ratios for $X$ and $Y$ depend on $Z$.
+
+\subsection{Summary of Dependence Models}
+\begin{enumerate}[$\bullet$]
+    \item All of the log-linear model parameterizations require estimability constraints, e.g. setting the first or last category of a variable as the reference category by zeroing out the corresponding $\lambda$ terms.
+    \item Different sub-models can be compared using likelihood ratio $G^2$ statistics or AIC and the simplest adequate model selected.
+    \item Below is a hierarchical list of log-linear models for a three way contingency tables.
+\end{enumerate}
+\begin{center}\begin{figure}[htbp]
+    \centering
+    \includegraphics[scale=0.3]{logliner.png}
+    \caption{Log-linear Model}
+    \label{}
+\end{figure}\end{center}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

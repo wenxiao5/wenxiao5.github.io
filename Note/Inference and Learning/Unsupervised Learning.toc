@@ -73,3 +73,5 @@
 \contentsline {chapter}{\numberline {7}Nonnegative Matrix Factorization (NMF)}{40}{chapter.7}%
 \contentsline {section}{\numberline {7.1}Goals of NMF}{40}{section.7.1}%
 \contentsline {section}{\numberline {7.2}NMF Optimization - Unsupervised Case}{40}{section.7.2}%
+\contentsline {chapter}{\numberline {8}BIRCH Clustering}{42}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Balanced Iterative Reducing and Clustering using Hierarchies (BIRCH) Algorithm}{42}{section.8.1}%

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.22)  18 APR 2023 17:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.22)  18 APR 2023 20:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1202,6 +1202,9 @@ LaTeX Warning: Label `' multiply defined.
 
 LaTeX Warning: Label `' multiply defined.
 
+
+LaTeX Warning: Label `' multiply defined.
+
 )
 \openout1 = `"STAT 426.aux"'.
 
@@ -1349,7 +1352,7 @@ Package hyperref Info: Option `pageanchor' set `false' on input line 28.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<cover.jpg, id=388, 602.25pt x 301.125pt>
+<cover.jpg, id=412, 602.25pt x 301.125pt>
 File: cover.jpg Graphic file (type jpg)
 <use cover.jpg>
 Package pdftex.def Info: cover.jpg  used on input line 28.
@@ -1388,13 +1391,13 @@ LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
 ]
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
 (Font)              scaled to size 10.0pt on input line 65.
- [2])
+ [2] [3])
 \tf@toc=\write9
 \openout9 = `"STAT 426.toc"'.
 
- [3]
+ [4]
 Chapter 1.
-<p1.png, id=590, 797.98125pt x 533.995pt>
+<p1.png, id=630, 797.98125pt x 533.995pt>
 File: p1.png Graphic file (type png)
 <use p1.png>
 Package pdftex.def Info: p1.png  used on input line 37.
@@ -1765,7 +1768,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 500--519
  []
 
 [12]
-<Simpson's Paradox.png, id=697, 1738.495pt x 507.8975pt>
+<Simpson's Paradox.png, id=737, 1738.495pt x 507.8975pt>
 File: Simpson's Paradox.png Graphic file (type png)
 <use Simpson's Paradox.png>
 Package pdftex.def Info: Simpson's Paradox.png  used on input line 571.
@@ -1815,13 +1818,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{equation.3.2.1
                    \relax 
 l.683         \begin{equation}
                               
-<logit.png, id=730, 1614.03pt x 608.2725pt>
+<logit.png, id=769, 1614.03pt x 608.2725pt>
 File: logit.png Graphic file (type png)
 <use logit.png>
 Package pdftex.def Info: logit.png  used on input line 692.
 (pdftex.def)             Requested size: 290.51286pt x 109.48433pt.
  [17 <./logit.png>]
-<logl.png, id=741, 1893.0725pt x 778.91pt>
+<logl.png, id=780, 1893.0725pt x 778.91pt>
 File: logl.png Graphic file (type png)
 <use logl.png>
 Package pdftex.def Info: logl.png  used on input line 790.
@@ -2022,19 +2025,19 @@ pdfTeX warning (ext4): destination with the same identifier (name{equation.5.3.1
                    \relax 
 l.1476 \begin{equation}
                         [34] [35] [36] [37] [38] [39] [40] [41]
-<ROC.png, id=893, 872.25874pt x 853.1875pt>
+<ROC.png, id=933, 872.25874pt x 853.1875pt>
 File: ROC.png Graphic file (type png)
 <use ROC.png>
 Package pdftex.def Info: ROC.png  used on input line 1861.
 (pdftex.def)             Requested size: 218.06415pt x 213.29636pt.
  [42 <./ROC.png>] [43] [44]
-<complete separation.png, id=916, 550.055pt x 509.905pt>
+<complete separation.png, id=957, 550.055pt x 509.905pt>
 File: complete separation.png Graphic file (type png)
 <use complete separation.png>
 Package pdftex.def Info: complete separation.png  used on input line 2002.
 (pdftex.def)             Requested size: 165.01776pt x 152.97267pt.
  [45 <./complete separation.png>]
-<quasi-complete separation.png, id=924, 555.07375pt x 516.93124pt>
+<quasi-complete separation.png, id=963, 555.07375pt x 516.93124pt>
 File: quasi-complete separation.png Graphic file (type png)
 <use quasi-complete separation.png>
 Package pdftex.def Info: quasi-complete separation.png  used on input line 2020.
@@ -2129,7 +2132,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{equation.6.3.1
                    \relax 
 l.2239     \begin{equation}
                             [51]
-<LVF.png, id=969, 1957.3125pt x 353.32pt>
+<LVF.png, id=1008, 1957.3125pt x 353.32pt>
 File: LVF.png Graphic file (type png)
 <use LVF.png>
 Package pdftex.def Info: LVF.png  used on input line 2265.
@@ -2255,29 +2258,100 @@ pdfTeX warning (ext4): destination with the same identifier (name{equation.7.1.1
 <to be read again> 
                    \relax 
 l.2438 \begin{equation}
-                        [56] (./STAT 426.aux)
+                       
+pdfTeX warning (ext4): destination with the same identifier (name{equation.7.1.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2449     \begin{equation}
+                           
+pdfTeX warning (ext4): destination with the same identifier (name{equation.7.1.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2449     \begin{equation}
+                           
+pdfTeX warning (ext4): destination with the same identifier (name{equation.7.1.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2449     \begin{equation}
+                           
+pdfTeX warning (ext4): destination with the same identifier (name{equation.7.1.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2449     \begin{equation}
+                           
+pdfTeX warning (ext4): destination with the same identifier (name{equation.7.1.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2457     \begin{equation}
+                           
+pdfTeX warning (ext4): destination with the same identifier (name{equation.7.1.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2457     \begin{equation}
+                           
+pdfTeX warning (ext4): destination with the same identifier (name{equation.7.1.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2457     \begin{equation}
+                           
+pdfTeX warning (ext4): destination with the same identifier (name{equation.7.1.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2457     \begin{equation}
+                           
+pdfTeX warning (ext4): destination with the same identifier (name{equation.7.1.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2465     \begin{equation}
+                           
+pdfTeX warning (ext4): destination with the same identifier (name{equation.7.1.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2465     \begin{equation}
+                           
+pdfTeX warning (ext4): destination with the same identifier (name{equation.7.1.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2465     \begin{equation}
+                           
+pdfTeX warning (ext4): destination with the same identifier (name{equation.7.1.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2465     \begin{equation}
+                            [56] [57] [58] [59
+pdfTeX warning (ext4): destination with the same identifier (name{equation.7.2.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.2591 \end{enumerate}
+                      ]
+<logliner.png, id=1077, 1186.4325pt x 300.12125pt>
+File: logliner.png Graphic file (type png)
+<use logliner.png>
+Package pdftex.def Info: logliner.png  used on input line 2594.
+(pdftex.def)             Requested size: 355.9325pt x 90.03706pt.
+ [60 <./logliner.png>] (./STAT 426.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `"STAT 426".out' has not changed.
-(rerunfilecheck)             Checksum: B389C9C9D7AFE910B327170E37D63F60;19181.
+(rerunfilecheck)             Checksum: E3842B0B3DAA9F53DB2A2823689CD095;20700.
 Package logreq Info: Writing requests to '"STAT 426".run.xml'.
 \openout1 = `"STAT 426.run.xml"'.
 
  ) 
 Here is how much of TeX's memory you used:
- 42032 strings out of 476091
- 824134 string characters out of 5791542
+ 42090 strings out of 476091
+ 824937 string characters out of 5791542
  1887330 words of memory out of 5000000
- 61389 multiletter control sequences out of 15000+600000
+ 61412 multiletter control sequences out of 15000+600000
  546622 words of font info for 114 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  102i,19n,136p,764b,1472s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/newtx/ztmbi.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on "STAT 426.pdf" (60 pages, 1901904 bytes).
+Output written on "STAT 426.pdf" (65 pages, 1963697 bytes).
 PDF statistics:
- 1157 PDF objects out of 1200 (max. 8388607)
- 1009 compressed objects within 11 object streams
- 290 named destinations out of 1000 (max. 500000)
- 866 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1244 PDF objects out of 1440 (max. 8388607)
+ 1089 compressed objects within 11 object streams
+ 324 named destinations out of 1000 (max. 500000)
+ 919 words of extra memory for PDF output out of 10000 (max. 10000000)
 
