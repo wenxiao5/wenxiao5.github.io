@@ -1167,6 +1167,165 @@ We can use the $\hat{\phi}$ to scale the GLM asymptotic covariance of $\hat{\bol
 
 \textbf{Remark:} Similar adjustments apply to likelihood-type and score-type inferences.
 
+\chapter{Binary-Response Regression except Logistic Regression}
+\section{Probit Model}
+\subsection{Probit Link}
+The probit link is $$g(\pi)=\Phi^{-1}(\pi)$$ where $\Phi = \textnormal{ c.d.f. of }N(0,1)$. Using the probit link is \textbf{probit regression}.
+\subsection{Motivation: Latent Response}
+
+Suppose there is just a single explanatory variable $x$, and it is quantitative.
+
+Consider ordinary simple linear regression with a response $Y^*$ :
+$$
+Y^* \sim N(\alpha+\beta x, 1)
+$$
+assuming variance $\sigma^2$ is equal to $1$.
+
+Suppose $Y^*$ is latent (unobserved), but we observe
+$$
+Y=\left\{\begin{array}{lll}
+1 & \text { if } & Y^*>0 \\
+0 & \text { if } & Y^* \leq 0
+\end{array}\right.
+$$
+Then
+$$
+\begin{aligned}
+\pi(x) & =\mathrm{P}(Y=1 \mid x) \\
+& =\mathrm{P}\left(Y^*>0 \mid x\right) \\
+& =\mathrm{P}\left(Y^*-\alpha-\beta x>-\alpha-\beta x \mid x\right) \\
+& =\mathrm{P}(Z>-\alpha-\beta x) \quad(Z \text { standard normal) } \\
+& =\mathrm{P}(Z<\alpha+\beta x) \quad \text { (symmetry) } \\
+& =\Phi(\alpha+\beta x)
+\end{aligned}
+$$
+So $Y$ satisfies a probit regression.
+
+\subsection{Properties and Interpretation}
+Again consider one quantitative $x$ variable:
+$$
+\pi(x)=\Phi(\alpha+\beta x)
+$$
+Then
+$$
+\frac{d \pi(x)}{d x}=\beta \phi(\alpha+\beta x)
+$$
+where $\phi=\text { density of } N(0,1)$.\\
+If $\beta \neq 0$, slope is steepest at
+$$
+x=-\frac{\alpha}{\beta} \quad(\text {where } \alpha+\beta x=0)
+$$
+Relation to latent response $Y^*$ :
+\begin{center}
+    a unit increase in $x$ implies an increase of $\beta$ in $E\left(Y^*\right)$
+(which is a decrease if $\beta<0$)
+\end{center}
+This assumes $\operatorname{var}\left(Y^*\right)=1$. (Otherwise, the increase is in standard deviation units - later.)
+
+Sign of $\beta$ indicates direction of $X-Y^*$ relationship.
+
+\subsection{Model Fitting and Checking}
+Usually fit by maximum likelihood to get $\hat{\boldsymbol{\beta}}$.
+
+Can use deviance (or Pearson $X^2$) to check fit.
+
+Residuals and influence measures are also available. Fitted values are defined as usual.
+
+Remark: Fisher scoring and Newton-Raphson algorithms are different for probit regression, and can cause software to report different standard errors.
+
+\subsection{Inference}
+Assume the general (binomial) form for the data:
+$$
+\begin{gathered}
+Y_i \sim \text { indep. binomial }\left(n_i, \pi\left(\boldsymbol{x}_i\right)\right) \\
+\Phi^{-1}\left(\pi\left(\boldsymbol{x}_i\right)\right)=\eta_i=\boldsymbol{x}_i^T \boldsymbol{\beta} \\
+\boldsymbol{x}_i^T=i^\textnormal{th} \text { row of } \boldsymbol{X} \quad \boldsymbol{\eta}=\boldsymbol{X} \boldsymbol{\beta}
+\end{gathered}
+$$
+The estimated asymptotic covariance (obtained by inverting estimated information):
+$$
+\widehat{\operatorname{cov}}(\hat{\boldsymbol{\beta}})=\left(\boldsymbol{X}^T \hat{\boldsymbol{W}} \boldsymbol{X}\right)^{-1}
+$$
+with
+$$
+\hat{\boldsymbol{W}}=\operatorname{diag}\left(n_i \frac{\left(\phi\left(\hat{\eta}_i\right)\right)^2}{\Phi\left(\hat{\eta}_i\right)\left(1-\Phi\left(\hat{\eta}_i\right)\right)}\right)
+$$
+where
+$$
+\hat{\eta}_i=\boldsymbol{x}_i^T \hat{\boldsymbol{\beta}}
+$$
+This can be used for Wald inference. Likelihood-ratio and score inference are also available.
+
+\subsection{Variance $\sigma^2\neq 1$}
+Suppose we allow the latent variable to have an unknown variance $\sigma^2$, so that
+$$
+Y^* \sim N\left(\tilde{\alpha}+\tilde{\beta} x, \sigma^2\right)
+$$
+where $\sigma^2>0$ is arbitrary.
+
+As before, observe
+$$
+Y=\left\{\begin{array}{lll}
+1 & \text { if } & Y^*>0 \\
+0 & \text { if } & Y^* \leq 0
+\end{array}\right.
+$$
+It turns out that $\tilde{\alpha}, \tilde{\beta}$, and $\sigma^2$ are not identifiable, so can't be estimated ...
+$$
+\begin{aligned}
+\pi(x) & =\mathrm{P}(Y=1 \mid x)=\mathrm{P}\left(Y^*>0 \mid x\right) \\
+& =\mathrm{P}\left(\frac{Y^*-\tilde{\alpha}-\tilde{\beta} x}{\sigma}>\frac{0-\tilde{\alpha}-\tilde{\beta} x}{\sigma} \mid x\right) \\
+& =\mathrm{P}(Z>-\tilde{\alpha} / \sigma-\tilde{\beta} x / \sigma) \quad(Z \text { standard normal) } \\
+& =\mathrm{P}(Z<\tilde{\alpha} / \sigma+\tilde{\beta} x / \sigma) \quad \text { (symmetry) } \\
+& =\Phi(\underbrace{\tilde{\alpha} / \sigma}_\alpha+\underbrace{(\tilde{\beta} / \sigma)}_\beta x)
+\end{aligned}
+$$
+Probit regression estimates $\alpha$ and $\beta$, not $\tilde{\alpha}$ and $\tilde{\beta}$.
+
+Thus, when $\sigma^2 \neq 1, \alpha$ and $\beta$ must be interpreted in standard deviation units.
+
+Eg: Increasing $x$ by 1
+\begin{center}
+    increases $E\left(Y^*\right)$ by $\tilde{\beta}=\sigma \beta$
+\end{center}
+i.e., by $\beta$ standard deviations.
+
+Again, $\tilde{\alpha}, \tilde{\beta}$, and $\sigma^2$ are not identified, so can't be estimated.
+
+\subsection{Symmetry Property}
+Logit and probit links have the symmetry property
+$$g(\pi) = -g(1 - \pi)$$
+This means both tails exhibit the same asymptotic behavior.
+
+An implication: If
+$$
+Y_i \sim \operatorname{binomial}\left(n_i, \cdot\right)
+$$
+follows a logistic (or probit) model with parameter $\boldsymbol{\beta}$, then
+$$
+n_i-Y_i
+$$
+follows a logistic (or probit) model with parameter $-\boldsymbol{\beta}$.
+This property is convenient, since the model is equivalent no matter which type of outcome is designated as the "success" and which the "failure."
+However, sometimes an asymmetric model fits the data better.
+
+\section{Complementary Log-Log Model}
+The complementary log-log link is
+$$
+g(\pi)=\ln (-\ln (1-\pi))
+$$
+The corresponding "response curve":
+$$
+\pi(\eta)=g^{-1}(\eta)=1-e^{-e^\eta}
+$$
+Property: When $\eta=\alpha+\beta x$,
+$$(1-\pi(x_2))=(1-\pi(x_1))^{e^{\beta(x_2-x_1)}}$$
+Remarks:
+\begin{enumerate}[$\bullet$]
+    \item This link does not have the symmetry property - the model does depend on which type of outcome is the "success."
+    \item There is also a log-log link, which is obtained by interchanging the roles of "success" and "failure."
+\end{enumerate}
+
 \chapter{Logistic Regression}
 \section{Parameter Interpretation of (Simple) Logistic Regression}
 Suppose we observe $0 / 1$ (Bernoulli) response $Y$ and quantitative explanatory variable $X$.
@@ -1423,7 +1582,7 @@ $$
 \end{aligned}
 $$
 
-\subsection*{Log-Likelihood}
+\subsubsection*{Log-Likelihood}
 Note:$\boldsymbol{\eta}=\boldsymbol{X} \boldsymbol{\beta}$, $\pi\left(\boldsymbol{x}_i\right)=\frac{e^{\eta_i}}{1+e^{\eta_i}}$, and
 \begin{equation}
     \begin{aligned}
@@ -1443,7 +1602,7 @@ L(\boldsymbol{\beta})=\boldsymbol{y}^T \boldsymbol{X} \boldsymbol{\beta}-\sum_i 
 $$
 where $\boldsymbol{y}$ is the observed version of $\boldsymbol{Y}$.
 
-\subsection*{Score Vector}
+\subsubsection*{Score Vector}
 The score vector is
 $$
 \begin{aligned}
@@ -1458,7 +1617,7 @@ $$
 $$
 (Note: $\boldsymbol{y}-\hat{\boldsymbol{\mu}}$ is orthogonal to the columns of $\boldsymbol{X}$, just like in linear regression.)
 
-\subsection*{Information Matrix and Covariance}
+\subsubsection*{Information Matrix and Covariance}
 The second derivative matrix is
 $$
 \begin{aligned}
@@ -1481,7 +1640,7 @@ $$
 where $\hat{\boldsymbol{W}}=\operatorname{diag}\left(n_i \hat{\pi}\left(\boldsymbol{x}_i\right)\left(1-\hat{\pi}\left(\boldsymbol{x}_i\right)\right)\right)$.
 
 
-\subsection*{Wald Test}
+\subsubsection*{Wald Test}
 The standard error of $\operatorname{logit}(\hat{\pi}(\boldsymbol{x}))=\boldsymbol{x}^T \hat{\boldsymbol{\beta}}$ is then
 $$
 \sqrt{\boldsymbol{x}^T \widehat{\operatorname{cov}}(\hat{\boldsymbol{\beta}}) \boldsymbol{x}}
@@ -1492,157 +1651,1020 @@ $$
 $$
 which can be transformed to a $\mathrm{Cl}$ for $\pi(\boldsymbol{x})$.
 
-\chapter{Binary-Response Regression with Other Link Functions}
-\section{Probit Model}
-\subsection{Probit Link}
-The probit link is $$g(\pi)=\Phi^{-1}(\pi)$$ where $\Phi = \textnormal{ c.d.f. of }N(0,1)$. Using the probit link is \textbf{probit regression}.
-\subsection{Motivation: Latent Response}
 
-Suppose there is just a single explanatory variable $x$, and it is quantitative.
+\section{Variable Selection}
+Goal: Choose the simplest model (fewest explanatory variables) that still explains the data well.
 
-Consider ordinary simple linear regression with a response $Y^*$ :
-$$
-Y^* \sim N(\alpha+\beta x, 1)
-$$
-assuming variance $\sigma^2$ is equal to $1$.
+\subsection{ Collinearity}
+When there is \textbf{collinearity} (i.e., strong linear relationships among the $X$ variables), the effect of one $X$ variable may mask the effect of another.
 
-Suppose $Y^*$ is latent (unobserved), but we observe
+Suggests that we should consider adding or removing variables \textit{one-at-a-time}.
+
+\begin{definition}[Stepwise Procedures]
+\normalfont
+\begin{enumerate}[$\bullet$]
+    \item \textbf{forward selection:} starting with none, add the “best” variable at each step, until the model stops improving
+    \item \textbf{backward elimination:} starting with all, remove the “worst” variable at each step, stopping before the model becomes inadequate
+    \item \textbf{stepwise selection:} perform forward selection, but also allow removal of variables (if appropriate) at each step
+\end{enumerate}
+\end{definition}
+Notes:
+\begin{enumerate}[$\bullet$]
+    \item If possible, consider interaction terms, not just main effects.\\
+    (An interaction can be in the model only if the corresponding lower-order interactions/main effects are.)
+    \item When evaluating a categorical variable (or its interactions), all of its indicator variables must be added/removed together.
+\end{enumerate}
+
+\subsection{Akaike Information Criterion (AIC)}
+\begin{definition}[Akaike Information Criterion (AIC)]
+\normalfont
 $$
-Y=\left\{\begin{array}{lll}
-1 & \text { if } & Y^*>0 \\
-0 & \text { if } & Y^* \leq 0
-\end{array}\right.
+\text { AIC }=-2(\max \text { log-likelihood }- \text { effective \# parameters })
 $$
-Then
+Equivalent to an adjusted deviance:
+$$
+D(\boldsymbol{y} ; \hat{\boldsymbol{\mu}})-2 \cdot \mathbf{r d f}=D(\boldsymbol{y} ; \hat{\boldsymbol{\mu}})+2(p+1)-2 n
+$$
+where \textbf{rdf} is the (residual) degrees of freedom $(\mathrm{rdf}=n$ - effective number of parameters), and we can ignore the constant $-2 n$ when comparing models.
+\end{definition}
+Note: First term penalizes lack of fit, second term penalizes complexity (too many variables). We choose model with the smallest AIC.
+
+\section{Diagnostic}
+We have already seen general goodness-of-fit tests, but there are fit-related questions that concern individual observations:
+\begin{enumerate}
+    \item Does the model fit all of the observations well?
+    \item Is the fit especially sensitive to certain observations?
+\end{enumerate}
+
+\subsection{Residuals}
+\begin{definition}[Residuals]
+\normalfont
+\begin{enumerate}
+    \item \textbf{Pearson}:
+    $$
+    e_i=\frac{y_i-n_i \hat{\pi}_i}{\sqrt{n_i \hat{\pi}_i\left(1-\hat{\pi}_i\right)}}
+    $$
+    The sum of their squares is a kind of generalized Pearson $X^2$ statistic.
+    \item \textbf{Deviance}:
+    $$
+    \operatorname{sign}\left(y_i-n_i \hat{\pi}_i\right) \sqrt{d_i}
+    $$
+    where
+    $$
+    d_i=2\left(y_i \ln \frac{y_i}{n_i \hat{\pi}_i}+\left(n_i-y_i\right) \ln \frac{n_i-y_i}{n_i-n_i \hat{\pi}_i}\right)
+    $$
+    The sum of their squares is the deviance $\left(G^2\right)$.
+    \item \textbf{Standardized}:
+    $$
+    r_i=\frac{e_i}{\sqrt{1-\hat{h}_i}}
+    $$
+    where $\hat{h}_i$ is the $i$ th leverage (from the hat matrix)
+    Idea: Divide the raw residual by (approximately) its standard deviation.
+    Advantage: Closer to $N(0,1)$, when model fits.
+\end{enumerate}
+\end{definition}
+Usage: Check for unusual observations (outliers) or trends (when plotted versus unused variables).
+
+Warning: For ungrouped data ($Y=0$ or $1$), residuals tend not to be very useful.
+
+
+\subsection{Influence}
+\begin{enumerate}[$\bullet$]
+    \item Leverages $\hat{h}_i$ measure \textbf{potential influence}.\\
+    Outliers having high leverage are particularly influential.\\
+    (Remark: Unlike in linear regression, observations outlying in the $X$ variables do not necessarily have high leverage.)
+    \item \textbf{Cook's Distance}: for each observation, an overall measure of change in $\hat{\boldsymbol{\beta}}$ when that observation is removed.\\
+    Generally indicates a problem if $>1$.\\
+    (Agresti instead uses a quantity $c$ that is larger by a constant factor.)
+    \item \textbf{Dfbeta}: for each parameter and each observation, the (standardized) change in the parameter estimate when the observation is removed.\\
+    Indicates a problem if its magnitude is large, e.g. $> 2$ or $> 3$, since standardized. (But even just $> 1$ could indicate undue influence.)
+\end{enumerate}
+
+\section{Predictive Model Metrics}
+Want to evaluate
+\begin{enumerate}
+    \item Strength of association (like $R^2$ in linear regression)
+    \item Performance of model as a classifier
+\end{enumerate}
+
+\subsection{Strength of Association}
+\begin{definition}[Correlation Measure]
+\normalfont
 $$
 \begin{aligned}
-\pi(x) & =\mathrm{P}(Y=1 \mid x) \\
-& =\mathrm{P}\left(Y^*>0 \mid x\right) \\
-& =\mathrm{P}\left(Y^*-\alpha-\beta x>-\alpha-\beta x \mid x\right) \\
-& =\mathrm{P}(Z>-\alpha-\beta x) \quad(Z \text { standard normal) } \\
-& =\mathrm{P}(Z<\alpha+\beta x) \quad \text { (symmetry) } \\
-& =\Phi(\alpha+\beta x)
+R(\boldsymbol{y}, \hat{\boldsymbol{\mu}})= & \text { sample correlation between } \\
+& y_i \text { s and fitted values } \hat{\mu}_i
 \end{aligned}
 $$
-So $Y$ satisfies a probit regression.
+Agresti assumes data are in ungrouped format:
+$$
+y_i=0 \text { or } 1 \quad \hat{\mu}_i=\hat{\pi}_i
+$$
+Note: Similar to $\sqrt{R^2}$ in linear regression, where $R^2$ is the coefficient of determination.
+\end{definition}
 
-\subsection{Properties and Interpretation}
-Again consider one quantitative $x$ variable:
-$$
-\pi(x)=\Phi(\alpha+\beta x)
-$$
-Then
-$$
-\frac{d \pi(x)}{d x}=\beta \phi(\alpha+\beta x)
-$$
-where $\phi=\text { density of } N(0,1)$.\\
-If $\beta \neq 0$, slope is steepest at
-$$
-x=-\frac{\alpha}{\beta} \quad(\text {where } \alpha+\beta x=0)
-$$
-Relation to latent response $Y^*$ :
+\begin{definition}[Likelihood Measures]
+\normalfont
+Consider a model $M$ (that has an intercept).
 \begin{center}
-    a unit increase in $x$ implies an increase of $\beta$ in $E\left(Y^*\right)$
-(which is a decrease if $\beta<0$)
+    \begin{tabular}{cc} 
+        Model & Maximum log-likelihood \\
+        \hline intercept-only & $L_0$ \\
+        $M$ & $L_M$ \\
+        saturated & $L_S$
+    \end{tabular}
 \end{center}
-This assumes $\operatorname{var}\left(Y^*\right)=1$. (Otherwise, the increase is in standard deviation units - later.)
+$$
+(\text {so } L_0 \leq L_M \leq L_S)
+$$
+Then use
+$$
+\frac{L_M-L_0}{L_S-L_0} \in[0,1]
+$$
+with larger values indicating $M$ better relative to intercept-only model.
 
-Sign of $\beta$ indicates direction of $X-Y^*$ relationship.
+Note: This likelihood measure may depend on the definition of the saturated model.
 
-\subsection{Model Fitting and Checking}
-Usually fit by maximum likelihood to get $\hat{\boldsymbol{\beta}}$.
+Recall: The saturated models are generally different for ungrouped (binary) and grouped (binomial) formats of the data.
 
-Can use deviance (or Pearson $X^2$) to check fit.
+Call the likelihood measure
+\begin{center}
+    $D$ for the ungrouped (binary) format\\
+    $D^*$ for the grouped (binomial) format
+\end{center}
+Agresti recommends $D$ over $D^*$.
+\end{definition}
 
-Residuals and influence measures are also available. Fitted values are defined as usual.
 
-Remark: Fisher scoring and Newton-Raphson algorithms are different for probit regression, and can cause software to report different standard errors.
+\subsection{Performance of Model as a Classifier}
+\begin{definition}[Classifier]
+\normalfont
+A logistic regression fit
+$$
+\hat{\pi}(\boldsymbol{x})=\text { estimate of } \mathrm{P}(\text { success } \mid \boldsymbol{x})
+$$
+can be used as a \textbf{classifier}:
+$$
+\hat{y}= \begin{cases}1 \text { (success) } & \text { if } \hat{\pi}(\boldsymbol{x})>\pi_0 \\ 0 \text { (failure) } & \text { if } \hat{\pi}(\boldsymbol{x}) \leq \pi_0\end{cases}
+$$
+for some cutoff $\pi_0$.\\
+Could take $\pi_0=0.5$, or perhaps $\pi_0=$ the observed fraction of successes.
+\end{definition}
 
-\subsection{Inference}
-Assume the general (binomial) form for the data:
+\begin{definition}[Classification Table]
+\normalfont
+A classification table is a $2 \times 2$ contingency table of actual (binary) response $y$ versus classified $\hat{y}$:
+\begin{center}
+    \begin{tabular}{rcccc}
+        \multicolumn{1}{r}{}&\multicolumn{2}{c}{$\hat{Y}=1$}&\multicolumn{2}{c}{$\hat{Y}=0$}\\
+        \cline{2-5}
+        \multicolumn{1}{r|}{$Y=1$}&\multicolumn{2}{c|}{}&\multicolumn{2}{c|}{}\\
+        \cline{2-5}
+        \multicolumn{1}{r|}{$Y=0$}&\multicolumn{2}{c|}{}&\multicolumn{2}{c|}{}\\
+        \cline{2-5}
+        \multicolumn{1}{c}{}&&&&
+    \end{tabular}
+\end{center}
+Can be used to estimate
+$$
+\begin{aligned}
+& \textbf{ sensitivity }=\mathrm{P}(\hat{Y}=1 \mid Y=1) \\
+& \textbf{ specificity }=\mathrm{P}(\hat{Y}=0 \mid Y=0)
+\end{aligned}
+$$
+(These don't depend on the marginal distribution of $Y$)
+\end{definition}
+The proportion correct is
+$$
+\mathrm{P}(Y=1, \hat{Y}=1)+\mathrm{P}(Y=0, \hat{Y}=0)
+$$
+(Prob. of correct classification)
+and the error rate is its complement:
+$$
+\mathrm{P}(Y=1, \hat{Y}=0)+\mathrm{P}(Y=0, \hat{Y}=1)
+$$
+Note: These depend on the marginal distribution of $Y$ (unlike sensitivity and specificity).
+
+Therefore, they cannot be estimated from retrospectively sampled data alone.
+
+\begin{enumerate}[-]
+    \item \textbf{Problem}: If same data is used to fit the model and to construct the table, performance estimates can be too optimistic.
+    \item \textbf{Remedy}: Use \underline{leave-one-out cross validation}, in which each observation is classified according to a model fit without it. Then build the table using the cross-validated predictions.
+\end{enumerate}
+
+\subsection{Receiver Operating Characteristic (ROC) Curves}
+Idea: Want to evaluate classification performance of a model without having to choose a cutoff $\pi_0$.
+
+Plot \underline{sensitivity vs. $1 - $specificity} for all possible cutoffs $\pi_0$.
+\begin{center}\begin{figure}[htbp]
+    \centering
+    \includegraphics[scale=0.25]{ROC.png}
+    \caption{Example of ROC}
+    \label{}
+\end{figure}\end{center}
+Note: ROC curve
+\begin{enumerate}[$\bullet$]
+    \item is non-decreasing
+    \item goes from $(0, 0)$ to $(1, 1)$
+    \item is often above the $45^\circ$ line (which represents random guessing.)
+    \item indicates a better classifier if it is higher
+\end{enumerate}
+The area under the ROC curve, a.k.a. the \textbf{“concordance index,”} \underline{measures predictive power}.
+
+
+\section{Cochran-Mantel-Haenszel Tests for Common Odds Ratios}
+Consider an $X-Y$ relationship as in a $2 \times 2$ table:
+\begin{enumerate}[-]
+    \item e.g., $\quad X=$ exposure (yes, no), $\quad Y=$ disease presence
+    \item e.g., $\quad X=$ treatment $(\mathrm{A}$ or $\mathrm{B}), \quad Y=$ whether successful
+\end{enumerate}
+Suppose we also have a categorical \textbf{stratification variable $Z$} that might affect inference about the $X-Y$ relationship:
+\begin{enumerate}[-]
+    \item e.g., $\quad Z=$ age range
+    \item e.g., $\quad Z=$ treatment clinic
+\end{enumerate}
+$Z$ could be a confounding variable, for which we want to adjust when assessing the $X-Y$ relationship.\\
+If $Z$ has $K$ categories (\textbf{strata}), the data form a $2 \times 2 \times K$ contingency table.
+
+\subsection{Model-Based: Logistic Regression}
+Homogeneous association model:
+$$
+\begin{aligned}
+& \operatorname{logit}\left(\pi_{i k}\right)=\alpha+\beta x_i+\beta_k^Z \quad i=1,2 \quad k=1, \ldots, K \\
+& \pi_{i k}=\mathrm{P}(Y=1 \mid X=i, Z=k), \quad x_i=\left\{\begin{matrix}
+    1 & i=1 \\
+    0 & i=2
+\end{matrix}\right.
+\end{aligned}
+$$
+(For identifiability, set, e.g., $\beta_1^Z \equiv 0$).
+
+Testing conditional independence is the same as testing
+$$
+H_0: \beta=0
+$$
+which can be done with Wald, likelihood-ratio, or score.
+
+The common conditional odds ratio is
+$$
+\theta_{X Y(k)}=e^\beta \quad(\text {all } k)
+$$
+for which the MLE is
+$$e^{\hat{\beta}}$$
+Can also form a $\mathrm{Cl}$ (with Wald or profile likelihood).
+
+Recall, this model \textit{assumes} homogeneous $XY$ association over $Z$. With grouped data, this assumption may be tested by comparison with the saturated model (e.g., using it as the full model in a LRT). (If homogeneous association is rejected, it may be worthwhile to investigate how $XY$ association varies between strata.)
+
+\subsection{Non-Model-Based: CMH}
+Consider the $k$ th partial table:
+$$
+\begin{array}{c|c|c|c}
+\multicolumn{1}{r}{Z=k:} &\multicolumn{1}{c}{Y=1} &\multicolumn{1}{c}{Y=0}\\
+\cline { 2 - 3 }
+\multicolumn{1}{r|}{$X=1$} & n_{11k} & n_{12k} & n_{1+k} \\
+\cline { 2 - 3 } 
+\multicolumn{1}{r|}{$X=0$} & n_{21k} & n_{22k} & n_{2+k} \\
+\cline { 2 - 3 } \multicolumn{1}{c}{}&\multicolumn{1}{c}{n_{+1k}}&\multicolumn{1}{c}{n_{+2k}}&\multicolumn{1}{c}{n_{++k}}
+\end{array}
+$$
+so that
+$$
+n_{i j k}=\text { count in row } i \& \text { col } j \text { of table } k
+$$
+
+Suppose there is no $X Y$ association when $Z=k$.
+
+Then conditioning on the $k$ th partial table's marginal totals (as in Fisher's exact test) yields
 $$
 \begin{gathered}
-Y_i \sim \text { indep. binomial }\left(n_i, \pi\left(\boldsymbol{x}_i\right)\right) \\
-\Phi^{-1}\left(\pi\left(\boldsymbol{x}_i\right)\right)=\eta_i=\boldsymbol{x}_i^T \boldsymbol{\beta} \\
-\boldsymbol{x}_i^T=i^\textnormal{th} \text { row of } \boldsymbol{X} \quad \boldsymbol{\eta}=\boldsymbol{X} \boldsymbol{\beta}
+\mu_{11 k}=E\left(N_{11 k}\right)=\frac{n_{1+k} n_{+1 k}}{n_{++k}} \\
+\operatorname{var}\left(N_{11 k}\right)=\frac{n_{1+k} n_{2+k} n_{+1 k} n_{+2 k}}{n_{++k}^2\left(n_{++k}-1\right)}
 \end{gathered}
 $$
-The estimated asymptotic covariance (obtained by inverting estimated information):
-$$
-\widehat{\operatorname{cov}}(\hat{\boldsymbol{\beta}})=\left(\boldsymbol{X}^T \hat{\boldsymbol{W}} \boldsymbol{X}\right)^{-1}
-$$
-with
-$$
-\hat{\boldsymbol{W}}=\operatorname{diag}\left(n_i \frac{\left(\phi\left(\hat{\eta}_i\right)\right)^2}{\Phi\left(\hat{\eta}_i\right)\left(1-\Phi\left(\hat{\eta}_i\right)\right)}\right)
-$$
-where
-$$
-\hat{\eta}_i=\boldsymbol{x}_i^T \hat{\boldsymbol{\beta}}
-$$
-This can be used for Wald inference. Likelihood-ratio and score inference are also available.
+based on the hypergeometric distribution.
 
-\subsection{Variance $\sigma^2\neq 1$}
-Suppose we allow the latent variable to have an unknown variance $\sigma^2$, so that
+\begin{definition}
+\normalfont
+Define the \textbf{(Cochran-) Mantel-Haenszel statistic}
 $$
-Y^* \sim N\left(\tilde{\alpha}+\tilde{\beta} x, \sigma^2\right)
+\mathrm{CMH}=\frac{\left(\sum_k\left(n_{11 k}-\mu_{11 k}\right)\right)^2}{\sum_k \operatorname{var}\left(N_{11 k}\right)}
 $$
-where $\sigma^2>0$ is arbitrary.
+\end{definition}
+Under
+\begin{center}
+    $H_0$ : conditional $X-Y$ independence
+\end{center}
+for large samples,
+$$
+\mathrm{CMH} \quad \dot{\sim} \quad \chi_1^2
+$$
+Note: If $\theta_{X Y(k)}>1$ then $n_{11 k}-\mu_{11 k}$ tends to be positive. If this is true for all $k, \mathrm{CMH}$ will tend to be larger. (Likewise if $\theta_{X Y(k)}<1$ for all $k$.) Thus reject
+\begin{center}
+    $H_0$ : conditional $X-Y$ independence
+\end{center}
+if $\mathrm{CMH}>\chi_1^2(\alpha)$.
 
-As before, observe
+For estimating the (common) conditional odds ratio, Mantel \& Haenszel proposed
 $$
-Y=\left\{\begin{array}{lll}
-1 & \text { if } & Y^*>0 \\
-0 & \text { if } & Y^* \leq 0
-\end{array}\right.
+\hat{\theta}_{\mathrm{MH}}=\frac{\sum_k n_{11 k} n_{22 k} / n_{++k}}{\sum_k n_{12 k} n_{21 k} / n_{++k}}
 $$
-It turns out that $\tilde{\alpha}, \tilde{\beta}$, and $\sigma^2$ are not identifiable, so can't be estimated ...
+\textbf{Remark:} Even if homogeneous XY association is not exactly correct, the CMH test and $\hat{\theta}_{\mathrm{MH}}$ still serve a summary of association, especially if all true associations have the same direction.
+
+\textbf{Remark:} In the model
+$$
+\operatorname{logit}\left(\pi_{i k}\right)=\alpha+\beta x_i+\beta_k^Z
+$$
+the condition
+$$
+\beta_k^Z=0 \quad \text { all } k
+$$
+is equivalent to conditional independence of $Y$ and $Z$ given $X$.
+In that case, the conditional and marginal $X-Y$ odds ratios are the same.
+
+
+\section{Existence of the MLE in Logistic Regression}
+The logistic regression MLE is unique if it exists (since the log-likelihood is strictly concave when $\boldsymbol{X}$ has full rank). But it doesn't always exist ...
+
+For simplicity, assume binary $Y$ (ungrouped data), so that $y_i=0 \text { or } 1$. Let $\boldsymbol{x}_i^T=i \text { th row of } \boldsymbol{X}$.
+
+Technically, the logistic regression MLE exists and is unique \textbf{if and only if} there \underline{does not exist} $\boldsymbol{b} \neq \mathbf{0}$ such that, for all $i$,
+$$
+\begin{array}{rlr}
+    \boldsymbol{b}^T \boldsymbol{x}_i>0 & \Rightarrow & y_i=1 \\
+    \boldsymbol{b}^T \boldsymbol{x}_i<0 & \Rightarrow & y_i=0
+\end{array}
+$$
+If $\boldsymbol{X}$ has full rank, then existence of the $\boldsymbol{b}$ above implies that an MLE does not exist. There is no maximum. The MLE fails to exist because the likelihood keeps increasing as \underline{one or more parameters become infinite}.
+
+One special case when the MLE does not exist:
+\begin{center}\begin{figure}[htbp]
+    \centering
+    \includegraphics[scale=0.3]{complete separation.png}
+    \caption{Complete Separation}
+    \label{}
+\end{figure}\end{center}
+\begin{definition}[complete separation]
+\normalfont
+There exists $\boldsymbol{b} \neq \mathbf{0}$ such that, for all $i$,
+$$
+\begin{array}{rlr}
+    y_i=1 & \Rightarrow & \boldsymbol{b}^T \boldsymbol{x}_i>0\\
+    y_i=0 & \Rightarrow & \boldsymbol{b}^T \boldsymbol{x}_i<0
+\end{array}
+$$
+i.e., a subspace separates the rows of $\boldsymbol{X}$ with $Y = 1$ from those with $Y = 0$ ...
+\end{definition}
+Even when complete separation does not hold, the MLE may still fail to exist.
+\begin{center}\begin{figure}[htbp]
+    \centering
+    \includegraphics[scale=0.3]{quasi-complete separation.png}
+    \caption{Quasi-Complete Separation}
+    \label{}
+\end{figure}\end{center}
+\begin{definition}[quasi-complete separation]
+\normalfont
+Assuming the logistic regression has an intercept, \textbf{quasi-complete separation} is when a \textit{hyperplane in explanatory variable space} separates $Y = 0$ and $Y = 1$ cases, except that both cases exist on the hyperplane itself.
+\end{definition}
+\begin{example}
+    One common situation can cause quasi-complete separation: One category of a nominal explanatory variable has only $Y =0$ cases or only $Y =1$ cases. For example, suppose $X$ is type of treatment and $Y = 1$ means cured. Then quasi-complete separation usually occurs if one treatment type cures (or fails to cure) all of its cases.
+\end{example}
+An MLE fails to exist under quasi-complete separation. As with complete separation, quasi-complete separation allows the likelihood to keep increasing as \underline{one or more parameters become infinite}.
+
+\subsubsection*{Signs the MLE may not exist:}
+\begin{enumerate}[1.]
+    \item Numerical estimates have large magnitude.
+    \item Standard errors are huge ($z$-values near $0$, P-values near $1$)
+    \item Some fitted values ($\hat{\pi}_i$) are almost exactly $0$ or $1$.
+    \item Iteration count is unusually large (or there is a non-convergence warning)
+\end{enumerate}
+
+\subsubsection*{Possible remedies:}
+\begin{enumerate}[1.]
+    \item Use likelihood-ratio or score inference (not Wald)
+    \item Use alternative estimation techniques (e.g., penalized likelihood, Bayes)
+    \item Use alternative fitting approaches like exact logistic regression (R packages \textit{elrm} and \textit{logistiX})
+    \item Use the bias reduction method of Firth (1993) (R package \textit{brglm})
+\end{enumerate}
+
+
+
+
+\chapter{Multinomial Regression Models}
+In this chapter we consider the situation that there are more than two categories of the response $Y$.
+
+\section{Settings}
+Suppose response $Y$ is categorical, with $J$ possible categories. The response can be
+\begin{enumerate}[$\bullet$]
+    \item \textbf{Nominal}. e.g. favorite soft drink (Coke, Pepsi, other)
+    \item \textbf{Ordinal}. e.g. customer rating of service (good, neutral, bad)
+\end{enumerate}
+Let categories be coded as $1, 2, . . . , J$ (in order, if ordinal).
+
+\subsection{Goal}
+\textbf{Goal:} Model the distribution of $Y$ in terms of explanatory variables $\boldsymbol{x}=X_1,...,X_p$.
+
+That is, we want to predict
+$$
+\pi_j(\boldsymbol{x})=\mathrm{P}(Y \text { in category } j \mid \boldsymbol{x}) \quad j=1, \ldots, J
+$$
+where $\sum_{j=1}^J \pi_j(\boldsymbol{x})=1$ for any $\boldsymbol{x}$
+
+There are $N$ observations of $(\boldsymbol{x},Y)$. The observations of $Y$ are independent (conditional on $\boldsymbol{x}$). Use $\boldsymbol{x}_i$ to denote the explanatory vector for observation $i$.
+
+\subsection{Formats for Multinomial Response Data}
+\begin{enumerate}[$\bullet$]
+    \item \textbf{Ungrouped codes:} $y_i=j$, $j\in\{1,...,J\}$.
+    \item \textbf{Ungrouped indicator vectors:} $\boldsymbol{y}_i=(y_{i1},...,y_{iJ})$ where $$y_{ij}=\left\{\begin{matrix}
+        1,&\textnormal{ if obs. $i$ in category $j$}\\
+        0,&\textnormal{ otherwise}
+    \end{matrix}\right.$$
+    Then $\sum_{j=1}^J y_{ij}=1,\forall i$ and $\boldsymbol{Y}_i\sim \textnormal{multinomial}(1,\boldsymbol{\pi}(\boldsymbol{x}_i))$ where $\boldsymbol{\pi}(\boldsymbol{x})=\left(\pi_1(\boldsymbol{x}),...,\pi_J(\boldsymbol{x})\right)$.
+    \item \textbf{Grouped:} Assume observation $i$ represents $n_i$ independent responses having the same explanatory vector $\boldsymbol{x}_i$ (i.e., replicates). Let $\boldsymbol{y}_i=(y_{i1},...,y_{iJ})$ where $$y_{ij}=\textnormal{number of responses in category $j$ (for obs. $i$)}$$
+    Then $\sum_{j=1}^J y_{ij}=n_i$ and $\boldsymbol{Y}_i\sim \textnormal{multinomial}(n_i,\boldsymbol{\pi}(\boldsymbol{x}_i))$\\
+    Parametric models assume a form for each $\pi_j(\boldsymbol{x})$ in terms of (vector) parameter $\boldsymbol{\theta}$.\\
+    The likelihood:
+    $$
+    \ell(\boldsymbol{\theta}) \propto \prod_{i=1}^N \prod_{j=1}^J \pi_j\left(\boldsymbol{x}_i ; \boldsymbol{\theta}\right)^{y_{i j}}
+    $$
+    where $y_{i j}$ is from the ungrouped indicator or grouped format.
+\end{enumerate}
+
+
+\section{Nominal Responses}
+\subsection{Baseline-Category Logistic Model}
+For the response whose categories are nominal, we can consider a \textbf{baseline-category logistic model}.
+\begin{definition}[Baseline-Category Logistic Model]
+    \normalfont
+    The \textbf{baseline-category logistic model}:
+    \begin{equation}
+        \begin{aligned}
+            \ln\left(\frac{\pi_{j}(\boldsymbol{x})}{\pi_J(\boldsymbol{x})}\right)=\alpha_j+\boldsymbol{\beta}_j^T \boldsymbol{x},\quad j=1,...,J-1
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    These are the \textbf{baseline (category) logits}, with $J$ as the \textbf{baseline category}.\\
+    The $J-1$ values of $\alpha_j$ and $J-1$ vectors $\boldsymbol{\beta}_j$ are unrestricted parameters to be estimated (MLE).\\
+    For the sake of notation, also define $\alpha_J\equiv0$ and $\boldsymbol{\beta}_J\equiv \boldsymbol{0}$
+\end{definition}
+Logits for other pairs of categories can also be determined: For categories $a$ and $b$,
+\begin{equation}
+    \begin{aligned}
+        \ln\left(\frac{\pi_{a}(\boldsymbol{x})}{\pi_b(\boldsymbol{x})}\right)&=\ln\left(\frac{\pi_{a}(\boldsymbol{x})}{\pi_J(\boldsymbol{x})}\right)-\ln\left(\frac{\pi_{b}(\boldsymbol{x})}{\pi_J(\boldsymbol{x})}\right)\\
+        &=(\alpha_a-\alpha_b)+(\boldsymbol{\beta}_a-\boldsymbol{\beta}_b)^T \boldsymbol{x}
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+Based on the model, we have
+\begin{equation}
+    \begin{aligned}
+        \frac{\pi_{j}(\boldsymbol{x})}{\pi_J(\boldsymbol{x})}=e^{\alpha_j+\boldsymbol{\beta}_j^T \boldsymbol{x}}
+    \end{aligned}
+    \nonumber
+\end{equation}
+Solving (using that the probabilities sum to $1$) gives
+\begin{equation}
+    \begin{aligned}
+        \pi_{j}(\boldsymbol{x})=\frac{e^{\alpha_j+\boldsymbol{\beta}_j^T \boldsymbol{x}}}{\sum_{h=1}^J e^{\alpha_h+\boldsymbol{\beta}_h^T \boldsymbol{x}}}
+    \end{aligned}
+    \nonumber
+\end{equation}
+recalling that $\alpha_J\equiv0$ and $\boldsymbol{\beta}_J\equiv \boldsymbol{0}$.
+
+Remark: Unlike in the binomial case, $ \pi_{j}(\boldsymbol{x})$ is not necessarily a monotone function of each $X$ variable.
+
+\subsubsection*{Interpretation}
+Suppose there is just one explanatory variable $X$ (quantitative or indicator).
+
+Then we call $\frac{\pi_{j}(x)}{\pi_J(x)}=e^{\alpha_j+\beta_j x}$ \underline{the odds of $j$ relative to $J$}.
+
+Then, $e^{\beta_j}$ is the multiplicative change in this odds when $X$ increases by $1$.
+
+\subsubsection*{Estimation}
+We consider MLEs
+\begin{equation}
+    \begin{aligned}
+        \hat{\alpha}_1,...,\hat{\alpha}_{J-1}, \hat{\boldsymbol{\beta}}_1,...,\hat{\boldsymbol{\beta}}_{J-1}
+    \end{aligned}
+    \nonumber
+\end{equation}
+(when they uniquely exist).\\
+\textbf{Note:} The total number of (scalar) free parameters is $(J-1)(1+p)$, where $\boldsymbol{x}$ has $p$ elements. The (residual) degrees of freedom depends on the data format —-- grouped data with N multinomial observations generally have $(J-1)(N-(1+p))$ degrees of freedom (df).\\
+Substituting the MLEs gives estimated response functions $$\hat{\pi}_j(\boldsymbol{x}),\forall j$$, "fitted values" $$\hat{\pi}_{ij}=\hat{\pi}_j(\boldsymbol{x}_i),\forall i,j$$, and estimated logits, such as $$\ln\left(\frac{\hat{\pi}_{j}(\boldsymbol{x})}{\hat{\pi}_J(\boldsymbol{x})}\right)=\hat{\alpha}_j+\hat{\boldsymbol{\beta}}_j^T\boldsymbol{x}$$
+
+\section{Ordinal Responses}
+Let response $Y$ be ordinal, ungrouped, and represented with codes $1,2,...,J$ in that order.
+
+Note: $P(Y\leq j\mid \boldsymbol{x})=\pi_1(\boldsymbol{x})+\cdots+\pi_j(\boldsymbol{x}),\ j=1,...,J$
+
+\subsection{Proportional Odds Model}
+The \textbf{cumulative logits} are
+\begin{equation}
+    \begin{aligned}
+        \textnormal{logit}\left(P(Y\leq j\mid \boldsymbol{x})\right)=\ln\left(\frac{P(Y\leq j\mid \boldsymbol{x})}{P(Y> j\mid \boldsymbol{x})}\right),\quad j=1,...,J-1
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+\begin{definition}[Proportional Odds Model]
+    \normalfont
+    The \textbf{proportional odds model:}
+    \begin{equation}
+        \begin{aligned}
+            &\textnormal{logit}\left(P(Y\leq j\mid \boldsymbol{x})\right)=\alpha_j+\boldsymbol{\beta}^T \boldsymbol{x},\\
+            &j=1,...,J-1,\quad \alpha_1\leq\alpha_2\leq\cdots\leq\alpha_{J-1}
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    Note:
+    \begin{enumerate}[$\bullet$]
+        \item For each $j$, this is a logistic regression, with \textbf{binary outcome} indicating subset $\{1, . . . , j\}$ versus $\{j + 1, . . . , J\}$.
+        \item $\boldsymbol{\beta}$ does not depend on $j$.
+    \end{enumerate}
+\end{definition}
+The order restriction on the $\alpha_j$ values is induced by the increasing property of logit function. As $0<P(Y\leq j\mid \boldsymbol{x})\leq P(Y\leq j+1\mid \boldsymbol{x})<1$, the logit is increasing $0\leq \textnormal{logit}\left(P(Y\leq j+1\mid \boldsymbol{x})\right)-\textnormal{logit}\left(P(Y\leq j\mid \boldsymbol{x})\right)=\alpha_{j+1}-\alpha_j$.
+
+We use the differenece of $\alpha_j$ to represent the different of cumularive probaility for different $j$, and fixing the $\boldsymbol{\beta}$ for all $j$ to avoid the wrong order.
+
+The probabilities $\pi_j(\boldsymbol{x})$ can be recovered from the cumulative probabilities:
+\begin{equation}
+    \begin{aligned}
+        \pi_j(\boldsymbol{x})=\left\{\begin{matrix}
+            P(Y\leq 1\mid \boldsymbol{x}),&j=1\\
+            P(Y\leq j\mid \boldsymbol{x})-P(Y\leq j-1\mid \boldsymbol{x}),&1<j<J\\
+            1-P(Y\leq J-1\mid \boldsymbol{x}),&j=J
+        \end{matrix}\right.
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+\subsubsection*{Interpretation: Proportional Odds}
+For some $j<J$, consider the cumulative odds ratio
+\begin{equation}
+    \begin{aligned}
+        \frac{\textnormal{odds}(Y\leq j\mid \boldsymbol{x}_1)}{\textnormal{odds}(Y\leq j\mid \boldsymbol{x}_2)}
+    \end{aligned}
+    \nonumber
+\end{equation}
+i.e., the odds ratio for $Y \leq j$ at $\boldsymbol{x}_1$ versus $\boldsymbol{x}_2$.\\
+Its natural logarithm is
 $$
 \begin{aligned}
-\pi(x) & =\mathrm{P}(Y=1 \mid x)=\mathrm{P}\left(Y^*>0 \mid x\right) \\
-& =\mathrm{P}\left(\frac{Y^*-\tilde{\alpha}-\tilde{\beta} x}{\sigma}>\frac{0-\tilde{\alpha}-\tilde{\beta} x}{\sigma} \mid x\right) \\
-& =\mathrm{P}(Z>-\tilde{\alpha} / \sigma-\tilde{\beta} x / \sigma) \quad(Z \text { standard normal) } \\
-& =\mathrm{P}(Z<\tilde{\alpha} / \sigma+\tilde{\beta} x / \sigma) \quad \text { (symmetry) } \\
-& =\Phi(\underbrace{\tilde{\alpha} / \sigma}_\alpha+\underbrace{(\tilde{\beta} / \sigma)}_\beta x)
+& \operatorname{logit}\left(\mathrm{P}\left(Y \leq j \mid \boldsymbol{x}_1\right)\right)-\operatorname{logit}\left(\mathrm{P}\left(Y \leq j \mid \boldsymbol{x}_2\right)\right) \\
+&=\left(\alpha_j+\boldsymbol{\beta}^T \boldsymbol{x}_1\right)-\left(\alpha_j+\boldsymbol{\beta}^T \boldsymbol{x}_2\right) \\
+&=\boldsymbol{\beta}^T\left(\boldsymbol{x}_1-\boldsymbol{x}_2\right)
 \end{aligned}
 $$
-Probit regression estimates $\alpha$ and $\beta$, not $\tilde{\alpha}$ and $\tilde{\beta}$.
+which does not depend on $j$.
 
-Thus, when $\sigma^2 \neq 1, \alpha$ and $\beta$ must be interpreted in standard deviation units.
+When $p = 1$, the log cumulative odds ratio becomes $\beta (x_1-x_2)$, which is proportional to $x_1-x_2$, with the same proportionality constant for all $j$.
 
-Eg: Increasing $x$ by 1
-\begin{center}
-    increases $E\left(Y^*\right)$ by $\tilde{\beta}=\sigma \beta$
-\end{center}
-i.e., by $\beta$ standard deviations.
+If $x_1-x_2=1$, the cumulative odds ratio (for any $j<J$) is $e^\beta$, which should be independent to $j$.
 
-Again, $\tilde{\alpha}, \tilde{\beta}$, and $\sigma^2$ are not identified, so can't be estimated.
+\begin{example}
+    Consider the implications when $X$ is binary and $J = 3$:
+    \begin{center}
+        \begin{tabular}{rccccc}
+        \multicolumn{1}{r}{}&\multicolumn{2}{c}{$Y=1$}&\multicolumn{2}{c}{$Y=2$}&\multicolumn{1}{c}{$Y=3$}\\
+        \cline{2-6}
+        \multicolumn{1}{r|}{$X=1$}&\multicolumn{2}{c|}{$\pi_1(1)$}&\multicolumn{2}{c|}{$\pi_2(1)$}&\multicolumn{1}{c|}{$\pi_3(1)$}\\
+        \cline{2-6}
+        \multicolumn{1}{r|}{$X=0$}&\multicolumn{2}{c|}{$\pi_1(0)$}&\multicolumn{2}{c|}{$\pi_2(0)$}&\multicolumn{1}{c|}{$\pi_3(0)$}\\
+        \cline{2-6}
+        \multicolumn{1}{c}{}&&&&&
+        \end{tabular}
+    \end{center}
+    with rows sum to $1$.\\
+    Under the proportional odds model, we must have
+    \begin{equation}
+        \begin{aligned}
+            e^\beta=\frac{\pi_1(1)(\pi_2(0)+\pi_3(0))}{(\pi_2(1)+\pi_3(1))\pi_1(0)}=\frac{(\pi_1(1)+\pi_2(1))\pi_3(0)}{\pi_3(1)(\pi_1(0)+\pi_2(0))}
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{example}
 
-\subsection{Symmetry Property}
-Logit and probit links have the symmetry property
-$$g(\pi) = -g(1 - \pi)$$
-This means both tails exhibit the same asymptotic behavior.
+\subsubsection*{Checking the Proportional Odds Assumption}
+Can use a test (e.g. LRT) of the fitted model versus a more general model that allows a separate $\boldsymbol{\beta}_j$ for each cumulative logit ($j = 1, . . . , J - 1$).
 
-An implication: If
-$$
-Y_i \sim \operatorname{binomial}\left(n_i, \cdot\right)
-$$
-follows a logistic (or probit) model with parameter $\boldsymbol{\beta}$, then
-$$
-n_i-Y_i
-$$
-follows a logistic (or probit) model with parameter $-\boldsymbol{\beta}$.
-This property is convenient, since the model is equivalent no matter which type of outcome is designated as the "success" and which the "failure."
-However, sometimes an asymmetric model fits the data better.
+(The more general model allows non-parallel curves, leading to possibly invalid probabilities. But it might still fit adequately within the range of the data.)
 
-\section{Complementary Log-Log Model}
-The complementary log-log link is
+\subsubsection*{Model Fitting}
+Usually by maximum likelihood (Fisher scoring or Newton-Raphson).
+
+
+
+\subsection{Latent Variable Formulation}
+Besides proportional odds, what other models are available?
+\begin{definition}[Latent Variable Formulation]
+    \normalfont
+    Suppose $Y$ derives from a latent continuous variable $Y^*$:
+\end{definition}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[scale=0.2]{LVF.png}
+    \caption{The real line is divided into $J$ successive segments (with unknown boundaries), and $Y$ indicates which one contains $Y^*$.}
+    \label{}
+\end{figure}
+\begin{definition}[Latent Variable Formulation, continue]
+    \normalfont
+    So,
+    \begin{center}
+        $Y=j$ if $\alpha_{j-1}<Y^*\leq \alpha_j$
+    \end{center}
+    where the \textbf{cutpoints} (or \textbf{thresholds}) are
+    \begin{equation}
+        \begin{aligned}
+            -\infty=\alpha_0<\alpha_1\leq\cdots\leq\alpha_{J-1}<\alpha_J=\infty
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    The interior cutpoints $\alpha_1, \ldots, \alpha_{J-1}$ are unknown.\\
+    Suppose $Y^*$ satisfies a no-intercept linear regression
+    $$
+    Y^*=\boldsymbol{\beta}^T \boldsymbol{x}+\varepsilon
+    $$
+    where $\varepsilon$ has known c.d.f. $G$ (usually with mean zero), assumed continuous and invertible.\\
+    (Alternatively, we could add an intercept, but then fix one of the cutpoints, e.g., set $\alpha_1=0$.)
+\end{definition}
+Note:
+\begin{enumerate}[$\bullet$]
+    \item In this parameterization, if an element of $\boldsymbol{\beta}$ is positive, its $X$ variable is positively related to $Y$ (all else constant). Conversely, $X$ variable is negatively related to $Y$ if $\boldsymbol{\beta}$ is negative.
+    \item Assuming the latent variables $Y^*$ are independent (conditionally on the given $X$ values), the observations $Y$ are independent.
+\end{enumerate}
+For $j<J$,
 $$
-g(\pi)=\ln (-\ln (1-\pi))
+\begin{aligned}
+\mathrm{P}(Y \leq j \mid \boldsymbol{x}) & =\mathrm{P}\left(Y^* \leq \alpha_j \mid \boldsymbol{x}\right) \\
+& =\mathrm{P}\left(Y^*-\boldsymbol{\beta}^T \boldsymbol{x} \leq \alpha_j-\boldsymbol{\beta}^T \boldsymbol{x} \mid \boldsymbol{x}\right) \\
+& =\mathrm{P}\left(\varepsilon \leq \alpha_j-\boldsymbol{\beta}^T \boldsymbol{x}\right) \\
+& =G\left(\alpha_j-\boldsymbol{\beta}^T \boldsymbol{x}\right)
+\end{aligned}
 $$
-The corresponding "response curve":
+Thus,
 $$
-\pi(\eta)=g^{-1}(\eta)=1-e^{-e^\eta}
+G^{-1}(\mathrm{P}(Y \leq j \mid \boldsymbol{x}))=\alpha_j-\boldsymbol{\beta}^T \boldsymbol{x}
 $$
+(Note sign of $\boldsymbol{\beta}$.)\\
+If $G^{-1}$ is the logit function, the latent model is equivalent to the proportional odds model, except with a different sign for $\boldsymbol{\beta}$.
+
+\textbf{Remark:} $G=\textnormal{logit}^{-1}$ is the c.d.f. of the standard logistic distribution. In general, this kind of model may be called a \textbf{cumulative link model}.
+
+Other Links
+\begin{enumerate}[$\bullet$]
+    \item The \textbf{cumulative probit model} uses $$G=\Phi=\textnormal{c.d.f. of }N(0,1)$$
+    \item The \textbf{proportional hazards} model uses the complementary log-log link:
+    $$G^{-1}(p)=\ln(-\ln(1-p))$$
+\end{enumerate}
+
+
+\chapter{Log-linear Models}
+\section{Log-linear Models for Two-Way Contingency Tables}
+
+\subsection{Independence Model}
+Consider an $I \times J$ table with population cell means $\mu_{ij}$ for $X=i\in\{1,2,...,I\}$, $Y=j\in\{1,2,...,J\}$.
+
+If $X$ and $Y$ are \textnormal{independent}, then the cell means have the structure:
+\begin{equation}
+    \begin{aligned}
+        \mu_{ij}=n\pi_{i+}\pi_{+j}=\mu\alpha_i\beta_j
+    \end{aligned}
+    \nonumber
+\end{equation}
+\begin{definition}[Independence Model]
+    Taking natural logs yields a \textbf{log-linear model}:
+    \begin{equation}
+        \begin{aligned}
+            \log(\mu_{ij})&=\log(\mu)+\log(\alpha_i)+\log(\beta_j)\\
+            &=\lambda+\lambda_i^X+\lambda_j^Y
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    \begin{enumerate}[$\bullet$]
+        \item The independence model is equivalent to an \textbf{additive log-linear model} with row effects $\lambda_i^X$ and column effects $\lambda_j^Y$.
+        \item As usual, we impose constraints to make the parameters identifiable, e.g., reference category constraints of the form
+        \begin{equation}
+            \begin{aligned}
+                \lambda_I^X=0=\lambda_J^Y
+            \end{aligned}
+            \nonumber
+        \end{equation}
+    \end{enumerate}
+\end{definition}
+Consider an $I \times 2$ table:
+$$
+\begin{aligned}
+\operatorname{logit} & {[P(Y=1 \mid X=i)]=\log \left[\frac{P(Y=1 \mid X=i)}{P(Y=2 \mid X=i)}\right] } \\
+& =\log \left[\frac{\mu_{i 1} /\left(\mu_{i 1}+\mu_{i 2}\right)}{\mu_{i 2} /\left(\mu_{i 1}+\mu_{i 2}\right)}\right] \\
+& =\log \left(\mu_{i 1}\right)-\log \left(\mu_{i 2}\right) \\
+& =\left(\lambda+\lambda_i^X+\lambda_1^Y\right)-\left(\lambda+\lambda_i^X+\lambda_2^Y\right)=\lambda_1^Y-\lambda_2^Y
+\end{aligned}
+$$
+For this model we see that the conditional logit is constant across the values of $X$, another way to see that \textbf{$Y$ is independent of $X$ in the additive log-linear model}.
+
+Similarly, consider a baseline logit model for an $I \times J$ table:
+\begin{equation}
+    \begin{aligned}
+        \log \left[\frac{P(Y=j \mid X=i)}{P(Y=J \mid X=i)}\right]
+        & =\log \left[\frac{\mu_{i j} /\sum_{k=1}^J\mu_{i k}}{\mu_{iJ} /\sum_{k=1}^J\mu_{ik}}\right]  =\log \left(\mu_{i j}\right)-\log \left(\mu_{i J}\right) \\
+        & =\left(\lambda+\lambda_i^X+\lambda_j^Y\right)-\left(\lambda+\lambda_i^X+\lambda_J^Y\right)=\lambda_j^Y-\lambda_J^Y
+    \end{aligned}
+    \nonumber
+\end{equation}
+Again, we see that the logit parameters relate to the log-linear model parameters, giving an expression \textbf{independent of the value of $X$ in the additive case}.
+
+\subsection{Dependence Model}
+\begin{definition}[Dependence Model]
+    To build \textbf{dependence} into the model we need to include interaction terms:
+    \begin{equation}
+        \begin{aligned}
+            \log(\mu_{ij})
+            &=\lambda+\lambda_i^X+\lambda_j^Y+\lambda_{ij}^{XY}
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    imposing additional estimability constraints such as
+    \begin{equation}
+        \begin{aligned}
+            \lambda_{Ij}^{XY}=\lambda_{iJ}^{XY}=0
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    \begin{enumerate}[$\bullet$]
+        \item The model above is the \textbf{saturated model}.
+        \item The independence hypothesis is equivalent to the hypothesis $$H_{\textnormal{Indep}}:\lambda_{ij}^{XY}=0,\quad \forall i,j$$
+    \end{enumerate}
+\end{definition}
+
+\textbf{Connection with odds ratios:}
+
+Consider the $2 \times 2$ case:
+$$
+\begin{aligned}
+\log (\theta) & =\log \left(\frac{\mu_{11} / \mu_{12}}{\mu_{21} / \mu_{22}}\right) \\
+& =\log \left(\mu_{11}\right)-\log \left(\mu_{12}\right)-\log \left(\mu_{21}\right)+\log \left(\mu_{22}\right) \\
+& =\lambda_{11}^{X Y}-\lambda_{12}^{X Y}-\lambda_{21}^{X Y}+\lambda_{22}^{X Y}
+\end{aligned}
+$$
+because all the other terms cancel. Therefore,
+$$
+\theta=\exp \left(\lambda_{11}^{X Y}-\lambda_{12}^{X Y}-\lambda_{21}^{X Y}+\lambda_{22}^{X Y}\right),
+$$
+and $\theta=1$ if the interaction terms are all $0$.
+
+\textbf{Connection to Multinomial Cell Probabilities:}
+
+We can go from expected cell counts $\mu_{i j}$ to multinomial cell probabilities $\pi_{i j}$ by dividing by the total:
+$$
+\begin{aligned}
+\pi_{i j} & =\frac{\mu_{i j}}{\sum_{a=1}^I \sum_{b=1}^J \mu_{a b}} \\
+& =\frac{\exp \left(\lambda+\lambda_i^X+\lambda_j^Y+\lambda_{i j}^{X Y}\right)}{\sum_{a=1}^I \sum_{b=1}^J \exp \left(\lambda+\lambda_a^X+\lambda_b^Y+\lambda_{a b}^{X Y}\right)} \\
+& =\frac{\exp \left(\lambda_i^X+\lambda_j^Y+\lambda_{i j}^{X Y}\right)}{\sum_{a=1}^I \sum_{b=1}^J \exp \left(\lambda_a^X+\lambda_b^Y+\lambda_{a b}^{X Y}\right)}
+\end{aligned}
+$$
+The constant multiplier $e^\lambda$, which is related to the overall total $n$, cancels out of the ratio.
+
+\subsection{Log-Likelihood for the Model}
+Suppose the observed cell counts for $N_{ij}$ are $n_{ij}$. We consider the cell counts to be observed values of independent random variables $N_{ij} \sim \textnormal{Poisson}(\mu_{ij})$.
+
+The likelihood is
+\begin{equation}
+    \begin{aligned}
+        l(\boldsymbol{\mu})=\prod_{ij}\frac{e^{-\mu_{ij}}\mu_{ij}^{n_{ij}}}{n_{ij}!}
+    \end{aligned}
+    \nonumber
+\end{equation}
+with log-likelihood kernel
+\begin{equation}
+    \begin{aligned}
+        L(\boldsymbol{\mu})&=\sum_{ij}n_{ij}\log(\mu_{ij})-\sum_{ij}\mu_{ij}\\
+        &=\sum_{ij}n_{ij}\left(\lambda+\lambda_i^X+\lambda_j^Y+\lambda_{ij}^{XY}\right)-\sum_{ij}e^{\lambda+\lambda_i^X+\lambda_j^Y+\lambda_{ij}^{XY}}\\
+        &=n\lambda + \sum_{i}n_{i+}\lambda_i^X+\sum_j n_{+j}\lambda_j^Y + \sum_{ij}n_{ij}\lambda_{ij}^{XY}-\sum_{ij}e^{\lambda+\lambda_i^X+\lambda_j^Y+\lambda_{ij}^{XY}}
+    \end{aligned}
+    \nonumber
+\end{equation}
+\textbf{Under independence hypothesis:}
+\begin{enumerate}[$\bullet$]
+    \item Under the \textbf{independence hypothesis} the log-likelihood simplifies to
+    \begin{equation}
+        \begin{aligned}
+            L(\boldsymbol{\mu})=n\lambda + \sum_{i}n_{i+}\lambda_i^X+\sum_j n_{+j}\lambda_j^Y -\sum_{ij}e^{\lambda+\lambda_i^X+\lambda_j^Y}
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    so the marginal counts $n_{i+}$ and $n_{+j}$ are sufficient statistics and the MLE can be computed from them.
+    \item In this case, it can be shown that the MLE gives the familiar expression for the expected cell counts
+    \begin{equation}
+        \begin{aligned}
+            \hat{\mu}_{ij}=e^{\hat{\lambda}+\hat{\lambda}_i^X+\hat{\lambda}_j^Y}=\frac{n_{i+}n_{+j}}{n}
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    \item The specific expressions for the terms $\hat{\lambda},\hat{\lambda}_i^X,\hat{\lambda}_j^Y$ also depend on the constraints imposed.
+    \item Under the saturated model the cell means $\mu_{ij}$ are unconstrained, so each cell's contribution to the log-likelihood can be maximized separately. In this case we have
+    \begin{equation}
+        \begin{aligned}
+            \frac{\partial L(\boldsymbol{\mu})}{\partial \mu_{ij}}=\frac{\partial}{\partial \mu_{ij}}\left(n_{ij}\log(\mu_{ij})-\mu_{ij}\right)=\frac{n_{ij}}{\mu_{ij}}-1
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    Equating to zero yields $$\hat{\mu}^{\textnormal{sat}}_{ij}=n_{ij}$$
+    \item The saturated model simply reproduces the cell counts. The specific forms of the estimates $\hat{\lambda},\hat{\lambda}_i^X,\hat{\lambda}_j^Y$ can be worked out using these equations and the constraints.
+\end{enumerate}
+
+\subsection{Ordinal Association Model}
+If $X$ and $Y$ are ordinal categorical variables, we may consider using scores $u_1, u_2, \ldots, u_I$ for $X$ and $v_1, v_2, \ldots, v_J$ for $Y$ to specify an ordinal association model:
+$$
+\log \left(\mu_{i j}\right)=\lambda+\lambda_i^X+\lambda_j^Y+u_i * v_j * \beta
+$$
+where $\beta$ is the ordinal association parameter.
+\begin{enumerate}[$\bullet$]
+    \item We still treat the main effects as factor variables to match the margins of the table.
+    \item With this model the null hypothesis of independence is
+    $$
+    H_{\text {Indep }}: \beta=0
+    $$
+    \item To test the fit of this model, compare its deviance to that of the saturated model to obtain the $G^2$ goodness of fit test.
+\end{enumerate}
+
+\section{Log-linear Models for Three-Way Contingency Tables}
+\subsection{Dependence in Three-Way Tables}
+When three or more variables are cross-classified multiple kinds of \textbf{dependence} and \textbf{conditional independence} can arise. We consider three-way tables to keep things from getting too complicated; the essential ideas extend to multi-way tables in general. The \textbf{log-linear model} approach allows us to model a wide range of dependencies between variables with streamlined notation unified GLM-based computation.
+\begin{enumerate}[$\bullet$]
+    \item Consider $I \times J \times K$ contingency table for the categorical response variables $X$, $Y$, and $Z$.
+    \item We can envision the data as a set of $K$ different $I \times J$ tables for $XY$, one for each level of $Z$, or as $I$ different $J\times K$ tables, or as $J$ different $I \times K$ tables.
+    \item Some types of independence allow explicit calculation of expected tables based on partial marginal tables, e.g., \textbf{mutual independence models} and certain \textbf{conditional independence models}.
+    \item Other more complex types of partial independence may have no such explicit formulas, yet we can easily compute the expected cell counts and test \textbf{goodness of fit} using GLM software.
+\end{enumerate}
+
+\subsection{Sampling Models for Cell Counts}
+Let $N_{i j k}$ denote the random cell count for the triplet
+$$
+(X=i, Y=j, Z=k)
+$$
+for $i=1,2, \ldots, I, j=1,2, \ldots, J$, and $k=1,2, \ldots, K$.\\
+We consider two, closely related models.
+\begin{enumerate}[(1)]
+    \item \textbf{Independent Poisson:} $N_{i j k}$ independently distributed as Poisson $\left(\mu_{i j k}\right)$; the counts in the table have no fixed totals, and the overall total $N$ for the table is random.
+    \item \textbf{Multinomial:} $N_{i j k}$ jointly distributed as $\operatorname{Multinomial}(n, \boldsymbol{\pi})$, where $n$ is the fixed total for the table, and $\boldsymbol{\pi}$ is the vector of all $I J K$ cell probabilities $\pi_{i j k}$ in some particular order.
+\end{enumerate}
+\textbf{Connection between Poisson and Multinomial:} Conditional on the total $N=n$, independent Poisson counts with mean vector $\boldsymbol{\mu}$ have a joint multinomial distribution with probability vector
+$$
+\boldsymbol{\pi}=\frac{\boldsymbol{\mu}}{\mu_{+}} \quad \text { where } \quad \mu_{+}=\mathbf{1}^{\boldsymbol{T}} \boldsymbol{\mu}=\sum_i \sum_j \sum_k \mu_{i j k}
+$$
+\begin{enumerate}[$\bullet$]
+    \item For ML estimation and inference on $\boldsymbol{\pi}$, it is important to note that the independent Poisson model and conditional multinomial model have \underline{the same log-likelihood kernel} for $\boldsymbol{\pi}$:
+    $$
+    \begin{array}{r}
+    L_{\text {Pois }}\left(\boldsymbol{\pi}, \mu_{+}\right)=\sum_i \sum_j \sum_k n_{i j k} \log \left(\pi_{i j k}\right)+n \log \left(\mu_{+}\right)-\mu_{+} \\
+    =L_{\text {Multinom }}(\boldsymbol{\pi})+n \log \left(\mu_{+}\right)-\mu_{+}
+    \end{array}
+    $$
+\end{enumerate}
+\textbf{Computational implications:}
+\begin{enumerate}[$\bullet$]
+    \item For the log-linear models we consider, the independent Poisson model places no restriction on $\mu_+$, therefore its MLE is $\hat{\mu}_+ = n$;
+    \item Due to the common kernel, the MLE $\hat{\boldsymbol{\pi}}$ will be the same for the independent Poisson model as for the conditional multinomial model.
+    \item A practical consequence is that we can use Poisson regression to fit the model, even if the conditional multinomial model is appropriate, because it gives the same estimates and inferences for $\boldsymbol{\pi}$.
+\end{enumerate}
+
+\subsection{Types of Dependence}
+Consider several independence conditions expressed using the cell probabilities
+$$
+\pi_{i j k}=P(X=i, Y=j, Z=k)
+$$
+and log-linear models
+$$
+\log \left(\mu_{i j k}\right)=\boldsymbol{X} \boldsymbol{\beta}
+$$
+Subscript + indicates summing probabilities over that index.
+\begin{definition}[Mutual Independence]
+    $X \perp Y \perp Z$ or $(X, Y, Z)$\\
+    Cell probability: $\pi_{i j k}=\pi_{i++} \pi_{+j+} \pi_{++k}$\\
+    Cell mean: $\log \left(\mu_{i j k}\right)=\lambda+\lambda_i^X+\lambda_j^Y+\lambda_k^Z$
+\end{definition}
+
+\begin{definition}[One variable jointly independent of the other two]
+    $Y \perp (X,Z)$ or $(XZ, Y)$\\
+    Cell probability: $\pi_{i j k}=\pi_{i+k} \pi_{+j+}$\\
+    Cell mean: $\log \left(\mu_{i j k}\right)=\lambda+\lambda_i^X+\lambda_j^Y+\lambda_k^Z+\lambda_{ik}^{XZ}$
+\end{definition}
+
+\begin{definition}[Conditional independence]
+    $X \perp Y\mid Z$ or $(XZ,YZ)$\\
+    Cell probability: $\pi_{i j k}=\pi_{i+\mid k} \pi_{+j\mid k}=\frac{\pi_{i+k} \pi_{+jk}}{\pi_{++k}}$\\
+    Cell mean: $\log \left(\mu_{i j k}\right)=\lambda+\lambda_i^X+\lambda_j^Y+\lambda_k^Z+\lambda_{ik}^{XZ}+\lambda_{jk}^{YZ}$
+\end{definition}
+
+\begin{definition}[Homogeneous Association]
+    All pairs dependent or $(XY, XZ, YZ)$\\
+    Cell probability: No expression\\
+    Cell mean: $\log(\mu_{ijk})=\lambda+\lambda_i^X+\lambda_j^Y+\lambda_k^Z+\lambda_{ij}^{XY}+\lambda_{ik}^{XZ}+\lambda_{jk}^{YZ}$
+\end{definition}
+Why \textbf{homogeneous} association? Consider local conditional log-odds ratios for $X$ and $Y$ given $Z$:
+\begin{equation}
+    \begin{aligned}
+        \log\left(\theta_{ij(k)}\right)=\log\left(\frac{\mu_{ijk}\mu_{i+1,j+1,k}}{\mu_{i,j+1,k}\mu_{i+1,j,k}}\right)=\lambda_{ij}^{XY}+\lambda_{i+1,j+1}^{XY}-\lambda_{i,j+1}^{XY}-\lambda_{i+1,j}^{XY}
+    \end{aligned}
+    \nonumber
+\end{equation}
+This does not depend on $Z$, so the conditional odds ratios are equal:
+\begin{equation}
+    \begin{aligned}
+        \theta_{ij(1)}=\theta_{ij(2)}=\cdots \theta_{ij(K)}
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+\begin{definition}[Three-way Interaction]
+    Three-way dependence ($XYZ$)\\
+    Cell probability: $\pi_{ijk}$\\
+    Cell mean: $\log(\mu_{ijk})=\lambda+\lambda_i^X+\lambda_j^Y+\lambda_k^Z+\lambda_{ij}^{XY}+\lambda_{ik}^{XZ}+\lambda_{jk}^{YZ}+\lambda_{ijk}^{XYZ}$
+\end{definition}
+This is the \textbf{saturated} model. Conditional odds ratios for $X$ and $Y$ depend on $Z$.
+
+\subsection{Summary of Dependence Models}
+\begin{enumerate}[$\bullet$]
+    \item All of the log-linear model parameterizations require estimability constraints, e.g. setting the first or last category of a variable as the reference category by zeroing out the corresponding $\lambda$ terms.
+    \item Different sub-models can be compared using likelihood ratio $G^2$ statistics or AIC and the simplest adequate model selected.
+    \item Below is a hierarchical list of log-linear models for a three way contingency tables.
+\end{enumerate}
+\begin{center}\begin{figure}[htbp]
+    \centering
+    \includegraphics[scale=0.3]{logliner.png}
+    \caption{Log-linear Model}
+    \label{}
+\end{figure}\end{center}
+
+\section{Relation with Logit Model}
+Consider the homogeneous association model $(XY, XZ, YZ)$ :
+$$
+\log \left(\mu_{i j k}\right)=\lambda+\lambda_i^X+\lambda_j^Y+\lambda_k^Z+\lambda_{i j}^{X Y}+\lambda_{i k}^{X Z}+\lambda_{j k}^{Y Z}
+$$
+with the constraints
+$$
+\begin{aligned}
+0 & =\lambda_I^X=\lambda_J^Y=\lambda_K^Z \\
+& =\lambda_{I j}^{X Y}=\lambda_{i J}^{X Y}=\lambda_{I k}^{X Z}=\lambda_{i K}^{X Z}=\lambda_{J k}^{Y Z}=\lambda_{j K}^{Y Z}
+\end{aligned}
+$$
+The baseline logits for dependence of $Y$ on $X$ and $Z$ are given by
+$$
+\begin{aligned}
+\log \left(\frac{\mu_{i j k}}{\mu_{i J k}}\right) & =\left(\lambda_j^Y-\lambda_J^Y\right)+\left(\lambda_{i j}^{X Y}-\lambda_{i J}^{X Y}\right)+\left(\lambda_{j k}^{Y Z}-\lambda_{J k}^{Y Z}\right) \\
+& =\lambda_j^Y+\lambda_{i j}^{X Y}+\lambda_{j k}^{Y Z} \\
+& =: \alpha_j+\beta_{j i}^X+\beta_{j k}^Z
+\end{aligned}
+$$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

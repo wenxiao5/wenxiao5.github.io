@@ -2596,7 +2596,37 @@ This is the \textbf{saturated} model. Conditional odds ratios for $X$ and $Y$ de
     \label{}
 \end{figure}\end{center}
 
-
+\section{Relation with Logit Model}
+Consider the homogeneous association model $(XY, XZ, YZ)$:
+$$
+\log \left(\mu_{i j k}\right)=\lambda+\lambda_i^X+\lambda_j^Y+\lambda_k^Z+\lambda_{i j}^{X Y}+\lambda_{i k}^{X Z}+\lambda_{j k}^{Y Z}
+$$
+with the constraints
+$$
+\begin{aligned}
+0 & =\lambda_I^X=\lambda_J^Y=\lambda_K^Z \\
+& =\lambda_{I j}^{X Y}=\lambda_{i J}^{X Y}=\lambda_{I k}^{X Z}=\lambda_{i K}^{X Z}=\lambda_{J k}^{Y Z}=\lambda_{j K}^{Y Z}
+\end{aligned}
+$$
+The baseline logits for dependence of $Y$ on $X$ and $Z$ are given by
+$$
+\begin{aligned}
+\log \left(\frac{\mu_{i j k}}{\mu_{i J k}}\right) & =\left(\lambda_j^Y-\lambda_J^Y\right)+\left(\lambda_{i j}^{X Y}-\lambda_{i J}^{X Y}\right)+\left(\lambda_{j k}^{Y Z}-\lambda_{J k}^{Y Z}\right) \\
+& =\lambda_j^Y+\lambda_{i j}^{X Y}+\lambda_{j k}^{Y Z} \\
+& =: \alpha_j+\beta_{j i}^X+\beta_{j k}^Z
+\end{aligned}
+$$
+\begin{enumerate}[$\bullet$]
+    \item In the special case of $J = 2$, where $Y$ is binary, we obtain the additive logistic regression model:
+    \begin{equation}
+        \begin{aligned}
+            \log \left(\frac{\mu_{i 1 k}}{\mu_{i 2 k}}\right)&=\lambda_1^Y+\lambda_{i1}^{XY}+\lambda_{1k}^{YZ}\\
+            &=:\alpha+\beta_i^X+\beta_k^Z
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    \item This is the homogeneous association logistic regression model that we studied earlier.
+\end{enumerate}
 
 
 
