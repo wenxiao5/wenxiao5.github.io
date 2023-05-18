@@ -70,9 +70,9 @@ pre, tt {
 }
 
 a, a > tt {
-	color: #063d5c;
-	text-decoration-color:#012e01;
-	font-weight: normal;
+	color: #032437;
+	text-decoration: none;
+	font-weight: bold;
 }
 
 a:hover {
