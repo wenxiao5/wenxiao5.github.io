@@ -67,19 +67,6 @@ body {
 #layout-f div {
     flex: 1;
 }
-#layout-f .description {
-    margin-top: 5px;
-}
-.motto {
-    font-family: "STKaiti", "SimSun", serif;
-    font-size: 24px;
-    color: #333;
-    margin-top: 20px;
-    padding: 10px;
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 5px;
-    text-align: center;
-  }
 
 #layout-menu a {
 	line-height: 1.5em;

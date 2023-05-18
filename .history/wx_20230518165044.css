@@ -71,14 +71,11 @@ body {
     margin-top: 5px;
 }
 .motto {
-    font-family: "STKaiti", "SimSun", serif;
     font-size: 24px;
-    color: #333;
-    margin-top: 20px;
-    padding: 10px;
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 5px;
-    text-align: center;
+    font-style: italic;
+    color: #ff7f50;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-top: 10px;
   }
 
 #layout-menu a {

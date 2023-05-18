@@ -53,33 +53,10 @@ body {
     text-align: left;
     vertical-align: top;
 }
-
-#layout-f {
-	display: flex;
-    align-items: flex-start;
-    background-color: transparent;
+#layout-content img {
+    max-height: calc(100vh - 80px);
+    margin-right: 10px;
 }
-#layout-f img {
-    max-width: 40%;
-    height: auto;
-    margin-right: 0px;
-}
-#layout-f div {
-    flex: 1;
-}
-#layout-f .description {
-    margin-top: 5px;
-}
-.motto {
-    font-family: "STKaiti", "SimSun", serif;
-    font-size: 24px;
-    color: #333;
-    margin-top: 20px;
-    padding: 10px;
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 5px;
-    text-align: center;
-  }
 
 #layout-menu a {
 	line-height: 1.5em;
