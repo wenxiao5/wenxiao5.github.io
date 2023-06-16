@@ -84,23 +84,23 @@ body {
 	z-index: 1;
 	top: 20%;
 	left: 5%;
-	opacity: 0.8;
-	transform: translate(-40%, 20%) scale(1.2);
+	opacity: 0.6;
+	transform: translate(-40%, 20%) scale(1.1);
 }
 
 #bg3 {
 	z-index: 1;
 	top: 10%;
 	left: 4%;
-	opacity: 0.8;
+	opacity: 0.9;
 	transform: translate(-20%, 20%) scale(1.4);
 }
 #bg4 {
 	z-index: 1;
 	top: 10%;
 	right: 10%;
-	opacity: 0.8;
-	transform: translate(10%, 5%) scale(1.1);
+	opacity: 0.9;
+	transform: translate(10%, -5%) scale(1.2);
 }
 
 #layout-f {
