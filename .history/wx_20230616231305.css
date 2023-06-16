@@ -85,8 +85,8 @@ body {
 	top: 20%;
 	left: 5%;
 	opacity: 0.9;
-	transform: translate(-40%, 50%) scale(1.6);
-	border-radius: 200px;
+	transform: translate(-40%, 20%) scale(1.6);
+	border-radius: 100px;
 }
 
 #bg3 {
@@ -103,7 +103,6 @@ body {
 	right: 10%;
 	opacity: 0.9;
 	transform: translate(10%, 15%) scale(1.1);
-	border-radius: 5px;
 }
 
 #layout-f {

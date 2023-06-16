@@ -85,7 +85,7 @@ body {
 	top: 20%;
 	left: 5%;
 	opacity: 0.9;
-	transform: translate(-40%, 50%) scale(1.6);
+	transform: translate(-40%, 20%) scale(1.6);
 	border-radius: 200px;
 }
 
@@ -103,7 +103,7 @@ body {
 	right: 10%;
 	opacity: 0.9;
 	transform: translate(10%, 15%) scale(1.1);
-	border-radius: 5px;
+	border-radius: 40px;
 }
 
 #layout-f {

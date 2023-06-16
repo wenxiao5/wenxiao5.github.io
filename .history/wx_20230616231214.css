@@ -85,17 +85,15 @@ body {
 	top: 20%;
 	left: 5%;
 	opacity: 0.9;
-	transform: translate(-40%, 50%) scale(1.6);
-	border-radius: 200px;
+	transform: translate(-40%, 20%) scale(1.6);
 }
 
 #bg3 {
 	z-index: 1;
 	top: 10%;
 	left: 4%;
-	opacity: 0.9;
+	opacity: 0.7;
 	transform: translate(-20%, 30%) scale(1.5);
-	border-radius: 5px;
 }
 #bg4 {
 	z-index: 1;
@@ -103,7 +101,6 @@ body {
 	right: 10%;
 	opacity: 0.9;
 	transform: translate(10%, 15%) scale(1.1);
-	border-radius: 5px;
 }
 
 #layout-f {
