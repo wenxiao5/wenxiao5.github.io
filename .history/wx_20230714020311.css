@@ -11,9 +11,9 @@ body {
   font-size: 110%;
   font-family: "Times New Roman", Times, serif;
   color: rgb(41, 5, 77);
-  background-color: rgb(251, 251, 251);
+  background-color: rgb(246, 241, 241);
   text-align:left; /* for IE */
-  background-image:url('picture/BG9.jpeg');
+  background-image:url('picture/BG.JPEG');
   background-repeat:no-repeat;
   background-size:cover;
   background-attachment:fixed;
@@ -59,7 +59,7 @@ body {
 	padding-left: 2em;
 	padding-right: 2em;
     border: none;
-    background: rgba(226, 227, 226, 0.7);
+    background: rgb(246, 241, 241, 0.90);
     text-align: left;
     vertical-align: top;
 }
@@ -213,16 +213,15 @@ strong {
 
 h1, h2, h3 {
 	color: #011f22;
-	margin-top: 1%;
-	margin-bottom: 1%;
-	padding-bottom: 0%;
+	margin-top: 0;
+	margin-bottom: 0.3em;
+	padding-bottom: 0.2em;
 	line-height: 1.0;
-	padding-top: 0.1em;
+	padding-top: 0.5em;
 	border-bottom: 1px solid #aaaaaa;
 	line-height: 1.42857;
     color: #404040;
     background-color: #fff;
-	text-align: center;
 }
 
 h1 {
@@ -243,9 +242,9 @@ h1 img {
 
 h2 {
 	padding-top: 0.8em;
-	font-size: 140%;
+	font-size: 125%;
 	color: transparent;
-	background: linear-gradient(to right, #02957f, #0a4a58, #0D0D0D);
+	background: linear-gradient(to right, #02957f, #2e0000, #0D0D0D);
 	-webkit-text-fill-color: transparent;
 	background-clip: text;
 	-webkit-background-clip: text;

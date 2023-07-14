@@ -213,11 +213,11 @@ strong {
 
 h1, h2, h3 {
 	color: #011f22;
-	margin-top: 1%;
+	margin-top: 5%;
 	margin-bottom: 1%;
 	padding-bottom: 0%;
 	line-height: 1.0;
-	padding-top: 0.1em;
+	padding-top: 0.5em;
 	border-bottom: 1px solid #aaaaaa;
 	line-height: 1.42857;
     color: #404040;
@@ -243,9 +243,9 @@ h1 img {
 
 h2 {
 	padding-top: 0.8em;
-	font-size: 140%;
+	font-size: 120%;
 	color: transparent;
-	background: linear-gradient(to right, #02957f, #0a4a58, #0D0D0D);
+	background: linear-gradient(to right, #02957f, #2e0000, #0D0D0D);
 	-webkit-text-fill-color: transparent;
 	background-clip: text;
 	-webkit-background-clip: text;
