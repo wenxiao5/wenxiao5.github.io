@@ -10,8 +10,8 @@
 \DeclareMathOperator{\col}{col}
 \title{\textbf{Linear Algebra}}
 \author{Wenxiao Yang}
-\institute{Department of Mathematics, University of Illinois at Urbana-Champaign}
-\date{2022}
+\institute{University of Illinois at Urbana-Champaign; University of California Berkeley}
+\date{2023 (Last Updated)}
 \setcounter{tocdepth}{2}
 \cover{cover.jpg}
 \extrainfo{All models are wrong, but some are useful.}
@@ -31,30 +31,68 @@
 \mainmatter
 
 
-\chapter{Vector Space}
-\section{Vector Space $(V,+,\times)$ (over a field $\mathbb{F}$)}
-A \underline{vector space} over a field $\mathbb{F}$ is a
-set $V$ w/ an operation \underline{addition} $+ : V \times V \rightarrow V$ and
-an operation \underline{scalar multiplication} $\mathbb{F} \times V \rightarrow V$\\
-(1) Addition is associative $\&$ commutative\\
-(2) $\exists 0\in V$, additive identity: $0 + v = v \forall v \in V$\\
-(3) $1v = v \forall v \in V$(where $1 \in \mathbb{F}$ is multi. id. in $\mathbb{F}$ )\\
-(4) $\forall \alpha,\beta\in\mathbb{F},\ v\in V,\ \alpha(\beta v)=(\alpha\beta)v$\\
-(5) $\forall v\in V,\ (-1)v=-v$ we have $v+(-v)=0$\\
-(6) $\forall \alpha\in\mathbb{F},\ v,u\in V,\ \alpha(v+u)=\alpha v+\alpha u$\\
-(7) $\forall \alpha,\beta\in\mathbb{F},\ v\in V,\ (\alpha+\beta)v=\alpha v+\beta v$
+\chapter{Field and Vector Space}
+\section{Field $(\mathbb{F},+,\cdot)$}
+\subsection{Definition of Field \small{(@ Lec 02 of ECON 204)}}
+\begin{definition}[Field]
+    \normalfont
+    A \textbf{field} $\mathcal{F}=(\mathbb{F},+,\cdot)$ is a 3-tuple consisting of a set $\mathbb{F}$ and two binary operations $+,\cdot: \mathbb{F}\times \mathbb{F} \rightarrow \mathbb{F}$ such that
+    \begin{enumerate}
+        \item $+$ is associative, commutative.
+        \item Exists (unique) additive identity and (unique) additive inverse.
+        \item $\cdot$ is associative, commutative.
+        \item Exists (unique) multiplicative identity and (unique) multiplicative inverse.
+        \item Distributivity of multiplication over addition.
+    \end{enumerate}
+\end{definition}
 
-\section{A field is a vector space over its subfield}
-\begin{example}
-$\mathbb{K}\subset\mathbb{F}$ is a subfield of a field $\mathbb{F}$. Then $\mathbb{F}$ is a vector space over $\mathbb{K}$. (Since $\mathbb{F}\subset \mathbb{F}[x]$, then $\mathbb{F}[x]$ is a vector space over $\mathbb{F}$.)
+\begin{example}[ of Field]
+    \begin{enumerate}
+        \item $\mathbb{R}$, $\mathbb{C}$, $\mathbb{Q}$ are field;
+        \item $\mathbb{N}$, $\mathbb{Z}$ are not field;
+        \item $\mathbb{Q}(\sqrt{2})=\{q+r\sqrt{2}: q,r\in \mathbb{Q}\}$ is the smallest filed containing $\mathbb{Q}\cup \sqrt{2}$.
+    \end{enumerate}
 \end{example}
-\section{ Vector subspace}
-Suppose that $V$ is a vector space over $\mathbb{F}$. A \underline{vector subspace} or just \underline{subspace} is a nonempty subset $W\subset V$ closed under addition and scalar multiplication. i.e. $v+w\in W,\ av\in W,\ \forall v,w\in W,\ a\in \mathbb{F}$.\\
+
+\section{Vector Space}
+\subsection{Definition of Vector Space \small{(@ Lec 02 of ECON 204)}}
+\begin{definition}[Vector Space]
+    \normalfont
+    A \underline{vector space} over a field $\mathbb{F}$, $(V, \mathbb{F}, +,\times)$, is a set $V$ w/ an operation \underline{addition} $+ : V \times V \rightarrow V$ and an operation \underline{scalar multiplication} $\mathbb{F} \times V \rightarrow V$
+    \begin{enumerate}
+        \item $+$ is associative, commutative.
+        \item Exists (unique) additive identity and (unique) additive inverse.
+        \item $\cdot$ is associative (there is no need to consider commutativity).
+        \item Exists (unique) multiplicative identity (there is no need to consider inverse).
+        \item Distributivity of scalar multiplication over vector addition: $\forall \alpha\in\mathbb{F},\ v,u\in V,\ \alpha(v+u)=\alpha v+\alpha u$
+        \item Distributivity of scalar multiplication over scalar addition: $\forall \alpha,\beta\in\mathbb{F},\ v\in V,\ (\alpha+\beta)v=\alpha v+\beta v$
+    \end{enumerate}
+\end{definition}
+We often say “$V$ is a vector space over $\mathbb{F}$”.
+
+\begin{example}
+    \begin{enumerate}
+        \item $\mathbb{R}^n$ is a vector space over $\mathbb{R}$, for any $n\in \mathbb{N}$.
+        \item $\mathbb{Q}(\sqrt{2})$ is a vector space over $\mathbb{Q}$. (It is $\mathbb{Q}^2$, using $(q,r)$ versus $q+r\sqrt{2}$).
+        \item $\mathbb{Q}(\sqrt[3]{2})$ is a vector space over $\mathbb{Q}$. (It is $\mathbb{Q}^3$, using $(q,r,v)$ versus $q+r 2^\frac{2}{3}+v2^\frac{1}{3}$).
+        \item $C([0,1])$, the space of all continuous real-valued functions on $[0,1]$, is a vector space over $\mathbb{R}$.
+    \end{enumerate}
+\end{example}
+
+\subsection{Theorem: A field is a vector space over its subfield}
+\begin{theorem}
+    $\mathbb{K}\subset\mathbb{F}$ is a subfield of a field $\mathbb{F}$. Then $\mathbb{F}$ is a vector space over $\mathbb{K}$.
+\end{theorem}
+\begin{example}
+    Since $\mathbb{F}\subset \mathbb{F}[x]$, then $\mathbb{F}[x]$ is a vector space over $\mathbb{F}$.
+\end{example}
+\subsection{Vector Subspace}
+Suppose that $V$ is a vector space over $\mathbb{F}$. A \underline{vector subspace} or just \underline{subspace} is a nonempty subset $W\subset V$ closed under addition and scalar multiplication. i.e. $v+w\in W,\ av\in W,\ \forall v,w\in W,\ a\in \mathbb{F}$.
 \begin{example}
 $\mathbb{K}\subset \mathbb{L}\subset \mathbb{F}$, then $\mathbb{L}$ is a subspace of $\mathbb{F}$ over $\mathbb{K}$.
 \end{example}
-\section{Linear independent, Linear combination}
-\section{span V, basis, dimension}
+\subsection{Linear independent, Linear combination}
+\subsection{span V, basis, dimension}
 A set of elements $v_1,...,v_n\in V$ is said to \textbf{span} $V$ if every vector $v\in V$ can be expressed as a linear combination of $v_1,...,v_n$. If $v_1,...,v_n$ spans and is linearly independent, then we call the set a \textbf{\textit{basis}} for $V$.
 \begin{proposition}[Proposition 2.4.10.]
     Suppose $V$ is a vector space over a field $\mathbb{F}$ having a basis $\{v_1,...,v_n\}$ with $n \geq 1$.
@@ -63,7 +101,7 @@ A set of elements $v_1,...,v_n\in V$ is said to \textbf{span} $V$ if every vecto
 (ii) If $w_1,...,w_n$ span $V$ , then they are linearly independent.\\
 (iii)If $w_1,...,w_n$ are linearly independent, then they span $V$.\\
 If a vector space $V$ over $\mathbb{F}$ has a basis with $n$ vectors, then $V$ is said to be n-dimensional (over $\mathbb{F}$) or is said to have \textbf{dimension} $n$.
-\section{Standard basis vectors}
+\subsection{Standard basis vectors}
 \begin{equation}
     \begin{aligned}
         e_1=(1,0,...,0),e_2=(0,1,0,...,0),...,e_n=(0,0,...,0,1)\in \mathbb{F}^n
@@ -71,7 +109,7 @@ If a vector space $V$ over $\mathbb{F}$ has a basis with $n$ vectors, then $V$ i
     \nonumber
 \end{equation}
 are a basis for $\mathbb{F}^n$ called the \textbf{standard basis vectors}.
-\section{Linear transformation}
+\subsection{Linear transformation}
 Given two vector spaces $V$ and $W$ over $\mathbb{F}$ a \textbf{linear transformation} is a function $T : V \rightarrow	 W$ such that
 for all $a \in \mathbb{F}$ and $v,w \in V$ , we have
 \begin{equation}
@@ -85,7 +123,7 @@ for all $a \in \mathbb{F}$ and $v,w \in V$ , we have
     from $\{v_1,...,v_n\}\rightarrow W$ extends \textit{uniquely} to a linear transformation $V \rightarrow W$.
 \end{proposition}
 Any $v\in V$, $\exists (a_1,...,a_n)$ s.t. $v=a_1 v_1+...+a_n v_n$. Then $T(v)=T(a_1 v_1+...+a_n v_n)=a_1T(v_1)+...+a_nT(v_n)$\\
-\section{A Linear Transformation Correponds to a Matrix}
+\subsection{A Linear Transformation Correponds to a Matrix}
 \begin{corollary}[Corollary 2.4.16.]
     If $v_1,...,v_n$ is a basis for a vector space $V$ and $w_1,...,w_n$ is a basis for a vector space $W$ (both over $\mathbb{F}$), then any linear transformation $T : V \rightarrow W$ determines (and is determined by) the $m\times n$ matrix:
     \begin{equation}
@@ -120,7 +158,7 @@ $\mathcal{L} (V,M)$ denotes the set of all linear transformations from $V$ to $W
     then $ST = S \circ T : V \rightarrow U$ is a linear transformation represented by the matrix $BA = B(S)A(T)$.
 \end{proposition}
 
-\section{GL(V): invertible linear transformations $V \rightarrow	V$}
+\subsection{GL(V): invertible linear transformations $V \rightarrow	V$}
 Given a vector space $V$ over $F$, we let $GL(V ) \subset \mathcal{L}(V , V )$ denote the subset of \textbf{invertible linear transformations}.
 \begin{equation}
     \begin{aligned}

@@ -1,0 +1,3595 @@
+\documentclass[11pt]{elegantbook}
+\definecolor{structurecolor}{RGB}{40,58,129}
+\linespread{1.6}
+\setlength{\footskip}{20pt}
+\setlength{\parindent}{0pt}
+\newcommand{\argmax}{\operatornamewithlimits{argmax}}
+\newcommand{\argmin}{\operatornamewithlimits{argmin}}
+\elegantnewtheorem{proof}{Proof}{}{Proof}
+\elegantnewtheorem{claim}{Claim}{prostyle}{Claim}
+\DeclareMathOperator{\col}{col}
+\title{\textbf{Abstract Algebra}}
+\author{Wenxiao Yang}
+\institute{University of Illinois at Urbana-Champaign; University of California Berkeley}
+\date{2023 (Last Updated)}
+\setcounter{tocdepth}{2}
+\cover{cover.jpg}
+\extrainfo{All models are wrong, but some are useful.}
+
+% modify the color in the middle of titlepage
+\definecolor{customcolor}{RGB}{32,178,170}
+\colorlet{coverlinecolor}{customcolor}
+\usepackage{cprotect}
+
+\addbibresource[location=local]{reference.bib} % bib
+
+\begin{document}
+
+\maketitle
+\frontmatter
+\tableofcontents
+\mainmatter
+
+
+\chapter{Function and Set}
+\section{Function}
+\noindent $A\times B=\{(a,b)|a\in A, b\in B\}$.\\
+\underline{\textit{Function}} is a rule $\sigma$ that assigns an element $B$ to \textit{every} element of $A$.
+\begin{equation}
+    \begin{aligned}
+    &\sigma:A\rightarrow B\\
+    & \forall a\in A, \sigma(a)\in B.\\
+    & \sigma (a)= \textit{value of } \sigma\textit{ at } a. \textit{ (the \underline{image} of $a$)}
+    \end{aligned}
+    \nonumber
+\end{equation}
+A set $C\subset B$, we call $\sigma^{-1}(C)=\{a\in A| \sigma(a)\in C\}$ as the \textit{\underline{preimage}} of $a$.\\
+An element $b\in B$, we call $\sigma^{-1}(b)=\{a\in A| \sigma(a)=b \}$ as the \textit{\underline{fiber}} of $b$.\\
+$A$ is the \underline{domain} of $\sigma$, $B$ is the \underline{range} of $\sigma$.
+
+\subsection{Composition of functions}
+$\sigma: A\rightarrow B, \tau: B\rightarrow C$. The function $\tau\circ \sigma:A\rightarrow C$ is $\forall a\in A,\ (\tau\circ \sigma)(a)=\tau( \sigma(a))$
+
+\subsection{Proposition 1.1.3: Associativity of Functions}
+\begin{proposition}[Proposition 1.1.3]
+    $\sigma:A \rightarrow B, \tau:B \rightarrow C, \rho:C \rightarrow D$ functions then,
+    \begin{equation}
+        \begin{aligned}
+            \rho\circ(\tau\circ\sigma)=(\rho\circ\tau)\circ\sigma
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{proposition}
+\subsection{Injective, surjective, bijective}
+A function $\sigma:A \rightarrow B$ is called,\\
+1. \textit{Injective (1 to 1)}
+\begin{equation}
+    \begin{aligned}
+        \forall a_1,a_2\in A, \sigma(a_1)=\sigma(a_2)\Rightarrow a_1=a_2
+    \end{aligned}
+    \nonumber
+\end{equation}
+2. \textit{Surjective (onto)}
+\begin{equation}
+    \begin{aligned}
+        \forall b\in B,\exists a\in A, s.t. \sigma(a)=b
+    \end{aligned}
+    \nonumber
+\end{equation}
+3. \textit{Bijective} (if injective and surjective)
+
+\subsection{Lemma 1.1.7: injective/surjective/bijective is preserved in composition}
+\begin{lemma}[Lemma 1.1.7]
+    Suppose $\sigma:A \rightarrow B, \tau: B \rightarrow C$ are functions,\\
+    If $\sigma, \tau$ are injective, then $\tau\circ\sigma$ is \textit{injective}.\\
+    If $\sigma, \tau$ are surjective, then $\tau\circ\sigma$ is \textit{surjective}.\\
+    If $\sigma, \tau$ are bijective, then $\tau\circ\sigma$ is \textit{bijective}.\\
+\end{lemma}
+
+\subsection{Proposition 1.1.8: Inverse of Function}
+\begin{proposition}[Proposition 1.1.8]
+    A function $\sigma:A \rightarrow B$ is a bijection if\\
+    $\exists$ a function $\tau:B \rightarrow A $ such that
+    \begin{equation}
+        \begin{aligned}
+            &\sigma\circ\tau=id_B=\textit{identity on }B(id_B(x)=x, \forall x\in B)\\
+            &\tau\circ\sigma=id_A
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{proposition}
+Such $\tau$ is unique, called inverse of $\sigma$, $\tau=\sigma^{-1}$.
+
+\section{Set}
+\subsection{Well Defined Set}
+\begin{definition}
+    A set $S$ is \textbf{well defined} if an object $a$ is either $a\in S$ or $a\notin S$.
+\end{definition}
+\subsection{Power Set}
+\begin{definition}
+    For any set $A$, we denote by $\mathcal{P}(A)$ the collection of all subsets of $A$. $\mathcal{P}(A)$ is the \textbf{power set} of $A$.
+\end{definition}
+\subsection{Cardinalities of Sets, Pigeonhole Principle}
+\begin{definition}
+    If $A$ is a set, $|A|=$ cardinality of $A$ = $\#$ of elements
+\end{definition}
+$n \in \mathbb{N},|\{1, \ldots n\}|=n$; $|\emptyset|=0(\emptyset=\text { empty set })$.
+
+$|A|=|B|$ if there is a bijection $\sigma:A \rightarrow B$.
+
+If there is an \textit{injection} $\sigma:A \rightarrow B$, we can write $|A|\leq|B|$;
+
+If there is a \textit{surjection} $\sigma:A \rightarrow B$, we can write $|A|\geq|B|$.
+\begin{theorem}[Pigeonhole Principle]
+    If $A$ and $B$ are sets and $|A|>|B|$, then there is no injective function $\sigma:A \rightarrow B$.
+\end{theorem}
+
+
+
+\subsection{$B^A$: Sets of Function}
+If $A,B$ are sets, then $B^A=\{\sigma:A \rightarrow B| \sigma \textit{ a function}\}$.
+\begin{example}
+    $n\in \mathbb{Z}$, we define a function $f: B^{\{1,\dots,n\}} \rightarrow B^n(=B\times B\times B\times \dots \times B)$ by the equation
+    $f(\sigma)=\{\sigma(1),...,\sigma(n)\}, \textit{ where }\sigma:\{1,\dots,n\} \rightarrow B$. The $f$ is a \textit{bijection}.
+\end{example}
+\begin{proof}
+    \quad\\
+    1. \textit{Injective}:
+    \begin{equation}
+        \begin{aligned}
+            &f(\sigma_1)=f(\sigma_2)
+            \Rightarrow \{\sigma_1(1),...,\sigma_1(n)\}=\{\sigma_2(1),...,\sigma_2(n)\}\\
+            &\textit{Since }\sigma:\{1,\dots,n\} \rightarrow B,\textit{ it is sufficient to prove }\sigma_1=\sigma_2.
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    2. \textit{Surjective}:
+    \begin{equation}
+        \begin{aligned}
+            &\forall \{b_1,...,b_n\},\textit{ we have }\sigma^*(x)=b_x,x=1,...,n.\textit{ s.t. }f(\sigma^*)=\{b_1,...,b_n\}
+        \end{aligned}
+        \nonumber
+    \end{equation}
+
+\end{proof}
+\begin{example}
+    \begin{equation}
+        \begin{aligned}
+            & C(\mathbb{R},\mathbb{R})=\{\textit{continuous functions }\sigma:\mathbb{R} \rightarrow \mathbb{R} \}\subset \mathbb{R}^\mathbb{R}
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{example}
+
+\subsection{Operation definitions}
+\begin{definition}
+    A \underline{binary operation} on a set $A$ is a function $*:A\times A \rightarrow A$.\\
+    The \underline{operation is \textit{associative}} if $a*(b*c)=(a*b)*c, \forall a,b,c\in A$.\\
+    The \underline{operation is \textit{commutative}} if $a*b=b*a, \forall a,b\in A$.
+\end{definition}
+
+\begin{example}
+
+${+,\circ}$ are both \textit{associative} and \textit{commutative} operations on $\mathbb{Z},\mathbb{N},\mathbb{Q},\mathbb{R}$; $-$ is a neither \textit{associative} nor \textit{commutative} operation on $\mathbb{Z},\mathbb{Q},\mathbb{R}$, but not $\mathbb{N}$.
+\end{example}
+
+\begin{definition}
+A subset $H\subset S$ is \underline{closed under $*$} if $a*b\in H$ for all $a,b\in H$.
+\end{definition}
+
+\begin{definition}
+$*$ has \underline{identity element $e\in S$} if $a*e=e*a=a$ for all $s\in S$.
+\end{definition}
+
+
+
+
+
+
+
+
+
+\chapter{Equivalence relations and Partition}
+\section{Equivalence Relations \small{(@ Lec 01 of ECON 204)}}
+\begin{definition}[Binary Relation]
+\normalfont
+    A \textbf{binary relation} $R$ from $X$ to $Y$ is a subset $R \subseteq X\times Y$. We write $xR y$ if $(x, y) \in R$ and “not $xRy$” if $(x, y) \notin R$. $R \subseteq X \times X$ is a binary relation on $X$.
+\end{definition}
+
+\begin{definition}[Equivalence Relation]
+\normalfont
+    A binary relation $R$ is said to be
+    \begin{enumerate}
+        \item \textit{Reflexive} if $\forall x\in X$, we have $xR x$
+        \item \textit{Symmetric} if $\forall x,y\in X$, $xR y\Rightarrow yR x$
+        \item \textit{Transitive} if $\forall x,y,z\in X$, $xR y, yR z\Rightarrow xR z$
+    \end{enumerate}
+    The $R$ is called \textbf{equivalence relation} if it is \textit{reflexive, symmetric} and \textit{transitive}. (which is also the definition of rational equivalence in microeconomics).
+\end{definition}
+
+\begin{example}
+    Set $X=\{(a,b)\in \mathbb{Z}^2|b\neq 0 \}$, satisfies $(a,b)\sim(c,d)$ if $ad=bc$.
+\end{example}
+\noindent 1. \textit{Reflexive}: $(a,b)\sim(a,b), \forall (a,b)\in \mathbb{Z}^2$.\\
+2. \textit{Symmetric}: $\forall (a,b),(c,d)\in \mathbb{Z}^2 ,(a,b)\sim(c,d)\Rightarrow (c,d)\sim(a,b)$.\\
+3. \textit{Transitive}: $\forall (a,b),(c,d),(u,v)\in \mathbb{Z}^2 ,(a,b)\sim(c,d), (c,d)\sim(u,v)\Rightarrow ad=bc, cv=du \Rightarrow acv=adu=bcu\Rightarrow av=bu\Rightarrow (a,b)\sim(u,v)$.\\
+So this is an equivalence relation.
+
+\begin{example}
+    $f:X \rightarrow Y$ is a function, define $\sim_f$ on X by $a\sim_f b$ if $f(a)=f(b)$.
+\end{example}
+\noindent 1. \textit{Reflexive}: $a\sim a, \forall a\in X$.\\
+2. \textit{Symmetric}: $a,b\in X ,a\sim b\Rightarrow b\sim a$.\\
+3. \textit{Transitive}: $\forall a,b,c\in X ,a\sim b, b\sim c \Rightarrow f(a)=f(b)=f(c) \Rightarrow a\sim c$.\\
+So $\sim_f$ is an equivalence relation.
+\section{Partition (separate a set into disjoint sets with no element left)}
+\begin{definition}[Partition]
+\normalfont
+    $X$ a set, a \underline{partition} of $X$ is a collection $\omega$ of subsets of $X$ s.t.
+    \begin{enumerate}[1)]
+        \item $\forall A,B\in\omega$ either $A=B$ or $A\cap B=\emptyset$.
+        \item $\cup_{A\in\omega}A=X$.
+    \end{enumerate}
+    The subsets are the \textbf{cell}s of partition.
+\end{definition}
+
+\section{Equivalence class \small{(@ Lec 01 of ECON 204)}}
+\subsection{$[x]$: equivalence class}
+\begin{definition}[Equivalence Class]
+\normalfont
+Given an equivalence relation $\sim$ on $X$, define the \textbf{equivalence class} containing $x$ to be the subset $[x]\subset X$:
+    \begin{equation}
+        \begin{aligned}
+            [x]=\{ y\in X: x\sim y\}
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{definition}
+As $\sim$ is reflexive, we have $x\in[x]$. We say that any $y\in[x]$ as a \textbf{representative} of the equivalence class.
+\subsection{$X/\sim$: set of equivalence classes}
+Set of equivalence classes is a \textbf{set} of division result of an \textit{equivalence relation}\\
+We write the \underline{set of equivalence classes}
+\begin{equation}
+    \begin{aligned}
+        X/\sim= \{[x]|x\in X \}
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+\section{Relationship of \underline{\textit{Equivalence relation}}, \underline{\textit{Set of equivalence classes}} and \underline{\textit{Partitions}}}
+%给定$X$，\underline{\textit{Equivalence relation}} $\sim$ 与\underline{\textit{Set of equivalence classes}} $X/\sim$具有相同的信息量；
+%包含所有\underline{\textit{Partitions}}的集合与包含所有\underline{\textit{Set of equivalence classes}} 的集合相同。
+
+\subsection{Theorem 1.2.7: Any equivalence class forms a unique partition; Any partition forms a unqiue equivalence class}
+\begin{theorem}[Theorem 1.2.7]
+    $X/\sim$ is a partition of $X$. Conversely, given a partition $\omega$ of $X$, there exists a unique equivalence relation $\sim_\omega$ s.t. $X/\sim_\omega=\omega$.
+\end{theorem}
+%（1）\underline{\textit{Equivalence relation}} $\sim$生成一个对应的\underline{\textit{Set of equivalence classes}} $X/\sim$，该$X/\sim$就是一个Partition。(可以看作 1. 所有Set of equivalence classes都是 Partitions; 2.$\sim \Rightarrow X/\sim$ 由方式推结果)\\
+%（2）反之，我们也可以根据已有的Partition $\omega$, 将其作为一种分类方式$\sim_{\omega}$的$\underline{结果}$(i.e. $X/\sim_\omega=\omega$) 这个对应的$\sim_{\omega}$存在且是唯一的。(可以看作 1. 所有Partitions都是 Set of equivalence classes; 2.$X/\sim\Rightarrow\sim$ 由结果推方式)
+\begin{proof}
+    \quad\\
+    (1)$X/\sim$ is a partition of $X$:\\
+    \begin{equation}
+        \begin{aligned}
+            &\forall x,y\in X \textit{ s.t. }[x]\cap[y]\neq \emptyset\\
+            &\textit{Let } z\in[x]\cap[y]\Rightarrow z\sim x, z\sim y\\
+            &\forall w\in[x]\Rightarrow w\sim x\Rightarrow x\sim w\Rightarrow z\sim w\Rightarrow w\sim z\Rightarrow w\sim y\Rightarrow [x]\subset [y]\\
+            &\textit{Similarly we can prove } [y]\subset [x]\Rightarrow [x]=[y]
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    (2)Given a partition $\omega$ of $X$, there exists a unique equivalence relation $\sim_\omega$ s.t. $X/\sim_\omega=\omega$:\\
+    (2.1) Prove there exists an equivalence relation s.t. $X/\sim_\omega=\omega$:\\
+    We define a relation: $x\sim_\omega y$ if there exists $A\in \omega$ s.t. $x,y\in A\Rightarrow$ $\sim_\omega$ is symmetric and transitive.\\
+    Since $\cup_{A\in\omega}A=X$, we know $\forall x\in X, \exists A\in \omega \textit{ s.t. } x\in A\Rightarrow$ $\sim_\omega$ is reflexive. So $\sim_\omega$ is an equivalence relation.\\
+    We know $A=[x], \forall A\in\omega, \forall x\in A$ (by $\sim_\omega$),
+    then $X/\sim_\omega= \{[x]|x\in \cup_{A\in\omega}A \}=\{\{A^*|x\in A^*\}|A^*\in\omega \}=\omega$.\\
+    (2.2) Prove the equivalence relation is unique:\\
+    Set $\sim$ be any equivalence relation that make $X/\sim=\omega$, then we know $\forall A\in \omega, \exists x\in X$ s.t. $[x]=A$. According to the definition of $[x]$, if $x\in A$, $y\sim x$ if and only if $y\in[x]=A$. Which is exactly the $\sim_\omega$.
+\end{proof}
+\begin{example}[the same as example 5]
+    $f:X \rightarrow Y$ is a function, define $\sim_f$ on X by $a\sim_f b$ if $f(a)=f(b)$. In this example the \textbf{equivalence classes} are precisely the fibers $[x]=f^{-1}(f(x))$. $y\sim_f x\Rightarrow y\in f^{-1}(f(x))$
+\end{example}
+
+\begin{example}[the same as example 4]
+    Set $X=\{(a,b)\in \mathbb{Z}^2|b\neq 0 \}$, satisfies $(a,b)\sim(c,d)$ if $ad=bc$. i.e. we write the equivalence of $(a,b)$ as $\frac{a}{b}=[(a,b)]$. Then $X/\sim=\mathbb{Q}$.
+\end{example}
+\subsection{Proposition 1.2.12: use $X/\sim=\{[x]|x\in X\}$ to infer $\sim_\pi$ equals to $\sim$.}
+\begin{proposition}[Proposition 1.2.12]
+    If $\sim$ is an equivalence relation on $X$, define a surjective function $\pi: X \rightarrow	 X/\sim$ by $\pi(x) = [x]$. Then $\sim_\pi=\sim$(the definition of $\sim_f$ in example 6.)
+\end{proposition}
+\begin{proof}
+\quad\\
+(1)Surjective:\\
+$X/\sim= \{[x]|x\in X \}=\{\pi(x)|x\in X \}$, so $\forall y\in X/\sim$, $y\in \{\pi(x)|x\in X \}$, there exists $x\in X$ s.t. $\pi(x)=y$.\\
+(2)$\sim_\pi=\sim$\\
+$a\sim_\pi b$ if $\pi(a)=\pi(b) \Leftrightarrow	[a]=[b]$, which is exactly the definition of $\sim$.
+\end{proof}
+%逻辑：\\
+1. Given $\sim$; \\
+2. Get the corresponding $X/\sim=\{[x]|x\in X\}$; \\
+3. $\pi(x) = [x]$; \\
+4. $\sim_\pi:\ a\sim_\pi b$ iff $\pi(a)=\pi(b)$\\
+5. $\sim_\pi=\sim$\\
+%根据结果$X/\sim=\{[x]|x\in X\}$推断的$\sim_\pi$ equals to $\sim$.
+
+%\subsection{Proposition 1.2.13: 给$X$标记$Y$: $f$, 给$X/\sim$标记$Y$ : $\tilde{f}$，；两函数之间一一对应}
+\begin{proposition}[Proposition 1.2.13]
+    Given any function $f:X \rightarrow Y$ there exists a unique function $\tilde{f}:X/\sim \rightarrow Y$ such that $\tilde{f}\circ \pi=f$, where $\pi: X \rightarrow X/\sim$ in proposition 3. Furthermore, $\tilde{f}$ is a bijection onto the image $f(X)$.
+\end{proposition}
+\begin{proof}
+\quad\\
+(1) Existence:\\
+We define $x_1\sim_f x_2$ if $f(x_1)=f(x_2)$. Set $\tilde{f}:X/\sim_f \rightarrow Y$, $\tilde{f}([x])=f(x)$. Then $\tilde{f}[\pi(x)]=\tilde{f}([x])=f(x)$. Exactly what we require.\\
+(2) Uniqueness:\\
+Set any $\tilde{f}'$ s.t. $\tilde{f}'\circ\pi=f$, then $\tilde{f}'[\pi(x)]=\tilde{f}'([x])=f(x)$, i.e. the $\tilde{f}$ is unique.\\
+(3) Bijection:\\
+\textit{Surjective}, which we proved before $\forall f, \exists \tilde{f}$ s.t.$\tilde{f}\circ\pi=f$;\\
+\textit{Injective}, we also have proved the uniqueness $f=\tilde{f}\circ\pi=\tilde{f}'\circ\pi\Rightarrow\tilde{f}'=\tilde{f}$.
+\end{proof}
+
+
+
+
+
+\chapter{Permutations}
+\begin{definition}
+    Let $X$ be a finite set, a permutation is bijection $\sigma:X \rightarrow X$.
+\end{definition}
+\begin{definition}
+    Let $S_X$($Sym(X)$) be the set of all bijection $\sigma:X \rightarrow X$.
+\end{definition}
+If $|X|=n$, $|S_X|=n!$.
+
+\section{$Sym(X)=\{\sigma: X\rightarrow X| \sigma \textit{ is a bijection} \}$: \textbf{permutation group of} $X$; elements in $Sym(X)$: \textbf{permutations of} $X$}
+We set $Sym(X)=\{\sigma: X\rightarrow X| \sigma \textit{ is a bijection} \}\subset X^X$. We call it \textbf{symmetric group of} $X$ or \textbf{permutation group of} $X$. We call the elements in $Sym(X)$ the \textbf{permutations of} $X$ or the \textbf{symmetries of} $X$.
+
+\subsection{Properties of $\circ$ on $Sym(X)$}
+\begin{proposition}[Proposition 1.3.1.]
+    For any nonempty set $X$, $\circ$ is an operation on $Sym(X)$ with the following properties:\\
+(i) $\circ$ is associative.\\
+(ii) $id_X\in Sym(X)$, and for all $\sigma \in Sym(X)$, $id_X\circ\sigma=\sigma\circ id_X=\sigma$, and\\
+(iii) For all $\sigma \in Sym(X)$, $\sigma^{-1} \in Sym(X)$.
+\end{proposition}
+%Permutations 类似于 rearrangement，交换$X$中元素的排序。
+
+\subsection{$S_n$: Permutation group on $n$ elements, $\sigma^i$}
+\begin{note}
+    When $X=\{1,...,n \}, n\in \mathbb{Z}$, write $S_n=Sym(X)$ \textbf{symmetric/permutation group on $n$ elements}.
+\end{note}
+\begin{note}
+    $\sigma \in Sym(X)$, write $\sigma^n=\sigma\circ\sigma\circ...\circ\sigma$, $\sigma^0=id_X$, $\sigma^{-1}=inverse$, $r>0, \sigma^{-r}=(\sigma^{-1})^r$. So, $r,s\in \mathbb{Z}, \sigma^{r+s}=\sigma^r\circ\sigma^s=\sigma^s\circ\sigma^r$.
+\end{note}
+
+\subsection{$k$-cycle, cyclically permute/fix}
+\begin{example}
+\end{example}
+\begin{center}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[scale=0.5]{Cycle.png}
+    \caption{Example of Cycle}
+\end{figure}
+\end{center}
+In the example of \textit{Figure 1}, $\sigma=\begin{pmatrix}
+    1&2&3&4&5\\
+    5&1&4&3&2
+\end{pmatrix}$, $\sigma=\tau_1\circ\tau_2$, where $\tau_1=\begin{pmatrix}
+    1&2&3&4&5\\
+    5&1&3&4&2
+\end{pmatrix}$, $\tau_2=\begin{pmatrix}
+    1&2&3&4&5\\
+    1&2&4&3&5
+\end{pmatrix}$. $\tau_1$ is 3-cycle, $\tau_2$ is 2-cycle.
+We could represent $\tau_1=(1\ 5\ 2)=(5\ 2\ 1)=(2\ 1\ 5)$, i.e.
+\begin{tikzpicture}[domain=0:3.25]
+\draw[->,line width=1] (0.5,0.5*3^0.5) arc (60:0:0.5*2);
+\draw[<-,line width=1] (0.5,0.5*3^0.5) arc (120:180:0.5*2);
+\draw[<-,line width=1] (0,0) arc (240:300:0.5*2);
+\node[left] at (0,0) {$1$};
+\node[right] at (0.5*2,0) {$5$};
+\node[above] at (0.5,0.5*3^0.5) {$2$};
+\end{tikzpicture}
+Similarly, we can represent $\tau_2=(3,4)=(4,3)$, i.e.
+\begin{tikzpicture}[domain=0:3.25]
+    \draw[<->](0,0)--(1,0) node[below] {};
+    \node[left] at (0,0) {$3$};
+    \node[right] at (1,0) {$4$};
+\end{tikzpicture}
+
+We can find that $\forall x\in \{1,2,3,4,5\}$, $\tau_1^{3}(x)=x, \tau_2^{2}(x)=x$, so we write $\tau_1$ as a \textbf{3-cycle} in $S_5$, $\tau_2$ as a \textbf{2-cycle} in $S_5$.\\
+
+Given $k \geq 2$, a \textbf{k-cycle} in $S_n$ is a permutation $\sigma$ with the property that $\{1,...,n\}$ is the union of two disjoint subsets, $\{1,...,n\}=Y \cup Z $ and $Y \cap Z =\emptyset$, such that\\
+1. $\sigma(x) = x$ for every $x \in Z$, and\\
+2. $|Y| = k$, and for any$ x \in Y$,$Y = \{\sigma (x), \sigma^2(x), \sigma^3(x)... \sigma^k(x) = x\}$.\\
+
+We say that $\sigma$ \textbf{cyclically permutes} the elements of $Y$ and \textbf{fixes} the elements of $Z$.\\
+$\tau_1=(1\ 2\ 5)$ \textbf{cyclically permutes} the elements of $Y=\{1,2,5\}$ and \textbf{fixes} the elements of $Z=\{3,4\}$.\\
+$\tau_2=(3\ 4)$ \textbf{cyclically permutes} the elements of $Y=\{3,4\}$ and \textbf{fixes} the elements of $Z=\{1,2,5\}$.\\
+
+
+\section{Disjoint cycles}
+Since the sets are cyclically permuted by $\tau_1, \tau_2$ (i.e.$Y$) are disjoint. We call the \textbf{disjoint cycle notation} $\sigma=\tau_1\circ\tau_2=(1\ 2\ 5)(3\ 4)$. (Commute the order is irrelevant)
+
+\subsection{Theorem: Every permutation is a union of disjoint
+cycles, uniquely.}
+Given $\sigma\in S_n$, there exists a unique (possibly empty) set of pairwise disjoint cycles.
+\begin{theorem}
+Let $X$ be a finite set, the graph of permutation $\sigma\in S_X$ is a union of disjoint cycle.
+\end{theorem}
+\begin{proof}
+Prove by induction:
+
+If $|X|=1$, the graph is circle:
+\begin{tikzpicture}[domain=-0.5:1]
+    \draw[->,line width=1] (0.5,-0.65) arc (255:-75:0.5);
+    \node[below] at (0.6,-0.5) {$x$};
+\end{tikzpicture}
+
+For $|X|>1$, let $i_1\in X$ and let $\mathcal{O}(i_1)=\{\sigma^r(i_1),r\geq 0\}=\{i_1,\sigma(i_1),\sigma^2(i_1),...\}$. $\mathcal{O}(i_1)$ is finite, and there is a smallest $r$ s.t. $\sigma^r(i_1)\in\{i_1,\sigma(i_1),\sigma^2(i_1),...,\sigma^{r-1}(i_1)\}$. Then $\sigma^r(i_1)=i_1$ because other elements already have a pre-change under $\sigma$.
+
+Then $i_1 \rightarrow \sigma(i_1) \rightarrow \sigma^2(i_1)\rightarrow \cdots \rightarrow \sigma^{r-1}(i_1) \rightarrow	i_1$ is a cycle of length $r$.
+
+For $j\notin \mathcal{O}(i_1), \sigma(j)\notin \mathcal{O}(i_1), \sigma^{-1}(j)\notin \mathcal{O}(i_1)$. Let $Y=X/\mathcal{O}(i_1)$ then $\sigma: Y \rightarrow	Y$ is a bijection. Then prove by induction.
+
+\end{proof}
+
+\begin{example}
+$\sigma_1=(1\ 2\ 6\ 5)(3)(4)$, can be written by $\sigma_1=(1\ 2\ 6\ 5)$, $\sigma_2=(2\ 3\ 5\ 4)$
+\end{example}
+$\sigma_1 \circ \sigma_2=(1\ 2\ 6\ 5)\circ (2\ 3\ 5\ 4)$
+\begin{equation}
+    \begin{aligned}
+        1 \stackrel{(2\ 3\ 5\ 4)}{\longrightarrow} 1 \stackrel{(1\ 2\ 6\ 5)}{\longrightarrow} 2\\
+        2 \stackrel{(2\ 3\ 5\ 4)}{\longrightarrow} 3 \stackrel{(1\ 2\ 6\ 5)}{\longrightarrow} 3\\
+        3 \stackrel{(2\ 3\ 5\ 4)}{\longrightarrow} 5 \stackrel{(1\ 2\ 6\ 5)}{\longrightarrow} 1\\
+        4 \stackrel{(2\ 3\ 5\ 4)}{\longrightarrow} 2 \stackrel{(1\ 2\ 6\ 5)}{\longrightarrow} 6\\
+        5 \stackrel{(2\ 3\ 5\ 4)}{\longrightarrow} 4 \stackrel{(1\ 2\ 6\ 5)}{\longrightarrow} 4\\
+        6 \stackrel{(2\ 3\ 5\ 4)}{\longrightarrow} 6 \stackrel{(1\ 2\ 6\ 5)}{\longrightarrow} 5\\
+    \end{aligned}
+    \nonumber
+\end{equation}
+Then $\sigma_1 \circ \sigma_2=(1\ 2\ 3)\circ (4\ 6\ 5)$
+
+$\sigma_2 \circ \sigma_1=(2\ 3\ 5\ 4)\circ (1\ 2\ 6\ 5)$
+\begin{equation}
+    \begin{aligned}
+        1 \stackrel{(1\ 2\ 6\ 5)}{\longrightarrow} 2 \stackrel{(2\ 3\ 5\ 4)}{\longrightarrow} 3\\
+        2 \stackrel{(1\ 2\ 6\ 5)}{\longrightarrow} 6 \stackrel{(2\ 3\ 5\ 4)}{\longrightarrow} 6\\
+        3 \stackrel{(1\ 2\ 6\ 5)}{\longrightarrow} 3 \stackrel{(2\ 3\ 5\ 4)}{\longrightarrow} 5\\
+        4 \stackrel{(1\ 2\ 6\ 5)}{\longrightarrow} 4 \stackrel{(2\ 3\ 5\ 4)}{\longrightarrow} 2\\
+        5 \stackrel{(1\ 2\ 6\ 5)}{\longrightarrow} 1 \stackrel{(2\ 3\ 5\ 4)}{\longrightarrow} 1\\
+        6 \stackrel{(1\ 2\ 6\ 5)}{\longrightarrow} 5 \stackrel{(2\ 3\ 5\ 4)}{\longrightarrow} 4\\
+    \end{aligned}
+    \nonumber
+\end{equation}
+Then $\sigma_2 \circ \sigma_1=(1\ 3\ 5)\circ (2\ 6\ 4)$
+
+Note: $\sigma_1 \circ \sigma_2\neq\sigma_2 \circ \sigma_1$
+
+\begin{example}[Exercise 1.3.2.]
+    Consider $\sigma = (3\ 4\ 8)(5\ 7\ 6\ 9)$ and $\tau = (1\ 9\ 3\ 5)(2\ 7\ 4)$ in $S_9$ expressed in disjoint cycle
+    notation. Compute $\sigma\circ\tau$ and $\tau\circ\sigma$ expressing both in disjoint cycle notation.
+\end{example}
+
+\begin{equation}
+    \begin{aligned}
+        &1 \rightarrow \sigma(\tau(1))=\sigma(9)=5;\ 
+        2 \rightarrow \sigma(\tau(2))=\sigma(7)=6;\\
+        &3 \rightarrow \sigma(\tau(3))=\sigma(5)=7;\ 
+        4 \rightarrow \sigma(\tau(4))=\sigma(2)=2;\\
+        &5 \rightarrow \sigma(\tau(5))=\sigma(1)=1;\ 
+        6 \rightarrow \sigma(\tau(6))=\sigma(6)=9;\\
+        &7 \rightarrow \sigma(\tau(7))=\sigma(4)=8;\ 
+        8 \rightarrow \sigma(\tau(8))=\sigma(8)=3;\\
+        &9 \rightarrow \sigma(\tau(9))=\sigma(3)=4;\\
+        \Rightarrow	&\sigma\circ\tau=(1\ 5)(2\ 6\ 9\ 4)(3\ 7\ 8)
+    \end{aligned}
+    \nonumber
+\end{equation}
+\begin{equation}
+    \begin{aligned}
+        &1 \rightarrow \tau(\sigma(1))=\tau(1)=9;\ 
+        2 \rightarrow \tau(\sigma(2))=\tau(2)=7;\\
+        &3 \rightarrow \tau(\sigma(3))=\tau(4)=2;\ 
+        4 \rightarrow \tau(\sigma(4))=\tau(8)=8;\\
+        &5 \rightarrow \tau(\sigma(5))=\tau(7)=4;\ 
+        6 \rightarrow \tau(\sigma(6))=\tau(9)=3;\\
+        &7 \rightarrow \tau(\sigma(7))=\tau(6)=6;\ 
+        8 \rightarrow \tau(\sigma(8))=\tau(3)=5;\\
+        &9 \rightarrow \tau(\sigma(9))=\tau(5)=1;\\
+        \Rightarrow	&\tau\circ\sigma=(1\ 9)(2\ 7\ 6\ 3)(4\ 8\ 5)
+    \end{aligned}
+    \nonumber
+\end{equation}
+\begin{example}
+    Let $\sigma,\tau \in S_7$, given in disjoint cycle,
+    notation by
+    $\sigma = (1\ 5\ 4)(3\ 7),
+    \tau = (1\ 3\ 2\ 6\ 4)$,
+    Compute
+    $\sigma^2 ,
+    \sigma^{-1} ,
+    \tau\circ \sigma$
+\end{example}
+\begin{equation}
+    \begin{aligned}
+        &\sigma^2=(1\ 4\ 5),&\sigma^{-1}=(4,5,1)(3,7),\\
+        &1 \rightarrow	\tau(\sigma(1))=\tau(5)=5,
+        &2 \rightarrow	\tau(\sigma(2))=\tau(2)=6,\\
+        &3 \rightarrow	\tau(\sigma(3))=\tau(7)=7,
+        &4 \rightarrow	\tau(\sigma(4))=\tau(1)=3,\\
+        &5 \rightarrow	\tau(\sigma(5))=\tau(4)=1,
+        &6 \rightarrow	\tau(\sigma(6))=\tau(6)=4,\\
+        &7 \rightarrow	\tau(\sigma(7))=\tau(3)=2,\\
+        \Rightarrow	& \tau\circ \sigma=(1,5)(2,6,4,3,7)
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+
+
+\subsection{Cycle Structure}
+\begin{enumerate}[$\bullet$]
+    \item How many permutation $\sigma\in S_{12}$ has cycle structure $(1\ 2\ 3)(4\ 5\ 6)(7\ 8)(9\ 10)(11\ 12)$?
+    $$\frac{12!}{3^22^3(2!)(3!)}$$
+    $12!$: Arrange 12 elements in 12 slots.
+
+    $3^2$: Every cycle with 3 element has 3 forms to represent a same permutation.
+
+    $2^3$: Every cycle with 2 element has 2 forms to represent a same permutation.
+
+    $(2!)$: Due to the communicative of disjoint permutation, the arrange of cycles with three elements is $2!$ need to be divided.
+
+    $(3!)$: Due to the communicative of disjoint permutation, the arrange of cycles with two elements is $3!$ need to be divided.
+    \item $(1\ 2\ 3)(4\ 5)(6)\in S_6$?
+    $$\frac{6!}{3\times 2}=120$$
+    \item General situation: $\sigma\in S_n$, $r_i$ category of length $i$, $i=1,2...$
+    $$\frac{n!}{[1^{r_1}2^{r_2}3^{r_3}\cdots][(r_1!)(r_2!)(r_3!)\cdots]}$$
+\end{enumerate}
+
+
+\section{Transposition}
+\begin{definition}
+A \textbf{transposition} is a cycle of length 2: $\sigma=(i\ j)$.
+\end{definition}
+
+\subsection{Theorem: Every permutation can be represented by a product of transpositions (not require to be disjoint)}
+\begin{theorem}
+    Every permutation $\sigma$ of $X$ is a product of transposition. (the product is not unique)
+
+    \textbf{Equivalent:} Given $n\geq2$, any $\sigma \in S_n$ can be expressed as a composition of 2-cycles.(not require disjoint)
+\end{theorem}
+\begin{proof}
+    \quad\\
+
+    Version 1:
+    \begin{equation}
+        \begin{aligned}
+            (x_1\ x_{k})(x_1\ x_2,...\ x_{k-1}\ x_{k})&=(x_1\ x_2\ ...\ x_{k-1})\\
+            (x_1\ x_2\ ...\ x_{k-1}\ x_{k})&=(x_1\ x_{k})(x_1,x_2\ ...\ x_{k-1})\\
+            &=\mathbf{(x_1\ x_{k})(x_1\ x_{k-1})(x_1\ x_2\ ...\ x_{k-2})}\\
+            &\dots\\
+            &=\mathbf{(x_1\ x_{k})(x_1\ x_{k-1})(x_1\ x_{k-2})\dots(x_1\ x_2)}\\
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    Version 2:
+    \begin{equation}
+        \begin{aligned}
+            (x_1\ x_2,...\ x_{k-1}\ x_{k})(x_1\ x_{k})&=(x_2\ x_3\ ...\ x_{k})\\
+            (x_1\ x_2\ ...\ x_{k-1}\ x_{k})&=(x_2\ x_3\ ...\ x_{k})(x_1\ x_{k})\\
+            &\dots\\
+            &=\mathbf{(x_{k-1}\ x_{k})(x_{k-2}\ x_{k})\dots(x_2\ x_{k})(x_1\ x_k)}\\
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{proof}
+
+\begin{claim}
+Cycle of length $k$ can be written as a product of $k-1$ transpositions.
+\end{claim}
+
+
+\subsection{Sign of Permutation}
+\begin{theorem}
+Although the product of transposition of a permutation is not unique, the \underline{parity (odd or even) of the number of transposition} in a product is unique. We call it the \textbf{sign} of permutation.
+\begin{equation}
+    \begin{aligned}
+        sign(\sigma)&=(-1)^{(\#\text{ even-length cycles in }\sigma)}\\
+        &=(-1)^{(\#\text{ transpositions in }\sigma)}
+    \end{aligned}
+    \nonumber
+\end{equation}
+\end{theorem}
+
+\begin{example}
+\quad
+
+$\sigma_1=(1\ 4\ 7\ 9)(2\ 8)(6\ 10)$: $N=3+1+1=5$ is odd.
+
+$\sigma_2=(1\ 2\ 3\ 4\ 5)(6\ 7\ 8\ 9\ 10)$: $N=4+4=8$ is even
+\end{example}
+
+What happens to a permutation $\sigma$'s cycles if $\sigma \rightarrow (i\ j)\circ\sigma$?
+
+1. $i$ and $j$ are not contained in $\sigma$.
+
+2. $i$ and $j$ appear in the same cycle of $\sigma$.
+
+3. $i$ and $j$ appear in disjoint cycles.
+
+\begin{equation}
+    \begin{aligned}
+        (i\ j)\circ (i-- j\sim\sim)&=(i--)\circ(j\sim\sim)\\
+        (i\ j)\circ(i--)\circ(j\sim\sim)&=(i-- j\sim\sim)
+    \end{aligned}
+    \nonumber
+\end{equation}
+\begin{proposition}
+    $sign((i\ j)\circ\sigma)=-1\cdot sign(\sigma)$
+\end{proposition}
+\begin{proof}
+\quad\\
+
+Suppose $\sigma=(a_1\ a_2\ \cdots a_k\ b_1\ b_2\ \cdots b_l)$
+
+Then $(a_1\ b_1)\circ\sigma=(a_1\ a_2\ \cdots a_k)(b_1\ b_2\ \cdots b_l)$
+$$sign(\sigma)=\left\{\begin{matrix}
+    +1&\text{ if $k+l$ is odd}\\
+    -1&\text{ if $k+l$ is even}
+\end{matrix}\right.$$
+$$sign((a_1\ b_1)\circ\sigma)=\left\{\begin{matrix}
+    -1&\text{ if $k+l$ is odd}\\
+    +1&\text{ if $k+l$ is even}
+\end{matrix}\right.$$
+
+\end{proof}
+
+
+
+
+
+
+
+
+\chapter{Integers}
+\section{Proposition 1.4.1: Properties of integers $\mathbb{Z}$}
+\begin{proposition}[Proposition 1.4.1.]
+    The following hold in the integers $\mathbb{Z}$:
+\end{proposition}
+(i) \textit{Addition} and \textit{multiplication} are \textit{commutative} and \textit{associative} operations in $\mathbb{Z}$.\\
+(ii) $0 \in \mathbb{Z}$ is an identity element for addition; that is, $\forall a \in \mathbb{Z}, 0 + a = a$.\\
+(iii) Every $a \in \mathbb{Z}$ has an additive inverse, denoted $-a$ and given by $-a = (-1)a$, satisfying $a + (-a) = 0$.\\
+(iv) $1 \in \mathbb{Z}$ is an identity element for multiplication; that is, for all $a \in \mathbb{Z}$, $1a = a.$\\
+(v) The \textit{distributive} law holds: $\forall a,b,c \in \mathbb{Z}, a(b + c) = ab + ac$.\\
+(vi) Both $\mathbb{N} = \{x \in Z | x \geq 0\}$ and $\mathbb{Z}_+ = \{x \in \mathbb{Z} | x > 0\}$ are $closed$ under $addition$ and $multiplication$.
+That is, if $x$ and $y$ are in one of these sets, then $x + y$ and $xy$ are also in that set.\\
+(vii) For any two nonzero integers $a,b\in\mathbb{Z}, |ab|\geq \max\{|a|,|b|\}$. Strict inequality holds if $|a| > 1$ and $|b| > 1$.\\
+
+From this we get cancellation.
+\begin{equation}
+    \begin{aligned}
+        ab=ac \Rightarrow	b=c \textit{ or } a=0
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+\section{Definition: Divide}
+Suppose $a,b\in\mathbb{Z},b\neq 0$, \underline{$b$ divides $a$} if $\exists m\in\mathbb{Z}$, so that $a=bm, b|a$. Otherwise, write $b \nmid a$.
+
+\section{Proposition 1.4.2: properties of integer division}
+\begin{proposition}[Proposition 1.4.2]
+    $\forall a,b\in\mathbb{Z}$
+\end{proposition}
+(i) if $a\neq0$, then $a|0$\\
+(ii) if $a|1$, then $a=\pm 1$\\
+(iii) if $a|b\ \&\ b|a$, then $a=\pm b$\\
+(iv) if $a|b\ \&\ b|c$, then $a|c$\\
+(v) if $a|b\ \&\ a|c$, then $a|(mc+nb)\forall m,n\in\mathbb{Z}$\\
+
+\section{Definitions: Prime, The Greatest common divisor $gcd(a,b)$}
+$p > 1, p \in \mathbb{Z}$ is called
+\underline{\textit{prime}} if the only divisors are
+$\pm 1,\pm p$.
+
+Given $a,b\in\mathbb{Z},a, b\neq 0$, the \underline{\textit{greatest common divisor}} of $a$ and $b$ is $c\in\mathbb{Z}, c>0$ s.t.
+
+(1) $c|a$ and $c|b$; (2) if $d|a, d|b$, then $d|c$
+
+The $c$ is unique, we write it $gcd(a,b)$.
+
+\section{Euclidean Algorithm}
+\begin{proposition}[Proposition 1.4.7(Euclidean Algorithm)]
+    Given $a,b\in\mathbb{Z},b\neq 0$, then $\exists q,r\in \mathbb{Z}$ s.t. $a=qb+r, 0\leq r\leq |b|$.
+\end{proposition}
+
+\begin{example}[Exercise 1.4.3]
+    For the pair $(a,b) = (130, 95)$, find $gcd(a, b)$ using the \textit{Euclidean Algorithm} and express it in the form $gcd(a,b) = sa + tb$ for $s, t \in Z$.
+\end{example}
+\begin{equation}
+    \begin{aligned}
+        &130=95+35;
+        &95=2\times35+25\\
+        &35=25+10;
+        &25=2\times10+5\\
+        &10=2\times5+0
+    \end{aligned}
+    \nonumber
+\end{equation}
+\begin{equation}
+    \begin{aligned}
+        5&=25-2\times10
+        =25-2\times(35-25)
+        =3\times25-2\times35=3\times(95-2\times35)-2\times35\\
+        &=3\times95-8\times35=3\times95-8\times(130-95)=11\times95-8\times130
+    \end{aligned}
+    \nonumber
+\end{equation}
+\begin{equation}
+    \begin{aligned}
+        gcd(130,95)=gcd(95,35)=gcd(35,25)=gcd(25,10)=gcd(10,5)=gcd(5,0)=5
+    \end{aligned}
+    \nonumber
+\end{equation}
+We can also express it by matrix
+\begin{center}
+    \begin{tabular}{ccccc}
+            \hline
+            & $q$& $r$&$s$&$t$\\
+            \hline
+            -1&&130&1&0\\
+            0&1&95&0&1\\
+            1&2&35&1&-1\\
+            2&1&25&-2&3\\
+            3&2&10&3&-4\\
+            4&2&5&-8&11\\
+            \hline
+    \end{tabular}
+\end{center}
+Hence $gcd(130,95)=5=-8\cdot130+11\cdot95$
+\section{Proposition: $gcd(a,b)$ exists and is the smallest positive integer in the set $M=\{ma+nb|m,n\in\mathbb{Z}\}$}
+
+\begin{theorem}
+    $d = gcd(a, b)$ is of the form $sa + tb$
+\end{theorem}
+\begin{proof}
+
+We may assume $0\leq a\leq b$
+
+For $a=0$, $d=b=0\cdot a+1\cdot b$.
+
+For $a>0$, let $b=q\cdot a+r$ with $0\leq r<a\leq b$. Then
+\begin{equation}
+    \begin{aligned}
+        \{sa+tb:s,t\in \mathbb{Z}\}&=\{sa+t(q\cdot a+r):s,t\in \mathbb{Z}\}=\{tr+ua: t,u\in \mathbb{Z}\}\\
+        &=\dots \{x\cdot 0+y\cdot d: x,y\in \mathbb{Z}\}=\{...,-2d,-d,0,d,2d,...\}
+    \end{aligned}
+    \nonumber
+\end{equation}
+\end{proof}
+
+\begin{proposition}[second form, second proof]
+    $\forall a,b\in\mathbb{Z}$, not both 0, $gcd(a,b)$ exists and is the smallest positive integer in the set $M=\{ma+nb|m,n\in\mathbb{Z}\}$. i.e. $\exists m_0,n_0\in\mathbb{Z}$ s.t. $gcd(a,b)=m_0a+n_0b$.
+\end{proposition}
+
+\begin{proof}
+
+Let $c$ be the smallest positive integer in the set $M=\{ma+nb|m,n\in\mathbb{Z}\}$. $c=m_0 a+n_0 b>0$.
+
+Let $d=ma+nb\in M$, $d=qc+r$ where $0\leq r<c$ (by Euclidean Algorithm).
+$$r=d-qc=(m-qm_0)a+(n-qn_0)b\in M$$
+Since $c$ is the smallest integer in $M$ and $r\in[0,c)$, so $r=0$. $\Rightarrow d=qc$. So $c|d$.
+
+$a=1a+0b\in M\Rightarrow c|a$, $b=0a+1b\in M\Rightarrow c|b$.
+
+If $t|a,t|b$ then $t|m_0 a+n_0 b \text{ i.e. } t|c$. $\Rightarrow c=gcd(a,b)$.
+\end{proof}
+
+\section{Well-Ordering Principle (Least Integer Axiom)}
+There is a smallest integer in every nonempty subset $S$ of the natural numbers $\mathbb{N}=\{0,1,2,...\}$
+
+\section{Proposition 1.4.10: $gcd(b,c)$, $b|ac$ $\Rightarrow$ $b|a$}
+\begin{proposition}[Proposition 1.4.10]
+    Suppose $a,b,c\in\mathbb{Z}$. If $b,c$ are \textit{relatively prime} i.e. $gcd(b,c)=1$ and $b|ac$, then $b|a$.
+\end{proposition}
+\begin{proof}
+$gcd(b,c)=1\Rightarrow\ \exists m,n\in\mathbb{Z}$ s.t. $1=mb+nc \Rightarrow a=amb+anc$. Since $b|nac, b|amb\Rightarrow b|a$.
+\end{proof}
+\subsection{Corollary: $p|ab$ $\Rightarrow	$ $p|a$ or $p|b$}
+\begin{corollary}[Corollary of Prop 1.4.10]
+    $a,b,p\in\mathbb{Z}, p>1$ prime. If $p|ab$, then $p|a$ or $p|b$.
+\end{corollary}
+\begin{proof}
+If $p|b$, done. Otherwise, $gcd(p,b)=1$. By Prop 1.4.10, $p|a$.
+\end{proof}
+
+
+\section{Fundamental Theorem of Arithmetic: Any integer
+$a \geq 2$ has a unique prime factorization}
+
+\subsection{Existence}
+\begin{lemma}
+    Any integer $a \geq 2$ is either a prime or a product of primes.
+\end{lemma}
+\begin{proof}
+    Set $S\subset \mathbb{N}$ be the set of all $n$ without the given property.
+    
+    Assume that $S$ in nonempty and $m$ is the least element in $S$.
+
+    Since $m$ is not a prime, it can be written as $m=ab$ with $1<a,b<m$. Since $m$ is the least element in $S$, $a,b\notin S$. Then $m$ is a product of primes. Contradiction. Thus, $S=\emptyset$.
+\end{proof}
+
+\subsection{Uniqueness}
+\begin{theorem}[Fundamental Theorem of Arithmetic]
+\end{theorem}
+Any integer
+$a > 1$ has a unique prime factorization:
+$a=p_1^{k_1}\cdot p_2^{k_2}\cdot...p_n^{k_n}$ where $p_i > 1$ is prime, $k_i\in\mathbb{Z}_+,\forall i=1,...,n, p_i\neq p_j, \forall i\neq j$.
+\begin{proof}
+\quad
+
+\begin{enumerate}[a)]
+    \item Existence: (Previous Lemma)
+    \item Uniqueness: \begin{enumerate}[1)]
+        \item Method 1:
+        
+        Suppose $a=p_1^{n_1}\cdot p_2^{n_2}\cdot...p_k^{n_k}=q_1^{r_1}\cdot q_2^{r_2}\cdot...q_j^{r_j}$. Where $p_1>p_2>...>p_k, q_1>q_2>...>q_j, n_i,r_i\geq 1$.
+
+        $p_1|a\Rightarrow \exists\ q_i\ s.t.\ p_1|q_i$. Similarly, $\exists\ q_i\ s.t.\ q_1|p_{i'}$.
+        
+        $q_1\leq p_{i'}\leq p_1\leq q_i\Rightarrow q_1= p_{i'}= p_1= q_i$
+        
+        We can also know $n_1=r_1$, otherwise we would have two prime factorization of the quotient where the largest primes are different by dividing $p_1^{\min\{n_1,r_1\}}$.
+        
+        Then we can get $b=p_2^{n_2}\cdot...p_k^{n_k}=q_2^{r_2}\cdot...q_j^{r_j}$. Then prove it by induction.
+
+        \item Method 2:
+        
+        Suppose $a=p_1\cdot p_2\cdot...p_k=q_1\cdot q_2\cdot...q_t$. For a $p_i$, there must exist a $q_j$ s.t. $p_i=q_j$:
+
+        Assume that $p_i\neq q_t$, $gcd(p_i,q_t)=1$. Then $\exists a,b$ such that $1=ap_i+bq_t$. Multiplying both sides by $q_1\cdot q_2\cdot...q_{t-1}$: $$q_1\cdot q_2\cdot...q_{t-1}=ap_iq_1\cdot q_2\cdot...q_{t-1}+bq_1\cdot q_2\cdot...q_t$$
+        Since $p_i|q_1\cdot q_2\cdot...q_t$, we can conclude that $p_i|(ap_iq_1\cdot q_2\cdot...q_{t-1}+bq_1\cdot q_2\cdot...q_t)$ $$\text{i.e. } p_i|q_1\cdot q_2\cdot...q_{t-1}\text{ if }p_i\neq q_t$$
+        Then prove by induction.
+    \end{enumerate}
+\end{enumerate}
+\end{proof}
+
+\chapter{Modular arithmetic}
+\section{Congruences}
+\subsection{Congruent modulo $m$: $a\equiv b \text{ mod }m$}
+Given $m\in\mathbb{Z}_+$, define a relation on $\mathbb{Z}$: \underline{\textbf{congruence modulo $m$}}
+\begin{equation}
+    \begin{aligned}
+        a\equiv b \text{ mod }m\text{, if } m|(a-b)
+    \end{aligned}
+    \nonumber
+\end{equation}
+Read as "$a$ is congruent to $b$ mod $n$"; Notation: $a\equiv b$ mod $m$.
+
+Equivalent to: $a,b$ have the same remainder after division by $m$.
+\subsection{Proposition: For fixed $m\geq 2$, the relation "$a\sim b$ $\Leftrightarrow$ $a\equiv b$ mod $m$" is an \underline{equivalence relation}}
+\begin{proposition}[Proposition 1.5.1]
+    For fixed $m\geq 2$, the relation "$a\sim b$ $\Leftrightarrow$ $a\equiv b$ mod $m$" is an \underline{equivalence relation}
+\end{proposition}
+\begin{proof}
+\quad
+
+\begin{enumerate}[1)]
+    \item \underline{Reflexive}: $\forall a\in\mathbb{Z}, m|0=(a-a)$, so $a\equiv a \text{ mod }m$ i.e. $a\sim a$.
+    \item \underline{Symmetric}: $\forall a,b\in\mathbb{Z}$, $a\equiv b \text{ mod }m$, then $m|(a-b)\Rightarrow m|(b-a)$$\Rightarrow b\equiv a \text{ mod }m$. i.e. $a\sim b \Rightarrow b\sim a$.
+    \item \underline{Transitive}: $\forall a,b,c\in\mathbb{Z}$, $a\equiv b \text{ mod }m$, $b\equiv c \text{ mod }m$. Then $m|(a-b), m|(b-c)$ $\Rightarrow m|(a-b)+(b-c)=(a-c)\Rightarrow a\equiv c \text{ mod }m$.
+\end{enumerate}
+\end{proof}
+
+\subsection{Theorem: the equivalence relation "$a\sim b$ $\Leftrightarrow$ $a\equiv b$ mod $m$" partitions the integers into $m$ disjoint sets $\Omega_i=\{a|a\sim i\},i=0,1,...,m-1$}
+\begin{theorem}
+    the equivalence relation "$a\sim b$ $\Leftrightarrow$ $a\equiv b$ mod $m$" partitions the integers into $m$ disjoint sets $\Omega_i=\{a|a\sim i\},i=0,1,...,m-1$
+\end{theorem}
+\begin{proof}
+    Prove any $a\in \mathbb{Z}$ belongs to a unique $\Omega_i$.
+
+    \begin{enumerate}[a)]
+        \item Existence: Division Algorithm $\Rightarrow$ $a=qm+r$, $0\leq r<m$. $a\in\Omega_r$.
+        \item Uniqueness: Assume $a$ in two sets, $a\in\Omega_r\cap \Omega_{r^1}$, $0\leq r^1<r<m$.
+        
+        Then $m|a-r$ and $m|a-r^1$ $\Rightarrow$ $m|r-r^1$, which is impossible because $0<r-r^1<m$. Contradiction.
+    \end{enumerate}
+\end{proof}
+
+\subsection{Proposition: Addition and Mutiplication of Congruences}
+\begin{proposition}
+    Fix integer $m\geq 2$. If $a\equiv r \text{ mod }m$ and $b\equiv s \text{ mod }m$, then $a+b\equiv r+s \text{ mod }m$ and $ab\equiv rs \text{ mod }m$
+\end{proposition}
+\begin{proof}
+\quad
+
+\begin{enumerate}[a)]
+    \item Addition: $m|(a-r), m|(b-s)\Rightarrow m|(a-c)+(b-d)\Rightarrow m|(a+b)-(c-d)$.
+    \item Mutiplication: $m|(a-r)b+r(b-s)\Rightarrow m|ab-rs$.
+\end{enumerate}
+\end{proof}
+
+\section{Solving Linear Equations on Modular $m$}
+\subsection{Theorm: unique solution of $aX\equiv b \text{ mod }m$ if $gcd(a,m)=1$}
+\begin{theorem}
+If $gcd(a,m)=1$, then $\forall b\in \mathbb{Z}$ the congruence $aX\equiv b \text{ mod }m$ has a unique solution.
+\end{theorem}
+\begin{proof}
+\quad
+
+\begin{enumerate}[1)]
+    \item Existence: Since $gcd(a,m)=1$, $\exists s,t$ such that
+    \begin{equation}
+        \begin{aligned}
+        1&=sa+tm\\
+        (\text{Version 1})&\\
+        &\text{(Mutiplying $X$)}\\
+        X&=saX+tmX\\
+        aX\equiv b \text{ mod }m &\Leftrightarrow aX=km+b\\
+        &\Leftrightarrow X=s(km+b)+b\\
+        &\Leftrightarrow X\equiv sb \text{ mod }m\\
+        (\text{Version 2})&\\
+        &\text{(Mutiplying $s$)}\\
+        saX&\equiv sb \text{ mod }m\\
+        (1-tm)X&\equiv sb \text{ mod }m\\
+        X&\equiv sb \text{ mod }m\\
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    $X\equiv sb \text{ mod }m$ is the solution to $aX\equiv b \text{ mod }m$.
+    \item Uniqueness: Assume $x,y$ are two solutions, $$ax\equiv b \text{ mod },ay\equiv b \text{ mod } m\Rightarrow	a(x-y)\equiv 0 \text{ mod }m$$
+    Since $gcd(a,m)=1,\ m|(x-y)\Rightarrow x=y,\ (x,y\in\{0,1,...,m-1\})$
+\end{enumerate}
+\begin{example}
+Solve $3X\equiv 5 \text{ mod }11$.
+\end{example}
+$gcd(3,11)=1$, $1=4*3-1*11$, 
+\begin{equation}
+    \begin{aligned}
+        X&\equiv 4*5\\
+        X&\equiv 9
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+\end{proof}
+
+\section{Chinese Remaindar Theorem (CRT): unique solution for $x$ modulo $mn$}
+\begin{theorem}[Chinese Remaindar Theorem (CRT)]
+\quad
+
+If $gcd(m,n)=1$. Then $\left\{\begin{matrix}
+    x\equiv r \text{ mod }m& (1)\\
+    x\equiv s \text{ mod }n& (2)
+\end{matrix}\right.$ have a unique solution for $x$ modulo $mn$.
+\end{theorem}
+\begin{proof}
+\quad\\
+(1) $\Rightarrow x=km+r$ for some $k\in \mathbb{Z}$.
+
+\begin{equation}
+    \begin{aligned}
+        \text{substitute (2) }&\Rightarrow	km+r\equiv s \text{ mod }n\\ &\Leftrightarrow	mk\equiv s-r \text{ mod }n\quad (3)
+    \end{aligned}
+    \nonumber
+\end{equation}
+According to previous theorem, $gcd(m,n)=1$, (3) has a \textbf{unique} solution.
+
+We say $k\equiv t \text{ mod }n$, $k=ln+t$ for some $l\in \mathbb{Z}$
+
+$\Rightarrow x=(ln+t)m+r=lnm+tm+r$, where $tm+r$ is the unique solution to $x$ modulo $mn$.
+\end{proof}
+
+\begin{example}(Similar to CRT)
+Find the smallest integer $x$ such that $$x\equiv 1 \text{ mod }11\text{ and }x\equiv  9\text{ mod }13$$
+\end{example}
+$gcd(11,13)=1$ and $1=6*11-5*13$
+
+Write $x=11k+1$. Substitute in $x\equiv 9 \text{ mod }13$:
+\begin{equation}
+    \begin{aligned}
+        11k&\equiv 8 \text{ mod }13\\
+        6*11k&\equiv 6*8\equiv 9 \text{ mod }13\\
+        (1+5*13)k&\equiv 9 \text{ mod }13\\
+        k&\equiv 9 \text{ mod }13\\
+    \end{aligned}
+    \nonumber
+\end{equation}
+Then $x=11k+1=100$.
+
+\section{Congruence Classes: $[a]_n=\{a+kn|k\in\mathbb{Z} \}$}
+%将给定$n$，相同余数的数分为一组\\
+Fix $n\in\mathbb{Z}_+$, we call $[a]_{n}=[a]$ the \underline{\textbf{congruence class}} of a modulo n.
+\begin{equation}
+    \begin{aligned}
+        [a] = \{b \in \mathbb{Z}|b\equiv a \textit{ mod }n\}=\{a+kn|k\in\mathbb{Z} \}
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+\subsection{Set of congruence classes of mod $n$: $\mathbb{Z}_n = \{[a]_n|a \in \mathbb{Z}\}=\{[0],[1],...,[n-1]\}$}
+The set of \textit{congruence classes} of mod $n$ is denoted $\mathbb{Z}_n = \{[a]_n|a \in \mathbb{Z}\}$
+\begin{proposition}[Proposition 1.5.2.]
+For any $n\geq 1$ there are exactly $n$ congruences classes modulo $n$, which we may write as
+\begin{equation}
+    \begin{aligned}
+        \mathbb{Z}_n = \{[0],[1],...,[n-1]\}
+    \end{aligned}
+    \nonumber
+\end{equation}
+\end{proposition}
+\begin{proof}
+\quad\\
+For any $a\in\mathbb{Z}$. By Euclidean algorithm, $a=qn+r$, $q,r\in\mathbb{Z}$, $0\leq r<n\Rightarrow a\in[r]$. So, $\mathbb{Z}_n = \{[0],[1],...,[n-1]\}$.\\
+When $0\leq a<b\leq n-1$, $n\nmid(b-a)$, so $[a]\neq [b]$ the $n$ congruence classes listed are all distinct. Hence, there are exactly $n$ congruence classes.
+\end{proof}
+\subsection{Proposition 1.5.5: Addition and Multiplication on Congruence Classes}
+Fix $n\in\mathbb{Z}$, we define addition$+$ and multiplication$\cdot$ on $\mathbb{Z}_n$:
+\begin{equation}
+    \begin{aligned}
+        &[a]+[b]=[a+b]=\{a+b+(k+j)n|k,j\in\mathbb{Z}\}\\
+        &[a]\cdot [b]=[ab]=\{ab+(aj+bk+kjn)n|k,j\in\mathbb{Z} \}
+    \end{aligned}
+    \nonumber
+\end{equation}
+This is well defined, follows Lemma 1.5.3.
+\begin{proposition}[Proposition 1.5.5.]
+    Let $a,b,c,d,n\in\mathbb{Z}, n\geq 1$, then\\
+    (i) Addition and multiplication are commutative and associative operations in $\mathbb{Z}_n$.\\
+    (ii) $[a] + [0] = [a]$.\\(iii) $[-a] + [a] = [0]$.\\(iv) $[1][a] = [a]$.\\(v) $[a]([b] + [c]) = [a][b] + [a][c]$.
+\end{proposition}
+\begin{proof}
+\quad\\
+
+\end{proof}
+\subsection{Units(i.e. invertible) in Congruence Classes}
+%将与$n$互质的数分为一组\\
+Say $[a] \in \mathbb{Z}_n$ is a \textbf{unit} or is \textbf{invertible} if $\exists [b] \in \mathbb{Z}_n$ so that $[a][b] = [1]$.
+\subsection{Proposition 1.5.6: Set of units in congruence classes: $\mathbb{Z}_n^{\times}=\{[a]\in\mathbb{Z}_n|[a] \textit{ is a unit}\}=\{[a]\in\mathbb{Z}_n|gcd(a,n)=1\}$}
+The set of \textbf{invertible} elements in $\mathbb{Z}_n$ will be denoted $\mathbb{Z}_n^{\times}=\{[a]\in\mathbb{Z}_n|[a] \textit{ is a unit}\}$.
+\begin{proposition}[Proposition 1.5.6.]
+For all $n\geq 1$, we have $\mathbb{Z}_n^{\times}=\{[a]\in\mathbb{Z}_n|gcd(a,n)=1\}$.
+\end{proposition}
+\begin{proof}
+    \quad\\
+    By Proposition 1.4.8, we know there exists $b,c$ s.t. $ab+cn=1$. So, $ab \equiv 1 \textit{ mod }n$, $[1]=[ab]=[a][b]$. So, $\{[a]\in\mathbb{Z}_n|gcd(a,n)=1\}\subset \mathbb{Z}_n^{\times}$\\
+    $[a] \textit{ is a unit}\Rightarrow $$\exists [b] \in \mathbb{Z}_n$ so that $[a][b] =[ab]= [1]\Rightarrow ab=1+kn, k\in \mathbb{Z}\Rightarrow ab-kn=1, k\in \mathbb{Z} \Rightarrow gcd(a,n)=1$. So, $\mathbb{Z}_n^{\times}\subset \{[a]\in\mathbb{Z}_n|gcd(a,n)=1\}$.
+\end{proof}
+\begin{note}
+Inverse of $[a]$ is unique, i.e. $[b]=[a]^{-1}$ is unique.
+\end{note}
+$[a][b]=1, [a][b']=1\Rightarrow [b]=[b][1]=[b][a][b']=[b']$
+
+\subsection{Corollary 1.5.7: if $p$ is prime, $\varphi(p)=\mathbb{Z}_p^{\times}=\{[1],[2],...,[p-1] \}$}
+\begin{corollary}[Corollary 1.5.7]
+If $p\geq2$ is prime, $\mathbb{Z}_p^{\times}=\{[1],[2],...,[p-1] \}$.
+\end{corollary}
+\section{\underline{Euler phi-function}: $\varphi(n)=|\mathbb{Z}_n^{\times}|$}
+\underline{Euler phi-function}: $\varphi(n)=|\mathbb{Z}_n^{\times}|$.\\
+$p$ prime, $\varphi(p)=p-1$.\\
+
+\subsection{$m|n$, $\pi_{m,n}([a]_n)=[a]_m$}
+\begin{example}[Exercise 1.5.4]
+    If $m|n$, we can define $\pi_{m,n}:\mathbb{Z}_n\rightarrow\mathbb{Z}_m$ by $\pi_{m,n}([a]_n)=[a]_m$. Prove it is well-defined.
+\end{example}
+\begin{proof}
+\quad\\
+We write $[a]_n=[c]_n$, verify that $[a]_m=[c]_m$.\\
+Since $m|n$, there exists $k\in\mathbb{Z}$ s.t. $n=km$.\\
+$[a]_n=[c]_n\Rightarrow \exists j\in\mathbb{Z}$ s.t. $c=a+jn$.\\
+$[c]_m=[a+jn]_m=[a+jkm]_m=[a]_m$
+\end{proof}
+
+\section{Theorem 1.5.8(Chinese Remainder Theorem): $n=mk,gcd(m,k)=1$, $F([a]_n)=(\pi_{m,n}([a]_n),\pi_{k,n}([a]_n))=([a]_m,[a]_k)$}
+\begin{theorem}[Theorem 1.5.8(Chinese Remainder Theorem)]
+If $m,n,k>0,n=mk,gcd(m,k)=1$, then $F:\mathbb{Z}_n\rightarrow\mathbb{Z}_m\times\mathbb{Z}_k$ which is given by $F([a]_n)=(\pi_{m,n}([a]_n),\pi_{k,n}([a]_n))=([a]_m,[a]_k)$, then $F$ is a bijection.
+\end{theorem}
+\begin{proof}
+\quad\\
+(1)Injective: $F([a]_n)=F([b]_n)\Rightarrow [a]_m=[b]_m,[a]_k=[b]_k$ i.e. $a\equiv b \textit{ mod }m,a\equiv b \textit{ mod }n$. $\exists i,j\in\mathbb{Z}$ s.t. $b=a+im=a+jk\Rightarrow k|im$. Since $gcd(m,k)=1$, $k|i\Rightarrow n=mk|im$. Then $[b]_n=[a]_n+[im]_n=[a]_n$.\\
+(2)Surjective: prove $\forall u,v\in\mathbb{Z}$, $\exists a\mathbb{Z}$ s.t. $[a]_m=[u]_m,[a]_k=[v]_k$.\\
+Since $gcd(m,k)=1$, $\exists s,t\in \mathbb{Z}$ so that $1=sm+tk$. \\
+Let $a=(1-tk)u+(1-sm)v$, $[a]_m=[(u-v)sm+v]_m=[v]_m$, $[a]_k=[(v-u)tk+u]_k=[u]_k$.
+\end{proof}
+\begin{note}
+    $F([a]_n[b]_n)=F([ab]_n)=([ab]_m,[ab]_k)=([a]_m[b]_m,[a]_k[b]_k)$
+\end{note}
+Since $F$ is a bijection, $[ab]_n=[1]_n$ iff $([a]_m[b]_m,[a]_k[b]_k)=([1]_m,[1]_k)$.
+\subsection{Proposition 1.5.9+Corollary 1.5.10: $m,n,k>0,n=mk,gcd(m,k)=1$, then $F(\mathbb{Z}_n^{\times})=\mathbb{Z}_m^{\times}\times\mathbb{Z}_k^{\times}$, then $\varphi(n)=\varphi(m)\varphi(k)$}
+\begin{proposition}[Proposition 1.5.9+Corollary 1.5.10]
+    If $m,n,k>0,n=mk,gcd(m,k)=1$, then $F(\mathbb{Z}_n^{\times})=\mathbb{Z}_m^{\times}\times\mathbb{Z}_k^{\times}$, then $\varphi(n)=\varphi(m)\varphi(k)$.
+\end{proposition}
+
+\section{prime factorization: $n=p_1^{r_1}...p_k^{r_k}$, then $\varphi(n)=(p_1-1)p_1^{r_1-1}...(p_k-1)p_k^{r_k-1}$}
+\begin{proposition}
+If $n\in\mathbb{Z}$ is positive integre with prime factorization $n=p_1^{r_1}...p_k^{r_k}$, then $\varphi(n)=(p_1-1)p_1^{r_1-1}...(p_k-1)p_k^{r_k-1}$
+\end{proposition}
+\begin{proof}
+\quad\\
+$\mathbb{Z}_{p^r}=\{[0],[1],...,[p^r-1]\}$, the number of multiples of $p$ is $\frac{p^r}{p}=p^{r-1}$. Then $\varphi(p^r)=|\mathbb{Z}_{p^r}^{\times}|=p^r-p^{r-1}=(p-1)p^{r-1}$. So,
+\begin{equation}
+    \begin{aligned}
+        \varphi(n)=\varphi(p_1^{r_1})...\varphi(p_k^{r_k})=(p_1-1)p_1^{r_1-1}...(p_k-1)p_k^{r_k-1}
+    \end{aligned}
+    \nonumber
+\end{equation}
+\end{proof}
+
+
+
+
+
+
+
+\chapter{Group}
+\section{Group $(G, *)$: a set with a binary operation(associative, identity, inverse)}
+\subsection{Definition}
+A \textit{group} is a nonempty set $G$ with a binary operation $*:G \times G \rightarrow G$ s.t.
+\begin{enumerate}[(1)]
+    \item Binary operation on $G$, $*:G \times G \rightarrow G$
+    \item $*$ is \textbf{associative}
+    \item $G$ contains an \textbf{identity} element $e$ for $*$: $\exists e\in G$ s.t. $e * g = g * e = g\ \forall g \in G$
+    \item Each element $a\in G$ has an \textbf{inverse} $b\in G$ s.t. $a*b=b*a=e$.
+
+A Group is \textbf{abelian} if moreover
+    \item $*$ is \textbf{commutative}.
+\end{enumerate}
+
+$|G|= $Order of a group $(G,*)$
+
+$(\mathbb{Z},+)$ is a group and $+$ is commutative, we call this kind of groups(statify commutative) \textit{abelian group}.
+\begin{example}
+If $\mathbb{F}$ is a field, then $(\mathbb{F},+)$ and $(\mathbb{F}^{\times},\cdot)$ are abelian group.
+\end{example}
+\begin{example}
+If $V$ is a vector space over $\mathbb{F}$, then $(V,+)$ abelian group.
+\end{example}
+As we know a $V$ is a vector space over $\mathbb{F}$ means $V$ is a field whose subfields include $\mathbb{F}$.
+
+\subsection{Uniqueness of identity and inverse}
+\begin{lemma}
+    1. Identity of a group is unique. 2. Inverse of any element in a group is also unique.
+\end{lemma}
+\begin{proof}
+\quad\\
+1. Let $e,e'$ be two identities in $G$, then $e*e'=e=e'$.
+
+2. Suppose $b,c$ are both inverse of $a$, then
+\begin{equation}
+    \begin{aligned}
+        b=b*e=b*(a*c)=(b*a)*c=e*c=c
+    \end{aligned}
+    \nonumber
+\end{equation}
+\end{proof}
+
+
+
+\subsection{Examples: Permutation group $Sym(X)$, Klein 4-group, alternating group $A_n$, Dihedral group}
+\begin{example}
+If $X$ is any nonempty set, permutation group of $X: \{\sigma:X \rightarrow X| \sigma$ is a bijection\}, then
+\end{example}
+1. $\circ$ is associative;\\
+2. $id: X \rightarrow X,\ id(x)=x\ \forall x\in X$ is the idenity;\\
+3. $\sigma\in Sym(X), \sigma^{-1}\in Sym(X)$ is the inverse function.\\
+\textbf{$(Sym(X),\circ)$ is a group called the symmetric group of $X$}
+
+\begin{example}
+    The Klein four-group is a group with four elements, in which each element is self-inverse (composing it with itself produces the identity) and in which composing any two of the three non-identity elements produces the third one. For example, $K\leq S_4$
+    $$K=\{(1),(12)(34),(13)(24),(14)(23)\}$$
+\end{example}
+
+\begin{example}
+    An alternating group is the group of even permutations of a finite set. An alternating group of degree $n$, $A_n$.
+\end{example}
+The cycle structure of $A_5$,
+
+(1) $(a b c d e)$ - even
+
+(3) $(a b c)$ - even
+
+(4) $(a b)(c d)$ - even (odd permutation $\times$ odd permutation)
+
+(6) $e$ - even
+
+\begin{example}[Dihedral group]
+\end{example}
+The dihedral group of order $2 n$, denoted $D_{2 n}$, is the group of symmetries of a regular $n$-gon $A_{1} A_{2} \ldots A_{n}$, which includes rotations and reflections. It consists of the $2 n$ elements
+$$
+\left\{1, \rho, \rho^{2}, \ldots, \rho^{n-1}, \sigma, \sigma \rho, \sigma \rho^{2}, \ldots, \sigma \rho^{n-1}\right\} .
+$$
+The element $\rho$ corresponds to rotating the $n$-gon by $\frac{2 \pi}{n}$, while $\sigma$ corresponds to reflecting it across the line $O A_{1}$ (here $O$ is the center of the polygon). So $\rho \sigma$ mean "reflect then rotate" (like with function composition, we read from right to left).
+In particular, $\rho^{n}=\sigma^{2}=1$. You can also see that $\rho^{k} \sigma=\sigma \rho^{-k}=\sigma\rho^{n-k}$.
+
+\subsection{Cancelation Laws}
+\begin{theorem}
+Let $G$ be a group. The left and right cancelation laws hold in $G$:
+\begin{enumerate}
+    \item $a*x=a*y \Rightarrow x=y$
+    \item $x*a=y*a \Rightarrow x=y$
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+\quad\\
+Let $a*x=a*y$. $\exists a'$ s.t. $a'*a=e$. $a'*(a*x)=a'*(a*y) \Rightarrow (a'*a)*x=(a'*a)*y \Rightarrow	e*x=e*y \Rightarrow	x=y$
+
+Similar for the right cancel law.
+\end{proof}
+
+\subsection{Unique Solution of Linear Equation}
+\begin{theorem}
+The linear equation $a*x=b$ and $y*a=b$ has unique solution.
+\end{theorem}
+\begin{proof}
+\quad\\
+\begin{enumerate}
+    \item Existence: Multiply by $a'$: $a'*(a*x)=a'*b \Rightarrow x=a'*b$ is a solution.
+    \item Uniqueness: if $x'$ is another, $a*x=a*x'=b \Rightarrow x=x'$
+\end{enumerate}
+\end{proof}
+
+
+
+\section{Subgroup: $H\leq G$}
+\begin{definition}
+A subset $H\subseteq G$ is a subgroup of $G$ if $H$ is itself a group.
+\end{definition}
+write $H\leq G$, $H<G$ if $H$ is a subgroup of $(G, *)$. (If $H=G$, $H$ is an improper subgroup. If $H\subsetneq G$, $H$ is an proper subgroup.)
+
+If $H=\{e\}$, then $H$ is a trivial subgroup.
+
+If $H\neq\{e\}$, then $H$ is a nontrivial subgroup.
+
+\begin{theorem}
+    A subset $H\subseteq G$ is a subgroup of $G$ if and only if
+    \begin{enumerate}
+        \item $H$ is closed under $*$. ($\forall\ g,h\in H$, $g*h\in H$)
+        \item identity $e\in H$.
+        \item Each $a\in H$, the inverse $a'\in H$
+    \end{enumerate}
+\end{theorem}
+\begin{proof}
+\quad\\
+"$\Rightarrow$": if $H\leq G$ be a subgroup.
+\begin{enumerate}
+    \item $H$ is a group $\Rightarrow$ $*$ is a binary operation on $H$, $*:H\times H \rightarrow H$ i.e. $H$ is closed under $*$.
+    \item Identity of $H$, $e_H$ is also a identity of $G$, due to the uniqueness of identity, $e_H=e_G$.
+    \item $a\in H$, $a$'s inverse $a'_H\in H$ is also an inverse in $G$, due to the uniqueness of identity, $a'_H=a'_G$.
+\end{enumerate}
+"$\Leftarrow$":
+\begin{enumerate}
+    \item $H$ is closed under $*$ $\Rightarrow	$ $*$ is a binary operation on $H$.
+    \item 2,3 fufill the requirement of identity and inverse.
+    \item $*$ is operation of group $G$ $\Rightarrow$ $*$ is associative.
+    
+    Hence $H$ is itself a group.
+    \item $H$ is a subeset of $G$, then $H$ is s subgroup of $G$.
+\end{enumerate}
+\end{proof}
+
+
+\subsection{Proposition 2.6.8: $H<G$, $(H,*)$ is a group: A group's operation with its any subgroup is also a group}
+%不同的definition.
+\begin{proposition}[Proposition 2.6.8]
+    If $(G, *)$ is a group, $H \subset G$ is a subgroup, then $(H, *)$ is a group.
+\end{proposition}
+\begin{example}
+    $(G,*)$ is a group, then ${e}<G,\ G<G$.
+\end{example}
+\begin{example}
+$\mathbb{K}\subset \mathbb{F}$ is a subfield, then $\mathbb{K}<\mathbb{F},\ \mathbb{K}^{\times}<\mathbb{F}^{\times}$.
+\end{example}
+\begin{example}
+$W\subset V$ is a vector subspace, $W<V$.
+\end{example}
+\begin{example}
+$1\in S^1\subset \mathbb{C}^{\times}$, $S^1=\{z\in\mathbb{C}| |z|=1\}$. $S^1$ is a subgroup.
+\end{example}
+\begin{proof}
+\quad\\
+$S^1=\{e^{i\theta}| \theta\in \mathbb{R}\}$. For any $e^{i\theta}, e^{i\psi}\in S^1$, $e^{i\theta}e^{i\psi}=e^{i(\theta+\psi)}\in S^1, e^{-i\theta}\in S^1$.
+\end{proof}
+\begin{example}
+$Isom(\mathbb{R}^n)<Sym(\mathbb{R}^n)$
+\end{example}
+\begin{example}
+If $\mathbb{F}$ is a field, $Aut(\mathbb{F})=\{\sigma:\mathbb{F}\rightarrow	\mathbb{F}\in Sym(\mathbb{F})| \sigma(a+b)=\sigma(a)+\sigma(b), \sigma(ab)=\sigma(a)\sigma(b)\}<Sym(\mathbb{F})$
+\end{example}
+\begin{example}
+    Dihedral Groups:
+\end{example}
+%保留多边形\\
+Let $P_n\subset \mathbb{R}^2$ be a regular $n-gon$
+\begin{center}\begin{figure}[htbp]
+    \centering
+    \includegraphics[scale=0.8]{Dihedral Groups.png}
+\end{figure}\end{center}
+$D_n<Isom(\mathbb{R}^2)$, $D_n=\{\Phi \in Isom(\mathbb{R}^2)|\Phi(P_n)=P_n\}$
+
+
+\section{Some Properties of Group Operation}
+\begin{proposition}[Proposition 3.1.1]
+    Let $(G,*)$ be a group with identity $e\in G$, then
+\end{proposition}
+(1) if $g,h\in G$ and either $g*h=h$ or $h*g=h$, then $g=e$\\
+(2) if $g,h\in G$ and $g*h=e$ then $g=h^{-1}$ and $h=g^{-1}$
+
+\begin{corollary}[Corollary 3.1.2]
+    $e^{-1}=e,\ (g^{-1})^{-1}=g,\ (g*h)^{-1}=h^{-1}*g^{-1}$
+\end{corollary}
+
+
+\section{Power of an Element}
+We define $g^n$ recursively for $n \geq 0$ by setting $g^0 = e$ and for $n\geq 1$, we set $g^n = g^{n-1} * g$. For $n \leq 0$, we define $g^n = (g^{-1})^{-n}$.
+\begin{proposition}[Proposition 3.1.5]
+(1) $g^n*g^m=g^{n+m}$; (2) $(g^n)^m=g^{nm}$
+\end{proposition}
+
+\section{$(G\times H, \circledast)$: \underline{Direct Product} of $G$ and $H$}
+$(G,*)$ a group $(H,\star)$ a group. Define an operation on $G\times H$, $\circledast$:\\
+$$(h,k)\circledast(h',k')=(h*h',k*k')$$
+\subsection{Proposition 3.1.7: $(G\times H, \circledast)$ is a group}
+\begin{proposition}[Proposition 3.1.7]
+$(G\times H, \circledast)$ is a group. The identity is $(e_G,e_H)$, inverse is $(g^{-1},h^{-1})$
+\end{proposition}
+usually written as
+$$(h,k)(h',k')=(hh',kk')$$
+
+\section{Subgroups and Cyclic Groups}
+
+\subsection{Intersection of Subgroups is a Subgroup}
+\begin{proposition}[Proposition 3.2.2]
+Let $G$ be a group and suppose $\mathcal{H}$ is any collection of subgroups of $G$. Then $K=\cap_{H\in\mathcal{H}}H<G$ is a subgroup of $G$.
+\end{proposition}
+
+
+\subsection{Subgroup Generated by $A$: $\left\langle A\right\rangle$}
+We define \textbf{Subgroup Generated by $A$:} $$\left\langle A\right\rangle=\cap_{H\in\mathcal{H}(A)}H$$
+where $\mathcal{H}(A)$ is the set of all subgroups of $G$ containing the set $A$:
+$$\mathcal{H}(A)=\{H<G|A\subset H \textit{ and }H \textit{ is a subgroup of } G \}$$
+
+
+\subsection{Cyclic Group: group generated by an element}
+A group $G$ is \underline{cyclic} if exists $g$ (an element), $\left\langle g\right\rangle=G$.
+
+$g$ is called a \underline{generator} for $G$ in this case.
+
+Easy to prove
+$$G=\left\langle g\right\rangle =\{...g^{-2},g^{-1},e,g^1,g^2...\}$$
+
+
+
+\subsection{Cyclic Subgroup}
+If $A$ is a subgroup of $G$, and $A=\left\langle \{a\}\right\rangle=\left\langle a\right\rangle$. Then $A$ is the \underline{cyclic subgroup} generated by $a$: $A=\left\langle a\right\rangle\leq G$
+
+$$\left\langle a\right\rangle =\{...a^{-2},a^{-1},e,a^1,a^2...\}$$
+
+
+\subsection{Subgroups of a Cyclic Group must be Cyclic}
+\begin{theorem}
+A subgroup of a cyclic group is cyclic.
+\end{theorem}
+\begin{proof}
+\quad\\
+Let $G=\{a^n:n\in \mathbb{Z}\}$ be a cyclic group. Let $H\leq G$ be a subgroup.
+\begin{enumerate}
+    \item If $H=\{e\}$, then $H$ is cyclic.
+    \item If $H\neq \{e\}$, then $a^n\in H$ for some $n>0$. Check $m$ be the minimal among all $n$.
+    
+    \underline{Claim}: $H=\left\langle a^m\right\rangle$
+
+    \underline{Proof}: Clearly $\left\langle a^m\right\rangle\subset H$. $\forall a^n\in H$, $n=qm+r,0\leq r<m$. Then $a^r=a^n(a^m)^{-q}$. Since $m$ is the minimal positive integer s.t. $a^m\in H$, $r=0$. $\Rightarrow n=qm \Rightarrow a^n\in \left\langle a^m\right\rangle$. Hence $H=\left\langle a^m\right\rangle$ which is cyclic.
+\end{enumerate}
+\end{proof}
+\begin{example}[Subgroups of $(\mathbb{Z},+)$]
+\end{example}
+$\mathbb{Z}$ is a cyclic group $\left\langle 1\right\rangle$. Its subgroups are $\left\langle n\right\rangle\leq \mathbb{Z}$ for some $n\geq 0$. (which is a multiplier of $n$. ($n \mathbb{Z}$))
+
+$n=0,H=\{0\}; n=1,H=\mathbb{Z}; n=2,H=2 \mathbb{Z}$
+
+\subsection{Theorem: $\left\langle a^v\right\rangle<\{1,a,a^2,...,a^{n-1}\}$ $\Rightarrow$ $\left\langle a^v\right\rangle=\left\langle a^d\right\rangle, d=gcd(v,n), |\left\langle a^v\right\rangle|=\frac{n}{d}$}
+\begin{theorem}
+    Let $G$ be a cyclic group of order $n$. ($G=\{1,a,a^2,...,a^{n-1}\}$, where $a^n=1$.). Let $H= \left\langle a^v\right\rangle$ be a subgroup of $G$. Then $H$ is generated by $a^d$ (i.e. $H=\left\langle a^d\right\rangle$), $d=gcd(v,n)$ and $|H|=\frac{n}{d}$.
+\end{theorem}
+\begin{proof}
+\quad\\
+Let $H'=\left\langle a^d\right\rangle$, we need to show that $H=H'$. $d=gcd(v,n)=d|v \Rightarrow a^v\in \left\langle a^d\right\rangle \Rightarrow H\subset H'$.
+
+While $d=sv+tn$ for some $s,t$. $\Rightarrow$ $a^d=(a^v)^s(a^n)^t$. Since $a^n=1$, $a^d=(a^v)^s \Rightarrow	H'\subset H$.
+
+Hence, $H=H'=\left\langle a^v\right\rangle$. $H=\{1,a^d,a^{2d},...,a^{n-d}\}, |H|=\frac{n}{d}$
+\end{proof}
+
+\subsection{Corollary 3.2.4: $G$ is a cyclic group $\Rightarrow	$ $G$ is abelian}
+\begin{corollary}[Corollary 3.2.4]
+    If $G$ is a cyclic group (i.e. exits $g\in G$ s.t. $\left\langle g\right\rangle=G$), then $G$ is abelian (i.e. commutative).
+\end{corollary}
+
+\subsection{Equivalent properties of order of $g$: $|g|=|\left\langle g\right\rangle|<\infty$}
+\begin{proposition}[Proposition 3.2.6]
+    Let $G$ be a group for $g \in G$, the
+    following are equivalent:
+\end{proposition}
+(i) $|g|<\infty$\\
+(ii) $\exists n \neq m$ in $\mathbb{Z}$ so that $g^{n}=g^{m}$\\
+(iii) $\exists n \in \mathbb{Z},\ n\neq 0$ so that $g^{n}=e$\\
+(iv) $\exists n \in \mathbb{Z}_{+}$so that $g^{n}=e$\\
+If $|g|<\infty$, then $|g|=$ smallest $n \in \mathbb{Z}_{+}$so that $g^{n}=e$, and $\langle g\rangle=\left\{e, g, g^{2}, \ldots, g^{n-1}\right\}=\left\{g^{n} \mid n=0, \ldots, n-1\right\}$
+
+\subsection{$(\mathbb{Z},+)$ Theorem 3.2.9: $\left\langle a\right\rangle <\left\langle b\right\rangle$ if and only if $b|a$}
+\begin{theorem}[Theorem 3.2.9]
+    If $H < \mathbb{Z}$ is a subgroup, then either $H = \{ 0 \}$ , or else $H=\left\langle d\right\rangle$ , where $$d = \min \{ h \in H | h > 0 \}$$
+    Consequently, $a \rightarrow \left\langle a\right\rangle$ deﬁnes a \textbf{bijection} from $N = \{ 0, 1, 2, . . . \}$ to the set of subgroups of $\mathbb{Z}$. Furthermore,
+    for $a,b\in \mathbb{Z}_{+}$, we have $\left\langle a\right\rangle <\left\langle b\right\rangle$ if and only if $b|a$.
+\end{theorem}
+
+\subsection{$(\mathbb{Z}_n,+)$ Theorem 3.2.10: $\left\langle [d]\right\rangle<\left\langle [d']\right\rangle$ if and only if $d'|d$}
+\begin{theorem}[Theorem 3.2.10]
+For any $n \geq 2$, if $H <\mathbb{Z}_n$ is a subgroup, then there is a positive divisor $d$ of $n$ so that $$H=\left\langle [d]\right\rangle$$
+Furthermore, this deﬁnes a bijection between divisors of $H$ and subgroups of $\mathbb{Z}_n$. Furthermore, if $d, d'> 0$ are two divisors of $n$, then $\left\langle [d]\right\rangle<\left\langle [d']\right\rangle$ if and only if $d'|d$.
+\end{theorem}
+If $H=\left\langle [d]\right\rangle$ is a subgroup of $H$, then $[n]\in H$, so $d|n$. And $|H|=|\left\langle [d]\right\rangle|=\frac{n}{d}$, so $|H|\vert d$
+
+\subsection{Subgroup Lattice}
+The set of all subgroups of a group of G, together with the data of which subgroups contain which others is called the \textbf{subgroup lattice}. We often picture the subgroup lattice in a diagram with the entire group at the top, the trivial subgroup $\{ e \} $ at the bottom, and the intermediate subgroups in the middle, with lines drawn from subgroups up to larger groups.
+\begin{center}\begin{figure}[htbp]
+    \centering
+    \includegraphics[scale=0.4]{lec1301.png}
+    \caption{}
+    \label{}
+\end{figure}\end{center}
+
+
+
+
+
+
+
+\section{Homomorphism}
+\subsection{Def: Homomorphism, Image}
+\begin{definition}
+If $(G,*)$ and $(H,\circ)$ are groups, then a function $f:G \rightarrow	H$ is a \textbf{homomorphism} if $$f(x*y)=f(x)\circ f(y),\ \forall x,y\in G$$
+If $f$ is also a bijection, then $f$ is called an \textbf{isomorphism}.
+\end{definition}
+
+\begin{example}
+    Let $S_{n}$ be the symmetric group on $n$ letters, and let $\phi: S_{n} \rightarrow \mathbb{Z}_{2}$ be defined by $$\phi(\sigma)= \begin{cases}0 & \text { if } \sigma \text { is an even permutation, } \\ 1 & \text { if } \sigma \text { is an odd permutation. }\end{cases}$$
+    Show that $\phi$ is a homomorphism.
+\end{example}
+
+\begin{example}
+    Let $G L(n, \mathbb{R})$ be the multiplicative group of all invertible $n \times n$ matrices. Recall that a matrix $A$ is invertible if and only if its determinant, $\operatorname{det}(A)$, is nonzero. Recall also that for matrices $A, B \in G L(n . \mathbb{R})$ we have
+    $$
+    \operatorname{det}(A B)=\operatorname{det}(A)
+    $$
+\end{example}
+
+\begin{example}
+\end{example}
+\begin{enumerate}
+    \item $\phi: (\mathbb{R},+) \rightarrow	(\mathbb{R}^*,x)\quad \phi(x)=2^x$. Then
+    $$\phi(x+y)=2^{x+y}=2^x2^y=\phi(x)\phi(y)$$ $\phi$ is a homonorphism.
+    \item $\phi: G \rightarrow	G\quad \phi(g)=g^{-1}$. Then
+    $$\phi(gh)=(gh)^{-1}=h^{-1}g^{-1}=\phi(h)\phi(g)$$ $\phi$ is not a homonorphism in general; but it is homomorpgism if it is abelian.
+\end{enumerate}
+
+\begin{definition}
+    Let $\phi$ be a mapping of a set $X$ into a set $Y$, and let $A \subseteq X$ and $B \subseteq Y$. The \underline{image $\phi[A]$ of $A$ in $Y$ under $\phi$} is $\{\phi(a) \mid a \in A\}$. The set $\phi[X]$ is the \underline{range of $\phi$}. The \underline{inverse image $\phi^{-1}[B]$ of $B$ in $X$} is $\{x \in X \mid \phi(x) \in B\}$
+\end{definition}
+
+\subsection{Properties of Homomorphism}
+\begin{theorem}
+    Let $\phi$ be a homomorphism of a group $G$ into a group $G'$, then
+\end{theorem}
+\begin{enumerate}
+    \item if $e\in G$ is an identity in $G$, then $\phi(e)\in G'$ is the identity in $G'$.
+    \item if $a\in G$ has inverse $a'\in G$, then $\phi(a)\in G'$ has inverse $\phi(a')\in G'$.
+    \item if $H\leq G$ is a subgroup of $G$, then the image $\phi(H)=\{\phi(h):h\in G\}\leq G'$ is a subgroup of $G'$.
+    \item if $K'\leq G'$ then the inverse image $\phi^{-1}(K')=\{x\in G:\phi(x)\in K'\}\leq G$.
+\end{enumerate}
+
+
+\subsection{Kernel of Homomorphism}
+\begin{definition}
+    Let $\phi: G \rightarrow G'$ be a homomorphism of groups. The subgroup $\phi^{-1}(e')=\{x\in G:\phi(x)=e'\}$ is the kernel of $\phi$, denoted by $Ker (\phi)$.
+    $$Ker (\phi) \stackrel{def}{=} \phi^{-1}(e')=\{x\in G:\phi(x)=e'\}$$
+\end{definition}
+
+\begin{theorem}[$Ker\phi$ is normal]
+Let $\phi: G \rightarrow G'$ be a homomorphism. $H=Ker\phi$, then for all $a\in G$, $\phi^{-1}[\phi(a)]=\{x\in G:\phi(x)=\phi(a)\}$ is the left coset $aH$ of $H$, and is also the right coset $Ha$ of $H$.
+$$aH=Ha=\{x\in G:\phi(x)=\phi(a)\}$$
+\end{theorem}
+\begin{proof}
+\begin{equation}
+    \begin{aligned}
+        &\phi(x)=\phi(a)\\
+        \Leftrightarrow\quad	&\phi(x)\phi(a)^{-1}=e'\\
+        \Leftrightarrow\quad	&\phi(x)\phi(a^{-1})=e'\\
+        \Leftrightarrow\quad	&\phi(xa^{-1})=e'\\
+        \Leftrightarrow\quad	&xa^{-1}\in H\\
+        \Leftrightarrow\quad	&x\in Ha\\
+    \end{aligned}
+    \nonumber
+\end{equation}
+Similarity, we can prove $x\in aH$.
+\end{proof}
+
+\begin{theorem}
+    A homomorphism is injective if and only if $Ker(\phi)=\{e\}$.
+\end{theorem}
+\begin{proof}
+        \begin{equation}
+            \begin{aligned}
+                \phi(x)=\phi(y) \Leftrightarrow	&\phi(x)\phi^{-1}(y)=e'\\
+                &\phi(x)\phi(y^{-1})=e'\\
+                &\phi(xy^{-1})=e'\\
+                \Leftrightarrow	&xy^{-1}\in Ker(\phi)
+            \end{aligned}
+            \nonumber
+        \end{equation}
+        Hence, we can also prove that
+        \begin{equation}
+            \begin{aligned}
+                xy^{-1}\in Ker(\phi)\Leftrightarrow x=y\text{ if and only if }Ker(\phi)=\{e\}
+            \end{aligned}
+            \nonumber
+        \end{equation}
+\end{proof}
+
+
+
+
+\section{Isomorphism}
+\subsection{Definition: Isomorphism}
+\begin{definition}
+    We say that $G$ and $H$ are \textbf{isomorphic} if exists an \textbf{isomorphism} $f$, denoted by $G\cong H$ or $G\simeq H$. (since $f$ is bijection, $G\cong H\Leftrightarrow H\cong G$)
+\end{definition}
+
+
+Isomophic means these two pathes are the same.
+\begin{equation}
+    \begin{aligned}
+        G\times G& \stackrel{*}{\longrightarrow} & G &\stackrel{f}{\longrightarrow}& H\\
+        G\times G& \stackrel{(f,f)}{\longrightarrow} &H\times H & \stackrel{\circ}{\longrightarrow}& H\\
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+\begin{example}
+    $(\mathbb{Z}_2,+)$, $(\{-1,1\},\times)$ and $\phi: 0 \rightarrow 1;\ 1 \rightarrow -1$.
+    \begin{equation}
+        \begin{aligned}
+            \phi(0+0)=1=\phi(0)\times\phi(0)\\
+            \phi(0+1)=-1=\phi(0)\times\phi(1)\\
+            \phi(1+1)=1=\phi(1)\times\phi(1)\\
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{example}
+
+
+\subsection{Theorem:$\sigma: G \rightarrow G'\text{ injective}\text{ and }\sigma(xy)=\sigma(x)\sigma(y)\ \forall x,y\in G \Rightarrow	\sigma(G)\leq G'$, $G$ is isomorphic to $\sigma(G)$}
+\begin{theorem}
+Let $\sigma: G \rightarrow G'$ be an injective map s.t. $$\sigma (xy)=\sigma(x)\sigma(y),\ \forall x,y\in G$$
+Then the image $\sigma(G)=\{\sigma(x):x\in G\}$ is a subgroup of $G'$ that is isomorphic to $G$.
+\end{theorem}
+\begin{proof}
+\quad\\
+\begin{enumerate}
+    \item Closed: $\forall a=\sigma(x),b=\sigma(y)\in \sigma(G)$, then $ab=\sigma(x)\sigma(y)=\sigma(xy)\in \sigma(G)$.
+    \item Identity: $\sigma(e)\in \sigma(G)$ is an identity for $\sigma(G)$: $\sigma(e)\sigma(x)=\sigma(ex)=\sigma(x)=\sigma(xe)=\sigma(x)\sigma(e)$
+    \item Inverse: $\sigma(x^{-1})$ is an inverse in $\sigma(G)$ for $\sigma(x)$: $\sigma(x^{-1})\sigma(x)=\sigma(e)=\sigma(x)\sigma(x^{-1})$
+\end{enumerate}
+\end{proof}
+
+\subsection{Cayley Theorem: $G$ is isomorphic to a subgroup of $S_G$}
+\begin{theorem}[Cayley Theorem]
+Let $G$ be a group and $S_G$ is the symmetric group of $G$ (the group of all permutation of $G$: $S_G=\{\text{Bijection } \sigma: G \rightarrow G\}$)
+Then $G$ is isomorphic to a subgroup of $S_G$.
+\end{theorem}
+\begin{proof}
+\quad\\
+Set a bijection $\phi: G \rightarrow S_G$ such that $\phi(g)=\lambda_g, \forall g\in G$, where $\lambda_g$ is a permutation $\lambda_g: x \rightarrow gx$.
+
+Claim: $\lambda_g\in S_G$ (i.e. $\lambda_g$ is a permutation of $G$, a \underline{bijection} $G \rightarrow	G$).
+\begin{enumerate}
+    \item $\lambda_g: G \rightarrow G$ is \underline{injective}
+    \begin{equation}
+        \begin{aligned}
+            \lambda_g(x)&=\lambda_g(y)\\
+            \Leftrightarrow	gx&=gy\\
+            \Leftrightarrow	x&=y\\
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    \item $\lambda_g: G \rightarrow G$ is \underline{surjective}. Let $y\in G$
+    \begin{equation}
+        \begin{aligned}
+            \lambda_g(x)&=y\\
+            \Leftrightarrow	gx&=y\\
+            \Leftrightarrow	x&=g^{-1}y\\
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{enumerate}
+
+
+Claim: $\phi(x)\phi(y)=\phi(xy)$
+\begin{equation}
+    \begin{aligned}
+        \phi(x)\phi(y)=\lambda_x\circ\lambda_y\\
+        (\lambda_x\circ\lambda_y)(z)=\lambda_x(yz)=xyz=\lambda_{xy}(z),\ \forall z\in G\\
+        \Rightarrow	\phi(x)\phi(y)=\phi(xy)
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+According to previous theorem, $\phi(G)\leq G$ and $G$ is isomorphic to $\phi(G)$.
+
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Coset and Order}
+\begin{definition}
+If $H$ is a subgroup of a group $G$ and $a\in G$, then $aH=\{ah|h\in H\}\leq G$ is called \underline{left coset} of H.
+\end{definition}
+\begin{theorem}
+Let $H\leq G$, $a,b\in G$,
+\begin{enumerate}
+    \item $aH=bH$ if and only if $a^{-1}b\in H$
+    \item $aH\cap bH=\emptyset$ or $aH=bH$
+    \item $|aH|=|H|\ \forall a\in G$
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+    \quad
+
+    \begin{enumerate}
+        \item Assume that $aH\cap bH\neq \emptyset$ and let $ah=bk\in aH\cap bH$ with $h,k\in H$.
+
+        $ah=bk\Leftrightarrow h=a^{-1}bk \Leftrightarrow a^{-1}b=hk^{-1}\in H$, thus $a^{-1}b\in H$.
+        \item When $aH\cap bH\neq \emptyset$ $\exists k_1,h\in H$ such that $ak_1=bh\in bH$. Then $\forall k_2\in H$ $a=bhk_1^{-1} \Rightarrow ak_2=bhk_1^{-1}k_2$ where $hk_1^{-1}k_2\in H$ so $ak_2\in bH,\ \forall k_2\in H$.
+        \item $x \rightarrow ax$ is bijection $\Rightarrow |aH|=|H|$.
+    \end{enumerate}
+\end{proof}
+
+\begin{claim}
+Coset can generate a partition of group:
+$$G=a_1H\cup a_2H\cup \cdots \cup a_rH$$
+\end{claim}
+
+\subsection{index of a subgroup}
+\begin{definition}
+    Let H be a subgroup of a group G. \underline{The number of left cosets of H in G} is the \textbf{index}.
+\end{definition}
+\textbf{Note:} Since $|aH|=|H|\ \forall a\in G$, the index of a subgroup is the number of subgroups which have order $|H|$.
+
+
+
+
+
+
+\subsection{Lagrange Theorem: Order of subgroup divides the order of group}
+\begin{theorem}[Lagrange Theorem]
+    Let $H\leq G$ be a subgroup of finite group $G$. Then the order $|H|$ divides the order $|G|$.
+\end{theorem}
+\begin{proof}
+\quad\\
+Give a partition
+\begin{equation}
+    \begin{aligned}
+        G&=a_1H\cup a_2H\cup \cdots \cup a_rH\\
+        |G|&=|a_1H|+ |a_2H|+ \cdots + |a_rH|\\
+        &=r|H|\rightarrow |H|\bigg||G|
+    \end{aligned}
+    \nonumber
+\end{equation}
+\end{proof}
+
+\subsection{Theoerm: Order of element $a\in G =|\left\langle a\right\rangle|$ divides $|G|$}
+\begin{theorem}[Order of element/cyclic subgroup]
+For $a\in G$, the order of $a$ (the smallest $m$ such that $a^m=e$) divides $|G|$. The order of $a$ is the order of cyclic subgroup $\left\langle a\right\rangle$ with generator $a$.
+\end{theorem}
+
+\begin{proof}
+\quad\\
+For $a\in G$, $H=\{a^n,n\in \mathbb{Z}\}\leq G$. $H$ is the size of $m$. With lagrange theorm, $|H|=m\bigg||G|$
+\end{proof}
+
+\begin{corollary}
+Every group of prime order is cyclic.
+\end{corollary}
+
+\subsection{Theorem: Order $n$ cyclic group is isomorphic to $(\mathbb{Z}_n,+_n)$}
+\begin{theorem}
+    Let $G$ be a cyclic group with generator $a$. If the order of $G$ is infinite, then G is isomorphic to $(\mathbb{Z},+)$. If $G$ has finite order $n$, then $G$ is isomorphic to $(\mathbb{Z}_n,+_n)$.
+\end{theorem}
+
+
+\section{Direct Products}
+\subsection{Cartesian product}
+Let $G_1,G_2,...,G_n$ be $n$ groups. Let $G=G_1\times G_2\times\cdots\times G_n$ be the Cartesian product.
+
+For $g\in G$, $g=(g_1,...,g_n)$, $g_i\in G_i$.
+
+\begin{theorem}
+Then $(G,*)$ becomes a group with operation $*$ defined as
+$$a*b=(a_1,...,a_n)*(b_1,...,b_n)=(a_1b_2,...,a_nb_n)\quad a,b\in G$$
+\end{theorem}
+\begin{proof}
+    \quad
+
+\begin{enumerate}[(1)]
+    \item Binary operation $*:G\times G \rightarrow	G$.
+    \item $*$ is associative: $$(a*b)*c=a*(b*c)=(a_1b_1c_1,...,a_nb_nc_n)$$
+    \item Identity: $e=(e_1,...,e_n)\in G$ $$e*a=a=a*e$$
+    \item Inverse: $a^{-1}=(a_1^{-1},...,a_n^{-1})\in G$ $$a*a^{-1}=a^{-1}*a=e$$
+\end{enumerate}
+\end{proof}
+
+\subsection{Theorem: $\mathbb{Z}_m\times \mathbb{Z}_n$ is cyclic and is isomorphic to $\mathbb{Z}_{mn}$ $\Leftrightarrow gcd(m,n)=1$}
+\begin{theorem}
+The group $\mathbb{Z}_m\times \mathbb{Z}_n$ is cyclic and is isomorphic to $\mathbb{Z}_{mn}$ if and only if $gcd(m,n)=1$.
+\end{theorem}
+\begin{proof}
+\quad\\
+\textbf{Claim:} $(1,1)$ generate $\mathbb{Z}_m\times \mathbb{Z}_n$
+
+$k(1,1)=(k,k)=(0,0)$ if and only if $m|k$ and $n|k$. The smallest such $k$ is $k=lcm(m,n)=mn$. Hence, $\mathbb{Z}_m\times \mathbb{Z}_n$ is a cyclic group with order $mn$. Then $\mathbb{Z}_m\times \mathbb{Z}_n$ is isomorphic to $\mathbb{Z}_{mn}$.
+
+We can define an isomorphism $$\phi:\mathbb{Z}_m\times \mathbb{Z}_n \rightarrow \mathbb{Z}_{mn}$$ and its inverse $$\psi: \mathbb{Z}_{mn} \rightarrow \mathbb{Z}_m\times \mathbb{Z}_n$$
+Since $\mathbb{Z}_{mn}\left\langle 1\right\rangle$, $\mathbb{Z}_m\times \mathbb{Z}_n=\left\langle (1,1)\right\rangle$, we can write $$\psi(x\text{ mod }mn)=(x\text{ mod }m,x\text{ mod }n)$$
+$\psi$ is well-defined.
+
+To describe $\phi:\mathbb{Z}_m\times \mathbb{Z}_n \rightarrow \mathbb{Z}_{mn}$ at $1=sm+tn$ and let $$\phi(a\text{ mod }m,b\text{ mod }n)=(atn+bsm\text{ mod }mn)$$
+\begin{equation}
+    \begin{aligned}
+        \psi(atn+bsm\text{ mod }mn)&=(atn+bsm\text{ mod }m,atn+bsm\text{ mod }n)\\
+        &=(atn\text{ mod }m,bsm\text{ mod }n)\\
+        &=(a(1-sm)\text{ mod }m,b(1-tn)\text{ mod }n)\\
+        &=(a\text{ mod }m,b\text{ mod }n)
+    \end{aligned}
+    \nonumber
+\end{equation}
+Hence $\psi$ is the inverse of $\phi$.
+\end{proof}
+
+
+
+\begin{corollary}
+    The group $\prod_{i=1}^n \mathbb{Z}_{m_i}$ is cyclic and is isomorphic to $\mathbb{Z}_{m_1m_2\cdots m_n}$ if and only if the numbers $m_i$ for $i=1,...,n$ are such that the gcd of any two of them is $1$.
+\end{corollary}
+\begin{example}
+If $n$ is written as a product of powers of distinct prime numbers, as it $$n=(p_1)^{n_1}(p_2)^{n_2}\cdots(p_r)^{n_r}$$
+then $\mathbb{Z}_n$ is isomorphic to $$\mathbb{Z}_{(p_1)^{n_1}}\times \mathbb{Z}_{(p_2)^{n_2}}\times \cdots\times \mathbb{Z}_{(p_r)^{n_r}}$$
+\end{example}
+
+\subsection{Finitely Generated Abelian Groups}
+\begin{theorem}[Primary Factor Version of the Fundamental Theorem of Finitely Generated Abelian Groups]
+Every finitely generated abelian group $G$ is isomorphic to a direct product of cyclic groups in the form $$\mathbb{Z}_{(p_1)^{r_1}}\times \mathbb{Z}_{(p_2)^{r_2}}\times \cdots\times \mathbb{Z}_{(p_n)^{r_n}}\times \mathbb{Z}\times \mathbb{Z}\times \cdots \times \mathbb{Z}$$
+where the $p_i$ are primes, not necessarily distinct, and the $r_i$ are positive integers. The number of factors of $\mathbb{Z}$ and the prime powers $(p_i)^{r_i}$ are unique.
+\end{theorem}
+\begin{enumerate}[$\bullet$]
+    \item $\mathbb{Z}_{mn}\simeq \mathbb{Z}_m\times \mathbb{Z}_n$ if $gcd(m,n)=1$.
+    \item Abelian $\Leftrightarrow$ $\mathbb{Z}_m\times \mathbb{Z}_n=\mathbb{Z}_n\times \mathbb{Z}_m$
+\end{enumerate}
+
+
+
+\begin{example}
+Find all abelian group of order 16
+\end{example}
+5 nonisomorphic abelian group.
+\begin{equation}
+    \begin{aligned}
+        \left\{\begin{matrix}
+            \mathbb{Z}_{16}&&&\\
+            \mathbb{Z}_8&\times \mathbb{Z}_2&&\\
+            \mathbb{Z}_4&\times\mathbb{Z}_4&&\\
+            \mathbb{Z}_4&\times \mathbb{Z}_2&\times \mathbb{Z}_2&\\
+            \mathbb{Z}_2&\times \mathbb{Z}_2&\times \mathbb{Z}_2&\times \mathbb{Z}_2
+        \end{matrix}\right.
+    \end{aligned}
+    \nonumber
+\end{equation}
+\begin{example}
+\end{example}
+\begin{equation}
+    \begin{aligned}
+        \mathbb{Z}_{6}\times \mathbb{Z}_{40}\times \mathbb{Z}_{49}&\simeq \mathbb{Z}_2\times \mathbb{Z}_3\times \mathbb{Z}_5\times \mathbb{Z}_8\times \mathbb{Z}_{49}\\
+        \mathbb{Z}_{210}\times \mathbb{Z}_{56}&\simeq \mathbb{Z}_3\times \mathbb{Z}_7\times \mathbb{Z}_2\times \mathbb{Z}_5\times \mathbb{Z}_{7}\times \mathbb{Z}_{8}\\
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+\section{Def: Normal Subgroup $H\lhd G: aH=Ha,\forall a\in G$}
+\begin{definition}
+    A subgroup $H\leq G$ is \textbf{normal} if its left and right cosets coincide, that is, if $$aH=Ha,\quad \forall a\in G$$
+    Notation: $H \lhd G$
+\end{definition}
+\textbf{Note} that all subgroups of abelian groups are normal.
+
+
+\subsection{Thm: Three ways to check if $H$ is normal}
+\begin{theorem}
+    "$H<G$ is a normal subgroup of $G$ ($H\lhd G$)" is equivalent to
+    \begin{enumerate}[(1)]
+        \item $ghg^{-1}\in H$ for all $g\in G$ and $h\in H$
+        \item $gHg^{-1}=H$ for all $g\in G$
+        \item $gH=Hg$ for all $g\in G$
+    \end{enumerate}
+\end{theorem}
+
+
+\subsection{Thm: A subgroup is "Well-defined Left Cosets Multiplication" $\Leftrightarrow$ "Normal"}
+\begin{theorem}
+    Let $H$ be a subgroup of a group $G$. Then left coset multiplication is well defined by the equation
+    $$(aH)(bH) = (ab)H$$
+    if and only if $H \lhd G$ ($H$ is a normal subgroup of $G$).
+
+    i.e. '$x\in aH$ and $y\in bH$ $\Rightarrow$ $xy\in abH$' \underline{if and only if} '$aH=Ha,\quad \forall a\in G$'
+\end{theorem}
+\begin{proof}
+    \quad
+
+\begin{enumerate}[$\bullet$]
+    \item "$\Rightarrow$": $\forall x\in aH$, $a^{-1}\in a^{-1}H$ $\Rightarrow$ $xa^{-1}\in H \Leftrightarrow x\in Ha \Rightarrow aH\subset Ha$;
+    
+    \quad Similarly $a^{-1}H\subset Ha^{-1} \Leftrightarrow	Ha\subset aH$ $\Rightarrow	aH=Ha$
+    \item "$\Leftarrow$": Let $x\in aH$, $y\in bH$. Say $x=ah_1, y=bh_2$
+    \begin{equation}
+        \begin{aligned}
+            xy&=(ah_1)(bh_2)\\
+            &=a(h_1 b)h_2\\
+            &=a(b h_3)h_2 \quad \text{(Since $bH=Hb$)}\\
+            &=(ab)(h_3 h_2)\in abH
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{enumerate}
+\end{proof}
+
+
+\section{Factor Group $G/H=\{aH:a\in G\}$}
+\begin{definition}
+    The group $G/H=\{aH:a\in G\}$ with $(aH)(bH)=abH$ is the factor group (or quotient group) of
+    $G$ by $H$.
+\end{definition}
+\subsection{Def: kernel $H$ forms a factor group $G/H$}
+\begin{definition}
+    Let $\phi: G \rightarrow G'$ be a homomorphism of groups with \underline{kernel $H$}. Then the cosets of $H$ form
+    a \textbf{factor group}, $G/H=\{aH:a\in G\}$. where $(aH)(bH) = (ab)H$.
+\end{definition}
+Also, the map $\mu: G/H \rightarrow \phi[G]$
+    defined by $\mu(aH) = \phi(a)$ is an isomorphism. Both coset multiplication and $\mu$ are well
+    defined, independent of the choices $a$ and $b$ from the cosets.
+
+\subsection{Cor: $ker\phi$ is a normal subgroup}
+\begin{corollary}
+    $ker\phi$ is a normal subgroup: $ker\phi \lhd G$ for all homonorphisms.
+\end{corollary}
+
+
+\subsection{Corollary: normal subgroup $H$ forms a group $G/H$}
+By the Thm: A subgroup is "Well-defined Left Cosets Multiplication" $\Leftrightarrow$ "Normal".
+\begin{corollary}
+    Let $H\lhd  G$ be a \textbf{normal subgroup} of $G$. Then the cosets of $H$ form a group $G/H=\{aH:a\in G\}$ under the
+    binary operation $(aH)(bH) = (ab)H$.
+\end{corollary}
+\begin{proof}
+\quad
+
+\begin{enumerate}[$(1)$]
+    \item $*$ is associative.
+    \item $G/H$ has an identity $H$. $$H*aH=aH*H=aH$$
+    \item $aH\in G/H$ has inverse $a^{-1}H$
+\end{enumerate}
+\end{proof}
+\textbf{Note}: This corollary contains the defintion because \underline{kernel is normal subgroup}(kernel $\Rightarrow$ normal subgroup). (We can then prove they are exactly the same in the next theorem (kernel $\Leftarrow$ normal subgroup))
+
+
+\subsection{Thm: \underline{normal subgroup is a kernel} of a surjective homomorphism $\gamma: G \rightarrow G/H$}
+For any normal subgroup $H\lhd G$, we can define $\gamma(x)=xH$ which is surjective with $ker \gamma=H$
+\begin{theorem}
+Let $H \lhd G$ be a normal subgroup of $G$. Define $\gamma: G \rightarrow G/H$, $\gamma(x)=xH$. Then $\gamma$ is a surjective homomorphism with $ker \gamma=H$.
+\end{theorem}
+\begin{proof}
+    \quad
+\begin{enumerate}
+    \item $\gamma$ is surjective homomorphism: $\gamma(ab)=abH=(aH)(bH)=\gamma(a)\gamma(b)$
+    \item $ker\gamma=H$: The identity in $G/H$ is the coset $H$.
+    \begin{equation}
+        \begin{aligned}
+            ker\gamma=\gamma^{-1}(H)&=\{a\in G: \gamma(a)=aH=H\}\\
+            &=\{a\in G: a\in H\}=H
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{enumerate}
+\end{proof}
+
+
+\subsection{\underline{The Fundamental Homomorphism Theorem}: Every homomorphism $\phi$ can be factored to a homomorphism $\gamma: G \rightarrow G/H$ and isomorphism $\mu : G/H \rightarrow	\phi[G]$}
+\begin{center}\begin{figure}[htbp]
+    \centering
+    \includegraphics[scale=0.5]{FHT.png}
+    \caption{The Fundamental Homomorphism Theorem}
+    \label{}
+\end{figure}\end{center}
+\begin{theorem}[The Fundamental Homomorphism Theorem]
+    \quad
+    \begin{center}
+        \fcolorbox{black}{gray!10}{\parbox{.9\linewidth}{\underline{Homomorphism $\phi: G \rightarrow G'$ with kernel $H$} can be \textbf{factored} $$\phi=\mu\gamma$$ where $\gamma: G \rightarrow G/H$ is a \underline{homomorphism}, $\mu : G/H \rightarrow	\phi[G]$ is an \underline{isomorphism}\\where $\gamma(g)=gH$, $\mu(gH)=\phi(g)$}}
+    \end{center}
+
+    Let $\phi: G \rightarrow G'$ be a group
+    homomorphism with kernel $H$.
+    
+    Then $\phi[G]$ is a group isomorphic to $G/H$, and $\mu: G/H \rightarrow \phi[G]$ given by $\mu(gH)=\phi(g)$ is an \underline{isomorphism}.
+    (If $\gamma:G \rightarrow G/H$ is the homomorphism given by $\gamma(g) = gH$, then $\phi(g) = \mu\gamma(g)$ for each $g\in G$.)
+\end{theorem}
+\begin{proof}
+i.e. prove $\mu$ is (1) well-deifined, (2) isomorphism.
+\begin{enumerate}[(1)]
+    \item \underline{well-defined}: if $aH=bH$, then $a^{-1}b\in H$, $$\mu(bH)=\mu((a(a^{-1}b))H)=\phi(a(a^{-1}b))=\phi(a)\phi(a^{-1}b)=\phi(a)=\mu(aH)$$
+    \item \underline{homomorphism}:$$\mu(aHbH)=\mu(abH)=\phi(ab)=\phi(a)\phi(b)=\mu(aH)\mu(bH)$$
+    \item \underline{isomorphism} i.e. prove $ker(\mu)$ is exactly the identity in $G/H$:
+    \begin{equation}
+        \begin{aligned}
+            \mu(aH)=e'=\phi(a) & \Leftrightarrow a\in ker(\mu),a\in ker(\phi)=H\\
+            &\Leftrightarrow aH=H,\quad aH\text{ is the identity in }G/H
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{enumerate}
+\end{proof}
+
+\begin{corollary}
+Let $\phi: G \rightarrow G'$ be a homomorphism for finite group $G,G'$.
+
+Then (1).$|\phi(G)|\bigg|  |G|$; (2).$|\phi(G)|\bigg|  |G’|$
+\end{corollary}
+\begin{proof}
+\quad
+\begin{enumerate}[(1)]
+    \item According to the Fundamental Homomorphism theorem, $\phi(G)$ is one-to-one corresponse to $G/H$ ($H$ is the kernel of $G$), then $|\phi(G)|=|G/H|=|\{aH: a\in G\}| \Rightarrow|\phi(G)|=|G|/|H|$
+    \item Proved by Lagrange theorem.
+\end{enumerate}
+\end{proof}
+
+\subsection{Thm: $(H\times K)/(H\times e)\simeq K$ and $(H\times K)/(e\times K)\simeq H$}
+\begin{theorem}
+    Let $G=H \times K$ be the direct product of groups $H$ and $K$. Then $\bar{H}=\{(h, e) \mid h \in H\}$ is a normal subgroup of $G$. Also $G / \bar{H}$ is isomorphic to $K$ in a natural way. Similarly, $G / \bar{K} \simeq H$ in a natural way.
+\end{theorem}
+\begin{proof}
+    $\pi:H\times K \rightarrow	K$ where $\pi(h,k)=k$ has kernal $\bar{H}=\{(h, e) \mid h \in H\}$, then $H\times K/\bar{H}$ is isomorphic to $K$. Prove $G / \bar{K} \simeq H$ in the same way.
+\end{proof}
+
+\subsection{Thm: factor group of a cyclic group is cyclic [a]/N=[aN]}
+\begin{theorem}
+    A factor group of a cyclic group is cyclic. $[a]/N=[aN]$
+\end{theorem}
+
+\subsection{Ex: 15.11 example $\mathbb{Z}_4\times \mathbb{Z}_6/(\left\langle (2,3)\right\rangle)\simeq \mathbb{Z}_4\times \mathbb{Z}_3$ or $\mathbb{Z}_{12}$}
+
+
+
+\subsection{Thm: Homomorphism $\phi: G \rightarrow G^{\prime}$ preserves normal subgroups between $G$ and $\phi[G]$.}
+\begin{theorem}
+    Let $\phi: G \rightarrow G^{\prime}$ be a group homomorphism. If $N$ is a normal subgroup of $G$, then $\phi[N]$ is a normal subgroup of $\phi[G]$. Also, if $N^{\prime}$ is a normal subgroup of $\phi[G]$, then $\phi^{-1}\left[N^{\prime}\right]$ is a normal subgroup of $G$.
+\end{theorem}
+Note: $\phi[N]$ is a normal subgroup of $\phi[G]$ not $G'$. Counterexample: $\phi: \mathbb{Z}_{2} \rightarrow S_{3}$, where $\phi(0)=\rho_{0}$ and $\phi(1)=\mu_{1}$ is a homomorphism, and $\mathbb{Z}_{2}$ is a normal subgroup of itself, but $\left\{\rho_{0}, \mu_{1}\right\}$ is not a normal subgroup of $S_{3}$.
+
+
+
+
+
+\section{Def: automorphism, inner automorphism}
+\begin{definition}
+    \quad\\
+    An isomorphism $\phi : G \rightarrow G$ of a group $G$ with itself is an \underline{automorphism} of $G$.\\
+    The automorphism $\phi_g : G \rightarrow G$, where $\phi_g(x) = gxg^{-1}$ for all $x \in G$, is the \underline{inner automorphism} of $G$ by $g$. Performing $\phi_g$ on $x$ is called \underline{conjugation} of $x$ by $g$.
+\end{definition}
+
+\section{Simple Groups}
+\begin{definition}
+    A group $G$ is \underline{simple} if it is nontrivial ($G\neq \{e\}$) and has no proper nontrivial normal subgroups. ($\nexists H\neq \{e\} \lhd G$)
+\end{definition}
+\begin{theorem}
+    The alternating group $A_n$ is simple for $n\geq 5$
+
+    (alternating group is a group of even permutations on a set of length $n$)
+\end{theorem}
+
+
+\section{The Center and Commutator Subgroups}
+\subsection{Def: center and commutator subgroup}
+\begin{theorem}
+All finite subgroup $G$ have two \underline{normal subgroups},
+\end{theorem}
+\begin{enumerate}[(1)]
+    \item The \textit{center} of $G$, $Z(G)=\{z\in G: za=az,\forall a\in G\}\lhd G$
+    \item The \textit{commutator} subgroup of $G$, $C(G)=[G,G]=\{[a,b]:a,b\in G\}$.
+\end{enumerate}
+\begin{definition}
+$[a,b]=aba^{-1}b^{-1}$ is the \underline{commutator} of $a$ and $b$. $[a,b]\in G$ is the unique element such that $ab=[a,b]ba$.
+\end{definition}
+
+\subsection{Thm: commutator subgroup is normal}
+\begin{theorem}
+$[G,G]\lhd G$
+\end{theorem}
+\begin{proof}
+Consider $[a,b]\in [G,G]$, prove that $\forall g\in G, g[a,b]g^{-1}\in [G,G]$
+\begin{equation}
+    \begin{aligned}
+        g[a,b]g^{-1}&=g(aba^{-1}b^{-1})g^{-1}=(gag^{-1})(gbg^{-1})(ga^{-1}g^{-1})(gb^{-1}g^{-1})\\
+        &=(gag^{-1})(gbg^{-1})(gag^{-1})^{-1}(gbg^{-1})^{-1}=[gag^{-1},gbg^{-1}]\in[G,G]
+    \end{aligned}
+    \nonumber
+\end{equation}
+\end{proof}
+
+\begin{example}
+\end{example}
+\begin{enumerate}[(1)]
+    \item For abelian group, $Z(G)=G$, $C(G)=\{e\}$
+    \item $G=S_6$, $Z(G)=\{e\}$, $C(G)=\{1,\rho,\rho^2\}$
+    \item $G=D_8=\{1,\rho,\rho^2,\rho^3,\sigma,\sigma\rho,\sigma\rho^2,\sigma\rho^3\}$, $Z(G)=\{1,\rho^2\}$, $C(G)=\{1,\rho^2\}$
+    \item $G=D_{12}$, $Z(G)=\{1,\rho^3\}$, $C(G)=\{1,\rho^2,\rho^4\}$
+    \item $G=A_4$, $Z(G)=\{(1)\}$, $C(G)=\{(1),(12)(34),(13)(24),(14)(23)\}$
+    \item $G=S_4$, $Z(G)=\{(1)\}$, $C(G)=A_4$
+\end{enumerate}
+Commutator subgroup of $S_n$ is $A_n$.
+
+Commutator subrgoup of $D_{2n}$ is $\{1,\rho^2,...,\rho^{n-2}\}$
+
+$\sigma\rho^{a}=\rho^{n-a}\sigma=\rho^{n-2a}(\rho^{a}\sigma) \Rightarrow \rho^{n-2a}$ is a commutator $\forall a\in \mathbb{Z}$ $\Rightarrow$ $C(D_{2n})=\{1,\rho^2,...\rho^{n-2}\}$ if $n$ is even.
+
+\subsection{Thm: if $N \lhd G$, "$G/N$ is abelian" $\Leftrightarrow$ "$[G,G] \leq N$"}
+\begin{theorem}
+    If $N$ is a normal subgroup of $G$, then $G/N$ is abelian if and only if $[G,G] < N$.
+\end{theorem}
+\begin{proof}
+\quad\\
+If $N$ is a normal subgroup of $G$ and $G / N$ is abelian, then $\left(a^{-1} N\right)\left(b^{-1} N\right)=$ $\left(b^{-1} N\right)\left(a^{-1} N\right)$; that is, $a b a^{-1} b^{-1} N=N$, so $a b a^{-1} b^{-1} \in N$, and $C \leq N$. Finally, if $C \leq N$, then
+$$
+\begin{aligned}
+(a N)(b N) &=a b N=a b\left(b^{-1} a^{-1} b a\right) N \\
+&=\left(a b b^{-1} a^{-1}\right) b a N=b a N=(b N)(a N)
+\end{aligned}
+$$
+\end{proof}
+
+
+\section{Group Action on a Set}
+\subsection{Def: action of group $G$ on set $X$}
+\begin{definition}
+    Let $X$ be a set and $G$ a group. An \textbf{action of $G$ on $X$} is a map $*:G\times X \rightarrow	X$ such that
+    \begin{enumerate}[(1)]
+        \item $ex=x$ for all $x\in X$.
+        \item $(g_1g_2)(x) = g_1(g_2x)$ for all $x \in X$ and all $g_1,g_2\in G$.
+    \end{enumerate}
+    Under these conditions, \textbf{$X$ is a $G$-set}.
+\end{definition}
+
+\textbf{Example:} Let $X$ be any set, and let $H$ be a subgroup of the group $S_x$ of all permutations of $X$. Then $X$ is an $H$-set.
+
+\subsection{Thm: If $G$ acts on $X$, $\phi: G \rightarrow S_X$ as $\phi(g) = \sigma_g$ is a homomorphism (where $\sigma_g(x)=gx$)}
+\begin{theorem}
+Let \underline{group $G$ act on the set $X$},
+\begin{enumerate}[$(1)$]
+    \item $\phi: G \rightarrow S_X$ defined by $\phi(g) = \sigma_g$ is \underline{well-defined}.
+    
+    ($\sigma_g:X \rightarrow X$ defined by $\sigma_g(x)=gx$ for $x\in X$ is a permutation of $X$)
+    \item $\phi: G \rightarrow S_X$ defined by $\phi(g) = \sigma_g$ is a \underline{homomorphism} with the property that $\phi(g)(x) = gx$.
+\end{enumerate}
+\end{theorem}
+\underline{Special case:} Let $G$ act on itself, we get the \textbf{Cayley Theorem}: $G$ is isomorphic to a subgroup of $S_G$
+
+In general, for a group $G$ act on the set $X$, the homomorphism $\phi:G \rightarrow S_X$ is not injective. We say that $G$ acts \underline{faithfully} on $X$ if $\phi$ is injective.
+
+\subsection{Examples of Group Actions}
+(Let $H \leq G$ be a subgroup of $G$)
+\begin{enumerate}[$(1)$]
+    \item $G\times G \rightarrow G$, $(g_1,g_2)\rightarrow g_1g_2$
+    \item $G\times G \rightarrow G$, $(g_1,g_2)\rightarrow g_1g_2g_1^{-1}$ (conjugation)
+    \item $G\times G/H \rightarrow G/H$, $(g,aH)\rightarrow gaH$ (when $H$ is not normal, $X=G/H$ is just a set.)
+\end{enumerate}
+
+\section{Orbits}
+\subsection{Thm: Equivalence Relation: $X$ is a $G$-set, $x_1\sim x_2 \Leftrightarrow x_2=gx_1,\ \exists g\in G$}
+\begin{theorem}
+    For $G$ acting on $X$, define a relation $\sim$ on $X$ via $$x_1\sim x_2\Leftrightarrow x_2=gx_1\quad \text{for some }g\in G$$
+\end{theorem}
+
+\begin{definition}
+    A group $G$ is \textbf{transitive} on
+    a $G$-set $X$ if for each $x_1,x_2\in X$, there exists $g \in G$ such that $gx_1=x_2$.
+\end{definition}
+
+\subsection{Def: $Gx=\{gx|g\in G\}$ is the orbit of $x$}
+\begin{definition}
+    For a group action $G$ on $X$, $X$ partitions into equivalence classes. Denote the class containing $x$ by $Gx$. $Gx=\{gx|g\in G\}$ is called the orbit of $x\in X$.
+\end{definition}
+\textbf{Denote:} the partition of $X$ as equivalence classes takes the form $$X=Gx_1\cup Gx_2\cup \cdots Gx_r$$
+$r$ disjoint orbits.
+
+\subsection{Def: $G_x=\{g\in G|gx=x\}$ is the \underline{stabilizer} of $x$}
+\begin{definition}
+    Let $G$ act on $X$, for $x\in X$, define $G_x=\{g\in G|gx=x\}$, then $G_x$ is a subgroup of $G$ called the \textbf{stabilizer} of $x$. (or the \textbf{isotropy subgroup} of $x$)
+\end{definition}
+
+\subsection{Thm: if $X$ is a $G$-set, stabilizer $G_x=\{g\in G\vert gx=x\}$ is subgroup of $G$, $\forall x\in X$}
+Let $$X^g=\{x\in X\vert gx=x\};\ G_x=\{g\in G\vert gx=x\}$$
+\begin{theorem}
+    Let $X$ be a $G$-set then $G_x$ is a subgroup of $G$, $\forall x\in X$.
+\end{theorem}
+\begin{proof}\quad
+\begin{enumerate}[(1)]
+    \item Closed: $\forall g_1,g_2\in G_x$, $(g_1g_2)x=g_1(g_2x)=g_1x=x \Rightarrow g_1g_2\in G_x$.
+    \item Identity: $ex=x$.
+    \item Inverse: $gx=x$, $x=ex=g^{-1}gx=g^{-1}(gx)=g^{-1}x$.
+\end{enumerate}
+\end{proof}
+
+\subsection{Orbit-Stabilizer Theorem: $|Gx|=\frac{|G|}{|G_x|}$}
+\begin{theorem}
+    Let $G$ act on $X$, and let $x\in X$, then $|Gx|=[G:G_x]=|G/G_x|=\frac{|G|}{|G_x|}$
+\end{theorem}
+\begin{proof}
+    Since $G_x$ is the subgroup of $G$, according to largrange theorem we know $|G_x|\bigg||G|$.
+
+    For a $x_1=g_1x\in Gx$ with $g_1\notin G_x=\{g\in G\vert gx=x\}$. $G_{x_1}=\{g\in G\vert gx_1=x_1\}=\{g\in G\vert {g_1^{-1}gg_1}x=x\}$.
+    
+    Prove $g \rightarrow g_1^{-1}gg_1$ is one to one: assume $g_1^{-1}gg_1=g_1^{-1}g'g_1$, $\Rightarrow	g=g'$.
+    
+    Hence, $|G_{x_1}|=|G_x| \Rightarrow	\frac{|G|}{|G_x|}=|Gx|$
+\end{proof}
+
+
+
+
+
+\section{Applications of $G-$sets to Counting}
+As we showed before, the partition of $X$ as equivalence classes takes the form $$X=Gx_1\cup Gx_2\cup \cdots Gx_r$$
+where $r$ is the number of orbits in $X$.
+\subsection{Burnside's Formula: number of orbits in $X$: $r=\frac{1}{|G|}\sum_{g\in G}|X^g|$}
+\begin{theorem}
+    Let $G$ be a finite group and $X$ a finite $G$-set. If $r$ is the number
+    of orbits in $X$ under $G$, then $$r=\frac{1}{|G|}\sum_{g\in G}|X^g|$$ i.e. $r$ equals to the average $|X^g|$, where $X^g=\{x:gx=x\}$
+\end{theorem}
+\begin{proof}
+    Since $G_{x_0}=\{g\in G\vert gx=x\}=\{(g,x)\vert gx=x,g\in G,x=x_0\}$,$$\sum_{x\in X}|G_x|=|\{(g,x)\vert gx=x,g\in G,x\in X\}|$$
+    At the same time, $|X^{g_0}|=\{x\in X:gx=x\}=\{(g,x)\vert gx=x,g=g_0,x\in X\}$, then
+    $$\sum_{g\in G}|X^g|=|\{(g,x)\vert gx=x,g\in G,x\in X\}|=\sum_{x\in X}|G_x|$$
+    As we shoed before, $|G_{x}|=|G_{y}|,\forall x,y\in X$
+    \begin{equation}
+        \begin{aligned}
+            \Rightarrow \sum_{x\in X}|G_x|=|G|\sum_{x\in X}\frac{1}{|Gx|}=|G|\sum_{i=1}^r\sum_{x\in Gx_i}\frac{1}{|Gx|}=|G|\sum_{i=1}^r\frac{|Gx_i|}{|Gx_i|}=|G|r\\
+            \Rightarrow r=\frac{\sum_{x\in X}|G_x|}{|G|}=\frac{\sum_{g\in G}|X^g|}{|G|}
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{proof}
+
+\subsection{Example: Counting}
+\begin{example}
+    How many distinguishable necklaces (with no clasp) can be made using $7$ different-
+    colored beads of the same size?
+\end{example}
+If two necklaces are transitive ($\exists g\in D_14$ s.t. $gx_1=x_2$), they are in the same necklace. Hence, we want to count the number of orbits. $|X^{1}|=7!$ and $|X^g|=0,\forall g\neq 1\in D_{14}$ Then, $$r=\frac{|X^{1}|}{|D_14|}=\frac{7!}{14}=360$$
+
+\begin{example}
+    Let $X$ be the set of all $4$-edge-colored equivalent triangle. Count the number of different coloring.
+\end{example}
+$D_6=\{(1),(1,2),(2,3),(1,3),(1,2,3),(1,3,2)\}$
+\begin{equation}
+    \begin{aligned}
+        g\quad&\#&|X^g|\\
+        (1)\quad&1&4^3\\
+        \left.\begin{matrix}
+            (1,2)\\
+            (2,3)\\
+            (1,3)
+        \end{matrix}\right\}\quad&3&4^2(\text{two points must be the same color, the other can be any color})\\
+        \left.\begin{matrix}
+            (1,2,3)\\
+            (1,3,2)
+        \end{matrix}\right\}\quad&2&4(\text{three points must be the same color})
+    \end{aligned}
+    \nonumber
+\end{equation}
+$$r=\frac{1\cdot 4^3+3\cdot 4^2+2\cdot 4}{6}=20$$
+
+\chapter{Ring and Field}
+\section{Ring $(R,+,\cdot)$: $+$ is associative, commutative, identity, inverse $\in R$; $\cdot$ is associative, distributes over $+$}
+\subsection{Def, Prop}
+\begin{definition}
+    A ring is a nonempty set with two operations, called addition and multiplication, $(R,+,\cdot)$ such that
+\end{definition}
+(1): $(R,+)$ is an abelian group: i.e. $+$ is associatve and commucative. $0,-a\in R$\\
+(2): $\cdot$ is associative.\\
+(3): $\cdot$ distributes over $+$: $\forall a,b,c\in R$, $a\cdot(b+c)=a\cdot b+a\cdot c$ and $(b+c)\cdot a=b\cdot a+c\cdot a$
+
+\begin{theorem}
+    If $R$ is a ring with additive identity 0 , then for any $a, b \in R$ we have
+
+    1. $0 a=a 0=0$,
+
+    2. $a(-b)=(-a) b=-(a b)$,
+
+    3. $(-a)(-b)=a b$.
+\end{theorem}
+
+\subsection{$S\subset R$: Subring (closed under $+$ and $\cdot$; addictive inverse $-a\in S$)}
+\begin{proposition}[Proposition 2.6.27]
+    If $S\subset R$ is a subring, then $+,\cdot$ make $S$ into a ring.
+\end{proposition}
+
+\subsection{Def: Commutative ring: ring's $\cdot$ is commutative}
+If "$\cdot$" is commutative, we call $(R, +, \cdot)$ a commutative ring.
+\subsection{Def: A ring with 1: the ring exists multiplication identity $1\in R$}
+If there exists an element $1\in R\backslash \{0\}$ such that $a1=1a=a,\ \forall a\in R$,then we say that $R$ is a ring with 1 (a ring with unity).
+
+Note: We usually discuss $1\neq 0$. If $1=0$, $a=1a=0 \Rightarrow R=\{0\}$.
+
+\subsection{Def: In a ring $R$ with $1$, $u$ is a \underline{unit} if $\exists v\in R$ s.t. $uv=vu=1$}
+\begin{definition}
+    In a ring $R$ with $1$, $u$ is a \underline{unit} if it has a \underline{multiplicative
+    inverse} in $R$ i.e. $\exists v\in R$ s.t. $uv=vu=1$
+\end{definition}
+\begin{example}
+    units in $\mathbb{Z}$ are $\{-1,+1\}$; in $\mathbb{Z}_n$ are $\{a\in \mathbb{Z}_n:gcd(a,n)=1\}$
+\end{example}
+
+\subsection{Def: A ring with $1$, $R$ is a \underline{division ring} if every nonzero element of $R$ is a unit}
+\begin{definition}
+    A ring with $1$, $R$ is a \underline{division ring} if every nonzero element of $R$ is a unit. This is equalivalent to $R$ has \underline{identity} and \underline{inverse} in mutiplication.
+\end{definition}
+
+\subsection{Def: Ring Homomorphism: $\phi(a+b)=\phi(a)+\phi(b)$, $\phi(ab)=\phi(a)\phi(b)$}
+\begin{definition}
+    Let $R,R'$ be rings. A map $\phi:R \rightarrow R'$ is a \underline{ring homomorphism} if $$\phi(a+b)=\phi(a)+\phi(b)$$ $$\phi(ab)=\phi(a)\phi(b)$$
+\end{definition}
+
+\subsection{Def: \underline{zero divisor}: a $a\neq 0\in R$ if $\exists b\neq 0\in R$ s.t. $ba=0$ or $ab=0$}
+\begin{definition}
+    A \underline{nonzero element} $a\in R$ is called a \underline{zero divisor} if there exists a nonzero $b\in R$ s.t. $ba=0$ or $ab=0$
+\end{definition}
+
+Note: Mutiplication cancellation law holds when no zero divisors.
+
+\subsection{Remark: In $\mathbb{Z}_n$, an element is either $0$ or unit or zero divisor}
+Remark: In $\mathbb{Z}_n$, an element is either (1) 0, (2) a unit, (3) a zero divisor.
+
+$0\neq a\in \mathbb{Z}_n$ is a $\left\{\begin{matrix}
+    \text{unit}&\text{if }gcd(a,n)=1\\
+    \text{zero divisor}&\text{if }gcd(a,n)\neq 1
+\end{matrix}\right.$
+
+In $M_n(R)$ $\left\{\begin{matrix}
+    \text{unit}&\text{if }rank(A)=n\\
+    \text{zero divisor}&\text{if }rank(A)<n
+\end{matrix}\right.$
+
+In $R=\mathbb{Z}$, $a\notin\{0,+1,-1\}$ is neither unit nor zero divisor.
+\subsection{Thm: $a\in\mathbb{Z}_n$ is a zero divisor $\Leftrightarrow gcd(a,n)\neq 1$.}
+\begin{theorem}
+    In the ring $\mathbb{Z}_n$, the zero divisors are precisely those nonzero elements that are not relatively prime to $n$.
+\end{theorem}
+\subsection{Cor: $\mathbb{Z}_p$ has no zero divisors if $p$ is prime.}
+
+\subsection{Def: An \underline{integral domain
+} is a commutative ring with $1\neq 0$ that has no zero divisors}
+\begin{definition}
+    An \underline{integral domain
+    } is a commutative ring with $1\neq 0$ that has no zero divisors.
+\end{definition}
+$\mathbb{Z}$ and $\mathbb{Z}_p$ for any prime $p$ are integral domains, but $\mathbb{Z}_p$ is not an integral domain if $n$ is not prime.
+
+\section{Field $\mathbb{F}$}
+\subsection{Def: A \underline{field} is a commutative division ring.}
+\begin{definition}
+    A field is a commutative division ring.
+\end{definition}
+Which is equal to a ring satifies \underline{identity, inverse and commutative in multiplication}.
+Field $(\mathbb{F}, +, \cdot)$ (close, associative, commutative, distributive(M over A), identity $\&$ inverse(M,A))
+
+\textbf{Note:} nonzero elements of a \underline{finite field} can form a cyclic (sufficient for abelian) mutiplication group.
+
+\begin{center}\begin{figure}[htbp]
+    \centering
+    \includegraphics[scale=0.5]{collection of rings.png}
+    \caption{example: 1.$\mathbb{Z}_2,\mathbb{Q}$, 2.$\mathbb{Z}$, 3.$\mathbb{Z}_4$, 4.$2\mathbb{Z}$ 5.$M_2(\mathbb{Z})$,$M_2(\mathbb{R})$, 6.upper-triangular matrices with integer entries and all zeros on the main diagonal}
+    \label{}
+\end{figure}\end{center}
+
+\subsection{Differences between "Field" and "Integral Domain"}
+Def: An \underline{integral domain
+} is a commutative ring with $1\neq 0$ that has no zero divisors
+
+Def: A \underline{field} is a commutative ring with $1\neq 0$ that every nonzero element of $R$ is a unit.
+
+\subsection{Lemma: A unit is not zero divisor}
+\begin{proof}
+    $a\in R$ is a unit and $\frac{1}{a}$ is its inverse.
+
+    Assume there exists $b\neq 0$ s.t. $ab=0$, then
+    \begin{equation}
+        \begin{aligned}
+            \frac{1}{a}(ab)&=\frac{1}{a}0=0\\
+            &=(\frac{1}{a}a)b=b
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    Contradiction!
+
+    Assume there exists $b\neq 0$ s.t. $ba=0$, then
+    \begin{equation}
+        \begin{aligned}
+            (ba)\frac{1}{a}&=0\frac{1}{a}=0\\
+            &=b(a\frac{1}{a})=b
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    Contradiction!
+\end{proof}
+\subsection{Lemma: A field doesn't has zero divisors}
+Since a field is a division ring, its nonzero elements are unit which is not zero divisor.
+
+\subsection{Thm: Every field is an integral domain}
+\begin{theorem}
+    Every field is an integral domain.
+\end{theorem}
+prove by previous lemma.
+
+\subsection{Thm: Every finite integral domain is a field}
+\begin{theorem}
+    Every finite integral domain is a field.
+\end{theorem}
+\begin{proof}
+The only thing we need to show is that a typical element $a \neq 0$ has a multiplicative inverse.
+
+Consider $a, a^2, a^3, ...$ Since there are only finitely many elements we must have $a^m = a^n$ for some $m < n$.
+
+Then $0 = a^m - a^n = a^m(1 - a^{n-m})$. Since there are no zero-divisors we must have $a^m \neq 0$ and hence $1 - a^{n-m} = 0$ and so $1 = a a^{n-m-1}$ and we have found a multiplicative inverse for $a$.
+\end{proof}
+
+\subsection{Note: Finite Integral Domain $\subset$ Field $\subset$ Integral Domain}
+$\mathbb{Z}_p$ is a field.
+
+$\mathbb{Z}$ is an integral domain but not a field.
+
+\section{The Characteristic of a Ring}
+\subsection{Def: characteristic $n$ is the least positive integer s.t. $n\cdot a=0,\forall a\in R$}
+\begin{definition}
+    If for a ring $R$ a positive integer $n$ exists such that $n \cdot a = 0$ for all $a\in R$, then the least such positive integer is the characteristic of the ring $R$. If no such positive integer exists, then R is of characteristic $0$.
+\end{definition}
+\begin{example}
+    The ring $\mathbb{Z}_n$ is of characteristic $n$, while $\mathbb{Z}, \mathbb{Q}, \mathbb{M}$, and $\mathbb{C}$ all have characteristic $0$.
+\end{example}
+
+\subsection{Thm: In a ring with $1$, characteristic $n\in \mathbb{Z}^+$ s.t. $n\cdot 1=0$}
+\begin{theorem}
+    Let $R$ be a ring with $1$. If $n \cdot 1 \neq 0$ for all $n\in \mathbb{Z}^+$, then $R$ has characteristic $0$. If
+    $n \cdot 1 = 0$ for some $n\in \mathbb{Z}^+$, then the smallest such integer $n$ is the characteristic of $R$.
+\end{theorem}
+
+\chapter{The Ring $\mathbb{Z}_n$ (Fermat's and Euler's Theorems)}
+\section{Fermat's Theorem}
+\subsection{Thm: nonzero elements in $\mathbb{Z}_p$ ($p$ is prime) form a group under multiplication}
+\begin{theorem}
+    The nonzero elements in $\mathbb{Z}_p$ ($p$ is prime) form a group under multiplication.
+\end{theorem}
+\begin{proof}
+$\mathbb{Z}_p$ is a finite field.
+\end{proof}
+
+\subsection{Cor: (Little Theorem of Fermat) $a\in \mathbb{Z}$ and $p$ is prime not dividing $a$, then $a^{p-1}\equiv 1 \text{ mod } p$ ($p$ divides $a^{p-1}-1$)}
+\begin{corollary}[Little Theorem of Fermat]
+    $a\in \mathbb{Z}$ and $p$ is prime not dividing $a$, then $a^{p-1}\equiv 1 \text{ mod } p$ ($p$ divides $a^{p-1}-1$)
+\end{corollary}
+\begin{proof}
+Let $G_p=\{a\in \mathbb{Z}_p: a\neq 0\}$, by previous theorem, we know the $G_p$ is a group under multiplication of size $|G_p|=p-1$.
+
+Then the order of $a$ should divde $|G_p|=p-1$, then
+$$a^{p-1}=1\in G_p \Rightarrow	a^{p-1}\equiv 1 \text{ mod } p$$
+\end{proof}
+\subsection{Cor: (Little Theorem of Fermat) If $a\in \mathbb{Z}$, then $a^p\equiv a \text{ mod }p$ for any prime $p$}
+
+\section{Euler's Theorem}
+Euler's Theorem is more general form of Fermat's Theorem.
+\subsection{Thm: $G_n=\{a\in \mathbb{Z}_n: gcd(a,n)=1\}$ forms a group under multiplication}
+\begin{theorem}
+    The set $G_n$ of nonzero elements of $\mathbb{Z}_n$ that are not zero divisors ($G_n=\{a\in \mathbb{Z}_n: gcd(a,n)=1\}$) forms a group under multiplication modulo $n$.
+\end{theorem}
+\subsection{Def: \underline{Euler phi function} $\phi(n)=|G_n|$, where $G_n=\{a\in \mathbb{Z}_n: gcd(a,n)=1\}$}
+More generally, any $n\in \mathbb{Z}^+$, $a^{p-1}\equiv 1 \text{ mod } p$. Then $G_n$ is a group under mutiplication of size $|G_n|=\phi(n)$, we set $\phi(n)$ be the \underline{Euler phi function}.
+E.g. 
+\begin{equation}
+    \begin{aligned}
+        \phi(8)&=\#\{a\in \mathbb{Z}_8: gcd(a,8)=1\}=4\\
+        \phi(15)&=\#\{1,2,4,7,8,11,13,14\}=8\\
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+\subsection{Thm: (Euler's Theorem) If $a\in \mathbb{Z}$, $n\geq 2$ s.t. $gcd(a,n)=1$ then $a^{\phi(n)}\equiv 1 \text{ mod }n$}
+\begin{theorem}
+    If $a$ is an integer relatively prime to $n$, then $a^{\phi(n)} - 1$ is divisible
+    by $n$, that is $a^{\phi(n)}\equiv 1 \text{ mod }n$.
+\end{theorem}
+\begin{proof}
+    order of $a$ should divide $|G_n|=\phi(n)$ then $a^{\phi(n)}=1\in G_n \Rightarrow a^{\phi(n)}\equiv 1 \text{ mod }n$
+\end{proof}
+
+\section{Application to $ax \equiv b$ (mod $m$)}
+\subsection{Thm: find solution of $ax \equiv b$ (mod $m$), $gcd(a,m)=1$}
+\begin{theorem}
+    $a,b\in \mathbb{Z}_m, gcd(a,m)=1$, then $ax=b$ has a unique solution in $\mathbb{Z}_m$
+\end{theorem}
+\begin{proof}
+By Euler's Theorem, $a^{\phi(m)}\equiv 1 \text{ mod }m$, which means $a$ is a unit of $\mathbb{Z}_m$, there exists a unique $a^{-1}\in \mathbb{Z}_m$.
+
+Mutiply $a^{-1}\in \mathbb{Z}_m$ on both side, we can get $x=a^{-1}b$ is the solution.
+\end{proof}
+
+\subsection{Thm: $ax \equiv b$ (mod $m$), $d=gcd(a,m)$ has solutions if $d|b$, the number of solutions is $d$}
+\begin{theorem}
+    Let $m$ be a positive integer and let $a, b \in \mathbb{Z}_m$. Let $d=gcd(a,m)$. The equation $ax = b$ has a solution in $\mathbb{Z}_m$ if and only if $d$ divides $b$. When $d$ divides $b$, the equation has exactly $d$ solutions in $\mathbb{Z}_m$.
+\end{theorem}
+
+\subsection{Cor: $ax \equiv b$ (mod $m$), $d=gcd(a,m)$, $d|b$, then solutions are $((\frac{a}{d})^{\phi(\frac{m}{d})-1}\frac{b}{d}+k\frac{m}{d})+(m \mathbb{Z}),\quad k=0,1,...,d-1$}
+\begin{corollary}
+    Let $d=gcd(a,m)$. The congruence $ax \equiv b$ (mod $m$) has a
+    solution if and only if $d$ divides $b$. When this is the case, the solutions are the integers in
+    exactly $d$ distinct residue classes modulo $m$.
+\end{corollary}
+Steps:
+\begin{enumerate}[(1)]
+    \item let $a_1=a/d$, $b_1=b/d$, $m_1=m/d$, solve $$a_1s\equiv b_1 \text{ mod } m_1 \Rightarrow	s=a_1^{-1}b_1$$
+    where $a_1^{-1}=a_1^{\phi(m_1)-1}$
+    \item Solutions are $$(s+km_1)+(m \mathbb{Z}),\quad k=0,1,...,d-1$$
+\end{enumerate}
+\begin{example}
+Find all solutions of $12 x\equiv 27 \text{ mod }18$
+\end{example}
+d=gcd(12,18)=6, $d\nmid 27 \Rightarrow$ no solutions.
+
+\begin{example}
+    Find all solutions of $15 x\equiv 27 \text{ mod }18$
+\end{example}
+d=gcd(15,18)=3, $a_1=5,b_1=9,m_1=6$. Then $s=a_1^{-1}b_1=5\cdot 9=3$, then solutions are $3+18 \mathbb{Z}$, $9+18 \mathbb{Z}$, $15+18 \mathbb{Z}$
+
+
+
+\chapter{Ring Homomorphisms and Factor Rings}
+
+\section{Ring Homomorphism}
+\subsection{Def: Ring Homomorphism: $\phi(a+b)=\phi(a)+\phi(b)$, $\phi(ab)=\phi(a)\phi(b)$}
+\begin{definition}
+    Let $R,R'$ be rings. A map $\phi:R \rightarrow R'$ is a \underline{ring homomorphism} if $$\phi(a+b)=\phi(a)+\phi(b)$$ $$\phi(ab)=\phi(a)\phi(b)$$
+\end{definition}
+
+\begin{example}[Projection Homomorphisms]
+    Let $R_1,R_2,...,R_n$ be rings. For each $i$, the map $\pi_i$: $R_1\times R_2\times ...\times R_n \rightarrow R_i$ defined by $\pi_i(r_1,r_2,...,r_n)=r_i$ is a homomorphism.
+\end{example}
+
+\subsection{Properties of Ring Homomorphism}
+\begin{enumerate}
+    \item $\phi(0)=0'$.
+    \item $\phi(-a)=-\phi(a)$.
+    \item $S\subseteq R$ is a subring $\Rightarrow$ $\phi(S)\subseteq R'$ is a subring.
+    \item $S'\subseteq R'$ is a subring $\Rightarrow$ $\phi^{-1}(S')\subseteq R$ is a subring.
+    \item If $1\in R$ is a unity of $R$ $\Rightarrow$ $\phi(1)$ is a unity of $\phi(R)$.
+\end{enumerate}
+
+\subsection{Def: kernel of ring homomorphism (the same as group homomorphism)}
+$$Ker(\phi)=\phi^{-1}[0']=\{r\in R: \phi(r)=0'\}$$
+
+\subsection{Thm: one-to-one map $\Leftrightarrow$ $Ker(\phi)=\{0\}$}
+Similiarly, a ring homomorphism is one-to-one map if and only if $Ker(\phi)=\{0\}$.
+
+\section{Factor(Quotient) Rings}
+\subsection{Thm: $R/H$ is a ring for $H=ker\phi$ if operations well defined}
+\begin{theorem}
+    Let $\phi: R \rightarrow R'$ be a ring homomorphism and let $H=ker\phi$. Then $R/H$ is a ring under the operation.
+    \begin{equation}
+        \begin{aligned}
+            (a+H)+(b+H)&=(a+b)+H\\
+            (a+H)(b+H)&=ab+H
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    Also, $\mu: R/H \rightarrow	\phi[R]$ defined by $\mu(a+H)=\phi(a)$ is an isomorphism.
+\end{theorem}
+
+\subsection{Thm: $(a+H)+(b+H)=(a+b)+H$ well defined $\Leftrightarrow$ $ah\in H,hb\in H,\forall a,b\in R,b\in H$}
+\begin{theorem}
+    $(a+H)+(b+H)=(a+b)+H$ is well defined if and only if $ah\in H$ and $hb\in H$, $\forall a,b\in R,\forall h\in H$
+\end{theorem}
+
+\subsection{Def: $N< R$ is ideal $aN\subseteq N$ and $Nb\subseteq N$ $\forall a,b\in R$}
+\begin{definition}
+    An addive subgroup $N$ of a ring $R$
+    is an \textbf{ideal} if  $aN\subseteq N$ and $Nb\subseteq N$ $\forall a,b\in R$
+\end{definition}
+\begin{example}
+    $n \mathbb{Z}$ is an ideal in the ring $\mathbb{Z}$.
+\end{example}
+
+\subsection{Thm: $N$ is ideal $\Rightarrow$ $R/N$ is a ring}
+\begin{theorem}
+Let $N$ be an ideal of a ring $R$. $R/N$ is a ring with operations
+\begin{equation}
+    \begin{aligned}
+        (a+H)+(b+H)&=(a+b)+H\\
+        (a+H)(b+H)&=ab+H
+    \end{aligned}
+    \nonumber
+\end{equation}
+We call this ring $R/N$ is the \textbf{factor ring of $R$ by $N$}
+\end{theorem}
+
+\subsection{Fundamental Homomorphism Theorem}
+\begin{theorem}
+    Let $\phi: R \rightarrow R'$ be a ring homomorphism with kernel $N$. Then
+    \begin{enumerate}
+        \item $\phi[R]$ is a ring.
+        \item $\mu: R/N \rightarrow \phi[R]$ given by $\mu(x+N)=\phi(x)$ is an isomorphism.
+        \item $\gamma: R \rightarrow R/N$ given by $\gamma(x)=x+N$ is a homomorphism.
+        \item $\phi(x)=\mu\gamma(x),\quad \forall x\in R$
+    \end{enumerate}
+\end{theorem}
+
+\subsection{Thm: $I,J\subset R$ be $R-ideals$ and $I+J=R$ $\Rightarrow R/_{I\cap J} \cong R/_I\times R/_J$}
+\begin{theorem}
+Let $R$ be a commutative ring with $1\neq 0$, and $I,J\subset R$ be $R-ideals$ such that $I+J=R$ ($I$ and $J$ are relatively prime). Then,
+$$R/_{I\cap J} \cong R/_I\times R/_J$$
+Moreover, $IJ=I\cap J$ and $R/_{IJ} \cong R/_I\times R/_J$
+\end{theorem}
+\begin{proof}
+    Using that $I+J=R$ and $1\in R$, we can write $1=x+y$, $x\in I,y\in J$.
+
+    The natural map (direct product of two projections) $R \rightarrow	R/I\times R/J$ is a ring homomorphism. ($r \rightarrow (r+I,r+J)$).
+
+    The ring $R/I\times R/J$ is generated by the element $(1+I,J),(I,1+J)$: $$(a+I,b+J)=a(1+I,J)+b(I,1+J)$$
+    Let $x+y=1,x\in I,y\in J$
+    \begin{equation}
+        \begin{aligned}
+            x \rightarrow (x+I,x+J)=(I,1-y+J)=(I,1+J)\\
+            y \rightarrow (y+I,y+J)=(1-x+I,J)=(1+I,J)
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    Then $bx+ay=a(1+I,J)+b(I,1+J)$. And $R \rightarrow R/I\times R/J$ is surjective.
+
+    We can prove that $I\cap J$ is the kernel of the ring $R/I\times R/J$:
+    \begin{equation}
+        \begin{aligned}
+            r \rightarrow (r+I,r+J)\text{ maps }r \text{ to }(I,J)=0\in R/I\times R/J\\
+            \Leftrightarrow	r\in I\text{ and }r\in J.\\
+            \Leftrightarrow	r\in I\cap J.\\
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    Then, according to the $FHT$
+    $R/_{I\cap J} \cong R/_I\times R/_J$ if $I+J=R$.
+
+    Moreover, we can prove $I+J=R \Rightarrow IJ=I\cap J$.
+    \begin{enumerate}
+        \item $(IJ\subset I\cap J)$: From the definition of ideal $IJ\subset I$ and $IJ\subset J$ $\Rightarrow$ $IJ\subset I\cap J$
+        \item $(I\cap J\subset IJ)$: Let $1=x+y,x\in I, y\in J, r\in I\cap J$, then
+        \begin{equation}
+            \begin{aligned}
+                r=r\cdot 1=r(x+y)=rx+ry=xr+ry\in IJ
+            \end{aligned}
+            \nonumber
+        \end{equation}
+    \end{enumerate}
+\end{proof}
+
+
+\chapter{Prime and Maximal Ideals}
+Every nonzero ring $R$ has at least two ideals, the \textbf{improper ideal} $R$ and the \textbf{trivial ideal} $\{0\}$. For these ideals, the factor rings are $R/R$, which has only one element, and $R/\{0\}$, which is isomorphic to $R$. These are uninteresting cases. Let's consider \textbf{proper nontrivial ideal} $N\subset R$.
+
+\section{Thm: $N$ is $R$-ideal has a unit $\Rightarrow$ $N=R$}
+\begin{theorem}
+    If $R$ is a ring with $1$, and $N$ is an ideal of $R$ containing a unit, then $N = R$.
+\end{theorem}
+\begin{proof}
+    Since $N$ is ideal, $rN\subseteq N,\forall r\in R$. $r^{-1}\in N \Rightarrow 1\in N \Rightarrow	r\cdot 1\in N, \forall r\in R \Rightarrow N=R$
+\end{proof}
+
+\subsection{Cor: Ideal of field $F$ is $\{0\}$ or $F$}
+\begin{corollary}
+    A field $F$ contains no proper nontrivial ideals, i.e., ideal is $\{0\}$ or $F$.
+\end{corollary}
+\begin{proof}
+    Every nonzero element of field is unit.
+\end{proof}
+
+\section{Def: Maximal ideal: no other ideal properly contains it}
+\begin{definition}
+    A proper ideal $M\subsetneq R$ is called \textbf{maximal} if
+    \begin{center}
+        $M\subseteq I\subseteq R \Rightarrow$ $M=I$ or $I=R$ (for $R-$ideal I).
+    \end{center}
+    i.e, there is no other ideal properly containing $M$.
+\end{definition}
+
+\subsection{Thm: $R$ comm ring with $1$, $M$ maximal ideal $\Leftrightarrow$ $R/M$ is a field}
+\begin{theorem}
+    Let $R$ be a commutative ring with $1\neq 0$. Then $M$ is a maximal ideal of $R$ \underline{if and only if} $R/M$ is a field.
+\end{theorem}
+\begin{example}
+    Since $\mathbb{Z}/n \mathbb{Z}$ is isomorphic to $\mathbb{Z}_n$ and $\mathbb{Z}_n$ is a field if and only if $n$ is prime. Then we see that \underline{maximal ideals are $p \mathbb{Z}$ where $p$ is any positive prime}.
+\end{example}
+\begin{example}
+    Let $R=\mathbb{Z}[x]$ has ideals $(2)=2 \mathbb{Z}[x]\subseteq R$, $(x)=x \mathbb{Z}[x]\subseteq R$, $(2,x)=2\mathbb{Z}[x]+x\mathbb{Z}[x]\subseteq R$
+    \begin{enumerate}[$(1)$]
+        \item $R/(2) \cong \mathbb{Z}_2[x]$, $\mathbb{Z}_2[x]$ is not a field $\Rightarrow$ $(2)$ is not maximal ideal.
+        \item $R/(x) \cong \mathbb{Z}$, $\mathbb{Z}$ is not a field $\Rightarrow$ $(x)$ is not maximal ideal.
+        \item $R/(2,x) \cong \mathbb{Z}_2$, $\mathbb{Z}_2$ is a field $\Rightarrow$ $(2,x)$ is maximal ideal.
+    \end{enumerate}
+\end{example}
+
+\section{Def: Prime ideal: $ab\in P \Rightarrow $ $a\in P$ or $b\in P$}
+\begin{definition}
+    An ideal $P\subsetneq R$ in a commutative ring $R$ is a \textbf{prime} ideal if $ab\in P \Rightarrow $ $a\in P$ or $b\in P$.
+\end{definition}
+\underline{Note:} $\{0\}$ is a prime ideal in $\mathbb{Z}$, and indeed in any integral domain.
+
+\begin{example}
+    $\mathbb{Z}\times \{0\}$ is a prime ideal of $\mathbb{Z}\times \mathbb{Z}$, for if $(a,b)(c,d)\in \mathbb{Z}\times \{0\}$, then we must have $bd=0$, then either $(a,b)\in \mathbb{Z}\times \{0\}$ or $(c,d)\in \mathbb{Z}\times \{0\}$
+\end{example}
+
+\subsection{Thm: $N$ prime ideal $\Leftrightarrow$ $R/N$ is an integral domain}
+\begin{theorem}
+    Let $R$ be a commutative ring with $1$, and let $N\subsetneq R$ be an ideal in $R$. Then $R/N$ is an integral domain \underline{if and only if} $N$ is a prime ideal in $R$.
+\end{theorem}
+$R/N$ is an integral domain: $(aN)(bN)=0,(an_1)(bn_2)=0, a,b\in R, \forall n_1,n_2\in N$ where $an_1\in N,bn_2\in N$ since $N$ is an ideal.
+
+\subsection{Cor: maximal ideal $\Rightarrow$ prime ideal}
+\begin{corollary}
+    Every maximal ideal in a commutative ring $R$ with $1$ is a prime ideal.
+\end{corollary}
+
+\section{Relation Summary}
+\begin{center}
+    \fcolorbox{black}{gray!10}{\parbox{.9\linewidth}{\begin{equation}
+        \begin{aligned}
+            &I\text{ is maximal}&\Leftrightarrow\quad  &R/I\text{ is a field}&\\
+            &\Downarrow & & \Downarrow&\\
+            &I\text{ is prime}&\Leftrightarrow\quad  &R/I\text{ is an integral domain}&
+        \end{aligned}
+        \nonumber
+    \end{equation}}}
+\end{center}
+
+\textcolor{gray}{
+\section{Thm: homomorphism $\phi:\mathbb{Z} \rightarrow R$, $\phi(n)=n\cdot 1$}
+\begin{theorem}
+    If $R$ is a ring with unity $1$, then the map $\phi:\mathbb{Z} \rightarrow R$ given by
+    $$\phi(n)=n\cdot 1$$
+    for $n\in \mathbb{Z}$ is a homomorphism of $\mathbb{Z}$ into $R$.
+\end{theorem}
+\subsection{Cor: Ring $R$ 1. characteristic $n > 1$ $\Rightarrow$ has subring isomorphic
+to $\mathbb{Z}_n$ 2. characteristic $0$ $\Rightarrow$ has subring isomorphic
+to $\mathbb{Z}$}
+\begin{corollary}
+    If $R$ is a ring with 1 and characteristic $n > 1$, then $R$ contains a subring isomorphic
+    to $\mathbb{Z}_n$. If $R$ has characteristic $0$, then $R$ contains a subring isomorphic to $\mathbb{Z}$.
+\end{corollary}
+Review: \underline{Characteristic} $n$ is the least positive integer s.t. $n\cdot a=0,\forall a\in R$
+\subsection{Thm: Field $F$ 1. prime characteristic $p$ $\Rightarrow$ has subfield isomorphic to $\mathbb{Z}_p$ 2. characteristic $0$ $\Rightarrow$ has subfield isomorphic
+to $\mathbb{Q}$}
+\begin{theorem}
+    A field $F$ is either of prime characteristic p and contains a subfield isomorphic to $\mathbb{Z}_p$ or of characteristic $0$ and contains a subfield isomorphic to $\mathbb{Q}$.
+\end{theorem}
+\begin{definition}
+    We define $\mathbb{Z}_p$ and $\mathbb{Q}$ are prime fields.
+\end{definition}}
+
+\section{Def: Pricipal ideal (of comm ring $R$) generated by $a$: $\left\langle a\right\rangle=\{ra|r\in R\}$}
+\begin{definition}
+    If $R$ is a commutative ring with $1$ and $a\in R$, the ideal $\{ra\vert r\in R\}$ of all multiples of $a$ is the \textbf{principal ideal generated by} $a$ and is denoted by $\left\langle a\right\rangle$. An ideal $N$ of $R$ is a \textbf{principal ideal} if $N=\left\langle a\right\rangle$ for some $a\in R$.
+\end{definition}
+\begin{example}
+    Every ideal of the ring $\mathbb{Z}$ is of the form $k \mathbb{Z}$, which is generated by $k$, so every ideal of $\mathbb{Z}$ is a principal ideal.
+\end{example}
+
+\begin{example}
+    The ideal $\left\langle x\right\rangle$ in $F[x]$ consists of all polynomials in $F[x]$ having zero constant term.
+\end{example}
+
+\subsection{Thm: field $F$, every ideal in $F[x]$ is principal}
+\begin{theorem}
+    If $F$ is a field, every ideal in $F[x]$ is principal.
+\end{theorem}
+\begin{proof}
+Let $N$ be an ideal of $F[x]$.
+\begin{enumerate}
+    \item If $N=\{0\}$, then $N=\left\langle 0\right\rangle$.
+    \item If $N\neq\{0\}$, and let $g(x)$ be a nonzero element of $N$ of minimal degree.
+    
+    If $g(x)$ is constant (degree $0$), then $g(x)\in F$ is a unit $\Rightarrow N=\left\langle 1\right\rangle=F[x]$.
+
+    If degree of $g(x)\geq 1$, then for all $f(x)\in N$, $\exists q(x),r(x)$ s.t. $f(x)=g(x)q(x)+r(x)$, where $r(x)=0$ or degree $r(x)$< degree $g(x)$. Since $g(x)$ has minimal degree, $r(x)=0 \Rightarrow f(x)=g(x)q(x) \Rightarrow N=\left\langle g(x)\right\rangle$
+\end{enumerate}
+\end{proof}
+
+\subsection{Thm: principal ideal $\left\langle p(x)\right\rangle\neq \{0\}$ of $F[x]$ is maximal $\Leftrightarrow$ $p(x)$ is irreducible}
+\begin{theorem}
+    An ideal $\left\langle p(x)\right\rangle\neq \{0\}$ of $F[x]$ is maximal if and only if $p(x)$ is irreducible over $F$.
+\end{theorem}
+\begin{proof}\quad
+    \begin{enumerate}
+        \item "$\Rightarrow$": Suppose $\left\langle p(x)\right\rangle$ is a maximal ideal of $F[x]$. Then $\left\langle p(x)\right\rangle\neq F[x]$, so $p(x)\notin F$. Assume $p(x)$ can be factorizaed $p(x)=f(x)g(x)$. Since $\left\langle p(x)\right\rangle$ is a maximal idea, it is also a prime ideal. Then $f(x)\in \left\langle p(x)\right\rangle$ or $g(x)\in \left\langle p(x)\right\rangle$, which is impossible since degree of $f(x)$ and $g(x)$ are both less than the degree of $p(x)$. Hence, $p(x)$ is irreducible.
+        \item "$\Leftarrow$": $p(x)$ is irreducible over $F$. Suppose $N$ is an ideal of $F[x]$ s.t. $\left\langle p(x)\right\rangle\subseteq N\subseteq F[x]$. According to previous theorem, we know that $N$ is a principal ideal. So, $N=\left\langle g(x)\right\rangle$ for some $g(x)\in F$. Since $p(x)\in F[x]$, $p(x)=g(x)q(x)$ for some $q(x)\in F[x]$. As we set $p(x)$ is irreducible, so degree $g(x)=0$ or degree $q(x)=0$. If degree $g(x)=0$, $g(x)\in F$, $g(x)$ is a unit in $F[x]$ $\Rightarrow N=\left\langle g(x)\right\rangle=F[x]$. If degree $q(x)=0$, $q(x)\in F$ is a unit, so $q^{-1}(x)\in F$ $\Rightarrow g(x)=p(x)q^{-1}(x) \Rightarrow N=\left\langle g(x)\right\rangle = \left\langle p(x)\right\rangle$
+    \end{enumerate}
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\chapter{The Field of Quotients of an Integral Domain}
+Let $D$ be an integral domain (a ring with $1$ has no zero divisors) that we desire to enlarge to a field of quotients $F$. A coarse
+outline of the steps we take is as follows:
+
+\section{Step 1. Define what the elements of $F$ are to be. (Define $S/\sim$)}
+$D$ is the given integral domain, $S=\{(a,b)|a,b\in D,b\neq 0\}<D\times D$
+\subsection{Def: equivalent relation $(a,b)\sim(c,d) \Leftrightarrow	ad = bc$}
+\begin{definition}
+    Two elements $(a, b)$ and $(c, d)$ in $S$ are equivalent, denoted by $(a, b) \sim (c, d)$, if and only if $ad = bc$.
+
+    Note: we can image it as $\frac{a}{b}=\frac{c}{d}$, but don't use this form.
+\end{definition}
+
+\begin{lemma}
+    $\sim$ defines an equivalence relation on $S$.
+\end{lemma}
+\begin{proof}
+easy to prove (1) reflexive, (2) symmetric, (3) transitive.
+\end{proof}
+
+\section{Step 2. Define the binary operations of addition and multiplication on $S/\sim$.}
+The relation $\sim$ can define a set of all equvalence classes on $[(a,b)], (a,b)\in S$, $S/\sim=\{[(a,b)]|(a,b)\in S\}$
+\subsection{lemma: well-defined operations $+,\times$}
+\begin{lemma}
+    For $[(a, b)]$ and $[(c, d)]$ in $S/\sim$, the equations
+    $$
+    [(a, b)]+[(c, d)]=[(a d+b c, b d)]
+    $$
+    and
+    $$
+    [(a, b)][(c, d)]=[(a c, b d)]
+    $$
+    give well-defined operations of addition and multiplication on $S/\sim$.
+\end{lemma}
+\begin{proof}
+Assume $(a_1,b_1)\sim(a,b)$, $(c_1,d_1)\sim (c,d)$.
+
+Verify $+:(ad+bc,bd)\sim (a_1d_1+b_1c_1,b_1d_1)$
+
+\end{proof}
+
+\section{Step 3. Check all the field axioms to show that F is a field under these operations.}
+\subsection{Thm: $S/\sim$ is a field with $+,\times$}
+\begin{theorem}
+    With operation $+,\times$. $S/\sim$ is a field.
+\end{theorem}
+\begin{proof}
+Check all field axioms:
+\begin{equation}
+    \begin{aligned}
+        Associative:& +:&\checkmark&\quad&\times:& \checkmark\\
+        Identity:& +:&[(0,1)]&\quad&\times:& [(1,1)]\\
+    \end{aligned}
+    \nonumber
+\end{equation}
+$[(a,b)]+[(0,1)]=[(a,b)]$, $[(a,b)][(1,1)]=[(a,b)]$
+\begin{equation}
+    \begin{aligned}
+        Inverse:& +:&[(-a,b)]&\quad&\times:& [(b,a)],\forall a\neq 0
+    \end{aligned}
+    \nonumber
+\end{equation}
+$[(a,b)]+[(-a,b)]=[(0,b^2)]=[(0,1)]$, where $(0,b^2)\sim (0,1) \Leftrightarrow 0*1=b^2*0$;
+
+$[(a,b)][(b,a)]=[(ab,ab)]=[(1,1)]$
+\begin{equation}
+    \begin{aligned}
+        Commucative:& +:&\checkmark&\quad&\times:& \checkmark\\
+        \text{Distributive laws}:&&\checkmark&&&
+    \end{aligned}
+    \nonumber
+\end{equation}
+\end{proof}
+
+\section{Step 4. Show that F can be viewed as containing D as an integral subdomain.}
+\subsection{Lem: $\phi(a)=[(a,1)]$ is an isomorphism between $D$ and $\{[(a,1)]|a\in D\}$}
+\begin{lemma}
+    The map $\phi : D \rightarrow F=S/\sim$ given by $\phi(a) = [(a, 1)]$ is an \underline{isomorphism} of $D$ with a subring of $F(=S/\sim)$.
+\end{lemma}
+\begin{proof}
+    \begin{equation}
+        \begin{aligned}
+            \phi(a+b) &= [(a+b, 1)]=[(a,1)]+[(b,1)]\\
+            \phi(ab) &= [(ab, 1)]=[(a,1)][(b,1)]\\
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    Injective: assume $\phi(a)=\phi(b)$, then
+    \begin{equation}
+        \begin{aligned}
+            [(a, 1)]=[(b,1)]\Leftrightarrow	(a,1)\sim (b,1) \Leftrightarrow	a=b
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    Surjective: $\forall [(a,1)]$ is mapped from $a$
+
+    We prove that $\phi$ is an isomorphism between $D$ and $\{[(a,1)]|a\in D\}$.
+\end{proof}
+
+\subsection{Thm: every
+element of $F$ can be expressed as a quotient of two elements of $D$: $[(a,b)]=\frac{\phi(a)}{\phi(b)}$}
+$\forall [(a,b)]\in F$,
+\begin{equation}
+    \begin{aligned}
+        [(a,b)]=[(a,1)][(1,b)]=\frac{[(a,1)]}{[(1,b)]^{-1}}=\frac{[(a,1)]}{[(b,1)]}=\frac{\phi(a)}{\phi(b)}
+    \end{aligned}
+    \nonumber
+\end{equation}
+\begin{theorem}
+    Any integral domain $D$ can be enlarged to (or embedded in) a field $F=S/\sim$ such that every
+    element of $F$ can be expressed as a quotient of two elements of $D$. (Such a field F is a
+    \textbf{field of quotients} of $D$.)
+\end{theorem}
+
+
+\chapter{Polynomials}
+\section{Def: Polynomials}
+Let $R$ be any field. A polynomial over $R$ in variable $x$ is a formal sum:
+\begin{equation}
+    \begin{aligned}
+        a_0+a_1x+a_2x^2+...+a_nx^n=\sum_{i=0}^na_ix^i
+    \end{aligned}
+    \nonumber
+\end{equation}
+where $n\geq 0$ is an integer, $a_1,a_1,...,a_n\in\mathbb{F}$.\\
+Polynomial is a squence $\{a_k\}_{k=0}^{\infty}$ with $a_m=0,\forall m>n$.
+
+\textbf{Remark:} $f(x)=a_0+a_1x+a_2x^2+\cdots+a_dx^d$ If $a_d\neq 0$ and $a_i=0,\forall i>d$, $d$ is the \underline{degree} of $f(x)$.
+
+\section{Rings of Polynomials}
+\subsection{Thm: $R[x]$ is a ring under addition and multiplication}
+\begin{theorem}
+    The set $R[x]$ of all polynomials in an indeterminate $x$ with coefficients in a ring $R$ is \underline{a ring under polynomial addition and multiplication}.
+    
+    Note: If $R$ is commutative, then so is $R[x]$,
+    and if $R$ has unity $1\neq 0$. then $1$ is also unity for $R[x]$.
+\end{theorem}
+Let $R[x]$ denote the set of all polynomials with coefficients in the ring $R$.
+\begin{equation}
+    \begin{aligned}
+        R[x]=\{\sum_{i=0}^na_ix^i|n\geq0,n\in\mathbb{Z}, a_0,...,a_n\in R\}
+    \end{aligned}
+    \nonumber
+\end{equation}
+We call the $R[x]$ \textit{polynomial ring} over the ring $R$.
+\begin{equation}
+    \begin{aligned}
+        &f=\sum_{i=0}^na_ix^i, g=\sum_{j=0}^na_jx^j \in R[x]\\
+        &f+g=\sum_{i=0}^n(a_i+b_i)x^i\in R[x]\\
+        &fg=(\sum_{i=0}^na_ix^i)(\sum_{j=0}^na_jx^j)=\sum_{i=0}^{2n}(\sum_{j=0}^ia_jb_{i-j})x^i
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+\subsection{Def: evaluation homomorphism}
+\begin{definition}
+    Let $F$ be a field, and let $\alpha\in F$. Define an evaluation map. $EV_{x=\alpha}:F[x] \rightarrow F$, $\phi_\alpha(\sum_{i=0}^\infty a_ix^i)=\sum_{i=0}^\infty a_i\alpha^i$. Then,
+    \begin{equation}
+        \begin{aligned}
+            \phi_\alpha(f(x)+g(x))&=\phi_\alpha(f(x))+\phi_\alpha(g(x))\\
+            \phi_\alpha(f(x)g(x))&=\phi_\alpha(f(x))\phi_\alpha(g(x))\\
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    $\phi_\alpha$ is a \underline{ring homomorphism}. We call it \underline{evaluation homomorphism}.
+\end{definition}
+
+\begin{example}
+    Consider $EV_{x=2}: \mathbb{Q}[x] \rightarrow \mathbb{Q}$. $EV_{x=2}$ is a ring homomorphism. In particular it is a \underline{group homomorphism} for \underline{addition}.
+    $$
+    \phi_{2}\left(a_{0}+a_{1} x+\cdots+a_{n} x^{n}\right)=a_{0}+a_{1} 2+\cdots+a_{n} 2^{n}
+    $$
+    Note that
+    $$
+    \phi_{2}\left(x^{2}+x-6\right)=2^{2}+2-6=0 .
+    $$
+    Thus $x^{2}+x-6$ is in the kernel $N$ of $\phi_{2}$. Of course,
+    $$
+    x^{2}+x-6=(x-2)(x+3),
+    $$
+    and the reason that $\phi_{2}\left(x^{2}+x-6\right)=0$ is that $\phi_{2}(x-2)=2-2=0$.
+\end{example}
+
+\begin{example}
+    Compute $EV_{x=4}(3x^{106}+5x^{99}+2x^{53})\in \mathbb{Z}_7[x]$
+
+    \begin{equation}
+        \begin{aligned}
+            EV_{x=4}(3x^{106}+5x^{99}+2x^{53})=\\
+            \text{According to the little Theorem of Fermat, $x^6\equiv 1 \text{ mod }7$.}\\
+            =3x^4+5x^3+2x^5=0\in \mathbb{Z}_7
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{example}
+
+\subsection{Def: $\alpha$ is zero if $EV_{x=\alpha}(f(x))=0$}
+\begin{definition}
+    We say that $\alpha$ is a zero of $f(x)$ if $EV_{x=\alpha}(f(x))=0$.
+\end{definition}
+\begin{example}
+    Find all zeros of $f(x)=x^3+2x+2$ in $\mathbb{Z}_7$.
+
+    Solve by checking all value $f(x),x=0,1,...,6$ $\Rightarrow$ zeros are $x=2$, $x=3$.
+\end{example}
+
+
+
+\textcolor{gray}{
+\section{Degree of a Polynomial: $deg(f)$}
+$f=\sum_{i=0}^na_ix^i$, $deg(f)=$ degree of $f$ is,
+\begin{equation}
+    \begin{aligned}
+        deg(f)=\left\{\begin{matrix}
+            0& \textit{if $f$ is constant, $f\neq0$}\\
+            n& \textit{if $a_n\neq0$ in above ($a_n=$ leading coefficent)}\\
+            -\infty& \textit{if } f=0
+        \end{matrix}\right.
+    \end{aligned}
+    \nonumber
+\end{equation}
+Define $-\infty+ a = a + (-\infty) = -\infty\ \forall a \in \mathbb{Z} \cup \{-\infty\}$
+\subsection{Lemma 2.3.3: $deg(fg)=deg(f)+deg(g)
+,\ deg(f+g)\leq\max\{deg(f),deg(g)\}$}
+\begin{lemma}[Lemma 2.3.3]
+    For any field $\mathbb{F}$ and $f$ , $g \in \mathbb{F}[x]$,
+    \begin{equation}
+        \begin{aligned}
+            &deg(fg)=deg(f)+deg(g)\\
+            &deg(f+g)\leq\max\{deg(f),deg(g)\}
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{lemma}
+\section{Corollary 2.3.5: Unit(invertible) in $\mathbb{F}[x]$: constant$\neq 0$ iff $deg(f)=0$}
+\begin{corollary}[Corollary 2.3.5]
+    For any field $\mathbb{F}$ and $f \in \mathbb{F}[x]$, Then $f$ is a $\underline{unit}$(i.e. invertible) in $\mathbb{F}[x]$ iff $deg(f)=0$.
+\end{corollary}
+\begin{proof}
+\quad\\
+Obviously, $deg(f)=0\Rightarrow\ f$ is a unit.\\
+Suppose $f$ is a unit, i.e. $\exists g\in\mathbb{F}[x]$ s.t. $fg=1$.\\
+$0=deg(fg)=deg(f)+deg(g)\Rightarrow deg(f),deg(g)\geq0\Rightarrow deg(f)=0,deg(g)=0.$
+\end{proof}
+\section{\underline{Irreducible} Polynomials:}
+%“无法分解为两个$degree\geq1$的多项式积”的多项式: 至少一个是constant (i.e. $degree=0$)
+A nonconstant polynomial $f$ is \underline{irreducible} if $f=uv,\ u,v\in\mathbb{F}[x]$, then either $u$ or $v$ is a unit(i.e., constant$\neq0$)
+\section{Theorem 2.3.6: nonconstant polynomials can be reduced uniquely}
+\begin{theorem}[Theorem 2.3.6]
+Suppose $\mathbb{F}$ is a field and $f\in\mathbb{F}[x]$ is any nonconstant. Then $f = ap_1p_2\dots p_k$ where $a \in \mathbb{F},\ p_1,\dots p_k \in \mathbb{F}[x]$ are irreducible \underline{monic} polynomials (monic = i.e. leading coeff. 1). If $f = bq_1q_2\dots q_r$ with $b \in \mathbb{F}$ and
+$q_1,q_2,\dots ,q_r \in \mathbb{F}[x]$ monic irreducible, then $a = b, k = r$, and after reindexing $p_i = q_i,\ \forall i$
+\end{theorem}
+\begin{lemma}[Lemma 2.3.7]
+    Suppose $\mathbb{F}$ is a field and $f\in\mathbb{F}[x]$ is nonconstant monic polynomial. Then $f = p_1p_2\dots p_k$ where each $p_i$ is monic irreducible.
+\end{lemma}
+\begin{proof}
+\quad\\
+Prove it by induction. When $deg(f)=1,\ f=uv,\ u,v\in\mathbb{F}[x]$, $deg(f)=deg(u)+deg(v)\Rightarrow$ one of these is 0.\\
+Suppose the lemma holds for all degree$<n$. When $deg(f)=n$,\\
+Either $f$ is irreducible, done.\\
+Suppose $f = uv$ with/ $deg(u), deg(v)\geq 1$\\
+$\Rightarrow deg(u),deg(v)<n\Rightarrow u=p_1p_2\dots p_k, v=q_1q_2\dots q_j$
+So, $f = p_1p_2\dots p_kq_1q_2\dots q_j$.
+\end{proof}
+\begin{example}
+$x^2-1\in\mathbb{Q}[x]$ reducible\\
+$x-1,x+1\in\mathbb{Q}[x]$ irreducible\\
+$x^2+1\in\mathbb{Q}[x]$ irreducible\\
+$x^2+1\in\mathbb{C}[x]$ reducible\\
+$x^2-1=x^2+1=[1]x^2+[1]\in\mathbb{Z}_2[x]$ reducible\\
+\end{example}}
+
+\chapter{Divisibility of Polynomials}
+\textcolor{gray}{
+\begin{proposition}[Proposition 2.3.8]
+    $f , h, g \in \mathbb{F}[x]$, then
+\end{proposition}
+(i) If $f \neq 0, f |0$\\
+(ii) If $f |1$, $f$ is nonzero constant\\
+(iii) If $f |g$ and $g|f$ , then $f = cg$ for some $c \in \mathbb{F}$\\
+(iv) If $f |g$ and $g|h$, then $f |h$\\
+(v) If $f|g$ and $f|h$, then $f|(ug + vh)$ for all $u, v \in \mathbb{F}[x]$.}
+\section{Thm: Euclidean Algorithm of polynomials}
+\begin{theorem}
+    For nonzero elements in $\mathbb{F}[x]$, $m>0$
+    \begin{equation}
+        \begin{aligned}
+            f(x)&=a_nx^n+a_{n-1}x^{n-1}+\cdots+a_0\\
+            g(x)&=b_mx^m+b_{m-1}x^{m-1}+\cdots+b_0
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    Then there are unique polynomials $q(x)$ and $r(x)$ in $\mathbb{F}[x]$ such that $f(x) = g(x)q(x) + r(x)$, where either $r(x) = 0$ or the degree of $r(x)$ is less than the degree $m$ of $g(x)$.
+\end{theorem}
+\underline{\textbf{Simplify:}}
+    Given $f, g \in \mathbb{F}[x]$, $g \neq 0$, then $\exists q, r \in \mathbb{F}[x]$ s.t.
+    $deg(r ) < deg(g)$
+    and $f = qg + r$
+\begin{example}
+\begin{equation}
+    \begin{aligned}
+        &f = 3x^3 - 5x^2 - 3x + 5, g = x^3 - 2x^2 + 1 \in \mathbb{Q}[x]\\
+        &f=3g+x^2-3x+2
+    \end{aligned}
+    \nonumber
+\end{equation}
+\end{example}
+
+$f,g\in\mathbb{F}[x], f\neq0$, $f$ \underline{divides} $g$, $f|g$ means $\exists u\in\mathbb{F}[x]$ s.t. $g=fu$.
+
+\section{Cor: $a$ is a zero of $f(x)$ $\Leftrightarrow$ $(x-a)|f(x)$}
+\begin{corollary}
+    An element $a \in F$ is a zero of $f(x) \in F[x]$ if and only if $(x - a)|f(x)$.
+\end{corollary}
+\begin{proof}[Proof method 2]
+    Suppose surjective homomorphism $\phi_a:F(x) \rightarrow F$ with $f(x) \rightarrow	f(a)$
+
+    By defition of kernel $f(a)=0\Leftrightarrow f(x)\in ker \phi_a$.
+
+    Then we have $\left\langle (x-a)\right\rangle\subseteq ker\phi_a\subsetneq F[x]$, where $\left\langle (x-a)\right\rangle=\{ra|r\in F[x]\}$. Since $x-a$ is irreducible, then $\left\langle (x-a)\right\rangle$ is a maximal ideal of $F[x]$. Then $\left\langle (x-a)\right\rangle=ker\phi_a$\\
+    Thus
+    \begin{equation}
+        \begin{aligned}
+            &f(a)=0\\
+            \Leftrightarrow& f(x)\in ker\phi_a\\
+            \Leftrightarrow& f(x)\in \left\langle (x-a)\right\rangle\\
+            \Leftrightarrow& (x-a)|f(x)
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{proof}
+
+\section{Cor: Finite subgroup of multiplicative $F\backslash \{0\}$ is cyclic}
+\begin{corollary}
+    If $G$ is a finite subgroup of the multiplicative group $F^*=F\backslash \{0\}$ of a field $F$, then $G$ is cyclic.
+    (In particular, the multiplicative group of all nonzero elements of a finite field is cyclic.)
+\end{corollary}
+\begin{proof}
+
+\end{proof}
+
+
+
+
+
+\textcolor{gray}{
+\subsection{Greatest common divisor of $f$ and $g$: is not unique, we denote monic Greatest common divisor as $gcd(f,g)$}
+If $f, g \in \mathbb{F}[x]$ are nonzero polynomials, a \underline{greatest common divisor} of $f$ and $g$ is a polynomial $h \in \mathbb{F}[x]$ such that\\
+(i) $h|f$ and $h|g$, and\\
+(ii) if $k\in\mathbb{F}[x]$ and $k|f$ and $k|g$, then $k|h$.\\
+the $gcd$ is not unique, but the monic $gcd$ is unique. We call it \textbf{the monic greatest common divisor}, denote it $gcd(f,g)$.
+\begin{example}
+\begin{equation}
+    \begin{aligned}
+        &x^2 - 1, x^2 - 2x + 1 \in \mathbb{Q}[x]\\
+        &(x - 1)(x + 1), (x - 1)^2 \in \mathbb{Q}[x]\\
+        &x -1 = gcd(x^2 - 1, x^2 - 2x + 1)
+    \end{aligned}
+    \nonumber
+\end{equation}
+\end{example}
+\subsection{Proposition 2.3.10:}
+%$gcd(f,g)$ 是degree最小的f,g的线性组合
+\begin{proposition}[Proposition 2.3.10]
+    Any 2 nonzero polynomials $f , g \in \mathbb{F}[x]$ have
+    a gcd in $\mathbb{F}[x]$. In fact among all polynomials
+    in the set
+    $M = \{uf + vg|u, v \in \mathbb{F}[x]\}$
+    any nonconstant of minimal degree are gcds.
+\end{proposition}
+\begin{proof}
+\quad\\
+$h\in M$, $deg(h)=d$ minimal. Let $k|f$ and $k|g$ $\Rightarrow$ $k|uf+vg,\ \forall u,v\Rightarrow k|h$.\\
+Suppose $h'\in M$ is any nonzero element. $deg(h')\geq deg(h)\Rightarrow\ \exists q,r\in\mathbb{F},deg(r)<deg(h)\ h'=qh+r$. $r=h'-qh\in M$. Since $deg(h)=d$ is nonconstant minimal degree, $r=0\Rightarrow h'=qh$. So $\exists q_1,q_2\in\mathbb{F}[x],\ 1f+0g=q_1h, 0f+1g=q_2h$ $\Rightarrow h|g,h|f$.
+\end{proof}
+\begin{example}
+    \begin{equation}
+        \begin{aligned}
+            &f = 3x^3 - 5x^2 - 3x + 5, g = x^3-2x^2 + 1 \in \mathbb{Q}[x]\\
+            &f=3g+x^2-3x+2\\
+            &g=(x+1)(x^2-3x+2)+x-1\\
+            &x^2-3x+2=(x-2)(x-1)\\
+            &\Rightarrow gcd(f,g)=x-1\\
+            &x-1=g-(x+1)(x^2-3x+2)=g-(x+1)(f-3g)=(3x+4)g-(x+1)f
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{example}
+\begin{example}
+    Find a greatest common divisor of $f=x^3-x^2-x+1$ and $g=x^2-3x+2$ in $\mathbb{Q}[x]$, and express it in form $uf+vg,\ u,v\in\mathbb{Q}[x]$.
+\end{example}
+\begin{equation}
+    \begin{aligned}
+        &f=(x+2)g+3x-3\\
+        &g=\frac{1}{3}(x-2)(3x-3)\\
+        &gcd(f,g)=3x-3\\
+        &3x-3=f-(x+2)g
+    \end{aligned}
+    \nonumber
+\end{equation}
+\subsection{Proposition 2.3.12: $gcd(f,g)=1, f|gh\Rightarrow f|h$}
+\begin{proposition}[Proposition 2.3.12]
+If $f,g,h\in\mathbb{F}[x]$, $gcd(f,g)=1$, and $f|gh$, then $f|h$.
+\end{proposition}
+\subsection{Corollary 2.3.13: irreducible $f$, $f|gh$ $\Rightarrow f|g$ or $f|h$}
+\begin{corollary}[Corollary 2.3.13]
+If $f\in\mathbb{F}[x]$ is irreducible, and $f|gh$, then $f|g$ or $f|h$.
+\end{corollary}
+Since $f$ is irreducible, we have two possible situations:\\
+1. $gcd(f,g)=f$, i.e. $f|g$ done.\\
+2. $gcd(f,g)=1$, then according to Prop 2.3.12, we can know $f|h$.\\
+\section{Roots}
+\underline{Root}:$\alpha\in\mathbb{F}$ is a root of $f$ if $f(\alpha)=0$.
+\subsection{Corollary 2.3.16(of Euclidean Algorithm): $f$ can be divided into $(x-\alpha)q+f(\alpha)$i.e. if $\alpha$ is a root, then $(x-\alpha)|f$}
+\begin{corollary}[Corollary 2.3.16(of Euclidean Algorithm)]
+$\forall f\in\mathbb{F}[x]$ and $\alpha\in\mathbb{F}$, there exists a polynomial $q\in\mathbb{F}[x]$ s.t. $f=(x-\alpha)q+f(\alpha)$. In particular , if $\alpha$ is a root, then $(x-\alpha)|f$.
+\end{corollary}
+\section{Multiplicity}
+If $\alpha$ is a root of $f$ , say its \textit{multiplicity} is $m$, if $x-\alpha$ appears $m$ times in irreducible factorization.
+\subsection{$\textit{Sum of multiplicity}\leq deg(f)$}
+\begin{proposition}[Proposition 2.3.17]
+Given a nonconstant polynomial $f\in\mathbb{F}[x]$, the number of roots of $f$, counted with multiplicity, is at most $deg(f)$.
+\end{proposition}
+\section{Roots in a filed may not in its subfield}
+Note if $\mathbb{F}\subset \mathbb{K}$, then $\mathbb{F}[x]\subset\mathbb{K}$. $f\in\mathbb{F}[x]$ may have no roots in $\mathbb{F}$, but could have roots in $\mathbb{K}$
+\begin{example}
+    $x^n-1\in\mathbb{Q}[x]$ has a root in $\mathbb{Q}$: 1; has 2 roots if $n$ even: $\pm 1$\\
+    $\underline{roots\ in\ \mathbb{C}}:\zeta_n=e^{\frac{2\pi i}{n}}$, then $\zeta_n^n=e^{2\pi i}=1$; $(\zeta_n^k)^n=e^{2\pi ki}=1$ So, the roots: $\{e^{\frac{2\pi ki}{n}}|k=0,...,n-1\}$\\
+    The roots of $x^n-d$: $\{e^{\frac{2\pi ki}{n}}\sqrt{d}|k=0,...,n-1\}$\\
+\end{example}}
+
+
+
+
+
+\chapter{Sylow Theorems}
+\section{Def: $p-$group}
+\begin{definition}
+    A group of order $p^n$, $p$ is prime, for some $\alpha>0$, is called $p-$group.
+\end{definition}
+\section{Sylow Theorems}
+\begin{enumerate}[1)]
+    \item \underline{\textbf{First Sylow Theorem:}} If $G$ is a finite group of order $p^\alpha m$, $gcd(p,m)=1$, then it conatins a subgroup $H$ of order $p^\alpha$. $H$ is called a Sylow $p-$subgroup.
+    \item \underline{\textbf{Second Sylow Theorem:}} Any two Sylow $p-$subgroups of group $G$ are conjugate.
+    
+    ($H_1$ and $H_2$ are conjugate of $G$ if $\exists g\in G$ s.t. $H_1=gH_2g^{-1}$)
+    \item \underline{\textbf{Third Sylow Theorem:}} The number of Sylow $p-$subgroups of a group $G$ is $1$ modulo $p$.
+\end{enumerate}
+\begin{example}
+    $G=S_4,|G|=4!=2^3\cdot 3$
+\end{example}
+\begin{enumerate}
+    \item \textit{First Sylow Theorem:} Contains subgroup of order $8$. ($D_8$)
+    \item \textit{Second Sylow Theorem:} There are three kinds of $D_8$: begin with $(1,3,2,4)/(1,2,3,4)/(1,2,4,3)$ are conjugate to each other.
+    \item \textit{Third Sylow Theorem:} $3\equiv 1 \text{ mod }2$
+\end{enumerate}
+
+\section{Thm: finite $H,K\leq G$, $|HK|=\frac{|H||K|}{|H\cap K|}$}
+\begin{proposition}
+    For finite subgroups $H,K\leq G$, define $HK=\{hk:h\in H,k\in K\}$.
+    $$|HK|=\frac{|H||K|}{|H\cap K|}$$
+\end{proposition}
+
+\section{Group action by conjugation}
+\begin{definition}[Group action by conjugation]
+    Let $X$ be the set of all subgroups of a group $G$, $G$ acts on $X$ by conjugation $$(g,H) \rightarrow gHg^{-1}\in X$$
+    $g\in G,\ H\in X$
+\end{definition}
+
+The \underline{\textbf{stabilizer}} of this action is called the \underline{\textbf{normalizer}} of $H$ in $G$
+\begin{equation}
+    \begin{aligned}
+        N_G(H)=\{g\in G: gHg^{-1}=H\}=\{g\in G: gH=Hg\}
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+\section{Lemma: $K\leq N_G(H)$ $\Rightarrow$ $HK\leq G$}
+\begin{lemma}
+    If $K\leq N_G(H)$, then $HK$ is a subgroup of $G$
+\end{lemma}
+\begin{proof}
+Let $a=h_kk_1$, $b=h_2k_2$, then
+\begin{equation}
+    \begin{aligned}
+        ab&=h_1k_1h_2k_2=h_1(k_1h_2k_1^{-1})k_1k_2, \text{ where }k_1h_2k_1^{-1}\in H \Rightarrow ab\in HK\\
+        a^{-1}&=(h_1k_1)^{-1}=(k_1^{-1}h_1^{-1}k_1)k_1^{-1}, \text{ where }k_1^{-1}h_1^{-1}k_1\in H \Rightarrow ab\in HK\\
+    \end{aligned}
+    \nonumber
+\end{equation}
+\end{proof}
+
+\section{Cor: if $H \lhd N_g(H)\leq G$, $\#$ subgroups of $G$ conjugate to $H$ is $[G: N_G(H)]$}
+\begin{corollary}
+    By the Orbit-Stabilizer Theorem, if $H \lhd N_g(H)\leq G$, then the number of subgroups in $G$ conjugate to $H$ is $[G: N_G(H)]$.
+\end{corollary}
+
+\begin{example}
+$H=\left\langle (1,2,3,4)\right\rangle \lhd D_8 \leq S_4$, $[S_4:D_8]=3$
+\end{example}
+$S_4$ has $3$ subgroups conjugate to $H$: $\left\langle (1,2,3,4)\right\rangle,\left\langle (1,3,4,2)\right\rangle,\left\langle (1,4,2,3)\right\rangle$
+
+\section{Center $Z(G)=\{a\in G:ag=ga,\forall g\in G\}=\{a\in G:gag^{-1}=a,\forall g\in G\}$}
+Size of orbit of $a$ is $1$ $\Leftrightarrow a\in Z(G)$
+
+\section{Class Equation: $|G|=|Z(G)|+\sum_{i=1}^r\frac{|G|}{|C_G(g_i)|}$}
+Let $G$ act on itself by conjugate and $C_G(g_i)$ is the stabilizer of $g_i\in G$ under conjugation. Orbits of $g_i$ of size $>1$.
+$$|G|=|Z(G)|+\sum_{i=1}^r\frac{|G|}{|C_G(g_i)|}$$
+Prove by Orbit-Stabilizer Theorem. Every element $a\in Z(G)$, $|Ga|=\frac{|G|}{|C_G(a)|}=1$. $G$ is the union of all orbits.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\chapter{Euclidean geometry basics}
+\section{ Euclidean distance, inner product}
+\textbf{Euclidean distance} on $\mathbb{R}^n$:
+\begin{equation}
+    \begin{aligned}
+        |x-y|=\sqrt{(x_1-y_1)^2+...+(x_n-y_n)^2}
+    \end{aligned}
+    \nonumber
+\end{equation}
+\textbf{Euclidean inner product}:
+\begin{equation}
+    \begin{aligned}
+        x\cdot y=x_1y_1+\cdots +x_ny_n=x^Ty
+    \end{aligned}
+    \nonumber
+\end{equation}
+\section{Isometry of $\mathbb{R}^n$: a bijection $\mathbb{R}^n \rightarrow \mathbb{R}^n$ preserves distance}
+An \textbf{isometry} of $\mathbb{R}^n$ is a bijection $\varPhi :\mathbb{R}^n \rightarrow \mathbb{R}^n$ that preserves distance, which means,
+\begin{equation}
+    \begin{aligned}
+        |\varPhi(x)-\varPhi(y)|=|x-y|,\ \forall x,y\in \mathbb{R}^n
+    \end{aligned}
+    \nonumber
+\end{equation}
+\subsection{$Isom(\mathbb{R}^n)$: set of all isometries of $\mathbb{R}^n$}
+We use $Isom(\mathbb{R}^n)$ denotes the set of all isometries of $\mathbb{R}^n$,
+\begin{equation}
+    \begin{aligned}
+        Isom(\mathbb{R}^n)=\{\varPhi:\mathbb{R}^n \rightarrow \mathbb{R}^n | |\varPhi(x)-\varPhi(y)|=|x-y|,\ \forall x,y\in \mathbb{R}^n\}
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+\subsection{$Isom(\mathbb{R}^n)$ is closed under $\circ$ and inverse}
+\begin{proposition}
+$\varPhi, \varPsi \in Isom(\mathbb{R}^n)$, then $\varPhi\circ\varPsi, \varPhi^{-1}\in Isom(\mathbb{R}^n)$
+\end{proposition}
+\begin{proof}
+\quad\\
+Since $\varPhi,\varPsi$ are bijections, so is $\varPhi\circ\varPsi$. Moreover,\\
+\begin{equation}
+    \begin{aligned}
+        &|\varPhi\circ\varPsi(x)-\varPhi\circ\varPsi(y)|=|\varPhi(\varPsi(x))-\varPhi(\varPsi(y))|=|\varPsi(x)-\varPsi(y)|=|x-y|\\
+    \end{aligned}
+    \nonumber
+\end{equation}
+Since $id\in Isom (\mathbb{R}^n)$,
+\begin{equation}
+    \begin{aligned}
+        |x-y|=|id(x)-id(y)|=|\varPhi\circ\varPhi^{-1}(x)-\varPhi\circ\varPhi^{-1}(y)|=|\varPhi^{-1}(x)-\varPhi^{-1}(y)|
+    \end{aligned}
+    \nonumber
+\end{equation}
+\end{proof}
+
+\section{$A\in GL(n,\mathbb{R})$, $T_A(v)=Av$: $A^tA=I \Leftrightarrow T_A\in Isom(\mathbb{R}^n)$}
+There is a matrix $A\in GL(n,\mathbb{R})$ i.e. a \textit{invertible linear transofrmations} $T_A: \mathbb{R}^n \rightarrow \mathbb{R}^n$ is given by $T_A(v)=Av$.
+\begin{equation}
+    \begin{aligned}
+        T_A(v)\cdot T_A(w)=(Av)\cdot(Aw)=(Av)^t(Aw)=v^tA^tAw
+    \end{aligned}
+    \nonumber
+\end{equation}
+\begin{equation}
+    \begin{aligned}
+        A^tA=I\Leftrightarrow T_A(v)\cdot T_A(w)=v\cdot w\Leftrightarrow_{(HW4)}\ T_A\in Isom(\mathbb{R}^n)
+    \end{aligned}
+    \nonumber
+\end{equation}
+\section{ Linear isometries i.e. orthogonal group $O(n)=\{A\in GL(n,\mathbb{R})|A^tA=I \}$}
+We define the all isometries in \textit{invertible linear transofrmations} $\mathbb{R}^n \rightarrow \mathbb{R}^n$ as \textbf{orthogonal group}
+\begin{equation}
+    \begin{aligned}
+        O(n)=\{A\in GL(n,\mathbb{R})|A^tA=I \}\subset GL(n,\mathbb{R})
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+\subsection{Special orthogonal group $SO(n)=\{A\in O(n) | det(A)=1\}$: orthogonal group with $det(A)=1$}
+$O(n)$ are the matrices representing linear isometries of $\mathbb{R}^n$.
+$1=det(I)=det(A^tA)=det(A^t)det(A)=det(A)^2 \Rightarrow	det(A)=1$ or $det(A)=-1$. We use \textbf{special orthogonal group} represents $A$ with $det(A)=1$,
+\begin{equation}
+    \begin{aligned}
+        SO(n)=\{A\in O(n) | det(A)=1\}
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+\section{translation: $\tau_v(x)=x+v$}
+Define a \textit{translation} by $v\in \mathbb{R}^n$,
+\begin{equation}
+    \begin{aligned}
+        \tau_v:\mathbb{R}^n \rightarrow \mathbb{R}^n,\ \tau_v(x)=x+v
+    \end{aligned}
+    \nonumber
+\end{equation}
+\subsection{translation is an isometry}
+\begin{note}[Exercise 2.5.3]
+$\forall v\in \mathbb{R}^n, \tau_v$ is an isometry.
+\end{note}
+\begin{proof}
+$|\tau_v(x)-\tau_v(y)|=|(x+v)-(y+v)|=|x-y|$
+\end{proof}
+
+\section{The composition of a translation and an orthogonal transformation is an isometry $\Phi_{A,v}(x)=\tau_v(T_A(x))=Ax+v$}
+Since \textit{the composition of isometries is an isometry,} $\forall A\in O(n)$ and $v\in \mathbb{R}^n$, the composition
+\begin{equation}
+    \begin{aligned}
+        \Phi_{A,v}(x)=\tau_v(T_A(x))=Ax+v
+    \end{aligned}
+    \nonumber
+\end{equation}
+is an isometry. \textbf{which could account for all isometries}.
+\subsection{Theorem 2.5.3: All isometries can be represented by a composition of \textit{a translation} and \textit{an orthogonal transformation}, $Isom(\mathbb{R}^n)=\{\Phi_{A,v}|A\in O(n), v\in \mathbb{R}^n \}$}
+\begin{theorem}[Theorem 2.5.3]
+$Isom(\mathbb{R}^n)=\{\Phi_{A,v}|A\in O(n), v\in \mathbb{R}^n \}$
+\end{theorem}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\chapter{Complex numbers}
+$\mathbb{C}=\{a+bi | a,b\in\mathbb{R}\}$, $\mathbb{R}=\{a+0i | a\in\mathbb{R}\}\subset \mathbb{C}$\\
+Addition $\&$ multiplication
+\begin{equation}
+    \begin{aligned}
+        (a + bi) + (c + di) &= (a + c) + (b + d)i\\
+        (a + bi )(c + di) &= ac + bci + adi + bdi^2\\
+        &= (ac-bd) + (bc + ad)i
+    \end{aligned}
+    \nonumber
+\end{equation}
+\textbf{\underline{Complex conjugation}}: $z = a + bi , \bar{z} = a - bi$, $\overline{zw}=\bar{z}\bar{w}$\\
+\textbf{\underline{Absolute value}}: $|z| = \sqrt{a^2+b^2}$, $|z|^2=z\bar{z}$\\
+\textbf{\underline{Additive inverse}}: $-z=-a-bi$\\
+\textbf{\underline{Multiplicative inverse}}: $z^{-1}=\frac{1}{z}=\frac{1}{a+bi}=\frac{a-bi}{a^2+b^2}=\frac{\bar{z}}{|z|^2}$\\
+\begin{equation}
+    \begin{aligned}
+        z\in\mathbb{C}, &\overline{z+\bar{z}}=\bar{z}+\bar{\bar{z}}=z+\bar{z}\\
+        \textit{Real part: }&Re(z)=\frac{z+\bar{z}}{2}\\
+        \textit{Imaginary part: }&Im(z)=\frac{z-\bar{z}}{2i}\\
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+\section{Geometric Meaning of Addition and Multiplication}
+\underline{Addition}: parallelogram law
+\begin{center}\begin{figure}[htbp]
+    \centering
+    \includegraphics[scale=0.7]{Complex addition.png}
+\end{figure}\end{center}
+\underline{Multiplication}:
+\begin{equation}
+    \begin{aligned}
+        z&=a+bi\neq0\\
+        &=r \cos\theta+r \sin\theta i\\
+        &=r (\cos\theta+i\sin\theta)\\
+        |z|^2&=a^2+b^2=r^2
+    \end{aligned}
+    \nonumber
+\end{equation}
+\begin{equation}
+    \begin{aligned}
+        z=&r (\cos\theta+i\sin\theta)\\
+        w=&s (\cos\phi+i\sin\phi)\\
+        zw=&rs[\cos\theta\cos\phi-\sin\theta\sin\phi+i(\cos\theta\sin\phi+\cos\phi\sin\theta)]\\
+        =&rs[cos(\theta+\phi)+i\sin(\theta+\phi)]\\
+        =&|z||w|[cos(\theta+\phi)+i\sin(\theta+\phi)]
+    \end{aligned}
+    \nonumber
+\end{equation}
+\begin{center}\begin{figure}[htbp]
+    \centering
+    \includegraphics[scale=0.8]{Complex multiplication.png}
+\end{figure}\end{center}
+We will write,
+\begin{equation}
+    \begin{aligned}
+        &\cos \theta+i\sin\theta=e^{i\theta}\\
+        &e^{i\theta}e^{i\phi}=e^{i(\theta+\phi)}\\
+        &z=|z|e^{i\theta}
+    \end{aligned}
+    \nonumber
+\end{equation}
+\section{Theorem 2.1.1: $f(x)=a_0+a_1x+...+a_nx^n$ with coefficients $a_0,a_1,...,a_n\in\mathbb{C}$. Then $f$ has a \underline{root} in $\mathbb{C}$: $\exists \alpha\in\mathbb{C}$ s.t. $f(\alpha)=0$}
+\begin{theorem}[Theorem 2.1.1]
+Supose a nonconstant polynomial $f(x)=a_0+a_1x+...+a_nx^n$ with coefficients $a_0,a_1,...,a_n\in\mathbb{C}$. Then $f$ has a \underline{root} in $\mathbb{C}$: $\exists \alpha\in\mathbb{C}$ s.t. $f(\alpha)=0$.
+\end{theorem}
+\subsection{Corollary 2.1.2: $f(x)=a_n\prod_{i=1}^n(x-k_i)=a_n(x-k_1)(x-k_2)...(x-k_n)$, where $k_1,k_2,...,k_n$ are roots of $f(x)$}
+\begin{corollary}[Corollary 2.1.2]
+    Every nonconstant polynomial with coefficients $a_0,a_1,...,a_n\in\mathbb{C}$ can be factored as $f(x)=a_n\prod_{i=1}^n(x-k_i)=a_n(x-k_1)(x-k_2)...(x-k_n)$, where $k_1,k_2,...,k_n$ are roots of $f(x)$.
+\end{corollary}
+\subsection{Corollary 2.1.3: $a_i\in \mathbb{R}$, $f$ can be expresses as a product of linear and quadratic polynomials}
+\begin{corollary}[Corollary 2.1.3]
+    If $f (x) = a_0 + a_1x + ... + a_nx^n$ is a nonconstant
+    polynomial $a_0, a_1, ..., a_n \in \mathbb{R}, a_n \neq 0$.
+    Then $f$ can be expresses as a product of linear and quadratic polynomials.
+\end{corollary}
+$a_0, a_1, ..., a_n$ is real number here!
+\begin{proof}
+\quad\\
+(1)Obviously, the corollary holds at $n=1$ and $n=2$.\\
+(2)Suppose the corollary holds for all situations that $n<k$.\\
+When $n=k$, $f (x) = a_0 + a_1x + ... + a_kx^k, a_k\neq 0$.\\
+By F.T.A., $f$ has a root $\alpha$ in $\mathbb{C}$.\\
+If $\alpha\in\mathbb{R}$, long division $f(x)=q(x)(x-\alpha)$. $q$ has real coefficients, $\textit{degree of }q=k-1$. Since the corollary holds at $n=k-1$, $q(x)$ is a product of linear and quadratics. Then, the corollary also holds at $n=k$.\\
+If $\alpha\notin\mathbb{R}$
+\begin{equation}
+    \begin{aligned}
+        &0=f(\alpha)=a_0+a_1\alpha+...+a_k\alpha^k\\
+        &0=\overline{f(\alpha)}={a_0}+{a_1}\bar{\alpha}+...+{a_n}\bar{\alpha}^n=f(\bar{\alpha})
+    \end{aligned}
+    \nonumber
+\end{equation}
+Since $\bar{\alpha}\neq\alpha$, $(x-\alpha)(x-\bar{\alpha})|f$.\\
+$(x-\alpha)(x-\bar{\alpha})=x^2-(\alpha+\bar{\alpha})x+|\alpha|^2$ is a polynomial with coefficients in $\mathbb{R}$. So $f(x)=q(x)(x^2-(\alpha+\bar{\alpha})x+|\alpha|^2)$, $q$ has real coefficients with degree $k-2$. The corollary also holds at $n=k-2$, $q(x)$ is a product of linear and quadratics. Then, the corollary also holds at $n=k$.\\
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{thebibliography}{1}
+    \bibitem{Long2015Fully}
+    Christopher J Leininger  \newblock Introduction to Abstract Algebra
+    (Draft)  2017.
+
+    \bibitem{Long2015Fully}
+    Fraleigh, J. B. (2003). A first course in abstract algebra. Pearson Education India.
+\end{thebibliography}
+
+
+\end{document}
+\bibliography{reference}
+\bibliographystyle{unsrt}

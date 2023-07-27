@@ -1,0 +1,585 @@
+\documentclass[11pt]{elegantbook}
+\definecolor{structurecolor}{RGB}{40,58,129}
+\linespread{1.6}
+\setlength{\footskip}{20pt}
+\setlength{\parindent}{0pt}
+\newcommand{\argmax}{\operatornamewithlimits{argmax}}
+\newcommand{\argmin}{\operatornamewithlimits{argmin}}
+\elegantnewtheorem{proof}{Proof}{}{Proof}
+\elegantnewtheorem{claim}{Claim}{prostyle}{Claim}
+\DeclareMathOperator{\col}{col}
+\title{\textbf{Analysis and Something Else}}
+\author{Wenxiao Yang}
+\institute{Haas School of Business, University of California Berkeley}
+\date{2023}
+\setcounter{tocdepth}{2}
+\cover{cover.png}
+\extrainfo{All models are wrong, but some are useful.}
+
+% modify the color in the middle of titlepage
+\definecolor{customcolor}{RGB}{9,119,119}
+\colorlet{coverlinecolor}{customcolor}
+\usepackage{cprotect}
+
+\addbibresource[location=local]{reference.bib} % bib
+
+\begin{document}
+
+\maketitle
+\frontmatter
+\tableofcontents
+\mainmatter
+
+
+\chapter{Logic}
+\section{Main Methods of Proof \small{ (@ Lec 01 of ECON 204)}}
+\subsection{Proof by Induction}
+\subsection{Proof by Deduction}
+\subsection{Proof by Contradiction}
+\subsection{Proof by Contraposition}
+\begin{enumerate}[$\circ$]
+    \item $\lnot P$ ("not $P$") means "$P$ is false".
+    \item $P \wedge Q$ ("$P$ and $Q$") means “$P$ is true and $Q$ is true.”
+    \item $P \vee Q$ ("$P$ or $Q$") means “$P$ is true or $Q$ is true (or possibly both).”
+    \item $\lnot P \wedge Q$ means $(\lnot P)\wedge Q$; $\lnot P \vee Q$ means $(\lnot P)\vee Q$.
+    \item $P \Rightarrow Q$ ("$P$ implies $Q$") means “whenever $P$ is satisfied, $Q$ is also satisfied.”
+\end{enumerate}
+\textbf{Statement:} Formally, $P \Rightarrow Q$ is equivalent to $\lnot P \vee Q$.
+
+\begin{definition}[Contrapositive]
+\normalfont
+The \textit{contrapositive} of the statement $P \Rightarrow Q$ is the statement $\lnot Q \Rightarrow \lnot P$.
+\end{definition}
+
+\begin{theorem}[Prove Contrapositive Insead]
+\normalfont
+$P \Rightarrow Q$ is true if and only if $\lnot Q \Rightarrow \lnot P$ is true.
+\end{theorem}
+
+
+
+\chapter{Analysis Basis}
+\section{Real Number $\mathbb{R}$ \small{(@ Lec 02 of ECON 204)}}
+$\mathbb{R}$ is a field with the usual operations $+$, $\cdot$, additive identity $0$, and multiplicative identity $1$.
+\subsection{Order Axiom}
+\begin{proposition}[Order Axiom]
+    \normalfont
+    There is a complete ordering $\leq$, i.e. $\leq$ is reflexive, transitive, antisymmetric ($\alpha\leq\beta,\beta\leq\alpha \Rightarrow \alpha=\beta$) with the property that $\forall \alpha,\beta\in \mathbb{R}$ either $\alpha\leq\beta$ or $\beta\leq \alpha$.
+\end{proposition}
+
+\section{Sequences}
+\subsection{Sequence Definitions}
+Sequences $\left\{x_{k}\right\}_{k=1}, \ldots$ or $\left\{x_{k}\right\}, x_{k} \in \mathbb{R}^{n}$
+\begin{definition}[Convergence: note $x_{k} \rightarrow x, \lim _{k \rightarrow \infty} x_{k}=x$]
+    Given $\varepsilon>0, \quad \exists N_{\varepsilon}$ s.t. $$\quad\left\|x_{k}-x\right\|<\varepsilon \quad \forall k \geqslant N_{\varepsilon}$$
+\end{definition}
+
+\begin{definition}[Cauchy Sequence]
+    $\{x_k\}$ is Cauchy if given $\varepsilon>0, \quad \exists N_{\varepsilon}$ s.t.
+    $$\left\|x_{k}-x_{m}\right\|<\varepsilon,\  \forall k, m \geqslant N_{\varepsilon} \text {. }$$
+\end{definition}
+\textbf{Note:}$$\left\{x_{k}\right\} \text { converges } \Longleftrightarrow\left\{x_{k}\right\} \text { is Cauchy}$$
+
+
+\begin{definition}[Subsequence]
+Infinite subset of $\{x_k\}$: $\{x_k:k\in \mathcal{K} \}\text{ or } \{x_k\}_\mathcal{K} $, where $\mathcal{K} $ is subset of $\mathbb{Z}^+$.
+\end{definition}
+
+\begin{definition}[Limit point]
+$x$ is a limit point of $\left\{x_{k}\right\}$ if $\exists \text { a subsequence of }\left\{x_{k}\right\} \text { that converges to } x$.
+\end{definition}
+
+\begin{definition}[Bounded Sequence]
+    $$\left\|x_{k}\right\| \leqslant b, \forall k$$
+\end{definition}
+
+Results about Bounded sequences:
+
+1. Every bounded has at least one limit point.
+
+2. A bounded sequence converges iff it has a \textbf{unique limit point}.
+
+\subsection{Scalar Sequences}
+\textbf{\underline{Scalar sequences}} $\left\{x_{k}\right\}, x_{k} \in \mathbb{R}$:
+\begin{proposition}
+    If $\left\{x_{k}\right\}$ is bounded above(below) and non-decreasing(non-increasing) it \textbf{converges}.
+\end{proposition}
+
+\begin{proposition}
+    The largest(smallest) limit point of $\left\{x_{k}\right\}$ is $\lim _{k \rightarrow \infty}\sup x_{k}$ ($\lim _{k \rightarrow \infty}\inf x_{k}$)
+\end{proposition}
+
+\begin{proposition}
+    $\left\{x_{k}\right\}$ converges $\Longleftrightarrow-\infty<\lim _{k \rightarrow \infty} \inf x_{k}=\lim _{k \rightarrow \infty}\sup x_{k}<\infty$
+\end{proposition}
+
+\section{Set Theory}
+\subsection{Well Defined Set}
+\begin{definition}
+    A set $S$ is \textbf{well defined} if an object $a$ is either $a\in S$ or $a\notin S$.
+\end{definition}
+
+\subsection{Numerically Equivalent \small{(@ Lec 01 of ECON 204)}}
+\begin{definition}
+\normalfont
+    Two sets $A, B$ are \textbf{numerically equivalent} (or have the same cardinality) if there is a bijection $f : A \rightarrow B$, that is, 1-1 ($a \neq a' \Rightarrow f(a) \neq f(a')$), and onto ($\forall b\in B, \exists a\in A$ s.t. $f(a)=b$).
+\end{definition}
+
+\subsection{Finite, Countable Set \small{(@ Lec 01 of ECON 204)}}
+\begin{definition}[Finite Set]
+\normalfont
+    A set is either \textbf{finite} or \textbf{infinite}. A set is \textbf{finite} if it is \underline{numerically equivalent to} $\{1,...,n\}$ for some $n$. A set that is not finite is infinite.
+\end{definition}
+
+We give a more precise definition to classify infinite set:
+\begin{definition}[Countable Set]
+\normalfont
+    An infinite set is \textbf{countable} if it is \underline{numerically equivalent to} $\mathbb{N}$. An infinite set that is not countable is called \textbf{uncountable}.
+\end{definition}
+
+\begin{theorem}[Countable $\mathbb{Q}$]
+    The set of rational numbers $\mathbb{Q}$ is countable.
+\end{theorem}
+
+
+\subsection{Power Set \small{(@ Lec 02 of ECON 204)}}
+\begin{definition}[Power Set: the set of all subsets]
+    For any set $A$, we denote by $\mathcal{P}(A)$ the collection of all subsets of $A$. $\mathcal{P}(A)$ is the \textbf{power set} of $A$.
+\end{definition}
+We may also use the notation $2^A$ (in Berkeley ECON 204).
+
+\subsection{Theorem (Cantor): The power set of $\mathbb{N}$ is uncountable \small{(@ Lec 02 of ECON 204)}}
+\begin{theorem}[Cantor]
+    $\mathcal{P}(\mathbb{N})$ (or denoted by $2^\mathbb{N}$), the set of all subsets of $\mathbb{N}$, is uncountable.
+\end{theorem}
+
+\subsection{Cardinalities of Sets \small{(@ Lec 02 of ECON 204)}}
+\begin{definition}[Cardinality]
+    If $A$ is a set, $|A|=$ cardinality of $A$ = $\#$ of elements
+\end{definition}
+$n \in \mathbb{N},|\{1, \ldots n\}|=n$; $|\emptyset|=0(\emptyset=\text { empty set })$.
+
+\begin{proposition}[Facts about cardinality]
+    \begin{enumerate}
+        \item If $A$ is numerically equivalent to $\{1,...,n\}$ for some $n\in \mathbb{N}$, then $|A|=n$.
+        \item $A$ and $B$ are numerically equivalent if and only if $|A|=|B|$.
+        \item If $|A| = n$ (finite) and $A$ is a proper subset of $B$ (that is, $A\subset B$ and $A \neq B$) then $|A|<|B|$.
+        \item If $A$ is countable and $B$ is uncountable, then $n<|A|<|B|, \forall n\in\mathbb{N}$.
+        \item If $A\subseteq B$, then $|A|\leq|B|$. (if $B$ is countable and $A\subseteq B$, then $A$ is at most countable, that is, $A$ is either empty, finite, or countable.)
+        \item If there is an \textit{injection} $\sigma:A \rightarrow B$, we can write $|A|\leq|B|$;
+        \item If there is a \textit{surjection} $\sigma:A \rightarrow B$, we can write $|A|\geq|B|$;
+        \item If there is a bijection $\sigma:A \rightarrow B$, we can write $|A|=|B|$.
+    \end{enumerate}
+\end{proposition}
+
+\subsection{Pigeonhole Principle: $|A|>|B|$ $\Rightarrow$ no injective function $\sigma:A \rightarrow B$}
+\begin{theorem}[Pigeonhole Principle]
+    If $A$ and $B$ are sets and $|A|>|B|$, then there is no injective function $\sigma:A \rightarrow B$.
+\end{theorem}
+
+
+
+\subsection{$B^A$: Sets of Function}
+If $A,B$ are sets, then $B^A=\{\sigma:A \rightarrow B| \sigma \textit{ a function}\}$.
+\begin{example}
+    $n\in \mathbb{Z}$, we define a function $f: B^{\{1,\dots,n\}} \rightarrow B^n(=B\times B\times B\times \dots \times B)$ by the equation
+    $f(\sigma)=\{\sigma(1),...,\sigma(n)\}, \textit{ where }\sigma:\{1,\dots,n\} \rightarrow B$. The $f$ is a \textit{bijection}.
+\end{example}
+\begin{proof}
+    \quad\\
+    1. \textit{Injective}:
+    \begin{equation}
+        \begin{aligned}
+            &f(\sigma_1)=f(\sigma_2)
+            \Rightarrow \{\sigma_1(1),...,\sigma_1(n)\}=\{\sigma_2(1),...,\sigma_2(n)\}\\
+            &\textit{Since }\sigma:\{1,\dots,n\} \rightarrow B,\textit{ it is sufficient to prove }\sigma_1=\sigma_2.
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    2. \textit{Surjective}:
+    \begin{equation}
+        \begin{aligned}
+            &\forall \{b_1,...,b_n\},\textit{ we have }\sigma^*(x)=b_x,x=1,...,n.\textit{ s.t. }f(\sigma^*)=\{b_1,...,b_n\}
+        \end{aligned}
+        \nonumber
+    \end{equation}
+
+\end{proof}
+\begin{example}
+    \begin{equation}
+        \begin{aligned}
+            & C(\mathbb{R},\mathbb{R})=\{\textit{continuous functions }\sigma:\mathbb{R} \rightarrow \mathbb{R} \}\subset \mathbb{R}^\mathbb{R}
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{example}
+
+\subsection{Open, Closed Set}
+\begin{definition}[Open Sets]
+    A set $\mathbb{X} \subseteq \mathbb{R}^{n}$ is open if
+    
+    $\forall x \in \mathbb{X}$ we can draw a ball around $x$ that is contained in $\mathbb{X}$.
+
+    i.e. $\forall x \in \mathbb{X}, \exists \varepsilon>0$ s.t. $\{y:\|y-x\|<\varepsilon\} \subseteq \mathbb{X}$
+\end{definition}
+
+\begin{definition}[Closed Sets]
+    $\mathbb{X}$ is closed if $\mathbb{X}^c$ is open
+
+    Equivalent: if $\mathbb{X}$ contains all limit points of all sequences in $\mathbb{X}$
+\end{definition}
+\begin{example}[ Closed and Open Sets]
+\end{example}
+\begin{enumerate}[1)]
+    \item $(1,2)=\{x \in \mathbb{R}: 1<x<2\}$ - open
+    \item $\mathbb{R}$ is both open and closed
+    \item $(-\infty, 1)=\{x \in \mathbb{R}: x<1\}$ - open
+    \item $[1, \infty)$ is closed because its complement open
+    \item $(1,2]$ is neither open nor closed
+\end{enumerate}
+
+\subsection{Bounded, Compact Set}
+\begin{definition}[Bounded Set]
+    $A$ is bounded if $\exists M$ s.t. $\|x\| \leqslant M \quad \forall x \in\mathbb{X}$
+\end{definition}
+
+\begin{definition}[Compact Set]
+    $\mathcal{L} \subseteq \mathbb{R}^{n}$ is compact of it is closed and bounded.
+\end{definition}
+
+\begin{example}[ Compact Set]
+    $[1,2]=\{x \in \mathbb{R}: 1 \leqslant x \leqslant 2\}$; $\left\{x \in \mathbb{R}^{2}\right.: \left.x_{1}^{2}+x_{2}^{2} \leqslant 4\right\}$
+\end{example}
+
+\begin{definition}[Extreme of sets of scalars, $\sup A,\inf A$]
+    Let $A\subset \mathbb{R}$.
+
+    - The infimum of A, or inf A is largest $y$ s.t. $y \leqslant x, \forall x \in A$. If no such $y$ exists, $\inf A=-\infty$
+
+    - Similar definition for supremum of $A$ (or wrote as $\sup A$).
+\end{definition}
+\begin{proposition}
+    If $\inf A=x^*\in A$ ($\sup A=x^*\in A$), then $x^*=\min A$ ($x^*=\max A$).
+\end{proposition}
+
+\subsection{Sublevel Set}
+\begin{definition}[Sublevel Set]
+    The sublevel set of a function $f: \mathbb{R}^n \rightarrow \mathbb{R}$ (for some level $c\in \mathbb{R}$) is the set $$\overline{L_c}=\{x\in \mathbb{R}^n:f(x)\leq c\}$$
+\end{definition}
+
+
+
+\subsection{Set Operations}
+\begin{definition}
+    A \underline{binary operation} on a set $A$ is a function $*:A\times A \rightarrow A$.\\
+    The \underline{operation is \textit{associative}} if $a*(b*c)=(a*b)*c, \forall a,b,c\in A$.\\
+    The \underline{operation is \textit{commutative}} if $a*b=b*a, \forall a,b\in A$.
+\end{definition}
+
+\begin{example}
+
+${+,\circ}$ are both \textit{associative} and \textit{commutative} operations on $\mathbb{Z},\mathbb{N},\mathbb{Q},\mathbb{R}$; $-$ is a neither \textit{associative} nor \textit{commutative} operation on $\mathbb{Z},\mathbb{Q},\mathbb{R}$, but not $\mathbb{N}$.
+\end{example}
+
+\begin{definition}
+A subset $H\subset S$ is \underline{closed under $*$} if $a*b\in H$ for all $a,b\in H$.
+\end{definition}
+
+\begin{definition}
+$*$ has \underline{identity element $e\in S$} if $a*e=e*a=a$ for all $s\in S$.
+\end{definition}
+
+
+
+
+
+
+\section{Functions}
+\subsection{Definitions of Function}
+\begin{definition}[Function]
+\normalfont
+\underline{\textit{Function}} is a rule $\sigma:A\rightarrow B$ that assigns an element $B$ to \textit{every} element of $A$. $\forall a\in A, \sigma(a)\in B$.
+\begin{enumerate}
+    \item $A$ is the \underline{domain} of $\sigma$, $B$ is the \underline{range} of $\sigma$.
+    \item We call $\sigma (a)= \textit{value of } \sigma\textit{ at } a$ as the \underline{image} of $a$.
+    \item A set $C\subset B$, we call $\sigma^{-1}(C)=\{a\in A| \sigma(a)\in C\}$ as the \textit{\underline{preimage}} of $C$.
+    \item An element $b\in B$, we call $\sigma^{-1}(b)=\{a\in A| \sigma(a)=b \}$ as the \textit{\underline{fiber}} of $b$.
+\end{enumerate}
+\end{definition}
+
+\subsection{Composition of functions}
+\begin{definition}[Function Composition]
+\normalfont
+The function composition $\circ$ is an operation that takes two functions $\sigma: A\rightarrow B$ and $\tau: B\rightarrow C$, , and produces a function $\tau\circ \sigma:A\rightarrow C$ that fulfills $\forall a\in A,\ (\tau\circ \sigma)(a)=\tau( \sigma(a))$.
+\end{definition}
+
+\begin{proposition}[Associativity of Functions]
+    Suppose $\sigma:A \rightarrow B, \tau:B \rightarrow C, \rho:C \rightarrow D$ are functions and $\circ$ is the function composition, then $\rho\circ(\tau\circ\sigma)=(\rho\circ\tau)\circ\sigma$.
+\end{proposition}
+\subsection{Definitions: Injective, surjective, bijective}
+A function $\sigma:A \rightarrow B$ is called,\\
+1. \textit{Injective (1 to 1)}
+\begin{equation}
+    \begin{aligned}
+        \forall a_1,a_2\in A, \sigma(a_1)=\sigma(a_2)\Rightarrow a_1=a_2
+    \end{aligned}
+    \nonumber
+\end{equation}
+2. \textit{Surjective (onto)}
+\begin{equation}
+    \begin{aligned}
+        \forall b\in B,\exists a\in A, s.t. \sigma(a)=b
+    \end{aligned}
+    \nonumber
+\end{equation}
+3. \textit{Bijective} (if injective and surjective)
+
+\subsection{Lemma 1.1.7: injective/surjective/bijective is preserved in composition}
+\begin{lemma}[Lemma 1.1.7]
+    Suppose $\sigma:A \rightarrow B, \tau: B \rightarrow C$ are functions,\\
+    If $\sigma, \tau$ are injective, then $\tau\circ\sigma$ is \textit{injective}.\\
+    If $\sigma, \tau$ are surjective, then $\tau\circ\sigma$ is \textit{surjective}.\\
+    If $\sigma, \tau$ are bijective, then $\tau\circ\sigma$ is \textit{bijective}.
+\end{lemma}
+
+\subsection{Proposition 1.1.8: A function is bijection if there exist inverse}
+\begin{proposition}[Proposition 1.1.8]
+    A function $\sigma:A \rightarrow B$ is a bijection if $\exists$ a function $\tau:B \rightarrow A $ such that
+    \begin{equation}
+        \begin{aligned}
+            &\sigma\circ\tau=id_B=\textit{identity on }B(id_B(x)=x, \forall x\in B)\\
+            &\tau\circ\sigma=id_A
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{proposition}
+Such $\tau$ is unique, called inverse of $\sigma$, $\tau=\sigma^{-1}$.
+
+\subsection{Continuous Function}
+\begin{definition}[Continunity at Point]
+    \normalfont
+    A real-valued function $f$ is \underline{\textbf{continuous} at $x$} if
+    
+    "For every $\left\{x_{k}\right\}$ converging to $x$ satisfies that $\lim _{k \rightarrow \infty} f\left(x_{k}\right)=f(x)$".
+
+    Equivalent definition:
+    
+    "Given $\varepsilon>0, \exists \delta>0$ s.t.
+    $|f(x)-f(y)|<\varepsilon, \forall\|y-x\|<\delta$."
+\end{definition}
+\begin{definition}[Continuous Function]
+    \normalfont
+    A real-valued function $f$ is \underline{continuous} if it is continuous at all points in its domain.
+\end{definition}
+
+\subsection{Coercive Function}
+
+\begin{definition}[Coercive]
+    A real-valued function $f:\mathbb{X} \rightarrow \mathbb{R}$ is \underline{coercive} if for \textbf{every} $\left\{x_{k}\right\} \subset \mathbb{X}$ s.t. $\left\|x_{k}\right\| \rightarrow \infty, f\left(x_{k}\right) \rightarrow \infty$
+\end{definition}
+
+\begin{example}[ Check coercive]
+\end{example}
+1) $x \in \mathbb{R}^{2}, f(x)=x_{1}^{2}+x_{2}^{2}$ - coercive
+
+2) $x \in \mathbb{R}, f(x)=1-e^{-|x|}$ - not coercive
+
+3) $x \in \mathbb{R}^{2}, f(x)=x_{1}^{2}+x_{2}^{2}-2 x_{1} x_{2}$ - not coercive
+(we need $f(x_k)\rightarrow	\infty$ for all $\left\|x_{k}\right\| \rightarrow \infty$)
+
+
+\subsection{Extreme of Functions}
+\begin{definition}[Extreme of Functions]
+    Let $\mathbb{X} \subseteq \mathbb{R}^{n}, f: \mathbb{X} \rightarrow \mathbb{R}$
+    $$\inf_{x \in \mathbb{X}} f(x)=\inf\{f(x): x \in \mathbb{X}\}$$
+\end{definition}
+
+If $\exists x^{*} \in \mathbb{X} \text { s.t. inf } f(x)=f\left(x^{*}\right)$. Then, $f$ achieves (attains) its minimum and $f\left(x^{*}\right)=\min _{x \in \mathbb{X}} f(x)$
+
+$x^{*}$ is called a \textbf{minimizer} of $f$, written as $x^{*} \in \arg \min _{x \in \mathbb{X}} f(x)$. If $x^*$ is uniqne, we write $x^{*}=\arg \min _{x \in \mathbb{X}} f(x)
+$
+
+Similarly, supremum and maximum of $f$.
+
+\subsection{Weierstrass' Theorem(Extreme value Theorem)}
+\begin{theorem}
+    [Weierstrass' Theorem(Extreme value Theorem)]
+    \quad
+
+    If $f$ is a \textbf{continuous} function on a \textbf{compact set}, $\mathbb{X} \subseteq \mathbb{R}^{n}$, then $f$ attains its min and max on $\mathbb{X}$ i.e.,
+    $$
+    \begin{aligned}
+    \exists x_1 \in \mathbb{X} \text { s.t. } f\left(x_{1}\right) &=\inf _{x \in \mathbb{X}} f(x) \\
+    \exists x_{2} \in \mathbb{X} \text { s.t. } f\left(x_{2}\right) &=\sup _{x \in \mathbb{X}} f(x)
+    \end{aligned}
+    $$
+\end{theorem}
+\begin{proof}
+    (for existence of $\min$; $\max$ is similar)
+
+    Let $\{\sigma_k\}\subseteq \mathbb{X}$ be s.t.
+    $$\inf_{x\in\mathbb{X}} f(x) \leq f\left(\sigma_{k}\right) \leq \inf _{x \in \mathbb{X}} f(x)+\frac{1}{k}$$
+
+    Then $\lim _{k \rightarrow \infty} f\left(\sigma_{k}\right)=\inf_{x\in\mathbb{X}} f(x)$
+
+    $\mathcal{L}$ is bounded $\Rightarrow\left\{\sigma_{k}\right\}$ has it least one limit point $x$,
+
+    $\mathcal{L}$ is closed $\Rightarrow x_{1} \in \mathbb{X}$
+
+    $f$ is continuous $\Rightarrow f\left(x_{1}\right)=\lim _{k \rightarrow \infty} f\left(\sigma_{k}\right)=\inf _{x \in \mathbb{X}} f(x)$
+\end{proof}
+
+\begin{corollary}[Corollary to WT]
+    Let $f$ be continuous on closed set $\mathbb{X}$ (not necessarily bounded). If $f$ is coercive on $\mathbb{X}$ it attains its $\min$ on $\mathbb{X}$.
+\end{corollary}
+\begin{proof}
+    Consider $\left\{\sigma_{k}\right\}$ as in proof of $WT$.
+
+    Since $f$ is closed, $f(x)<\infty,\ \forall x\in\mathbb{X}$. And $f$ is coercive on $\mathbb{X}$, which means $f(x)\rightarrow \infty$ if $\|x\| \rightarrow\infty$. Hence, $\left\{\sigma_{k}\right\}\in\mathbb{X}$ is bounded. Rest of proof same as proof of $\mathrm{WT}$.
+\end{proof}
+
+\begin{example}
+    $f(x)=f\left(x_{1}, x_{2}, x_{3}\right)=x_{1}^{4}+2 x_{2}^{2}+e^{-x_{3}}+e^{2 x_{3}}$
+\end{example}
+
+\begin{enumerate}[1)]
+    \item \textit{Does $f$ achieve its $\min$ and $\max$ on $\mathcal{L}_{1}=\left\{x \in \mathbb{R}^{3}: x_{1}^{2}+2 x_{2}^{2}+3 x_{3}^{2} \leqslant 6\right\}$?}
+    
+    - $\mathcal{L}_{1}$ is compact and $f$ is continuous. Both $\min$ and $\max$ are achieved (WT).
+    \item Does $f$ achieve its min and max over $\mathbb{R}^{3}$?
+    
+    - $f \rightarrow \infty$ whenever $\|x\| \rightarrow \infty \Rightarrow f$ is coercive.
+
+    - $\mathbb{R}^{3}$ is closed.
+
+    $\Rightarrow f$ achieves its min. on $\mathbb{R}^{3}$ by corollary to WT.
+
+    - $\max$ does not exist since $f \rightarrow \infty$ as $\|x\| \rightarrow \infty$.
+
+    \item Does $f$ achieve its min and max over $\mathcal{L}_{2}=\{x \in \mathbb{R}^{3}: x_{1}+x_{2}+x_{3}=3\}$?
+    
+    - $\mathcal{L}_{2}$ is closed, but not bounded.
+
+    - Since $f$ is coercive, $\min$ achieved.
+
+    - $\max$ does not exist since setting $x_{1}=0$ $x_{2}=3-x_{3}$ and letting $x_{3} \rightarrow \infty$ makes $f \rightarrow \infty$
+\end{enumerate}
+
+
+
+
+
+
+
+
+\chapter{Big $\mathcal{O}$ and Small $o$ Notation}
+\section{Definition}
+\begin{center}
+    \fcolorbox{black}{gray!10}{\parbox{.9\linewidth}{\textbf{\underline{Complexity}:}
+    \begin{definition}
+        A sequence $f(n)$ is $O(1)$ if $\lim_{n \rightarrow \infty}f(n)<\infty$.
+    \end{definition}
+    
+    \begin{definition}
+        A sequence $f(n)$ is $O(g(n))$ if $\frac{f(n)}{g(n)}$ is $O(1)$.
+    \end{definition}
+    
+    \begin{definition}
+        A sequence $f(n)$ is $o(1)$ if $\lim_{n \rightarrow \infty}\sup f(n)=0$.
+    \end{definition}
+    
+    \begin{definition}
+        A sequence $f(n)$ is $o(g(n))$ if $\lim_{n \rightarrow \infty}\sup \frac{f(n)}{g(n)}=0$.
+    \end{definition}
+    
+    \begin{definition}
+        A sequence $f(n)$ is \underline{asymptotic} to $g(n)$ if $\lim_{n \rightarrow \infty} \frac{f(n)}{g(n)}=1$. (This is denoted by $f(n)\sim g(n)$ as $a \rightarrow \infty$)
+    \end{definition}
+    }}
+\end{center}
+For two scalar functions $f(x)\in \mathbb{R}, g(x)\in \mathbb{R}_+$, where $x\in \mathbb{R}$, we write:
+\begin{enumerate}
+    \item $f(x)=\mathcal{O}(g(x))$ if $\lim \sup_{x \rightarrow	\infty}\frac{|f(x)|}{g(x)}<\infty$; we say $f$ is dominated by $g$ asymptotically.
+    \item $f(x)=\Omega(g(x))$ if $\lim \inf_{x \rightarrow \infty}\frac{|f(x)|}{g(x)}>0$.
+    \item $f(x)=\Theta (g(x))$ if $f(x)=\mathcal{O}(g(x))$ and $f(x)=\Omega(g(x))$ both hold.
+    \item $f(x)=o(g(x))$ if $\lim \inf_{x \rightarrow \infty}\frac{f(x)}{g(x)}=0$.
+\end{enumerate}
+
+\begin{example}
+\begin{equation}
+    \begin{aligned}
+        n^3+n+2=\Omega(1),n^3+n+2=\Omega(n^2)\\
+        n^3+n+2=\Theta(n^3)\\
+        n^3+n+2=o(n^4)
+    \end{aligned}
+    \nonumber
+\end{equation}
+\end{example}
+
+\subsection{Extension}
+$f(x)=\mathcal{O}(g(x))$ as $x \rightarrow a$ if $\lim \sup_{x \rightarrow a}\frac{|f(x)|}{g(x)}<\infty$.
+
+\begin{example}
+$\varepsilon^2+\varepsilon^3=\mathcal{O}(\varepsilon^2)$ as $\varepsilon \rightarrow 0$
+\end{example}
+
+\chapter{Lipschitz Continuous}
+\section{Definition}
+\begin{definition}
+    Lipschitz continuous: if a function $f: \mathbb{R}^{n} \rightarrow \mathbb{R}^{m}$ satisfies
+    $$
+    \|f(\mathbf{x})-f(\mathbf{y})\| \leq \gamma\|\mathbf{x}-\mathbf{y}\|, \forall \mathbf{x}, \mathbf{y}
+    $$
+    the function is called $\gamma$-Lipschitz continuous;
+\end{definition}
+If $f$ is $\gamma$-Lipschitz continuous, then it is also $(\gamma+1)$-Lipschitz continuous
+
+The minimal such $\gamma$ is called a \underline{Lipschitz constant} of function $f$
+
+Remark: Here $\|\cdot\|$ can be any given norm of the space $\mathbb{R}^{n}$ and $\mathbb{R}^{m}$, such as Euclidean norm, $\ell_{1}$-norm, etc.
+
+When not specified, we assume it is Euclidean norm.
+
+\section{Example}
+Example 1: $f(x)=2 x$ is 2-Lipschitz continuous;
+
+Example 2: What about $f(\mathbf{x})=\mathbf{A x}$, where $\mathbf{A}$ is a matrix? Spectral norm $\|\mathbf{A}\|_{2}$ (for Euclidean norm).
+
+Example 3: What about $f(x)=x^{2}$ ?
+Not Lipschitz continuous, or the Lipschitz constant is $\infty$.
+
+\section{Contraction Mapping}
+1. If the Lipschitz constant $\gamma \leq 1$, then $\mathrm{f}$ is called a \underline{non-expansive mapping}.
+
+2. If $\gamma<1$, then $f$ is called a \underline{contraction mapping}
+
+Example 1: $f(x)=2 x$ is not a contraction mapping; $f(x)=0.5 x$ is.
+
+Example 2: $f(x)=A x$ is a contraction mapping (with respect to Euclidean norm) iff $\|A\|_{2}<1$.
+
+
+
+\chapter{Fixed point theorem}
+1. Fixed point theorem: If $f$ is a contraction mapping that maps $\mathbb{R}^{n}$ to itself, then the following two results hold:
+
+1) There exists a unique fixed point $\mathrm{x}^{*}$ satisfying
+$$
+\mathbf{x}^{*}=f\left(\mathbf{x}^{*}\right)
+$$
+2) In addition, the iterated function sequence
+$$
+\mathbf{x}, f(\mathbf{x}), f(f(\mathbf{x})), \cdots \text {, }
+$$
+converges to this unique fixed point $\mathbf{x}^{*}$ (independent of the initial point $x$ ).
+
+2. Remark: This is a special case of "Banach fixed point theorem" (which applies to any complete metric space).
+
+
+
+
+
+
+
+
+
+\end{document}
