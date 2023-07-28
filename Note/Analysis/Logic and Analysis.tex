@@ -482,6 +482,32 @@ Sequences $\left\{x_{k}\right\}_{k=1}, \ldots$ or $\left\{x_{k}\right\}, x_{k} \
     Let $\{x_n\}$ be an increasing (decreasing) sequence of real numbers. Then $\lim_{n \rightarrow \infty} x_n = \sup\{x_n : n \in \mathbb{N}\}$ ($\lim_{n \rightarrow \infty} x_n = \inf\{x_n : n \in \mathbb{N}\}$). In particular, the limit exists.
 \end{theorem}
 
+Consider a sequence $\{x_n\}$ of real numbers. Let $$\alpha_n=\sup\{x_k:k\geq n\}$$ and $$\beta_n=\inf\{x_k:k\geq n\}$$
+Either $\alpha_n = +\infty$ for all $n$, or $\alpha_n \in \mathbb{R}$ and $\alpha_1 \geq \alpha_2 \geq \alpha_3 \geq...$. Either $\beta_n = -\infty$ for all n, or $\beta_n \in \mathbb{R}$ and $\beta_1 \leq \beta_2 \leq \beta_3 \leq ...$.
+\begin{definition}[Lim Sups and Lim Infs]
+    \normalfont
+    $$
+    \begin{aligned}
+    & \limsup _{n \rightarrow \infty} x_n=\left\{\begin{array}{cl}
+    +\infty & \text { if } \alpha_n=+\infty \text { for all } n \\
+    \lim \alpha_n & \text { otherwise. }
+    \end{array}\right. \\
+    & \liminf _{n \rightarrow \infty} x_n=\left\{\begin{array}{cl}
+    -\infty & \text { if } \beta_n=-\infty \text { for all } n \\
+    \lim \beta_n & \text { otherwise. }
+    \end{array}\right.
+    \end{aligned}
+    $$
+\end{definition}
+Theorem 16 Let $\left\{x_n\right\}$ be a sequence of real numbers. Then
+$$
+\begin{aligned}
+& \lim _{n \rightarrow \infty} x_n=\gamma \in \mathbf{R} \cup\{-\infty, \infty\} \\
+\Leftrightarrow & \lim \sup _{n \rightarrow \infty} x_n=\liminf _{n \rightarrow \infty} x_n=\gamma
+\end{aligned}
+$$
+Theorem 17 (Theorem 3.2, Rising Sun Lemma) Every sequence of real numbers contains an increasing subsequence or a decreasing subsequence or both.
+
 \begin{proposition}
     The largest(smallest) limit point of $\left\{x_{k}\right\}$ is $\lim _{k \rightarrow \infty}\sup x_{k}$ ($\lim _{k \rightarrow \infty}\inf x_{k}$)
 \end{proposition}
