@@ -36,32 +36,49 @@
 \contentsline {section}{\numberline {2.4}Sequences}{10}{section.2.4}%
 \contentsline {subsection}{\numberline {2.4.1}Convergence of Sequences \small {(@ Lec 03 of ECON 204)}}{11}{subsection.2.4.1}%
 \contentsline {subsection}{\numberline {2.4.2}Cluster Point \small {(@ Lec 03 of ECON 204)}}{11}{subsection.2.4.2}%
-\contentsline {subsection}{\numberline {2.4.3}Sequences in $\mathbb {R}$ and $\mathbb {R}^n$ \small {(@ Lec 03 of ECON 204)}}{11}{subsection.2.4.3}%
-\contentsline {subsection}{\numberline {2.4.4}Cauchy Sequence}{12}{subsection.2.4.4}%
-\contentsline {chapter}{\numberline {3}Functions}{13}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Definitions of Function}{13}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Image, Preimage, Fiber}{13}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Composition of functions}{13}{subsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.1.3}Function Composition is Associative}{13}{subsection.3.1.3}%
-\contentsline {section}{\numberline {3.2}Injection, Surjection, Bijection}{13}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Definitions: Injective, surjective, bijective}{13}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Lemma 1.1.7: injective/surjective/bijective is preserved in composition}{14}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}Proposition 1.1.8: A function is bijection if there exist inverse}{14}{subsection.3.2.3}%
-\contentsline {section}{\numberline {3.3}Function Continuity}{14}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Continuous Function in $\mathbb {R}$ with Euclidean norm}{14}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Continuous Function in Metric Spaces \small {(@ Lec 04 of ECON 204)}}{15}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Theorem: Continuous $\Leftrightarrow $ Preimage of open set is open \small {(@ Lec 04 of ECON 204)}}{15}{subsection.3.3.3}%
-\contentsline {subsection}{\numberline {3.3.4}Theorem: Continuity is preserved in composition \small {(@ Lec 04 of ECON 204)}}{15}{subsection.3.3.4}%
-\contentsline {subsection}{\numberline {3.3.5}Uniform Continuity \small {(@ Lec 04 of ECON 204)}}{15}{subsection.3.3.5}%
-\contentsline {subsection}{\numberline {3.3.6}Intermediate Value Theorem \small {(@ Lec 02 of ECON 204)}}{16}{subsection.3.3.6}%
-\contentsline {subsection}{\numberline {3.3.7}Coercive Function}{16}{subsection.3.3.7}%
-\contentsline {subsection}{\numberline {3.3.8}Extreme of Functions}{16}{subsection.3.3.8}%
-\contentsline {subsection}{\numberline {3.3.9}Weierstrass' Theorem(Extreme value Theorem)}{16}{subsection.3.3.9}%
-\contentsline {chapter}{\numberline {4}Big $\mathcal {O}$ and Small $o$ Notation}{18}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Definition}{18}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Extension}{18}{subsection.4.1.1}%
-\contentsline {chapter}{\numberline {5}Lipschitz Continuous}{19}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Definition \small {(@ Lec 04 of ECON 204)}}{19}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Example}{19}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Contraction Mapping}{19}{section.5.3}%
-\contentsline {chapter}{\numberline {6}Fixed point theorem}{20}{chapter.6}%
+\contentsline {subsection}{\numberline {2.4.3}Proposition: Sequences in $\mathbb {R}^n$, Bounded above and non-decreasing sequence $\Rightarrow $ Converge}{11}{subsection.2.4.3}%
+\contentsline {subsection}{\numberline {2.4.4}Theorem: Increasing/Decreasing Sequences in $\mathbb {R}^n$, Limit is $\sup $/$\inf $ \small {(@ Lec 03 of ECON 204)}}{11}{subsection.2.4.4}%
+\contentsline {subsection}{\numberline {2.4.5}Definition: $\lim \sup $ and $\lim \inf $ \small {(@ Lec 03 of ECON 204)}}{12}{subsection.2.4.5}%
+\contentsline {subsection}{\numberline {2.4.6}Exists Limit $\Leftrightarrow $ $\lim =\lim \sup =\lim \inf $ \small {(@ Lec 03 of ECON 204)}}{12}{subsection.2.4.6}%
+\contentsline {subsection}{\numberline {2.4.7}Rising Sun Lemma: Sequence in $\mathbb {R}^n$ contains monotone subsequence \small {(@ Lec 03 of ECON 204)}}{12}{subsection.2.4.7}%
+\contentsline {subsection}{\numberline {2.4.8}Bolzano-Weierstrass: Bounded Sequence in $\mathbb {R}^n$ contains a convergent subsequence \small {(@ Lec 03 of ECON 204)}}{13}{subsection.2.4.8}%
+\contentsline {section}{\numberline {2.5}Complete Metric Spaces \small {(@ Lec 05 of ECON 204)}}{13}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Cauchy Sequence}{13}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}Theorem: Convergent $\Rightarrow $ Cauchy}{13}{subsection.2.5.2}%
+\contentsline {subsection}{\numberline {2.5.3}Complete Metric Space and Banach Space}{13}{subsection.2.5.3}%
+\contentsline {subsection}{\numberline {2.5.4}Theorem: Subset of Complete Metric Space is Complete $\Leftrightarrow $ Subset is Closed}{14}{subsection.2.5.4}%
+\contentsline {chapter}{\numberline {3}Functions}{15}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Definitions of Function}{15}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Image, Preimage, Fiber}{15}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Composition of functions}{15}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}Function Composition is Associative}{15}{subsection.3.1.3}%
+\contentsline {subsection}{\numberline {3.1.4}Homeomorphism \small {(@ Lec 04 of ECON 204)}}{15}{subsection.3.1.4}%
+\contentsline {section}{\numberline {3.2}Injection, Surjection, Bijection}{16}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Definitions: Injective, surjective, bijective}{16}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Lemma 1.1.7: injective/surjective/bijective is preserved in composition}{16}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Proposition 1.1.8: A function is bijection if there exist inverse}{16}{subsection.3.2.3}%
+\contentsline {section}{\numberline {3.3}Function Continuity}{17}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Continuous Function in $\mathbb {R}$ with Euclidean norm}{17}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Continuous Function in Metric Spaces \small {(@ Lec 04 of ECON 204)}}{17}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Theorem: Continuous $\Leftrightarrow $ Preimage of open set is open \small {(@ Lec 04 of ECON 204)}}{17}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4}Theorem: Continuity is preserved in composition \small {(@ Lec 04 of ECON 204)}}{17}{subsection.3.3.4}%
+\contentsline {subsection}{\numberline {3.3.5}Uniform Continuity \small {(@ Lec 04 of ECON 204)}}{18}{subsection.3.3.5}%
+\contentsline {subsection}{\numberline {3.3.6}Lipschitz Continuous \small {(@ Lec 04 of ECON 204)}}{18}{subsection.3.3.6}%
+\contentsline {subsection}{\numberline {3.3.7}Contraction (from the view of Lipschitz constant)}{19}{subsection.3.3.7}%
+\contentsline {section}{\numberline {3.4}Extreme Value, Intermediate Value of Functions}{19}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Intermediate Value Theorem \small {(@ Lec 02 of ECON 204)}}{19}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Coercive Function}{19}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Extreme of Functions}{20}{subsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.4.4}Weierstrass' Theorem (Extreme value Theorem) \small {(@ Lec 05 of ECON 204)}}{20}{subsection.3.4.4}%
+\contentsline {section}{\numberline {3.5}Monotonic Function \small {(@ Lec 05 of ECON 204)}}{21}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Theorem: Monotonically Increasing $\Rightarrow $ One-sided Limits exist}{21}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Theorem: Monotonically Increasing $\Rightarrow $ Set of Points are discontinuous is finite (possibly empty) or countable}{22}{subsection.3.5.2}%
+\contentsline {section}{\numberline {3.6}Contraction Mapping Theorem}{22}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Contractions}{22}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.2}Theorem: Contraction $\Rightarrow $ Uniformly Continuous}{22}{subsection.3.6.2}%
+\contentsline {section}{\numberline {3.7}Fixed Point Theorem}{22}{section.3.7}%
+\contentsline {subsection}{\numberline {3.7.1}Fixed Point}{22}{subsection.3.7.1}%
+\contentsline {subsection}{\numberline {3.7.2}Contraction Mapping Theorem}{23}{subsection.3.7.2}%
+\contentsline {chapter}{\numberline {4}Big $\mathcal {O}$ and Small $o$ Notation}{25}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Definition}{25}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Extension}{25}{subsection.4.1.1}%
