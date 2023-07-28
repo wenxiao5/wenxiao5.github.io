@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.27)  27 JUL 2023 14:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.27)  27 JUL 2023 21:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1331,7 +1331,7 @@ Package hyperref Info: Option `pageanchor' set `false' on input line 28.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<cover.png, id=296, 2055.68pt x 1155.31625pt>
+<cover.png, id=300, 2055.68pt x 1155.31625pt>
 File: cover.png Graphic file (type png)
 <use cover.png>
 Package pdftex.def Info: cover.png  used on input line 28.
@@ -1397,7 +1397,7 @@ LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
 (Font)              scaled to size 8.0pt on input line 78.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
 (Font)              scaled to size 6.0pt on input line 78.
-<CA.png, id=463, 845.1575pt x 220.825pt>
+<CA.png, id=470, 845.1575pt x 220.825pt>
 File: CA.png Graphic file (type png)
 <use CA.png>
 Package pdftex.def Info: CA.png  used on input line 82.
@@ -1610,66 +1610,66 @@ Chapter 3.
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.571     \begin{equation}
+l.564     \begin{equation}
                           
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.571     \begin{equation}
+l.564     \begin{equation}
                           
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.571     \begin{equation}
+l.564     \begin{equation}
                           
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.571     \begin{equation}
+l.564     \begin{equation}
                           
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 583.
+(hyperref)                removing `math shift' on input line 576.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 583.
+(hyperref)                removing `math shift' on input line 576.
 
 [14
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.2.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.606 \end{definition}
+l.599 \end{definition}
                       ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 614.
+(hyperref)                removing `math shift' on input line 607.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Leftrightarrow' on input line 614.
+(hyperref)                removing `\Leftrightarrow' on input line 607.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 614.
+(hyperref)                removing `math shift' on input line 607.
 
 [15] [16] [17]
 Chapter 4.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 747.
+(hyperref)                removing `math shift' on input line 740.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 747.
+(hyperref)                removing `math shift' on input line 740.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 747.
+(hyperref)                removing `math shift' on input line 740.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 747.
+(hyperref)                removing `math shift' on input line 740.
 
 [18
 
@@ -1682,58 +1682,25 @@ Chapter 6.
 [20
 
 ] (./Logic and Analysis.aux)
-
-Package rerunfilecheck Warning: File `"Logic and Analysis".out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `"Logic and Analysis".out':
-(rerunfilecheck)             Before: 24E0B834674F3418F175652249C99D60;17248
-(rerunfilecheck)             After:  78719941F9C5F46D3916AAF84528930E;17405.
+Package rerunfilecheck Info: File `"Logic and Analysis".out' has not changed.
+(rerunfilecheck)             Checksum: 8213928C87337F0640FF9B9465A4E67B;17400.
 Package logreq Info: Writing requests to '"Logic and Analysis".run.xml'.
 \openout1 = `"Logic and Analysis.run.xml"'.
 
  ) 
 Here is how much of TeX's memory you used:
- 42286 strings out of 476038
- 833078 string characters out of 5790170
- 1891785 words of memory out of 5000000
- 61763 multiletter control sequences out of 15000+600000
+ 42278 strings out of 476038
+ 832938 string characters out of 5790170
+ 1897785 words of memory out of 5000000
+ 61764 multiletter control sequences out of 15000+600000
  549473 words of font info for 130 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  102i,14n,136p,761b,1471s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{subsection.3.2.12} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.3.2.11} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.3.2.10} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.3.2.9} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.3.2.8} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.3.2.7} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.3.2.6} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.3.2.5} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.3.2.4} has been referenced but does not exist, replaced by a fixed one
-
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/newtx/ztmbi.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on "Logic and Analysis.pdf" (24 pages, 4862641 bytes).
+Output written on "Logic and Analysis.pdf" (24 pages, 4862705 bytes).
 PDF statistics:
- 832 PDF objects out of 1000 (max. 8388607)
- 741 compressed objects within 8 object streams
- 232 named destinations out of 1000 (max. 500000)
- 647 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 827 PDF objects out of 1000 (max. 8388607)
+ 736 compressed objects within 8 object streams
+ 223 named destinations out of 1000 (max. 500000)
+ 655 words of extra memory for PDF output out of 10000 (max. 10000000)
 
