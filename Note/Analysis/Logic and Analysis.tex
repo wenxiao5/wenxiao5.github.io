@@ -711,7 +711,7 @@ A Cauchy sequence is trying really hard to converge, but there may not be anythi
 \end{theorem}
 
 \subsection{Theorem: Continuous Images of Compact Set is Compact}
-\begin{theorem}[Continuous Images of Compact Set is Compact]
+\begin{theorem}[Continuous Images of Compact Set is Compact]\label{con_compact_is_compact}
     Let $(X, d)$ and $(Y, \rho)$ be metric spaces. If $f : X \rightarrow Y$ is continuous and $C$ is a compact subset of $(X, d)$, then $f(C)$ is compact in $(Y, \rho)$.
 \end{theorem}
 
@@ -857,7 +857,27 @@ Given $\varepsilon>0$, "uniformly continuous" requires $\delta(\varepsilon)$ tha
     Let $(X, d)$ and $(Y, \rho)$ be metric spaces, $C$ a \textbf{compact} subset of $X$, and $f : C \rightarrow Y$ a \textbf{continuous} function. Then $f$ is \textbf{uniformly continuous} on $C$.
 \end{theorem}
 \begin{proof}
-
+    Fix $\varepsilon>0$. Since $f$ is continuous, given $c\in C$, we can find $\delta(c)>0$ such that $$\forall x\in C,\ d(x,c)<2\delta(c) \Rightarrow \rho(f(x),f(c))<\frac{\varepsilon}{2}$$
+    Let $U_c=B_{\delta(c)}(c)$, then $\{U_c:c\in C\}$ is an open cover of $C$. Since $C$ is compact, there is a finite subcover $\{U_{c_1},...,U_{c_n}\}=\{B_{\delta(c_1)}(c_1),...,B_{\delta(c_n)}(c_n)\}$. Let $\delta=\min\{\delta(c_1),...,\delta(c_n)\}$.
+    
+    Given $x,y\in C$ with $d(x,y)<\delta$, note that $x\in U_{c_i}$ for some $i\in\{1,...,n\}$, so $d(x,c_i)<\delta(c_i)$.
+    \begin{equation}
+        \begin{aligned}
+            d(y,c_i)&\leq d(y,x)+d(x,c_i)\\
+            &<\delta+\delta(c_i)\\
+            &\leq\delta(c_i)+\delta(c_i)=2\delta(c_i)
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    So,
+    \begin{equation}
+        \begin{aligned}
+            \rho(f(x),f(y))&\leq \rho(f(x),f(c_i))+\rho(f(c_i),f(y))\\
+            &<\frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    That is, $d(x,y)<\delta \Rightarrow \rho(f(x),f(y))<\varepsilon$, which proves that $f$ is uniformly continuous.
 \end{proof}
 
 
@@ -952,31 +972,27 @@ Similarly, supremum and maximum of $f$.
 \subsection{Weierstrass' Theorem (Extreme value Theorem) \small{(@ Lec 06 of ECON 204)}}
 \begin{theorem}
     [Weierstrass' Theorem (Extreme value Theorem)]
-    Given a \textbf{compact set} $C$ in a metric space $(X, d)$ and a \textbf{continuous} function $f: C \rightarrow \mathbb{R}$, then $f$ is bounded on $C$ and attains its min and max on $C$ i.e.,
+    Given a \textbf{compact set} $C$ in a metric space $(X, d)$ and a \textbf{continuous} function $f: C \rightarrow \mathbb{R}$, then $f$ is bounded on $C$ and attains its minimum and maximum on $C$ i.e.,
     $$
     \begin{aligned}
-    \exists x_1 \in C \text { s.t. } f\left(x_{1}\right) &=\inf _{x \in C} f(x) \\
-    \exists x_{2} \in C \text { s.t. } f\left(x_{2}\right) &=\sup _{x \in C} f(x)
+    \exists x_1 \in C \text { s.t. } f\left(x_{1}\right) &=\inf f(C) \\
+    \exists x_{2} \in C \text { s.t. } f\left(x_{2}\right) &=\sup f(C)
     \end{aligned}
     $$
 \end{theorem}
 \begin{proof}
-    (for existence of $\min$; $\max$ is similar)
-
-    Let $\{\sigma_k\}\subseteq \mathbb{X}$ be s.t.
-    $\inf_{x\in\mathbb{X}} f(x) \leq f\left(\sigma_{k}\right) \leq \inf _{x \in \mathbb{X}} f(x)+\frac{1}{k}$
-
-    Then $\lim _{k \rightarrow \infty} f\left(\sigma_{k}\right)=\inf_{x\in\mathbb{X}} f(x)$
-
-    $\mathbb{X}$ is bounded $\Rightarrow\left\{\sigma_{k}\right\}$ has it least one limit point $x_1$,
-
-    $\mathbb{X}$ is closed $\Rightarrow x_{1} \in \mathbb{X}$
-
-    $f$ is continuous $\Rightarrow f\left(x_{1}\right)=\lim _{k \rightarrow \infty} f\left(\sigma_{k}\right)=\inf _{x \in \mathbb{X}} f(x)$
+    Since $C$ is compact and $f$ is continuous, $f(C)\subset \mathbb{R}$ is compact by theorem \ref{con_compact_is_compact}. Hence, $f(C)$ is closed and bounded.
+    \begin{enumerate}
+        \item Proof of maximum: Let $M=\sup f(C)<\infty$. Then $\forall m>0$ there exists $y_m\in f(C)$ such that $$M-\frac{1}{m}\leq y_m\leq M$$
+        So $y_m \rightarrow M$ and $\{y_m\}\subseteq f(C)$. Since $f(C)$ is closed, $M\in f(C)$, i.e., there exists $c\in C$ such that $f(c)=M=\sup f(C)$.
+        \item Proof of minimum: Let $M=\inf f(C)>-\infty$. Then $\forall m>0$ there exists $y_m\in f(C)$ such that $$M\geq y_m\geq M+\frac{1}{m}$$
+        So $y_m \rightarrow M$ and $\{y_m\}\subseteq f(C)$. Since $f(C)$ is closed, $M\in f(C)$, i.e., there exists $c\in C$ such that $f(c)=M=\inf f(C)$.
+    \end{enumerate}
 \end{proof}
 
-\begin{corollary}[Corollary to WT]
-    Let $f$ be continuous on closed set $\mathbb{X}$ (not necessarily bounded). If $f$ is coercive on $\mathbb{X}$ it attains its $\min$ on $\mathbb{X}$.
+\subsection{Corollary: Continuous and Coercive function attains its Minimum on Closed Set}
+\begin{corollary}[Continuous and Coercive function attains its Minimum on Closed Set]
+    Let $f$ be \textbf{continuous} and \textbf{coercive} on \textbf{closed set} $\mathbb{X}$ (not necessarily bounded), it attains its $\min$ on $\mathbb{X}$.
 \end{corollary}
 \begin{proof}
     Consider $\left\{\sigma_{k}\right\}$ as in proof of $WT$.

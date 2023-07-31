@@ -75,24 +75,25 @@
 \contentsline {subsection}{\numberline {3.3.4}Theorem: Continuity is preserved in composition \small {(@ Lec 04 of ECON 204)}}{20}{subsection.3.3.4}%
 \contentsline {subsection}{\numberline {3.3.5}Uniform Continuity \small {(@ Lec 04 of ECON 204)}}{21}{subsection.3.3.5}%
 \contentsline {subsection}{\numberline {3.3.6}Theorem: Continuous function with Compact domain is Uniformly Continuous \small {(@ Lec 06 of ECON 204)}}{21}{subsection.3.3.6}%
-\contentsline {subsection}{\numberline {3.3.7}Lipschitz Continuous \small {(@ Lec 04 of ECON 204)}}{21}{subsection.3.3.7}%
+\contentsline {subsection}{\numberline {3.3.7}Lipschitz Continuous \small {(@ Lec 04 of ECON 204)}}{22}{subsection.3.3.7}%
 \contentsline {subsection}{\numberline {3.3.8}Contraction (from the view of Lipschitz constant)}{22}{subsection.3.3.8}%
-\contentsline {section}{\numberline {3.4}Extreme Value, Intermediate Value of Functions}{22}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Intermediate Value Theorem \small {(@ Lec 02 of ECON 204)}}{22}{subsection.3.4.1}%
+\contentsline {section}{\numberline {3.4}Extreme Value, Intermediate Value of Functions}{23}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Intermediate Value Theorem \small {(@ Lec 02 of ECON 204)}}{23}{subsection.3.4.1}%
 \contentsline {subsection}{\numberline {3.4.2}Coercive Function}{23}{subsection.3.4.2}%
 \contentsline {subsection}{\numberline {3.4.3}Extreme of Functions}{23}{subsection.3.4.3}%
 \contentsline {subsection}{\numberline {3.4.4}Weierstrass' Theorem (Extreme value Theorem) \small {(@ Lec 06 of ECON 204)}}{23}{subsection.3.4.4}%
-\contentsline {section}{\numberline {3.5}Monotonic Function \small {(@ Lec 05 of ECON 204)}}{24}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}Theorem: Monotonically Increasing $\Rightarrow $ One-sided Limits exist}{24}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.4.5}Corollary: Continuous and Coercive function attains its Minimum on Closed Set}{24}{subsection.3.4.5}%
+\contentsline {section}{\numberline {3.5}Monotonic Function \small {(@ Lec 05 of ECON 204)}}{25}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Theorem: Monotonically Increasing $\Rightarrow $ One-sided Limits exist}{25}{subsection.3.5.1}%
 \contentsline {subsection}{\numberline {3.5.2}Theorem: Monotonically Increasing $\Rightarrow $ Set of Points are discontinuous is finite (possibly empty) or countable}{25}{subsection.3.5.2}%
-\contentsline {section}{\numberline {3.6}Contraction Mapping Theorem \small {(@ Lec 05 of ECON 204)}}{25}{section.3.6}%
-\contentsline {subsection}{\numberline {3.6.1}Contractions}{25}{subsection.3.6.1}%
-\contentsline {subsection}{\numberline {3.6.2}Theorem: Contraction $\Rightarrow $ Uniformly Continuous}{25}{subsection.3.6.2}%
+\contentsline {section}{\numberline {3.6}Contraction Mapping Theorem \small {(@ Lec 05 of ECON 204)}}{26}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Contractions}{26}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.2}Theorem: Contraction $\Rightarrow $ Uniformly Continuous}{26}{subsection.3.6.2}%
 \contentsline {subsection}{\numberline {3.6.3}Theorem: Blackwell's Sufficient Conditions for Contraction}{26}{subsection.3.6.3}%
 \contentsline {section}{\numberline {3.7}Fixed Point Theorem \small {(@ Lec 05 of ECON 204)}}{27}{section.3.7}%
 \contentsline {subsection}{\numberline {3.7.1}Fixed Point}{27}{subsection.3.7.1}%
 \contentsline {subsection}{\numberline {3.7.2}Contraction Mapping Theorem: Existence and Uniqueness of Fixed Point}{27}{subsection.3.7.2}%
-\contentsline {subsection}{\numberline {3.7.3}Theorem: Fixed Point's Continuous Dependence on Parameters}{28}{subsection.3.7.3}%
-\contentsline {chapter}{\numberline {4}Big $\mathcal {O}$ and Small $o$ Notation}{29}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Definition}{29}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Extension}{29}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {3.7.3}Theorem: Fixed Point's Continuous Dependence on Parameters}{29}{subsection.3.7.3}%
+\contentsline {chapter}{\numberline {4}Big $\mathcal {O}$ and Small $o$ Notation}{30}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Definition}{30}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Extension}{30}{subsection.4.1.1}%
