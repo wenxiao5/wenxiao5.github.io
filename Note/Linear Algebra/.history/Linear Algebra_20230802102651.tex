@@ -113,7 +113,7 @@ Prove a set is linearly independent by $\sum_{i=1}^n\alpha_iv_i=0 \Rightarrow \a
     Every vector space has a Hamel basis.
 \end{theorem}
 
-\begin{theorem}[Bases have the same cardinality]
+\begin{theorem}
     Any two Hamel bases of a vector space $X$ have the same cardinality (are numerically equivalent).
 \end{theorem}
 
@@ -124,37 +124,19 @@ Prove a set is linearly independent by $\sum_{i=1}^n\alpha_iv_i=0 \Rightarrow \a
 \begin{proposition}[Proposition 2.4.10.]
     Suppose $V$ is a vector space over a field $\mathbb{F}$ having a basis $\{v_1,...,v_n\}$ with $n \geq 1$.
     \begin{enumerate}[(i).]
-        \item For all $v \in V$, $v = a_1 v_1 +... + a_n v_n$ for exactly one $(a_1,...,a_n)\in \mathbb{F}^n$ (unique representation).
+        \item For all $v \in V$, $v = a_1 v_1 + ... + a_n v_n$ for exactly one $(a_1,...,a_n)\in \mathbb{F}^n$ (unique representation).
         \item If $w_1,...,w_n$ span $V$, then they are linearly independent.
         \item If $w_1,...,w_n$ are linearly independent, then they span $V$.
     \end{enumerate}
 \end{proposition}
 
 \subsection{Dimension}
+If a vector space $V$ over $\mathbb{F}$ has a basis with $n$ vectors, then $V$ is said to be n-dimensional (over $\mathbb{F}$) or is said to have \textbf{dimension} $n$.
+
 \begin{definition}[Dimension]
     \normalfont
-    The dimension of a vector space $X$, denoted $\dim X$, is the cardinality of any basis of $X$.
+    The dimension of a vector space $X$, denoted $\dim X$, is the cardinality of any basis of X.
 \end{definition}
-If a vector space $V$ over $\mathbb{F}$ has a basis with $n$ vectors, then $V$ is said to be n-dimensional (over $\mathbb{F}$) or is said to have \textbf{dimension} $n$.
-\begin{definition}[Finite-Dimension]
-    \normalfont
-    Let $X$ be a vector space. If $\dim X = n$ for some $n \in N$, then $X$ is finite-dimensional. Otherwise, $X$ is infinite-dimensional.
-\end{definition}
-
-\subsection{Theorem: $|V|>\dim X \Rightarrow$ linearly dependent}
-\begin{theorem}[$|V|>\dim X \Rightarrow$ $V$ is linearly dependent]
-    Suppose $\dim X = n \in \mathbb{N}$. If $V \subseteq X$ and $|V| > n$, then $V$ is linearly dependent.
-\end{theorem}
-
-\subsection{Theorem: $|V|=n$: Linear Indep $\Leftrightarrow$ Spans $\Rightarrow$ Basis}
-\begin{theorem}[$|V|=n$: Linear Indep $\Leftrightarrow$ Spans $\Rightarrow$ Basis]
-    Suppose $\dim X = n \in \mathbb{N}$, and $V \subseteq X$ and $|V| = n$.
-    \begin{enumerate}
-        \item If $V$ is linearly independent, then $V$ spans $X$, so $V$ is a Hamel basis.
-        \item If $V$ spans $X$, then $V$ is linearly independent, so $V$ is a Hamel basis.
-    \end{enumerate}
-\end{theorem}
-
 
 
 
@@ -167,41 +149,20 @@ If a vector space $V$ over $\mathbb{F}$ has a basis with $n$ vectors, then $V$ i
     \nonumber
 \end{equation}
 are a basis for $\mathbb{F}^n$ called the \textbf{standard basis vectors}.
-
-
-\section{Linear Transformation}
-\subsection{Definition of Linear Transformation}
-\begin{definition}[Linear Transformation]
-    \normalfont
-    Given two vector spaces $V$ and $W$ over $\mathbb{F}$ a \textbf{linear transformation} is a function $T : V \rightarrow	 W$ such that
+\subsection{Linear transformation}
+Given two vector spaces $V$ and $W$ over $\mathbb{F}$ a \textbf{linear transformation} is a function $T : V \rightarrow	 W$ such that
 for all $a \in \mathbb{F}$ and $v,w \in V$, we have
 \begin{equation}
     \begin{aligned}
-        T(av)=aT(v) \textnormal{ and } T(v+w)=T(v)+T(w)
+        T(av)=aT(v)\ and\ T(v+w)=T(v)+T(w)
     \end{aligned}
     \nonumber
 \end{equation}
-\end{definition}
-
-\subsection{Composition of Linear Transformations is also Linear}
-Let $L(X, Y)$ denote the \textbf{set of all linear transformations} from $X$ to $Y$ over field $\mathbb{F}$.
-\begin{theorem}
-    $L(X,Y)$ is a vector space of $\mathbb{F}$.
-\end{theorem}
-
-\begin{proposition}[Composition of Linear Transformations is also Linear]
-    Suppose $R\in L(X,Y),\ S\in L(Y,Z)$, then $S\circ R\in L(X,Z)$.
-\end{proposition}
-
-\subsection{Function from a Basis extends uniquely to a Linear Transformation}
 \begin{proposition}[Proposition 2.4.15.]
     If $V$ and $W$ are vector spaces and $v_1,...,v_n$ is a basis for $V$ then any function
     from $\{v_1,...,v_n\}\rightarrow W$ extends \textit{uniquely} to a linear transformation $V \rightarrow W$.
 \end{proposition}
-Any $v\in V$, $\exists (a_1,...,a_n)$ s.t. $v=a_1 v_1+...+a_n v_n$. Then $T(v)=T(a_1 v_1+...+a_n v_n)=a_1T(v_1)+...+a_nT(v_n)$
-
-
-
+Any $v\in V$, $\exists (a_1,...,a_n)$ s.t. $v=a_1 v_1+...+a_n v_n$. Then $T(v)=T(a_1 v_1+...+a_n v_n)=a_1T(v_1)+...+a_nT(v_n)$\\
 \subsection{A Linear Transformation Correponds to a Matrix}
 \begin{corollary}[Corollary 2.4.16.]
     If $v_1,...,v_n$ is a basis for a vector space $V$ and $w_1,...,w_n$ is a basis for a vector space $W$ (both over $\mathbb{F}$), then any linear transformation $T : V \rightarrow W$ determines (and is determined by) the $m\times n$ matrix:
@@ -228,89 +189,23 @@ Any $v\in V$, $\exists (a_1,...,a_n)$ s.t. $v=a_1 v_1+...+a_n v_n$. Then $T(v)=T
     \end{aligned}
     \nonumber
 \end{equation}
-$L(V,M)$ denotes the set of all linear transformations from $V$ to $W$; $M_{m\times n}(\mathbb{F})$ the set of $m\times n$ matrix with entries in $\mathbb{F}$. $T\rightarrow A(T)$ defines a \textit{bijection} $L(V,M)\rightarrow M_{m\times n}(\mathbb{F})$. \textbf{$A(T)$ represents the linear transformation $T$}.
+$\mathcal{L} (V,M)$ denotes the set of all linear transformations from $V$ to $W$; $M_{m\times n}(\mathbb{F})$ the set of $m\times n$ matrix with entries in $\mathbb{F}$. $T\rightarrow A(T)$ defines a \textit{bijection} $\mathcal{L} (V,M)\rightarrow M_{m\times n}(\mathbb{F})$. \textbf{$A(T)$ represents the linear transformation $T$}.
 
 
+\begin{proposition}[Proposition 2.4.19]
+    Suppose that $V$, $W$, and $U$ are vector spaces over $\mathbb{F}$, with fixed chosen bases. If
+    $T : V \rightarrow W$ and $S : W \rightarrow U$ are linear transformations represented by matrices $A = A(T)$ and $B = B(S)$,
+    then $ST = S \circ T : V \rightarrow U$ is a linear transformation represented by the matrix $BA = B(S)A(T)$.
+\end{proposition}
 
-
-\subsection{Image, Kernel, Rank}
-\begin{definition}[Image, Kernel, Rank]
-    \normalfont
-    Let $T\in L(X,Y)$,
-    \begin{enumerate}[$\circ$]
-        \item The \textbf{image} of $T$ is $\textnormal{Im }T= T(X)\subseteq Y$.
-        \item The \textbf{kernel} of $T$ is $\textnormal{ker }T=\{x\in X:T(x)=0\}$.
-        \item The \textbf{rank} of $T$ is $\textnormal{Rank }T=\dim(\textnormal{Im }T)$.
-    \end{enumerate}
-\end{definition}
-
-
-\subsection{The Rank-Nullity Theorem: $\dim X=\dim\textnormal{ker }T+\textnormal{Rank }T$}
-\begin{theorem}[The Rank-Nullity Theorem]
-    Let $X$ be a finite-dimensional vector space and $T \in L(X, Y)$. Then $\textnormal{Im }T$ and $\textnormal{ker }T$ are vector subspaces of $Y$ and $X$ respectively, and
-    $$\dim X=\dim\textnormal{ker }T+\textnormal{Rank }T$$
-\end{theorem}
-
-
-\subsection{Theorem: Linear Transformation $T$ is 1-to-1 $\Leftrightarrow$ $\textnormal{ker }T = \{0\}$}
-\begin{theorem}[1-to-1 $\Leftrightarrow$ $\textnormal{ker }T = \{0\}$]
-    $T \in L(X, Y)$ is one-to-one if and only if $\textnormal{ker }T = \{0\}$.
-\end{theorem}
-
-
-\subsection{Definition of Invertible Linear Transformation}
-\begin{definition}[Invertible Linear Transformation]
-    \normalfont
-    $T \in L(X, Y)$ is \textbf{invertible} if there is a function $S : Y \rightarrow X$ such that
-    \begin{enumerate}
-        \item $S(T(x))=x$, $\forall x\in X$.
-        \item $T(S(y))=y$, $\forall y\in Y$.
-    \end{enumerate}
-\end{definition}
-
-\subsection{Theorem: Inverse of a Linear Transformation is also Linear}
-\begin{theorem}[Inverse of a Linear Transformation is also Linear]
-    If $T \in L(X, Y)$ is invertible, then $T^{-1} \in L(Y, X)$, i.e. $T^{-1}$ is linear.
-\end{theorem}
-
-
-\subsection{Theorem: Linear Transformation is completely determined by values on basis}
-\begin{theorem}[Linear Transformation is completely determined by values on basis]
-    Let $X, Y$ be two vector spaces over the same field F, and let $V = \{v_\lambda : \lambda \in \Lambda\}$ be a basis for $X$. Then a linear transformation $T \in L(X, Y)$ is completely determined by its values on $V$, that is:
-    \begin{enumerate}
-        \item Given any set $\{y_\lambda : \lambda \in \Lambda\} \subseteq Y$, $\exists T \in L(X, Y)$ s.t. $$T(v_\lambda)=y_\lambda,\ \forall \lambda\in\Lambda$$
-        \item If $S,T\in L(X,Y)$ and $S(v_\lambda)=T(v_\lambda)$ for all $\lambda\in\Lambda$, then $S=T$.
-    \end{enumerate}
-\end{theorem}
-\begin{proof}
-    \begin{enumerate}
-        \item By the definition of linear transformation, we can prove the result by proving $T(x)=T(\sum_i\alpha_i v_i)=\sum_i\alpha_i y_i$ is linear.
-        \item Suppose $S(v_\lambda)=T(v_\lambda)$. We prove the result by proving $S(x)=S(\sum_i\alpha_i v_i)=\sum_i\alpha_i S(v_i)=\sum_i\alpha_i T(v_i)=T(\sum_i\alpha_i v_i)=T(x)$.
-    \end{enumerate}
-
-\end{proof}
-
-\subsection{GL(V): set of invertible linear transformations $V \rightarrow	V$}
-Given a vector space $V$ over $F$, we let $GL(V) \subset L(V, V)$ denote the subset of \textbf{invertible linear transformations}.
+\subsection{GL(V): invertible linear transformations $V \rightarrow	V$}
+Given a vector space $V$ over $F$, we let $GL(V ) \subset \mathcal{L}(V, V )$ denote the subset of \textbf{invertible linear transformations}.
 \begin{equation}
     \begin{aligned}
-        GL(V)=\{T\in L(V, V)| T \textit{ is a bijection}\}=L(V, V)\cap Sym(V)
+        GL(V)=\{T\in \mathcal{L}(V, V )| T \textit{ is a bijection}\}=\mathcal{L}(V, V )\cap Sym(V)
     \end{aligned}
     \nonumber
 \end{equation}
-
-
-\section{Isomorphisms}
-\subsection{Definition of Isomorphisms}
-\begin{definition}[Isomorphisms]
-    \normalfont
-    Two vector spaces $X, Y$ over a field $F$ are \textbf{isomorphic} if there is an invertible $T \in L(X, Y)$.
-\end{definition}
-
-\subsection{Theorem: Isomorphic $\Leftrightarrow$ $\dim X = \dim Y$}
-\begin{theorem}[Isomorphic $\Leftrightarrow$ $\dim X = \dim Y$]
-    Two vector spaces $X, Y$ over the same field are \textbf{isomorphic} ($\exists$ invertible $T \in L(X, Y)$) \underline{if and only if} $$\dim X = \dim Y$$
-\end{theorem}
 
 \chapter{Basic Definition}
 \section{Square Matrix $A_{n\times n}$: $det(A)$, singular}
@@ -473,7 +368,7 @@ $A_{m\times n}$, $B_{n\times k}$, $C_{k\times m}$, $Tr(ABC)=Tr(CAB)=Tr(BCA)$.
 
 
 \section{Jacobian matrix}
-Suppose $\mathbf{f}: \mathbf{R}^{n} \rightarrow \mathbf{R}^{m}$ is a function such that each of its first-order partial derivatives exist on $\mathbf{R}^{n}.$ This function takes a point $\mathbf{x} \in \mathbf{R}^{n}$ as input and produces the vector $\mathbf{f}(\mathbf{x}) \in \mathbf{R}^{m}$ as output. Then the Jacobian matrix of $\mathbf{f}$ is defined to be an $m \times n$ matrix, denoted by $\mathbf{J}$, whose $(i, j)$ th entry is $\mathbf{J}_{i j}=\frac{\partial f_{i}}{\partial x_{j}}$, or explicitly
+Suppose $\mathbf{f}: \mathbf{R}^{n} \rightarrow \mathbf{R}^{m}$ is a function such that each of its first-order partial derivatives exist on $\mathbf{R}^{n} .$ This function takes a point $\mathbf{x} \in \mathbf{R}^{n}$ as input and produces the vector $\mathbf{f}(\mathbf{x}) \in \mathbf{R}^{m}$ as output. Then the Jacobian matrix of $\mathbf{f}$ is defined to be an $m \times n$ matrix, denoted by $\mathbf{J}$, whose $(i, j)$ th entry is $\mathbf{J}_{i j}=\frac{\partial f_{i}}{\partial x_{j}}$, or explicitly
 
 $
 \mathbf{J}=\left[\begin{array}{ccc}
@@ -506,7 +401,7 @@ $
 or, by stating an equation for the coefficients using indices $i$ and $j$,
 
 $
-\left(\mathbf{H}_{f}\right)_{i, j}=\frac{\partial^{2} f}{\partial x_{i} \partial x_{j}}.
+\left(\mathbf{H}_{f}\right)_{i, j}=\frac{\partial^{2} f}{\partial x_{i} \partial x_{j}} .
 $
 
 The Hessian matrix is a symmetric matrix, since the hypothesis of continuity of the second derivatives implies that the order of differentiation does not matter (Schwarz's theorem).
@@ -574,11 +469,11 @@ If $A$ is an $n \times n$ symmetric matrix, then it can be factored as
     \begin{bmatrix}
         \lambda_1&0&... &0\\
         0&\lambda_2&...&0\\
-       ...&...&...&...\\
+        ...&...&...&...\\
         0&0&...&\lambda_n
     \end{bmatrix}Q$$
 
-where $\lambda_1,..., \lambda_n$ are the eigenvalues of $A$ and the columns of $Q$ are the corresponding eigenvectors.
+where $\lambda_1, . . ., \lambda_n$ are the eigenvalues of $A$ and the columns of $Q$ are the corresponding eigenvectors.
 
     We can get $x^TAx=x^TQ^T\Lambda Qx=(Qx)^T\Lambda(Qx)$
     
@@ -1023,7 +918,7 @@ $\textnormal{Isom}(\mathbb{R}^n)=\{\Phi_{A,v}|A\in O(n), v\in \mathbb{R}^n \}$
 \end{lemma}
 
 \begin{definition}[Sample mean of multivariate data]
-    Let $X := \{x_1, x_2,..., x_n\}$ denote a set of $d-$dimensional vectors of real-valued data. The sample mean is the entry-wise average
+    Let $X := \{x_1, x_2, . . ., x_n\}$ denote a set of $d-$dimensional vectors of real-valued data. The sample mean is the entry-wise average
     \begin{equation}
         \begin{aligned}
             \mu_X:=\frac{\sum_{i=1}^n x_i}{n}
@@ -1057,7 +952,7 @@ $\textnormal{Isom}(\mathbb{R}^n)=\{\Phi_{A,v}|A\in O(n), v\in \mathbb{R}^n \}$
 \end{lemma}
 
 \begin{definition}[Sample covariance matrix]
-    Let $X := \{x_1, x_2,..., x_n\}$ denote a set of $d-$dimensional vectors of real-valued data. The sample covariance matrix equals
+    Let $X := \{x_1, x_2, . . ., x_n\}$ denote a set of $d-$dimensional vectors of real-valued data. The sample covariance matrix equals
 \end{definition}
 
 Variance-Covariance matrix $\Sigma$:
