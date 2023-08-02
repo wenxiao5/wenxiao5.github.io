@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.27)  1 AUG 2023 17:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.27)  1 AUG 2023 17:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1975,127 +1975,127 @@ pdfTeX warning (ext4): destination with the same identifier (name{equation.3.2.1
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.974 \end{theorem}
-                   ] [25] [26
+                   ] [25] [26] [27
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.3.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1064 \end{claim}
-                  ] [27] [28]
+l.1087 \end{claim}
+                  ] [28] [29]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1179.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Rightarrow' on input line 1179.
+(hyperref)                removing `math shift' on input line 1202.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1179.
+(hyperref)                removing `\Rightarrow' on input line 1202.
 
-<SJD.png, id=1117, 1449.415pt x 1061.9675pt>
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1202.
+
+<SJD.png, id=1133, 1449.415pt x 1061.9675pt>
 File: SJD.png Graphic file (type png)
 <use SJD.png>
-Package pdftex.def Info: SJD.png  used on input line 1185.
+Package pdftex.def Info: SJD.png  used on input line 1208.
 (pdftex.def)             Requested size: 289.87787pt x 212.38974pt.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1190.
+(hyperref)                removing `math shift' on input line 1213.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Rightarrow' on input line 1190.
+(hyperref)                removing `\Rightarrow' on input line 1213.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1190.
+(hyperref)                removing `math shift' on input line 1213.
 
-[29]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1203.
-
+[30]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Rightarrow' on input line 1203.
+(hyperref)                removing `math shift' on input line 1226.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1203.
+(hyperref)                removing `\Rightarrow' on input line 1226.
 
-[30 <./SJD.png>] [31] [32
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1226.
+
+[31 <./SJD.png>] [32] [33
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.7.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1318 \end{proof}
+l.1341 \end{proof}
                   
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.7.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1318 \end{proof}
-                  ] [33] [34]
-<uhc.png, id=1169, 1577.895pt x 979.66pt>
+l.1341 \end{proof}
+                  ] [34] [35]
+<uhc.png, id=1184, 1577.895pt x 979.66pt>
 File: uhc.png Graphic file (type png)
 <use uhc.png>
-Package pdftex.def Info: uhc.png  used on input line 1372.
+Package pdftex.def Info: uhc.png  used on input line 1395.
 (pdftex.def)             Requested size: 315.57341pt x 195.92853pt.
-<lhc.png, id=1170, 1610.015pt x 983.675pt>
+<lhc.png, id=1185, 1610.015pt x 983.675pt>
 File: lhc.png Graphic file (type png)
 <use lhc.png>
-Package pdftex.def Info: lhc.png  used on input line 1379.
+Package pdftex.def Info: lhc.png  used on input line 1402.
 (pdftex.def)             Requested size: 321.9973pt x 196.7315pt.
- [35 <./uhc.png> <./lhc.png>]
+ [36 <./uhc.png> <./lhc.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1405.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Psi' on input line 1405.
+(hyperref)                removing `math shift' on input line 1428.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1405.
+(hyperref)                removing `\Psi' on input line 1428.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1405.
+(hyperref)                removing `math shift' on input line 1428.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Leftrightarrow' on input line 1405.
+(hyperref)                removing `math shift' on input line 1428.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1405.
+(hyperref)                removing `\Leftrightarrow' on input line 1428.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1405.
+(hyperref)                removing `math shift' on input line 1428.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1405.
+(hyperref)                removing `math shift' on input line 1428.
 
-[36] [37]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1428.
+
+[37] [38]
 Chapter 4.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1426.
+(hyperref)                removing `math shift' on input line 1449.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1426.
+(hyperref)                removing `math shift' on input line 1449.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1426.
+(hyperref)                removing `math shift' on input line 1449.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1426.
+(hyperref)                removing `math shift' on input line 1449.
 
-[38
+[39
 
 ] (./Logic and Analysis.aux)
 
@@ -2108,18 +2108,18 @@ Package logreq Info: Writing requests to '"Logic and Analysis".run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 42691 strings out of 476038
- 839553 string characters out of 5790170
+ 42707 strings out of 476038
+ 839741 string characters out of 5790170
  1897785 words of memory out of 5000000
- 61987 multiletter control sequences out of 15000+600000
+ 61991 multiletter control sequences out of 15000+600000
  549473 words of font info for 130 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  102i,18n,136p,1339b,1471s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/newtx/ztmbi.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on "Logic and Analysis.pdf" (43 pages, 5119439 bytes).
+Output written on "Logic and Analysis.pdf" (44 pages, 5124131 bytes).
 PDF statistics:
- 1382 PDF objects out of 1440 (max. 8388607)
- 1261 compressed objects within 13 object streams
- 410 named destinations out of 1000 (max. 500000)
+ 1399 PDF objects out of 1440 (max. 8388607)
+ 1277 compressed objects within 13 object streams
+ 422 named destinations out of 1000 (max. 500000)
  1070 words of extra memory for PDF output out of 10000 (max. 10000000)
 

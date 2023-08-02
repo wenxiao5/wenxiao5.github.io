@@ -84,34 +84,34 @@
 \contentsline {subsection}{\numberline {3.3.1}Continuous Function in $\mathbb {R}$ with Euclidean norm}{24}{subsection.3.3.1}%
 \contentsline {subsection}{\numberline {3.3.2}Continuous Function in Metric Spaces \small {(@ Lec 04 of ECON 204)}}{24}{subsection.3.3.2}%
 \contentsline {subsection}{\numberline {3.3.3}Theorem: Continuous $\Leftrightarrow $ Preimage of open set is open \small {(@ Lec 04 of ECON 204)}}{25}{subsection.3.3.3}%
-\contentsline {subsection}{\numberline {3.3.4}Theorem: Continuity is preserved in composition \small {(@ Lec 04 of ECON 204)}}{25}{subsection.3.3.4}%
-\contentsline {subsection}{\numberline {3.3.5}Uniform Continuity \small {(@ Lec 04 of ECON 204)}}{25}{subsection.3.3.5}%
-\contentsline {subsection}{\numberline {3.3.6}Theorem: Continuous function with Compact domain is Uniformly Continuous \small {(@ Lec 06 of ECON 204)}}{25}{subsection.3.3.6}%
-\contentsline {subsection}{\numberline {3.3.7}Lipschitz Continuous \small {(@ Lec 04 of ECON 204)}}{26}{subsection.3.3.7}%
-\contentsline {subsection}{\numberline {3.3.8}Contraction (from the view of Lipschitz constant)}{27}{subsection.3.3.8}%
-\contentsline {section}{\numberline {3.4}Extreme Value, Intermediate Value of Functions}{27}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Intermediate Value Theorem \small {(@ Lec 02 of ECON 204)}}{27}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Coercive Function}{27}{subsection.3.4.2}%
-\contentsline {subsection}{\numberline {3.4.3}Extreme of Functions}{28}{subsection.3.4.3}%
-\contentsline {subsection}{\numberline {3.4.4}Weierstrass' Theorem (Extreme value Theorem) \small {(@ Lec 06 of ECON 204)}}{28}{subsection.3.4.4}%
-\contentsline {subsection}{\numberline {3.4.5}Corollary: Continuous and Coercive function attains its Minimum on Closed Set}{29}{subsection.3.4.5}%
-\contentsline {section}{\numberline {3.5}Monotonic Function \small {(@ Lec 05 of ECON 204)}}{29}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}Theorem: Monotonically Increasing $\Rightarrow $ One-sided Limits exist}{29}{subsection.3.5.1}%
-\contentsline {subsection}{\numberline {3.5.2}Theorem: Monotonically Increasing $\Rightarrow $ Set of Points are discontinuous is finite (possibly empty) or countable}{30}{subsection.3.5.2}%
-\contentsline {section}{\numberline {3.6}Contraction Mapping Theorem \small {(@ Lec 05 of ECON 204)}}{30}{section.3.6}%
-\contentsline {subsection}{\numberline {3.6.1}Contractions}{30}{subsection.3.6.1}%
-\contentsline {subsection}{\numberline {3.6.2}Theorem: Contraction $\Rightarrow $ Uniformly Continuous}{30}{subsection.3.6.2}%
-\contentsline {subsection}{\numberline {3.6.3}Theorem: Blackwell's Sufficient Conditions for Contraction}{31}{subsection.3.6.3}%
-\contentsline {section}{\numberline {3.7}Fixed Point Theorem \small {(@ Lec 05 of ECON 204)}}{32}{section.3.7}%
-\contentsline {subsection}{\numberline {3.7.1}Fixed Point}{32}{subsection.3.7.1}%
-\contentsline {subsection}{\numberline {3.7.2}Contraction Mapping Theorem: Existence and Uniqueness of Fixed Point}{32}{subsection.3.7.2}%
-\contentsline {subsection}{\numberline {3.7.3}Theorem: Fixed Point's Continuous Dependence on Parameters}{33}{subsection.3.7.3}%
-\contentsline {section}{\numberline {3.8}Correspondence \small {(@ Lec 07 of ECON 204)}}{34}{section.3.8}%
-\contentsline {subsection}{\numberline {3.8.1}Definition of Correspondence}{34}{subsection.3.8.1}%
-\contentsline {subsection}{\numberline {3.8.2}Continuity of Correspondences}{34}{subsection.3.8.2}%
-\contentsline {subsection}{\numberline {3.8.3}Graph of Correspondence}{35}{subsection.3.8.3}%
-\contentsline {subsection}{\numberline {3.8.4}Theorem: $\Psi (x)=\{f(x)\}$ is uhc $\Leftrightarrow $ $f$ is continuous}{36}{subsection.3.8.4}%
-\contentsline {subsection}{\numberline {3.8.5}Closed-valued and Compact-valued Correspondences}{36}{subsection.3.8.5}%
-\contentsline {chapter}{\numberline {4}Big $\mathcal {O}$ and Small $o$ Notation}{38}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Definition}{38}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Extension}{38}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {3.3.4}Theorem: Continuity is preserved in composition \small {(@ Lec 04 of ECON 204)}}{26}{subsection.3.3.4}%
+\contentsline {subsection}{\numberline {3.3.5}Uniform Continuity \small {(@ Lec 04 of ECON 204)}}{26}{subsection.3.3.5}%
+\contentsline {subsection}{\numberline {3.3.6}Theorem: Continuous function with Compact domain is Uniformly Continuous \small {(@ Lec 06 of ECON 204)}}{26}{subsection.3.3.6}%
+\contentsline {subsection}{\numberline {3.3.7}Lipschitz Continuous \small {(@ Lec 04 of ECON 204)}}{27}{subsection.3.3.7}%
+\contentsline {subsection}{\numberline {3.3.8}Contraction (from the view of Lipschitz constant)}{28}{subsection.3.3.8}%
+\contentsline {section}{\numberline {3.4}Extreme Value, Intermediate Value of Functions}{28}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Intermediate Value Theorem \small {(@ Lec 02 of ECON 204)}}{28}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Coercive Function}{28}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Extreme of Functions}{29}{subsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.4.4}Weierstrass' Theorem (Extreme value Theorem) \small {(@ Lec 06 of ECON 204)}}{29}{subsection.3.4.4}%
+\contentsline {subsection}{\numberline {3.4.5}Corollary: Continuous and Coercive function attains its Minimum on Closed Set}{30}{subsection.3.4.5}%
+\contentsline {section}{\numberline {3.5}Monotonic Function \small {(@ Lec 05 of ECON 204)}}{30}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Theorem: Monotonically Increasing $\Rightarrow $ One-sided Limits exist}{30}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Theorem: Monotonically Increasing $\Rightarrow $ Set of Points are discontinuous is finite (possibly empty) or countable}{31}{subsection.3.5.2}%
+\contentsline {section}{\numberline {3.6}Contraction Mapping Theorem \small {(@ Lec 05 of ECON 204)}}{31}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Contractions}{31}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.2}Theorem: Contraction $\Rightarrow $ Uniformly Continuous}{31}{subsection.3.6.2}%
+\contentsline {subsection}{\numberline {3.6.3}Theorem: Blackwell's Sufficient Conditions for Contraction}{32}{subsection.3.6.3}%
+\contentsline {section}{\numberline {3.7}Fixed Point Theorem \small {(@ Lec 05 of ECON 204)}}{33}{section.3.7}%
+\contentsline {subsection}{\numberline {3.7.1}Fixed Point}{33}{subsection.3.7.1}%
+\contentsline {subsection}{\numberline {3.7.2}Contraction Mapping Theorem: Existence and Uniqueness of Fixed Point}{33}{subsection.3.7.2}%
+\contentsline {subsection}{\numberline {3.7.3}Theorem: Fixed Point's Continuous Dependence on Parameters}{34}{subsection.3.7.3}%
+\contentsline {section}{\numberline {3.8}Correspondence \small {(@ Lec 07 of ECON 204)}}{35}{section.3.8}%
+\contentsline {subsection}{\numberline {3.8.1}Definition of Correspondence}{35}{subsection.3.8.1}%
+\contentsline {subsection}{\numberline {3.8.2}Continuity of Correspondences}{35}{subsection.3.8.2}%
+\contentsline {subsection}{\numberline {3.8.3}Graph of Correspondence}{36}{subsection.3.8.3}%
+\contentsline {subsection}{\numberline {3.8.4}Theorem: $\Psi (x)=\{f(x)\}$ is uhc $\Leftrightarrow $ $f$ is continuous}{37}{subsection.3.8.4}%
+\contentsline {subsection}{\numberline {3.8.5}Closed-valued and Compact-valued Correspondences}{37}{subsection.3.8.5}%
+\contentsline {chapter}{\numberline {4}Big $\mathcal {O}$ and Small $o$ Notation}{39}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Definition}{39}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Extension}{39}{subsection.4.1.1}%

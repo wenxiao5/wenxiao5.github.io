@@ -973,6 +973,29 @@ Continuity at $x_0$ requires:
     $$f^{-1}(A)=\{x\in X: f(x)\in A\} \textnormal{ is open in $X$ $\forall A\subseteq Y$ s.t. $A$ is open in $Y$}$$
 \end{theorem}
 
+\begin{proposition}
+    Let $A \subseteq \mathbb{R}$ be an open set and $f : A \rightarrow \mathbb{R}$. The two following statements are equivalent:
+    \begin{enumerate}[(a).]
+        \item $f$ is continuous.
+        \item for all $c\in \mathbb{R}$, the sets $E[f<c]=\{x\in A\mid f(x)<c\}$ and $E[f>c]=\{x\in A\mid f(x)>c\}$ are open.
+    \end{enumerate}
+\end{proposition}
+\begin{proof}
+\begin{enumerate}
+    \item "(a)$\Rightarrow$(b)": Suppose $f$ is continuous. Consider any $c\in \mathbb{R}$. Since $(-\infty,c)$ and $(c,\infty)$ are open and $f$ is continuous, $E[f<c]=f^{-1}((-\infty,c))$ and $E[f>c]=f^{-1}((c,\infty))$ are open.
+    \item "(b)$\Rightarrow$(a)": Suppose $E[f<c]=\{x\in A\mid f(x)<c\}$ and $E[f>c]=\{x\in A\mid f(x)>c\}$ are open for all $c\in \mathbb{R}$. Let $C\subseteq \mathbb{R}$ be an arbitrary open set over $\mathbb{R}$. There are following cases about the $C$:
+    \begin{enumerate}[(1).]
+        \item $C=(-\infty,k)$, where $k\in \mathbb{R}$. In this case $f^{-1}(C)=E[f<k]$, which is open by the given condition.
+        \item $C=(k,\infty)$, where $k\in \mathbb{R}$. In this case $f^{-1}(C)=E[f>k]$, which is open by the given condition.
+        \item $C=\emptyset$. In this case $f^{-1}(C)=\{x\in A\mid f(x)\in \emptyset\}=E[f>k_1]\cap E[f<k_2], \forall k_1\geq k_2$, which is a finite intersection of two open sets. So, $f^{-1}(C)$ is open.
+        \item $C=(k_1,k_2)$, where $k_1,k_2\in \mathbb{R}$ s.t. $k_1<k_2$. In this case $f^{-1}(C)=\{x\in A\mid f(x)\in (k_1,k_2)\}=E[f>k_1]\cap E[f<k_2]$, which is a finite intersection of two open sets. So, $f^{-1}(C)$ is open.
+        \item $C=(-\infty,k_2)\cup(k_1,\infty)$. In this case $f^{-1}(C)=\{x\in A\mid f(x)\in (-\infty,k_2)\cup(k_1,\infty)\}=E[f>k_1]\cup E[f<k_2], \forall k_1,k_2\in \mathbb{R}$ s.t. $k_1>k_2$. $f^{-1}(C)$ is a union of two open set, which is open.
+        \item $C=\mathbb{R}$. In this case $f^{-1}(C)=\{x\in A\mid f(x)\in \mathbb{R}\}=\{x\in A\mid f(x)\in (-\infty,k_2)\cup(k_1,\infty)\}=E[f>k_1]\cup E[f<k_2], \forall k_1,k_2\in \mathbb{R}$ s.t. $k_1<k_2$. $f^{-1}(C)$ is a union of two open set, which is open.
+    \end{enumerate}
+    Hence, $f^{-1}(C)=\{x\in A: f(x)\in C\} \textnormal{ is open $\forall C\subseteq \mathbb{R}$ s.t. $C$ is open in $\mathbb{R}$}$
+\end{enumerate}
+\end{proof}
+
 \subsection{Theorem: Continuity is preserved in composition \small{(@ Lec 04 of ECON 204)}}
 \begin{theorem}[Continuity is preserved in composition]
     Let $(X, d_X)$, $(Y, d_Y)$ and $(Z, d_Z)$ be metric spaces. If $f : X \rightarrow Y$ and $g : Y \rightarrow Z$ are continuous, then $g \circ f : X \rightarrow Z$ is
