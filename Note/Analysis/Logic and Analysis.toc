@@ -79,7 +79,7 @@
 \contentsline {section}{\numberline {3.2}Injection, Surjection, Bijection}{23}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}Definitions: Injective, surjective, bijective}{23}{subsection.3.2.1}%
 \contentsline {subsection}{\numberline {3.2.2}Lemma 1.1.7: injective/surjective/bijective is preserved in composition}{23}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}Proposition 1.1.8: A function is bijection if there exist inverse}{24}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.3}Theorem: A function is bijective $\Leftrightarrow $ $\exists $ inverse}{24}{subsection.3.2.3}%
 \contentsline {section}{\numberline {3.3}Function Continuity}{24}{section.3.3}%
 \contentsline {subsection}{\numberline {3.3.1}Continuous Function in $\mathbb {R}$ with Euclidean norm}{24}{subsection.3.3.1}%
 \contentsline {subsection}{\numberline {3.3.2}Continuous Function in Metric Spaces \small {(@ Lec 04 of ECON 204)}}{24}{subsection.3.3.2}%
