@@ -121,7 +121,19 @@
 \contentsline {subsection}{\numberline {3.9.6}Theorem: Partial Derivatives exist and Continuous $\Rightarrow $ Differentiable}{40}{subsection.3.9.6}%
 \contentsline {subsection}{\numberline {3.9.7}Directional Derivatives}{40}{subsection.3.9.7}%
 \contentsline {subsection}{\numberline {3.9.8}Chain Rule: $d F_{x_0}= d g_{f(x_0)} \circ d f_{x_0}$ and $D F_{x_0}= D g (f(x_0)) D f (x_0)$}{41}{subsection.3.9.8}%
-\contentsline {subsection}{\numberline {3.9.9}Mean Value Theorem: $\exists c\in (a,b),f(b)-f(a)=f'(c)(b-a)$}{41}{subsection.3.9.9}%
-\contentsline {chapter}{\numberline {4}Big $\mathcal {O}$ and Small $o$ Notation}{42}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Definition}{42}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Extension}{42}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {3.9.9}Mean Value Theorem: $\exists z\in l(x,y),\|f(y)-f(x)\|\leq \|df_z\| \|y-x\|$}{41}{subsection.3.9.9}%
+\contentsline {subsection}{\numberline {3.9.10}Taylor's Theorem}{42}{subsection.3.9.10}%
+\contentsline {subsection}{\numberline {3.9.11}$C^k$ Function and Continuously Differentiable}{42}{subsection.3.9.11}%
+\contentsline {subsection}{\numberline {3.9.12}Taylor's Theorem with $C^k$}{42}{subsection.3.9.12}%
+\contentsline {chapter}{\numberline {4}Tools for Comparative Statics}{45}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Regular and Critical Points and Values}{45}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Rank of Derivatives $\textnormal {Rank} df_x=\textnormal {Rank} Df(x)$}{45}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Regular and Critical Points and Values}{45}{subsection.4.1.2}%
+\contentsline {section}{\numberline {4.2}Inverse and Implicit Function Theorem}{46}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Transversality and Genericity}{47}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Lebesgue Measure Zero}{47}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Sard's Theorem}{47}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Transversality Theorem}{47}{subsection.4.3.3}%
+\contentsline {chapter}{\numberline {5}Big $\mathcal {O}$ and Small $o$ Notation}{48}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Definition}{48}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Extension}{48}{subsection.5.1.1}%
