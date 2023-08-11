@@ -99,7 +99,7 @@
 \contentsline {section}{\numberline {6.4}Obtuse Angle Criterion: $[z]^\&$ is projection $\Leftrightarrow $ $(z-[z]^\&)^T(y-[z]^\&)\leq 0, \forall y\in \&$}{43}{section.6.4}%
 \contentsline {subsection}{\numberline {6.4.1}Special Case (Linear subspace): Orthogonality Principle $(z-[z]^\&)^Tx= 0,\forall x\in \&$}{44}{subsection.6.4.1}%
 \contentsline {section}{\numberline {6.5}Prop: Projection is Non-expansive $\|[x]^\&-[z]^\&\|\leq \|x-z\|,\forall x,z\in \mathbb {R}^n$}{45}{section.6.5}%
-\contentsline {section}{\numberline {6.6}The Separation Theorem}{46}{section.6.6}%
+\contentsline {section}{\numberline {6.6}Separating Hyperplane Theorem \small {(Lec 13 @ Econ 204)}}{46}{section.6.6}%
 \contentsline {section}{\numberline {6.7}Bolzano-Weierstrass theorem}{47}{section.6.7}%
 \contentsline {subsection}{\numberline {6.7.1}Sequence Convergence}{47}{subsection.6.7.1}%
 \contentsline {subsection}{\numberline {6.7.2}Bolzano-Weierstrass Theorem: Compact set $S$, $\exists $ subsequence converges to $\vec {x}^*\in S$}{47}{subsection.6.7.2}%
