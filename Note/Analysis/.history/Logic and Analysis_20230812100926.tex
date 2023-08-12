@@ -1236,29 +1236,24 @@ $\Psi$ is the demand correspondence associated with the utility function $u$; ty
 \end{example}
 
 \subsection{Continuity of Correspondences}
-Let $X\subseteq \mathbb{E}^n$, $Y\subseteq \mathbb{E}^m$, and $\Psi: X \rightarrow 2^Y$.
-\begin{definition}[Upper Hemicontinuous]
+\begin{definition}[Upper/Lower Hemicontinuous]
     \normalfont
-    $\Psi$ is \textbf{upper hemicontinuous} (uhc) at $x_0 \in X$ if, for every open set $V$ with $\Psi(x_0)\subseteq V$, there is an \underline{open set} $U$ with $x_0 \in U$ s.t.
-    $$x\in U \Rightarrow \Psi(x)\subseteq V$$
+    Let $X\subseteq \mathbb{E}^n$, $Y\subseteq \mathbb{E}^m$, and $\Psi: X \rightarrow 2^Y$.
+    \begin{enumerate}
+        \item $\Psi$ is \textbf{upper hemicontinuous} (uhc) at $x_0 \in X$ if, for every open set $V$ with $\Psi(x_0)\subseteq V$, there is an \underline{open set} $U$ with $x_0 \in U$ (which requires elements around $x_0$ all satisfy) such that
+        \begin{center}
+            $\Psi(x) \subseteq V$ for every $x \in U \cap X$
+        \end{center}
+        Upper hemicontinuity reflects the requirement that $\Psi$ doesn't “jump down/implode in the limit” at $x_0$. \textit{(A set to “jump down” at the limit $x_0$: It should mean the set suddenly gets smaller -- it “implodes in the limit” -- that is, there is a sequence $x_n \rightarrow x_0$ and points $y_n \in \Psi(x_n)$ that are far from every point of $\Psi(x_0)$ as $n \rightarrow \infty$.)}
+        \item $\Psi$ is \textbf{lower hemicontinuous} (lhc) at $x_0 \in X$ if, for every open set $V$ such that $\Psi(x_0)\cap V \neq \emptyset$, there is an \underline{open set} $U$ with $x_0 \in U$ such that
+        \begin{center}
+            $\Psi(x) \cap V\neq \emptyset$ for every $x \in U \cap X$
+        \end{center}
+        Lower hemicontinuity reflects the requirement that $\Psi$ doesn't “jump up/explode in the limit” at $x_0$. \textit{(A set to “jump up” at the limit $x_0$: It should mean that the set suddenly gets bigger -- it “explodes in the limit” -- that is, there is a sequence $x_n \rightarrow x_0$ and a point $y_0\in\Psi(x_0)$ that is far from every point of $\Psi(x_n)$ as $n \rightarrow \infty$.)}
+        \item $\Psi$ is \textbf{continuous} at $x_0 \in X$ if it is both \textbf{uhc} and \textbf{lhc} at $x_0$.
+        \item $\Psi$ is upper hemicontinuous (respectively lower hemicontinuous, continuous) if it is uhc (respectively lhc, continuous) at every $x \in X$.
+    \end{enumerate}
 \end{definition}
-Upper hemicontinuity reflects the requirement that $\Psi$ doesn't “jump down/implode in the limit” at $x_0$. \textit{(A set to “jump down” at the limit $x_0$: It should mean the set suddenly gets smaller -- it “implodes in the limit” -- that is, there is a sequence $x_n \rightarrow x_0$ and points $y_n \in \Psi(x_n)$ that are far from every point of $\Psi(x_0)$ as $n \rightarrow \infty$.)}
-\begin{definition}[Lower Hemicontinuous]
-    \normalfont
-    $\Psi$ is \textbf{lower hemicontinuous} (lhc) at $x_0 \in X$ if, for every open set $V$ with $\Psi(x_0)\cap V \neq \emptyset$, there is an \underline{open set} $U$ with $x_0 \in U$ s.t.
-    $$x\in U \Rightarrow \Psi(x)\cap V\neq \emptyset$$
-\end{definition}
-Lower hemicontinuity reflects the requirement that $\Psi$ doesn't “jump up/explode in the limit” at $x_0$. \textit{(A set to “jump up” at the limit $x_0$: It should mean that the set suddenly gets bigger -- it “explodes in the limit” -- that is, there is a sequence $x_n \rightarrow x_0$ and a point $y_0\in\Psi(x_0)$ that is far from every point of $\Psi(x_n)$ as $n \rightarrow \infty$.)}
-
-\begin{definition}[Continuous Correspondence]
-    \normalfont
-    $\Psi$ is \textbf{continuous} at $x_0 \in X$ if it is both \textbf{uhc} and \textbf{lhc} at $x_0$.
-\end{definition}
-
-\begin{proposition}
-    $\Psi$ is upper hemicontinuous (respectively lower hemicontinuous, continuous) if it is uhc (respectively lhc, continuous) at every $x \in X$.
-\end{proposition}
-
 \begin{center}\begin{figure}[htbp]
     \centering
     \includegraphics[scale=0.2]{uhc.png}
@@ -1809,79 +1804,10 @@ We want to know how the function $x^*(a)$ changes with keeping $f(x^*,a)=0$.
     All in all, the inverse function theorem is proved.
 \end{proof}
 
-\subsection{Example: Using Implicit Function Theorem in Comparative Statics}
-\begin{example}
-    Let us consider a firm that produces a good $y$; it uses two inputs $x_1$ and $x_2$. The firm sells the output and acquires the inputs in competitive markets: The market price of $y$ is $p$, and the cost of each unit of $x_1$ and $x_2$ are $w_1$ and $w_2$ respectively. Its technology is given by $f : \mathbb{R}^2_+ \rightarrow \mathbb{R}_+$, where $f (x_1, x_2) = x_1^ax_2^b$, $a + b < 1$. Its profits take the form
-    \begin{equation}
-        \begin{aligned}
-            \pi(x_1,x_2; p, w_1,w_2)=p x_1^ax_2^b-w_1x_1-w_2x_2
-        \end{aligned}
-        \nonumber
-    \end{equation}
-    The firm selects $x_1$ and $x_2$ in order to maximize profits. \textbf{We aim to know how its choice of $x_1$ and $x_2$ is affected by a change in $w_1$}.
 
-    Assuming an interior solution, the first-order conditions of this optimization problem are
-    \begin{equation}
-        \begin{aligned}
-            \frac{\partial \pi}{\partial x_1}(x_1^*,x_2^*;p,w_1,w_2)=pa(x_1^*)^{a-1}(x_2^*)^b-w_1=0\\
-            \frac{\partial \pi}{\partial x_2}(x_1^*,x_2^*;p,w_1,w_2)=pb(x_1^*)^{a}(x_2^*)^{b-1}-w_2=0
-        \end{aligned}
-        \nonumber
-    \end{equation}
-    for some $(x_1, x_2) = (x_1^*,x_2^*)$.
-
-    Let us define
-    \begin{equation}
-        \begin{aligned}
-            F(x_1^*,x_2^*;p,w_1,w_2)=
-            \begin{bmatrix}
-                pa(x_1^*)^{a-1}(x_2^*)^b-w_1\\
-                pb(x_1^*)^{a}(x_2^*)^{b-1}-w_1
-            \end{bmatrix}
-        \end{aligned}
-        \nonumber
-    \end{equation}
-    Jacobian matrices are
-    \begin{equation}
-        \begin{aligned}
-            D_{(x_1,x_2)}F(x_1^*,x_2^*;p,w_1,w_2)=\begin{bmatrix}
-                pa(a-1)(x_1^*)^{a-2}(x_2^*)^b&pab(x_1^*)^{a-1}(x_2^*)^{b-1}\\
-                pab(x_1^*)^{a-1}(x_2^*)^{b-1}&pb(b-1)(x_1^*)^{a}(x_2^*)^{b-2}
-            \end{bmatrix}
-        \end{aligned}
-        \nonumber
-    \end{equation}
-    \begin{equation}
-        \begin{aligned}
-            D_{w_1}F(x_1^*,x_2^*;p,w_1,w_2)
-            &=
-            \begin{bmatrix}
-                -1\\
-                0
-            \end{bmatrix}
-        \end{aligned}
-        \nonumber
-    \end{equation}
-    By the implicit function theorem, we can get
-    \begin{equation}
-        \begin{aligned}
-            \begin{bmatrix}
-                \frac{\partial x_1^*}{\partial w_1}\\
-                \frac{\partial x_2^*}{\partial w_1}
-            \end{bmatrix}&=-[D_{(x_1,x_2)}F(x_1^*,x_2^*;p,w_1,w_2)]^{-1}[D_{w_1}F(x_1^*,x_2^*;p,w_1,w_2)]\\
-            &=[D_{(x_1,x_2)}F(x_1^*,x_2^*;p,w_1,w_2)]^{-1}\begin{bmatrix}
-                1\\
-                0
-            \end{bmatrix}
-        \end{aligned}
-        \nonumber
-    \end{equation}
-\end{example}
-
-\subsection{Corollary: $a \rightarrow \{x\in X: f(x,a)=0\}$ is lhc}
 \begin{corollary}
     Suppose $X \subseteq \mathbb{R}^n$ and $A \subseteq \mathbb{R}^p$ are open and $f : X \times A \rightarrow \mathbb{R}^n$ is $C^1$. If $0$ is a regular value of $f(\cdot, a_0)$, then the correspondence $$a \rightarrow \{x\in X: f(x,a)=0\}$$
-    is \textbf{lower hemicontinuous} at $a_0$.
+    is lower hemicontinuous at $a_0$.
 \end{corollary}
 
 

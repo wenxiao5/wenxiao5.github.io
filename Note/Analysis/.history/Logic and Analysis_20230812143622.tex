@@ -1818,64 +1818,7 @@ We want to know how the function $x^*(a)$ changes with keeping $f(x^*,a)=0$.
         \end{aligned}
         \nonumber
     \end{equation}
-    The firm selects $x_1$ and $x_2$ in order to maximize profits. \textbf{We aim to know how its choice of $x_1$ and $x_2$ is affected by a change in $w_1$}.
-
-    Assuming an interior solution, the first-order conditions of this optimization problem are
-    \begin{equation}
-        \begin{aligned}
-            \frac{\partial \pi}{\partial x_1}(x_1^*,x_2^*;p,w_1,w_2)=pa(x_1^*)^{a-1}(x_2^*)^b-w_1=0\\
-            \frac{\partial \pi}{\partial x_2}(x_1^*,x_2^*;p,w_1,w_2)=pb(x_1^*)^{a}(x_2^*)^{b-1}-w_2=0
-        \end{aligned}
-        \nonumber
-    \end{equation}
-    for some $(x_1, x_2) = (x_1^*,x_2^*)$.
-
-    Let us define
-    \begin{equation}
-        \begin{aligned}
-            F(x_1^*,x_2^*;p,w_1,w_2)=
-            \begin{bmatrix}
-                pa(x_1^*)^{a-1}(x_2^*)^b-w_1\\
-                pb(x_1^*)^{a}(x_2^*)^{b-1}-w_1
-            \end{bmatrix}
-        \end{aligned}
-        \nonumber
-    \end{equation}
-    Jacobian matrices are
-    \begin{equation}
-        \begin{aligned}
-            D_{(x_1,x_2)}F(x_1^*,x_2^*;p,w_1,w_2)=\begin{bmatrix}
-                pa(a-1)(x_1^*)^{a-2}(x_2^*)^b&pab(x_1^*)^{a-1}(x_2^*)^{b-1}\\
-                pab(x_1^*)^{a-1}(x_2^*)^{b-1}&pb(b-1)(x_1^*)^{a}(x_2^*)^{b-2}
-            \end{bmatrix}
-        \end{aligned}
-        \nonumber
-    \end{equation}
-    \begin{equation}
-        \begin{aligned}
-            D_{w_1}F(x_1^*,x_2^*;p,w_1,w_2)
-            &=
-            \begin{bmatrix}
-                -1\\
-                0
-            \end{bmatrix}
-        \end{aligned}
-        \nonumber
-    \end{equation}
-    By the implicit function theorem, we can get
-    \begin{equation}
-        \begin{aligned}
-            \begin{bmatrix}
-                \frac{\partial x_1^*}{\partial w_1}\\
-                \frac{\partial x_2^*}{\partial w_1}
-            \end{bmatrix}&=-[D_{(x_1,x_2)}F(x_1^*,x_2^*;p,w_1,w_2)]^{-1}[D_{w_1}F(x_1^*,x_2^*;p,w_1,w_2)]\\
-            &=[D_{(x_1,x_2)}F(x_1^*,x_2^*;p,w_1,w_2)]^{-1}\begin{bmatrix}
-                1\\
-                0
-            \end{bmatrix}
-        \end{aligned}
-        \nonumber
-    \end{equation}
+    The firm selects $x_1$ and $x_2$ in order to maximize profits. We aim to know how its choice of $x_1$ is affected by a change in $w_1$.
 \end{example}
 
 \subsection{Corollary: $a \rightarrow \{x\in X: f(x,a)=0\}$ is lhc}
