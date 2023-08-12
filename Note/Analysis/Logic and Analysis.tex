@@ -1332,6 +1332,10 @@ $$
 $$
 Recall that the limit considers $h$ near zero, but not $h=0$.
 
+\begin{proposition}
+    $f$ is \textbf{differentiable} $\Rightarrow$ $f$ is \textbf{continuous}.
+\end{proposition}
+
 \subsection{General Definition of Differentiable}
 \begin{definition}
     \normalfont
@@ -1546,7 +1550,7 @@ $$
 \subsection{Taylor's Theorem with $C^k$}
 \subsubsection*{Linear Terms}
 \begin{theorem}
-    Suppose $X \subseteq \mathbf{R}^n$ is open and $x \in X$. If $f: X \rightarrow \mathbf{R}^m$ is differentiable, then
+    Suppose $X \subseteq \mathbb{R}^n$ is open and $x \in X$. If $f: X \rightarrow \mathbb{R}^m$ is differentiable, then
     $$
     f(x+h)=f(x)+D f(x) h+o(h) \text { as } h \rightarrow 0
     $$
@@ -1554,14 +1558,14 @@ $$
 The previous theorem is essentially a restatement of the definition of differentiability.
 
 \begin{theorem}
-    Suppose $X \subseteq \mathbf{R}^n$ is open and $x \in X$. If $f: X \rightarrow \mathbf{R}^m$ is $C^2$, then
+    Suppose $X \subseteq \mathbb{R}^n$ is open and $x \in X$. If $f: X \rightarrow \mathbb{R}^m$ is $C^2$, then
     $$
     f(x+h)=f(x)+D f(x) h+O\left(|h|^2\right) \text { as } h \rightarrow 0
     $$
 \end{theorem}
 
 \subsubsection*{Quadratic Terms}
-We treat each component of the function separately, so consider $f: X \rightarrow \mathbf{R}, X \subseteq \mathbf{R}^n$ an open set. Let
+We treat each component of the function separately, so consider $f: X \rightarrow \mathbb{R}, X \subseteq \mathbb{R}^n$ an open set. Let
 $$
 \begin{aligned}
 D^2 f(x) & =\left(\begin{array}{cccc}
@@ -1577,7 +1581,7 @@ f \in C^2 & \Rightarrow \frac{\partial^2 f}{\partial x_i \partial x_j}(x)=\frac{
 $$
 
 \begin{theorem}[Stronger Version of Taylor's Theorem]
-    Suppose $X \subseteq \mathbf{R}^n$ is open and $x \in X$. If $f: X \rightarrow \mathbf{R}$ is $C^2$, then
+    Suppose $X \subseteq \mathbb{R}^n$ is open and $x \in X$. If $f: X \rightarrow \mathbb{R}$ is $C^2$, then
     $$
     f(x+h)=f(x)+D f(x) h +\frac{1}{2}h^T(D^2f(x))h+O\left(|h|^2\right) \text { as } h \rightarrow 0
     $$
@@ -1593,7 +1597,7 @@ $$
 \end{definition}
 
 \begin{corollary}
-    Suppose $X \subseteq \mathbf{R}^n$ is open and $x \in X$. If $f: X \rightarrow \mathbf{R}$ is $C^2$, then there is an orthonormal basis $\left\{v_1, \ldots, v_n\right\}$ and corresponding eigenvalues $\lambda_1, \ldots, \lambda_n \in \mathbf{R}$ of $D^2 f(x)$ such that
+    Suppose $X \subseteq \mathbb{R}^n$ is open and $x \in X$. If $f: X \rightarrow \mathbb{R}$ is $C^2$, then there is an orthonormal basis $\left\{v_1, \ldots, v_n\right\}$ and corresponding eigenvalues $\lambda_1, \ldots, \lambda_n \in \mathbb{R}$ of $D^2 f(x)$ such that
     $$
     \begin{aligned}
     f(x+h) & =f\left(x+\gamma_1 v_1+\cdots+\gamma_n v_n\right) \\
@@ -1681,9 +1685,10 @@ The requirement of "regular point" is necessary for the $Df(x_0)$ being invertib
     Suppose $X \subseteq \mathbb{R}^n$ is open. Suppose $f : X \rightarrow \mathbb{R}^n$ is $C^1$ on $X$, and $x_0\in X$. If $\det Df(x_0)\neq 0$ (i.e., $x_0$ is a regular point of $f$), then there are open neighborhoods $U$ of $x_0$ and $V$ of $f(x_0)$ s.t.
     \begin{equation}
         \begin{aligned}
-            f:U &\rightarrow V \textnormal{ is bijective (on-to-on and onto)}\\
-            \exists\ f^{-1}:V &\rightarrow U \textnormal{ is }C^1\\
-            Df^{-1}(f(x_0))&=[Df(x_0)]^{-1}
+            &f:U \rightarrow V \textnormal{ is bijective (on-to-on and onto)}\\
+            &\exists\ f^{-1}:V \rightarrow U \textnormal{ is }C^1\\
+            &Df^{-1}(f(x_0))=[Df(x_0)]^{-1}\\
+            &\textnormal{(In $\mathbb{R}$, $(f^{-1})'(f(x_0))=(f'(x_0))^{-1}$)}
         \end{aligned}
         \nonumber
     \end{equation}
@@ -1706,6 +1711,62 @@ We want to know how the function $x^*(a)$ changes with keeping $f(x^*,a)=0$.
     For each $a \in W$ let $g(a)$ be that unique $x$. Then $g : W \rightarrow X$ is $C^1$ and $$Dg(a_0)=-[D_x f(x_0, a_0)]^{-1}[D_a f(x_0, a_0)]$$
     If in addition $f \in C^k$, then $g \in C^k$.
 \end{theorem}
+\begin{proof}
+    \begin{enumerate}
+        \item Firstly, we prove "$g$ is differentiable":
+        The "change of $a$" incurs the value change:
+        \begin{equation}
+            \begin{aligned}
+                f(x_0,a_0+h)&=f(x_0,a_0)+D_af(x_0,a_0)h+o(h)\\
+                &=D_af(x_0,a_0)h+o(h)\\
+            \end{aligned}
+            \nonumber
+        \end{equation}
+        Find a $\Delta x$ such that the new $x$ can let the value go back to $0$, i.e., $f(x_0+\Delta x,a_0+h)=0$. That is,
+        \begin{equation}
+            \begin{aligned}
+                g(a_0+h)=x_0+\Delta x
+            \end{aligned}
+            \nonumber
+        \end{equation}
+        To prove "$g$ is differentiable", we want to prove "$\exists T\in L(A,X)$ s.t. $\Delta x=T(h)+o(h)$"
+        \begin{equation}
+            \begin{aligned}
+                0&=f(x_0+\Delta x,a_0+h)\\
+                &=f(x_0,a_0)+D_xf(x_0,a_0+h)\Delta x+ D_a f(x_0,a_0)h+o(\Delta x)+o(h)\\
+                &=D_xf(x_0,a_0+h)\Delta x+ D_a f(x_0,a_0)h+o(\Delta x)+o(h)\\
+                D_x f(x_0,a_0+h)\Delta x&=-D_a f(x_0,a_0)h+o(\Delta x)+o(h)
+            \end{aligned}
+            \nonumber
+        \end{equation}
+        Because $f$ is $C^1$ and the determinant is a continuous function of the entries of the matrix, $\det D_xf(x_0, a_0 + h) \neq 0$ for $h$ sufficiently small, so
+        \begin{equation}
+            \begin{aligned}
+                \Delta x&= -[D_x f(x_0,a_0+h)]^{-1}D_a f(x_0,a_0)h+o(\Delta x)+o(h)\\
+                \textnormal{Since $f\in C^1$, }\Delta x&= -[D_x f(x_0,a_0)+o(1)]^{-1}D_a f(x_0,a_0)h+o(\Delta x)+o(h)\\
+                \textnormal{Since $f\in C^1$, }\Delta x&= -[D_x f(x_0,a_0)]^{-1}D_a f(x_0,a_0)h+o(\Delta x)+o(h)
+            \end{aligned}
+            \nonumber
+        \end{equation}
+        Hence, "$g$ is differentiable" is proved and the derivative of $g$ is $Dg(a_0)=-[D_x f(x_0,a_0)]^{-1}[D_a f(x_0,a_0)]$.
+        \item Secondly, given the "$g$ is differentiable", we can also compute the derivative by
+        \begin{equation}
+            \begin{aligned}
+                Df(g(a),a)(a_0)&=0\\
+                D_xf(x_0,a_0)Dg(a_0)+D_af(x_0,a_0)&=0\\
+                Dg(a_0)&=-[D_x f(x_0,a_0)]^{-1}D_a f(x_0,a_0)
+            \end{aligned}
+            \nonumber
+        \end{equation}
+    \end{enumerate}
+\end{proof}
+
+
+
+
+
+
+
 \begin{example}
     $f: \mathbb{R}^3 \rightarrow \mathbb{R}^2$, $f((3,-1,2))=(0,0)$, $Df(3,-1,2)=\begin{bmatrix}
         1&2&1\\
@@ -1713,6 +1774,27 @@ We want to know how the function $x^*(a)$ changes with keeping $f(x^*,a)=0$.
     \end{bmatrix}$. Then,
     let $(x_0,a_0)=(3,-1,2)$, where $x_0=3$ and $a_0=(-1,2)$. Or, we can let $(x_0,a_0)=(3,-1,2)$, where $x_0=(3,-1)$ and $a_0=2$.
 \end{example}
+
+
+\begin{proof}[Prove Inverse Function Theorem Given Implicit Function Theorem]
+    Define $F:X\times \mathbb{R}^n$ s.t. $F(x,y)=y-f(x)$. Let $y_0=f(x_0)$.
+    \begin{equation}
+        \begin{aligned}
+            D_x F(x,y)=-Df(x),\ D_y F(x,y)=I_{n\times n}
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    Let $g$ be the function $0=F(g(y),y)=y-f(g(y))$, we have $f(g(y))=y$, that is $g=f^{-1}$.
+    By the implicit function, $g(y)$ is differentiable and
+    \begin{equation}
+        \begin{aligned}
+            Df^{-1}(y_0)=Dg(y_0)=-[D_x F(x_0,y_0)]^{-1}[D_y F(x_0,y_0)]=[Df(x_0)]^{-1}
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    where $y_0=f(x_0)$. So, the inverse function theorem is proved.
+\end{proof}
+
 
 \begin{corollary}
     Suppose $X \subseteq \mathbb{R}^n$ and $A \subseteq \mathbb{R}^p$ are open and $f : X \times A \rightarrow \mathbb{R}^n$ is $C^1$. If $0$ is a regular value of $f(\cdot, a_0)$, then the correspondence $$a \rightarrow \{x\in X: f(x,a)=0\}$$
@@ -1962,7 +2044,7 @@ Note that the theorem asserts both the \textbf{existence} and \textbf{uniqueness
 \end{theorem}
 
 
-\chapter{Differential Equations \small{(@ Lec 14 of ECON 204)}}
+\chapter{Differential Equations \small{(@ Lec 14/15 of ECON 204)}}
 \section{Initial Value Problem}
 \subsection{Initial Value Problem}
 \begin{definition}[Differential Equation]
@@ -2098,7 +2180,7 @@ has a complete solution in closed form.
 The matrix representation $$M=D F\left(y_s\right)$$
 need not be symmetric, hence may not be diagonalizable. If $M$ is diagonalizable over $\mathbb{C}$, the complete solution takes the following simple form:
 
-\begin{theorem}
+\begin{theorem}[Solutions of Linear Differential Equations with Constant Coefficients]\label{theorem:Solutions of Linear Differential Equations with Constant Coefficients}
     Consider the linear differential equation $$
     y^{\prime}=\left(y-y_s\right)^{\prime}=M\left(y-y_s\right)
     $$
@@ -2193,12 +2275,169 @@ need not be symmetric, hence may not be diagonalizable. If $M$ is diagonalizable
 
 \subsection{The Form of Real Solutions}
 We can determine the form of the real solutions once we know the eigenvalues. In an important special case, we can solve for the solution of the initial value problem without calculating the diagonalization, as in Equation \ref{Constant Coefficients}.
+\begin{theorem}
+    Consider the differential equation
+    $$
+    y^{\prime}=\left(y-y_s\right)^{\prime}=M\left(y-y_s\right)
+    $$
+    Suppose that the matrix $M$ can be diagonalized over $\mathbb{C}$. Let the eigenvalues of $M$ with the correct multiplicity be
+    $$
+    a_1+i b_1, a_1-i b_1, \ldots, a_m+i b_m, a_m-i b_m, a_{m+1}, \ldots, a_{n-m}
+    $$
+    Then for each fixed $i=1, \ldots, n$, every real solution is of the form
+    $$
+    \left(y(t)-y_s\right)_i=\sum_{j=1}^m e^{a_j\left(t-t_0\right)}\left(C_{i j} \cos b_j\left(t-t_0\right)+D_{i j} \sin b_j\left(t-t_0\right)\right)+\sum_{j=m+1}^{n-m} C_{i j} e^{a_j\left(t-t_0\right)}
+    $$
+    The $n^2$ parameters
+    $$
+    \left\{C_{i j}: i=1, \ldots, n ; j=1, \ldots, n-m\right\} \cup\left\{D_{i j}: i=1, \ldots, n ; j=1, \ldots, m\right\}
+    $$
+    have $n$ real degrees of freedom. The parameters are uniquely determined from the $n$ real initial conditions of an initial value problem.
+\end{theorem}
 
 
+\section{Higher Order Differential Equations}
+When we consider a differential equation of order $n$ is an equation of the form
+\begin{equation}
+    \begin{aligned}
+        y^{(n)}(t)=F\left(y(t),y'(t),...,y^{n-1}(t),t\right)
+    \end{aligned}
+    \nonumber
+\end{equation}
+We can always rewrite
+\begin{equation}
+    \begin{aligned}
+        \bar{y}(t)=\begin{bmatrix}
+            y(t)\\y'(t)\\
+            \vdots\\y^{n-1}(t)
+        \end{bmatrix}
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+\subsection{Second Order Linear Differential Equations}
+Consider the second order differential equation $y'' = cy + by'$ with $b, c \in \mathbb{R}$.
+
+Rewrite $\bar{y}(t)=\begin{bmatrix}
+    y(t)\\ y'(t)
+\end{bmatrix}$, then
+\begin{equation}
+    \begin{aligned}
+        \bar{y}'(t)=\begin{bmatrix}
+            y'(t)\\ y''(t)
+        \end{bmatrix}=\begin{bmatrix}
+            0&1\\
+            c&b
+        \end{bmatrix}\begin{bmatrix}
+            y(t)\\ y'(t)
+        \end{bmatrix}=\begin{bmatrix}
+            0&1\\
+            c&b
+        \end{bmatrix}\bar{y}
+    \end{aligned}
+    \nonumber
+\end{equation}
+By the Theorem \ref{theorem:Solutions of Linear Differential Equations with Constant Coefficients}, we can now solve it. Specifically, the eigenvalues of $\begin{bmatrix}
+    0&1\\
+    c&b
+\end{bmatrix}$ are $\frac{b\pm\sqrt{b^2+4c}}{2}$.
+
+\begin{example}
+    Consider the second order linear differential equation $y''=2y+y'$, we can solve the eigenvalues $\lambda_1=2,\lambda_2=-1$ and eigenvectors $v_1=(1,2), v_2=(1,-1)$. The general solution of $\bar{y}(t)=\begin{bmatrix}
+        y(t)\\ y'(t)
+    \end{bmatrix}$ can be solved by the Theorem \ref{theorem:Solutions of Linear Differential Equations with Constant Coefficients}.
+\end{example}
+
+\section{Inhomogeneous Linear Differential Equations with Nonconstant Coefficients}
+Consider the inhomogeneous linear differential equation
+\begin{equation}
+    \begin{aligned}
+        y'=M(t)y+H(t)
+    \end{aligned}
+    \tag{1}
+    \label{Equation 1}
+\end{equation}
+where $M$ is continuous function from $t$ to the set of $n \times n$ matrices; and $H$ is continuous
+function from $t$ to $\mathbb{R}^n$.
+
+\subsection{Theorem: General Solution of Inhomo $=$ General Solution of Homo $+$ Particular Solution of Inhomo}
+There is a close relationship between solutions of the \textit{inhomogeneous} linear differential equation \ref{Equation 1} and the associated \textit{homogeneous} linear differential equation
+\begin{equation}
+    \begin{aligned}
+        y'=M(t)y
+    \end{aligned}
+    \tag{2}
+    \label{Equation 2}
+\end{equation}
+
+\begin{theorem}[General Solution of Inhomo$=$General Solution of Homo$+$Particular Solution of Inhomo]
+    The general solution of the inhomogeneous linear differential equation \ref{Equation 1} is $$y_h+y_p$$
+    where $y_h$ is the general solution of the homogeneous linear differential equation \ref{Equation 2} and $y_p$ is any particular solution of the inhomogeneous linear differential equation \ref{Equation 1}.
+\end{theorem}
+Hence, to find general solution of inhomogeneous equation:
+\begin{enumerate}
+    \item Find general solution of homogeneous equation;
+    \item Find a particular solution of inhomogeneous equation;
+    \item Add these to get general solution of inhomogeneous equation
+\end{enumerate}
+
+
+
+
+\subsection{Matrix Exponentials Notations}
+In analogy with how we define $e^x$ for $x \in \mathbb{R}$, for an $n \times n$ matrix $M$ we define
+$$
+e^M=\sum_{k=0}^{\infty} \frac{M^k}{k !}=I+M+\frac{M^2}{2}+\cdots
+$$
+and
+$$
+e^{t M}=\sum_{k=0}^{\infty} \frac{t^k M^k}{k !}
+$$
+The matrix exponential satisfies many properties analogous to the exponential function in $\mathbb{R}$ and $\mathbb{C}$. Here are a few of the most important properties, which can be established fairly directly from the definitions above.
+\begin{enumerate}[-]
+    \item If $D$ is a diagonal matrix with diagonal $d_1, \ldots, d_n$,
+    $$
+    e^D=\left(\begin{array}{cccc}
+    e^{d_1} & 0 & \cdots & 0 \\
+    0 & e^{d_2} & \cdots & 0 \\
+    \vdots & \vdots & \ddots & \vdots \\
+    0 & 0 & \cdots & e^{d_n}
+    \end{array}\right)
+    $$
+    \item $e^{A+B}=e^A e^B$ if $A B=B A$ (this is not necessarily valid for matrices $A$ and $B$ that do not commute)
+    \item $e^{P^{-1} A P}=P^{-1} e^A P$\\
+    Then, if $M$ is diagonalizable, so $M = P^{-1}DP$ for a diagonal matrix $D$, then $$e^M=P^{-1} e^D P=P^{-1} \left(\begin{array}{cccc}
+        e^{d_1} & 0 & \cdots & 0 \\
+        0 & e^{d_2} & \cdots & 0 \\
+        \vdots & \vdots & \ddots & \vdots \\
+        0 & 0 & \cdots & e^{d_n}
+        \end{array}\right) P$$
+    \item $g(t)=e^{t M}$ is differentiable (in fact $C^{\infty}$) and $g^{\prime}(t)=M e^{t M}$
+\end{enumerate}
+
+
+\subsection{Theorem: Particular Solution of Inhomogeneous Linear Differential Equations with Constant Coefficients (Matrix)}
+\begin{theorem}[Particular  Solution with Constant Coefficients (Matrix)]
+    Consider the inhomogeneous linear differential equation \ref{Equation 1}, and suppose that $M(t)$ is a constant matrix $M$, independent of $t$. A particular solution of the inhomogeneous linear differential equation \ref{Equation 1}, satisfying the initial condition $y_p(t_0) = y_0$, is given by
+    \begin{equation}
+        \begin{aligned}
+            y_p(t_0)&=e^{(t-t_0)M}y_0+\int_{t_0}^t e^{(t-s)M} H(s) ds
+        \end{aligned}
+        \tag{3}
+        \label{Equation 3}
+    \end{equation}
+\end{theorem}
 
 
 \chapter{Big $\mathcal{O}$ and Small $o$ Notation}
 \section{Definition}
+\begin{definition}["$O$" and "$o$"]
+    \normalfont
+    \begin{enumerate}
+        \item $y = O(|h|^n)$ as $h \rightarrow 0$ -- read “$y$ is big-Oh of $|h|^n$” -- means $\exists K, \delta > 0$ s.t. $|h| < \delta \Rightarrow |y| \leq K|h|^n$
+        \item $y = o(|h|^n)$ as $h \rightarrow 0$ -- read “$y$ is little-Oh of $|h|^n$” -- means $\lim_{h \rightarrow 0}\frac{|y|}{|h|^n}=0$
+    \end{enumerate}
+\end{definition}
 \begin{center}
     \fcolorbox{black}{gray!10}{\parbox{.9\linewidth}{\textbf{\underline{Complexity}:}
     \begin{definition}
