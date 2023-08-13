@@ -8,7 +8,7 @@ html {
 }
 
 body {
-  font-size: 110%;
+  font-size: 120%;
   font-family: "Times New Roman", Times, serif;
   color: rgb(41, 5, 77);
   background-color: rgb(251, 251, 251);
@@ -24,6 +24,7 @@ body {
   padding-top: 5%;
   padding-bottom: 5%;
   max-width: auto;
+  line-height: 150%;
 }
 
 
@@ -59,7 +60,7 @@ body {
 	padding-left: 2em;
 	padding-right: 2em;
     border: none;
-    background: rgba(226, 227, 226, 0.7);
+    background: rgba(226, 227, 226, 0.8);
     text-align: left;
     vertical-align: top;
 }
@@ -125,7 +126,7 @@ body {
 }
 .motto {
     font-family: "STKaiti", "SimSun", serif;
-    font-size: 22px;
+    font-size: 100%;
     color: #4f0e0e;
     margin-top: 10px;
     padding: 10px;
@@ -136,11 +137,12 @@ body {
 
 .small_note {
     font-family: "STKaiti", "SimSun", serif;
-    font-size: 80%;
+    font-size: 70%;
 	margin-top: -10px;
     color: #09051f;
     padding: 5px;
     border-radius: 2px;
+	line-height: 100%;
 }
 
 
@@ -163,6 +165,7 @@ a, a > tt {
 	color: #063d5c;
 	text-decoration-color:#012e01;
 	font-weight: normal;
+	font-family: "STKaiti", "SimSun", serif;
 }
 
 a:hover {
@@ -275,7 +278,7 @@ p {
 	margin-top: 0.0em;
 	margin-bottom: 0.8em;
 	padding: 0;
-	line-height: 1.3;
+	line-height: 150%;
 }
 
 pre {

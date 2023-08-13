@@ -34,19 +34,20 @@
 \contentsline {subsection}{\numberline {2.3.9}Bounded Set \small {(@ Lec 03 of ECON 204)}}{9}{subsection.2.3.9}%
 \contentsline {subsection}{\numberline {2.3.10}Open, Closed Set \small {(@ Lec 04 of ECON 204)}}{9}{subsection.2.3.10}%
 \contentsline {subsection}{\numberline {2.3.11}Theorem: Union of open sets is open, Intersection of finite open sets is open}{10}{subsection.2.3.11}%
-\contentsline {subsection}{\numberline {2.3.12}Interior, Exterior, Boundary, Closure \small {(@ Lec 04 of ECON 204)}}{10}{subsection.2.3.12}%
-\contentsline {subsection}{\numberline {2.3.13}Dense Set: $\bar {A}=X$}{11}{subsection.2.3.13}%
-\contentsline {subsection}{\numberline {2.3.14}Compact Set}{12}{subsection.2.3.14}%
-\contentsline {subsection}{\numberline {2.3.15}Sublevel Set}{12}{subsection.2.3.15}%
-\contentsline {subsection}{\numberline {2.3.16}Set Operations}{12}{subsection.2.3.16}%
-\contentsline {subsection}{\numberline {2.3.17}Connected Sets \small {(@ Lec 07 of ECON 204)}}{12}{subsection.2.3.17}%
-\contentsline {subsection}{\numberline {2.3.18}Theorem: Connected Set over $\mathbb {E}^1$ $\Leftrightarrow $ Interval \small {(@ Lec 07 of ECON 204)}}{13}{subsection.2.3.18}%
-\contentsline {subsection}{\numberline {2.3.19}Theorem: Continuous Image of Connected Set is Connected}{13}{subsection.2.3.19}%
-\contentsline {subsection}{\numberline {2.3.20}Intermediate Value Theorem proved by connectedness}{13}{subsection.2.3.20}%
-\contentsline {section}{\numberline {2.4}Sequences}{13}{section.2.4}%
+\contentsline {subsection}{\numberline {2.3.12}Corollary: Intersection of closed sets is closed, Union of finite closed sets is closed}{10}{subsection.2.3.12}%
+\contentsline {subsection}{\numberline {2.3.13}Interior, Exterior, Boundary, Closure \small {(@ Lec 04 of ECON 204)}}{10}{subsection.2.3.13}%
+\contentsline {subsection}{\numberline {2.3.14}Dense Set: $\bar {A}=X$}{11}{subsection.2.3.14}%
+\contentsline {subsection}{\numberline {2.3.15}Compact Set}{12}{subsection.2.3.15}%
+\contentsline {subsection}{\numberline {2.3.16}Sublevel Set}{12}{subsection.2.3.16}%
+\contentsline {subsection}{\numberline {2.3.17}Set Operations}{12}{subsection.2.3.17}%
+\contentsline {subsection}{\numberline {2.3.18}Connected Sets \small {(@ Lec 07 of ECON 204)}}{13}{subsection.2.3.18}%
+\contentsline {subsection}{\numberline {2.3.19}Theorem: Connected Set over $\mathbb {E}^1$ $\Leftrightarrow $ Interval \small {(@ Lec 07 of ECON 204)}}{13}{subsection.2.3.19}%
+\contentsline {subsection}{\numberline {2.3.20}Theorem: Continuous Image of Connected Set is Connected}{13}{subsection.2.3.20}%
+\contentsline {subsection}{\numberline {2.3.21}Intermediate Value Theorem proved by connectedness}{13}{subsection.2.3.21}%
+\contentsline {section}{\numberline {2.4}Sequences}{14}{section.2.4}%
 \contentsline {subsection}{\numberline {2.4.1}Convergence of Sequences \small {(@ Lec 03 of ECON 204)}}{14}{subsection.2.4.1}%
 \contentsline {subsection}{\numberline {2.4.2}Limit Point \small {(@ Lec 03 of ECON 204)}}{14}{subsection.2.4.2}%
-\contentsline {subsection}{\numberline {2.4.3}Cluster Point \small {(@ Lec 03 of ECON 204)}}{14}{subsection.2.4.3}%
+\contentsline {subsection}{\numberline {2.4.3}Cluster Point \small {(@ Lec 03 of ECON 204)}}{15}{subsection.2.4.3}%
 \contentsline {subsection}{\numberline {2.4.4}Proposition: Sequences in $\mathbb {R}^n$, Bounded above and non-decreasing sequence $\Rightarrow $ Converge}{15}{subsection.2.4.4}%
 \contentsline {subsection}{\numberline {2.4.5}Theorem: Increasing/Decreasing Sequences in $\mathbb {R}^n$, Limit is $\sup $/$\inf $ \small {(@ Lec 03 of ECON 204)}}{15}{subsection.2.4.5}%
 \contentsline {subsection}{\numberline {2.4.6}Definition: $\lim \sup $ and $\lim \inf $ \small {(@ Lec 03 of ECON 204)}}{15}{subsection.2.4.6}%
@@ -54,17 +55,17 @@
 \contentsline {subsection}{\numberline {2.4.8}Rising Sun Lemma: Sequence in $\mathbb {R}^n$ contains monotone subsequence \small {(@ Lec 03 of ECON 204)}}{16}{subsection.2.4.8}%
 \contentsline {subsection}{\numberline {2.4.9}Bolzano-Weierstrass: Bounded Sequence in $\mathbb {R}^n$ contains a convergent subsequence \small {(@ Lec 03 of ECON 204)}}{16}{subsection.2.4.9}%
 \contentsline {section}{\numberline {2.5}Complete Metric Spaces \small {(@ Lec 05 of ECON 204)}}{16}{section.2.5}%
-\contentsline {subsection}{\numberline {2.5.1}Cauchy Sequence}{16}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.1}Cauchy Sequence}{17}{subsection.2.5.1}%
 \contentsline {subsection}{\numberline {2.5.2}Theorem: Convergent $\Rightarrow $ Cauchy}{17}{subsection.2.5.2}%
 \contentsline {subsection}{\numberline {2.5.3}Complete Metric Space and Banach Space}{17}{subsection.2.5.3}%
-\contentsline {subsection}{\numberline {2.5.4}Theorem: Subset of Complete Metric Space is Complete $\Leftrightarrow $ Subset is Closed}{17}{subsection.2.5.4}%
+\contentsline {subsection}{\numberline {2.5.4}Theorem: Subset of Complete Metric Space is Complete $\Leftrightarrow $ Subset is Closed}{18}{subsection.2.5.4}%
 \contentsline {section}{\numberline {2.6}Compactness over Metric Spaces \small {(@ Lec 06 of ECON 204)}}{18}{section.2.6}%
 \contentsline {subsection}{\numberline {2.6.1}Open Cover}{18}{subsection.2.6.1}%
 \contentsline {subsection}{\numberline {2.6.2}Definition of Compact Set}{18}{subsection.2.6.2}%
 \contentsline {subsection}{\numberline {2.6.3}Theorem: Closed Subset of Compact Set is Compact}{18}{subsection.2.6.3}%
 \contentsline {subsection}{\numberline {2.6.4}Theorem: Compact Set over Metric Space is Closed}{19}{subsection.2.6.4}%
-\contentsline {subsection}{\numberline {2.6.5}Definition of Sequentially Compact}{19}{subsection.2.6.5}%
-\contentsline {subsection}{\numberline {2.6.6}Theorem: Compact $\Leftrightarrow $ Sequentially Compact}{19}{subsection.2.6.6}%
+\contentsline {subsection}{\numberline {2.6.5}Definition of Sequentially Compact}{20}{subsection.2.6.5}%
+\contentsline {subsection}{\numberline {2.6.6}Theorem: Compact $\Leftrightarrow $ Sequentially Compact}{20}{subsection.2.6.6}%
 \contentsline {subsection}{\numberline {2.6.7}Definition of Totally Bounded}{20}{subsection.2.6.7}%
 \contentsline {subsection}{\numberline {2.6.8}Theroem: Compact $\Leftrightarrow $ Complete/Closed and Totally Bounded}{20}{subsection.2.6.8}%
 \contentsline {subsection}{\numberline {2.6.9}Heine-Borel Theorem: With Euclidean Metric, Compact $\Leftrightarrow $ Closed and Bounded}{21}{subsection.2.6.9}%
@@ -98,71 +99,76 @@
 \contentsline {section}{\numberline {3.5}Monotonic Function \small {(@ Lec 05 of ECON 204)}}{30}{section.3.5}%
 \contentsline {subsection}{\numberline {3.5.1}Theorem: Monotonically Increasing $\Rightarrow $ One-sided Limits exist}{30}{subsection.3.5.1}%
 \contentsline {subsection}{\numberline {3.5.2}Theorem: Monotonically Increasing $\Rightarrow $ Set of Points are discontinuous is finite (possibly empty) or countable}{31}{subsection.3.5.2}%
-\contentsline {section}{\numberline {3.6}Correspondence \small {(@ Lec 07 of ECON 204)}}{31}{section.3.6}%
-\contentsline {subsection}{\numberline {3.6.1}Definition of Correspondence}{31}{subsection.3.6.1}%
-\contentsline {subsection}{\numberline {3.6.2}Continuity of Correspondences}{32}{subsection.3.6.2}%
-\contentsline {subsection}{\numberline {3.6.3}Graph of Correspondence}{32}{subsection.3.6.3}%
-\contentsline {subsection}{\numberline {3.6.4}Theorem: $\Psi (x)=\{f(x)\}$ is uhc $\Leftrightarrow $ $f$ is continuous}{34}{subsection.3.6.4}%
-\contentsline {subsection}{\numberline {3.6.5}Closed-valued and Compact-valued Correspondences}{34}{subsection.3.6.5}%
-\contentsline {section}{\numberline {3.7}Differentiable Function \small {(@ Lec 11 of ECON 204)}}{35}{section.3.7}%
-\contentsline {subsection}{\numberline {3.7.1}Definition of Differentiable in $\mathbb {R}$}{35}{subsection.3.7.1}%
-\contentsline {subsection}{\numberline {3.7.2}General Definition of Differentiable}{35}{subsection.3.7.2}%
-\contentsline {subsection}{\numberline {3.7.3}"$O$" and "$o$" Notations}{36}{subsection.3.7.3}%
-\contentsline {subsection}{\numberline {3.7.4}Jacobian and Error Term}{36}{subsection.3.7.4}%
-\contentsline {subsection}{\numberline {3.7.5}Theorem: Differentiable $\Rightarrow $ Partial Derivatives (and Jacobian) exist}{37}{subsection.3.7.5}%
-\contentsline {subsection}{\numberline {3.7.6}Theorem: Partial Derivatives exist and Continuous $\Rightarrow $ Differentiable}{37}{subsection.3.7.6}%
-\contentsline {subsection}{\numberline {3.7.7}Directional Derivatives}{37}{subsection.3.7.7}%
-\contentsline {subsection}{\numberline {3.7.8}Chain Rule: $d F_{x_0}= d g_{f(x_0)} \circ d f_{x_0}$ and $D F_{x_0}= D g (f(x_0)) D f (x_0)$}{38}{subsection.3.7.8}%
-\contentsline {subsection}{\numberline {3.7.9}Mean Value Theorem: $\exists z\in l(x,y),\|f(y)-f(x)\|\leq \|df_z\| \|y-x\|$}{38}{subsection.3.7.9}%
-\contentsline {subsection}{\numberline {3.7.10}Taylor's Theorem}{39}{subsection.3.7.10}%
-\contentsline {subsection}{\numberline {3.7.11}$C^k$ Function and Continuously Differentiable}{39}{subsection.3.7.11}%
-\contentsline {subsection}{\numberline {3.7.12}Taylor's Theorem with $C^k$}{39}{subsection.3.7.12}%
-\contentsline {chapter}{\numberline {4}Tools for Comparative Statics}{42}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Regular and Critical Points and Values}{42}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Rank of Derivatives $\textnormal {Rank} df_x=\textnormal {Rank} Df(x)$}{42}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Regular and Critical Points and Values}{42}{subsection.4.1.2}%
-\contentsline {section}{\numberline {4.2}Inverse and Implicit Function Theorem}{43}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Inverse Function Theorem}{43}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Implicit Function Theorem}{43}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.2.3}Prove Implicit Function Theorem Given Inverse Function Theorem}{44}{subsection.4.2.3}%
-\contentsline {subsection}{\numberline {4.2.4}Prove Inverse Function Theorem Given Implicit Function Theorem}{45}{subsection.4.2.4}%
-\contentsline {subsection}{\numberline {4.2.5}Example: Using Implicit Function Theorem in Comparative Statics}{45}{subsection.4.2.5}%
-\contentsline {subsection}{\numberline {4.2.6}Corollary: $a \rightarrow \{x\in X: f(x,a)=0\}$ is lhc}{46}{subsection.4.2.6}%
-\contentsline {section}{\numberline {4.3}Transversality and Genericity}{46}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Lebesgue Measure Zero}{46}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Sard's Theorem}{47}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}Transversality Theorem}{47}{subsection.4.3.3}%
-\contentsline {chapter}{\numberline {5}Fixed Point Theorem}{48}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Contraction Mapping Theorem \small {(@ Lec 05 of ECON 204)}}{48}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Contractions}{48}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Theorem: Contraction $\Rightarrow $ Uniformly Continuous}{48}{subsection.5.1.2}%
-\contentsline {subsection}{\numberline {5.1.3}Theorem: Blackwell's Sufficient Conditions for Contraction}{48}{subsection.5.1.3}%
-\contentsline {section}{\numberline {5.2}Fixed Point Theorem \small {(@ Lec 05 of ECON 204)}}{49}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Fixed Point}{49}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Contraction Mapping Theorem: Existence and Uniqueness of Fixed Point}{50}{subsection.5.2.2}%
-\contentsline {subsection}{\numberline {5.2.3}Theorem: Fixed Point's Continuous Dependence on Parameters}{51}{subsection.5.2.3}%
-\contentsline {section}{\numberline {5.3}Brouwer's Fixed Point Theorem \small {(@ Lec 13 of ECON 204)}}{51}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Simple One: One-dimension}{51}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}Brouwer's Fixed Point Theorem}{52}{subsection.5.3.2}%
-\contentsline {section}{\numberline {5.4}Fixed Points for Correspondences \small {(@ Lec 13 of ECON 204)}}{52}{section.5.4}%
-\contentsline {subsection}{\numberline {5.4.1}Definition}{52}{subsection.5.4.1}%
-\contentsline {subsection}{\numberline {5.4.2}Kakutani's Fixed Point Theorem}{52}{subsection.5.4.2}%
-\contentsline {chapter}{\numberline {6}Differential Equations \small {(@ Lec 14/15 of ECON 204)}}{53}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Initial Value Problem}{53}{section.6.1}%
-\contentsline {subsection}{\numberline {6.1.1}Initial Value Problem}{53}{subsection.6.1.1}%
-\contentsline {subsection}{\numberline {6.1.2}Theorem: Initial Value Problem, Continuous $\rightarrow $ Existence; Lipschitz $\rightarrow $ Uniqueness}{53}{subsection.6.1.2}%
-\contentsline {section}{\numberline {6.2}Autonomous Differential Equation}{54}{section.6.2}%
-\contentsline {subsection}{\numberline {6.2.1}Autonomous Differential Equation}{54}{subsection.6.2.1}%
-\contentsline {subsection}{\numberline {6.2.2}Complex Exponentials}{55}{subsection.6.2.2}%
-\contentsline {subsection}{\numberline {6.2.3}Solutions of Simple Case: $y'(t)=ay(t)$}{55}{subsection.6.2.3}%
-\contentsline {subsection}{\numberline {6.2.4}Solutions of Special Case: Linear Differential Equations with Constant Coefficients}{55}{subsection.6.2.4}%
-\contentsline {subsection}{\numberline {6.2.5}The Form of Real Solutions}{58}{subsection.6.2.5}%
-\contentsline {section}{\numberline {6.3}Higher Order Differential Equations}{59}{section.6.3}%
-\contentsline {subsection}{\numberline {6.3.1}Second Order Linear Differential Equations}{59}{subsection.6.3.1}%
-\contentsline {section}{\numberline {6.4}Inhomogeneous Linear Differential Equations with Nonconstant Coefficients}{59}{section.6.4}%
-\contentsline {subsection}{\numberline {6.4.1}Theorem: General Solution of Inhomo $=$ General Solution of Homo $+$ Particular Solution of Inhomo}{60}{subsection.6.4.1}%
-\contentsline {subsection}{\numberline {6.4.2}Matrix Exponentials Notations}{60}{subsection.6.4.2}%
-\contentsline {subsection}{\numberline {6.4.3}Theorem: Particular Solution of Inhomogeneous Linear Differential Equations with Constant Coefficients (Matrix)}{61}{subsection.6.4.3}%
-\contentsline {chapter}{\numberline {7}Big $\mathcal {O}$ and Small $o$ Notation}{62}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Definition}{62}{section.7.1}%
-\contentsline {subsection}{\numberline {7.1.1}Extension}{63}{subsection.7.1.1}%
+\contentsline {section}{\numberline {3.6}Differentiable Function \small {(@ Lec 11 of ECON 204)}}{31}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Definition of Differentiable in $\mathbb {R}$}{31}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.2}General Definition of Differentiable}{32}{subsection.3.6.2}%
+\contentsline {subsection}{\numberline {3.6.3}"$O$" and "$o$" Notations}{32}{subsection.3.6.3}%
+\contentsline {subsection}{\numberline {3.6.4}Jacobian and Error Term}{32}{subsection.3.6.4}%
+\contentsline {subsection}{\numberline {3.6.5}Theorem: Differentiable $\Rightarrow $ Partial Derivatives (and Jacobian) exist}{33}{subsection.3.6.5}%
+\contentsline {subsection}{\numberline {3.6.6}Theorem: Partial Derivatives exist and Continuous $\Rightarrow $ Differentiable}{34}{subsection.3.6.6}%
+\contentsline {subsection}{\numberline {3.6.7}Directional Derivatives}{34}{subsection.3.6.7}%
+\contentsline {subsection}{\numberline {3.6.8}Chain Rule: $d F_{x_0}= d g_{f(x_0)} \circ d f_{x_0}$ and $D F_{x_0}= D g (f(x_0)) D f (x_0)$}{34}{subsection.3.6.8}%
+\contentsline {subsection}{\numberline {3.6.9}Mean Value Theorem: $\exists z\in l(x,y),\|f(y)-f(x)\|\leq \|df_z\| \|y-x\|$}{34}{subsection.3.6.9}%
+\contentsline {subsection}{\numberline {3.6.10}Taylor's Theorem}{35}{subsection.3.6.10}%
+\contentsline {subsection}{\numberline {3.6.11}$C^k$ Function and Continuously Differentiable}{36}{subsection.3.6.11}%
+\contentsline {subsection}{\numberline {3.6.12}Taylor's Theorem with $C^k$}{36}{subsection.3.6.12}%
+\contentsline {chapter}{\numberline {4}Tools for Comparative Statics}{39}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Regular and Critical Points and Values}{39}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Rank of Derivatives $\textnormal {Rank} df_x=\textnormal {Rank} Df(x)$}{39}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Regular and Critical Points and Values}{39}{subsection.4.1.2}%
+\contentsline {section}{\numberline {4.2}Inverse and Implicit Function Theorem}{40}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Inverse Function Theorem}{40}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Implicit Function Theorem}{40}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Prove Implicit Function Theorem Given Inverse Function Theorem}{41}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.4}Prove Inverse Function Theorem Given Implicit Function Theorem}{42}{subsection.4.2.4}%
+\contentsline {subsection}{\numberline {4.2.5}Example: Using Implicit Function Theorem in Comparative Statics}{42}{subsection.4.2.5}%
+\contentsline {subsection}{\numberline {4.2.6}Corollary: $a \rightarrow \{x\in X: f(x,a)=0\}$ is lhc}{43}{subsection.4.2.6}%
+\contentsline {section}{\numberline {4.3}Transversality and Genericity}{43}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Lebesgue Measure Zero}{43}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Sard's Theorem}{44}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Transversality Theorem}{44}{subsection.4.3.3}%
+\contentsline {chapter}{\numberline {5}Fixed Point Theorem}{45}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Contraction Mapping Theorem \small {(@ Lec 05 of ECON 204)}}{45}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Contractions}{45}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Theorem: Contraction $\Rightarrow $ Uniformly Continuous}{45}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}Theorem: Blackwell's Sufficient Conditions for Contraction}{45}{subsection.5.1.3}%
+\contentsline {section}{\numberline {5.2}Fixed Point Theorem \small {(@ Lec 05 of ECON 204)}}{46}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Fixed Point}{46}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Contraction Mapping Theorem: Existence and Uniqueness of Fixed Point}{47}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}Theorem: Fixed Point's Continuous Dependence on Parameters}{48}{subsection.5.2.3}%
+\contentsline {section}{\numberline {5.3}Brouwer's Fixed Point Theorem \small {(@ Lec 13 of ECON 204)}}{48}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Simple One: One-dimension}{48}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Brouwer's Fixed Point Theorem}{49}{subsection.5.3.2}%
+\contentsline {chapter}{\numberline {6}Correspondence: $\Psi : X \rightarrow 2^Y$ \small {(@ Lec 07 of ECON 204)}}{50}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Continuity of Correspondences}{50}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Upper/Lower Hemicontinuous}{50}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Theorem: $\Psi (x)=\{f(x)\}$ is uhc $\Leftrightarrow $ $f$ is continuous}{52}{subsection.6.1.2}%
+\contentsline {subsection}{\numberline {6.1.3}Berge's Maximum Theorem: $v(y)=\max _{x\in \Gamma (y)f(x,y)}$ is continuous; $\{x:f(x,y)=v(y)\}$ is uhc with non-empty compact values}{52}{subsection.6.1.3}%
+\contentsline {section}{\numberline {6.2}Graph of Correspondence}{52}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Closed Graph}{52}{subsection.6.2.1}%
+\contentsline {section}{\numberline {6.3}Closed-valued and Compact-valued Correspondences}{53}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Closed-valued, uhc and Closed Graph}{53}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}Theorem: compact-valued, uhs correspondence of compact set is compact}{53}{subsection.6.3.2}%
+\contentsline {section}{\numberline {6.4}Fixed Points for Correspondences \small {(@ Lec 13 of ECON 204)}}{54}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}Definition}{54}{subsection.6.4.1}%
+\contentsline {subsection}{\numberline {6.4.2}Kakutani's Fixed Point Theorem: Existence of a Fixed Point}{54}{subsection.6.4.2}%
+\contentsline {subsection}{\numberline {6.4.3}Theorem: $\exists $ compact set $C = \cap _{i=0}^\infty \Psi ^i(X)$ s.t. $\Psi (C)=C$}{54}{subsection.6.4.3}%
+\contentsline {chapter}{\numberline {7}Differential Equations \small {(@ Lec 14/15 of ECON 204)}}{55}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Initial Value Problem}{55}{section.7.1}%
+\contentsline {subsection}{\numberline {7.1.1}Initial Value Problem}{55}{subsection.7.1.1}%
+\contentsline {subsection}{\numberline {7.1.2}Theorem: Initial Value Problem, Continuous $\rightarrow $ Existence; Lipschitz $\rightarrow $ Uniqueness}{55}{subsection.7.1.2}%
+\contentsline {section}{\numberline {7.2}Autonomous Differential Equation}{56}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}Autonomous Differential Equation}{56}{subsection.7.2.1}%
+\contentsline {subsection}{\numberline {7.2.2}Complex Exponentials}{57}{subsection.7.2.2}%
+\contentsline {subsection}{\numberline {7.2.3}Solutions of Simple Case: $y'(t)=ay(t)$}{57}{subsection.7.2.3}%
+\contentsline {subsection}{\numberline {7.2.4}Solutions of Special Case: Linear Differential Equations with Constant Coefficients}{57}{subsection.7.2.4}%
+\contentsline {subsection}{\numberline {7.2.5}The Form of Real Solutions}{60}{subsection.7.2.5}%
+\contentsline {section}{\numberline {7.3}Higher Order Differential Equations}{61}{section.7.3}%
+\contentsline {subsection}{\numberline {7.3.1}Second Order Linear Differential Equations}{61}{subsection.7.3.1}%
+\contentsline {section}{\numberline {7.4}Inhomogeneous Linear Differential Equations with Nonconstant Coefficients}{61}{section.7.4}%
+\contentsline {subsection}{\numberline {7.4.1}Theorem: General Solution of Inhomo $=$ General Solution of Homo $+$ Particular Solution of Inhomo}{62}{subsection.7.4.1}%
+\contentsline {subsection}{\numberline {7.4.2}Matrix Exponentials Notations}{62}{subsection.7.4.2}%
+\contentsline {subsection}{\numberline {7.4.3}Theorem: Particular Solution of Inhomogeneous Linear Differential Equations with Constant Coefficients (Matrix)}{63}{subsection.7.4.3}%
+\contentsline {chapter}{\numberline {8}Big $\mathcal {O}$ and Small $o$ Notation}{64}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Definition}{64}{section.8.1}%
+\contentsline {subsection}{\numberline {8.1.1}Extension}{65}{subsection.8.1.1}%
