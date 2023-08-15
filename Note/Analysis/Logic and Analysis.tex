@@ -262,18 +262,19 @@ $$
     A set $S$ is \textbf{well defined} if an object $a$ is either $a\in S$ or $a\notin S$.
 \end{definition}
 
-\subsection{Numerically Equivalent \small{(@ Lec 01 of ECON 204)}}
+\subsection{Numerically Equivalent: $\exists$ bijection \small{(@ Lec 01 of ECON 204)}}
 \begin{definition}
 \normalfont
     Two sets $A, B$ are \textbf{numerically equivalent} (or have the same cardinality) if there is a bijection $f : A \rightarrow B$, that is, 1-1 ($a \neq a' \Rightarrow f(a) \neq f(a')$), and onto ($\forall b\in B, \exists a\in A$ s.t. $f(a)=b$).
 \end{definition}
 
-\subsection{Finite, Countable Set \small{(@ Lec 01 of ECON 204)}}
+\subsection{Finite \small{(@ Lec 01 of ECON 204)}}
 \begin{definition}[Finite Set]
 \normalfont
     A set is either \textbf{finite} or \textbf{infinite}. A set is \textbf{finite} if it is \underline{numerically equivalent to} $\{1,...,n\}$ for some $n$. A set that is not finite is infinite.
 \end{definition}
 
+\subsection{Countable Set: numerically equivalent to $\mathbb{N}$ \small{(@ Lec 01 of ECON 204)}}
 We give a more precise definition to classify infinite set:
 \begin{definition}[Countable Set]
 \normalfont
@@ -419,7 +420,7 @@ Equivalent: $\exists \beta>0$ and $s\in S$ such that $S\subseteq B_\beta(s)$.
     Any set in a metric space $(X, d)$ can be written as the intersection of open sets.
 \end{proposition}
 
-\subsection{Theorem: Union of open sets is open, Intersection of finite open sets is open}
+\subsection{$\bigstar$ Theorem: Union of open sets is open, Intersection of finite open sets is open}
 \begin{theorem}[Union of open sets is open, Intersection of finite open sets is open]
     In any metric space $(X, d)$,
     \begin{enumerate}
@@ -428,7 +429,7 @@ Equivalent: $\exists \beta>0$ and $s\in S$ such that $S\subseteq B_\beta(s)$.
     \end{enumerate}
 \end{theorem}
 
-\subsection{Corollary: Intersection of closed sets is closed, Union of finite closed sets is closed}
+\subsection{$\bigstar$ Corollary: Intersection of closed sets is closed, Union of finite closed sets is closed}
 \begin{corollary}[Intersection of closed sets is closed, Union of finite closed sets is closed]
     In any metric space $(X, d)$,
     \begin{enumerate}
@@ -715,8 +716,8 @@ A Cauchy sequence is trying really hard to converge, but there may not be anythi
     Then $C(X)$ is a Banach space.
 \end{theorem}
 
-\subsection{Theorem: Subset of Complete Metric Space is Complete $\Leftrightarrow$ Subset is Closed}
-\begin{theorem}[Subset of Complete Metric Space is Complete $\Leftrightarrow$ Subset is Closed]\label{complete_equal_closed}
+\subsection{$\bigstar$ Theorem: Subset of Complete Metric Space "is Complete" $\Leftrightarrow$ "is Closed"}
+\begin{theorem}[Subset of Complete Metric Space "is Complete" $\Leftrightarrow$ "is Closed"]\label{complete_equal_closed}
     Suppose $(X, d)$ is a complete metric space and $Y \subseteq X$. Then $(Y, d) = (Y, d\mid_Y)$ is complete \underline{if and only if} $Y$ is a \textit{closed subset} of $X$. (where $d: \mathbb{X}\times \mathbb{X}\rightarrow \mathbb{R}_+$; $d\mid_Y: \mathbb{Y}\times \mathbb{Y}\rightarrow \mathbb{R}_+$)
 \end{theorem}
 
@@ -804,7 +805,7 @@ A Cauchy sequence is trying really hard to converge, but there may not be anythi
     A set $A$ in a metric space $(X, d)$ is \textbf{compact} \underline{if and only if} it is \textbf{sequentially compact}.
 \end{theorem}
 
-\subsection{Definition of Totally Bounded}
+\subsection{Definition of Totally Bounded: $\forall \varepsilon>0: \exists x_1,...,x_n\in A \textnormal{ s.t. }A\subseteq \cup_{i=1}^n B_{\varepsilon}(x_i).$}
 \begin{definition}[Totally Bounded]
     \normalfont
     A set $A$ in a metric space $(X, d)$ is \textbf{totally bounded} if, for every $\varepsilon > 0$, $$\exists x_1,...,x_n\in A \textnormal{ s.t. }A\subseteq \cup_{i=1}^n B_{\varepsilon}(x_i).$$
@@ -823,7 +824,7 @@ A Cauchy sequence is trying really hard to converge, but there may not be anythi
     \end{enumerate}
 \end{example}
 
-\subsection{Theroem: Compact $\Leftrightarrow$ Complete/Closed and Totally Bounded}
+\subsection{$\bigstar$ Theroem: Compact $\Leftrightarrow$ Complete/Closed and Totally Bounded}
 \begin{theorem}[Subset is Compact $\Leftrightarrow$ Complete and Totally Bounded]\label{compact_equal_complete_and_totally_bounded}
     Let $A$ be a subset of a metric space $(X, d)$. Then $A$ is \textbf{compact} \underline{if and only if} $A$ is \textbf{complete} and \textbf{totally bounded}.
 \end{theorem}
@@ -839,7 +840,7 @@ A Cauchy sequence is trying really hard to converge, but there may not be anythi
     Directly by theorem \ref{complete_equal_closed} and theorem \ref{compact_equal_complete_and_totally_bounded}.
 \end{proof}
 
-\subsection{Heine-Borel Theorem: With Euclidean Metric, Compact $\Leftrightarrow$ Closed and Bounded}
+\subsection{$\bigstar$ Heine-Borel Theorem: With Euclidean Metric, Compact $\Leftrightarrow$ Closed and Bounded}
 \begin{claim}[With Euclidean Metric, Compact $\Leftrightarrow$ Closed and Bounded]
     If $A \subseteq \mathbb{E}^n$, then $A$ is \textbf{totally bounded} \underline{if and only if} $A$ is \textbf{bounded}.
 \end{claim}
@@ -848,7 +849,7 @@ A Cauchy sequence is trying really hard to converge, but there may not be anythi
     If $A \subseteq \mathbb{E}^n$, then $A$ is \textbf{compact} \underline{if and only if} $A$ is \textbf{closed} and \textbf{bounded}.
 \end{theorem}
 
-\subsection{Theorem: Continuous Images of Compact Set is Compact}
+\subsection{$\bigstar$ Theorem: Continuous Images of Compact Set is Compact}
 \begin{theorem}[Continuous Images of Compact Set is Compact]\label{con_compact_is_compact}
     Let $(X, d)$ and $(Y, \rho)$ be metric spaces. If $f : X \rightarrow Y$ is continuous and $C$ is a compact subset of $(X, d)$, then $f(C)$ is compact in $(Y, \rho)$.
 \end{theorem}
@@ -1845,7 +1846,7 @@ We want to know how the function $x^*(a)$ changes with keeping $f(x^*,a)=0$.
 \chapter{Fixed Point Theorem}
 
 \section{Contraction Mapping Theorem \small{(@ Lec 05 of ECON 204)}}
-\subsection{Contractions}
+\subsection{Contraction: Lipschitz continuous with constant $<1$}
 \begin{definition}
     \normalfont
     Let $(X, d)$ be a \underline{nonempty complete} metric space. An operator is a function $T : X \rightarrow X$. An operator $T$ is a \textbf{contraction of modulus $\beta$} if $\beta < 1$ and $$d(T(x), T(y)) \leq \beta d(x, y), \forall x,y\in X$$
@@ -1860,7 +1861,7 @@ A contraction shrinks distances by a \textit{uniform} factor $\beta < 1$.
     Let $\delta=\frac{\varepsilon}{\beta}$.
 \end{proof}
 
-\subsection{Theorem: Blackwell's Sufficient Conditions for Contraction}
+\subsection{Blackwell's Sufficient Conditions for Contraction}
 Let $X$ be a set, and let $B(X)$ be the set of all bounded functions from $X$ to $\mathbb{R}$. Then $(B(X), \|\cdot\|_\infty)$ is a normed vector space.
 
 (Notice that below we use shorthand notation that identifies a constant function with its constant value in $\mathbb{R}$, that is, we write interchangeably $a \in \mathbb{R}$ and $a : X \rightarrow \mathbb{R}$ to denote the function such that $a(x) = a, \forall x \in X$.)
@@ -1919,7 +1920,7 @@ Let $X$ be a set, and let $B(X)$ be the set of all bounded functions from $X$ to
     \end{enumerate}
 \end{example}
 
-\subsection{Contraction Mapping Theorem: Existence and Uniqueness of Fixed Point}
+\subsection{$\bigstar$ Contraction Mapping Theorem: contraction $\Rightarrow$ exist unique fixed point}
 \begin{theorem}[Contraction Mapping Theorem]
     Let $(X, d)$ be a nonempty complete metric space and $T : X \rightarrow X$ a contraction with modulus $\beta < 1$. Then
     \begin{enumerate}
@@ -1985,7 +1986,7 @@ Note that the theorem asserts both the \textbf{existence} and \textbf{uniqueness
 
 
 
-\subsection{Theorem: Fixed Point's Continuous Dependence on Parameters}
+\subsection{Conditions for Fixed Point's Continuous Dependence on Parameters}
 \begin{theorem}[Continuous Dependence on Parameters]
     Let $(X, d)$ and $(\Omega, \rho)$ be two metric spaces and $T : X \times \Omega \rightarrow X$. For each parameter $\omega \in \Omega$ let $T_\omega : X \rightarrow X$ be defined by $T_\omega(x)=T(x,\omega)$.
 
@@ -2003,7 +2004,7 @@ Note that the theorem asserts both the \textbf{existence} and \textbf{uniqueness
     Easily proved by Intermediate Value Theorem.
 \end{proof}
 
-\subsection{Brouwer's Fixed Point Theorem}
+\subsection{$\bigstar$ Brouwer's Fixed Point Theorem: continuous function has fixed point over compact, convex set}
 \begin{theorem}[Brouwer's Fixed Point Theorem]
     Let $X \subseteq \mathbb{R}^n$ be nonempty, \textbf{compact}, and \textbf{convex}, and let $f : X \rightarrow X$ be continuous. Then $f$ has a fixed point.
 \end{theorem}
@@ -2042,13 +2043,13 @@ $\Psi$ is the demand correspondence associated with the utility function $u$; ty
 Let $X\subseteq \mathbb{E}^n$, $Y\subseteq \mathbb{E}^m$, and $\Psi: X \rightarrow 2^Y$.
 \begin{definition}[Upper Hemicontinuous]
     \normalfont
-    $\Psi$ is \textbf{upper hemicontinuous} (uhc) at $x_0 \in X$ if, for every open set $V$ with $\Psi(x_0)\subseteq V$, there is an \underline{open set} $U$ with $x_0 \in U$ s.t.
+    $\Psi$ is \textbf{upper hemicontinuous} (uhc) at $x_0 \in X$ if, for every \underline{open set} $V$ with $\Psi(x_0)\subseteq V$, there is an \underline{open set} $U$ with $x_0 \in U$ s.t.
     $$x\in U \Rightarrow \Psi(x)\subseteq V$$
 \end{definition}
 Upper hemicontinuity reflects the requirement that $\Psi$ doesn't “jump down/implode in the limit” at $x_0$. \textit{(A set to “jump down” at the limit $x_0$: It should mean the set suddenly gets smaller -- it “implodes in the limit” -- that is, there is a sequence $x_n \rightarrow x_0$ and points $y_n \in \Psi(x_n)$ that are far from every point of $\Psi(x_0)$ as $n \rightarrow \infty$.)}
 \begin{definition}[Lower Hemicontinuous]
     \normalfont
-    $\Psi$ is \textbf{lower hemicontinuous} (lhc) at $x_0 \in X$ if, for every open set $V$ with $\Psi(x_0)\cap V \neq \emptyset$, there is an \underline{open set} $U$ with $x_0 \in U$ s.t.
+    $\Psi$ is \textbf{lower hemicontinuous} (lhc) at $x_0 \in X$ if, for every \underline{open set} $V$ with $\Psi(x_0)\cap V \neq \emptyset$, there is an \underline{open set} $U$ with $x_0 \in U$ s.t.
     $$x\in U \Rightarrow \Psi(x)\cap V\neq \emptyset$$
 \end{definition}
 Lower hemicontinuity reflects the requirement that $\Psi$ doesn't “jump up/explode in the limit” at $x_0$. \textit{(A set to “jump up” at the limit $x_0$: It should mean that the set suddenly gets bigger -- it “explodes in the limit” -- that is, there is a sequence $x_n \rightarrow x_0$ and a point $y_0\in\Psi(x_0)$ that is far from every point of $\Psi(x_n)$ as $n \rightarrow \infty$.)}
@@ -2082,7 +2083,7 @@ Lower hemicontinuity reflects the requirement that $\Psi$ doesn't “jump up/exp
 \end{theorem}
 
 
-\subsection{Berge's Maximum Theorem: $v(y)=\max_{x\in\Gamma(y)f(x,y)}$ is continuous; $\{x:f(x,y)=v(y)\}$ is uhc with non-empty compact values}
+\subsection{Berge's Maximum Theorem: $v(y)=\max_{x\in\Gamma(y)}f(x,y)$ is continuous; $\{x:f(x,y)=v(y)\}$ is uhc with non-empty compact values}
 \begin{theorem}[Berge's Maximum Theorem]
     Let $X \subseteq \mathbb{R}^n$ and $Y \subseteq \mathbb{R}^m$. Consider the function $f : X \times Y \rightarrow \mathbb{R}$ and the correspondence $\Gamma : Y \rightarrow 2^X$. Define $v(y) = \max_{x\in\Gamma(y)} f(x, y)$ and $Ω(y) = \argmax_{x\in\Gamma(y)} f(x, y)=\{x:f(x,y)=v(y)\}$. Suppose $f$ and $\Gamma$ are continuous, and that $\Gamma$ has non-empty compact values. Show that v is continuous and $\Omega$ is uhc with non-empty compact values.
 \end{theorem}
@@ -2113,13 +2114,14 @@ By the definition of continuous function $f:\mathbb{R}^n \rightarrow \mathbb{R}$
     Let $V = (-0.1, 0.1)$. Then $\Psi(0) = \{0\} \subseteq V$, but no matter how close $x$ is to $0$, $\Psi(x)=\{\frac{1}{x}\}\nsubseteq V$, so $\Psi$ is not uhc at $0$. However, note that $\Psi$ has closed graph.
 \end{example}
 
-\section{Closed-valued and Compact-valued Correspondences}
-\begin{definition}[Closed-valued and Compact-valued Correspondences]
+\section{Closed-valued, Compact-valued, and Convex-valued Correspondences}
+\begin{definition}[Closed-valued, Compact-valued, and Convex-valued Correspondences]
     \normalfont
     Given a correspondence $\Psi : X \rightarrow 2^Y$,
     \begin{enumerate}
         \item $\Psi$ is \textbf{closed-valued} if $\Psi(x)$ is a closed subset of $Y$ for all $x$;
         \item $\Psi$ is \textbf{compact-valued} if $\Psi(x)$ is compact for all $x$.
+        \item $\Psi$ is \textbf{convex-valued} if $\Psi(x)$ is convex for all $x$.
     \end{enumerate}
 \end{definition}
 
@@ -2163,7 +2165,7 @@ For closed-valued correspondences these concepts can be more tightly connected. 
 
 
 
-\subsection{Kakutani's Fixed Point Theorem: Existence of a Fixed Point}
+\subsection{Kakutani's Fixed Point Theorem: uhs, compact, convex values correspondence has a fixed point over compact convex set}
 \begin{theorem}[Kakutani's Fixed Point Theorem]
     Let $X \subseteq \mathbb{R}^n$ be a non-empty, \textbf{compact}, \textbf{convex} set and $\psi : X \rightarrow 2^X$ be an \textbf{upper hemi-continuous} correspondence with non-empty, \textbf{compact}, \textbf{convex} values. Then $\psi$ has a fixed point in $X$.
 \end{theorem}

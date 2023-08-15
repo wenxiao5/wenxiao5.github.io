@@ -24,52 +24,53 @@
 \contentsline {subsection}{\numberline {2.2.8}Ball, Radius, Diameter, and Distance}{6}{subsection.2.2.8}%
 \contentsline {section}{\numberline {2.3}Set Theory}{7}{section.2.3}%
 \contentsline {subsection}{\numberline {2.3.1}Well Defined Set}{7}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}Numerically Equivalent \small {(@ Lec 01 of ECON 204)}}{7}{subsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.3.3}Finite, Countable Set \small {(@ Lec 01 of ECON 204)}}{7}{subsection.2.3.3}%
-\contentsline {subsection}{\numberline {2.3.4}Power Set \small {(@ Lec 02 of ECON 204)}}{7}{subsection.2.3.4}%
-\contentsline {subsection}{\numberline {2.3.5}Theorem (Cantor): The power set of $\mathbb {N}$ is uncountable \small {(@ Lec 02 of ECON 204)}}{7}{subsection.2.3.5}%
-\contentsline {subsection}{\numberline {2.3.6}Cardinalities of Sets \small {(@ Lec 02 of ECON 204)}}{8}{subsection.2.3.6}%
-\contentsline {subsection}{\numberline {2.3.7}Pigeonhole Principle: $|A|>|B|$ $\Rightarrow $ no injective function $\sigma :A \rightarrow B$}{8}{subsection.2.3.7}%
-\contentsline {subsection}{\numberline {2.3.8}$B^A$: Sets of Function}{8}{subsection.2.3.8}%
-\contentsline {subsection}{\numberline {2.3.9}Bounded Set \small {(@ Lec 03 of ECON 204)}}{9}{subsection.2.3.9}%
-\contentsline {subsection}{\numberline {2.3.10}Open, Closed Set \small {(@ Lec 04 of ECON 204)}}{9}{subsection.2.3.10}%
-\contentsline {subsection}{\numberline {2.3.11}Theorem: Union of open sets is open, Intersection of finite open sets is open}{10}{subsection.2.3.11}%
-\contentsline {subsection}{\numberline {2.3.12}Corollary: Intersection of closed sets is closed, Union of finite closed sets is closed}{10}{subsection.2.3.12}%
-\contentsline {subsection}{\numberline {2.3.13}Interior, Exterior, Boundary, Closure \small {(@ Lec 04 of ECON 204)}}{10}{subsection.2.3.13}%
-\contentsline {subsection}{\numberline {2.3.14}Dense Set: $\bar {A}=X$}{11}{subsection.2.3.14}%
-\contentsline {subsection}{\numberline {2.3.15}Compact Set}{12}{subsection.2.3.15}%
-\contentsline {subsection}{\numberline {2.3.16}Sublevel Set}{12}{subsection.2.3.16}%
-\contentsline {subsection}{\numberline {2.3.17}Set Operations}{12}{subsection.2.3.17}%
-\contentsline {subsection}{\numberline {2.3.18}Connected Sets \small {(@ Lec 07 of ECON 204)}}{13}{subsection.2.3.18}%
-\contentsline {subsection}{\numberline {2.3.19}Theorem: Connected Set over $\mathbb {E}^1$ $\Leftrightarrow $ Interval \small {(@ Lec 07 of ECON 204)}}{13}{subsection.2.3.19}%
-\contentsline {subsection}{\numberline {2.3.20}Theorem: Continuous Image of Connected Set is Connected}{13}{subsection.2.3.20}%
-\contentsline {subsection}{\numberline {2.3.21}Intermediate Value Theorem proved by connectedness}{13}{subsection.2.3.21}%
+\contentsline {subsection}{\numberline {2.3.2}Numerically Equivalent: $\exists $ bijection \small {(@ Lec 01 of ECON 204)}}{7}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Finite \small {(@ Lec 01 of ECON 204)}}{7}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.4}Countable Set: numerically equivalent to $\mathbb {N}$ \small {(@ Lec 01 of ECON 204)}}{7}{subsection.2.3.4}%
+\contentsline {subsection}{\numberline {2.3.5}Power Set \small {(@ Lec 02 of ECON 204)}}{7}{subsection.2.3.5}%
+\contentsline {subsection}{\numberline {2.3.6}Theorem (Cantor): The power set of $\mathbb {N}$ is uncountable \small {(@ Lec 02 of ECON 204)}}{8}{subsection.2.3.6}%
+\contentsline {subsection}{\numberline {2.3.7}Cardinalities of Sets \small {(@ Lec 02 of ECON 204)}}{8}{subsection.2.3.7}%
+\contentsline {subsection}{\numberline {2.3.8}Pigeonhole Principle: $|A|>|B|$ $\Rightarrow $ no injective function $\sigma :A \rightarrow B$}{8}{subsection.2.3.8}%
+\contentsline {subsection}{\numberline {2.3.9}$B^A$: Sets of Function}{8}{subsection.2.3.9}%
+\contentsline {subsection}{\numberline {2.3.10}Bounded Set \small {(@ Lec 03 of ECON 204)}}{9}{subsection.2.3.10}%
+\contentsline {subsection}{\numberline {2.3.11}Open, Closed Set \small {(@ Lec 04 of ECON 204)}}{9}{subsection.2.3.11}%
+\contentsline {subsection}{\numberline {2.3.12}$\bigstar $ Theorem: Union of open sets is open, Intersection of finite open sets is open}{10}{subsection.2.3.12}%
+\contentsline {subsection}{\numberline {2.3.13}$\bigstar $ Corollary: Intersection of closed sets is closed, Union of finite closed sets is closed}{10}{subsection.2.3.13}%
+\contentsline {subsection}{\numberline {2.3.14}Interior, Exterior, Boundary, Closure \small {(@ Lec 04 of ECON 204)}}{10}{subsection.2.3.14}%
+\contentsline {subsection}{\numberline {2.3.15}Dense Set: $\bar {A}=X$}{11}{subsection.2.3.15}%
+\contentsline {subsection}{\numberline {2.3.16}Compact Set}{12}{subsection.2.3.16}%
+\contentsline {subsection}{\numberline {2.3.17}Sublevel Set}{12}{subsection.2.3.17}%
+\contentsline {subsection}{\numberline {2.3.18}Set Operations}{12}{subsection.2.3.18}%
+\contentsline {subsection}{\numberline {2.3.19}Connected Sets \small {(@ Lec 07 of ECON 204)}}{13}{subsection.2.3.19}%
+\contentsline {subsection}{\numberline {2.3.20}Theorem: Connected Set over $\mathbb {E}^1$ $\Leftrightarrow $ Interval \small {(@ Lec 07 of ECON 204)}}{13}{subsection.2.3.20}%
+\contentsline {subsection}{\numberline {2.3.21}Theorem: Continuous Image of Connected Set is Connected}{13}{subsection.2.3.21}%
+\contentsline {subsection}{\numberline {2.3.22}Intermediate Value Theorem proved by connectedness}{14}{subsection.2.3.22}%
 \contentsline {section}{\numberline {2.4}Sequences}{14}{section.2.4}%
 \contentsline {subsection}{\numberline {2.4.1}Convergence of Sequences \small {(@ Lec 03 of ECON 204)}}{14}{subsection.2.4.1}%
 \contentsline {subsection}{\numberline {2.4.2}Limit Point \small {(@ Lec 03 of ECON 204)}}{14}{subsection.2.4.2}%
 \contentsline {subsection}{\numberline {2.4.3}Cluster Point \small {(@ Lec 03 of ECON 204)}}{15}{subsection.2.4.3}%
 \contentsline {subsection}{\numberline {2.4.4}Proposition: Sequences in $\mathbb {R}^n$, Bounded above and non-decreasing sequence $\Rightarrow $ Converge}{15}{subsection.2.4.4}%
 \contentsline {subsection}{\numberline {2.4.5}Theorem: Increasing/Decreasing Sequences in $\mathbb {R}^n$, Limit is $\sup $/$\inf $ \small {(@ Lec 03 of ECON 204)}}{15}{subsection.2.4.5}%
-\contentsline {subsection}{\numberline {2.4.6}Definition: $\lim \sup $ and $\lim \inf $ \small {(@ Lec 03 of ECON 204)}}{15}{subsection.2.4.6}%
+\contentsline {subsection}{\numberline {2.4.6}Definition: $\lim \sup $ and $\lim \inf $ \small {(@ Lec 03 of ECON 204)}}{16}{subsection.2.4.6}%
 \contentsline {subsection}{\numberline {2.4.7}Exists Limit $\Leftrightarrow $ $\lim =\lim \sup =\lim \inf $ \small {(@ Lec 03 of ECON 204)}}{16}{subsection.2.4.7}%
 \contentsline {subsection}{\numberline {2.4.8}Rising Sun Lemma: Sequence in $\mathbb {R}^n$ contains monotone subsequence \small {(@ Lec 03 of ECON 204)}}{16}{subsection.2.4.8}%
-\contentsline {subsection}{\numberline {2.4.9}Bolzano-Weierstrass: Bounded Sequence in $\mathbb {R}^n$ contains a convergent subsequence \small {(@ Lec 03 of ECON 204)}}{16}{subsection.2.4.9}%
-\contentsline {section}{\numberline {2.5}Complete Metric Spaces \small {(@ Lec 05 of ECON 204)}}{16}{section.2.5}%
+\contentsline {subsection}{\numberline {2.4.9}Bolzano-Weierstrass: Bounded Sequence in $\mathbb {R}^n$ contains a convergent subsequence \small {(@ Lec 03 of ECON 204)}}{17}{subsection.2.4.9}%
+\contentsline {section}{\numberline {2.5}Complete Metric Spaces \small {(@ Lec 05 of ECON 204)}}{17}{section.2.5}%
 \contentsline {subsection}{\numberline {2.5.1}Cauchy Sequence}{17}{subsection.2.5.1}%
 \contentsline {subsection}{\numberline {2.5.2}Theorem: Convergent $\Rightarrow $ Cauchy}{17}{subsection.2.5.2}%
 \contentsline {subsection}{\numberline {2.5.3}Complete Metric Space and Banach Space}{17}{subsection.2.5.3}%
-\contentsline {subsection}{\numberline {2.5.4}Theorem: Subset of Complete Metric Space is Complete $\Leftrightarrow $ Subset is Closed}{18}{subsection.2.5.4}%
+\contentsline {subsection}{\numberline {2.5.4}$\bigstar $ Theorem: Subset of Complete Metric Space "is Complete" $\Leftrightarrow $ "is Closed"}{18}{subsection.2.5.4}%
 \contentsline {section}{\numberline {2.6}Compactness over Metric Spaces \small {(@ Lec 06 of ECON 204)}}{18}{section.2.6}%
 \contentsline {subsection}{\numberline {2.6.1}Open Cover}{18}{subsection.2.6.1}%
 \contentsline {subsection}{\numberline {2.6.2}Definition of Compact Set}{18}{subsection.2.6.2}%
-\contentsline {subsection}{\numberline {2.6.3}Theorem: Closed Subset of Compact Set is Compact}{18}{subsection.2.6.3}%
+\contentsline {subsection}{\numberline {2.6.3}Theorem: Closed Subset of Compact Set is Compact}{19}{subsection.2.6.3}%
 \contentsline {subsection}{\numberline {2.6.4}Theorem: Compact Set over Metric Space is Closed}{19}{subsection.2.6.4}%
 \contentsline {subsection}{\numberline {2.6.5}Definition of Sequentially Compact}{20}{subsection.2.6.5}%
 \contentsline {subsection}{\numberline {2.6.6}Theorem: Compact $\Leftrightarrow $ Sequentially Compact}{20}{subsection.2.6.6}%
-\contentsline {subsection}{\numberline {2.6.7}Definition of Totally Bounded}{20}{subsection.2.6.7}%
-\contentsline {subsection}{\numberline {2.6.8}Theroem: Compact $\Leftrightarrow $ Complete/Closed and Totally Bounded}{20}{subsection.2.6.8}%
-\contentsline {subsection}{\numberline {2.6.9}Heine-Borel Theorem: With Euclidean Metric, Compact $\Leftrightarrow $ Closed and Bounded}{21}{subsection.2.6.9}%
-\contentsline {subsection}{\numberline {2.6.10}Theorem: Continuous Images of Compact Set is Compact}{21}{subsection.2.6.10}%
+\contentsline {subsection}{\numberline {2.6.7}Definition of Totally Bounded: $\forall \varepsilon >0: \exists x_1,...,x_n\in A \textnormal { s.t. }A\subseteq \cup _{i=1}^n B_{\varepsilon }(x_i).$}{20}{subsection.2.6.7}%
+\contentsline {subsection}{\numberline {2.6.8}$\bigstar $ Theroem: Compact $\Leftrightarrow $ Complete/Closed and Totally Bounded}{21}{subsection.2.6.8}%
+\contentsline {subsection}{\numberline {2.6.9}$\bigstar $ Heine-Borel Theorem: With Euclidean Metric, Compact $\Leftrightarrow $ Closed and Bounded}{21}{subsection.2.6.9}%
+\contentsline {subsection}{\numberline {2.6.10}$\bigstar $ Theorem: Continuous Images of Compact Set is Compact}{21}{subsection.2.6.10}%
 \contentsline {chapter}{\numberline {3}Functions}{22}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Definitions of Function}{22}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}Image, Preimage, Fiber}{22}{subsection.3.1.1}%
@@ -129,46 +130,46 @@
 \contentsline {subsection}{\numberline {4.3.3}Transversality Theorem}{44}{subsection.4.3.3}%
 \contentsline {chapter}{\numberline {5}Fixed Point Theorem}{45}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Contraction Mapping Theorem \small {(@ Lec 05 of ECON 204)}}{45}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Contractions}{45}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.1}Contraction: Lipschitz continuous with constant $<1$}{45}{subsection.5.1.1}%
 \contentsline {subsection}{\numberline {5.1.2}Theorem: Contraction $\Rightarrow $ Uniformly Continuous}{45}{subsection.5.1.2}%
-\contentsline {subsection}{\numberline {5.1.3}Theorem: Blackwell's Sufficient Conditions for Contraction}{45}{subsection.5.1.3}%
+\contentsline {subsection}{\numberline {5.1.3}Blackwell's Sufficient Conditions for Contraction}{45}{subsection.5.1.3}%
 \contentsline {section}{\numberline {5.2}Fixed Point Theorem \small {(@ Lec 05 of ECON 204)}}{46}{section.5.2}%
 \contentsline {subsection}{\numberline {5.2.1}Fixed Point}{46}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Contraction Mapping Theorem: Existence and Uniqueness of Fixed Point}{47}{subsection.5.2.2}%
-\contentsline {subsection}{\numberline {5.2.3}Theorem: Fixed Point's Continuous Dependence on Parameters}{48}{subsection.5.2.3}%
+\contentsline {subsection}{\numberline {5.2.2}$\bigstar $ Contraction Mapping Theorem: contraction $\Rightarrow $ exist unique fixed point}{47}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}Conditions for Fixed Point's Continuous Dependence on Parameters}{48}{subsection.5.2.3}%
 \contentsline {section}{\numberline {5.3}Brouwer's Fixed Point Theorem \small {(@ Lec 13 of ECON 204)}}{48}{section.5.3}%
 \contentsline {subsection}{\numberline {5.3.1}Simple One: One-dimension}{48}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}Brouwer's Fixed Point Theorem}{49}{subsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.3.2}$\bigstar $ Brouwer's Fixed Point Theorem: continuous function has fixed point over compact, convex set}{49}{subsection.5.3.2}%
 \contentsline {chapter}{\numberline {6}Correspondence: $\Psi : X \rightarrow 2^Y$ \small {(@ Lec 07 of ECON 204)}}{50}{chapter.6}%
 \contentsline {section}{\numberline {6.1}Continuity of Correspondences}{50}{section.6.1}%
 \contentsline {subsection}{\numberline {6.1.1}Upper/Lower Hemicontinuous}{50}{subsection.6.1.1}%
 \contentsline {subsection}{\numberline {6.1.2}Theorem: $\Psi (x)=\{f(x)\}$ is uhc $\Leftrightarrow $ $f$ is continuous}{52}{subsection.6.1.2}%
-\contentsline {subsection}{\numberline {6.1.3}Berge's Maximum Theorem: $v(y)=\max _{x\in \Gamma (y)f(x,y)}$ is continuous; $\{x:f(x,y)=v(y)\}$ is uhc with non-empty compact values}{52}{subsection.6.1.3}%
+\contentsline {subsection}{\numberline {6.1.3}Berge's Maximum Theorem: $v(y)=\max _{x\in \Gamma (y)}f(x,y)$ is continuous; $\{x:f(x,y)=v(y)\}$ is uhc with non-empty compact values}{52}{subsection.6.1.3}%
 \contentsline {section}{\numberline {6.2}Graph of Correspondence}{52}{section.6.2}%
 \contentsline {subsection}{\numberline {6.2.1}Closed Graph}{52}{subsection.6.2.1}%
-\contentsline {section}{\numberline {6.3}Closed-valued and Compact-valued Correspondences}{53}{section.6.3}%
+\contentsline {section}{\numberline {6.3}Closed-valued, Compact-valued, and Convex-valued Correspondences}{53}{section.6.3}%
 \contentsline {subsection}{\numberline {6.3.1}Closed-valued, uhc and Closed Graph}{53}{subsection.6.3.1}%
 \contentsline {subsection}{\numberline {6.3.2}Theorem: compact-valued, uhs correspondence of compact set is compact}{53}{subsection.6.3.2}%
 \contentsline {section}{\numberline {6.4}Fixed Points for Correspondences \small {(@ Lec 13 of ECON 204)}}{54}{section.6.4}%
 \contentsline {subsection}{\numberline {6.4.1}Definition}{54}{subsection.6.4.1}%
-\contentsline {subsection}{\numberline {6.4.2}Kakutani's Fixed Point Theorem: Existence of a Fixed Point}{54}{subsection.6.4.2}%
+\contentsline {subsection}{\numberline {6.4.2}Kakutani's Fixed Point Theorem: uhs, compact, convex values correspondence has a fixed point over compact convex set}{54}{subsection.6.4.2}%
 \contentsline {subsection}{\numberline {6.4.3}Theorem: $\exists $ compact set $C = \cap _{i=0}^\infty \Psi ^i(X)$ s.t. $\Psi (C)=C$}{54}{subsection.6.4.3}%
-\contentsline {chapter}{\numberline {7}Differential Equations \small {(@ Lec 14/15 of ECON 204)}}{55}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Initial Value Problem}{55}{section.7.1}%
-\contentsline {subsection}{\numberline {7.1.1}Initial Value Problem}{55}{subsection.7.1.1}%
-\contentsline {subsection}{\numberline {7.1.2}Theorem: Initial Value Problem, Continuous $\rightarrow $ Existence; Lipschitz $\rightarrow $ Uniqueness}{55}{subsection.7.1.2}%
-\contentsline {section}{\numberline {7.2}Autonomous Differential Equation}{56}{section.7.2}%
-\contentsline {subsection}{\numberline {7.2.1}Autonomous Differential Equation}{56}{subsection.7.2.1}%
-\contentsline {subsection}{\numberline {7.2.2}Complex Exponentials}{57}{subsection.7.2.2}%
-\contentsline {subsection}{\numberline {7.2.3}Solutions of Simple Case: $y'(t)=ay(t)$}{57}{subsection.7.2.3}%
-\contentsline {subsection}{\numberline {7.2.4}Solutions of Special Case: Linear Differential Equations with Constant Coefficients}{57}{subsection.7.2.4}%
-\contentsline {subsection}{\numberline {7.2.5}The Form of Real Solutions}{60}{subsection.7.2.5}%
-\contentsline {section}{\numberline {7.3}Higher Order Differential Equations}{61}{section.7.3}%
-\contentsline {subsection}{\numberline {7.3.1}Second Order Linear Differential Equations}{61}{subsection.7.3.1}%
-\contentsline {section}{\numberline {7.4}Inhomogeneous Linear Differential Equations with Nonconstant Coefficients}{61}{section.7.4}%
-\contentsline {subsection}{\numberline {7.4.1}Theorem: General Solution of Inhomo $=$ General Solution of Homo $+$ Particular Solution of Inhomo}{62}{subsection.7.4.1}%
-\contentsline {subsection}{\numberline {7.4.2}Matrix Exponentials Notations}{62}{subsection.7.4.2}%
-\contentsline {subsection}{\numberline {7.4.3}Theorem: Particular Solution of Inhomogeneous Linear Differential Equations with Constant Coefficients (Matrix)}{63}{subsection.7.4.3}%
-\contentsline {chapter}{\numberline {8}Big $\mathcal {O}$ and Small $o$ Notation}{64}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Definition}{64}{section.8.1}%
-\contentsline {subsection}{\numberline {8.1.1}Extension}{65}{subsection.8.1.1}%
+\contentsline {chapter}{\numberline {7}Differential Equations \small {(@ Lec 14/15 of ECON 204)}}{56}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Initial Value Problem}{56}{section.7.1}%
+\contentsline {subsection}{\numberline {7.1.1}Initial Value Problem}{56}{subsection.7.1.1}%
+\contentsline {subsection}{\numberline {7.1.2}Theorem: Initial Value Problem, Continuous $\rightarrow $ Existence; Lipschitz $\rightarrow $ Uniqueness}{56}{subsection.7.1.2}%
+\contentsline {section}{\numberline {7.2}Autonomous Differential Equation}{57}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}Autonomous Differential Equation}{57}{subsection.7.2.1}%
+\contentsline {subsection}{\numberline {7.2.2}Complex Exponentials}{58}{subsection.7.2.2}%
+\contentsline {subsection}{\numberline {7.2.3}Solutions of Simple Case: $y'(t)=ay(t)$}{58}{subsection.7.2.3}%
+\contentsline {subsection}{\numberline {7.2.4}Solutions of Special Case: Linear Differential Equations with Constant Coefficients}{58}{subsection.7.2.4}%
+\contentsline {subsection}{\numberline {7.2.5}The Form of Real Solutions}{61}{subsection.7.2.5}%
+\contentsline {section}{\numberline {7.3}Higher Order Differential Equations}{62}{section.7.3}%
+\contentsline {subsection}{\numberline {7.3.1}Second Order Linear Differential Equations}{62}{subsection.7.3.1}%
+\contentsline {section}{\numberline {7.4}Inhomogeneous Linear Differential Equations with Nonconstant Coefficients}{62}{section.7.4}%
+\contentsline {subsection}{\numberline {7.4.1}Theorem: General Solution of Inhomo $=$ General Solution of Homo $+$ Particular Solution of Inhomo}{63}{subsection.7.4.1}%
+\contentsline {subsection}{\numberline {7.4.2}Matrix Exponentials Notations}{63}{subsection.7.4.2}%
+\contentsline {subsection}{\numberline {7.4.3}Theorem: Particular Solution of Inhomogeneous Linear Differential Equations with Constant Coefficients (Matrix)}{64}{subsection.7.4.3}%
+\contentsline {chapter}{\numberline {8}Big $\mathcal {O}$ and Small $o$ Notation}{65}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Definition}{65}{section.8.1}%
+\contentsline {subsection}{\numberline {8.1.1}Extension}{66}{subsection.8.1.1}%

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.27)  13 AUG 2023 14:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.27)  14 AUG 2023 17:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1341,7 +1341,7 @@ Package hyperref Info: Option `pageanchor' set `false' on input line 28.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<cover.png, id=730, 2055.68pt x 1155.31625pt>
+<cover.png, id=734, 2055.68pt x 1155.31625pt>
 File: cover.png Graphic file (type png)
 <use cover.png>
 Package pdftex.def Info: cover.png  used on input line 28.
@@ -1380,14 +1380,14 @@ LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
 
 
 
-] [2] [3]
+] [2]
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 8.0pt on input line 117.
+(Font)              scaled to size 8.0pt on input line 70.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 6.0pt on input line 117.
- [4]
+(Font)              scaled to size 6.0pt on input line 70.
+ [3] [4]
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 10.0pt on input line 142.
+(Font)              scaled to size 10.0pt on input line 143.
  [5])
 \tf@toc=\write9
 \openout9 = `"Logic and Analysis.toc"'.
@@ -1419,7 +1419,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 72.
 
-<CA.png, id=1138, 845.1575pt x 220.825pt>
+<CA.png, id=1147, 845.1575pt x 220.825pt>
 File: CA.png Graphic file (type png)
 <use CA.png>
 Package pdftex.def Info: CA.png  used on input line 92.
@@ -1626,326 +1626,485 @@ LaTeX Font Info:    Font shape `OT1/ntxtlf/b/it' will be
  [6]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 294.
+(hyperref)                removing `math shift' on input line 265.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 294.
+(hyperref)                removing `\exists' on input line 265.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 265.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 277.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 277.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 295.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 295.
 
 [7]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 318.
+(hyperref)                removing `math shift' on input line 319.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 318.
+(hyperref)                removing `math shift' on input line 319.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 318.
+(hyperref)                removing `math shift' on input line 319.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Rightarrow' on input line 318.
+(hyperref)                removing `\Rightarrow' on input line 319.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 318.
+(hyperref)                removing `math shift' on input line 319.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 318.
+(hyperref)                removing `math shift' on input line 319.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sigma' on input line 318.
+(hyperref)                removing `\sigma' on input line 319.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\rightarrow' on input line 318.
+(hyperref)                removing `\rightarrow' on input line 319.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 318.
+(hyperref)                removing `math shift' on input line 319.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 325.
+(hyperref)                removing `math shift' on input line 326.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 325.
+(hyperref)                removing `superscript' on input line 326.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 325.
+(hyperref)                removing `math shift' on input line 326.
 
-[8
+[8] [9
 pdfTeX warning (ext4): destination with the same identifier (name{equation.2.3.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.357     \end{equation}
-                        ] [9
+l.396     \item $
+                 \mathbb{R}$ is both open and closed
 pdfTeX warning (ext4): destination with the same identifier (name{equation.2.3.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.408 \end{theorem}
-                   ] [10]
+l.396     \item $
+                 \mathbb{R}$ is both open and closed]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 464.
+(hyperref)                removing `math shift' on input line 423.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 464.
+(hyperref)                removing `\bigstar' on input line 423.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 423.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 432.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\bigstar' on input line 432.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 432.
+
+[10]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 465.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 465.
 
 [11] [12]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 541.
+(hyperref)                removing `math shift' on input line 542.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 541.
+(hyperref)                removing `superscript' on input line 542.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 541.
+(hyperref)                removing `math shift' on input line 542.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 541.
+(hyperref)                removing `math shift' on input line 542.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Leftrightarrow' on input line 541.
+(hyperref)                removing `\Leftrightarrow' on input line 542.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 541.
+(hyperref)                removing `math shift' on input line 542.
 
 [13] [14]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 615.
+(hyperref)                removing `math shift' on input line 616.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 615.
+(hyperref)                removing `superscript' on input line 616.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 615.
+(hyperref)                removing `math shift' on input line 616.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 615.
+(hyperref)                removing `math shift' on input line 616.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Rightarrow' on input line 615.
+(hyperref)                removing `\Rightarrow' on input line 616.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 615.
+(hyperref)                removing `math shift' on input line 616.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 620.
+(hyperref)                removing `math shift' on input line 621.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 620.
+(hyperref)                removing `superscript' on input line 621.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 620.
+(hyperref)                removing `math shift' on input line 621.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 620.
+(hyperref)                removing `math shift' on input line 621.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sup' on input line 620.
+(hyperref)                removing `\sup' on input line 621.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 620.
+(hyperref)                removing `math shift' on input line 621.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 620.
+(hyperref)                removing `math shift' on input line 621.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\inf' on input line 620.
+(hyperref)                removing `\inf' on input line 621.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 620.
+(hyperref)                removing `math shift' on input line 621.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 626.
+(hyperref)                removing `math shift' on input line 627.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lim' on input line 626.
+(hyperref)                removing `\lim' on input line 627.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sup' on input line 626.
+(hyperref)                removing `\sup' on input line 627.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 626.
+(hyperref)                removing `math shift' on input line 627.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 626.
+(hyperref)                removing `math shift' on input line 627.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lim' on input line 626.
+(hyperref)                removing `\lim' on input line 627.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\inf' on input line 626.
+(hyperref)                removing `\inf' on input line 627.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 626.
+(hyperref)                removing `math shift' on input line 627.
 
 [15]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 645.
+(hyperref)                removing `math shift' on input line 646.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Leftrightarrow' on input line 645.
+(hyperref)                removing `\Leftrightarrow' on input line 646.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 645.
+(hyperref)                removing `math shift' on input line 646.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 645.
+(hyperref)                removing `math shift' on input line 646.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lim' on input line 645.
+(hyperref)                removing `\lim' on input line 646.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lim' on input line 645.
+(hyperref)                removing `\lim' on input line 646.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sup' on input line 645.
+(hyperref)                removing `\sup' on input line 646.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lim' on input line 645.
+(hyperref)                removing `\lim' on input line 646.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\inf' on input line 645.
+(hyperref)                removing `\inf' on input line 646.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 645.
+(hyperref)                removing `math shift' on input line 646.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 656.
+(hyperref)                removing `math shift' on input line 657.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 656.
+(hyperref)                removing `superscript' on input line 657.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 656.
+(hyperref)                removing `math shift' on input line 657.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 661.
+(hyperref)                removing `math shift' on input line 662.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 661.
+(hyperref)                removing `superscript' on input line 662.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 661.
+(hyperref)                removing `math shift' on input line 662.
 
 [16]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 681.
+(hyperref)                removing `math shift' on input line 682.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Rightarrow' on input line 681.
+(hyperref)                removing `\Rightarrow' on input line 682.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 681.
+(hyperref)                removing `math shift' on input line 682.
 
 [17]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 718.
+(hyperref)                removing `math shift' on input line 719.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Leftrightarrow' on input line 718.
+(hyperref)                removing `\bigstar' on input line 719.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 718.
+(hyperref)                removing `math shift' on input line 719.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 719.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\Leftrightarrow' on input line 719.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 719.
 
 [18] [19]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 802.
+(hyperref)                removing `math shift' on input line 803.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Leftrightarrow' on input line 802.
+(hyperref)                removing `\Leftrightarrow' on input line 803.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 802.
+(hyperref)                removing `math shift' on input line 803.
+
+LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 808.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
+(Font)              scaled to size 8.0pt on input line 808.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
+(Font)              scaled to size 6.0pt on input line 808.
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 808.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 826.
+(hyperref)                removing `\forall' on input line 808.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Leftrightarrow' on input line 826.
+(hyperref)                removing `\varepsilon' on input line 808.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 826.
+(hyperref)                removing `\exists' on input line 808.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 808.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 808.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\in' on input line 808.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\subseteq' on input line 808.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\cup' on input line 808.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 808.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 808.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 808.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\varepsilon' on input line 808.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 808.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 808.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 827.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\bigstar' on input line 827.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 827.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 827.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\Leftrightarrow' on input line 827.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 827.
 
 [20]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 842.
+(hyperref)                removing `math shift' on input line 843.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Leftrightarrow' on input line 842.
+(hyperref)                removing `\bigstar' on input line 843.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 842.
+(hyperref)                removing `math shift' on input line 843.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 843.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\Leftrightarrow' on input line 843.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 843.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 852.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\bigstar' on input line 852.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 852.
 
 [21]
 Chapter 3.
@@ -1954,419 +2113,413 @@ Chapter 3.
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 933.
+(hyperref)                removing `math shift' on input line 934.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Leftrightarrow' on input line 933.
+(hyperref)                removing `\Leftrightarrow' on input line 934.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 933.
+(hyperref)                removing `math shift' on input line 934.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 933.
+(hyperref)                removing `math shift' on input line 934.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\exists' on input line 933.
+(hyperref)                removing `\exists' on input line 934.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 933.
+(hyperref)                removing `math shift' on input line 934.
 
 [23
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.2.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.944 \end{theorem}
+l.945 \end{theorem}
                    ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 948.
+(hyperref)                removing `math shift' on input line 949.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 948.
+(hyperref)                removing `math shift' on input line 949.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 979.
+(hyperref)                removing `math shift' on input line 980.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Leftrightarrow' on input line 979.
+(hyperref)                removing `\Leftrightarrow' on input line 980.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 979.
+(hyperref)                removing `math shift' on input line 980.
 
 [24
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.2.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.983 \end{theorem}
+l.984 \end{theorem}
                    ] [25] [26] [27
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.3.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1096 \end{claim}
+l.1097 \end{claim}
                   ] [28] [29]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1211.
+(hyperref)                removing `math shift' on input line 1212.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Rightarrow' on input line 1211.
+(hyperref)                removing `\Rightarrow' on input line 1212.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1211.
+(hyperref)                removing `math shift' on input line 1212.
 
-<SJD.png, id=1489, 1449.415pt x 1061.9675pt>
+<SJD.png, id=1497, 1449.415pt x 1061.9675pt>
 File: SJD.png Graphic file (type png)
 <use SJD.png>
-Package pdftex.def Info: SJD.png  used on input line 1217.
+Package pdftex.def Info: SJD.png  used on input line 1218.
 (pdftex.def)             Requested size: 289.87787pt x 212.38974pt.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1222.
+(hyperref)                removing `math shift' on input line 1223.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Rightarrow' on input line 1222.
+(hyperref)                removing `\Rightarrow' on input line 1223.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1222.
+(hyperref)                removing `math shift' on input line 1223.
 
 [30]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1228.
+(hyperref)                removing `math shift' on input line 1229.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1228.
+(hyperref)                removing `math shift' on input line 1229.
 
 [31 <./SJD.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1260.
+(hyperref)                removing `math shift' on input line 1261.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1260.
+(hyperref)                removing `math shift' on input line 1261.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1260.
+(hyperref)                removing `math shift' on input line 1261.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1260.
+(hyperref)                removing `math shift' on input line 1261.
 
 [32]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1324.
+(hyperref)                removing `math shift' on input line 1325.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Rightarrow' on input line 1324.
+(hyperref)                removing `\Rightarrow' on input line 1325.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1324.
+(hyperref)                removing `math shift' on input line 1325.
 
 [33]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1346.
+(hyperref)                removing `math shift' on input line 1347.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Rightarrow' on input line 1346.
+(hyperref)                removing `\Rightarrow' on input line 1347.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1346.
+(hyperref)                removing `math shift' on input line 1347.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1367.
+(hyperref)                removing `math shift' on input line 1368.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1367.
+(hyperref)                removing `subscript' on input line 1368.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1367.
+(hyperref)                removing `subscript' on input line 1368.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1367.
+(hyperref)                removing `subscript' on input line 1368.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1367.
+(hyperref)                removing `subscript' on input line 1368.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\circ' on input line 1367.
+(hyperref)                removing `\circ' on input line 1368.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1367.
+(hyperref)                removing `subscript' on input line 1368.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1367.
+(hyperref)                removing `subscript' on input line 1368.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1367.
+(hyperref)                removing `math shift' on input line 1368.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1367.
+(hyperref)                removing `math shift' on input line 1368.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1367.
+(hyperref)                removing `subscript' on input line 1368.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1367.
+(hyperref)                removing `subscript' on input line 1368.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1367.
+(hyperref)                removing `subscript' on input line 1368.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1367.
+(hyperref)                removing `subscript' on input line 1368.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1367.
+(hyperref)                removing `math shift' on input line 1368.
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.6.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1370     \begin{equation}
+l.1371     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.6.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1370     \begin{equation}
+l.1371     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.6.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1370     \begin{equation}
+l.1371     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.6.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1370     \begin{equation}
+l.1371     \begin{equation}
                            
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1379.
+(hyperref)                removing `math shift' on input line 1380.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\exists' on input line 1379.
+(hyperref)                removing `\exists' on input line 1380.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\in' on input line 1379.
+(hyperref)                removing `\in' on input line 1380.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\|' on input line 1379.
+(hyperref)                removing `\|' on input line 1380.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\|' on input line 1379.
+(hyperref)                removing `\|' on input line 1380.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leq' on input line 1379.
+(hyperref)                removing `\leq' on input line 1380.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\|' on input line 1379.
+(hyperref)                removing `\|' on input line 1380.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1379.
+(hyperref)                removing `subscript' on input line 1380.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\|' on input line 1379.
+(hyperref)                removing `\|' on input line 1380.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\|' on input line 1379.
+(hyperref)                removing `\|' on input line 1380.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\|' on input line 1379.
+(hyperref)                removing `\|' on input line 1380.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1379.
+(hyperref)                removing `math shift' on input line 1380.
 
 [34]
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.6.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1399     \begin{equation}
+l.1400     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.6.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1399     \begin{equation}
+l.1400     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.6.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1399     \begin{equation}
+l.1400     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.6.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1399     \begin{equation}
+l.1400     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.6.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1412     \begin{equation}
+l.1413     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.6.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1412     \begin{equation}
+l.1413     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.6.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1412     \begin{equation}
+l.1413     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.6.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1412     \begin{equation}
+l.1413     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.6.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1419     \begin{equation}
+l.1420     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.6.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1419     \begin{equation}
+l.1420     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.6.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1419     \begin{equation}
+l.1420     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.6.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1419     \begin{equation}
+l.1420     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.6.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1429     \begin{equation}
+l.1430     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.6.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1429     \begin{equation}
+l.1430     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.6.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1429     \begin{equation}
+l.1430     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.6.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1429     \begin{equation}
+l.1430     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.6.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1436     \begin{equation}
+l.1437     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.6.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1436     \begin{equation}
+l.1437     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.6.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1436     \begin{equation}
+l.1437     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.6.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1436     \begin{equation}
+l.1437     \begin{equation}
                             [35]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1444.
+(hyperref)                removing `math shift' on input line 1445.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 1444.
+(hyperref)                removing `superscript' on input line 1445.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1444.
+(hyperref)                removing `math shift' on input line 1445.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1463.
+(hyperref)                removing `math shift' on input line 1464.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 1463.
+(hyperref)                removing `superscript' on input line 1464.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1463.
+(hyperref)                removing `math shift' on input line 1464.
 
 [36] [37] [38]
 Chapter 4.
-LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1549.
-LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 8.0pt on input line 1549.
-LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 6.0pt on input line 1549.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1549.
+(hyperref)                removing `math shift' on input line 1550.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1549.
+(hyperref)                removing `subscript' on input line 1550.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1549.
+(hyperref)                removing `math shift' on input line 1550.
 
 [39
 
@@ -2374,94 +2527,94 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1628 \end{theorem}
+l.1629 \end{theorem}
                     
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1628 \end{theorem}
+l.1629 \end{theorem}
                     ]
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1634         \begin{equation}
+l.1635         \begin{equation}
                                
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1634         \begin{equation}
+l.1635         \begin{equation}
                                
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1634         \begin{equation}
+l.1635         \begin{equation}
                                
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1634         \begin{equation}
+l.1635         \begin{equation}
                                
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1642         \begin{equation}
+l.1643         \begin{equation}
                                
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1642         \begin{equation}
+l.1643         \begin{equation}
                                
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1642         \begin{equation}
+l.1643         \begin{equation}
                                
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1642         \begin{equation}
+l.1643         \begin{equation}
                                
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1649         \begin{equation}
+l.1650         \begin{equation}
                                
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1649         \begin{equation}
+l.1650         \begin{equation}
                                
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1649         \begin{equation}
+l.1650         \begin{equation}
                                
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1649         \begin{equation}
+l.1650         \begin{equation}
                                
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1659         \begin{equation}
+l.1660         \begin{equation}
                                
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1659         \begin{equation}
+l.1660         \begin{equation}
                                
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1659         \begin{equation}
+l.1660         \begin{equation}
                                
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1659         \begin{equation}
+l.1660         \begin{equation}
                                
-Underfull \hbox (badness 4084) in paragraph at lines 1666--1668
+Underfull \hbox (badness 4084) in paragraph at lines 1667--1669
 \OT1/ntxtlf/m/it/10.95 Hence, "$\OML/cmm/m/it/10.95 g$ \OT1/ntxtlf/m/it/10.95 is dif-fer-en-tiable" is proved and the deriva-tive of $\OML/cmm/m/it/10.95 g$ \OT1/ntxtlf/m/it/10.95 is $\OML/cmm/m/it/10.95 Dg\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 a[]\OT1/cmr/m/n/10.95 ) =
  []
 
@@ -2469,593 +2622,633 @@ Underfull \hbox (badness 4084) in paragraph at lines 1666--1668
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1669         \begin{equation}
+l.1670         \begin{equation}
                                
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1669         \begin{equation}
+l.1670         \begin{equation}
                                
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1669         \begin{equation}
+l.1670         \begin{equation}
                                
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1669         \begin{equation}
+l.1670         \begin{equation}
                                 [41]
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1697     \begin{equation}
+l.1698     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1697     \begin{equation}
+l.1698     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1697     \begin{equation}
+l.1698     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1697     \begin{equation}
+l.1698     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1707     \begin{equation}
+l.1708     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1707     \begin{equation}
+l.1708     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1707     \begin{equation}
+l.1708     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1707     \begin{equation}
+l.1708     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1723     \begin{equation}
+l.1724     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1723     \begin{equation}
+l.1724     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1723     \begin{equation}
+l.1724     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1723     \begin{equation}
+l.1724     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1732     \begin{equation}
+l.1733     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1732     \begin{equation}
+l.1733     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1732     \begin{equation}
+l.1733     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1732     \begin{equation}
+l.1733     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1742     \begin{equation}
+l.1743     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1742     \begin{equation}
+l.1743     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1742     \begin{equation}
+l.1743     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1742     \begin{equation}
+l.1743     \begin{equation}
                             [42]
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1753     \begin{equation}
+l.1754     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1753     \begin{equation}
+l.1754     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1753     \begin{equation}
+l.1754     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1753     \begin{equation}
+l.1754     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1762     \begin{equation}
+l.1763     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1762     \begin{equation}
+l.1763     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1762     \begin{equation}
+l.1763     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1762     \begin{equation}
+l.1763     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1774     \begin{equation}
+l.1775     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1774     \begin{equation}
+l.1775     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1774     \begin{equation}
+l.1775     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1774     \begin{equation}
+l.1775     \begin{equation}
                            
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1789.
+(hyperref)                removing `math shift' on input line 1790.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\rightarrow' on input line 1789.
+(hyperref)                removing `\rightarrow' on input line 1790.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\in' on input line 1789.
+(hyperref)                removing `\in' on input line 1790.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1789.
+(hyperref)                removing `math shift' on input line 1790.
 
 [43] [44
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.3.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1845 \chapter
+l.1846 \chapter
                {Fixed Point Theorem}]
 Chapter 5.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1855.
+(hyperref)                removing `math shift' on input line 1849.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Rightarrow' on input line 1855.
+(hyperref)                removing `math shift' on input line 1849.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1855.
+(hyperref)                removing `math shift' on input line 1856.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\Rightarrow' on input line 1856.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1856.
 
 [45
 
-] [46] [47
+]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1923.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\bigstar' on input line 1923.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1923.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1923.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\Rightarrow' on input line 1923.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1923.
+
+[46] [47
 pdfTeX warning (ext4): destination with the same identifier (name{equation.5.2.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1984 \end{proof}
+l.1985 \end{proof}
                   
 pdfTeX warning (ext4): destination with the same identifier (name{equation.5.2.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1984 \end{proof}
-                  ] [48] [49]
+l.1985 \end{proof}
+                  ]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2007.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\bigstar' on input line 2007.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2007.
+
+[48] [49]
 Chapter 6.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2022.
+(hyperref)                removing `math shift' on input line 2023.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Psi' on input line 2022.
+(hyperref)                removing `\Psi' on input line 2023.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\rightarrow' on input line 2022.
+(hyperref)                removing `\rightarrow' on input line 2023.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 2022.
+(hyperref)                removing `superscript' on input line 2023.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2022.
+(hyperref)                removing `math shift' on input line 2023.
 
 [50
 
 ]
-<uhc.png, id=1665, 1577.895pt x 979.66pt>
+<uhc.png, id=1673, 1577.895pt x 979.66pt>
 File: uhc.png Graphic file (type png)
 <use uhc.png>
-Package pdftex.def Info: uhc.png  used on input line 2067.
+Package pdftex.def Info: uhc.png  used on input line 2068.
 (pdftex.def)             Requested size: 315.57341pt x 195.92853pt.
-<lhc.png, id=1666, 1610.015pt x 983.675pt>
+<lhc.png, id=1674, 1610.015pt x 983.675pt>
 File: lhc.png Graphic file (type png)
 <use lhc.png>
-Package pdftex.def Info: lhc.png  used on input line 2074.
+Package pdftex.def Info: lhc.png  used on input line 2075.
 (pdftex.def)             Requested size: 321.9973pt x 196.7315pt.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2079.
+(hyperref)                removing `math shift' on input line 2080.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Psi' on input line 2079.
+(hyperref)                removing `\Psi' on input line 2080.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2079.
+(hyperref)                removing `math shift' on input line 2080.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2079.
+(hyperref)                removing `math shift' on input line 2080.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Leftrightarrow' on input line 2079.
+(hyperref)                removing `\Leftrightarrow' on input line 2080.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2079.
+(hyperref)                removing `math shift' on input line 2080.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2079.
+(hyperref)                removing `math shift' on input line 2080.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2079.
+(hyperref)                removing `math shift' on input line 2080.
 
 [51 <./uhc.png> <./lhc.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2085.
+(hyperref)                removing `math shift' on input line 2086.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\max' on input line 2085.
+(hyperref)                removing `\max' on input line 2086.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 2085.
+(hyperref)                removing `subscript' on input line 2086.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\in' on input line 2085.
+(hyperref)                removing `\in' on input line 2086.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Gamma' on input line 2085.
+(hyperref)                removing `\Gamma' on input line 2086.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2085.
+(hyperref)                removing `math shift' on input line 2086.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2085.
+(hyperref)                removing `math shift' on input line 2086.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2085.
+(hyperref)                removing `math shift' on input line 2086.
 
 
-LaTeX Warning: Command \textohm invalid in math mode on input line 2087.
+LaTeX Warning: Command \textohm invalid in math mode on input line 2088.
 
 Package textcomp Info: Symbol \textohm not provided by
 (textcomp)             font family ntxtlf in TS1 encoding.
-(textcomp)             Default family used instead on input line 2087.
+(textcomp)             Default family used instead on input line 2088.
 
-LaTeX Warning: Command \textohm invalid in math mode on input line 2087.
+LaTeX Warning: Command \textohm invalid in math mode on input line 2088.
 
 
-LaTeX Warning: Command \textohm invalid in math mode on input line 2087.
+LaTeX Warning: Command \textohm invalid in math mode on input line 2088.
 
 [52] [53]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2172.
+(hyperref)                removing `math shift' on input line 2174.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\exists' on input line 2172.
+(hyperref)                removing `\exists' on input line 2174.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2172.
+(hyperref)                removing `math shift' on input line 2174.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2172.
+(hyperref)                removing `math shift' on input line 2174.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\cap' on input line 2172.
+(hyperref)                removing `\cap' on input line 2174.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 2172.
+(hyperref)                removing `subscript' on input line 2174.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 2172.
+(hyperref)                removing `superscript' on input line 2174.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\infty' on input line 2172.
+(hyperref)                removing `\infty' on input line 2174.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Psi' on input line 2172.
+(hyperref)                removing `\Psi' on input line 2174.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 2172.
+(hyperref)                removing `superscript' on input line 2174.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2172.
+(hyperref)                removing `math shift' on input line 2174.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2172.
+(hyperref)                removing `math shift' on input line 2174.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Psi' on input line 2172.
+(hyperref)                removing `\Psi' on input line 2174.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2172.
+(hyperref)                removing `math shift' on input line 2174.
 
-[54]
+[54] [55]
 Chapter 7.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2218.
+(hyperref)                removing `math shift' on input line 2220.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\rightarrow' on input line 2218.
+(hyperref)                removing `\rightarrow' on input line 2220.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2218.
+(hyperref)                removing `math shift' on input line 2220.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2218.
+(hyperref)                removing `math shift' on input line 2220.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\rightarrow' on input line 2218.
+(hyperref)                removing `\rightarrow' on input line 2220.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2218.
+(hyperref)                removing `math shift' on input line 2220.
 
-[55
+[56
 
-] [56]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2294.
-
+] [57]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2294.
+(hyperref)                removing `math shift' on input line 2296.
 
-[57
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2296.
+
+[58
 pdfTeX warning (ext4): destination with the same identifier (name{equation.7.2.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.2332 T
+l.2334 T
         he matrix representation $$M=D F\left(y_s\right)$$
 pdfTeX warning (ext4): destination with the same identifier (name{equation.7.2.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.2332 T
+l.2334 T
         he matrix representation $$M=D F\left(y_s\right)$$
 pdfTeX warning (ext4): destination with the same identifier (name{equation.7.2.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.2332 T
+l.2334 T
         he matrix representation $$M=D F\left(y_s\right)$$]
 pdfTeX warning (ext4): destination with the same identifier (name{equation.7.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2340     \begin{equation}
+l.2342     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.7.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2340     \begin{equation}
+l.2342     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.7.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2340     \begin{equation}
+l.2342     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.7.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2340     \begin{equation}
-                            [58] [59
+l.2342     \begin{equation}
+                            [59] [60
 pdfTeX warning (ext4): destination with the same identifier (name{equation.7.2.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.2425 \end{proof}
+l.2427 \end{proof}
                   
 pdfTeX warning (ext4): destination with the same identifier (name{equation.7.2.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.2425 \end{proof}
+l.2427 \end{proof}
                   
 pdfTeX warning (ext4): destination with the same identifier (name{equation.7.2.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.2425 \end{proof}
-                  ] [60
+l.2427 \end{proof}
+                  ] [61
 pdfTeX warning (ext4): destination with the same identifier (name{equation.7.2.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.2458 \end{equation}
+l.2460 \end{equation}
                      ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2515.
+(hyperref)                removing `math shift' on input line 2517.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2515.
+(hyperref)                removing `math shift' on input line 2517.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2515.
+(hyperref)                removing `math shift' on input line 2517.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2515.
+(hyperref)                removing `math shift' on input line 2517.
 
-[61
+[62
 pdfTeX warning (ext4): destination with the same identifier (name{equation.7.3.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.2523 \end{equation}
+l.2525 \end{equation}
                      
 pdfTeX warning (ext4): destination with the same identifier (name{equation.7.3.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.2523 \end{equation}
-                     ] [62
+l.2525 \end{equation}
+                     ] [63
 pdfTeX warning (ext4): destination with the same identifier (name{equation.7.4.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.2566         \end{array}\right) P$$
+l.2568         \end{array}\right) P$$
                                      ]
 pdfTeX warning (ext4): destination with the same identifier (name{equation.7.4.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2574     \begin{equation}
+l.2576     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.7.4.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2574     \begin{equation}
+l.2576     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.7.4.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2574     \begin{equation}
+l.2576     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.7.4.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2574     \begin{equation}
-                            [63]
+l.2576     \begin{equation}
+                            [64]
 Chapter 8.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2584.
+(hyperref)                removing `math shift' on input line 2586.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2584.
+(hyperref)                removing `math shift' on input line 2586.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2584.
+(hyperref)                removing `math shift' on input line 2586.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2584.
+(hyperref)                removing `math shift' on input line 2586.
 
-[64
+[65
 
-] [65] (./Logic and Analysis.aux)
+] [66] (./Logic and Analysis.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
-
-Package rerunfilecheck Warning: File `"Logic and Analysis".out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `"Logic and Analysis".out':
-(rerunfilecheck)             Before: 33BAE9A8599B144BEF59A636AD2DA018;54371
-(rerunfilecheck)             After:  F01CB6AAFAFBEF5FBD8F591D5AE4EF3A;54335.
+Package rerunfilecheck Info: File `"Logic and Analysis".out' has not changed.
+(rerunfilecheck)             Checksum: F60C99F31F82EF2B9EF78C887A5A3D49;55944.
 Package logreq Info: Writing requests to '"Logic and Analysis".run.xml'.
 \openout1 = `"Logic and Analysis.run.xml"'.
 
  ) 
 Here is how much of TeX's memory you used:
- 43103 strings out of 476038
- 845995 string characters out of 5790170
- 1898785 words of memory out of 5000000
- 62194 multiletter control sequences out of 15000+600000
+ 43106 strings out of 476038
+ 846039 string characters out of 5790170
+ 1896785 words of memory out of 5000000
+ 62195 multiletter control sequences out of 15000+600000
  554887 words of font info for 140 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  102i,18n,136p,1339b,1465s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/hoekwater/manfnt-font/manfnt.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/newtx/ztmbi.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on "Logic and Analysis.pdf" (72 pages, 5263184 bytes).
+Output written on "Logic and Analysis.pdf" (73 pages, 5266078 bytes).
 PDF statistics:
- 2028 PDF objects out of 2073 (max. 8388607)
- 1868 compressed objects within 19 object streams
- 609 named destinations out of 1000 (max. 500000)
- 1526 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2042 PDF objects out of 2073 (max. 8388607)
+ 1881 compressed objects within 19 object streams
+ 611 named destinations out of 1000 (max. 500000)
+ 1534 words of extra memory for PDF output out of 10000 (max. 10000000)
 
