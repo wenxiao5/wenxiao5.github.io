@@ -86,11 +86,12 @@
 \contentsline {subsection}{\numberline {3.3.1}Continuous Function in $\mathbb {R}$ with Euclidean norm}{24}{subsection.3.3.1}%
 \contentsline {subsection}{\numberline {3.3.2}Continuous Function in Metric Spaces \small {(@ Lec 04 of ECON 204)}}{24}{subsection.3.3.2}%
 \contentsline {subsection}{\numberline {3.3.3}Theorem: Continuous $\Leftrightarrow $ Preimage of open set is open \small {(@ Lec 04 of ECON 204)}}{25}{subsection.3.3.3}%
-\contentsline {subsection}{\numberline {3.3.4}Theorem: Continuity is preserved in composition \small {(@ Lec 04 of ECON 204)}}{26}{subsection.3.3.4}%
-\contentsline {subsection}{\numberline {3.3.5}Uniform Continuity \small {(@ Lec 04 of ECON 204)}}{26}{subsection.3.3.5}%
-\contentsline {subsection}{\numberline {3.3.6}Theorem: Continuous function with Compact domain is Uniformly Continuous \small {(@ Lec 06 of ECON 204)}}{26}{subsection.3.3.6}%
-\contentsline {subsection}{\numberline {3.3.7}Lipschitz Continuous \small {(@ Lec 04 of ECON 204)}}{27}{subsection.3.3.7}%
-\contentsline {subsection}{\numberline {3.3.8}Contraction (from the view of Lipschitz constant)}{28}{subsection.3.3.8}%
+\contentsline {subsection}{\numberline {3.3.4}Limit characterization of continuity: continuous at $x_0$ $\Leftrightarrow $ $\lim _{x \rightarrow x_0} f(x)=f(x_0)$}{26}{subsection.3.3.4}%
+\contentsline {subsection}{\numberline {3.3.5}Theorem: Continuity is preserved in composition \small {(@ Lec 04 of ECON 204)}}{26}{subsection.3.3.5}%
+\contentsline {subsection}{\numberline {3.3.6}Uniform Continuity \small {(@ Lec 04 of ECON 204)}}{26}{subsection.3.3.6}%
+\contentsline {subsection}{\numberline {3.3.7}Theorem: Continuous function with Compact domain is Uniformly Continuous \small {(@ Lec 06 of ECON 204)}}{26}{subsection.3.3.7}%
+\contentsline {subsection}{\numberline {3.3.8}Lipschitz Continuous \small {(@ Lec 04 of ECON 204)}}{27}{subsection.3.3.8}%
+\contentsline {subsection}{\numberline {3.3.9}Contraction (from the view of Lipschitz constant)}{28}{subsection.3.3.9}%
 \contentsline {section}{\numberline {3.4}Extreme Value, Intermediate Value of Functions}{28}{section.3.4}%
 \contentsline {subsection}{\numberline {3.4.1}Intermediate Value Theorem \small {(@ Lec 02 of ECON 204)}}{28}{subsection.3.4.1}%
 \contentsline {subsection}{\numberline {3.4.2}Coercive Function}{28}{subsection.3.4.2}%

@@ -1006,12 +1006,6 @@ Continuity at $x_0$ requires:
 \end{enumerate}
 \end{proof}
 
-\subsection{Limit characterization of continuity: continuous at $x_0$ $\Leftrightarrow$ $\lim_{x \rightarrow x_0} f(x)=f(x_0)$}
-\begin{theorem}[Limit Characterization of Continuity]
-    If $x_0$ is a limit point of $X$, then $f$ is \textbf{continuous at $x_0$} \underline{if and only if}
-    $$\lim_{x \rightarrow x_0} f(x)=f(x_0)$$
-\end{theorem}
-
 \subsection{Theorem: Continuity is preserved in composition \small{(@ Lec 04 of ECON 204)}}
 \begin{theorem}[Continuity is preserved in composition]
     Let $(X, d_X)$, $(Y, d_Y)$ and $(Z, d_Z)$ be metric spaces. If $f : X \rightarrow Y$ and $g : Y \rightarrow Z$ are continuous, then $g \circ f : X \rightarrow Z$ is
@@ -2134,16 +2128,13 @@ By the definition of continuous function $f:\mathbb{R}^n \rightarrow \mathbb{R}$
 \subsection{Closed-valued, uhc and Closed Graph}
 For closed-valued correspondences these concepts can be more tightly connected. A closed-valued and upper hemicontinuous correspondence must have closed graph. For a closed-valued correspondence with a compact range, upper hemicontinuity is equivalent to closed graph.
 
-\begin{theorem}
+\begin{theorem}[Properties]
     Let $X\subseteq \mathbb{E}^n$, $Y\subseteq \mathbb{E}^m$, and $\Psi: X \rightarrow 2^Y$.
-    \begin{enumerate}
+    \begin{enumerate}[(i).]
         \item $\Psi$ is \textbf{closed-valued} and \textbf{uhc} $\Rightarrow$ $\Psi$ has \textbf{closed graph}.
-        \item $\Psi$ is \textbf{closed-valued} and \textbf{uhc} $\Leftarrow$ $\Psi$ has \textbf{closed graph}. (If $Y$ is \textbf{compact})
+        \item $\Psi$ is \textbf{closed-valued} and \textbf{uhc} $\Leftrightarrow$ $\Psi$ has \textbf{closed graph}. (If $Y$ is \textbf{compact})
+        \item If $\Psi$ has \textbf{closed graph} and there is an \textbf{open set} $W$ with $x_0 \in W$ and a \textbf{compact set} $Z$ such that $x \in W \cap X \Rightarrow \Psi(x) \subseteq Z$, then $\Psi$ is \textbf{uhc} at $x_0$.
     \end{enumerate}
-\end{theorem}
-
-\begin{theorem}
-    Let $X\subseteq \mathbb{E}^n$, $Y\subseteq \mathbb{E}^m$, and $\Psi: X \rightarrow 2^Y$. If $\Psi$ has \textbf{closed graph} and there is an \textbf{open set} $W$ with $x_0 \in W$ and a \textbf{compact set} $Z$ such that $x \in W \cap X \Rightarrow \Psi(x) \subseteq Z$, then $\Psi$ is \textbf{uhc} at $x_0$.
 \end{theorem}
 
 
