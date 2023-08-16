@@ -535,7 +535,7 @@ $*$ has \underline{identity element $e\in S$} if $a*e=e*a=a$ for all $s\in S$.
 
     A set in a metric space is \textbf{connected} if it cannot be written as the union of two nonempty separated sets.
 \end{definition}
-Equivalent Definition:
+\textbf{Equivalent Definition:}
 \begin{definition}[Connected Set]
     \normalfont
     A set $Y$ in a metric space $X$ is \textbf{connected} if there do not exist \textit{open sets} $A$ and $B$ such that $A \cap B = \emptyset$, $Y \subseteq A\cup B$ and $A \cap Y \neq \emptyset$ and $B \cap Y \neq \emptyset$.
@@ -1361,21 +1361,18 @@ The missing piece is continuity of the partial derivatives:
 \end{theorem}
 
 \subsection{Directional Derivatives}
-\begin{definition}[Directional Derivative]
-    \normalfont
-    Suppose $X \subseteq \mathbb{R}^n$ open, $f: X \rightarrow \mathbb{R}^m$ is differentiable at $x$, and $|u|=1$.
-    $$
-    \begin{aligned}
-    & f(x+\gamma u)-\left(f(x)+T_x(\gamma u)\right)=o(\gamma) \text { as } \gamma \rightarrow 0 \\
-    & \quad \Rightarrow f(x+\gamma u)-\left(f(x)+\gamma T_x(u)\right)=o(\gamma) \text { as } \gamma \rightarrow 0 \\
-    & \quad \Rightarrow \lim _{\gamma \rightarrow 0} \frac{f(x+\gamma u)-f(x)}{\gamma}=T_x(u)=Df(x) u
-    \end{aligned}
-    $$
-    i.e. the \textbf{directional derivative} in the direction $u$ (with $|u|=1$ ) is
-    $$
-    Df(x) u \in \mathbb{R}^m
-    $$
-\end{definition}
+Suppose $X \subseteq \mathbb{R}^n$ open, $f: X \rightarrow \mathbb{R}^m$ is differentiable at $x$, and $|u|=1$.
+$$
+\begin{aligned}
+& f(x+\gamma u)-\left(f(x)+T_x(\gamma u)\right)=o(\gamma) \text { as } \gamma \rightarrow 0 \\
+& \quad \Rightarrow f(x+\gamma u)-\left(f(x)+\gamma T_x(u)\right)=o(\gamma) \text { as } \gamma \rightarrow 0 \\
+& \quad \Rightarrow \lim _{\gamma \rightarrow 0} \frac{f(x+\gamma u)-f(x)}{\gamma}=T_x(u)=Df(x) u
+\end{aligned}
+$$
+i.e. the \textbf{directional derivative} in the direction $u$ (with $|u|=1$ ) is
+$$
+Df(x) u \in \mathbb{R}^m
+$$
 
 
 \subsection{Chain Rule: $d F_{x_0}= d g_{f(x_0)} \circ d f_{x_0}$ and $D F_{x_0}= D g (f(x_0)) D f (x_0)$}
