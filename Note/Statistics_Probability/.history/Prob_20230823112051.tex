@@ -509,45 +509,23 @@ $$
     $S=\emptyset^C\in \mathcal{B}$.
 \end{note}
 \begin{example}
-    \textbf{Coin Tossing:} $S=\{H,T\}$ has $\sigma-$algebra $\mathcal{B}=2^S=\{\emptyset,\{H\},\{T\},\{H,T\}\}$ (which is called the "discrete $\sigma-$algebra").
+    \textbf{Coin Tossing:} $S=\{H,T\}$ has $\sigma-$algebra $B=2^S=\{\emptyset,\{H\},\{T\},\{H,T\}\}$ (which is called the "discrete $\sigma-$algebra").
 \end{example}
 
 \begin{definition}
     \normalfont
-    A function $P: \mathcal{B} \rightarrow [0,1]$ is a \textbf{probability function} \underline{if and only if}
+    A function $P: B \rightarrow [0,1]$ is a \textbf{probability function} \underline{if and only if}
     \begin{enumerate}
         \item $P(S)=1$;
-        \item If $B_1,B_2,...\in \mathcal{B}$ are disjoint event, then $P(\cup_{i=1}^\infty B_i)=\sum_{i=1}^\infty P(B_i)$.
+        \item If $B_1,B_2,...\in B$ are disjoint event, then $P(\cup_{i=1}^\infty B_i)=\sum_{i=1}^\infty P(B_i)$.
     \end{enumerate}
 \end{definition}
 \begin{note}
-    \begin{enumerate}
-        \item $\mathcal{B}$ is the domain of $P$.
-        \item $S=\emptyset^C\in \mathcal{B}$ because $\mathcal{B}$ is a $\sigma-$algebra.
-        \item $P(\emptyset)=0$ because $\emptyset$ and $S$ are disjoint, $P(\emptyset)+P(S)=P(\emptyset\cup S)=P(S)$.
-    \end{enumerate}
+    $B$ is the domain of $P$. $S=\empty^C\in B$ because $B$ is a $\sigma-$algebra.
 \end{note}
-\begin{example}
-    \textbf{Coin Tossing:} $S=\{H,T\}$ has $\sigma-$algebra $\mathcal{B}=2^S=\{\emptyset,\{H\},\{T\},\{H,T\}\}$ (which is called the "discrete $\sigma-$algebra").
-    \begin{equation}
-        \begin{aligned}
-            P(\emptyset)=0,P(\{H\})=P(\{T\})=\frac{1}{2},P(\{H,T\})=1
-        \end{aligned}
-        \nonumber
-    \end{equation}
-\end{example}
 
-\begin{note}
-    \textbf{Specifying $B\& P()$ in general:}
-    \begin{enumerate}
-        \item We don't specify $\mathcal{B}$ unless we have to.
-        \item It suffices to specify $P()$ on a subset of $\mathcal{B}$. (In the example, we can only specify $P(\{H\})$ and $P(\{T\})$).
-    \end{enumerate}
-\end{note}
-\begin{note}
-    \textbf{Generalization:}\\
-    If $S$ is \underline{(at most) countable}, then $\mathcal{B}=2^S$ is a standard choice. It suffices to specify $P(\{s\}), s\in S$.
-\end{note}
+
+
 
 
 

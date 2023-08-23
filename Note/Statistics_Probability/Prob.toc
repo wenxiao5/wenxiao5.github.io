@@ -30,95 +30,97 @@
 \contentsline {subsection}{\numberline {2.6.2}Strong Law of Large Numbers (sLLN)}{11}{subsection.2.6.2}%
 \contentsline {subsection}{\numberline {2.6.3}Differences between \underline {convergence in probability} (wLLN) and \underline {wp1(a.s.)} (sLLN)}{11}{subsection.2.6.3}%
 \contentsline {section}{\numberline {2.7}Central Limit Theorem (CLT)}{12}{section.2.7}%
-\contentsline {chapter}{\numberline {3}Markov Chain}{14}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Definition}{14}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Matrix Computations}{14}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Chapman Kolmogorov Equations (C-K Equations) $P(X_{n+m}=j|X_0=i)=(P^{m+n})_{ij}=\DOTSB \sum@ \slimits@ _{k\in S}(P^{m})_{ik}(P^{n})_{kj}$}{15}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Marginal Distribution $P(X_n=j)=(\alpha P^n)_{j}$}{15}{subsection.3.2.2}%
-\contentsline {section}{\numberline {3.3}States, Class}{15}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Irreducible, Reducible}{15}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Recurrent, Transient}{16}{subsection.3.3.2}%
-\contentsline {section}{\numberline {3.4}Periodicity}{17}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Lemma: all states in an irreducible MC have the same period}{17}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Periodic, Aperiodic}{17}{subsection.3.4.2}%
-\contentsline {section}{\numberline {3.5}Regular Matrix}{17}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}Regular matrix: $\exists n\geq 1$ s.t. $P^n>0$}{17}{subsection.3.5.1}%
-\contentsline {subsection}{\numberline {3.5.2}Lemma: Finite MC is Irreducible, Aperiodic $\Leftrightarrow $ has Regular transition matrix}{18}{subsection.3.5.2}%
-\contentsline {section}{\numberline {3.6}Eigenvalues of a Stochastic Matrix: $\lambda =1$ must exist and other $|\lambda |\leq 1$ (not equal when if regular matrix)}{18}{section.3.6}%
-\contentsline {section}{\numberline {3.7}Long Run Behavior of Finite Markov Chains}{18}{section.3.7}%
-\contentsline {subsection}{\numberline {3.7.1}Limiting Distribution}{18}{subsection.3.7.1}%
-\contentsline {subsection}{\numberline {3.7.2}Stationary Distribution}{19}{subsection.3.7.2}%
-\contentsline {subsection}{\numberline {3.7.3}Limiting Distribution = Expected Proportion of time in each state}{19}{subsection.3.7.3}%
-\contentsline {subsection}{\numberline {3.7.4}Fundamental Theorem for \underline {Irreducible, Aperiodic, Finite MC} (Regular transition matrix) $\Rightarrow $ $\exists $ unique limiting distribution $\pi $ and $\pi _j>0,\forall j$}{20}{subsection.3.7.4}%
-\contentsline {subsection}{\numberline {3.7.5}Long run behavior for reducible and/or periodic chains}{20}{subsection.3.7.5}%
-\contentsline {subsection}{\numberline {3.7.6}Fundamental Theorem for \underline {Irreducible, Finite MC}: expected first return time $\mathbb {E}(T_j|X_0 = j)=\frac {1}{\pi _j}$}{21}{subsection.3.7.6}%
-\contentsline {section}{\numberline {3.8}Return Times and Absorption Probabilities}{22}{section.3.8}%
-\contentsline {subsection}{\numberline {3.8.1}Expected Number of Visits to a Transient State: $E(Y_i|X_0 = j) = M_{ji} = (I-Q)^{-1}_{ji}$}{22}{subsection.3.8.1}%
-\contentsline {subsection}{\numberline {3.8.2}Expected Time till Absorption to a Recurrent Class: $\mathbb {E}(T_{abs}|X_0=j)=\DOTSB \sum@ \slimits@ _{i\in T_1\cup T_2\cup \cdots \cup T_s} M_{ji}$}{23}{subsection.3.8.2}%
-\contentsline {subsection}{\numberline {3.8.3}Expected first return time (different initial state) = Time till Absorption}{24}{subsection.3.8.3}%
-\contentsline {subsection}{\numberline {3.8.4}Probability of Eventually Entering a Given Recurrent Class: $A=(I-Q)^{-1}S=MS$}{25}{subsection.3.8.4}%
-\contentsline {section}{\numberline {3.9}Examples of Finite MC}{26}{section.3.9}%
-\contentsline {subsection}{\numberline {3.9.1}Gambler's Ruin}{26}{subsection.3.9.1}%
-\contentsline {subsection}{\numberline {3.9.2}Simple Random Walk (SRW) on Undirected Graph}{26}{subsection.3.9.2}%
-\contentsline {chapter}{\numberline {4} Countably infinite MC}{28}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Recurrence and Transience}{28}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Recurrent or Transient State}{28}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Recurrent or Transient Class}{29}{subsection.4.1.2}%
-\contentsline {subsection}{\numberline {4.1.3}Lemma: Transient Class $\Leftrightarrow $ $\DOTSB \sum@ \slimits@ _{n=0}^\infty P_{i,i}^n<\infty $}{29}{subsection.4.1.3}%
-\contentsline {subsection}{\numberline {4.1.4}Recurrence/Transience of Simple Random Walk on Lattice}{29}{subsection.4.1.4}%
-\contentsline {subsection}{\numberline {4.1.5}Null and Positive Recurrence}{30}{subsection.4.1.5}%
-\contentsline {subsection}{\numberline {4.1.6}Stationary Distribution and Limiting Distribution}{30}{subsection.4.1.6}%
-\contentsline {section}{\numberline {4.2}Differences between Finite and (Countably) Infinite Markov Chains}{31}{section.4.2}%
-\contentsline {chapter}{\numberline {5}Branching Process}{32}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Extinction Probability in a Branching Process}{32}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Expectation $\mathbb {E}X_n=\mu ^n \mathbb {E}X_0$}{32}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Lemma: $\mu <1$ $\Rightarrow $ $P(extinction)=1$}{33}{subsection.5.1.2}%
-\contentsline {subsection}{\numberline {5.1.3}Variance: $Var X_n=n\sigma ^2$ if $\mu =1$; $Var X_n=\sigma ^2\mu ^{n-1}\frac {\mu ^n-1}{\mu -1}$ if $\mu \neq 1$}{33}{subsection.5.1.3}%
-\contentsline {subsection}{\numberline {5.1.4}Extinction probability $\rho =1$ if $\mu \leq 1$; $\rho <1$ if $\mu >1$}{33}{subsection.5.1.4}%
-\contentsline {subsection}{\numberline {5.1.5}$G_n(s)=G_{n-1}(\psi (s))=\psi (\psi (\psi (\cdots \psi (s)\cdots )))=\psi (G_{n-1}(s))$}{35}{subsection.5.1.5}%
-\contentsline {chapter}{\numberline {6}Time Reversible Markov Chains}{37}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Definition: Local Balance $\pi (i)P(i,j)=\pi (j)P(j,i),\forall i,j\in S$}{37}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Discussion about Local Balance}{37}{section.6.2}%
-\contentsline {subsection}{\numberline {6.2.1}Flow: $Flow(A,B)=\DOTSB \sum@ \slimits@ _{i\in A}\DOTSB \sum@ \slimits@ _{j\in B}\pi (i)P_{ij}$}{37}{subsection.6.2.1}%
-\contentsline {subsection}{\numberline {6.2.2}Lemma: $Flow(A,A^c)=Flow(A^c,A)$ for any subset $A\subset S$}{37}{subsection.6.2.2}%
-\contentsline {subsection}{\numberline {6.2.3}Lemma: Local balance $\Rightarrow $ $\pi $ is stationary}{38}{subsection.6.2.3}%
-\contentsline {subsection}{\numberline {6.2.4}Lemma: All stationary birth and death chains are reversible}{38}{subsection.6.2.4}%
-\contentsline {section}{\numberline {6.3}Example: Random Walk on an Undirected Graph}{38}{section.6.3}%
-\contentsline {chapter}{\numberline {7}Markov Chain Monte Carlo (MCMC)}{40}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Strong Law of Large Numbers for Markov Chains}{40}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Example of Designing MC}{40}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Metropolis Hastings Algorithm}{41}{section.7.3}%
-\contentsline {subsection}{\numberline {7.3.1}Example of generate standard normal distribution with uniform}{41}{subsection.7.3.1}%
-\contentsline {subsection}{\numberline {7.3.2}Without MCMC: Box Muller Transform}{42}{subsection.7.3.2}%
-\contentsline {section}{\numberline {7.4}Gibbs Sampling}{42}{section.7.4}%
-\contentsline {subsection}{\numberline {7.4.1} Systematic scan Gibbs sampler}{42}{subsection.7.4.1}%
-\contentsline {subsection}{\numberline {7.4.2} Random Scan Gibbs sampler}{43}{subsection.7.4.2}%
-\contentsline {subsection}{\numberline {7.4.3}Example: Bivariate Normal Distribution}{44}{subsection.7.4.3}%
-\contentsline {subsection}{\numberline {7.4.4}Example: Potts model (Ising model)}{44}{subsection.7.4.4}%
-\contentsline {section}{\numberline {7.5}A Linear Algebraic Condition for Convergence}{45}{section.7.5}%
-\contentsline {chapter}{\numberline {8}Poisson Process}{47}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Basics of Poisson Process}{47}{section.8.1}%
-\contentsline {subsection}{\numberline {8.1.1}Counting Process}{47}{subsection.8.1.1}%
-\contentsline {subsection}{\numberline {8.1.2}Poisson Distribution}{47}{subsection.8.1.2}%
-\contentsline {subsection}{\numberline {8.1.3}Definition of Poisson Process}{48}{subsection.8.1.3}%
-\contentsline {section}{\numberline {8.2}Inter-Arrival Times}{48}{section.8.2}%
-\contentsline {subsection}{\numberline {8.2.1}First arrival time: Exponential distribution $Exp(\lambda )$}{48}{subsection.8.2.1}%
-\contentsline {subsection}{\numberline {8.2.2}$k^{th}$ arrival time: Gamma distribution $Gamma(n,\lambda )$}{49}{subsection.8.2.2}%
-\contentsline {subsection}{\numberline {8.2.3}Memorylessness of the Exponential Random Variable}{50}{subsection.8.2.3}%
-\contentsline {section}{\numberline {8.3}Conditioning on the number of arrivals in a Poisson Process: Uniform}{50}{section.8.3}%
-\contentsline {section}{\numberline {8.4}Superposition}{53}{section.8.4}%
-\contentsline {subsection}{\numberline {8.4.1}Independent Poisson variables: $\DOTSB \sum@ \slimits@ _{i=1}^n Y_i\sim \textnormal {Poi}\left (\DOTSB \sum@ \slimits@ _{i=1}^n\lambda _i\right )$}{53}{subsection.8.4.1}%
-\contentsline {subsection}{\numberline {8.4.2}Superposition Theorem: PP with $\lambda _1$ + PP with $\lambda _2$ = PP with $\lambda _1+\lambda _2$}{54}{subsection.8.4.2}%
-\contentsline {subsection}{\numberline {8.4.3}Probability of type 1 event before type 2 event: $\frac {\lambda _1}{\lambda _1+\lambda _2}$}{54}{subsection.8.4.3}%
-\contentsline {section}{\numberline {8.5}Thinning: PP can be divided into two independent PP}{55}{section.8.5}%
-\contentsline {section}{\numberline {8.6}Variants of Poisson process}{57}{section.8.6}%
-\contentsline {subsection}{\numberline {8.6.1}Spatial Poisson Process (dimension $\geq 2$)}{57}{subsection.8.6.1}%
-\contentsline {subsection}{\numberline {8.6.2}Non Homogeneous Poisson Process}{58}{subsection.8.6.2}%
-\contentsline {chapter}{\numberline {9}Brownian Motion}{59}{chapter.9}%
-\contentsline {section}{\numberline {9.1}Brownian Motion}{59}{section.9.1}%
-\contentsline {subsection}{\numberline {9.1.1}Definition}{59}{subsection.9.1.1}%
-\contentsline {subsection}{\numberline {9.1.2}Sufficient Condition for BM}{59}{subsection.9.1.2}%
-\contentsline {subsection}{\numberline {9.1.3}Standard Brownian Motion and Transformations}{60}{subsection.9.1.3}%
-\contentsline {subsection}{\numberline {9.1.4}Brownian Motion as a limit of Random Walk}{60}{subsection.9.1.4}%
-\contentsline {section}{\numberline {9.2} Gaussian Process}{60}{section.9.2}%
-\contentsline {section}{\numberline {9.3}Transformations and Properties}{61}{section.9.3}%
+\contentsline {chapter}{\numberline {3}Metric Spaces Foundations \small {(Lec 01 @ ECON 240A)}}{14}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Probability Space}{14}{section.3.1}%
+\contentsline {chapter}{\numberline {4}Markov Chain}{16}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Definition}{16}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Matrix Computations}{16}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Chapman Kolmogorov Equations (C-K Equations) $P(X_{n+m}=j|X_0=i)=(P^{m+n})_{ij}=\DOTSB \sum@ \slimits@ _{k\in S}(P^{m})_{ik}(P^{n})_{kj}$}{17}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Marginal Distribution $P(X_n=j)=(\alpha P^n)_{j}$}{17}{subsection.4.2.2}%
+\contentsline {section}{\numberline {4.3}States, Class}{17}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Irreducible, Reducible}{17}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Recurrent, Transient}{18}{subsection.4.3.2}%
+\contentsline {section}{\numberline {4.4}Periodicity}{19}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Lemma: all states in an irreducible MC have the same period}{19}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Periodic, Aperiodic}{19}{subsection.4.4.2}%
+\contentsline {section}{\numberline {4.5}Regular Matrix}{19}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Regular matrix: $\exists n\geq 1$ s.t. $P^n>0$}{19}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}Lemma: Finite MC is Irreducible, Aperiodic $\Leftrightarrow $ has Regular transition matrix}{20}{subsection.4.5.2}%
+\contentsline {section}{\numberline {4.6}Eigenvalues of a Stochastic Matrix: $\lambda =1$ must exist and other $|\lambda |\leq 1$ (not equal when if regular matrix)}{20}{section.4.6}%
+\contentsline {section}{\numberline {4.7}Long Run Behavior of Finite Markov Chains}{20}{section.4.7}%
+\contentsline {subsection}{\numberline {4.7.1}Limiting Distribution}{20}{subsection.4.7.1}%
+\contentsline {subsection}{\numberline {4.7.2}Stationary Distribution}{21}{subsection.4.7.2}%
+\contentsline {subsection}{\numberline {4.7.3}Limiting Distribution = Expected Proportion of time in each state}{21}{subsection.4.7.3}%
+\contentsline {subsection}{\numberline {4.7.4}Fundamental Theorem for \underline {Irreducible, Aperiodic, Finite MC} (Regular transition matrix) $\Rightarrow $ $\exists $ unique limiting distribution $\pi $ and $\pi _j>0,\forall j$}{22}{subsection.4.7.4}%
+\contentsline {subsection}{\numberline {4.7.5}Long run behavior for reducible and/or periodic chains}{22}{subsection.4.7.5}%
+\contentsline {subsection}{\numberline {4.7.6}Fundamental Theorem for \underline {Irreducible, Finite MC}: expected first return time $\mathbb {E}(T_j|X_0 = j)=\frac {1}{\pi _j}$}{23}{subsection.4.7.6}%
+\contentsline {section}{\numberline {4.8}Return Times and Absorption Probabilities}{24}{section.4.8}%
+\contentsline {subsection}{\numberline {4.8.1}Expected Number of Visits to a Transient State: $E(Y_i|X_0 = j) = M_{ji} = (I-Q)^{-1}_{ji}$}{24}{subsection.4.8.1}%
+\contentsline {subsection}{\numberline {4.8.2}Expected Time till Absorption to a Recurrent Class: $\mathbb {E}(T_{abs}|X_0=j)=\DOTSB \sum@ \slimits@ _{i\in T_1\cup T_2\cup \cdots \cup T_s} M_{ji}$}{25}{subsection.4.8.2}%
+\contentsline {subsection}{\numberline {4.8.3}Expected first return time (different initial state) = Time till Absorption}{26}{subsection.4.8.3}%
+\contentsline {subsection}{\numberline {4.8.4}Probability of Eventually Entering a Given Recurrent Class: $A=(I-Q)^{-1}S=MS$}{27}{subsection.4.8.4}%
+\contentsline {section}{\numberline {4.9}Examples of Finite MC}{28}{section.4.9}%
+\contentsline {subsection}{\numberline {4.9.1}Gambler's Ruin}{28}{subsection.4.9.1}%
+\contentsline {subsection}{\numberline {4.9.2}Simple Random Walk (SRW) on Undirected Graph}{28}{subsection.4.9.2}%
+\contentsline {chapter}{\numberline {5} Countably infinite MC}{30}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Recurrence and Transience}{30}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Recurrent or Transient State}{30}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Recurrent or Transient Class}{31}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}Lemma: Transient Class $\Leftrightarrow $ $\DOTSB \sum@ \slimits@ _{n=0}^\infty P_{i,i}^n<\infty $}{31}{subsection.5.1.3}%
+\contentsline {subsection}{\numberline {5.1.4}Recurrence/Transience of Simple Random Walk on Lattice}{31}{subsection.5.1.4}%
+\contentsline {subsection}{\numberline {5.1.5}Null and Positive Recurrence}{32}{subsection.5.1.5}%
+\contentsline {subsection}{\numberline {5.1.6}Stationary Distribution and Limiting Distribution}{32}{subsection.5.1.6}%
+\contentsline {section}{\numberline {5.2}Differences between Finite and (Countably) Infinite Markov Chains}{33}{section.5.2}%
+\contentsline {chapter}{\numberline {6}Branching Process}{34}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Extinction Probability in a Branching Process}{34}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Expectation $\mathbb {E}X_n=\mu ^n \mathbb {E}X_0$}{34}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Lemma: $\mu <1$ $\Rightarrow $ $P(extinction)=1$}{35}{subsection.6.1.2}%
+\contentsline {subsection}{\numberline {6.1.3}Variance: $Var X_n=n\sigma ^2$ if $\mu =1$; $Var X_n=\sigma ^2\mu ^{n-1}\frac {\mu ^n-1}{\mu -1}$ if $\mu \neq 1$}{35}{subsection.6.1.3}%
+\contentsline {subsection}{\numberline {6.1.4}Extinction probability $\rho =1$ if $\mu \leq 1$; $\rho <1$ if $\mu >1$}{35}{subsection.6.1.4}%
+\contentsline {subsection}{\numberline {6.1.5}$G_n(s)=G_{n-1}(\psi (s))=\psi (\psi (\psi (\cdots \psi (s)\cdots )))=\psi (G_{n-1}(s))$}{37}{subsection.6.1.5}%
+\contentsline {chapter}{\numberline {7}Time Reversible Markov Chains}{39}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Definition: Local Balance $\pi (i)P(i,j)=\pi (j)P(j,i),\forall i,j\in S$}{39}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Discussion about Local Balance}{39}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}Flow: $Flow(A,B)=\DOTSB \sum@ \slimits@ _{i\in A}\DOTSB \sum@ \slimits@ _{j\in B}\pi (i)P_{ij}$}{39}{subsection.7.2.1}%
+\contentsline {subsection}{\numberline {7.2.2}Lemma: $Flow(A,A^c)=Flow(A^c,A)$ for any subset $A\subset S$}{39}{subsection.7.2.2}%
+\contentsline {subsection}{\numberline {7.2.3}Lemma: Local balance $\Rightarrow $ $\pi $ is stationary}{40}{subsection.7.2.3}%
+\contentsline {subsection}{\numberline {7.2.4}Lemma: All stationary birth and death chains are reversible}{40}{subsection.7.2.4}%
+\contentsline {section}{\numberline {7.3}Example: Random Walk on an Undirected Graph}{40}{section.7.3}%
+\contentsline {chapter}{\numberline {8}Markov Chain Monte Carlo (MCMC)}{42}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Strong Law of Large Numbers for Markov Chains}{42}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Example of Designing MC}{42}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Metropolis Hastings Algorithm}{43}{section.8.3}%
+\contentsline {subsection}{\numberline {8.3.1}Example of generate standard normal distribution with uniform}{43}{subsection.8.3.1}%
+\contentsline {subsection}{\numberline {8.3.2}Without MCMC: Box Muller Transform}{44}{subsection.8.3.2}%
+\contentsline {section}{\numberline {8.4}Gibbs Sampling}{44}{section.8.4}%
+\contentsline {subsection}{\numberline {8.4.1} Systematic scan Gibbs sampler}{44}{subsection.8.4.1}%
+\contentsline {subsection}{\numberline {8.4.2} Random Scan Gibbs sampler}{45}{subsection.8.4.2}%
+\contentsline {subsection}{\numberline {8.4.3}Example: Bivariate Normal Distribution}{46}{subsection.8.4.3}%
+\contentsline {subsection}{\numberline {8.4.4}Example: Potts model (Ising model)}{46}{subsection.8.4.4}%
+\contentsline {section}{\numberline {8.5}A Linear Algebraic Condition for Convergence}{47}{section.8.5}%
+\contentsline {chapter}{\numberline {9}Poisson Process}{49}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Basics of Poisson Process}{49}{section.9.1}%
+\contentsline {subsection}{\numberline {9.1.1}Counting Process}{49}{subsection.9.1.1}%
+\contentsline {subsection}{\numberline {9.1.2}Poisson Distribution}{49}{subsection.9.1.2}%
+\contentsline {subsection}{\numberline {9.1.3}Definition of Poisson Process}{50}{subsection.9.1.3}%
+\contentsline {section}{\numberline {9.2}Inter-Arrival Times}{50}{section.9.2}%
+\contentsline {subsection}{\numberline {9.2.1}First arrival time: Exponential distribution $Exp(\lambda )$}{50}{subsection.9.2.1}%
+\contentsline {subsection}{\numberline {9.2.2}$k^{th}$ arrival time: Gamma distribution $Gamma(n,\lambda )$}{51}{subsection.9.2.2}%
+\contentsline {subsection}{\numberline {9.2.3}Memorylessness of the Exponential Random Variable}{52}{subsection.9.2.3}%
+\contentsline {section}{\numberline {9.3}Conditioning on the number of arrivals in a Poisson Process: Uniform}{52}{section.9.3}%
+\contentsline {section}{\numberline {9.4}Superposition}{55}{section.9.4}%
+\contentsline {subsection}{\numberline {9.4.1}Independent Poisson variables: $\DOTSB \sum@ \slimits@ _{i=1}^n Y_i\sim \textnormal {Poi}\left (\DOTSB \sum@ \slimits@ _{i=1}^n\lambda _i\right )$}{55}{subsection.9.4.1}%
+\contentsline {subsection}{\numberline {9.4.2}Superposition Theorem: PP with $\lambda _1$ + PP with $\lambda _2$ = PP with $\lambda _1+\lambda _2$}{56}{subsection.9.4.2}%
+\contentsline {subsection}{\numberline {9.4.3}Probability of type 1 event before type 2 event: $\frac {\lambda _1}{\lambda _1+\lambda _2}$}{56}{subsection.9.4.3}%
+\contentsline {section}{\numberline {9.5}Thinning: PP can be divided into two independent PP}{57}{section.9.5}%
+\contentsline {section}{\numberline {9.6}Variants of Poisson process}{59}{section.9.6}%
+\contentsline {subsection}{\numberline {9.6.1}Spatial Poisson Process (dimension $\geq 2$)}{59}{subsection.9.6.1}%
+\contentsline {subsection}{\numberline {9.6.2}Non Homogeneous Poisson Process}{60}{subsection.9.6.2}%
+\contentsline {chapter}{\numberline {10}Brownian Motion}{61}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Brownian Motion}{61}{section.10.1}%
+\contentsline {subsection}{\numberline {10.1.1}Definition}{61}{subsection.10.1.1}%
+\contentsline {subsection}{\numberline {10.1.2}Sufficient Condition for BM}{61}{subsection.10.1.2}%
+\contentsline {subsection}{\numberline {10.1.3}Standard Brownian Motion and Transformations}{62}{subsection.10.1.3}%
+\contentsline {subsection}{\numberline {10.1.4}Brownian Motion as a limit of Random Walk}{62}{subsection.10.1.4}%
+\contentsline {section}{\numberline {10.2} Gaussian Process}{62}{section.10.2}%
+\contentsline {section}{\numberline {10.3}Transformations and Properties}{63}{section.10.3}%
