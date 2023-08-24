@@ -3,3 +3,58 @@
 \contentsline {section}{\numberline {1.2}Nash Equilibrium}{1}{section.1.2}%
 \contentsline {section}{\numberline {1.3}Single-crossing}{2}{section.1.3}%
 \contentsline {subsection}{\numberline {1.3.1}Situation over real line}{2}{subsection.1.3.1}%
+\contentsline {chapter}{\numberline {2}Tools for Comparative Statics}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Regular and Critical Points and Values}{3}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Rank of Derivatives $\textnormal {Rank} df_x=\textnormal {Rank} Df(x)$}{3}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Regular and Critical Points and Values}{3}{subsection.2.1.2}%
+\contentsline {section}{\numberline {2.2}Inverse and Implicit Function Theorem}{4}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Inverse Function Theorem}{4}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Implicit Function Theorem}{4}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Prove Implicit Function Theorem Given Inverse Function Theorem}{5}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}Prove Inverse Function Theorem Given Implicit Function Theorem}{6}{subsection.2.2.4}%
+\contentsline {subsection}{\numberline {2.2.5}Example: Using Implicit Function Theorem in Comparative Statics}{6}{subsection.2.2.5}%
+\contentsline {subsection}{\numberline {2.2.6}Corollary: $a \rightarrow \{x\in X: f(x,a)=0\}$ is lhc}{7}{subsection.2.2.6}%
+\contentsline {section}{\numberline {2.3}Transversality and Genericity}{7}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Lebesgue Measure Zero}{7}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Sard's Theorem}{8}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Transversality Theorem}{8}{subsection.2.3.3}%
+\contentsline {chapter}{\numberline {3}Fixed Point Theorem}{9}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Contraction Mapping Theorem \small {(@ Lec 05 of ECON 204)}}{9}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Contraction: Lipschitz continuous with constant $<1$}{9}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Theorem: Contraction $\Rightarrow $ Uniformly Continuous}{9}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}Blackwell's Sufficient Conditions for Contraction}{9}{subsection.3.1.3}%
+\contentsline {section}{\numberline {3.2}Fixed Point Theorem \small {(@ Lec 05 of ECON 204)}}{10}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Fixed Point}{10}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}$\bigstar $ Contraction Mapping Theorem: contraction $\Rightarrow $ exist unique fixed point}{11}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Conditions for Fixed Point's Continuous Dependence on Parameters}{12}{subsection.3.2.3}%
+\contentsline {section}{\numberline {3.3}Brouwer's Fixed Point Theorem \small {(@ Lec 13 of ECON 204)}}{12}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Simple One: One-dimension}{12}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}$\bigstar $ Brouwer's Fixed Point Theorem: continuous function has fixed point over compact, convex set}{13}{subsection.3.3.2}%
+\contentsline {chapter}{\numberline {4}Correspondence: $\Psi : X \rightarrow 2^Y$ \small {(@ Lec 07 of ECON 204)}}{14}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Continuity of Correspondences}{14}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Upper/Lower Hemicontinuous}{14}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Theorem: $\Psi (x)=\{f(x)\}$ is uhc $\Leftrightarrow $ $f$ is continuous}{16}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.3}Berge's Maximum Theorem: $v(y)=\max _{x\in \Gamma (y)}f(x,y)$ is continuous; $\{x:f(x,y)=v(y)\}$ is uhc with non-empty compact values}{16}{subsection.4.1.3}%
+\contentsline {section}{\numberline {4.2}Graph of Correspondence}{16}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Closed Graph}{16}{subsection.4.2.1}%
+\contentsline {section}{\numberline {4.3}Closed-valued, Compact-valued, and Convex-valued Correspondences}{17}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Closed-valued, uhc and Closed Graph}{17}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Theorem: compact-valued, uhs correspondence of compact set is compact}{17}{subsection.4.3.2}%
+\contentsline {section}{\numberline {4.4}Fixed Points for Correspondences \small {(@ Lec 13 of ECON 204)}}{18}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Definition}{18}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Kakutani's Fixed Point Theorem: uhs, compact, convex values correspondence has a fixed point over compact convex set}{18}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}Theorem: $\exists $ compact set $C = \cap _{i=0}^\infty \Psi ^i(X)$ s.t. $\Psi (C)=C$}{18}{subsection.4.4.3}%
+\contentsline {chapter}{\numberline {5}Stochastic Dominance}{20}{chapter.5}%
+\contentsline {section}{\numberline {5.1}First-order Stochastic Dominance}{20}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Two Equivalent Definitions}{20}{subsection.5.1.1}%
+\contentsline {section}{\numberline {5.2}Second-order Stochastic Dominance}{21}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Definition in terms of final goals}{21}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Mean-Preserving Spread}{21}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}Second-order Stochastic Dominance is equivalent to Mean-Preserving Spread}{22}{subsection.5.2.3}%
+\contentsline {chapter}{\numberline {6}Bayesian Persuasion: Useful Mathematical Results}{23}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Majorization}{23}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Majorization and Weak Majorization}{23}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}How to work for non-monotonic functions? -- Non-Decreasing Rearrangement}{23}{subsection.6.1.2}%
+\contentsline {subsection}{\numberline {6.1.3}Generalized Inverse $G^{-1}(x)=\sup \{s:G(s)\leq x\}$}{24}{subsection.6.1.3}%
+\contentsline {subsection}{\numberline {6.1.4}Theorem: $F$ majorizes $G$ $\Leftrightarrow $ $G$ is a mean-preserving spread of $F$}{24}{subsection.6.1.4}%
+\contentsline {section}{\numberline {6.2}Extreme Points and Majorization}{24}{section.6.2}%

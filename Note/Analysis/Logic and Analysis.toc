@@ -114,63 +114,22 @@
 \contentsline {subsection}{\numberline {3.6.10}Taylor's Theorem}{35}{subsection.3.6.10}%
 \contentsline {subsection}{\numberline {3.6.11}$C^k$ Function and Continuously Differentiable}{36}{subsection.3.6.11}%
 \contentsline {subsection}{\numberline {3.6.12}Taylor's Theorem with $C^k$}{36}{subsection.3.6.12}%
-\contentsline {chapter}{\numberline {4}Tools for Comparative Statics}{39}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Regular and Critical Points and Values}{39}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Rank of Derivatives $\textnormal {Rank} df_x=\textnormal {Rank} Df(x)$}{39}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Regular and Critical Points and Values}{39}{subsection.4.1.2}%
-\contentsline {section}{\numberline {4.2}Inverse and Implicit Function Theorem}{40}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Inverse Function Theorem}{40}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Implicit Function Theorem}{40}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.2.3}Prove Implicit Function Theorem Given Inverse Function Theorem}{41}{subsection.4.2.3}%
-\contentsline {subsection}{\numberline {4.2.4}Prove Inverse Function Theorem Given Implicit Function Theorem}{42}{subsection.4.2.4}%
-\contentsline {subsection}{\numberline {4.2.5}Example: Using Implicit Function Theorem in Comparative Statics}{42}{subsection.4.2.5}%
-\contentsline {subsection}{\numberline {4.2.6}Corollary: $a \rightarrow \{x\in X: f(x,a)=0\}$ is lhc}{43}{subsection.4.2.6}%
-\contentsline {section}{\numberline {4.3}Transversality and Genericity}{43}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Lebesgue Measure Zero}{43}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Sard's Theorem}{44}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}Transversality Theorem}{44}{subsection.4.3.3}%
-\contentsline {chapter}{\numberline {5}Fixed Point Theorem}{45}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Contraction Mapping Theorem \small {(@ Lec 05 of ECON 204)}}{45}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Contraction: Lipschitz continuous with constant $<1$}{45}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Theorem: Contraction $\Rightarrow $ Uniformly Continuous}{45}{subsection.5.1.2}%
-\contentsline {subsection}{\numberline {5.1.3}Blackwell's Sufficient Conditions for Contraction}{45}{subsection.5.1.3}%
-\contentsline {section}{\numberline {5.2}Fixed Point Theorem \small {(@ Lec 05 of ECON 204)}}{46}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Fixed Point}{46}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}$\bigstar $ Contraction Mapping Theorem: contraction $\Rightarrow $ exist unique fixed point}{47}{subsection.5.2.2}%
-\contentsline {subsection}{\numberline {5.2.3}Conditions for Fixed Point's Continuous Dependence on Parameters}{48}{subsection.5.2.3}%
-\contentsline {section}{\numberline {5.3}Brouwer's Fixed Point Theorem \small {(@ Lec 13 of ECON 204)}}{48}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Simple One: One-dimension}{48}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}$\bigstar $ Brouwer's Fixed Point Theorem: continuous function has fixed point over compact, convex set}{49}{subsection.5.3.2}%
-\contentsline {chapter}{\numberline {6}Correspondence: $\Psi : X \rightarrow 2^Y$ \small {(@ Lec 07 of ECON 204)}}{50}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Continuity of Correspondences}{50}{section.6.1}%
-\contentsline {subsection}{\numberline {6.1.1}Upper/Lower Hemicontinuous}{50}{subsection.6.1.1}%
-\contentsline {subsection}{\numberline {6.1.2}Theorem: $\Psi (x)=\{f(x)\}$ is uhc $\Leftrightarrow $ $f$ is continuous}{52}{subsection.6.1.2}%
-\contentsline {subsection}{\numberline {6.1.3}Berge's Maximum Theorem: $v(y)=\max _{x\in \Gamma (y)}f(x,y)$ is continuous; $\{x:f(x,y)=v(y)\}$ is uhc with non-empty compact values}{52}{subsection.6.1.3}%
-\contentsline {section}{\numberline {6.2}Graph of Correspondence}{52}{section.6.2}%
-\contentsline {subsection}{\numberline {6.2.1}Closed Graph}{52}{subsection.6.2.1}%
-\contentsline {section}{\numberline {6.3}Closed-valued, Compact-valued, and Convex-valued Correspondences}{53}{section.6.3}%
-\contentsline {subsection}{\numberline {6.3.1}Closed-valued, uhc and Closed Graph}{53}{subsection.6.3.1}%
-\contentsline {subsection}{\numberline {6.3.2}Theorem: compact-valued, uhs correspondence of compact set is compact}{53}{subsection.6.3.2}%
-\contentsline {section}{\numberline {6.4}Fixed Points for Correspondences \small {(@ Lec 13 of ECON 204)}}{54}{section.6.4}%
-\contentsline {subsection}{\numberline {6.4.1}Definition}{54}{subsection.6.4.1}%
-\contentsline {subsection}{\numberline {6.4.2}Kakutani's Fixed Point Theorem: uhs, compact, convex values correspondence has a fixed point over compact convex set}{54}{subsection.6.4.2}%
-\contentsline {subsection}{\numberline {6.4.3}Theorem: $\exists $ compact set $C = \cap _{i=0}^\infty \Psi ^i(X)$ s.t. $\Psi (C)=C$}{54}{subsection.6.4.3}%
-\contentsline {chapter}{\numberline {7}Differential Equations \small {(@ Lec 14/15 of ECON 204)}}{56}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Initial Value Problem}{56}{section.7.1}%
-\contentsline {subsection}{\numberline {7.1.1}Initial Value Problem}{56}{subsection.7.1.1}%
-\contentsline {subsection}{\numberline {7.1.2}Theorem: Initial Value Problem, Continuous $\rightarrow $ Existence; Lipschitz $\rightarrow $ Uniqueness}{56}{subsection.7.1.2}%
-\contentsline {section}{\numberline {7.2}Autonomous Differential Equation}{57}{section.7.2}%
-\contentsline {subsection}{\numberline {7.2.1}Autonomous Differential Equation}{57}{subsection.7.2.1}%
-\contentsline {subsection}{\numberline {7.2.2}Complex Exponentials}{58}{subsection.7.2.2}%
-\contentsline {subsection}{\numberline {7.2.3}Solutions of Simple Case: $y'(t)=ay(t)$}{58}{subsection.7.2.3}%
-\contentsline {subsection}{\numberline {7.2.4}Solutions of Special Case: Linear Differential Equations with Constant Coefficients}{58}{subsection.7.2.4}%
-\contentsline {subsection}{\numberline {7.2.5}The Form of Real Solutions}{61}{subsection.7.2.5}%
-\contentsline {section}{\numberline {7.3}Higher Order Differential Equations}{62}{section.7.3}%
-\contentsline {subsection}{\numberline {7.3.1}Second Order Linear Differential Equations}{62}{subsection.7.3.1}%
-\contentsline {section}{\numberline {7.4}Inhomogeneous Linear Differential Equations with Nonconstant Coefficients}{62}{section.7.4}%
-\contentsline {subsection}{\numberline {7.4.1}Theorem: General Solution of Inhomo $=$ General Solution of Homo $+$ Particular Solution of Inhomo}{63}{subsection.7.4.1}%
-\contentsline {subsection}{\numberline {7.4.2}Matrix Exponentials Notations}{63}{subsection.7.4.2}%
-\contentsline {subsection}{\numberline {7.4.3}Theorem: Particular Solution of Inhomogeneous Linear Differential Equations with Constant Coefficients (Matrix)}{64}{subsection.7.4.3}%
-\contentsline {chapter}{\numberline {8}Big $\mathcal {O}$ and Small $o$ Notation}{65}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Definition}{65}{section.8.1}%
-\contentsline {subsection}{\numberline {8.1.1}Extension}{66}{subsection.8.1.1}%
+\contentsline {chapter}{\numberline {4}Differential Equations \small {(@ Lec 14/15 of ECON 204)}}{39}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Initial Value Problem}{39}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Initial Value Problem}{39}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Theorem: Initial Value Problem, Continuous $\rightarrow $ Existence; Lipschitz $\rightarrow $ Uniqueness}{39}{subsection.4.1.2}%
+\contentsline {section}{\numberline {4.2}Autonomous Differential Equation}{40}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Autonomous Differential Equation}{40}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Complex Exponentials}{41}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Solutions of Simple Case: $y'(t)=ay(t)$}{41}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.4}Solutions of Special Case: Linear Differential Equations with Constant Coefficients}{41}{subsection.4.2.4}%
+\contentsline {subsection}{\numberline {4.2.5}The Form of Real Solutions}{44}{subsection.4.2.5}%
+\contentsline {section}{\numberline {4.3}Higher Order Differential Equations}{45}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Second Order Linear Differential Equations}{45}{subsection.4.3.1}%
+\contentsline {section}{\numberline {4.4}Inhomogeneous Linear Differential Equations with Nonconstant Coefficients}{45}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Theorem: General Solution of Inhomo $=$ General Solution of Homo $+$ Particular Solution of Inhomo}{46}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Matrix Exponentials Notations}{46}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}Theorem: Particular Solution of Inhomogeneous Linear Differential Equations with Constant Coefficients (Matrix)}{47}{subsection.4.4.3}%
+\contentsline {chapter}{\numberline {5}Big $\mathcal {O}$ and Small $o$ Notation}{48}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Definition}{48}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Extension}{49}{subsection.5.1.1}%
