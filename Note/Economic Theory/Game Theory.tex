@@ -31,6 +31,131 @@
 \mainmatter
 
 
+
+\chapter{Stochastic Dominance}
+Based on
+\begin{enumerate}[$\circ$]
+    \item MIT 14.123 S15 Stochastic Dominance Lecture Notes
+    \item Princeton ECO317 Economics of Uncertainty Fall Term 2007 Notes for lectures 4. Stochastic Dominance
+    \item Jensen, M. K. (2018). Distributional comparative statics. \textit{The Review of Economic Studies}, 85(1), 581-610.
+\end{enumerate}
+
+\section{General Definitions}
+\begin{definition}[Jensen (2018), Defnition 1]\label{Defn SD}
+    \normalfont
+    Let $F$ and $G$ be two distributions on the same measurable space. Let $u$ be a function for which the following expression is well-defined,
+    \begin{equation}
+        \begin{aligned}
+            \int u(x)dF\geq \int u(x)dG
+        \end{aligned}
+        \label{Eq 1}
+    \end{equation}
+    Then:
+    \begin{enumerate}[$\bullet$]
+        \item $F$ \textbf{first-order stochastically dominates} $G$ if \ref{Eq 1} holds for any \underline{increasing} function $u$.
+        \item $F$ is a \textbf{mean-preserving spread} of $G$ if \ref{Eq 1} holds for any \underline{convex} function $u$.
+        \item $F$ is a \textbf{mean-preserving contraction} of $G$ if \ref{Eq 1} holds for any \underline{concave} function $u$.
+        \item \textbf{$F$ second-order stochastically dominates $G$} if \ref{Eq 1} holds for any \underline{concave and increasing} function $u$.
+        \item \textbf{$F$ dominates $G$ in the convex-increasing order} if \ref{Eq 1} holds for any \underline{convex and increasing} function $u$.
+    \end{enumerate}
+\end{definition}
+\begin{note}
+    $F$ is a \textbf{mean-preserving contraction} of $G$ $\Leftrightarrow$ $G$ is a \textbf{mean-preserving spread} of $F$.
+\end{note}
+
+\begin{definition}[MPS and MPC]
+    \normalfont
+    We define the following notations of sets.
+    \begin{enumerate}[$\circ$]
+        \item $\textnormal{MPS}(f)$ is the set of all \textbf{mean-preserving spread} of $f$;
+        \item $\textnormal{MPC}(f)$ is the set of all \textbf{mean-preserving contraction} of $f$;
+    \end{enumerate}
+\end{definition}
+
+\section{First-order Stochastic Dominance}
+\subsection{Two Equivalent Definitions}
+\begin{definition}[First-order Stochastic Dominance]
+    \normalfont
+    For any lotteries $F$ and $G$, $F$ \textbf{first-order stochastically dominates} $G$ if and only if the decision maker weakly prefers $F$ to $G$ under every \underline{weakly increasing} utility function $u$, i.e.,
+    $$\int u (x) dF \geq \int u(x) dG$$
+\end{definition}
+
+\begin{definition}[First-order Stochastic Dominance]
+    \normalfont
+    For any lotteries $F$ and $G$, $F$ \textbf{first-order stochastically dominates} $G$ if and only if
+    $$F(x)\leq G(x),\forall x$$
+\end{definition}
+
+\begin{center}\begin{figure}[htbp]
+    \centering
+    \includegraphics[scale=0.2]{FOSD_1.png}
+    \includegraphics[scale=0.2]{FOSD_2.png}
+    \caption{$F_1$ is FOSD over $F_2$: CDF and density comparison}
+    \label{}
+\end{figure}\end{center}
+
+\section{Second-order Stochastic Dominance}
+\subsection{Definition in terms of final goals}
+\begin{definition}[Second-order Stochastic Dominance]
+    \normalfont
+    For any lotteries $F$ and $G$, $F$ \textbf{second-order stochastically dominates} $G$ if and only if the decision maker weakly prefers $F$ to $G$ under every \underline{weakly \textbf{increasing concave}} utility function $u$, i.e.,
+    $$\int u (x) dF \geq \int u(x) dG$$
+\end{definition}
+\begin{center}\begin{figure}[htbp]
+    \centering
+    \includegraphics[scale=0.25]{SOSD_1.png}
+    \includegraphics[scale=0.25]{SOSD_2.png}
+    \caption{$F_1$ is SOSD over $F_2$: CDF and density comparison}
+    \label{}
+\end{figure}\end{center}
+
+\subsection{Mean-Preserving Spread/Contraction}
+\begin{definition}[Mean-Preserving Spread]
+    \normalfont
+    Let $x_F$ and $x_G$ be the random variables associated with lotteries $F$ and $G$. Then $G$ is a \textbf{mean-preserving spread} of $F$ if and only if $$x_G \stackrel{d}{=} x_F+\varepsilon$$
+    for some random variable $\varepsilon$ such that $\mathbb{E}(\varepsilon\mid x_F)=0,\forall x_F$.
+\end{definition}
+The "$\stackrel{d}{=}$" means "is equal in distribution to" (that is, "has the same distribution as").
+
+\begin{note}
+    Given $G$ is a \textbf{mean-preserving spread} of $F$, $G$ has larger variance than $F$.
+\end{note}
+
+\begin{example}
+    $F(198)=\frac{1}{2}, F(202)=\frac{1}{2}$ and $G(100)=\frac{1}{100}$, $G(200)=\frac{98}{100}$, $G(300)=\frac{1}{100}$. Then $$x_G \stackrel{d}{=} x_F+\varepsilon$$
+    where the distribution of $\varepsilon$ can be solved by $\left\{\begin{matrix}
+        \frac{1}{100}&=\frac{1}{2}P(\varepsilon=102)+\frac{1}{2}P(\varepsilon=98)\\
+        \frac{98}{100}&=\frac{1}{2}P(\varepsilon=2)+\frac{1}{2}P(\varepsilon=-2)\\
+        \frac{1}{100}&=\frac{1}{2}P(\varepsilon=-98)+\frac{1}{2}P(\varepsilon=-102)
+    \end{matrix}\right.$
+\end{example}
+
+
+\subsection{For Same Mean Distributions, Second-order Stochastic Dominance is equivalent to Mean-Preserving Spread}
+\begin{theorem}[Second-order Stochastic Dominance Equivalence]\label{SOSD_equiv}
+    Given $\int x dF=\int x dG$ (same mean). The following are equivalent.
+    \begin{enumerate}
+        \item $F$ second-order stochastically dominates $G$: $\int u (x) dF \geq \int u(x) dG$  for every weakly increasing concave utility function $u$.
+        \item $F$ is a mean-preserving contraction of $G$ ($G$ is a mean-preserving spread of $F$).
+        \item For every $t\geq 0$, $\int_a^t G(x)dx\geq \int_a^t F(x)dx$.
+    \end{enumerate}
+\end{theorem}
+\begin{center}\begin{figure}[htbp]
+    \centering
+    \includegraphics[scale=0.25]{SOSD_3.png}
+    \caption{$F_1$ is SOSD over $F_2$, $S(t):\int_a^t F_2(x)dx\geq \int_a^t F_1(x)dx$}
+    \label{}
+\end{figure}\end{center}
+
+
+
+
+
+
+
+
+
+
 \chapter{Market Design}
 Based on
 \begin{enumerate}[$\circ$]
@@ -834,87 +959,6 @@ For closed-valued correspondences these concepts can be more tightly connected. 
 \end{proof}
 
 
-\chapter{Stochastic Dominance}
-Based on
-\begin{enumerate}[$\circ$]
-    \item MIT 14.123 S15 Stochastic Dominance Lecture Notes
-    \item Princeton ECO317 Economics of Uncertainty Fall Term 2007 Notes for lectures 4. Stochastic Dominance
-\end{enumerate}
-
-\section{First-order Stochastic Dominance}
-\subsection{Two Equivalent Definitions}
-\begin{definition}[First-order Stochastic Dominance]
-    \normalfont
-    For any lotteries $F$ and $G$, $F$ \textbf{first-order stochastically dominates} $G$ if and only if the decision maker weakly prefers $F$ to $G$ under every \underline{weakly increasing} utility function $u$, i.e.,
-    $$\int u (x) dF \geq \int u(x) dG$$
-\end{definition}
-
-\begin{definition}[First-order Stochastic Dominance]
-    \normalfont
-    For any lotteries $F$ and $G$, $F$ \textbf{first-order stochastically dominates} $G$ if and only if
-    $$F(x)\leq G(x),\forall x$$
-\end{definition}
-
-\begin{center}\begin{figure}[htbp]
-    \centering
-    \includegraphics[scale=0.2]{FOSD_1.png}
-    \includegraphics[scale=0.2]{FOSD_2.png}
-    \caption{$F_1$ is FOSD over $F_2$: CDF and density comparison}
-    \label{}
-\end{figure}\end{center}
-
-\section{Second-order Stochastic Dominance}
-\subsection{Definition in terms of final goals}
-\begin{definition}[Second-order Stochastic Dominance]
-    \normalfont
-    For any lotteries $F$ and $G$, $F$ \textbf{second-order stochastically dominates} $G$ if and only if the decision maker weakly prefers $F$ to $G$ under every \underline{weakly increasing \textbf{concave}} utility function $u$, i.e.,
-    $$\int u (x) dF \geq \int u(x) dG$$
-\end{definition}
-\begin{center}\begin{figure}[htbp]
-    \centering
-    \includegraphics[scale=0.25]{SOSD_1.png}
-    \includegraphics[scale=0.25]{SOSD_2.png}
-    \caption{$F_1$ is SOSD over $F_2$: CDF and density comparison}
-    \label{}
-\end{figure}\end{center}
-
-\subsection{Mean-Preserving Spread}
-\begin{definition}[Mean-Preserving Spread]
-    \normalfont
-    Let $x_F$ and $x_G$ be the random variables associated with lotteries $F$ and $G$. Then $G$ is a \textbf{mean-preserving spread} of $F$ if and only if $$x_G \stackrel{d}{=} x_F+\varepsilon$$
-    for some random variable $\varepsilon$ such that $\mathbb{E}(\varepsilon\mid x_F)=0,\forall x_F$.
-\end{definition}
-The "$\stackrel{d}{=}$" means "is equal in distribution to" (that is, "has the same distribution as").
-
-\begin{note}
-    Given $G$ is a \textbf{mean-preserving spread} of $F$, $G$ has larger variance than $F$.
-\end{note}
-
-\begin{example}
-    $F(198)=\frac{1}{2}, F(202)=\frac{1}{2}$ and $G(100)=\frac{1}{100}$, $G(200)=\frac{98}{100}$, $G(300)=\frac{1}{100}$. Then $$x_G \stackrel{d}{=} x_F+\varepsilon$$
-    where the distribution of $\varepsilon$ can be solved by $\left\{\begin{matrix}
-        \frac{1}{100}&=\frac{1}{2}P(\varepsilon=102)+\frac{1}{2}P(\varepsilon=98)\\
-        \frac{98}{100}&=\frac{1}{2}P(\varepsilon=2)+\frac{1}{2}P(\varepsilon=-2)\\
-        \frac{1}{100}&=\frac{1}{2}P(\varepsilon=-98)+\frac{1}{2}P(\varepsilon=-102)
-    \end{matrix}\right.$
-\end{example}
-
-
-\subsection{Second-order Stochastic Dominance is equivalent to Mean-Preserving Spread}
-\begin{theorem}[Second-order Stochastic Dominance Equivalence]\label{SOSD_equiv}
-    Given $\int x dF=\int x dG$ (same mean). The following are equivalent.
-    \begin{enumerate}
-        \item $F$ second-order stochastically dominates $G$: $\int u (x) dF \geq \int u(x) dG$  for every weakly increasing concave utility function $u$.
-        \item $G$ is a mean-preserving spread of $F$.
-        \item For every $t\geq 0$, $\int_a^t G(x)dx\geq \int_a^t F(x)dx$.
-    \end{enumerate}
-\end{theorem}
-\begin{center}\begin{figure}[htbp]
-    \centering
-    \includegraphics[scale=0.25]{SOSD_3.png}
-    \caption{$F_1$ is SOSD over $F_2$, $S(t):\int_a^t F_2(x)dx\geq \int_a^t F_1(x)dx$}
-    \label{}
-\end{figure}\end{center}
 
 
 
@@ -923,26 +967,38 @@ The "$\stackrel{d}{=}$" means "is equal in distribution to" (that is, "has the s
 
 
 
-
-
-
-
-
-
-
-
-
-
-\chapter{Bayesian Persuasion: Useful Mathematical Results}
+\chapter{Bayesian Persuasion: Extreme Points and Majorization}
 Based on
 \begin{enumerate}[$\circ$]
     \item Kleiner, A., Moldovanu, B., \& Strack, P. (2021). Extreme points and majorization: Economic applications. \textit{Econometrica}, 89(4), 1557-1593.
     \item 
 \end{enumerate}
 
+
+\section{Extreme Points}
+\subsection{Extreme Points of Convex Set}
+\begin{definition}[Extreme Points]
+    \normalfont
+    An \textbf{extreme point} of a convex set $A$ is a point $x\in A$ that cannot be represented as a convex combination of points in $A$.
+\end{definition}
+
+\subsection{Krein-Milman Theorem: Existence of Extreme Points}
+\begin{theorem}[Krein-Milman Theorem]\label{KMT}
+    Every non-empty \textbf{compact convex} subset of a Hausdorff locally convex topological vector space (for example, a normed space) is the closed, convex hull of its extreme points.\\
+    In particular, this set has extreme points.
+\end{theorem}
+
+
+\subsection{Bauer's Maximum Principle: Usefulness of Extreme Points for Optimization}
+\begin{theorem}[Bauer's Maximum Principle]\label{BMP}
+    Any function that is \textbf{convex and continuous}, and defined on a set that is \textbf{convex and compact}, attains its maximum at some extreme point of that set.
+\end{theorem}
+
+
+
 \section{Majorization}
 \subsection{Majorization and Weak Majorization}
-\begin{definition}[Majorization]
+\begin{definition}[Majorization of Non-decreasing Functions]
     \normalfont
     Consider right-continuous functions that map the unit interval $[0,1]$ into the real numbers. For two \underline{non-decreasing} functions $f,g \in L^1$, we say that $f$ \textbf{majorizes} $g$, denoted by $g \prec f$, if the following two conditions hold:
     \begin{equation}
@@ -977,81 +1033,86 @@ Based on
     \end{definition}
 \end{note}
 
-\subsection{Generalized Inverse $G^{-1}(x)=\sup\{s:G(s)\leq x\}$}
+\subsection{Theorem: $F$ majorizes $G$ $\Leftrightarrow$ $G$ is a mean-preserving spread of $F$}
+Based on
+\begin{enumerate}[$\circ$]
+    \item Shaked, M., \& Shanthikumar, J. G. (2007). \textit{Stochastic orders}. New York, NY: Springer New York.
+\end{enumerate}
+
 \begin{definition}[Generalized Inverse]
     \normalfont
     Suppose $G$ is defined on the interval $[0,1]$, we can define the \textbf{generalized inverse}
     $$G^{-1}(x)=\sup\{s:G(s)\leq x\}, x\in [0,1]$$
 \end{definition}
 
-\subsection{Theorem: $F$ majorizes $G$ $\Leftrightarrow$ $G$ is a mean-preserving spread of $F$}
-Based on
-\begin{enumerate}[$\circ$]
-    \item Shaked, M., \& Shanthikumar, J. G. (2007). \textit{Stochastic orders}. New York, NY: Springer New York.
-\end{enumerate}
 Let $X_F$ and $X_G$ be now random variables with distributions $F$ and $G$, defined on the interval $[0,1]$.
 \begin{theorem}[Shaked \& Shanthikumar (2007), Section 3.A]
     $$G\prec F \Leftrightarrow F^{-1}\prec G^{-1} \Leftrightarrow X_{G}\leq_{ssd}X_F \textnormal{ and }\mathbb{E}[X_G]=\mathbb{E}[X_F]$$
     where $\leq_{ssd}$ denotes the standard \underline{second-order stochastic dominance}.
 \end{theorem}
-Based on Theorem \ref{SOSD_equiv}, we can conclude
-\begin{corollary}
+Based on Theorem \ref{SOSD_equiv} and the \ref{C2} of Majorization, we can conclude
+\begin{corollary}[Majorization $\Leftrightarrow$ Mean-preserving Contraction]\label{Maj_Equiv}
     \begin{center}
-        $F$ majorizes $G$ $\Leftrightarrow$ $G$ is a mean-preserving spread of $F$
+        $F$ majorizes $G$ $\Leftrightarrow$ $F$ is a mean-preserving contraction of $G$ ($G$ is a mean-preserving spread of $F$)
     \end{center}
 \end{corollary}
 That is, we can construct random variables $X_F$, $X_G$,
 jointly distributed on some probability space, such that $X_F \sim F$, $X_G \sim G$ and such that $X_F = \mathbb{E}[X_G \mid X_F]$.
 
-
-\section{Extreme Points}
-\subsection{Extreme Points of Convex Set}
-\begin{definition}[Extreme Points]
-    \normalfont
-    An \textbf{extreme point} of a convex set $A$ is a point $x\in A$ that cannot be represented as a convex combination of points in $A$.
-\end{definition}
-
-\subsection{Krein-Milman Theorem: Existence of Extreme Points}
-\begin{theorem}[Krein-Milman Theorem]\label{KMT}
-    Every non-empty \textbf{compact convex} subset of a Hausdorff locally convex topological vector space (for example, a normed space) is the closed, convex hull of its extreme points.\\
-    In particular, this set has extreme points.
-\end{theorem}
-
-
-\subsection{Bauer's Maximum Principle: Usefulness of Extreme Points for Optimization}
-\begin{theorem}[Bauer's Maximum Principle]\label{BMP}
-    Any function that is \textbf{convex and continuous}, and defined on a set that is \textbf{convex and compact}, attains its maximum at some extreme point of that set.
-\end{theorem}
-
 \section{Capture Extreme Points in Economic Applications}
 Let $L^1$ denote the real-valued and integrable functions defined on $[0,1]$.
 
-We focus on functional maximizers that are non-decreasing, for example, a cumulative distribution function in Bayesian persuasion, or an incentive-compatible allocation in mechanism design.
+In this section, we focus on \textbf{non-decreasing (weakly increasing) functions}, for example, a cumulative distribution function in Bayesian persuasion, or an incentive-compatible allocation in mechanism design.
 
+\subsection{Definitions of $\mathcal{MPS}(f)$, $\mathcal{MPS}_w(f)$, $\mathcal{MPC}(f)$}
+Based on Corollary \ref{Maj_Equiv}, we can define following sets
 \begin{definition}
     \normalfont
     \begin{enumerate}
-        \item The set of non-decreasing functions that are majorized by $f$ is denoted by $$\textnormal{MPS}(f)=\{g\in L^1\mid g \textnormal{ is non-decreasing and }g\prec f\}$$
-        \item The set of non-negative, non-decreasing functions that are weakly majorized by $f$ is denoted by $$\textnormal{MPS}_w(f)=\{g\in L^1\mid g \textnormal{ is non-negative,  non-decreasing and }g\prec f\}$$
-        \item The set of non-decreasing functions that majorize $f$ and satisfy $f(0)\leq g\leq f(1)$ is denoted by $$\textnormal{MPC}(f)=\{g\in L^1\mid g \textnormal{ is non-decreasing and }g\succ f \textnormal{ and }f(0)\leq g\leq f(1)\}$$
+        \item The set of non-decreasing functions that are majorized by $f$ is denoted by
+        \begin{equation}
+            \begin{aligned}
+                \mathcal{MPS}(f)&=\textnormal{MPS}(f)\cap\{g\in L^1\mid g \textnormal{ is non-decreasing}\}\\
+                &=\{g\in L^1\mid g \textnormal{ is non-decreasing and }g\prec f\}
+            \end{aligned}
+            \nonumber
+        \end{equation}
+        \item The set of non-negative, non-decreasing functions that are weakly majorized by $f$ is denoted by
+        \begin{equation}
+            \begin{aligned}
+                \mathcal{MPS}_w(f)=\{g\in L^1\mid g \textnormal{ is non-negative,  non-decreasing and }g\preceq f\}
+            \end{aligned}
+            \nonumber
+        \end{equation}
+        \item The set of non-decreasing functions that majorize $f$ and satisfy $f(0)\leq g\leq f(1)$ is denoted by
+        \begin{equation}
+            \begin{aligned}
+                \mathcal{MPC}(f)&=\textnormal{MPC}(f)\cap\{g\in L^1\mid g \textnormal{ is non-decreasing and }f(0)\leq g\leq f(1)\}\\
+                &=\{g\in L^1\mid g \textnormal{ is non-decreasing and }g\succ f \textnormal{ and }f(0)\leq g\leq f(1)\}
+            \end{aligned}
+            \nonumber
+        \end{equation}
+        where $f(0)\leq g\leq f(1)$ is used to ensure compactness.
     \end{enumerate}
 \end{definition}
 
+\subsection{Proposition: $\mathcal{MPS}(f)$, $\mathcal{MPS}_w(f)$, $\mathcal{MPC}(f)$ have extreme points and any element is a combination of extreme points}
+
 Following two propositions are the Proposition 1 of the Kleiner et al. (2021).
-\begin{proposition}[Non-decreasing $f$ $\Rightarrow$ $\textnormal{MPS}(f)$, $\textnormal{MPS}_w(f)$, and $\textnormal{MPC}(f)$ have extreme points]
-    Suppose $f\in L^1$ is non-decreasing. Then $\textnormal{MPS}(f)$, $\textnormal{MPS}_w(f)$, and $\textnormal{MPC}(f)$ are convex and compact in the norm topology $\Rightarrow$ (by Krein-Milman Theorem \ref{KMT}) they all have non-empty set of extreme points.
+\begin{proposition}[Non-decreasing $f$ $\Rightarrow$ $\mathcal{MPS}(f)$, $\mathcal{MPS}_w(f)$, and $\mathcal{MPC}(f)$ have extreme points]
+    Suppose $f\in L^1$ is non-decreasing. Then $\mathcal{MPS}(f)$, $\mathcal{MPS}_w(f)$, and $\mathcal{MPC}(f)$ are convex and compact in the norm topology $\Rightarrow$ (by Krein-Milman Theorem \ref{KMT}) they all have non-empty set of extreme points.
 \end{proposition}
 \begin{note}
     We use $\textnormal{ext} A$ to denote the set of extreme points of set $A$.
 \end{note}
 \begin{proposition}[Non-decreasing $f$ $\Rightarrow$ any distribution is a combination of extreme points]
-    Suppose $f\in L^1$ is non-decreasing. For any $g\in \textnormal{MPS}(f)$, $\exists$ a probability measure $\lambda_g$ over $\textnormal{ext} \textnormal{MPS}(f)$ such that $$g=\int_{\textnormal{ext} \textnormal{MPS}(f)}h\ d\lambda_g(h)$$
-    (also hold for any $g\in \textnormal{MPS}_w(f)$ and $g\in \textnormal{MPC}(f)$).
+    Suppose $f\in L^1$ is non-decreasing. For any $g\in \mathcal{MPS}(f)$, $\exists$ a probability measure $\lambda_g$ over $\textnormal{ext} \mathcal{MPS}(f)$ such that $$g=\int_{\textnormal{ext} \mathcal{MPS}(f)}h\ d\lambda_g(h)$$
+    (also hold for any $g\in \mathcal{MPS}_w(f)$ and $g\in \mathcal{MPC}(f)$).
 \end{proposition}
 
-\subsection{Extreme Points in $\textnormal{MPS}(f)$}
+\subsection{Extreme Points in $\mathcal{MPS}(f)$}\label{K_thm_1}
 \begin{theorem}[Form of Extreme Points in $\textnormal{MPS}(f)$: Kleiner et al. (2021), Theorem 1]
-    Let $f$ be non-decreasing. Then $g$ is an \textbf{extreme point} in $\textnormal{MPS}(f)$ \underline{if and only if} there exists a collection of disjoint intervals $\{[\underline{x}_i,\overline{x}_i)\}_{i\in I}$ such that
+    Let $f$ be non-decreasing. Then $g$ is an \textbf{extreme point} in $\mathcal{MPS}(f)$ \underline{if and only if} there exists a collection of disjoint intervals $\{[\underline{x}_i,\overline{x}_i)\}_{i\in I}$ such that
     \begin{equation}
         \begin{aligned}
             g(x)=\left\{\begin{matrix}
@@ -1062,7 +1123,7 @@ Following two propositions are the Proposition 1 of the Kleiner et al. (2021).
         \nonumber
     \end{equation}
 \end{theorem}
-$g$ is an extreme point of $\textnormal{MPS}(f)$ implies either that $g(x)=f(x)$ or that $g$ is constant at $x$.
+$g$ is an extreme point of $\mathcal{MPS}(f)$ implies either that $g(x)=f(x)$ or that $g$ is constant at $x$.
 
 \begin{definition}[Exposed Element]
     \normalfont
@@ -1073,17 +1134,62 @@ $g$ is an extreme point of $\textnormal{MPS}(f)$ implies either that $g(x)=f(x)$
 \end{note}
 
 \begin{corollary}[Kleiner et al. (2021), Corollary 1]
-    Every extreme point of $\textnormal{MPS}(f)$ is exposed.
+    Every extreme point of $\mathcal{MPS}(f)$ is exposed.
 \end{corollary}
 
-\subsection{Extreme Points in $\textnormal{MPS}_w(f)$}
+\subsection{Extreme Points in $\mathcal{MPS}_w(f)$}
 For a set $A\subseteq [0,1]$, we use $\mathbf{1}_{A}(x)$ denote the indicator function of set $A$: it equals to $1$ if $x\in A$ and $0$ otherwise.
 \begin{corollary}[Kleiner et al. (2021), Corollary 2]
-    Suppose that $f$ is non-decreasing and non-negative. A function $g$ is an extreme point of $\textnormal{MPS}_w(f)$ \underline{if and only if} there is $\theta \in[0,1]$ such that $g$ is an extreme point of $\textnormal{MPS}(f)$ and $g(x) = 0,\forall x\in[0,\theta)$.
+    Suppose that $f$ is non-decreasing and non-negative. A function $g$ is an extreme point of $\mathcal{MPS}_w(f)$ \underline{if and only if} there is $\theta \in[0,1]$ such that $g$ is an extreme point of $\mathcal{MPS}(f)$ and $g(x) = 0,\forall x\in[0,\theta)$.
 \end{corollary}
 
-\subsection{Extreme Points in $\textnormal{MPC}(f)$}
+\subsection{Extreme Points in $\mathcal{MPC}(f)$}
+\begin{theorem}[Kleiner et al. (2021), Theorem 2]
+    Let $f$ be non-decreasing and continuous. Then $g \in \mathcal{MPC}(f)$ is an extreme point of $\mathcal{MPC}(f)$ \underline{if and only if} there exists a collection of intervals $\left[\underline{x}_i, \bar{x}_i\right)$, (potentially empty) sub-intervals $\left[\underline{y}_i, \bar{y}_i\right) \subseteq \left[\underline{x}_i, \bar{x}_i\right)$, and numbers $v_i$ indexed by $i \in I$ such that for all $x \in[0,1]$,
+    \begin{equation}
+        \begin{aligned}
+            g(x)=
+            \begin{cases}
+                f(x) & \text { if } x \notin \bigcup_{i \in I}\left[\underline{x}_i, \bar{x}_i\right)\\
+                f\left(\underline{x}_i\right) & \text { if } x \in\left[\underline{x}_i, \underline{y}_i\right)\\
+                v_i & \text { if } x \in\left[\underline{y}_i, \bar{y}_i\right)\\
+                f\left(\bar{x}_i\right) & \text { if } x \in\left[\bar{y}_i, \bar{x}_i\right)
+            \end{cases}
+        \end{aligned}
+        \label{3}
+    \end{equation}
+    Moreover, a function $g$ as defined in (\ref{3}) is in $\mathcal{MPC}(f)$ if the following three conditions are satisfied:
+    \begin{equation}
+        \begin{aligned}
+            \left(\bar{y}_i-\underline{y}_i\right) v_i=\int_{\underline{x}_i}^{\bar{x}_i} f(s) \mathrm{d} s-f\left(\underline{x}_i\right)\left(\underline{y}_i-\underline{x}_i\right)-f\left(\bar{x}_i\right)\left(\bar{x}_i-\bar{y}_i\right)
+        \end{aligned}
+        \label{4}
+    \end{equation}
+    \begin{equation}
+        \begin{aligned}
+            f\left(\underline{x}_i\right)\left(\bar{y}_i-\underline{x}_i\right)+f\left(\bar{x}_i\right)\left(\bar{x}_i-\bar{y}_i\right) \leq \int_{\underline{x}_i}^{\bar{x}_i} f(s) \mathrm{d} s \leq f\left(\underline{x}_i\right)\left(\underline{y}_i-\underline{x}_i\right)+f\left(\bar{x}_i\right)\left(\bar{x}_i-\underline{y}_i\right)
+        \end{aligned}
+        \label{5}
+    \end{equation}
+    If $v_i \in\left(f\left(\underline{y}_i\right), f\left(\bar{y}_i\right)\right)$, then for an arbitrary point $m_i$ satisfying $f\left(m_i\right)=v_i$ it must hold that
+    \begin{equation}
+        \begin{aligned}
+            \int_{m_i}^{\bar{x}_i} f(s) \mathrm{d} s \leq v_i\left(\bar{y}_i-m_i\right)+f\left(\bar{x}_i\right)\left(\bar{x}_i-\bar{y}_i\right)
+        \end{aligned}
+        \label{6}
+    \end{equation}
+\end{theorem}
+Condition (\ref{4}) in the theorem ensures that $g$ and $f$ have the same integrals for each sub-interval $\left[\underline{x}_i, \bar{x}_i\right)$, analogously to the condition imposed in Theorem \ref{K_thm_1}. Condition (\ref{5}) ensures that $v_i \in\left(f\left(\underline{x}_i\right), f\left(\bar{x}_i\right)\right)$, ensuring that $g$ is non-decreasing. If $f$ crosses $g$ in the interval $\left[\underline{y}_i, \bar{y}_i\right]$, then there is $m_i \in\left[\underline{y}_i, \bar{y}_i\right]$ such that $f\left(m_i\right)=v_i$. In this case, Condition (\ref{6}) ensures that $\int_s^{\bar{x}_i} f(t) \mathrm{d} t \leq \int_s^{\bar{x}_i} g(t) \mathrm{d} t$ for all $s \in\left[\underline{x}_i, \bar{x}_i\right)$ and thus that $f \prec g$. If $v_i \notin$ $\left(f\left(\underline{y}_i\right), f\left(\bar{y}_i\right)\right)$, Condition (\ref{5}) is enough to ensure that $f \prec g$ and thus Condition (\ref{6}) is not necessary.
 
+
+
+
+
+\chapter{Bayesian Persuasion: Bi-Pooling}
+Based on
+\begin{enumerate}[$\circ$]
+    \item Arieli, I., Babichenko, Y., Smorodinsky, R., \& Yamashita, T. (2023). Optimal persuasion via bi-pooling. \textit{Theoretical Economics}, 18(1), 15-36.
+\end{enumerate}
 
 
 
