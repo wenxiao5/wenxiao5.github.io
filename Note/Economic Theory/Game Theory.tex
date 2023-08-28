@@ -147,6 +147,18 @@ The "$\stackrel{d}{=}$" means "is equal in distribution to" (that is, "has the s
     \label{}
 \end{figure}\end{center}
 
+\begin{corollary}[Euqivalent Definitions of MPC and MPS]
+    \normalfont
+    $F$ is a mean-preserving contraction of $G$ (or $G$ is a mean-preserving spread of $F$) \underline{if and only if}
+    \begin{enumerate}[(1).]
+        \item $\int x dF=\int x dG$
+        \item $\int_a^t G(x)dx\geq \int_a^t F(x)dx, \forall t$
+    \end{enumerate}
+\end{corollary}
+
+\begin{corollary}[$\textnormal{MPC}(f)$ and $\textnormal{MPS}(f)$ are convex and compact]
+    $\textnormal{MPC}(f)$ and $\textnormal{MPS}(f)$ are \textbf{convex} and \textbf{compact}.
+\end{corollary}
 
 
 
@@ -1188,11 +1200,39 @@ Condition (\ref{4}) in the theorem ensures that $g$ and $f$ have the same integr
 \chapter{Bayesian Persuasion: Bi-Pooling}
 Based on
 \begin{enumerate}[$\circ$]
-    \item Arieli, I., Babichenko, Y., Smorodinsky, R., \& Yamashita, T. (2023). Optimal persuasion via bi-pooling. \textit{Theoretical Economics}, 18(1), 15-36.
+    \item $\bigstar$ Arieli, I., Babichenko, Y., Smorodinsky, R., \& Yamashita, T. (2023). Optimal persuasion via bi-pooling. \textit{Theoretical Economics}, 18(1), 15-36.
+    \item Gentzkow, Matthew and Emir Kamenica (2016), “A Rothschild-Stiglitz approach to Bayesian persuasion.” \textit{American Economic Review}, 106, 597-601.
+    \item Kolotilin, Anton (2018), “Optimal information disclosure: A linear programming ap-proach.” \textit{Theoretical Economics}, 13, 607-635.
+\end{enumerate}
+
+\section{Persuation Model}
+Consider a persuation model where the state space is the interval $[0,1]$ with a common prior $F\in\Delta([0,1])$ that has full support (i.e., $[0,1]$ is the smallest closed set that has probability one). The sender knows the realized state and the receiver is uninformed.
+\begin{enumerate}
+    \item \underline{Singaling:} Prior to the realization of the state, the sender commits to a \textbf{signaling policy} $$\pi : [0, 1] \rightarrow \Delta(S)$$
+    where $S$ is an arbitrary measurable space. Once the state $\omega\in[0,1]$ is realized, the sender sends a signal $s\in S$ to the receiver based on the committed signaling policy, i.e., $s \sim \pi(\omega)$. Without loss of generality, we may assume that $S=[0, 1]$, and that the posterior mean of the state, given signal $s$, is $s$ itself.
+    
+    Hence, the distribution of the posterior mean $s$ given the signal policy $\pi$, denoted by $F_\pi\in\Delta([0,1])$ is a \textit{mean-preserving contraction} of $F$ (i.e., $\exists \varepsilon_\omega\in\Delta([0,1])$ such that $\omega=s+\varepsilon_\omega$ for all $\omega\in F$ and $s\in F_\pi$).
+    
+    It is also easy to note that for any $G\in \textnormal{MPC}(F)$, there exists a signaling policy $\pi$ (may not be unique) that makes $F_\pi=G$ (e.g., Gentzkow and Kamenica(2016), Kolotilin (2018)).
+    \item \underline{Persuation problem:} The sender's indirect utility is denoted by $u:[0,1] \rightarrow \mathbb{R}$, where $u(x)$ is the sender's expected utility in case the receiver's posterior mean is $x$. $u$ is assume to be upper semicontinuous. $(F,u)$ is referred as a \textbf{persuation problem}. The sender's problem takes the form:
+    \begin{equation}
+        \begin{aligned}
+            \max_{G\in \textnormal{MPC}(F)}\mathbb{E}_{x\sim G}[u(x)]
+        \end{aligned}
+        \nonumber
+    \end{equation}
 \end{enumerate}
 
 
+\section{Bi-Pooling}
+\subsection{Bi-pooling Distribution}
+\begin{note}
+    For a distribution $H \in \Delta([0,1])$ and a measurable set $C \subseteq[0,1]$ we denote by $H|_C$ the distribution of $h \sim H$ conditional on the event that $h\in C$.
+\end{note}
 
+\begin{definition}[Bi-pooling Distribution]
+    \normalfont
+\end{definition}
 
 
 
