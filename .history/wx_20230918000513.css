@@ -9,7 +9,7 @@ html {
 
 body {
   font-size: 120%;
-  font-family: "Times New Roman", Times;
+  font-family: "Times New Roman", Times, STKaiti, SimSun, serif; 
   color: rgb(41, 5, 77);
   background-color: rgb(251, 251, 251);
   text-align:left; /* for IE */
@@ -136,7 +136,7 @@ body {
 }
 
 .small_note {
-    font-family: "Times New Roman", Times;
+    font-family: "STKaiti", "SimSun", serif;
     font-size: 70%;
 	margin-top: -10px;
     color: #09051f;
@@ -165,7 +165,7 @@ a, a > tt {
 	color: #063d5c;
 	text-decoration-color:#012e01;
 	font-weight: normal;
-	font-family: "Times New Roman", Times;
+	font-family: "STKaiti", "SimSun", serif;
 }
 
 a:hover {

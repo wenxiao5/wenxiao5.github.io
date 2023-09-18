@@ -645,7 +645,7 @@ Suppose there are doctors ($D$) and hospitals ($H$). For a doctor $d$, define a 
 \subsection{Matching Markets: One-to-One}
 \begin{definition}[$D$-Optimal Matching]
     \normalfont
-    A matching $\mu: D\cup H \rightarrow D\cup H$ is \textbf{$D$-optimal}, denoted by $\mu^D$, if for any stable $\mu'$ we have that $\mu^D\succeq_D \mu'$ (the best stable matching for all doctors).
+    A matching $\mu: D\cup H \rightarrow D\cup H$ is \textbf{$D$-optimal}, denoted by $\mu^D$, if for any stable $\mu'$ we have that $\mu^D\succeq_D \mu'$ (best stable matching for all doctors).
 \end{definition}
 
 \begin{theorem}[Deferred Acceptance Algorithm $\Rightarrow$ $D$-Optimal Matching]
@@ -733,28 +733,25 @@ Suppose there are doctors ($D$) and hospitals ($H$). For a doctor $d$, define a 
     There is no stable and strategy-proof (SP) mechanism.
 \end{theorem}
 
-The mechanism that yields the D-optimal stable matching (in terms of the stated preferences) makes it a dominant strategy for each doctor to state his true preferences. (Similarly, the mechanism that yields the H-optimal stable matching makes it a dominant strategy for every hospital to state its true preferences.)
-\begin{theorem}[Dubins and Freedman; Roth]
+
+\begin{theorem}
     The doctor($D$)-optimal stable mechanism is strategy-proof for doctors.
 \end{theorem}
-\begin{proof}
-    %Suppose under truthful $\succ$ (all doctors), a doctor $d$ has $\mu(d)=h$. $d$ changes his report to $\succ'_d$ such that $\mu'(d)=h'\succ_d h$.\\
-    %Consider $\succ''_d$ which $\succ'_d$ truncated below $h'$.\\
-    %Now, run a doctor-proposing DA (conside $\mu^D$) under $\succ''_d$. $d$ is unmatched.
-\end{proof}
+Suppose under truthful $\succ$ (all doctors), a doctor $d$ has $\mu(d)=h$. $d$ changes his report to $\succ'_d$ such that $\mu'(d)=h'\succ_d h$.\\
+Consider $\succ''_d$ which $\succ'_d$ truncated below $h'$.\\
+Now, run a doctor-proposing DA (conside $\mu^D$) under $\succ''_d$. $d$ is unmatched.
 
 
 \section{Matching Many-to-Many}
-Contracts are denoted by $x\in X$, $x_D\in D$, $x_H\in H$. $F\triangleq D\cup H$.
+Contracts are denoted by $x\in X$, $x_D\in D$, $x_H\in H$.
 
 Consider a set of contracts $Y\subseteq X$,
 \begin{enumerate}[$\circ$]
     \item $Y_D$ = doctors listed in $Y$;
     \item $Y_d$ = the contract in $Y$ that list the doctor $d$;
     \item $\succ_d$ over set of contracts that name the doctor $d$;
-    \item The set of contracts $f\in F$ chooses from $Y$: $C_f(Y)=\max_{\succ_f}\{Z\subseteq X:Z\subseteq Y_f\}\subseteq Y_f$;
-    \item The set of contracts doctors choose from $Y$: $C_D(Y)=\cup_{d\in D}C_d(Y)$.
-    \item The set of contracts doctors reject from $Y$: $R_D(Y)=Y\backslash C_D(Y)$.
+    \item Choice of doctor $d$ from $Y_d$: $C_d(Y_d)\subseteq Y_d$;
+    \item $C_D(Y)=\cup_{d\in D}C_d(Y_d)$; $R_D(Y)=X\backslash C_D(Y)$
 \end{enumerate}
 The outcome of matching is $Y\subseteq X$.
 
@@ -762,8 +759,8 @@ The outcome of matching is $Y\subseteq X$.
     \normalfont
     $A\subseteq X$ is \textbf{stable} if
     \begin{enumerate}[$\circ$]
-        \item Individually Rational (IR): $\forall f\in F$: $C_f(A_f)=A_f$;
-        \item Unblocked: $\nexists$ non-empty $Z\subseteq X$ such that $Z\cap A=\emptyset $ and for all $f\in F$, $Z_f\subseteq C_f(A\cup Z)$.
+        \item Individually Rational (IR): $f\in F\triangleq D\cup H$, $C_f(A_f)=A_f$;
+        \item Unblocked: $\nexists$ non-empty $Z\subseteq X$ such that $Z\cap A=\emptyset $ and for all $f\in F\triangleq D\cup H$, $Z_f\subseteq C_f(A\cup Z)$.
     \end{enumerate}
 \end{definition}
 

@@ -125,7 +125,7 @@ body {
     margin-top: 5px;
 }
 .motto {
-    font-family: "STKaiti", "SimSun", serif;
+    font-family: "Times New Roman", Times;
     font-size: 100%;
     color: #4f0e0e;
     margin-top: 10px;
@@ -136,7 +136,7 @@ body {
 }
 
 .small_note {
-    font-family: "Times New Roman", Times;
+    font-family: "STKaiti", "SimSun", serif;
     font-size: 70%;
 	margin-top: -10px;
     color: #09051f;

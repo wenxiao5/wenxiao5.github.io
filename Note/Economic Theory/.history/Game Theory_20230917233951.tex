@@ -745,15 +745,15 @@ The mechanism that yields the D-optimal stable matching (in terms of the stated 
 
 
 \section{Matching Many-to-Many}
-Contracts are denoted by $x\in X$, $x_D\in D$, $x_H\in H$. $F\triangleq D\cup H$.
+Contracts are denoted by $x\in X$, $x_D\in D$, $x_H\in H$.
 
 Consider a set of contracts $Y\subseteq X$,
 \begin{enumerate}[$\circ$]
     \item $Y_D$ = doctors listed in $Y$;
     \item $Y_d$ = the contract in $Y$ that list the doctor $d$;
     \item $\succ_d$ over set of contracts that name the doctor $d$;
-    \item The set of contracts $f\in F$ chooses from $Y$: $C_f(Y)=\max_{\succ_f}\{Z\subseteq X:Z\subseteq Y_f\}\subseteq Y_f$;
-    \item The set of contracts doctors choose from $Y$: $C_D(Y)=\cup_{d\in D}C_d(Y)$.
+    \item Choice of doctor $d$ from $Y_d$: $C_d(Y_d)\subseteq Y_d$;
+    \item The set of contracts doctors choose from $Y$: $C_D(Y)=\cup_{d\in D}C_d(Y_d)$.
     \item The set of contracts doctors reject from $Y$: $R_D(Y)=Y\backslash C_D(Y)$.
 \end{enumerate}
 The outcome of matching is $Y\subseteq X$.
@@ -762,8 +762,8 @@ The outcome of matching is $Y\subseteq X$.
     \normalfont
     $A\subseteq X$ is \textbf{stable} if
     \begin{enumerate}[$\circ$]
-        \item Individually Rational (IR): $\forall f\in F$: $C_f(A_f)=A_f$;
-        \item Unblocked: $\nexists$ non-empty $Z\subseteq X$ such that $Z\cap A=\emptyset $ and for all $f\in F$, $Z_f\subseteq C_f(A\cup Z)$.
+        \item Individually Rational (IR): $f\in F\triangleq D\cup H$, $C_f(A_f)=A_f$;
+        \item Unblocked: $\nexists$ non-empty $Z\subseteq X$ such that $Z\cap A=\emptyset $ and for all $f\in F\triangleq D\cup H$, $Z_f\subseteq C_f(A\cup Z)$.
     \end{enumerate}
 \end{definition}
 
