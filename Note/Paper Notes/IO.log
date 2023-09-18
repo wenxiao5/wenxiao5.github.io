@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.27)  8 SEP 2023 15:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.27)  9 SEP 2023 14:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1331,7 +1331,7 @@ Package hyperref Info: Option `pageanchor' set `false' on input line 28.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<cover.JPEG, id=47, 1786.2735pt x 1004.85413pt>
+<cover.JPEG, id=51, 1786.2735pt x 1004.85413pt>
 File: cover.JPEG Graphic file (type jpg)
 <use cover.JPEG>
 Package pdftex.def Info: cover.JPEG  used on input line 28.
@@ -1377,29 +1377,149 @@ LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
 (Font)              scaled to size 8.0pt on input line 51.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/it' will be
 (Font)              scaled to size 10.95pt on input line 52.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
+(Font)              scaled to size 12.0pt on input line 58.
 [1
 
 
-] (./IO.aux)
+]
+LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
+(Font)              scaled to size 10.0pt on input line 111.
+ [2
+pdfTeX warning (ext4): destination with the same identifier (name{equation.1.3.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.111 ... be written as $$u_{ij}=\delta_j+v_{ij}$$
+                                                  
+pdfTeX warning (ext4): destination with the same identifier (name{equation.1.3.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.111 ... be written as $$u_{ij}=\delta_j+v_{ij}$$
+                                                  
+pdfTeX warning (ext4): destination with the same identifier (name{equation.1.3.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.111 ... be written as $$u_{ij}=\delta_j+v_{ij}$$
+                                                  ]
+pdfTeX warning (ext4): destination with the same identifier (name{equation.1.3.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.116     \begin{equation}
+                          
+pdfTeX warning (ext4): destination with the same identifier (name{equation.1.3.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.116     \begin{equation}
+                          
+pdfTeX warning (ext4): destination with the same identifier (name{equation.1.3.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.116     \begin{equation}
+                          
+pdfTeX warning (ext4): destination with the same identifier (name{equation.1.3.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.116     \begin{equation}
+                          
+pdfTeX warning (ext4): destination with the same identifier (name{equation.1.3.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.123     \begin{equation}
+                          
+pdfTeX warning (ext4): destination with the same identifier (name{equation.1.3.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.123     \begin{equation}
+                          
+pdfTeX warning (ext4): destination with the same identifier (name{equation.1.3.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.123     \begin{equation}
+                          
+pdfTeX warning (ext4): destination with the same identifier (name{equation.1.3.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.123     \begin{equation}
+                          
+pdfTeX warning (ext4): destination with the same identifier (name{equation.1.3.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.134     \begin{equation}
+                          
+pdfTeX warning (ext4): destination with the same identifier (name{equation.1.3.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.134     \begin{equation}
+                          
+pdfTeX warning (ext4): destination with the same identifier (name{equation.1.3.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.134     \begin{equation}
+                          
+pdfTeX warning (ext4): destination with the same identifier (name{equation.1.3.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.134     \begin{equation}
+                          
+pdfTeX warning (ext4): destination with the same identifier (name{equation.1.3.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.142     \begin{equation}
+                          
+pdfTeX warning (ext4): destination with the same identifier (name{equation.1.3.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.142     \begin{equation}
+                          
+pdfTeX warning (ext4): destination with the same identifier (name{equation.1.3.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.142     \begin{equation}
+                          
+pdfTeX warning (ext4): destination with the same identifier (name{equation.1.3.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.142     \begin{equation}
+                          
+pdfTeX warning (ext4): destination with the same identifier (name{equation.1.3.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.149     \begin{equation}
+                          
+pdfTeX warning (ext4): destination with the same identifier (name{equation.1.3.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.149     \begin{equation}
+                          
+pdfTeX warning (ext4): destination with the same identifier (name{equation.1.3.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.149     \begin{equation}
+                          
+pdfTeX warning (ext4): destination with the same identifier (name{equation.1.3.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.149     \begin{equation}
+                           [3] (./IO.aux)
 Package rerunfilecheck Info: File `IO.out' has not changed.
-(rerunfilecheck)             Checksum: E324DAC5A82BC0CD5DA380F82CDBB687;844.
+(rerunfilecheck)             Checksum: 5B2FE700936FC8BF87E074A507040D3F;977.
 Package logreq Info: Writing requests to 'IO.run.xml'.
 \openout1 = `IO.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 41678 strings out of 476038
- 822676 string characters out of 5790170
- 1860785 words of memory out of 5000000
- 61393 multiletter control sequences out of 15000+600000
- 532467 words of font info for 80 fonts, out of 8000000 for 9000
+ 41718 strings out of 476038
+ 823134 string characters out of 5790170
+ 1867785 words of memory out of 5000000
+ 61412 multiletter control sequences out of 15000+600000
+ 538944 words of font info for 95 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 102i,11n,136p,748b,850s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/hoekwater/manfnt-font/manfnt.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/newtx/ztmbi.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on IO.pdf (3 pages, 3929624 bytes).
+ 102i,13n,136p,748b,850s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/hoekwater/manfnt-font/manfnt.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/newtx/ztmbi.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
+Output written on IO.pdf (5 pages, 4007711 bytes).
 PDF statistics:
- 126 PDF objects out of 1000 (max. 8388607)
- 85 compressed objects within 1 object stream
- 12 named destinations out of 1000 (max. 500000)
- 146 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 185 PDF objects out of 1000 (max. 8388607)
+ 127 compressed objects within 2 object streams
+ 20 named destinations out of 1000 (max. 500000)
+ 154 words of extra memory for PDF output out of 10000 (max. 10000000)
 

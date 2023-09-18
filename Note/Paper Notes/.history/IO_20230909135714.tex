@@ -1,0 +1,167 @@
+\documentclass[11pt]{elegantbook}
+\definecolor{structurecolor}{RGB}{40,58,129}
+\linespread{1.6}
+\setlength{\footskip}{20pt}
+\setlength{\parindent}{0pt}
+\newcommand{\argmax}{\operatornamewithlimits{argmax}}
+\newcommand{\argmin}{\operatornamewithlimits{argmin}}
+\elegantnewtheorem{proof}{Proof}{}{Proof}
+\elegantnewtheorem{claim}{Claim}{prostyle}{Claim}
+\DeclareMathOperator{\col}{col}
+\title{\textbf{Industrial Organization Papers}}
+\author{Wenxiao Yang}
+\institute{Haas School of Business, University of California Berkeley}
+\date{2023}
+\setcounter{tocdepth}{2}
+\cover{cover.JPEG}
+\extrainfo{All models are wrong, but some are useful.}
+
+% modify the color in the middle of titlepage
+\definecolor{customcolor}{RGB}{9,119,119}
+\colorlet{coverlinecolor}{customcolor}
+\usepackage{cprotect}
+
+\addbibresource[location=local]{reference.bib} % bib
+
+\begin{document}
+
+\maketitle
+\frontmatter
+\tableofcontents
+\mainmatter
+
+
+\chapter{Berry, S. T. (1994). Estimating discrete-choice models of product differentiation.}
+Based on
+\begin{enumerate}[$\circ$]
+    \item Berry, S. T. (1994). Estimating discrete-choice models of product differentiation. \textit{The RAND Journal of Economics}, 242-262.
+\end{enumerate}
+
+
+\section{Problem}
+The problem of estimating supply-and-demand models in markets with product differentiation.
+
+
+\section{What's New?}
+\begin{enumerate}
+    \item Discrete-choice model.
+    \item Unobserved demand factors are considered.
+    \item Estimation by "inverting" the market-share equation to find the implied mean levels of utility for each good.
+\end{enumerate}
+\begin{note}
+    \textbf{The problem of previous empirical model:} a system of $N$ goods gives $N^2$ elasticizes to estimate.
+\end{note}
+This paper put some structure based by making assumptions on consumer utility. It uses the aggregation of consumers' individual choice to estimate demand.
+
+\section{Model}
+\textbf{Data:} The econometrician is assumed to observe the market outcomes of price and quantities sold by each firm.
+\subsection{Settings}
+\begin{enumerate}
+    \item There are $R$ independent markets.
+    \item There are $N_r$ firms in market $r$, with each firm producing one product. (For simplicity, we omit $r$ in following notations).
+    \item For product $j$, the observed characteristics are denoted by $z_{j}=(x_j,w_j)\in \mathbb{R}^k$.\\ Specifically, $z_j$ includes two parts:
+    \subitem characteristics that affect demand $x_j$;
+    \subitem characteristics that affect marginal cost $w_j$.
+    \item For product $j$, the unobserved characteristics are denoted by $(\xi_j,\omega_j)\in \mathbb{R}^k$.\\ Specifically, $(\xi_j,\omega_j)$ includes two parts:
+    \subitem unobserved characteristics that affect demand $\xi_j$;
+    \subitem unobserved characteristics that affect marginal cost $\omega_j$.\\
+    Unobserved characteristics are mean independent of observed characteristics and independent across markets.
+    \item Price of product $j$ is denoted by $p_j$.
+    \item \textbf{Discrete Choice Model:} the utility of consumer $i$ for product $j$: $$u_{ij}=U(x_j,\xi_j,p_j,v_i,\theta_d)$$
+    \subitem $v_i$ captures the consumer $i$'s consumer-specific terms that are not observed by the econometrician;
+    \subitem $\theta_d$ are demand parameters.\\
+    Consider a simple random coefficients specification for utility,
+    \begin{equation}
+        \begin{aligned}
+            u_{ij}&=U(x_j,\xi_j,p_j,v_i=\tilde{\beta}_i,\theta_d=\alpha)\\
+            &=x_j\tilde{\beta}_i-\alpha p_j+\xi_j+\epsilon_{ij}
+        \end{aligned}
+        \tag{(2)}
+        \label{(2)}
+    \end{equation}
+    where $\epsilon_{ij}$ represents the distribution of consumer preferences about this mean, and $\alpha$ is invariant across consumers (although not necessary).\\
+    \textbf{Random coefficients:} (to avoid unreasonable substitution effects) Decompose consumer $i$'s taste parameter for characteristic $k$ as
+    \begin{equation}
+        \begin{aligned}
+            \tilde{\beta}_{ik}=\beta_k+\sigma_k\xi_{ik}
+        \end{aligned}
+        \tag{(3)}
+        \label{(3)}
+    \end{equation}
+    where $\beta_k$ is the mean level of taste for characteristic $k$ and $\xi_{ik}$ has mean zero.\\
+    Combing \ref{(2)} and \ref{(3)}, we can write
+    \begin{equation}
+        \begin{aligned}
+            u_{ij}&=\sum_{k}x_{jk}\tilde{\beta}_{ik}-\alpha p_j+\xi_j+\epsilon_{ij}\\
+            &=\sum_{k}x_{jk}\left(\beta_k+\sigma_k\xi_{ik}\right)-\alpha p_j+\xi_j+\epsilon_{ij}\\
+            &=x_j\beta-\alpha p_j+\xi_j+\sum_{k}x_{jk}\sigma_k\xi_{ik}+\epsilon_{ij}\\
+            &=x_j\beta-\alpha p_j+\xi_j+v_{ij}
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    with $v_{ij}=\sum_{k}x_{jk}\sigma_k\xi_{ik}+\epsilon_{ij}$, which has mean zero.\\
+    The mean utility level of product $j$ is
+    \begin{equation}
+        \begin{aligned}
+            \delta_j\equiv x_j\beta-\alpha p_j+\xi_j
+        \end{aligned}
+        \tag{(5)}
+        \label{(5)}
+    \end{equation}
+    Then, the utility of consumer $i$ for product $j$ can be written as $$u_{ij}=\delta_j+v_{ij}$$
+    \item \textbf{Discrete-choice Market Share Function:}
+    \subitem Define the set of consumer unobservables that lead to the consumption of good $j$ as $$A_j(\boldsymbol{\delta})\triangleq \{\boldsymbol{v}_i: \delta_j+v_{ij}>\delta_k+v_{ik}, \forall k\neq j\}$$
+    Then, the market share of $j$ is the probability that $\boldsymbol{v}_i$ falls into the region $A_j(\boldsymbol{\delta})$, $P(\boldsymbol{v}_i\in A_j(\boldsymbol{\delta}))$.\\
+    Given $\boldsymbol{x},\boldsymbol{p},\boldsymbol{\xi}, \boldsymbol{\theta}$, and the distribution of $\boldsymbol{v}$ follows $F(\cdot,\boldsymbol{x},\sigma)$ (p.d.f $f$), the market share is
+    \begin{equation}
+        \begin{aligned}
+            \natural_j(\boldsymbol{\delta}(\boldsymbol{x},\boldsymbol{p},\boldsymbol{\xi}),\boldsymbol{x},\boldsymbol{\theta})=\int_{A_j(\boldsymbol{\delta})}f(\boldsymbol{v},\boldsymbol{x},\sigma_v)d \boldsymbol{v}
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    The measure of consumers in a market is denoted by $M$ (which is assumed to be observed). The observed output quantity of the firm is
+    \begin{equation}
+        \begin{aligned}
+            q_j=M \natural_j(\boldsymbol{x},\boldsymbol{\xi},\boldsymbol{p},\theta_d)
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    In addition to competing products $j=1,...,N$, there is also an outside good $j=0$.
+    \item \textbf{The supply side:}
+    \subitem Suppose the \textbf{total costs for firm $j$} are given by the function $C_j(q_j,w_j,\omega_j,\boldsymbol{\gamma})$;
+    \subitem the \textbf{marginal costs} are given by $c_j(q_j,w_j,\omega_j,\boldsymbol{\gamma})$, where $\boldsymbol{\gamma}$ is a vector of unknown parameters.
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
