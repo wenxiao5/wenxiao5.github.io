@@ -613,7 +613,7 @@ We consider \underline{the most important special case ($n=2$)}.
     \end{enumerate}
 \end{proposition}
 
-
+\chapter{Statistics}
 \section{Random Sampling}
 \begin{definition}[Random Sample]
     \normalfont
@@ -723,6 +723,268 @@ In statistics, we define \textbf{data} be a vector $x=(x_1,...,x_n)'$ of numbers
         \item $x_i\sim \textnormal{i.i.d. } N(\mu,\sigma^2)$, where $\mu\in \mathbb{R}$ and $\sigma^2>0$ are unknown.
     \end{enumerate}
 \end{example}
+
+
+\section{Point Estimation}
+Suppose $X_1,...,X_n$ is a random sample from a discrete/continuous distribution with pmf/pdf $f(\cdot\mid \theta)$, where $\theta\in\Theta$ is unknown.
+
+\begin{definition}[Point Estimator]
+    \normalfont
+    A \textbf{point estimator} (of $\theta$) is a function of $(X_1,...,X_n)$.\\
+    \underline{Notation}: $\hat{\theta}=\hat{\theta}(X_1,...,X_n)$.
+\end{definition}
+
+\underline{Agenda}
+\begin{enumerate}[(1).]
+    \item Constructing point estimators
+    \begin{enumerate}[$\circ$]
+        \item Method of moments;
+        \item Maximum likelihood.
+    \end{enumerate}
+    \item Comparing estimators
+    \begin{enumerate}[$\circ$]
+        \item Pairwise comparisons;
+        \item Finding 'optimal' estimators.
+    \end{enumerate}
+\end{enumerate}
+
+
+\subsection{Method of Moments (MM)}
+\begin{definition}[Method of Moments in $\mathbb{R}^1$]
+    \normalfont
+    Suppose $\Theta\subseteq \mathbb{R}^1$. A \textbf{method of moments} estimator $\hat{\theta}_{MM}$ solves
+    \begin{equation}
+        \begin{aligned}
+            \mu(\hat{\theta}_{MM})=\bar{X}=\frac{1}{n}\sum_{i=1}^n X_i
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    where $\mu: \Theta \rightarrow \mathbb{R}$ is given by
+    \begin{equation}
+        \begin{aligned}
+            \mu(\theta)=\left\{\begin{matrix}
+                \sum_{x\in \mathbb{R}}x f(x\mid \theta),& \textnormal{ if $X_i$ are discrete}\\
+                \int_{-\infty}^\infty x f(x\mid \theta) dx,& \textnormal{ if $X_i$ are continuous}
+            \end{matrix}\right.
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{definition}
+\begin{remark}
+    Existence of $\mu(\cdot)$ is assumed;
+    Existence (and uniqueness) of $\hat{\theta}_{MM}$ is assumed.
+\end{remark}
+
+\begin{example}\quad
+    \begin{enumerate}
+        \item Suppose $X_i\sim \textnormal{i.i.d. Ber}(p)$ where $p\in[0,1]$ is unknown. The \underline{moment function} is
+        \begin{equation}
+            \begin{aligned}
+                \mu(p)=p
+            \end{aligned}
+            \nonumber
+        \end{equation}
+        Then, the \underline{estimator} is
+        \begin{equation}
+            \begin{aligned}
+                \hat{p}_{MM}=\mu(\hat{p}_{MM})=\bar{X}
+            \end{aligned}
+            \nonumber
+        \end{equation}
+        \begin{remark}
+            $\hat{p}_{MM}=\bar{X}$ is the 'best' estimator of $p$.
+        \end{remark}
+        \item Suppose $X_i\sim \textnormal{i.i.d.}U(0,\theta)$ where $\theta>0$ is unknown.\\
+        \begin{remark}
+            Non-regular statistical model: parameter dependent support, where $\textnormal{supp}X=[0,\theta]$.
+        \end{remark}
+        The \underline{moment function} is
+        \begin{equation}
+            \begin{aligned}
+                \mu(\theta)=\frac{\theta}{2}
+            \end{aligned}
+            \nonumber
+        \end{equation}
+        Then, the \underline{estimator} is
+        \begin{equation}
+            \begin{aligned}
+                \hat{\theta}_{MM}=2\mu(\hat{\theta}_{MM})=2\bar{X}
+            \end{aligned}
+            \nonumber
+        \end{equation}
+        \begin{remark}
+            $\hat{\theta}_{MM}$ is not a very good estimator of $\theta$. Concern $X_i>\hat{\theta}_{MM}$ could happen. So, $\max\{\hat{\theta}_{MM},X_{(n)}\}$ can be better.
+        \end{remark}
+    \end{enumerate}
+\end{example}
+
+\begin{definition}[Method of Moments in $\mathbb{R}^k$]
+    \normalfont
+    Suppose $\Theta\subseteq \mathbb{R}^k$. A \textbf{method of moments} estimator $\hat{\theta}_{MM}$ solves
+    \begin{equation}
+        \begin{aligned}
+            \mu'_j(\hat{\theta}_{MM})=\frac{1}{n}\sum_{i=1}^n X_i^j,\quad (j=1,...,k)
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    where $\mu'_j: \Theta \rightarrow \mathbb{R}$ is given by
+    \begin{equation}
+        \begin{aligned}
+            \mu'_j(\theta)=\left\{\begin{matrix}
+                \sum_{x\in \mathbb{R}}x^j f(x\mid \theta),& \textnormal{ if $X_i$ are discrete}\\
+                \int_{-\infty}^\infty x^j f(x\mid \theta) dx,& \textnormal{ if $X_i$ are continuous}
+            \end{matrix}\right.
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{definition}
+\begin{example}\quad\\
+    Suppose $X_i\sim \textnormal{i.i.d.}N(\mu,\sigma^2)$ where $\mu\in \mathbb{R}$ and $\sigma^2>0$ are unknown. The \underline{moment function} is
+    \begin{equation}
+        \begin{aligned}
+            \mu'_1(\mu,\sigma^2)&=\mu\\
+            \mu'_2(\mu,\sigma^2)&=\mu^2+\sigma^2
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    Then, the \underline{estimator} is
+    \begin{equation}
+        \begin{aligned}
+            \mu'_1(\hat{\mu}_{MM},\hat{\sigma}^2_{MM})&=\hat{\mu}_{MM}=\frac{1}{n}\sum_{i=1}^n X_i\\
+            \mu'_2(\hat{\mu}_{MM},\hat{\sigma}^2_{MM})&=\hat{\mu}_{MM}+\hat{\sigma}^2_{MM}=\frac{1}{n}\sum_{i=1}^n X_i^2\\
+            \Rightarrow \hat{\mu}_{MM}&=\bar{X}\\
+            \hat{\sigma}^2_{MM}&=\frac{1}{n}\sum_{i=1}^n (X_i-\bar{X})^2
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    \begin{remark}
+        $\bar{X}$ is the 'best' estimator of $\mu$; An alternative better estimator of $\sigma^2$ is $\frac{1}{n-1}\sum_{i=1}^n (X_i-\bar{X})^2$.
+    \end{remark}
+\end{example}
+
+
+\subsection{Maximum Likelihood (ML)}
+\begin{definition}[Maximum Likelihood]
+    \normalfont
+    A \textbf{maximum likelihood estimator} $\hat{\theta}_{ML}$ solves
+    \begin{equation}
+        \begin{aligned}
+            L(\hat{\theta}_{ML}\mid X_1,...,X_n)=\max_{\theta\in\Theta} L(\theta\mid X_1,...,X_n)
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    where $L(\cdot\mid X_1,...,X_n):\Theta \rightarrow \mathbb{R}_+$ is given by $$L(\theta\mid X_1,...,X_n)=\prod_{i=1}^n f(X_i\mid\theta),\ \theta\in\Theta$$
+\end{definition}
+\begin{remark}
+    $L(\cdot\mid X_1,...,X_n)$ is called the \underline{likelihood} function.
+\end{remark}
+\begin{definition}[Log-Likelihood]
+    \normalfont
+    The \textbf{log-likelihood} function is
+    \begin{equation}
+        \begin{aligned}
+            l(\theta\mid X_1,...,X_n)=\log L(\theta\mid X_1,...,X_n)=\sum_{i=1}^n \log f(X_i\mid\theta),\ \theta\in\Theta
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{definition}
+\begin{example}\quad
+\begin{enumerate}
+    \item Suppose $X_i\sim \textnormal{i.i.d. Ber}(p)$ where $p\in[0,1]$ is unknown. The \underline{marginal pmf} is
+    \begin{equation}
+        \begin{aligned}
+            f(x\mid p)=\left\{\begin{matrix}
+                p,&x=1\\
+                1-p,&x=0\\
+                0,&\textnormal{ otherwise}
+            \end{matrix}\right.=p^x(1-p)^{1-x}\mathbf{1}_{\{x\in\{0,1\}\}}
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    Then, the \underline{likelihood function} is
+    \begin{equation}
+        \begin{aligned}
+            L(p\mid X_1,...,X_n)&=\prod_{i=1}^n\left\{ p^{X_i}(1-p)^{1-X_i}\underbrace{\mathbf{1}_{\{X_i\in\{0,1\}\}}}_{=1}\right\}\\
+            &=p^{\sum_{i=1}^n X_i}(1-p)^{n-\sum_{i=1}^n X_i}, \ p\in[0,1]
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    and the \underline{log-likelihood function} is
+    \begin{equation}
+        \begin{aligned}
+            l(p\mid X_1,...,X_n)&=(\sum_{i=1}^n X_i)\log p + (n-\sum_{i=1}^n X_i)\log (1-p),\ p\in (0,1)
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    \underline{Maximization:}
+    \begin{enumerate}
+        \item Suppose $0<\sum_{i=1}^n X_i<n$, we can give the first-order condition:
+        \begin{equation}
+            \begin{aligned}
+                \frac{\partial l(p\mid X_1,...,X_n)}{\partial p}\big|_{p=\hat{p}_{ML}}=\frac{\sum_{i=1}^n X_i}{\hat{p}_{ML}}-\frac{n-\sum_{i=1}^n X_i}{n-\hat{p}_{ML}}=0\\
+                \Rightarrow \hat{p}_{ML}=\frac{\sum_{i=1}^n X_i}{n}=\bar{X}
+            \end{aligned}
+            \nonumber
+        \end{equation}
+        \item Suppose $\sum_{i=1}^n X_i=0$, then
+        \begin{equation}
+            \begin{aligned}
+                l(p\mid X_1,...,X_n)=n\log (1-p),\ p\in [0,1)
+                \Rightarrow \hat{p}_{ML}=0
+            \end{aligned}
+            \nonumber
+        \end{equation}
+        \item Suppose $\sum_{i=1}^n X_i=n$, then
+        \begin{equation}
+            \begin{aligned}
+                l(p\mid X_1,...,X_n)=n\log p,\ p\in (0,1]
+                \Rightarrow \hat{p}_{ML}=1
+            \end{aligned}
+            \nonumber
+        \end{equation}
+    \end{enumerate}
+    All in all, $$\hat{p}_{ML}=\bar{X}$$
+    \begin{remark}
+        $\hat{p}_{ML}=\bar{X}=\hat{p}_{MM}$ is the 'best' estimator of $p$.
+    \end{remark}
+\end{enumerate}
+\end{example}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \chapter{Basis}

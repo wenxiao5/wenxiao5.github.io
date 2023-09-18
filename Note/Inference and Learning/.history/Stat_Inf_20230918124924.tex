@@ -1,0 +1,380 @@
+\documentclass[11pt]{elegantbook}
+\definecolor{structurecolor}{RGB}{40,58,129}
+\linespread{1.6}
+\setlength{\footskip}{20pt}
+\setlength{\parindent}{0pt}
+\newcommand{\argmax}{\operatornamewithlimits{argmax}}
+\newcommand{\argmin}{\operatornamewithlimits{argmin}}
+\elegantnewtheorem{proof}{Proof}{}{Proof}
+\elegantnewtheorem{claim}{Claim}{prostyle}{Claim}
+\DeclareMathOperator{\col}{col}
+\title{Statistical Inference}
+\author{Wenxiao Yang}
+\institute{Haas School of Business, University of California Berkeley}
+\date{2023}
+\setcounter{tocdepth}{2}
+\extrainfo{All models are wrong, but some are useful.}
+
+\cover{cover.png}
+
+% modify the color in the middle of titlepage
+\definecolor{customcolor}{RGB}{32,178,170}
+\colorlet{coverlinecolor}{customcolor}
+\usepackage{cprotect}
+
+\addbibresource[location=local]{reference.bib} % bib
+
+\begin{document}
+\maketitle
+
+\frontmatter
+\tableofcontents
+
+\mainmatter
+
+\chapter{Statistics Basics}
+\section{Random Sampling}
+\begin{definition}[Random Sample]
+    \normalfont
+    A \textbf{random sample} is a collection $X_1,...,X_n$ of random variables that are (mutually) independent and identical marginal distributions.
+
+    $X_1,...,X_n$ are called "independent and identically distributed". The notation is $X_i\sim i.i.d. $
+\end{definition}
+
+\begin{definition}[Statistic]
+    \normalfont
+    If $X_1,...,X_n$ is a random sample and $T: \mathbb{R}^n \rightarrow \mathbb{R}^k$ (for some $k\in \mathbb{N}$), then $T(X_1,...,X_n)$ is called a \textbf{statistic}.
+\end{definition}
+
+\subsection{Sample Mean and Sample Variance}
+\begin{definition}[Sample Mean and Sample Variance]
+    \normalfont
+    \begin{enumerate}
+        \item The \textbf{sample mean} is $\bar{X}=\frac{1}{n}\sum_{i=1}^n X_i$;
+        \item The \textbf{sample variance} is $S^2=\frac{1}{n-1}\sum_{i=1}^n (X_i-\bar{X})^2=\frac{1}{n-1}(\sum_{i=1}^n X_i^2 - n\bar{X}^2)$
+    \end{enumerate}
+\end{definition}
+
+\begin{note}
+    We use "$X_i\sim \textnormal{i.i.d}(\mu,\sigma^2)$" to denote a random sample from a distribution with mean $\mu$ and variance $\sigma^2$.
+\end{note}
+
+\begin{theorem}[$\mathbb{E}(\bar{X}), \textnormal{Var}(\bar{X}), \mathbb{E}(S^2)$]
+    Suppose $X_1,...,X_n$ is a random sample from a distribution with mean $\mu$ and variance $\sigma^2$ (denoted by $X_i\sim \textnormal{i.i.d}(\mu,\sigma^2)$). Then,
+    \begin{enumerate}[(a).]
+        \item $\mathbb{E}(\bar{X})=\mu$;
+        \item $\textnormal{Var}(\bar{X})=\frac{\sigma^2}{n}$;
+        \item $\mathbb{E}(S^2)=\sigma^2$.
+    \end{enumerate}
+\end{theorem}
+
+
+\subsection{Distributional Properties}
+\begin{theorem}
+    If $X_i\sim \textnormal{i.i.d. } N(\mu,\sigma^2)$, then
+    \begin{enumerate}[(a).]
+        \item $\bar{X}\sim N(\mu,\frac{\sigma^2}{n})$
+        \item $\frac{n-1}{\sigma^2}S^2\sim \chi^2_{n-1}$
+        \item $\bar{X}\perp S^2$
+    \end{enumerate}
+\end{theorem}
+
+\begin{theorem}["Asymptotics"]
+    If $X_i\sim \textnormal{i.i.d. } (\mu,\sigma^2)$ and if $n$ is "large", then
+    \begin{enumerate}[(a).]
+        \item $\bar{X}\sim N(\mu,\frac{\sigma^2}{n})$ (converges in distribution) by CLT \ref{CLT};
+        \item $S^2=\sigma^2$ by LLN;
+    \end{enumerate}
+\end{theorem}
+
+\subsection{Order Statistics}
+\begin{definition}[Order Statistics]
+    \normalfont
+    If $X_1,...,X_n$ is a random sample, then the \textbf{characteristics} are the sample values placed in ascending order.
+    \underline{Notation:}
+    \begin{equation}
+        \begin{aligned}
+            X_{(1)}\leq X_{(2)}\leq ... \leq X_{(n)}
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{definition}
+
+\begin{proposition}[Distribution of $X_{n}=\max_{i=1,...,n}X_i$]
+    If $X_1,...,X_n$ is a random sample form a distribution with cdf $F$ (denoted by "$X_i\sim \textnormal{i.i.d. } F$"), then
+    \begin{equation}
+        \begin{aligned}
+            F_{X_{(n)}}(x)=P(X_{(n)}\leq x)=F^n(x)
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{proposition}
+
+
+\section{Basic Statistics}
+In statistics, we define \textbf{data} be a vector $x=(x_1,...,x_n)'$ of numbers.
+\begin{assumption}[\textbf{Fundamental Assumption}]
+    $x$ is the realization of a random vector $X=(X_1,...,X_n)'$.
+\end{assumption}
+
+\textbf{\underline{Objective}:} Using $x$ to give (data-based) answers to questions about the distribution of $X$.
+
+\textbf{\underline{Probability vs. Statistics}:}
+\begin{enumerate}[$\circ$]
+    \item Probability: Distribution known, outcome unknown;
+    \item Statistics: Distribution unknown, outcome known.
+\end{enumerate}
+
+\textbf{\underline{Setting:}} $X_1,...,X_n$ is a random sample from a discrete/continuous distribution with pmf/pdf $f(\cdot\mid \theta)$, where $\theta\in\Theta$ is unknown.
+
+\textbf{\underbar{Types of Statistical Inference}:}
+\begin{enumerate}[$\circ$]
+    \item Point estimation $\Rightarrow$ "What is $\theta$?";
+    \item Hypothesis testing $\Rightarrow$ "Is $\theta=\theta_0$?";
+    \item Interval estimation $\Rightarrow$ "Which values of $\theta$ are 'plausible'?".
+\end{enumerate}
+
+\begin{example}
+    \underline{Examples of Statistical Models}
+    \begin{enumerate}[(1).]
+        \item $x_i\sim \textnormal{i.i.d. } \textnormal{Bernoulli}(p)$, where $p$ is unknown.
+        \item $x_i\sim \textnormal{i.i.d. } U(0,\theta)$, where $\theta>0$ is unknown.
+        \item $x_i\sim \textnormal{i.i.d. } N(\mu,\sigma^2)$, where $\mu\in \mathbb{R}$ and $\sigma^2>0$ are unknown.
+    \end{enumerate}
+\end{example}
+
+
+\section{Point Estimation}
+Suppose $X_1,...,X_n$ is a random sample from a discrete/continuous distribution with pmf/pdf $f(\cdot\mid \theta)$, where $\theta\in\Theta$ is unknown.
+
+\begin{definition}[Point Estimator]
+    \normalfont
+    A \textbf{point estimator} (of $\theta$) is a function of $(X_1,...,X_n)$.\\
+    \underline{Notation}: $\hat{\theta}=\hat{\theta}(X_1,...,X_n)$.
+\end{definition}
+
+\underline{Agenda}
+\begin{enumerate}[(1).]
+    \item Constructing point estimators
+    \begin{enumerate}[$\circ$]
+        \item Method of moments;
+        \item Maximum likelihood.
+    \end{enumerate}
+    \item Comparing estimators
+    \begin{enumerate}[$\circ$]
+        \item Pairwise comparisons;
+        \item Finding 'optimal' estimators.
+    \end{enumerate}
+\end{enumerate}
+
+
+\subsection{Method of Moments (MM)}
+\begin{definition}[Method of Moments in $\mathbb{R}^1$]
+    \normalfont
+    Suppose $\Theta\subseteq \mathbb{R}^1$. A \textbf{method of moments} estimator $\hat{\theta}_{MM}$ solves
+    \begin{equation}
+        \begin{aligned}
+            \mu(\hat{\theta}_{MM})=\bar{X}=\frac{1}{n}\sum_{i=1}^n X_i
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    where $\mu: \Theta \rightarrow \mathbb{R}$ is given by
+    \begin{equation}
+        \begin{aligned}
+            \mu(\theta)=\left\{\begin{matrix}
+                \sum_{x\in \mathbb{R}}x f(x\mid \theta),& \textnormal{ if $X_i$ are discrete}\\
+                \int_{-\infty}^\infty x f(x\mid \theta) dx,& \textnormal{ if $X_i$ are continuous}
+            \end{matrix}\right.
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{definition}
+\begin{remark}
+    Existence of $\mu(\cdot)$ is assumed;
+    Existence (and uniqueness) of $\hat{\theta}_{MM}$ is assumed.
+\end{remark}
+
+\begin{example}\quad
+    \begin{enumerate}
+        \item Suppose $X_i\sim \textnormal{i.i.d. Ber}(p)$ where $p\in[0,1]$ is unknown. The \underline{moment function} is
+        \begin{equation}
+            \begin{aligned}
+                \mu(p)=p
+            \end{aligned}
+            \nonumber
+        \end{equation}
+        Then, the \underline{estimator} is
+        \begin{equation}
+            \begin{aligned}
+                \hat{p}_{MM}=\mu(\hat{p}_{MM})=\bar{X}
+            \end{aligned}
+            \nonumber
+        \end{equation}
+        \begin{remark}
+            $\hat{p}_{MM}=\bar{X}$ is the 'best' estimator of $p$.
+        \end{remark}
+        \item Suppose $X_i\sim \textnormal{i.i.d.}U(0,\theta)$ where $\theta>0$ is unknown.\\
+        \begin{remark}
+            Non-regular statistical model: parameter dependent support, where $\textnormal{supp}X=[0,\theta]$.
+        \end{remark}
+        The \underline{moment function} is
+        \begin{equation}
+            \begin{aligned}
+                \mu(\theta)=\frac{\theta}{2}
+            \end{aligned}
+            \nonumber
+        \end{equation}
+        Then, the \underline{estimator} is
+        \begin{equation}
+            \begin{aligned}
+                \hat{\theta}_{MM}=2\mu(\hat{\theta}_{MM})=2\bar{X}
+            \end{aligned}
+            \nonumber
+        \end{equation}
+        \begin{remark}
+            $\hat{\theta}_{MM}$ is not a very good estimator of $\theta$. Concern $X_i>\hat{\theta}_{MM}$ could happen. So, $\max\{\hat{\theta}_{MM},X_{(n)}\}$ can be better.
+        \end{remark}
+    \end{enumerate}
+\end{example}
+
+\begin{definition}[Method of Moments in $\mathbb{R}^k$]
+    \normalfont
+    Suppose $\Theta\subseteq \mathbb{R}^k$. A \textbf{method of moments} estimator $\hat{\theta}_{MM}$ solves
+    \begin{equation}
+        \begin{aligned}
+            \mu'_j(\hat{\theta}_{MM})=\frac{1}{n}\sum_{i=1}^n X_i^j,\quad (j=1,...,k)
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    where $\mu'_j: \Theta \rightarrow \mathbb{R}$ is given by
+    \begin{equation}
+        \begin{aligned}
+            \mu'_j(\theta)=\left\{\begin{matrix}
+                \sum_{x\in \mathbb{R}}x^j f(x\mid \theta),& \textnormal{ if $X_i$ are discrete}\\
+                \int_{-\infty}^\infty x^j f(x\mid \theta) dx,& \textnormal{ if $X_i$ are continuous}
+            \end{matrix}\right.
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{definition}
+\begin{example}\quad\\
+    Suppose $X_i\sim \textnormal{i.i.d.}N(\mu,\sigma^2)$ where $\mu\in \mathbb{R}$ and $\sigma^2>0$ are unknown. The \underline{moment function} is
+    \begin{equation}
+        \begin{aligned}
+            \mu'_1(\mu,\sigma^2)&=\mu\\
+            \mu'_2(\mu,\sigma^2)&=\mu^2+\sigma^2
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    Then, the \underline{estimator} is
+    \begin{equation}
+        \begin{aligned}
+            \mu'_1(\hat{\mu}_{MM},\hat{\sigma}^2_{MM})&=\hat{\mu}_{MM}=\frac{1}{n}\sum_{i=1}^n X_i\\
+            \mu'_2(\hat{\mu}_{MM},\hat{\sigma}^2_{MM})&=\hat{\mu}_{MM}+\hat{\sigma}^2_{MM}=\frac{1}{n}\sum_{i=1}^n X_i^2\\
+            \Rightarrow \hat{\mu}_{MM}&=\bar{X}\\
+            \hat{\sigma}^2_{MM}&=\frac{1}{n}\sum_{i=1}^n (X_i-\bar{X})^2
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    \begin{remark}
+        $\bar{X}$ is the 'best' estimator of $\mu$; An alternative better estimator of $\sigma^2$ is $\frac{1}{n-1}\sum_{i=1}^n (X_i-\bar{X})^2$.
+    \end{remark}
+\end{example}
+
+
+\subsection{Maximum Likelihood (ML)}
+\begin{definition}[Maximum Likelihood]
+    \normalfont
+    A \textbf{maximum likelihood estimator} $\hat{\theta}_{ML}$ solves
+    \begin{equation}
+        \begin{aligned}
+            L(\hat{\theta}_{ML}\mid X_1,...,X_n)=\max_{\theta\in\Theta} L(\theta\mid X_1,...,X_n)
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    where $L(\cdot\mid X_1,...,X_n):\Theta \rightarrow \mathbb{R}_+$ is given by $$L(\theta\mid X_1,...,X_n)=\prod_{i=1}^n f(X_i\mid\theta),\ \theta\in\Theta$$
+\end{definition}
+\begin{remark}
+    $L(\cdot\mid X_1,...,X_n)$ is called the \underline{likelihood} function.
+\end{remark}
+\begin{definition}[Log-Likelihood]
+    \normalfont
+    The \textbf{log-likelihood} function is
+    \begin{equation}
+        \begin{aligned}
+            l(\theta\mid X_1,...,X_n)=\log L(\theta\mid X_1,...,X_n)=\sum_{i=1}^n \log f(X_i\mid\theta),\ \theta\in\Theta
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{definition}
+\begin{example}\quad
+\begin{enumerate}
+    \item Suppose $X_i\sim \textnormal{i.i.d. Ber}(p)$ where $p\in[0,1]$ is unknown. The \underline{marginal pmf} is
+    \begin{equation}
+        \begin{aligned}
+            f(x\mid p)=\left\{\begin{matrix}
+                p,&x=1\\
+                1-p,&x=0\\
+                0,&\textnormal{ otherwise}
+            \end{matrix}\right.=p^x(1-p)^{1-x}\mathbf{1}_{\{x\in\{0,1\}\}}
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    Then, the \underline{likelihood function} is
+    \begin{equation}
+        \begin{aligned}
+            L(p\mid X_1,...,X_n)&=\prod_{i=1}^n\left\{ p^{X_i}(1-p)^{1-X_i}\underbrace{\mathbf{1}_{\{X_i\in\{0,1\}\}}}_{=1}\right\}\\
+            &=p^{\sum_{i=1}^n X_i}(1-p)^{n-\sum_{i=1}^n X_i}, \ p\in[0,1]
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    and the \underline{log-likelihood function} is
+    \begin{equation}
+        \begin{aligned}
+            l(p\mid X_1,...,X_n)&=(\sum_{i=1}^n X_i)\log p + (n-\sum_{i=1}^n X_i)\log (1-p),\ p\in (0,1)
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    \underline{Maximization:}
+    \begin{enumerate}
+        \item Suppose $0<\sum_{i=1}^n X_i<n$, we can give the first-order condition:
+        \begin{equation}
+            \begin{aligned}
+                \frac{\partial l(p\mid X_1,...,X_n)}{\partial p}\big|_{p=\hat{p}_{ML}}=\frac{\sum_{i=1}^n X_i}{\hat{p}_{ML}}-\frac{n-\sum_{i=1}^n X_i}{n-\hat{p}_{ML}}=0\\
+                \Rightarrow \hat{p}_{ML}=\frac{\sum_{i=1}^n X_i}{n}=\bar{X}
+            \end{aligned}
+            \nonumber
+        \end{equation}
+        \item Suppose $\sum_{i=1}^n X_i=0$, then
+        \begin{equation}
+            \begin{aligned}
+                l(p\mid X_1,...,X_n)=n\log (1-p),\ p\in [0,1)
+                \Rightarrow \hat{p}_{ML}=0
+            \end{aligned}
+            \nonumber
+        \end{equation}
+        \item Suppose $\sum_{i=1}^n X_i=n$, then
+        \begin{equation}
+            \begin{aligned}
+                l(p\mid X_1,...,X_n)=n\log p,\ p\in (0,1]
+                \Rightarrow \hat{p}_{ML}=1
+            \end{aligned}
+            \nonumber
+        \end{equation}
+    \end{enumerate}
+    All in all, $$\hat{p}_{ML}=\bar{X}$$
+    \begin{remark}
+        $\hat{p}_{ML}=\bar{X}=\hat{p}_{MM}$ is the 'best' estimator of $p$.
+    \end{remark}
+\end{enumerate}
+\end{example}
+
+
+
+
+
+
+
+
+
+\end{document}
