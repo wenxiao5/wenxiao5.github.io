@@ -598,8 +598,6 @@ Some lemmas can help to prove the theorem.
 Based on
 \begin{enumerate}[$\circ$]
     \item Two-Sided Matching: A Study in Game-Theoretic Modeling and Analysis, Roth, Alvin E.\& Sotomayor, Matilda, 1990.
-    \item Fleiner, T. (2003). A fixed-point approach to stable matchings and some applications. \textit{Mathematics of Operations research}, 28(1), 103-126.
-    \item Hatfield, J. W., \& Kominers, S. D. (2017). Contract design and stability in many-to-many matching. \textit{Games and Economic Behavior}, 101, 78-97.
 \end{enumerate}
 \section{Matching One-to-One}
 Suppose there are doctors ($D$) and hospitals ($H$). For a doctor $d$, define a relation $\succeq_d$ over $H\cup\{d\}$; for a hospital $h$, define a relation $\succeq_h$ over $D\cup\{h\}$. A matching market is defined by $$\left(D,H,\{\succeq_i\}_{i\in D\cup H}\right)$$
@@ -818,27 +816,24 @@ If $z$ is rejected given a set, then it should also be rejected given a larger s
 \begin{theorem}[Tarski 1955]
     Let $L=(X,<)$ be a complete lattice and $f: L \rightarrow L$ be monotone ($\leq$) function on $L$. Then, the set $\{x\in L: f(x)=x\}$ of fixed points is a non-empty, complete lattice with order $\leq$.
 \end{theorem}
-\begin{proof}
-    Fleiner, T. (2003). A fixed-point approach to stable matchings and some applications. \textit{Mathematics of Operations research}, 28(1), 103-126.
-\end{proof}
 
 
 %Given sets of contracts $X^D$ and $X^H$.
 
 %Operator $f(X^D,X^H)$ produces $\left(X\backslash R_H(X^H), X\backslash R_D(X^D)\right)$. Fixed point: $\left\{\begin{matrix}
-    %X^D=&X\backslash R_H(X^H)\\
-    %X^H=&X\backslash R_D(X^D)
-%\end{matrix}\right.$. $X^D\cap X^H=A$ is stable.\\
-%(Find the intercection of contracts that are not rejected in both $X^D$ and $X^H$, which is stable.)
+    X^D=&X\backslash R_H(X^H)\\
+    X^H=&X\backslash R_D(X^D)
+\end{matrix}\right.$. $X^D\cap X^H=A$ is stable.\\
+(Find the intercection of contracts that are not rejected in both $X^D$ and $X^H$, which is stable.)
 
 
 
 
 %Operator $g(X^D,X^H)$ produces $g_H(X^H)=\{x\in X: x\in C_H(X^H\cup\{x\})\}$ and $g_D(X^D)=\{x\in X: x\in C_D(X^D\cup\{x\})\}$. Fixed point: $\left\{\begin{matrix}
-    %X^D=&g_H(X^H)\\
-    %X^H=&g_D(X^D)
-%\end{matrix}\right.$. $X^D\cap X^H=A$ is stable.\\
-%(Find the intercection of contracts that are accepted both $X^D$ and $X^H$, which is stable.)
+    X^D=&g_H(X^H)\\
+    X^H=&g_D(X^D)
+\end{matrix}\right.$. $X^D\cap X^H=A$ is stable.\\
+(Find the intercection of contracts that are accepted both $X^D$ and $X^H$, which is stable.)
 
 
 %Define partial order, $(X^D,X^H)\geq (\bar{X}^D,\bar{X}^H)$ if $X^D\subseteq \bar{X}^D$ and $X^H \supseteq  \bar{X}^H$.

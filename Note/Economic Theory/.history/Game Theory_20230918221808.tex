@@ -598,8 +598,6 @@ Some lemmas can help to prove the theorem.
 Based on
 \begin{enumerate}[$\circ$]
     \item Two-Sided Matching: A Study in Game-Theoretic Modeling and Analysis, Roth, Alvin E.\& Sotomayor, Matilda, 1990.
-    \item Fleiner, T. (2003). A fixed-point approach to stable matchings and some applications. \textit{Mathematics of Operations research}, 28(1), 103-126.
-    \item Hatfield, J. W., \& Kominers, S. D. (2017). Contract design and stability in many-to-many matching. \textit{Games and Economic Behavior}, 101, 78-97.
 \end{enumerate}
 \section{Matching One-to-One}
 Suppose there are doctors ($D$) and hospitals ($H$). For a doctor $d$, define a relation $\succeq_d$ over $H\cup\{d\}$; for a hospital $h$, define a relation $\succeq_h$ over $D\cup\{h\}$. A matching market is defined by $$\left(D,H,\{\succeq_i\}_{i\in D\cup H}\right)$$
@@ -799,62 +797,58 @@ If $z$ is rejected given a set, then it should also be rejected given a larger s
 
 \begin{definition}[Lattice]
     \normalfont
-    On a \textbf{lattice}, $L=(X,<,\wedge,\vee)$ (or we just use $L=(X,<)$), $<$ is a partial order on $X$ in such a way that any two elements $x$ and $y$ of $X$ have a unique greatest lower bound (glb) $x \wedge y$ (meet) and a unique lowest upper bound (lub) $x \vee y$ (join).
+    On a \textbf{lattice}, $L=(X,<,\wedge,\vee)$, $<$ is a partial order on $X$ in such a way that any two elements $x$ and $y$ of $X$ have a unique greatest lower bound (glb) $x \wedge y$ (meet) and a unique lowest upper bound (lub) $x \vee y$ (join).
 \end{definition}
-
 
 
 \begin{definition}[Complete Lattice]
     \normalfont
-    A lattice $L=(X,<)$ is \textbf{complete} if there are both a meet (i.e. a greatest lower bound) and a join (i.e. a least upper bound) for any subset $Y\subseteq X$.\\
-    These generalized meet and join operations on $Y$ are denoted by $\wedge Y$ and $\vee Y$.
+    A lattice is \textbf{complete} if $X\subseteq L$ has a meet $\wedge X$ and a join $\vee X$.
 \end{definition}
 
 \begin{definition}[Monotone Function over Lattice]
     \normalfont
-    A function from one lattice to another lattice $f:(X,<) \rightarrow (X',<')$ is \textbf{monotone} if $x\leq y \Rightarrow f(x)\leq' f(y)$ for any $x,y\in X$.
+    A function from one lattice to another lattice $f:L \rightarrow L'$ is \textbf{monotone} if $x\leq y \Rightarrow f(x)\leq f(y)$ for any $x,y\in L$.
 \end{definition}
 
-\begin{theorem}[Tarski 1955]
-    Let $L=(X,<)$ be a complete lattice and $f: L \rightarrow L$ be monotone ($\leq$) function on $L$. Then, the set $\{x\in L: f(x)=x\}$ of fixed points is a non-empty, complete lattice with order $\leq$.
+Taiski's F.P.T.
+\begin{theorem}
+    Let $L$ be a complete lattice and $f: L \rightarrow L$ be monotone ($\leq$) function on $L$. Then, the set $\{x\in L: f(x)=x\}$ of fixed points is a non-empty, complete lattice with order $\leq$.
 \end{theorem}
-\begin{proof}
-    Fleiner, T. (2003). A fixed-point approach to stable matchings and some applications. \textit{Mathematics of Operations research}, 28(1), 103-126.
-\end{proof}
 
 
-%Given sets of contracts $X^D$ and $X^H$.
+Given sets of contracts $X^D$ and $X^H$.
 
-%Operator $f(X^D,X^H)$ produces $\left(X\backslash R_H(X^H), X\backslash R_D(X^D)\right)$. Fixed point: $\left\{\begin{matrix}
-    %X^D=&X\backslash R_H(X^H)\\
-    %X^H=&X\backslash R_D(X^D)
-%\end{matrix}\right.$. $X^D\cap X^H=A$ is stable.\\
-%(Find the intercection of contracts that are not rejected in both $X^D$ and $X^H$, which is stable.)
+Operator $f(X^D,X^H)$ produces $\left(X\backslash R_H(X^H), X\backslash R_D(X^D)\right)$. Fixed point: $\left\{\begin{matrix}
+    X^D=&X\backslash R_H(X^H)\\
+    X^H=&X\backslash R_D(X^D)
+\end{matrix}\right.$. $X^D\cap X^H=A$ is stable.\\
+(Find the intercection of contracts that are not rejected in both $X^D$ and $X^H$, which is stable.)
 
 
 
 
-%Operator $g(X^D,X^H)$ produces $g_H(X^H)=\{x\in X: x\in C_H(X^H\cup\{x\})\}$ and $g_D(X^D)=\{x\in X: x\in C_D(X^D\cup\{x\})\}$. Fixed point: $\left\{\begin{matrix}
-    %X^D=&g_H(X^H)\\
-    %X^H=&g_D(X^D)
-%\end{matrix}\right.$. $X^D\cap X^H=A$ is stable.\\
-%(Find the intercection of contracts that are accepted both $X^D$ and $X^H$, which is stable.)
+Operator $g(X^D,X^H)$ produces $g_H(X^H)=\{x\in X: x\in C_H(X^H\cup\{x\})\}$ and $g_D(X^D)=\{x\in X: x\in C_D(X^D\cup\{x\})\}$. Fixed point: $\left\{\begin{matrix}
+    X^D=&g_H(X^H)\\
+    X^H=&g_D(X^D)
+\end{matrix}\right.$. $X^D\cap X^H=A$ is stable.\\
+(Find the intercection of contracts that are accepted both $X^D$ and $X^H$, which is stable.)
 
 
-%Define partial order, $(X^D,X^H)\geq (\bar{X}^D,\bar{X}^H)$ if $X^D\subseteq \bar{X}^D$ and $X^H \supseteq  \bar{X}^H$.
+Define partial order, $(X^D,X^H)\geq (\bar{X}^D,\bar{X}^H)$ if $X^D\subseteq \bar{X}^D$ and $X^H \supseteq  \bar{X}^H$.
 
-%If $(X^D,X^H)\geq (\bar{X}^D,\bar{X}^H)$, then $g(X^D,X^H)\geq g(\bar{X}^D,\bar{X}^H)$
-
-
-%Check if $X^D\subseteq \bar{X}^D$, then $g(X^D)\supseteq g(\bar{X}^D)$, by substitutability.
+If $(X^D,X^H)\geq (\bar{X}^D,\bar{X}^H)$, then $g(X^D,X^H)\geq g(\bar{X}^D,\bar{X}^H)$
 
 
-%Prove $X^D\cap X^H=A$ is stable:\\
-%Given the claim $C_D(X^D)=A$ (prove later)
-%\begin{enumerate}[1).]
-    %\item IR: $C_D(X^D)=A$ by $C(A)=A$;
-    %\item Unblocked: $z\in X\backslash A$ that blocks. Then $z\notin X^H \Rightarrow z\in C_D(A\cup\{z\})$ and $z\notin C_D(X^D\cup\{z\})$, but $C_D(X^D)=A \Rightarrow z\notin C_D(A\cup\{z\})$.
-%\end{enumerate}
+Check if $X^D\subseteq \bar{X}^D$, then $g(X^D)\supseteq g(\bar{X}^D)$, by substitutability.
+
+
+Prove $X^D\cap X^H=A$ is stable:\\
+Given the claim $C_D(X^D)=A$ (prove later)
+\begin{enumerate}[1).]
+    \item IR: $C_D(X^D)=A$ by $C(A)=A$;
+    \item Unblocked: $z\in X\backslash A$ that blocks. Then $z\notin X^H \Rightarrow z\in C_D(A\cup\{z\})$ and $z\notin C_D(X^D\cup\{z\})$, but $C_D(X^D)=A \Rightarrow z\notin C_D(A\cup\{z\})$.
+\end{enumerate}
 
 
 \chapter{Stochastic Dominance}
