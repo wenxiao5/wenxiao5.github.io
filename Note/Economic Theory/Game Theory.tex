@@ -857,6 +857,81 @@ If $z$ is rejected given a set, then it should also be rejected given a larger s
 %\end{enumerate}
 
 
+If some contracts are not substitute, there are no stable outcomes exist.
+
+\section{Matching Many-to-One}
+\underline{Settings}
+\begin{enumerate}[$\circ$]
+    \item Doctors, $D$; Hospitals, $H$; Contracts $X=D\times H\times \textnormal{terms}$;
+    \item Hospitals preference $\succ_h$ over $2^X$;
+    \item Doctors preference $\succ_d$ over $X$ (compare one contract with another one contract, not compare over sets of contracts);
+    \item Outcome is $Y\subseteq X$ s.t. $|Y_d|\leq 1$ for all $d\in D$ (a doctor signs at most one contract).
+\end{enumerate}
+
+What restriction do we need to have a stable matching? Not as strong as substitute.
+
+\begin{corollary}
+    Doctor-proposing DA algorithm produces a doctor-optimal stable matching.
+\end{corollary}
+
+\begin{example} The preferences of agents are
+    \begin{enumerate}[$\circ$]
+        \item $d_1: h_1\succ h_2$; $d_2: h_1\succ h_2$; $d_3: h_2\succ h_1$;
+        \item $h_1: d_3\succ d_1,d_2\succ d_1\succ d_2$; $h_2: d_1\succ d_2\succ d_3$.
+    \end{enumerate}
+    There are two stable outcomes
+    \begin{enumerate}
+        \item $(d_1,h_2)$, $(d_3,h_1)$;
+        \item $(d_1,h_1), (d_2,h_1), (d_3,h_2)$.
+    \end{enumerate}
+    \begin{remark}
+        Lone-Wolf Theorem doesn't hold.
+    \end{remark}
+
+    Assume the $d_2$'s true preference is $h_2\succ h_1$ and he reveals it, there is only one stable matching: $(d_1,h_2)$, $(d_3,h_1)$. So, the $d_2$ may benefit from lying.\\
+    \begin{remark}
+        Strategy-proof doesn't hold.
+    \end{remark}
+\end{example}
+
+\begin{definition}[Law of Aggagate Demand/ Cardianlity Monotomicity (CM)]
+    \normalfont
+    For $h$, $Y\subseteq Y'\subseteq X \Rightarrow |C_h(Y)|\leq |C_h(Y')|$
+\end{definition}
+
+\begin{theorem}
+    Under substitutes and CM, doctor-proposing DA is strategy-proof and LWT holds.
+\end{theorem}
+
+\begin{theorem}[Rural Hosptial Theorem]
+    Under substitutes / CM, hospitals have same numbers of contracts in every stable outcome.
+\end{theorem}
+
+\subsubsection*{Cadets-branch matching}
+Can be found in:
+\begin{enumerate}[$\circ$]
+    \item Jagadeesan, R. (2019). Cadet-branch matching in a Kelso-Crawford economy. \textit{American Economic Journal: Microeconomics}, 11(3), 191-224.
+\end{enumerate}
+
+
+\begin{remark}
+    Contracts are not substitutes.
+\end{remark}
+
+\begin{definition}[Unilateral Substitute]
+    \normalfont
+    Contracts are \textbf{unilateral substitutes} if for all $z,x\in X$ and $Y\subseteq X$ \underline{such that $z_D\notin Y_D$} if $z\notin C_h(Y\cup\{z\}) \Rightarrow z\notin C_h(Y\cup\{z\}\cup\{x\})$
+\end{definition}
+
+\begin{remark}
+    Preferences of branches satisfying unilateral substitute.
+\end{remark}
+
+\begin{remark}
+    The outcome of doctor-proposing DA algorithm is doctor-optimal and stable.
+\end{remark}
+
+
 \chapter{Stochastic Dominance}
 Based on
 \begin{enumerate}[$\circ$]
