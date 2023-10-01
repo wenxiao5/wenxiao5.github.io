@@ -1,110 +1,124 @@
 \contentsline {chapter}{\numberline {1}Economic Theory Foundation}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Preferences and Utility Functions}{1}{section.1.1}%
-\contentsline {subsection}{\numberline {1.1.1}Rational Preference}{1}{subsection.1.1.1}%
-\contentsline {subsection}{\numberline {1.1.2}Utility Function $\Leftrightarrow $ Rational Preference}{2}{subsection.1.1.2}%
-\contentsline {subsection}{\numberline {1.1.3}Monotone Preference}{2}{subsection.1.1.3}%
-\contentsline {subsection}{\numberline {1.1.4}Independence of Preference}{3}{subsection.1.1.4}%
-\contentsline {subsection}{\numberline {1.1.5}Continuous Preference}{3}{subsection.1.1.5}%
-\contentsline {subsection}{\numberline {1.1.6}Convex Preference}{4}{subsection.1.1.6}%
-\contentsline {subsection}{\numberline {1.1.7}Homothetic Preference}{4}{subsection.1.1.7}%
-\contentsline {subsection}{\numberline {1.1.8}Quasi-linearity}{4}{subsection.1.1.8}%
-\contentsline {subsection}{\numberline {1.1.9}Separability}{5}{subsection.1.1.9}%
-\contentsline {subsection}{\numberline {1.1.10}Differentiable Preference}{5}{subsection.1.1.10}%
-\contentsline {section}{\numberline {1.2}Choice}{5}{section.1.2}%
-\contentsline {subsection}{\numberline {1.2.1}Choice}{5}{subsection.1.2.1}%
-\contentsline {subsection}{\numberline {1.2.2}Choice Correspondence}{6}{subsection.1.2.2}%
-\contentsline {subsection}{\numberline {1.2.3}Weak Axiom of Revealed Preference (WARP)}{6}{subsection.1.2.3}%
-\contentsline {section}{\numberline {1.3}Social Choice}{6}{section.1.3}%
-\contentsline {subsection}{\numberline {1.3.1}Social Welfare Function and Properties}{7}{subsection.1.3.1}%
-\contentsline {subsection}{\numberline {1.3.2}Arrow's Theorem}{7}{subsection.1.3.2}%
-\contentsline {section}{\numberline {1.4}Demand Theory and Equilibrium}{7}{section.1.4}%
-\contentsline {section}{\numberline {1.5}Basic Game Theory}{10}{section.1.5}%
-\contentsline {subsection}{\numberline {1.5.1}von Neumann and Morgenstern Expected Utility (EU)}{10}{subsection.1.5.1}%
-\contentsline {subsection}{\numberline {1.5.2}Game, Dominant Strategy}{10}{subsection.1.5.2}%
-\contentsline {subsection}{\numberline {1.5.3}Nash Equilibrium and Existence}{10}{subsection.1.5.3}%
-\contentsline {subsection}{\numberline {1.5.4}Bayesian Game}{11}{subsection.1.5.4}%
-\contentsline {subsection}{\numberline {1.5.5}Mechanism Design}{11}{subsection.1.5.5}%
-\contentsline {chapter}{\numberline {2}Market Design}{14}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Matching One-to-One}{14}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Matching Markets: One-to-One}{15}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}Joint and Meet}{16}{subsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.1.3}Strategic Incentives}{16}{subsection.2.1.3}%
-\contentsline {section}{\numberline {2.2}Matching Many-to-Many}{17}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Matching Many-to-One}{18}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Networks}{20}{section.2.4}%
-\contentsline {chapter}{\numberline {3}Stochastic Dominance}{23}{chapter.3}%
-\contentsline {section}{\numberline {3.1}General Definitions}{23}{section.3.1}%
-\contentsline {section}{\numberline {3.2}First-order Stochastic Dominance}{24}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Two Equivalent Definitions}{24}{subsection.3.2.1}%
-\contentsline {section}{\numberline {3.3}Second-order Stochastic Dominance}{24}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Definition in terms of final goals}{24}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Mean-Preserving Spread/Contraction}{25}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}For Same Mean Distributions, Second-order Stochastic Dominance is equivalent to Mean-Preserving Spread}{25}{subsection.3.3.3}%
-\contentsline {chapter}{\numberline {4}Signalling Game}{27}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Canonical Game}{27}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Nash Equilibrium}{27}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Single-crossing}{28}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Situation over real line}{28}{subsection.4.3.1}%
-\contentsline {chapter}{\numberline {5}Tools for Comparative Statics}{29}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Regular and Critical Points and Values}{29}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Rank of Derivatives $\textnormal {Rank} df_x=\textnormal {Rank} Df(x)$}{29}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Regular and Critical Points and Values}{29}{subsection.5.1.2}%
-\contentsline {section}{\numberline {5.2}Inverse and Implicit Function Theorem}{30}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Inverse Function Theorem}{30}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Implicit Function Theorem}{30}{subsection.5.2.2}%
-\contentsline {subsection}{\numberline {5.2.3}Prove Implicit Function Theorem Given Inverse Function Theorem}{31}{subsection.5.2.3}%
-\contentsline {subsection}{\numberline {5.2.4}Prove Inverse Function Theorem Given Implicit Function Theorem}{32}{subsection.5.2.4}%
-\contentsline {subsection}{\numberline {5.2.5}Example: Using Implicit Function Theorem in Comparative Statics}{32}{subsection.5.2.5}%
-\contentsline {subsection}{\numberline {5.2.6}Corollary: $a \rightarrow \{x\in X: f(x,a)=0\}$ is lhc}{33}{subsection.5.2.6}%
-\contentsline {section}{\numberline {5.3}Transversality and Genericity}{33}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Lebesgue Measure Zero}{33}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}Sard's Theorem}{34}{subsection.5.3.2}%
-\contentsline {subsection}{\numberline {5.3.3}Transversality Theorem}{34}{subsection.5.3.3}%
-\contentsline {chapter}{\numberline {6}Fixed Point Theorem}{35}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Contraction Mapping Theorem \small {(@ Lec 05 of ECON 204)}}{35}{section.6.1}%
-\contentsline {subsection}{\numberline {6.1.1}Contraction: Lipschitz continuous with constant $<1$}{35}{subsection.6.1.1}%
-\contentsline {subsection}{\numberline {6.1.2}Theorem: Contraction $\Rightarrow $ Uniformly Continuous}{35}{subsection.6.1.2}%
-\contentsline {subsection}{\numberline {6.1.3}Blackwell's Sufficient Conditions for Contraction}{35}{subsection.6.1.3}%
-\contentsline {section}{\numberline {6.2}Fixed Point Theorem \small {(@ Lec 05 of ECON 204)}}{36}{section.6.2}%
-\contentsline {subsection}{\numberline {6.2.1}Fixed Point}{36}{subsection.6.2.1}%
-\contentsline {subsection}{\numberline {6.2.2}$\bigstar $ Contraction Mapping Theorem: contraction $\Rightarrow $ exist unique fixed point}{37}{subsection.6.2.2}%
-\contentsline {subsection}{\numberline {6.2.3}Conditions for Fixed Point's Continuous Dependence on Parameters}{38}{subsection.6.2.3}%
-\contentsline {section}{\numberline {6.3}Brouwer's Fixed Point Theorem \small {(@ Lec 13 of ECON 204)}}{38}{section.6.3}%
-\contentsline {subsection}{\numberline {6.3.1}Simple One: One-dimension}{38}{subsection.6.3.1}%
-\contentsline {subsection}{\numberline {6.3.2}$\bigstar $ Brouwer's Fixed Point Theorem: continuous function has fixed point over compact, convex set}{39}{subsection.6.3.2}%
-\contentsline {chapter}{\numberline {7}Correspondence: $\Psi : X \rightarrow 2^Y$ \small {(@ Lec 07 of ECON 204)}}{40}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Continuity of Correspondences}{40}{section.7.1}%
-\contentsline {subsection}{\numberline {7.1.1}Upper/Lower Hemicontinuous}{40}{subsection.7.1.1}%
-\contentsline {subsection}{\numberline {7.1.2}Theorem: $\Psi (x)=\{f(x)\}$ is uhc $\Leftrightarrow $ $f$ is continuous}{42}{subsection.7.1.2}%
-\contentsline {subsection}{\numberline {7.1.3}Berge's Maximum Theorem: the set of maximizers is uhc with non-empty compact values}{42}{subsection.7.1.3}%
-\contentsline {section}{\numberline {7.2}Graph of Correspondence}{42}{section.7.2}%
-\contentsline {subsection}{\numberline {7.2.1}Closed Graph}{42}{subsection.7.2.1}%
-\contentsline {section}{\numberline {7.3}Closed-valued, Compact-valued, and Convex-valued Correspondences}{43}{section.7.3}%
-\contentsline {subsection}{\numberline {7.3.1}Closed-valued, uhc and Closed Graph}{43}{subsection.7.3.1}%
-\contentsline {subsection}{\numberline {7.3.2}Theorem: compact-valued, uhs correspondence of compact set is compact}{43}{subsection.7.3.2}%
-\contentsline {section}{\numberline {7.4}Fixed Points for Correspondences \small {(@ Lec 13 of ECON 204)}}{44}{section.7.4}%
-\contentsline {subsection}{\numberline {7.4.1}Definition}{44}{subsection.7.4.1}%
-\contentsline {subsection}{\numberline {7.4.2}Kakutani's Fixed Point Theorem: uhs, compact, convex values correspondence has a fixed point over compact convex set}{44}{subsection.7.4.2}%
-\contentsline {subsection}{\numberline {7.4.3}Theorem: $\exists $ compact set $C = \cap _{i=0}^\infty \Psi ^i(X)$ s.t. $\Psi (C)=C$}{44}{subsection.7.4.3}%
-\contentsline {chapter}{\numberline {8}Bayesian Persuasion: Extreme Points and Majorization}{46}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Extreme Points}{46}{section.8.1}%
-\contentsline {subsection}{\numberline {8.1.1}Extreme Points of Convex Set}{46}{subsection.8.1.1}%
-\contentsline {subsection}{\numberline {8.1.2}Krein-Milman Theorem: Existence of Extreme Points}{46}{subsection.8.1.2}%
-\contentsline {subsection}{\numberline {8.1.3}Bauer's Maximum Principle: Usefulness of Extreme Points for Optimization}{46}{subsection.8.1.3}%
-\contentsline {section}{\numberline {8.2}Majorization}{47}{section.8.2}%
-\contentsline {subsection}{\numberline {8.2.1}Majorization and Weak Majorization}{47}{subsection.8.2.1}%
-\contentsline {subsection}{\numberline {8.2.2}How to work for non-monotonic functions? -- Non-Decreasing Rearrangement}{47}{subsection.8.2.2}%
-\contentsline {subsection}{\numberline {8.2.3}Theorem: $F$ majorizes $G$ $\Leftrightarrow $ $G$ is a mean-preserving spread of $F$}{47}{subsection.8.2.3}%
-\contentsline {section}{\numberline {8.3}Capture Extreme Points in Economic Applications}{48}{section.8.3}%
-\contentsline {subsection}{\numberline {8.3.1}Definitions of $\mathcal {MPS}(f)$, $\mathcal {MPS}_w(f)$, $\mathcal {MPC}(f)$}{48}{subsection.8.3.1}%
-\contentsline {subsection}{\numberline {8.3.2}Proposition: $\mathcal {MPS}(f)$, $\mathcal {MPS}_w(f)$, $\mathcal {MPC}(f)$ have extreme points and any element is a combination of extreme points}{49}{subsection.8.3.2}%
-\contentsline {subsection}{\numberline {8.3.3}Extreme Points in $\mathcal {MPS}(f)$}{49}{subsection.8.3.3}%
-\contentsline {subsection}{\numberline {8.3.4}Extreme Points in $\mathcal {MPS}_w(f)$}{50}{subsection.8.3.4}%
-\contentsline {subsection}{\numberline {8.3.5}Extreme Points in $\mathcal {MPC}(f)$}{50}{subsection.8.3.5}%
-\contentsline {chapter}{\numberline {9}Bayesian Persuasion: Bi-Pooling}{51}{chapter.9}%
-\contentsline {section}{\numberline {9.1}Persuation Model}{51}{section.9.1}%
-\contentsline {section}{\numberline {9.2}Bi-Pooling}{52}{section.9.2}%
-\contentsline {subsection}{\numberline {9.2.1}Bi-pooling Distribution}{52}{subsection.9.2.1}%
-\contentsline {section}{\numberline {9.3}Applying Bi-pooling Distributions to Persuasion Problems}{53}{section.9.3}%
-\contentsline {subsection}{\numberline {9.3.1}It works for all}{53}{subsection.9.3.1}%
-\contentsline {subsection}{\numberline {9.3.2}How it works}{53}{subsection.9.3.2}%
+\contentsline {subsection}{\numberline {1.1.1}Preference Relation}{1}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Rational Preference}{1}{subsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.1.3}Utility Function $\Leftrightarrow $ Rational Preference}{2}{subsection.1.1.3}%
+\contentsline {subsection}{\numberline {1.1.4}Monotone Preference}{2}{subsection.1.1.4}%
+\contentsline {subsection}{\numberline {1.1.5}Independence of Preference}{3}{subsection.1.1.5}%
+\contentsline {subsection}{\numberline {1.1.6}Continuous Preference}{3}{subsection.1.1.6}%
+\contentsline {subsection}{\numberline {1.1.7}Convex Preference}{4}{subsection.1.1.7}%
+\contentsline {subsection}{\numberline {1.1.8}Homothetic Preference}{4}{subsection.1.1.8}%
+\contentsline {subsection}{\numberline {1.1.9}Quasi-linearity}{5}{subsection.1.1.9}%
+\contentsline {subsection}{\numberline {1.1.10}Separability}{5}{subsection.1.1.10}%
+\contentsline {subsection}{\numberline {1.1.11}Differentiable Preference}{5}{subsection.1.1.11}%
+\contentsline {section}{\numberline {1.2}Choice}{6}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Choice}{6}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Choice Correspondence}{7}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}Weak Axiom of Revealed Preference (WARP)}{7}{subsection.1.2.3}%
+\contentsline {section}{\numberline {1.3}Social Choice}{7}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Social Welfare Function and Properties}{8}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}Arrow's Theorem}{8}{subsection.1.3.2}%
+\contentsline {section}{\numberline {1.4}Demand Theory and Equilibrium}{8}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Basic Game Theory}{11}{section.1.5}%
+\contentsline {subsection}{\numberline {1.5.1}von Neumann and Morgenstern Expected Utility (EU)}{11}{subsection.1.5.1}%
+\contentsline {subsection}{\numberline {1.5.2}Game, Dominant Strategy}{11}{subsection.1.5.2}%
+\contentsline {subsection}{\numberline {1.5.3}Nash Equilibrium and Existence}{11}{subsection.1.5.3}%
+\contentsline {subsection}{\numberline {1.5.4}Bayesian Game}{12}{subsection.1.5.4}%
+\contentsline {subsection}{\numberline {1.5.5}Mechanism Design}{12}{subsection.1.5.5}%
+\contentsline {subsection}{\numberline {1.5.6}Cho-Kreps Intuitive Criterion}{14}{subsection.1.5.6}%
+\contentsline {chapter}{\numberline {2}Market Design}{15}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Matching One-to-One}{15}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Matching Markets: One-to-One}{16}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Joint and Meet}{17}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}Strategic Incentives}{17}{subsection.2.1.3}%
+\contentsline {section}{\numberline {2.2}Matching Many-to-Many}{18}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Matching Many-to-One}{19}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Networks}{21}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Corporate Game Theory}{23}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Core of Corporate Game and Farkas' lemma}{23}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}Doubly stochastic matrix and Birkhoff-von Neumann Theorem}{24}{subsection.2.5.2}%
+\contentsline {section}{\numberline {2.6}Constrained Demand Theory}{25}{section.2.6}%
+\contentsline {chapter}{\numberline {3}Stochastic Dominance}{27}{chapter.3}%
+\contentsline {section}{\numberline {3.1}General Definitions}{27}{section.3.1}%
+\contentsline {section}{\numberline {3.2}First-order Stochastic Dominance}{28}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Two Equivalent Definitions}{28}{subsection.3.2.1}%
+\contentsline {section}{\numberline {3.3}Second-order Stochastic Dominance}{28}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Definition in terms of final goals}{28}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Mean-Preserving Spread/Contraction}{29}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}For Same Mean Distributions, Second-order Stochastic Dominance is equivalent to Mean-Preserving Spread}{29}{subsection.3.3.3}%
+\contentsline {chapter}{\numberline {4}Signalling Game}{31}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Canonical Game}{31}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Nash Equilibrium}{31}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Single-crossing}{32}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Situation over real line}{32}{subsection.4.3.1}%
+\contentsline {chapter}{\numberline {5}Tools for Comparative Statics}{33}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Regular and Critical Points and Values}{33}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Rank of Derivatives $\textnormal {Rank} df_x=\textnormal {Rank} Df(x)$}{33}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Regular and Critical Points and Values}{33}{subsection.5.1.2}%
+\contentsline {section}{\numberline {5.2}Inverse and Implicit Function Theorem}{34}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Inverse Function Theorem}{34}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Implicit Function Theorem}{34}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}Prove Implicit Function Theorem Given Inverse Function Theorem}{35}{subsection.5.2.3}%
+\contentsline {subsection}{\numberline {5.2.4}Prove Inverse Function Theorem Given Implicit Function Theorem}{36}{subsection.5.2.4}%
+\contentsline {subsection}{\numberline {5.2.5}Example: Using Implicit Function Theorem}{36}{subsection.5.2.5}%
+\contentsline {subsection}{\numberline {5.2.6}Corollary: $a \rightarrow \{x\in X: f(x,a)=0\}$ is lhc}{37}{subsection.5.2.6}%
+\contentsline {section}{\numberline {5.3}Transversality and Genericity}{38}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Lebesgue Measure Zero}{38}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Sard's Theorem}{38}{subsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.3.3}Transversality Theorem}{38}{subsection.5.3.3}%
+\contentsline {chapter}{\numberline {6}Fixed Point Theorem}{39}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Contraction Mapping Theorem \small {(@ Lec 05 of ECON 204)}}{39}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Contraction: Lipschitz continuous with constant $<1$}{39}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Theorem: Contraction $\Rightarrow $ Uniformly Continuous}{39}{subsection.6.1.2}%
+\contentsline {subsection}{\numberline {6.1.3}Blackwell's Sufficient Conditions for Contraction}{39}{subsection.6.1.3}%
+\contentsline {section}{\numberline {6.2}Fixed Point Theorem \small {(@ Lec 05 of ECON 204)}}{40}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Fixed Point}{40}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}$\bigstar $ Contraction Mapping Theorem: contraction $\Rightarrow $ exist unique fixed point}{41}{subsection.6.2.2}%
+\contentsline {subsection}{\numberline {6.2.3}Conditions for Fixed Point's Continuous Dependence on Parameters}{42}{subsection.6.2.3}%
+\contentsline {section}{\numberline {6.3}Brouwer's Fixed Point Theorem \small {(@ Lec 13 of ECON 204)}}{42}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Simple One: One-dimension}{42}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}$\bigstar $ Brouwer's Fixed Point Theorem: continuous function has fixed point over compact, convex set}{43}{subsection.6.3.2}%
+\contentsline {chapter}{\numberline {7}Correspondence: $\Psi : X \rightarrow 2^Y$ \small {(@ Lec 07 of ECON 204)}}{44}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Continuity of Correspondences}{44}{section.7.1}%
+\contentsline {subsection}{\numberline {7.1.1}Upper/Lower Hemicontinuous}{44}{subsection.7.1.1}%
+\contentsline {subsection}{\numberline {7.1.2}Theorem: $\Psi (x)=\{f(x)\}$ is uhc $\Leftrightarrow $ $f$ is continuous}{46}{subsection.7.1.2}%
+\contentsline {subsection}{\numberline {7.1.3}Berge's Maximum Theorem: the set of maximizers is uhc with non-empty compact values}{46}{subsection.7.1.3}%
+\contentsline {section}{\numberline {7.2}Graph of Correspondence}{46}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}Closed Graph}{46}{subsection.7.2.1}%
+\contentsline {section}{\numberline {7.3}Closed-valued, Compact-valued, and Convex-valued Correspondences}{47}{section.7.3}%
+\contentsline {subsection}{\numberline {7.3.1}Closed-valued, uhc and Closed Graph}{47}{subsection.7.3.1}%
+\contentsline {subsection}{\numberline {7.3.2}Theorem: compact-valued, uhs correspondence of compact set is compact}{47}{subsection.7.3.2}%
+\contentsline {section}{\numberline {7.4}Fixed Points for Correspondences \small {(@ Lec 13 of ECON 204)}}{48}{section.7.4}%
+\contentsline {subsection}{\numberline {7.4.1}Definition}{48}{subsection.7.4.1}%
+\contentsline {subsection}{\numberline {7.4.2}Kakutani's Fixed Point Theorem: uhs, compact, convex values correspondence has a fixed point over compact convex set}{48}{subsection.7.4.2}%
+\contentsline {subsection}{\numberline {7.4.3}Theorem: $\exists $ compact set $C = \cap _{i=0}^\infty \Psi ^i(X)$ s.t. $\Psi (C)=C$}{48}{subsection.7.4.3}%
+\contentsline {chapter}{\numberline {8}Bayesian Persuasion: Extreme Points and Majorization}{50}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Extreme Points}{50}{section.8.1}%
+\contentsline {subsection}{\numberline {8.1.1}Extreme Points of Convex Set}{50}{subsection.8.1.1}%
+\contentsline {subsection}{\numberline {8.1.2}Krein-Milman Theorem: Existence of Extreme Points}{50}{subsection.8.1.2}%
+\contentsline {subsection}{\numberline {8.1.3}Bauer's Maximum Principle: Usefulness of Extreme Points for Optimization}{50}{subsection.8.1.3}%
+\contentsline {section}{\numberline {8.2}Majorization}{51}{section.8.2}%
+\contentsline {subsection}{\numberline {8.2.1}Majorization and Weak Majorization}{51}{subsection.8.2.1}%
+\contentsline {subsection}{\numberline {8.2.2}How to work for non-monotonic functions? -- Non-Decreasing Rearrangement}{51}{subsection.8.2.2}%
+\contentsline {subsection}{\numberline {8.2.3}Theorem: $F$ majorizes $G$ $\Leftrightarrow $ $G$ is a mean-preserving spread of $F$}{51}{subsection.8.2.3}%
+\contentsline {section}{\numberline {8.3}Capture Extreme Points in Economic Applications}{52}{section.8.3}%
+\contentsline {subsection}{\numberline {8.3.1}Definitions of $\mathcal {MPS}(f)$, $\mathcal {MPS}_w(f)$, $\mathcal {MPC}(f)$}{52}{subsection.8.3.1}%
+\contentsline {subsection}{\numberline {8.3.2}Proposition: $\mathcal {MPS}(f)$, $\mathcal {MPS}_w(f)$, $\mathcal {MPC}(f)$ have extreme points and any element is a combination of extreme points}{53}{subsection.8.3.2}%
+\contentsline {subsection}{\numberline {8.3.3}Extreme Points in $\mathcal {MPS}(f)$}{53}{subsection.8.3.3}%
+\contentsline {subsection}{\numberline {8.3.4}Extreme Points in $\mathcal {MPS}_w(f)$}{54}{subsection.8.3.4}%
+\contentsline {subsection}{\numberline {8.3.5}Extreme Points in $\mathcal {MPC}(f)$}{54}{subsection.8.3.5}%
+\contentsline {chapter}{\numberline {9}Bayesian Persuasion: Bi-Pooling}{55}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Persuation Model}{55}{section.9.1}%
+\contentsline {section}{\numberline {9.2}Bi-Pooling}{56}{section.9.2}%
+\contentsline {subsection}{\numberline {9.2.1}Bi-pooling Distribution}{56}{subsection.9.2.1}%
+\contentsline {section}{\numberline {9.3}Applying Bi-pooling Distributions to Persuasion Problems}{57}{section.9.3}%
+\contentsline {subsection}{\numberline {9.3.1}It works for all}{57}{subsection.9.3.1}%
+\contentsline {subsection}{\numberline {9.3.2}How it works}{57}{subsection.9.3.2}%
+\contentsline {chapter}{\numberline {10}Optimization Methods}{59}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Neyman-Pearson Lemma}{59}{section.10.1}%
+\contentsline {chapter}{\numberline {11}Political Models}{60}{chapter.11}%
+\contentsline {section}{\numberline {11.1}Normal-Normal Learning}{60}{section.11.1}%
+\contentsline {section}{\numberline {11.2}Voting Model}{60}{section.11.2}%
+\contentsline {subsection}{\numberline {11.2.1}Case 1}{60}{subsection.11.2.1}%
+\contentsline {subsection}{\numberline {11.2.2}Case 2: Moral Hazard Version}{60}{subsection.11.2.2}%
+\contentsline {subsection}{\numberline {11.2.3}Case 3}{61}{subsection.11.2.3}%
