@@ -518,6 +518,33 @@ which is given by $\mathbb{E}[X^2]=\mathbb{E}[X]^2+\textnormal{Var}(X)$. Hence, 
 
 \begin{example}\quad
     \begin{enumerate}
+        \item Suppose $\{X_i\}_{i=1}^n$ be a random sample from $Poisson(\theta)$. Then, show $T(X_1,...,X_n)=\sum_{i=1}^n X_i$ is a sufficient statistic.
+        \begin{enumerate}
+            \item \textbf{Prove by Definition:} The sum of independent Poisson random variables are Poisson random variable, so we have $T=\sum_{i=1}^n X_i\sim Pois(n\theta)$. Then the conditional distribution of $X_1,...,X_n$ given $T$ is
+            \begin{equation}
+                \begin{aligned}
+                    f(X_1,...,X_n\mid T)=\frac{\prod_{i=1}^n\frac{\theta^{X_i} e^{-\theta}}{X_i!}}{\frac{(n\theta)^{T} e^{-n\theta}}{T!}}=\frac{T!}{n^T\prod_{i=1}^nX_i!}
+                \end{aligned}
+                \nonumber
+            \end{equation}
+            which is independent of $\theta$. So, $T(X_1,...,X_n)$ is sufficient statistic by definition.
+            \item \textbf{Prove by Factorization Theorem:}
+            \begin{equation}
+                \begin{aligned}
+                    \prod_{i=1}^n f(X_i\mid\theta)=\prod_{i=1}^n\frac{\theta^{X_i} e^{-\theta}}{X_i!}=\frac{\theta^{T(X_1,...,X_n)} e^{-n\theta}}{\prod_{i=1}^n X_i!}=g(T(X_1,...,X_n)\mid\theta)h(X_1,...,X_n)
+                \end{aligned}
+                \nonumber
+            \end{equation}
+            where $g(T(X_1,...,X_n)\mid\theta)=\theta^{T(X_1,...,X_n)} e^{-n\theta}$ and $h(X_1,...,X_n)=\frac{1}{\prod_{i=1}^n X_i!}$. Hence, $T(X_1,...,X_n)$ is sufficient statistic by Fisher-Neyman Factorization Criterion.
+            \item \textbf{Prove by Exponential Family:}
+            \begin{equation}
+                \begin{aligned}
+                    f(X\mid\theta)=\frac{\theta^X e^{-\theta}}{X!}=\frac{e^{-\theta+X\ln\theta}}{ X!}
+                \end{aligned}
+                \nonumber
+            \end{equation}
+            Hence, the distribution is a member of the exponential family, where $c(\theta)=1,h(X)=\frac{1}{X!}, w_1(\theta)=-\theta,w_2(\theta)=\ln\theta,t_1(X)=1,t_2(X)=X$. By theorem \ref{comp_exp_fam}, $\sum_{i=1}^n X_i$ is sufficient because $\{w_1(\theta)=-\theta,w_2(\theta)=\ln\theta\}$ is non-empty.
+        \end{enumerate}
         \item Suppose $X_i\sim \textnormal{i.i.d. } U[0,\theta]$ where $\theta>0$ is unknown. The \underline{marginal pdf} is
         \begin{equation}
             \begin{aligned}
@@ -616,7 +643,7 @@ If $T$ is sufficient and complete and if $\hat{\theta}=\hat{\theta}(T)$ is unbia
 \end{enumerate}
 
 \begin{theorem}[Sufficient and Complete Statistic for Exponential Family]\label{comp_exp_fam}
-    If $f(x|\theta)=c(\theta)h(x)e^{\sum_{j=1}^k w_j(\theta) t_j(x)}$, then $T=(\sum_{i=1}^n t_1(x_i),...,\sum_{i=1}^n t_k(x_i))$ is sufficient and complete if $\{\{w_1(\theta),...,w_k(\theta)\}:\theta\in\Theta\}$ contains a non-empty set.
+    If the distribution is a member of the exponential family, that is, $$f(x|\theta)=c(\theta)h(x)e^{\sum_{j=1}^k w_j(\theta) t_j(x)}$$ then $T=(\sum_{i=1}^n t_1(x_i),...,\sum_{i=1}^n t_k(x_i))$ is sufficient and complete if $\{\{w_1(\theta),...,w_k(\theta)\}:\theta\in\Theta\}$ contains a non-empty set.
 \end{theorem}
 \begin{example}
     Suppose $X\sim N(\mu,\sigma^2)$ for some $\mu\in \mathbb{R}$ and some $\sigma^2>0$. Then, $\theta=(\mu,\sigma^2)$ and $\Theta=\mathbb{R}\times \mathbb{R}_{++}$. The pdf can be written as
