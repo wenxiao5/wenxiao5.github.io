@@ -33,7 +33,7 @@
 \contentsline {section}{\numberline {2.5}Inequality}{15}{section.2.5}%
 \contentsline {subsection}{\numberline {2.5.1}Cauchy-Schwarz inequality: $|\mathbb {E}XY|\leq \sqrt {\mathbb {E}X^2\cdot \mathbb {E}Y^2}$}{15}{subsection.2.5.1}%
 \contentsline {subsection}{\numberline {2.5.2}Jensen's Inequality: convex $g$ $\Rightarrow $ $\mathbb {E}(g(X))\geq g(\mathbb {E}(X))$}{15}{subsection.2.5.2}%
-\contentsline {subsection}{\numberline {2.5.3}Markov's Inequality: $P(|X|\geq a)\leq \frac {\mathbb {E}|X|}{a}$}{15}{subsection.2.5.3}%
+\contentsline {subsection}{\numberline {2.5.3}Markov's Inequality: $P(|X|\geq a)\leq \frac {\mathbb {E}|X|}{a}$}{16}{subsection.2.5.3}%
 \contentsline {subsection}{\numberline {2.5.4}Chebychev's inequality: $P(|X-\mu |\geq a)\leq \frac {\sigma ^2}{a^2}$}{16}{subsection.2.5.4}%
 \contentsline {subsection}{\numberline {2.5.5}Chernoff Inequality: $P(X\geq a)\leq \frac {\mathbb {E}e^{tX}}{e^{ta}}$}{16}{subsection.2.5.5}%
 \contentsline {section}{\numberline {2.6}Law of Large Numbers (LLN)}{16}{section.2.6}%
