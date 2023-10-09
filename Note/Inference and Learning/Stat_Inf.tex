@@ -30,7 +30,7 @@
 \maketitle
 
 \frontmatter
-\tableofcontents
+%\tableofcontents
 
 \mainmatter
 
@@ -1008,7 +1008,7 @@ Consider the problem of testing $H_0:\theta=\theta_0\in \mathbb{R}$
     \item UMP level $\alpha$ test often $\exists$ if $H_1:\theta>\theta_0$ or $H_1:\theta<\theta_0$ (Proven by Karlin-Rubin Theorem);
     \item UMP level $\alpha$ test often $\nexists$ if $H_1:\theta\neq \theta_0$; UMP "unbiased" level $\alpha$ test often $\exists$.
 \end{enumerate}
-\begin{theorem}[Neyman-Pearson Lemma]
+\begin{theorem}[Neyman-Pearson Lemma]\label{NP_lemma}
     Consider the problem of testing,
     \begin{equation}
         \begin{aligned}
@@ -1095,7 +1095,7 @@ For any $\theta_1>\theta_0$, use NP Lemma to find optimal test of $H_0:\mu=\thet
     The UMP \underline{unbiased} 5\% test of $H_0:\mu=0 \textnormal{ vs. }H_1:\mu\neq 0$: Rejects $H_0$ iff $|\bar{X}|>\frac{1.96}{\sqrt{n}}$.
 \end{claim}
 \begin{corollary}
-    Suppose $X_i\sim \textnormal{i.i.d. }N(\mu,\sigma^2)$, where $\sigma^2$ is known. Then, the UMP unbiased $5\%$ test of the $H_0:\mu=\mu_0 \textnormal{ vs. }H_1:\mu\neq \mu_0$: Rejects $H_0$ if $|\frac{bar{X}-\mu_0}{\sigma}|>\frac{1.96}{\sqrt{n}}$.
+    Suppose $X_i\sim \textnormal{i.i.d. }N(\mu,\sigma^2)$, where $\sigma^2$ is known. Then, the UMP unbiased $5\%$ test of the $H_0:\mu=\mu_0 \textnormal{ vs. }H_1:\mu\neq \mu_0$: Rejects $H_0$ if $|\frac{\bar{X}-\mu_0}{\sigma}|>\frac{1.96}{\sqrt{n}}$.
 \end{corollary}
 
 \begin{claim}
@@ -1113,14 +1113,125 @@ For any $\theta_1>\theta_0$, use NP Lemma to find optimal test of $H_0:\mu=\thet
 \end{theorem}
 
 
+\section{Trinity of Classical Tests}
+\begin{enumerate}[$\circ$]
+    \item Likelihood Ratio Test
+    \item Lagrangian Multiplier Test (Score Test)
+    \item Wald Test
+\end{enumerate}
+\underline{Properties:} Deliver optimal test in motivating example; closely related (and "approximately" optimal) in general.
 
+\subsection{Test Statistics}
+\underline{Settings:} $X_1,...,X_n$ is a random sample from a discrete/continuous distribution with pmf/pdf $f(\cdot\mid\epsilon)$, where $\theta\in\Theta\subseteq \mathbb{R}$ is unknown.
 
+\underline{Testing Problem:} $H_0:\theta=\theta_0 \textnormal{ vs. }H_1:\theta\neq \theta_0$ for some $\theta_0\in\Theta$.
 
+Recall the log likelihood function is given by
+\begin{equation}
+    \begin{aligned}
+        l(\theta\mid X_1,...,X_n)=\sum_{i=1}^n \log f(X_i\mid \theta)
+    \end{aligned}
+    \nonumber
+\end{equation}
+The (sample) score function is
+\begin{equation}
+    \begin{aligned}
+        u(\theta\mid X_1,...,X_n)=\frac{\partial}{\partial \theta}l(\theta\mid X_1,...,X_n)
+    \end{aligned}
+    \nonumber
+\end{equation}
+and the (sample) fisher information is
+\begin{equation}
+    \begin{aligned}
+        \mathcal{I}(\theta\mid X_1,...,X_n)=-\frac{\partial^2}{\partial \theta^2}l(\theta_0\mid X_1,...,X_n)
+    \end{aligned}
+    \nonumber
+\end{equation}
 
+\begin{enumerate}[$\bullet$]
+    \item \textbf{Likelihood Ratio Test Statistic}:
+    \begin{equation}
+        \begin{aligned}
+            T_{LR}\left(X_1,...,X_n\right)&=2\left\{\max_{\theta\in\Theta}l(\theta\mid X_1,...,X_n)-\max_{\theta\in\Theta_0}l(\theta\mid X_1,...,X_n)\right\} \textnormal{ (general form)}\\
+            &=2\left\{l(\hat{\theta}_{ML}\mid X_1,...,X_n)-l(\theta_0\mid X_1,...,X_n)\right\}\\
+            &=2\log\left\{\frac{l(\hat{\theta}_{ML}\mid X_1,...,X_n)}{l(\theta_0\mid X_1,...,X_n)}\right\}
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    Motivation: Neyman-Pearson Lemma (\ref{NP_lemma})
+    \item \textbf{Lagrangian Multiplier Test Statistic}:
+    \begin{equation}
+        \begin{aligned}
+            T_{LM}\left(X_1,...,X_n\right)&=\frac{\left(\frac{\partial}{\partial \theta}l(\theta_0\mid X_1,...,X_n)\right)^2}{-\frac{\partial^2}{\partial \theta^2}l(\theta_0\mid X_1,...,X_n)}=\frac{\left(u(\theta_0\mid X_1,...,X_n)\right)^2}{\mathcal{I}(\theta_0\mid X_1,...,X_n)}
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    Motivation: $T_{LM}$ is approximate to $T_{LR}$; No estimation required.
+    \item \textbf{Wald Test Statistic}:
+    \begin{equation}
+        \begin{aligned}
+            T_W\left(X_1,...,X_n\right)=\frac{(\hat{\theta}_{ML}-\theta_0)^2}{\left\{-\frac{\partial^2}{\partial \theta^2}l(\hat{\theta}_{ML}\mid X_1,...,X_n)\right\}^{-1}}=\frac{(\hat{\theta}_{ML}-\theta_0)^2}{\left(\mathcal{I}(\hat{\theta}_{ML}\mid X_1,...,X_n)\right)^{-1}}
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    Motivation: $T_W$ is approximate to $T_{LR}$;\\
+    Generalization: Reject the $H_0:\theta=\theta_0$ if $|\hat{\theta}-\theta_0|$ is "large", when $\hat{\theta}$ is some estimator of $\theta$.
+\end{enumerate}
+\begin{claim}
+    In general, for "large" $n$, $$T_{LR}\approx T_{LM}\approx T_W\sim \chi^2(1)=N(0,1)^2 \textnormal{ under }H_0:\theta=\theta_0$$
+    \begin{enumerate}[$\circ$]
+        \item Approximate $5\%$critical value is $(1.96)^2=3.84$.
+        \item $T_{LR}=T_{LM}=T_W\sim \chi^2(1)=N(0,1)^2 \textnormal{ under }H_0:\theta=\theta_0$ when $X_i\sim \textnormal{i.i.d. }N(\mu,1)$.
+    \end{enumerate}
+\end{claim}
 
+\subsection{Approximation to $T_{LR}$}
+In this part as $n \rightarrow \infty$, we use $l(\theta), l'(\theta), l''(\theta)$ to denote $l(\theta\mid X_1,...,X_n), l'(\theta\mid X_1,...,X_n)\triangleq u(\theta\mid X_1,...,X_n), l''(\theta\mid X_1,...,X_n)\triangleq - \mathcal{I}(\theta\mid X_1,...,X_n)$.
+\begin{enumerate}[(1).]
+    \item $T_{LM}$:\\
+    Suppose $$l(\theta)\approx l(\theta_0)+l'(\theta_0)(\theta-\theta_0)+\frac{1}{2}l''(\theta_0)(\theta-\theta_0)^2\triangleq\tilde{l}(\theta)$$
+    Then $$\hat{\theta}_{ML}=\argmax_{\theta}l (\theta)\approx \argmax_{\theta}\tilde{l}(\theta)=\theta_0-\frac{l'(\theta_0)}{l''(\theta_0)}\triangleq\tilde{\theta}_{ML}$$
+    Hence, $$T_{LR}=2\left\{l(\hat{\theta}_{ML})-l(\theta_0)\right\}\approx 2\left\{\tilde{l}(\tilde{\theta}_{ML})-\tilde{l}(\theta_0)\right\}=-\frac{l'(\theta_0)^2}{l''(\theta_0)}=T_{LM}$$
+    \item $T_W$:\\
+    Suppose $$l(\theta)\approx l(\hat{\theta}_{ML})+l'(\hat{\theta}_{ML})(\theta-\hat{\theta}_{ML})+\frac{1}{2}l''(\hat{\theta}_{ML})(\theta-\hat{\theta}_{ML})^2\triangleq\hat{l}(\theta)$$
+    Then,
+    $$T_{LR}=2\left\{l(\hat{\theta}_{ML})-l(\theta_0)\right\}\approx 2\left\{\tilde{l}(\hat{\theta}_{ML})-\hat{l}(\theta_0)\right\}=\frac{(\hat{\theta}_{ML}-\theta_0)^2}{(-l''(\hat{\theta}_ML))^{-1}}=T_W$$
+\end{enumerate}
 
-
-
+\section{Interval Estimation}
+\begin{definition}
+    \normalfont
+    Suupose $\theta\in \mathbb{R}$.
+    \begin{enumerate}
+        \item An \underline{interval estimator} of $\theta$ is an interval $\left[L(X_1,...,X_n),U(X_1,...,X_n)\right]$, where $L(X_1,...,X_n)$ and $U(X_1,...,X_n)$ are statistics.
+        \item The \underline{converge probability} (of the interval estimator) is the function (of $\theta$) given by $$P_\theta\left[L(X_1,...,X_n)\leq\theta\leq U(X_1,...,X_n)\right]$$
+        \item The \underline{confidence coefficient} is $\inf_{\theta}P_\theta\left[L(X_1,...,X_n)\leq\theta\leq U(X_1,...,X_n)\right]$
+    \end{enumerate}
+\end{definition}
+\begin{example}
+    Suppose $X_i\sim \textnormal{i.i.d. }N(\mu,1)$, where $\mu$ is unknown.\\
+    \underline{Interval estimator:} $\left[\bar{X}-\frac{1.96}{\sqrt{n}},\bar{X}+\frac{1.96}{\sqrt{n}}\right]$.\\
+    \underline{Converge probability:} $P_\mu\left[\bar{X}-\frac{1.96}{\sqrt{n}}\leq\mu\leq\bar{X}+\frac{1.96}{\sqrt{n}}\right]=P_\mu\left[-1.96\leq\sqrt{n}(\bar{X}-\mu)\leq 1.96\right]=\Phi(1.96)-\Phi(-1.96)\approx 0.95$.
+\end{example}
+\underline{Interpretation:}
+\begin{enumerate}[(I).]
+    \item Recall
+    \begin{enumerate}[(i).]
+        \item $\bar{X}=\hat{\mu}_{MM}=\hat{\mu}_{ML}=\hat{\mu}_{UMVU}$;
+        \item $\bar{X}\sim N(\mu,\frac{1}{n}) \Rightarrow \frac{1}{\sqrt{n}}=\sqrt{\textnormal{Var}(\bar{x})}$.
+    \end{enumerate}
+    Hence, $\left[\bar{X}-\frac{1.96}{\sqrt{n}},\bar{X}+\frac{1.96}{\sqrt{n}}\right]=\left[\bar{X}-1.96\sqrt{\textnormal{Var}(\bar{x})},\bar{X}+1.96\sqrt{\textnormal{Var}(\bar{x})}\right]$. $\frac{\bar{X}-\mu}{\textnormal{Var}(\bar{x})}\sim N(0,1)$.
+    \item Recall: The "optimal" two-sided $5\%$ of the $\mu=\mu_0$ rejects \underline{iff} $|\bar{X}-\mu_0|>\frac{1.96}{\sqrt{n}}$\\
+    $\Leftrightarrow$ $\bar{X}-\mu_0>\frac{1.96}{\sqrt{n}}$ or $\bar{X}-\mu_0<-\frac{1.96}{\sqrt{n}}$\\
+    $\Leftrightarrow$ $\mu_0<\bar{X}-\frac{1.96}{\sqrt{n}}$ or $\mu_0>\bar{X}+\frac{1.96}{\sqrt{n}}$\\
+    Hence, the test "accepts" $H_0$ iff
+    \begin{equation}
+        \begin{aligned}
+            \bar{X}-\frac{1.96}{\sqrt{n}}\leq \mu_0\leq \bar{X}+\frac{1.96}{\sqrt{n}}
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{enumerate}
 
 
 
