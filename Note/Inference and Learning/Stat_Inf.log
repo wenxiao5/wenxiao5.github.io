@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.8)  9 OCT 2023 11:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.8)  10 OCT 2023 22:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1207,44 +1207,7 @@ File: ot1ntxtlf.fd 2021/05/24 v1.0 font definition file for OT1/ntx/tlf
 )
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
 (Font)              scaled to size 10.95pt on input line 29.
- (./Stat_Inf.aux
-
-LaTeX Warning: Label `' multiply defined.
-
-
-LaTeX Warning: Label `' multiply defined.
-
-
-LaTeX Warning: Label `' multiply defined.
-
-
-LaTeX Warning: Label `' multiply defined.
-
-
-LaTeX Warning: Label `' multiply defined.
-
-
-LaTeX Warning: Label `' multiply defined.
-
-
-LaTeX Warning: Label `' multiply defined.
-
-
-LaTeX Warning: Label `' multiply defined.
-
-
-LaTeX Warning: Label `' multiply defined.
-
-
-LaTeX Warning: Label `' multiply defined.
-
-
-LaTeX Warning: Label `' multiply defined.
-
-
-LaTeX Warning: Label `' multiply defined.
-
-)
+ (./Stat_Inf.aux)
 \openout1 = `Stat_Inf.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
@@ -1422,9 +1385,21 @@ LaTeX Font Info:    Font shape `OT1/ntxtlf/m/it' will be
 
 
 {/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc} <./cover.png>]
-Chapter 1.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 17.28pt on input line 37.
+(Font)              scaled to size 17.28pt on input line 33.
+ (./Stat_Inf.toc [1
+
+
+
+]
+LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
+(Font)              scaled to size 10.0pt on input line 60.
+ [2] [3] [4])
+\tf@toc=\write9
+\openout9 = `Stat_Inf.toc'.
+
+ [5]
+Chapter 1.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
 (Font)              scaled to size 12.0pt on input line 52.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
@@ -1440,14 +1415,10 @@ LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
 [1
 
 
-
-
 ]
 
 LaTeX Warning: Reference `CLT' on page 2 undefined on input line 88.
 
-LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 10.0pt on input line 134.
 [2
 pdfTeX warning (ext4): destination with the same identifier (name{equation.1.1.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -2118,6 +2089,10 @@ pdfTeX warning (ext4): destination with the same identifier (name{equation.1.3.1
                    \relax 
 l.589             \begin{equation}
                                   
+
+LaTeX Warning: Reference `comp_exp_fam' on page 9 undefined on input line 595.
+
+
 pdfTeX warning (ext4): destination with the same identifier (name{equation.1.3.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
@@ -2283,6 +2258,10 @@ pdfTeX warning (ext4): destination with the same identifier (name{equation.1.3.1
                    \relax 
 l.713         \begin{equation}
                                [11]
+
+LaTeX Warning: Reference `comp_exp_fam' on page 12 undefined on input line 732.
+
+
 pdfTeX warning (ext4): destination with the same identifier (name{equation.1.3.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
@@ -2581,6 +2560,9 @@ pdfTeX warning (ext4): destination with the same identifier (name{equation.1.4.1
                    \relax 
 l.1064     \begin{equation}
                             [18] [19]
+
+LaTeX Warning: Reference `NP_lemma' on page 20 undefined on input line 1161.
+
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1188.
@@ -3094,7 +3076,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{equation.5.4.1
 l.1910 \begin{equation}
                         [38] [39]
 Chapter 6.
-<Riemann and Trapezoidal.png, id=963, 1750.54pt x 531.9875pt>
+<Riemann and Trapezoidal.png, id=1244, 1750.54pt x 531.9875pt>
 File: Riemann and Trapezoidal.png Graphic file (type png)
 <use Riemann and Trapezoidal.png>
 Package pdftex.def Info: Riemann and Trapezoidal.png  used on input line 1966.
@@ -3102,7 +3084,7 @@ Package pdftex.def Info: Riemann and Trapezoidal.png  used on input line 1966.
 [40
 
  <./Riemann and Trapezoidal.png>]
-<two-dim int.png, id=970, 722.7pt x 471.7625pt>
+<two-dim int.png, id=1251, 722.7pt x 471.7625pt>
 File: two-dim int.png Graphic file (type png)
 <use two-dim int.png>
 Package pdftex.def Info: two-dim int.png  used on input line 1977.
@@ -3118,7 +3100,7 @@ Chapter 7.
 
 ] [45]
 Chapter 8.
-<HMM.png, id=990, 1357.07pt x 475.7775pt>
+<HMM.png, id=1271, 1357.07pt x 475.7775pt>
 File: HMM.png Graphic file (type png)
 <use HMM.png>
 Package pdftex.def Info: HMM.png  used on input line 2135.
@@ -3267,7 +3249,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{equation.8.2.1
 l.2206     \begin{equation}
                             [48]
 Chapter 9.
-<EM1.png, id=1020, 1080.035pt x 600.2425pt>
+<EM1.png, id=1299, 1080.035pt x 600.2425pt>
 File: EM1.png Graphic file (type png)
 <use EM1.png>
 Package pdftex.def Info: EM1.png  used on input line 2261.
@@ -3453,7 +3435,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{equation.9.4.1
 l.2560 $
         \mathcal{Q}_y=\{q: q(z)=0, \forall z\in h^{-1}(y)\}$] [56]
 Chapter 10.
-<HDM.png, id=1066, 1156.32pt x 411.5375pt>
+<HDM.png, id=1347, 1156.32pt x 411.5375pt>
 File: HDM.png Graphic file (type png)
 <use HDM.png>
 Package pdftex.def Info: HDM.png  used on input line 2596.
@@ -3580,7 +3562,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{equation.10.1.
                    \relax 
 l.2664 \begin{equation}
                        
-<dia.png, id=1078, 1933.2225pt x 778.91pt>
+<dia.png, id=1359, 1933.2225pt x 778.91pt>
 File: dia.png Graphic file (type png)
 <use dia.png>
 Package pdftex.def Info: dia.png  used on input line 2675.
@@ -3748,7 +3730,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 [60] (./ML_tex/Graphic Models.tex [61]
 Chapter 11.
-<graph.png, id=1100, 1445.4pt x 329.23pt>
+<graph.png, id=1381, 1445.4pt x 329.23pt>
 File: graph.png Graphic file (type png)
 <use graph.png>
 Package pdftex.def Info: graph.png  used on input line 28.
@@ -3756,7 +3738,7 @@ Package pdftex.def Info: graph.png  used on input line 28.
 [62
 
 ]
-<BM.png, id=1115, 1752.5475pt x 415.5525pt>
+<BM.png, id=1396, 1752.5475pt x 415.5525pt>
 File: BM.png Graphic file (type png)
 <use BM.png>
 Package pdftex.def Info: BM.png  used on input line 56.
@@ -3772,18 +3754,18 @@ pdfTeX warning (ext4): destination with the same identifier (name{equation.11.3.
                                                   \__shipout_drop_firstpage_...
 l.110 T
        his is the process of “marrying” the parents of each node, i.e., ...]
-<moralization.png, id=1133, 1433.355pt x 578.16pt>
+<moralization.png, id=1413, 1433.355pt x 578.16pt>
 File: moralization.png Graphic file (type png)
 <use moralization.png>
 Package pdftex.def Info: moralization.png  used on input line 113.
 (pdftex.def)             Requested size: 358.33788pt x 144.53964pt.
-<inftree.png, id=1134, 1069.9975pt x 576.1525pt>
+<inftree.png, id=1414, 1069.9975pt x 576.1525pt>
 File: inftree.png Graphic file (type png)
 <use inftree.png>
 Package pdftex.def Info: inftree.png  used on input line 129.
 (pdftex.def)             Requested size: 213.99571pt x 115.22845pt.
  [65 <./moralization.png> <./inftree.png>]
-<belief.png, id=1144, 1078.0275pt x 542.025pt>
+<belief.png, id=1424, 1078.0275pt x 542.025pt>
 File: belief.png Graphic file (type png)
 <use belief.png>
 Package pdftex.def Info: belief.png  used on input line 148.
@@ -4323,7 +4305,7 @@ Chapter 14.
 [86
 
 ] [87]
-<MM.png, id=1263, 1989.4325pt x 1110.1475pt>
+<MM.png, id=1544, 1989.4325pt x 1110.1475pt>
 File: MM.png Graphic file (type png)
 <use MM.png>
 Package pdftex.def Info: MM.png  used on input line 3674.
@@ -4334,7 +4316,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{equation.14.2.
                                                   \__shipout_drop_firstpage_...
 l.3761 \begin{center}
                      \begin{figure}[htbp]]
-<l1re.png, id=1289, 1039.885pt x 612.2875pt>
+<l1re.png, id=1569, 1039.885pt x 612.2875pt>
 File: l1re.png Graphic file (type png)
 <use l1re.png>
 Package pdftex.def Info: l1re.png  used on input line 3763.
@@ -4349,27 +4331,32 @@ L3 programming layer <2023-08-29>
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 Package rerunfilecheck Info: File `Stat_Inf.out' has not changed.
 (rerunfilecheck)             Checksum: 8FE8732A02A6F8E7A33AF0D0198D9411;30967.
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                Stat_Inf
+(biblatex)                and rerun LaTeX afterwards.
+
 Package logreq Info: Writing requests to 'Stat_Inf.run.xml'.
 \openout1 = `Stat_Inf.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 42526 strings out of 474934
- 826566 string characters out of 5759811
+ 42534 strings out of 474934
+ 826674 string characters out of 5759811
  1955791 words of memory out of 5000000
- 62818 multiletter control sequences out of 15000+600000
+ 62822 multiletter control sequences out of 15000+600000
  600535 words of font info for 147 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  109i,20n,136p,776b,1587s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/hoekwater/manfnt-font/manfnt.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/newtx/ztmbi.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on Stat_Inf.pdf (93 pages, 6369113 bytes).
+Output written on Stat_Inf.pdf (98 pages, 6384798 bytes).
 PDF statistics:
- 1513 PDF objects out of 1728 (max. 8388607)
- 1315 compressed objects within 14 object streams
- 518 named destinations out of 1000 (max. 500000)
+ 1793 PDF objects out of 2073 (max. 8388607)
+ 1588 compressed objects within 16 object streams
+ 519 named destinations out of 1000 (max. 500000)
  1235 words of extra memory for PDF output out of 10000 (max. 10000000)
 
