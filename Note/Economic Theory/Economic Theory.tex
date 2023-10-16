@@ -64,8 +64,9 @@ Based on
 
 
 \subsection{Rational Preference}
-\begin{definition}[Rantional Preference]
+\begin{definition}[Rantional Relation = Preference]
     \normalfont
+    A binary relation $\succeq$ on $X$ is a \textbf{preference relation} if it is a weak order, i.e., \textbf{complete} and \textbf{transitive}.\\
     {Rationality}: $\succeq$ is \textbf{rational} \underline{if and only if} it is \textbf{complete} and \textbf{transitive}.
     \begin{enumerate}[$\circ$]
         \item $\succeq$ is \textbf{complete} iff $\forall x,y\in X$, $x \succeq y$ or $y \succeq x$.
@@ -204,7 +205,7 @@ The 'standard' model of decisions under risk is based on von Neumann and Morgens
 \end{example}
 
 \begin{proposition}[Debreu's Theorem, Continuous $\succeq$ $\Rightarrow$ continuous $u(\cdot)$]
-    If $\succeq$ is continuous, then $\exists$ a continuous $u(\cdot)$ that represents $\succeq$.
+    If $\succeq$ is continuous (on $X$, a convex subset of $\mathbb{R}^k$), then $\exists$ a continuous $u(\cdot)$ that represents $\succeq$.
 \end{proposition}
 
 
@@ -299,47 +300,127 @@ Any improvement is an improvement direction if
 
 \chapter{Choice Theory}
 \section{Choice}
-\subsection{Choice}
 Let $\mathcal{B}=2^X$ (all subsets of $X$) and $B\in \mathcal{B}$ be the all potential alternatives that can be chosen.
 
 The choice of an agent can be represented by $C(B)\subseteq B, \forall B\in \mathcal{B}$.
-\begin{definition}
-    \normalfont
-    A \textbf{choice function} $C$ such that $C(A)\subseteq A$ which specifies for each nonempty subset $A\subseteq X$.
-\end{definition}
-A choice function $C$ can be rationalized if there is a preference relation $\succeq$ on $X$ such that $C=C_\succeq$, that is $$C(A)=C_\succeq(A)=\{x\in A:x\succeq y, \forall y\in A\}, \forall A\subseteq X$$
 
-\begin{definition}[Rubinstein's Condition $\alpha$]
-    \normalfont
-    A choice function $C$ satisfies \textbf{condition $\alpha$} if for any two problems $A,B$, if $A\subseteq B$ and $C(B)\in A$, then $C(A)=C(B)$.
-\end{definition}
-%Condition $\alpha$ is sufficient for $C$ is being formulated by maximizing a preference $\succeq$.
-
-\subsection{Choice Correspondence}
 \begin{definition}[Choice Correspondence (More than one choice)]
     \normalfont
     A choice correspondence $C$ assigns a non-empty \underline{subset} for every non-empty set $A$
     $$\emptyset\neq C(A)\subseteq A$$
 \end{definition}
-\textbf{Properties:}
-\begin{enumerate}
-    \item[($\alpha$):] If $a\in A\subseteq B$, then $a\in C(B) \Rightarrow a\in C(A)$
-    \item[($\beta$):] If $a,b\in A\subseteq B$, then $a,b\in C(A)$ and $b\in c(B) \Rightarrow a\in C(B)$.
-\end{enumerate}
+
+\begin{definition}[Induced Choice Rule]
+    \normalfont
+    Given a binary relation $\succeq$, the \textbf{induced choice rule} $C_\succeq$ is defined by
+    $C(A)=C_\succeq(A)=\{x\in A:x\succeq y, \forall y\in A\}, \forall A\subseteq X$.\\
+    A choice function $c$ can be \textbf{rationalizable} if there is a preference relation $\succeq$ on $X$ such that $c=c_\succeq$.
+\end{definition}
+
+\begin{definition}[Revealed Preference]
+    \normalfont
+    Given a choice rule $\succeq$, its \textbf{revealed preference relation $\succeq_C$} is defined by $x \succeq_C y$ if there exists some $A$ such that $x, y \in A$ and $x \in C(A)$.
+\end{definition}
+
+\begin{proposition}
+    If $C$ is rationalized by $\succeq$, then $\succeq=\succeq_C$.
+\end{proposition}
+
+\begin{definition}[Rubinstein's Condition $\alpha$]
+    \normalfont
+    A choice function $c$ satisfies \textbf{condition $\alpha$} if for any two problems $A,B$, if $A\subseteq B$ and $c(B)\in A$, then $c(A)=c(B)$.
+\end{definition}
+%Condition $\alpha$ is sufficient for $C$ is being formulated by maximizing a preference $\succeq$.
+
+\subsection{Choice Function}
+\begin{definition}[Choice Function]
+    \normalfont
+    A \textbf{choice function} $c$ such that $c(A)\in A$ which specifies a unique element for each nonempty subset $A\subseteq X$ (no indifferent preferences).
+\end{definition}
+\begin{proposition}[Rubinstein's Condition $\alpha$ $\Rightarrow$ Rationalizable Choice Function $c$]
+    \begin{enumerate}[(1).]
+        \item  Let $c$ be a choice function defined on a domain containing at least all subsets of $X$ of \underline{size of at most $3$}. If $c$ satisfies condition $\alpha$, then there is a preference $\succeq$ on $X$ such that $c=c_\succeq$.
+        \item Let $c$ be a choice function with a domain $D$ satisfying that if \underline{$A, B \in D$, then $A \cup B \in D$}. If $c$ satisfies condition $\alpha$, then there is a preference relation $\succeq$ on $X$ such that $c = c_\succeq$.
+    \end{enumerate}
+\end{proposition}
+
+\subsection{Choice Correspondence}
+\begin{definition}[Sen's $\alpha$ or Independence of Irrelevant Alternatives]
+    \normalfont
+    If $a\in A\subseteq B$, then $a\in C(B) \Rightarrow a\in C(A)$.
+\end{definition}
+
+\begin{definition}[Sen's $\beta$]
+    \normalfont
+    If $a,b\in A\subseteq B$, then $a,b\in C(A)$ and $b\in C(B) \Rightarrow a\in C(B)$.
+\end{definition}
 $\alpha$ and $\beta$ are equivalent to WARP.
-
-
-\subsection{Weak Axiom of Revealed Preference (WARP)}
-\begin{definition}[Weak Axiom of Revealed Preference]\label{WARP}
+\begin{definition}[Weak Axiom of Revealed Preference (WARP)]\label{WARP}
     \normalfont
     Given a choice structure $(C,\mathcal{B})$ satisfies \textbf{WARP}. If $\exists B\in \mathcal{B}$ with $x,y\in B$, such that $x\in C(B)$. Then, $\forall B'\in \mathcal{B}$ with $x,y\in B'$, $y\in C(B') \Rightarrow x\in C(B')$.\\
-    Or we can say, whenever $x,y\in B\cap B'$, $$x\in C(B) \textnormal{ and }y\in C(B') \Rightarrow x\in C(B')$$
+    Or we can say, $$x,y\in B\cap B', x\in C(B), \textnormal{ and }y\in C(B') \Rightarrow x\in C(B')$$
 \end{definition}
 
 \begin{proposition}[Rational $\Rightarrow$ WARP]
     Given $\succeq$ is rational, then $(C^*_{\succeq},\mathcal{B})$ satisfies WARP.\\
     ($C^*_{\succeq}$ is the choice rule that picks the maximal alternatives by $\succeq$)
 \end{proposition}
+
+\begin{proposition}[Sen's Condition $\alpha,\beta$ $\Rightarrow$ Rationalizable Choice Correspondence $C$]
+    Let $C$ be a choice correspondence defined on a domain containing at least all subsets of $X$ of \underline{size of at most $3$}. If $C$ satisfies condition $\alpha$ and $\beta$, then there is a preference $\succeq$ on $X$ such that $C=C_\succeq$.
+\end{proposition}
+
+\section{Revealed Preference}
+Given choice data $(p^t,x^t)$, we say $u$-fucntion \underline{rationalizes} the observed behavior $(p^t,x^t)$ if for all $t=1,...,T$, $p^t x^t\geq p^t x \Rightarrow u(x^t)\geq u(x)$, that is, $u(\cdot)$ achieves its maximum value on the budget set at the chosen bundles.
+
+If ``locally non-satiated'' $u$-function, $p^t x^t> p^t x \Rightarrow u(x^t)> u(x)$.
+
+\begin{definition}[Revealed Preferred]
+    \normalfont
+    We say $x^t$ is
+    \begin{enumerate}[-]
+        \item $x^t R^D x$: \underline{\textbf{directly} revealed preferred} to $x$, if $p^t x^t \geq p^t x$; ($x$ is available under $p^t$)
+        \item $x^t P^D x$: \underline{\textbf{strictly directly} revealed preferred} to $x$, if $p^t x^t > p^t x$;
+        \item $x^t R x$: \underline{\textbf{indirectly} revealed preferred} to $x$, if $\exists$ a sequence $\{x_k\}_{k=1}^K$ with $x_1=x^t$ and $x_K=x$ such that $x_k R^D x_{k+1}$ for all $k=1,...,K-1$, i.e., $p^t x^t=p^t x_1\geq p^t x_2\geq ... \geq p^t x_K=p^t x$.
+    \end{enumerate}
+\end{definition}
+
+\begin{definition}[Generalized Axiom of Revealed Preference (GARP)]
+    \normalfont
+    Consider two observations $(p^t,x^t)$ and $(p^s,x^s)$, GARP is satisfied if
+    \begin{equation}
+        \begin{aligned}
+            x^t R x^s &\Rightarrow \textnormal{ not } x^s P^D x^t\\
+            \textnormal{i.e., }x^t R x^s &\Rightarrow p^s x^t\geq p^s x^s
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{definition}
+
+GARP is a generalization of various other revealed preference tests
+\begin{definition}
+    \normalfont
+    \underline{Weak Axiom of Revealed Preference (WARP)}:
+    \begin{equation}
+        \begin{aligned}
+            x^t R^D x^s,x^t\neq x^s&\Rightarrow\textnormal{ not } x^s P^D x^t\\
+            \textnormal{i.e., }p^t x^t \geq p^t x^s,x^t\neq x^s&\Rightarrow p^s x^t\geq p^s x^s
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    \underline{Strong Axiom of Revealed Preference (SARP)}:
+    \begin{equation}
+        \begin{aligned}
+            x^t R x^s,x^t\neq x^s&\Rightarrow\textnormal{ not } x^s R x^t
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{definition}
+
+\begin{theorem}[Afriat's Theorem]
+    The following conditions are equivalent:
+\end{theorem}
+
 
 
 \section{Choice under Uncertainty}
