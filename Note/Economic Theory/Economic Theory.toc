@@ -16,66 +16,71 @@
 \contentsline {subsection}{\numberline {1.4.2}Continuous Preference}{4}{subsection.1.4.2}%
 \contentsline {subsection}{\numberline {1.4.3}Homothetic Preference}{5}{subsection.1.4.3}%
 \contentsline {subsection}{\numberline {1.4.4}Quasi-linearity}{5}{subsection.1.4.4}%
-\contentsline {subsection}{\numberline {1.4.5}Separability}{5}{subsection.1.4.5}%
+\contentsline {subsection}{\numberline {1.4.5}Separability}{6}{subsection.1.4.5}%
 \contentsline {subsection}{\numberline {1.4.6}Differentiable Preference}{6}{subsection.1.4.6}%
-\contentsline {chapter}{\numberline {2}Choice Theory}{7}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Choice}{7}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Choice Function}{7}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}Choice Correspondence}{8}{subsection.2.1.2}%
-\contentsline {section}{\numberline {2.2}Revealed Preference}{8}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Choice under Uncertainty}{9}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}von Neumann-Morgenstern (vNM)}{9}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}Savage (1954)}{11}{subsection.2.3.2}%
-\contentsline {section}{\numberline {2.4}Social Choice}{11}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}Social Welfare Function and Properties}{11}{subsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.4.2}Arrow's Theorem}{12}{subsection.2.4.2}%
-\contentsline {chapter}{\numberline {3}Demand Theory}{13}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Utility Maximization Problem (UMP)}{13}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Marshallian Demand: Existence and Properties}{13}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Lagrangian Approach: $\frac {\partial u\left (x^{*}\right )}{\partial x_{i}}=\lambda ^{*} p_{i}$ and $\lambda ^*\left (x_i(p,w)+\DOTSB \sum@ \slimits@ _{j=1}^{K} p_{j} \frac {\partial x_{j}}{\partial p_{i}}\right )=0$}{14}{subsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.1.3}Envelope Theorem $\Rightarrow \lambda ^{*}=\frac {\partial u(x(p, w))}{\partial w}$}{15}{subsection.3.1.3}%
-\contentsline {subsection}{\numberline {3.1.4}Indirect Utility Function $v(p, w) \equiv u(x(p, w))$}{16}{subsection.3.1.4}%
-\contentsline {subsection}{\numberline {3.1.5}Roy's Identity $x^*_i=-\frac {\frac {\partial v}{\partial p_{i}}}{\frac {\partial v}{\partial w}}$: recover $x(p, w)$ from $v(p, w)$}{16}{subsection.3.1.5}%
-\contentsline {section}{\numberline {3.2}Expenditure Minimization Problem (EMP)}{17}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Hicksian Demand $h(p,u)$: Properties}{17}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Expenditure Function $e(p,u)\equiv p\cdot h(p,u)$}{18}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}Law of Compensated Demand: $\frac {\partial h_i}{\partial p_i}\leq 0$}{19}{subsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.2.4}Shifts in Hicksian Demand: $\frac {\partial h_{i}}{\partial u} \equiv \frac {\partial x_{i}}{\partial w} \frac {\partial e}{\partial u}$, same direction as $\frac {\partial x_{i}}{\partial w}$}{19}{subsection.3.2.4}%
-\contentsline {section}{\numberline {3.3}UMP and EMP}{20}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Slutsky Equation: substitution effect and income effect}{20}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Relationship Between UMP and EMP}{20}{subsection.3.3.2}%
-\contentsline {section}{\numberline {3.4}Competitive Equilibrium}{21}{section.3.4}%
-\contentsline {chapter}{\numberline {4}Game Theory}{22}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Basic Game Theory}{22}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Game, Dominant Strategy}{22}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Nash Equilibrium and Existence}{22}{subsection.4.1.2}%
-\contentsline {subsection}{\numberline {4.1.3}Bayesian Game}{23}{subsection.4.1.3}%
-\contentsline {section}{\numberline {4.2}Mechanism Design}{23}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Signaling Game}{25}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Canonical Game}{25}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Nash Equilibrium}{26}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}Single-crossing}{26}{subsection.4.3.3}%
-\contentsline {subsubsection}{\numberline {4.3.3.1}Situation over real line}{26}{subsubsection.4.3.3.1}%
-\contentsline {section}{\numberline {4.4}Equilibrium Refinement}{27}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Cho-Kreps Intuitive Criterion}{27}{subsection.4.4.1}%
-\contentsline {chapter}{\numberline {5}Market Design}{28}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Matching One-to-One}{28}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Matching Markets: One-to-One}{29}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Joint and Meet}{30}{subsection.5.1.2}%
-\contentsline {subsection}{\numberline {5.1.3}Strategic Incentives}{30}{subsection.5.1.3}%
-\contentsline {section}{\numberline {5.2}Matching Many-to-Many}{31}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Matching Many-to-One}{32}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Networks}{34}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Corporate Game Theory}{36}{section.5.5}%
-\contentsline {subsection}{\numberline {5.5.1}Core of Corporate Game and Farkas' lemma}{36}{subsection.5.5.1}%
-\contentsline {subsection}{\numberline {5.5.2}Doubly stochastic matrix and Birkhoff-von Neumann Theorem}{37}{subsection.5.5.2}%
-\contentsline {section}{\numberline {5.6}Constrained Demand Theory}{38}{section.5.6}%
-\contentsline {subsection}{\numberline {5.6.1}Substitutes Valuation}{38}{subsection.5.6.1}%
-\contentsline {subsection}{\numberline {5.6.2}Income Effect}{39}{subsection.5.6.2}%
-\contentsline {section}{\numberline {5.7}Object Allocation}{41}{section.5.7}%
-\contentsline {subsection}{\numberline {5.7.1}Allocation}{41}{subsection.5.7.1}%
-\contentsline {subsection}{\numberline {5.7.2}Exchange}{42}{subsection.5.7.2}%
-\contentsline {chapter}{\numberline {6}Auction}{44}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Examples}{44}{section.6.1}%
-\contentsline {subsection}{\numberline {6.1.1}Auctions with Common-value}{44}{subsection.6.1.1}%
-\contentsline {section}{\numberline {6.2}Optimal Auctions}{44}{section.6.2}%
+\contentsline {chapter}{\numberline {2}Choice Theory}{8}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Choice}{8}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Choice Function}{8}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Choice Correspondence}{9}{subsection.2.1.2}%
+\contentsline {section}{\numberline {2.2}Revealed Preference}{9}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Choice under Uncertainty}{10}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}von Neumann-Morgenstern (vNM)}{11}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Savage (1954)}{12}{subsection.2.3.2}%
+\contentsline {section}{\numberline {2.4}Social Choice}{12}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Social Welfare Function and Properties}{13}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Arrow's Theorem}{13}{subsection.2.4.2}%
+\contentsline {chapter}{\numberline {3}Demand Theory}{14}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Utility Maximization Problem (UMP)}{14}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Marshallian Demand: Existence and Properties}{14}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Lagrangian Approach: $\frac {\partial u\left (x^{*}\right )}{\partial x_{i}}=\lambda ^{*} p_{i}$ and $\lambda ^*\left (x_i(p,w)+\DOTSB \sum@ \slimits@ _{j=1}^{K} p_{j} \frac {\partial x_{j}}{\partial p_{i}}\right )=0$}{15}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}Envelope Theorem $\Rightarrow \lambda ^{*}=\frac {\partial u(x(p, w))}{\partial w}$}{16}{subsection.3.1.3}%
+\contentsline {subsection}{\numberline {3.1.4}Indirect Utility Function $v(p, w) \equiv u(x(p, w))$}{17}{subsection.3.1.4}%
+\contentsline {subsection}{\numberline {3.1.5}Roy's Identity $x^*_i=-\frac {\frac {\partial v}{\partial p_{i}}}{\frac {\partial v}{\partial w}}$: recover $x(p, w)$ from $v(p, w)$}{17}{subsection.3.1.5}%
+\contentsline {section}{\numberline {3.2}Expenditure Minimization Problem (EMP)}{18}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Hicksian Demand $h(p,u)$: Properties}{18}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Expenditure Function $e(p,u)\equiv p\cdot h(p,u)$}{19}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Law of Compensated Demand: $\frac {\partial h_i}{\partial p_i}\leq 0$}{20}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Shifts in Hicksian Demand: $\frac {\partial h_{i}}{\partial u} \equiv \frac {\partial x_{i}}{\partial w} \frac {\partial e}{\partial u}$, same direction as $\frac {\partial x_{i}}{\partial w}$}{20}{subsection.3.2.4}%
+\contentsline {section}{\numberline {3.3}UMP and EMP}{21}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Slutsky Equation: substitution effect and income effect}{21}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Relationship Between UMP and EMP}{21}{subsection.3.3.2}%
+\contentsline {chapter}{\numberline {4}General Equilibrium}{22}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Basic Definitions}{22}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Exchange Economics}{22}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Pareto Optimal/Efficient}{22}{subsection.4.1.2}%
+\contentsline {section}{\numberline {4.2}Competitive Equilibrium}{22}{section.4.2}%
+\contentsline {chapter}{\numberline {5}Game Theory}{24}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Basic Game Theory}{24}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Game, Dominant Strategy}{24}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Nash Equilibrium and Existence}{24}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}Bayesian Game}{25}{subsection.5.1.3}%
+\contentsline {section}{\numberline {5.2}Mechanism Design}{25}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Signaling Game}{27}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Canonical Game}{27}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Nash Equilibrium}{28}{subsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.3.3}Single-crossing}{28}{subsection.5.3.3}%
+\contentsline {subsubsection}{\numberline {5.3.3.1}Situation over real line}{28}{subsubsection.5.3.3.1}%
+\contentsline {section}{\numberline {5.4}Equilibrium Refinement}{29}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Cho-Kreps Intuitive Criterion}{29}{subsection.5.4.1}%
+\contentsline {chapter}{\numberline {6}Market Design}{30}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Matching One-to-One}{30}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Matching Markets: One-to-One}{31}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Joint and Meet}{32}{subsection.6.1.2}%
+\contentsline {subsection}{\numberline {6.1.3}Strategic Incentives}{32}{subsection.6.1.3}%
+\contentsline {section}{\numberline {6.2}Matching Many-to-Many}{33}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Matching Many-to-One}{34}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Networks}{36}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Corporate Game Theory}{38}{section.6.5}%
+\contentsline {subsection}{\numberline {6.5.1}Core of Corporate Game and Farkas' lemma}{38}{subsection.6.5.1}%
+\contentsline {subsection}{\numberline {6.5.2}Doubly stochastic matrix and Birkhoff-von Neumann Theorem}{39}{subsection.6.5.2}%
+\contentsline {section}{\numberline {6.6}Constrained Demand Theory}{40}{section.6.6}%
+\contentsline {subsection}{\numberline {6.6.1}Substitutes Valuation}{40}{subsection.6.6.1}%
+\contentsline {subsection}{\numberline {6.6.2}Income Effect}{41}{subsection.6.6.2}%
+\contentsline {section}{\numberline {6.7}Object Allocation}{43}{section.6.7}%
+\contentsline {subsection}{\numberline {6.7.1}Allocation}{43}{subsection.6.7.1}%
+\contentsline {subsection}{\numberline {6.7.2}Exchange}{44}{subsection.6.7.2}%
+\contentsline {section}{\numberline {6.8}School Choice}{45}{section.6.8}%
+\contentsline {chapter}{\numberline {7}Auction}{47}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Examples}{47}{section.7.1}%
+\contentsline {subsection}{\numberline {7.1.1}Auctions with Common-value}{47}{subsection.7.1.1}%
+\contentsline {section}{\numberline {7.2}Optimal Auctions}{47}{section.7.2}%
