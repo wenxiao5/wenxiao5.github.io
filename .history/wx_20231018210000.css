@@ -233,6 +233,7 @@ h1, h2, h3 {
 	line-height: 1.42857;
     color: #404040;
     background-color: #fff;
+	text-align: center;
 }
 
 h1 {margin-bottom: 0%;
@@ -244,7 +245,6 @@ h1 {margin-bottom: 0%;
 	-webkit-background-clip: text;
 	position: relative;
 	font-family: serif;
-	text-align: center;
 }
 h1 img {
     max-width: 100%; /* 图片宽度最大为父元素宽度 */
