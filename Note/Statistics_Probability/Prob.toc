@@ -41,6 +41,7 @@
 \contentsline {subsection}{\numberline {2.6.2}Strong Law of Large Numbers (sLLN)}{17}{subsection.2.6.2}%
 \contentsline {subsection}{\numberline {2.6.3}Differences between \underline {convergence in probability} (wLLN) and \underline {wp1(a.s.)} (sLLN)}{17}{subsection.2.6.3}%
 \contentsline {section}{\numberline {2.7}Central Limit Theorem (CLT)}{18}{section.2.7}%
+\contentsline {section}{\numberline {2.8}Glivenko-Cantelli Theorem (Fundamental Theorem of Statistics)}{19}{section.2.8}%
 \contentsline {chapter}{\numberline {3}Distribution}{20}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Discrete}{20}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}Bernoulli Distribution -- $\operatorname {Bernoulli}(\pi )$: an event happens with probability $\pi $}{20}{subsection.3.1.1}%
