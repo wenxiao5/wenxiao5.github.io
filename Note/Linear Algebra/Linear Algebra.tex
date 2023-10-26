@@ -1517,6 +1517,15 @@ where $A, U, C$ and $V$ are conformable matrices: $A$ is $n\times n$, $C$ is $k\
 {\displaystyle {\begin{bmatrix}\mathbf {A} &\mathbf {B} \\\mathbf {C} &\mathbf {D} \end{bmatrix}}^{-1}={\begin{bmatrix}\mathbf {A} ^{-1}+\mathbf {A} ^{-1}\mathbf {B} \left(\mathbf {D} -\mathbf {CA} ^{-1}\mathbf {B} \right)^{-1}\mathbf {CA} ^{-1}&-\mathbf {A} ^{-1}\mathbf {B} \left(\mathbf {D} -\mathbf {CA} ^{-1}\mathbf {B} \right)^{-1}\\-\left(\mathbf {D} -\mathbf {CA} ^{-1}\mathbf {B} \right)^{-1}\mathbf {CA} ^{-1}&\left(\mathbf {D} -\mathbf {CA} ^{-1}\mathbf {B} \right)^{-1}\end{bmatrix}}}
 $$
 
+\subsection{Block Matrix Determinant}
+If $A$ is invertible,
+\begin{equation}
+    \begin{aligned}
+        det \begin{bmatrix}\mathbf {A} &\mathbf {B} \\\mathbf {C} &\mathbf {D} \end{bmatrix}=det (\mathbf {A}) det (\mathbf {D}-\mathbf {C}\mathbf {A}^{-1}\mathbf {B})
+    \end{aligned}
+    \nonumber
+\end{equation}
+
 
 
 

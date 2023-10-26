@@ -10,7 +10,7 @@
 \elegantnewtheorem{proof}{Proof}{}{Proof}
 \elegantnewtheorem{claim}{Claim}{prostyle}{Claim}
 \DeclareMathOperator{\col}{col}
-\title{Statistical Inference}
+\title{Statistical Inference and Learning}
 \author{Wenxiao Yang}
 \institute{Haas School of Business, University of California Berkeley}
 \date{2023}
@@ -1307,7 +1307,7 @@ In this part as $n \rightarrow \infty$, we use $l(\theta), l'(\theta), l''(\thet
 
 
 \chapter{Decision Rule Based Statistical Inference}
-\section{Basics}
+\section{Decision Rule}
 Given an observation $x\in X$, we want to estimate an unknown state $\theta \in S$ (not necessarily random). The $\theta$ can form $x$ with $P_\theta(x)$. We use decision rule $\delta (x)$ to form an action (estimation of $\theta$) $a=\hat{\theta}$.
 
 \textbf{Example:}
@@ -1316,36 +1316,32 @@ Given an observation $x\in X$, we want to estimate an unknown state $\theta \in 
     \item Multiple hypothesis testing (classification) when $S=\{1,2,...,n\}$
     \item (Estimation) when $S=\mathbb{R}$ e.g. $P_\theta\in N(\theta,\sigma^2)$
 \end{enumerate}
+\begin{example}[ (Binary HT)]
+    For the example Binary HT, $P_0\sim N(0,\sigma^2), P_1\sim N(\mu,\sigma^2)$: decision rule $\delta: \mathbb{R} \rightarrow \{0,1\}$
 
-\section{Decision Rule Examples}
-\subsection*{Binary HT Example}
-For the example Binary HT, $P_0\sim N(0,\sigma^2), P_1\sim N(\mu,\sigma^2)$: decision rule $\delta: \mathbb{R} \rightarrow \{0,1\}$
+    We can find a $\tau$ such that $\delta(x)=\left\{\begin{matrix}
+        1,&x\ge \tau\\
+        0,& else
+    \end{matrix}\right.=\mathbf{1}_{x\geq \tau}$. Howe to choose $\tau$?
+    
+    Type-I error probability: probability that $\theta$ is $0$ but receive $\delta(x)=1$. $$P_I=P_0\{\delta(x)=1\}=P_0\{x\geq \tau\}=Q\left(\frac{\tau}{\sigma}\right)$$
+    Type-II error probability: probability that $\theta$ is $1$ but receive $\delta(x)=0$. $$P_{II}=P_1\{\delta(x)=0\}=P_1(x<\tau)=Q(\frac{\mu-\tau}{\sigma})$$
+    
+    Both $P_I$ and $P_{II}$ depends on $\tau$. $Q(t)=\int_t^\infty\frac{e^{-\frac{x^2}{2}}}{\sqrt{2\pi}}dx$
+    
+    For $\tau=\frac{\mu}{2}$, $P_I=P_{II}=Q\left(\frac{\mu}{2\sigma}\right)$
+\end{example}
 
-We can find a $\tau$ such that $\delta(x)=\left\{\begin{matrix}
-    1,&x\ge \tau\\
-    0,& else
-\end{matrix}\right.=\mathbf{1}_{x\geq \tau}$. Howe to choose $\tau$?
-
-Type-I error probability: probability that $\theta$ is $0$ but receive $\delta(x)=1$. $$P_I=P_0\{\delta(x)=1\}=P_0\{x\geq \tau\}=Q\left(\frac{\tau}{\sigma}\right)$$
-Type-II error probability: probability that $\theta$ is $1$ but receive $\delta(x)=0$. $$P_{II}=P_1\{\delta(x)=0\}=P_1(x<\tau)=Q(\frac{\mu-\tau}{\sigma})$$
-
-Both $P_I$ and $P_{II}$ depends on $\tau$. $Q(t)=\int_t^\infty\frac{e^{-\frac{x^2}{2}}}{\sqrt{2\pi}}dx$
-
-For $\tau=\frac{\mu}{2}$, $P_I=P_{II}=Q\left(\frac{\mu}{2\sigma}\right)$
-
-\subsection*{Multiple HT Example}
-Consider three state $S=\{1,2,3\}$.
-We can find a $\tau$ such that $\delta(x)=\left\{\begin{matrix}
-    1,&x< \tau_1\\
-    2,& \tau_1\leq x\leq \tau_2\\
-    3,& x>\tau_2
-\end{matrix}\right.=\mathbf{1}_{x\geq \tau}$.
-
-\textit{Conditional Error Probabilities:} probability that $\theta$ is $i$ but receive $\delta(x)=j$ (6 types in this example) $$P_i\{\delta(x)=j\}, \forall i\neq j$$
-
-\subsection*{Estimation Example}
-Ex: $P_\theta\sim N(\theta,\sigma^2)$. Perform $\delta(x)=\hat{\theta}$ by using mean-squared error (MSE):
-$$MSE= \mathbb{E}_\theta \left[(\delta(x)-\theta)^2\right],\theta\in \mathbb{R}$$
+\begin{example}[ (Multiple HT)]
+    Consider three state $S=\{1,2,3\}$.
+    We can find a $\tau$ such that $\delta(x)=\left\{\begin{matrix}
+        1,&x< \tau_1\\
+        2,& \tau_1\leq x\leq \tau_2\\
+        3,& x>\tau_2
+    \end{matrix}\right.=\mathbf{1}_{x\geq \tau}$.
+    
+    \textit{Conditional Error Probabilities:} probability that $\theta$ is $i$ but receive $\delta(x)=j$ (6 types in this example) $$P_i\{\delta(x)=j\}, \forall i\neq j$$
+\end{example}
 
 \section{Maximum-Likelihood Principle (state is norandom)}
 Maximum-Likelihood Principle $$\hat{\theta}=\argmax_{\theta\in S}P_{\theta}(x)=\argmax_{\theta\in S}\ln P_{\theta}(x)$$
@@ -1527,8 +1523,8 @@ In this rule the whole optimization problem also goes to
 \end{equation}
 
 \subsection{Minimum Mean Squared Error (MMSE) Rule ($\mathbb{R}^n$ example)}
-\begin{example}
-    (estimation) Squared error loss $l(a,y)=(a-y)^2$.
+\begin{example}[ (Estimation)]
+    Squared error loss $l(a,y)=(a-y)^2$.
 \end{example}
 \subsection*{Minimum Mean Squared Error (MMSE) Rule:}
 Optimization problem is $\delta(x)=\argmin_{a} \int_{y} \pi(y|x) (a-y)^2 dy$
@@ -1661,7 +1657,8 @@ Given a sample $\vec{Z}=\left(Z_1,...,Z_N\right)$. Define $N_j=\sum_{i=1}^N \mat
 \begin{definition}[Steps to estimate $\beta$ by Bayesian Bootstrap]
 \normalfont
 \begin{enumerate}[(1).]
-    \item Calculate posterior distribution given $\vec{Z}$: $\pi(\vec{\theta}\mid \vec{Z})$.
+    \item We have prior $\pi(\vec{\theta})$.
+    \item Given $\vec{Z}$, calculate posterior distribution $\pi(\vec{\theta}\mid \vec{Z})$.
     \item Draw samples $\vec{\theta}^{(t)},t=1,...,T$ from $\pi(\vec{\theta}\mid \vec{Z})$.
     \item Then compute $\frac{1}{T}\sum_{t=1}^T\hat{\beta}(\vec{\theta}^{(t)})$.
 \end{enumerate}
@@ -1711,6 +1708,11 @@ That is
     \end{enumerate}
 \end{definition}
 
+\subsection{Haldane Prior}
+We may also begin with an uninformative prior, an improper prior, $\textnormal{Dirichlet}(\vec{\alpha})$, where $\vec{\alpha} \rightarrow 0$. $\pi(\theta)\varpropto \frac{1}{\theta_1\theta_2\cdots\theta_J}$.
+
+Under this prior, the posterior is $\textnormal{Dirichlet}(N_1,...,N_J)$, where $N_j=\sum_{i=1}^N \mathbf{1}\{Z_i=z_j\}$.
+
 \subsection{Linear Model Case}
 Each sample is $Z_i=(1,X_{1,i},X_{2,i},X_{3,i},X_{4,i})$. The linear regression coefficient is $\beta=\mathbb{E}[XX']^{-1}\mathbb{E}[XY]$, and $\mathbb{E}^*[Y\mid X=x]=x'\beta$.
 
@@ -1745,6 +1747,58 @@ Hence, we can define
 which is close to the posterior beliefs in Example \ref{ex:square_loss} and can be seen as the posterior beliefs drawn from an \underline{improper prior}: $\theta\sim \textnormal{Beta}(\epsilon,\epsilon), \epsilon \rightarrow 0$, which has p.d.f. $\pi(\theta)=\frac{1}{\theta(1-\theta)}$.
 
 We use $$\frac{1}{T}\sum_{t=1}^T\hat{\theta}^{(t)}\approx \mathbb{E}[\theta^{(t)}|\{Z_1,...,Z_n\}]$$ to estimate $\mathbb{E}[\theta^{(t)}|\{Z_1,...,Z_n\}]$.
+
+
+
+
+
+\chapter{Nonparameteric Prediction Probelm}
+\subsection*{Problem}
+There are $J$ non-stochastic treats $X\in \mathbb{X}\subseteq \mathbb{R}^J$, and we want to predict a related outcome $Y\in \mathbb{Y}\subseteq \mathbb{R}$.
+
+Given a sample $X_i$,
+\begin{equation}
+    \begin{aligned}
+        Y_i=m(X_i)+\sigma u_i
+    \end{aligned}
+    \nonumber
+\end{equation}
+where $m(\cdot)$ is an unknown function and $u_i|X_i\sim N(0,1)$.
+
+\underline{Goal}:
+\begin{enumerate}[$\circ$]
+    \item Predict $Y$ given a new $X$;
+    \item Learn $m(\cdot)$.
+\end{enumerate}
+
+\subsection*{Decision Rule}
+Given $\vec{X}=\{X_1,...,X_N\}$, we want to derive a decision rule $d(\vec{Y})$ given corresponding $\vec{Y}$ of $\vec{X}$.
+
+Define $\vec{m}\triangleq \left[m(X_1),...,m(X_N)\right]'$, its estimation is denoted by $\hat{\vec{m}}$, which is based on the decision rule.
+
+\begin{definition}[Sum of Squared Residual]
+    \normalfont
+    \textbf{Sum of Squared Residual} (SSR) of an estimation $\hat{\vec{m}}$ is given by
+    \begin{equation}
+        \begin{aligned}
+            \mathbb{E}\left[\|\vec{Y}-\hat{\vec{m}}\|^2\right]&=\mathbb{E}\left[\|Y-m\|^2\right]+\mathbb{E}\left[\|\hat{\vec{m}}-\vec{m}\|^2\right]-2 \mathbb{E}\left[(\vec{Y}-\vec{m})'(\hat{\vec{m}}-\vec{m})\right]\\
+            &=N\sigma^2+\sum_{i=1}^N\left(\hat{m}(X_i)-m(X_i)\right)^2-2\sigma^2 df(\hat{\vec{m}})
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    where the norm is $\|\vec{X}\|=\left[\sum_{i=1}^N X_i^2\right]^{1/2}$, and $df(\hat{\vec{m}})=\frac{\sum_{i=1}^N \textnormal{Cov}(Y_i,\hat{m_i})}{\sigma^2}$.
+\end{definition}
+The second equality is because
+\begin{equation}
+    \begin{aligned}
+        \mathbb{E}\left[(\vec{Y}-\vec{m})'(\hat{\vec{m}}-\vec{m})\right]&=\sum_{i=1}^N \mathbb{E}\left[(Y_i-m_i)(\hat{m_i}-m_i)\right]\\
+        &=\sum_{i=1}^N \mathbb{E}\left[(Y_i-m_i)\hat{m_i}\right]\\
+        &=\sum_{i=1}^N \mathbb{E}\left[(Y_i-m_i)(\hat{m_i}-\mathbb{E}m_i)\right]\\
+        &=\sum_{i=1}^N \textnormal{Cov}(Y_i,\hat{m_i})
+    \end{aligned}
+    \nonumber
+\end{equation}
+
 
 
 \chapter{Machine Learning in Inference}

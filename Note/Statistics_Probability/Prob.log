@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.20)  23 OCT 2023 15:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.20)  25 OCT 2023 21:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1200,8 +1200,17 @@ File: ot1ntxtlf.fd 2021/05/24 v1.0 font definition file for OT1/ntx/tlf
 )
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
 (Font)              scaled to size 10.95pt on input line 27.
+ (./Prob.aux
 
-No file Prob.aux.
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+)
 \openout1 = `Prob.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
@@ -1223,8 +1232,10 @@ LaTeX Font Info:    ... okay on input line 27.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 27.
 LaTeX Font Info:    ... okay on input line 27.
 Package hyperref Info: Link coloring ON on input line 27.
+ (./Prob.out) (./Prob.out)
 \@outlinefile=\write8
 \openout8 = `Prob.out'.
+
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1346,7 +1357,7 @@ Package hyperref Info: Option `pageanchor' set `false' on input line 28.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<cover.png, id=31, 2055.68pt x 1155.31625pt>
+<cover.png, id=642, 2055.68pt x 1155.31625pt>
 File: cover.png Graphic file (type png)
 <use cover.png>
 Package pdftex.def Info: cover.png  used on input line 28.
@@ -1378,19 +1389,36 @@ LaTeX Font Info:    Font shape `OT1/ntxtlf/m/it' will be
 {/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc} <./cover.png>]
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
 (Font)              scaled to size 17.28pt on input line 31.
-
-No file Prob.toc.
-\tf@toc=\write9
-\openout9 = `Prob.toc'.
-
-[1
+ (./Prob.toc
+LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
+(Font)              scaled to size 10.0pt on input line 1.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
+(Font)              scaled to size 8.0pt on input line 14.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
+(Font)              scaled to size 6.0pt on input line 14.
+ [1
 
 
 
 ]
+LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
+(Font)              scaled to size 10.0pt on input line 61.
+ [2]
+Overfull \hbox (11.04526pt too wide) in paragraph at lines 64--64
+ [][] [][][]\OT1/ntxtlf/m/n/10.95 Chapman Kol-mogorov Equa-tions (C-K Equa-tions) $\OML/cmm/m/it/10.95 P\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 X[] \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 j\OMS/cmsy/m/n/10.95 j\OML/cmm/m/it/10.95 X[] \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 i\OT1/cmr/m/n/10.95 ) = (\OML/cmm/m/it/10.95 P[]\OT1/cmr/m/n/10.95 )[] = 
+ []
+
+
+Overfull \hbox (10.931pt too wide) in paragraph at lines 85--85
+ [][] [][][]\OT1/ntxtlf/m/n/10.95 Expected Time till Ab-sorp-tion to a Re-cur-rent Class: $\U/msb/m/n/10.95 E\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 T[]\OMS/cmsy/m/n/10.95 j\OML/cmm/m/it/10.95 X[] \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 j\OT1/cmr/m/n/10.95 ) = [][] \OML/cmm/m/it/10.95 M[]$[][] []  
+ []
+
+[3] [4] [5])
+\tf@toc=\write9
+\openout9 = `Prob.toc'.
+
+ [6]
 Chapter 1.
-LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 10.0pt on input line 36.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
 (Font)              scaled to size 12.0pt on input line 43.
 
@@ -1405,8 +1433,6 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 52.
 
-LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 8.0pt on input line 63.
 [1
 
 
@@ -1426,8 +1452,6 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 129.
 
-LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 10.0pt on input line 139.
 [2]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
@@ -1494,9 +1518,6 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 244.
-
-
-LaTeX Warning: Reference `Jen_in' on page 5 undefined on input line 250.
 
 [5]
 pdfTeX warning (ext4): destination with the same identifier (name{equation.1.4.1}) has been already used, duplicate ignored
@@ -2103,12 +2124,12 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 800.
 
-<wLLN.png, id=292, 885.3075pt x 274.02374pt>
+<wLLN.png, id=1192, 885.3075pt x 274.02374pt>
 File: wLLN.png Graphic file (type png)
 <use wLLN.png>
 Package pdftex.def Info: wLLN.png  used on input line 806.
 (pdftex.def)             Requested size: 265.5943pt x 82.20775pt.
-<sLLN.png, id=294, 882.29625pt x 209.78375pt>
+<sLLN.png, id=1194, 882.29625pt x 209.78375pt>
 File: sLLN.png Graphic file (type png)
 <use sLLN.png>
 Package pdftex.def Info: sLLN.png  used on input line 814.
@@ -2191,7 +2212,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 942.
 
-<Poisson Distribution graph.png, id=339, 1314.9125pt x 1023.825pt>
+<Poisson Distribution graph.png, id=1230, 1314.9125pt x 1023.825pt>
 File: Poisson Distribution graph.png Graphic file (type png)
 <use Poisson Distribution graph.png>
 Package pdftex.def Info: Poisson Distribution graph.png  used on input line 948.
@@ -2860,7 +2881,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{equation.4.9.2
                                                   \__shipout_drop_firstpage_...
 l.1617 ...E|}=\frac{deg(v)}{\sum_{v\in V}deg(v)}$$
                                                   ]
-<bipartite.png, id=521, 684.5575pt x 716.6775pt>
+<bipartite.png, id=1371, 684.5575pt x 716.6775pt>
 File: bipartite.png Graphic file (type png)
 <use bipartite.png>
 Package pdftex.def Info: bipartite.png  used on input line 1621.
@@ -3282,7 +3303,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{equation.6.1.1
                    \relax 
 l.1858 \begin{equation}
                        
-<pgf.png, id=583, 1971.365pt x 851.18pt>
+<pgf.png, id=1418, 1971.365pt x 851.18pt>
 File: pgf.png Graphic file (type png)
 <use pgf.png>
 Package pdftex.def Info: pgf.png  used on input line 1883.
@@ -3878,41 +3899,27 @@ L3 programming layer <2023-10-10>
  ***********
 
 
-LaTeX Warning: There were undefined references.
+LaTeX Warning: There were multiply-defined labels.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `Prob.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `Prob.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  82B7FC2AB07D0011BC078C5BEA02071F;43486.
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                Prob
-(biblatex)                and rerun LaTeX afterwards.
-
+Package rerunfilecheck Info: File `Prob.out' has not changed.
+(rerunfilecheck)             Checksum: 82B7FC2AB07D0011BC078C5BEA02071F;43486.
 Package logreq Info: Writing requests to 'Prob.run.xml'.
 \openout1 = `Prob.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 42410 strings out of 474510
- 825117 string characters out of 5752974
- 1962040 words of memory out of 5000000
- 63113 multiletter control sequences out of 15000+600000
+ 42574 strings out of 474510
+ 827698 string characters out of 5752974
+ 1963040 words of memory out of 5000000
+ 63269 multiletter control sequences out of 15000+600000
  600434 words of font info for 142 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  109i,21n,136p,1194b,1468s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/hoekwater/manfnt-font/manfnt.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/newtx/ztmbi.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on Prob.pdf (76 pages, 7129406 bytes).
+Output written on Prob.pdf (81 pages, 7163897 bytes).
 PDF statistics:
- 1074 PDF objects out of 1200 (max. 8388607)
- 911 compressed objects within 10 object streams
+ 1864 PDF objects out of 2073 (max. 8388607)
+ 1689 compressed objects within 17 object streams
  543 named destinations out of 1000 (max. 500000)
- 139 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1355 words of extra memory for PDF output out of 10000 (max. 10000000)
 
