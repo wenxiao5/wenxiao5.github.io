@@ -901,8 +901,7 @@ Slutsky: how change of $p_j$ (price in good $j$) affects $x_i$ (the demand of pr
 
 
 \chapter{General Equilibrium}
-\section{Basic Definitions}
-\subsection{Exchange Economics}
+\section{Exchange Economy}
 \begin{enumerate}
     \item There are $L$ perfectly divisible commodities indexed by $l=1,...,L$ over $\mathbb{R}^L$.
     \item There are $m$ agents, indexed by $i=1,...,m$. $N=\{1,...,m\}$.
@@ -925,7 +924,7 @@ Slutsky: how change of $p_j$ (price in good $j$) affects $x_i$ (the demand of pr
 
 
 \subsection{Pareto Optimal/Efficient}
-\begin{definition}
+\begin{definition}[Pareto Optimal]
     \normalfont
     An allocation $x$ is \textbf{Pareto optimal/efficient} if there doesn't exist an allocation $y$ s.t. $u_i(y_i)\geq u_i(x_i)$ ($y_i\succeq_i x_i$) for each $i$ and $u_j(y_j)> u_j(x_j)$ ($y_j\succ_j x_j$) for some $j$.
 \end{definition}
@@ -945,7 +944,7 @@ Consider the following social planner's problem:
     \end{equation}
 \end{enumerate}
 
-\begin{proposition}
+\begin{proposition}[P.O. $\Leftrightarrow$ Solutions of Problem (\ref{Planner P})]
     Suppose each agent's utility function is continuous and strongly monotone. Then, an allocation $x^*$ in an exchange economy is Pareto-Optimal \underline{iff} it is a solution of Problem (\ref{Planner P}) for some choice of $\{\bar{u}_i\}_{i\neq j}$.
 \end{proposition}
 \begin{proof}
@@ -1067,20 +1066,75 @@ Demand notations:
 
 
 
-
-
-(Assume consumers' preferences are strict monotone)
-\begin{theorem}[First-order fundamental welfare theorem]
-    Suppose $(p^*,x^*)$ is a competitive equilibrium. Then $x^*$ is Pareto-efficient.
+\subsection{First Welfare Theorem: CE $\Rightarrow$ P.O.}
+Given non-satiated preference, every CE is P.O. (P.E.).
+\begin{theorem}[First-order (fundamental) Welfare Theorem: CE $\Rightarrow$ P.O.]
+    If each agent's preference relation is locally non-satiated, then every \underline{competitive equilibrium} allocation is \underline{Pareto optimal (Pareto efficient)}.
 \end{theorem}
+\begin{proof}
+    Let $x^*=(x_1^*,...,x_n^*)$ be a CE allocation with corresponding CE price vector $p^*$.\\
+    Suppose by way of contradiction that $x^*$ is \underline{not} P.O. allocation. Then, there is another allocation $\hat{x}=(\hat{x}_1,...\hat{x}_n)$ such that $\hat{x}_j\succ_j x^*_j$ for some $j\in N$ and $\hat{x}_i\succeq_i x^*_i$ for all $i\neq j$.\\
+    By the definition of CE, $\hat{x}_j$ should not be affordable for $j$, i.e., $p^*\hat{x}_j>p^*w_j$. By the definitions of non-satiated and CE, $p^*\hat{x}_i\geq p^*w_i$ for all $i\neq j$. (If $p^*\hat{x}_i<p^*w_i$, $\exists \tilde{x}_i$ s.t. $p^*\tilde{x}_i\leq p^*w_i$ and $\tilde{x}_i\succ_i\hat{x}_i\succeq_i x_i^*$, which contradicts to the definition of CE.)\\
+    Add up all inequalities, we get
+    \begin{equation}
+        \begin{aligned}
+            p^*\cdot\left(\sum_{i=1}^n\hat{x}_i\right)> p^*\cdot\left(\sum_{i=1}^n w_i\right)=p^*\cdot w
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    which contradicts to the definition of CE that $\sum_{i}^n x_i^*=w$. Hence, $x^*$ is P.O.
+\end{proof}
+\begin{note}
+    This requires \textbf{only} \underline{local non-satiation} of preferences. In particular, does not require convexity of preferences.
+\end{note}
 
-If CE exists we can prove a Pareto-effecient allocation is CE.
+\subsection{CE $\Rightarrow$ IR; CE $\subseteq$ P.O. $\cap$ Core}
+\begin{note}[CE $\Rightarrow$ IR]
+    At any prices $p$, an agent can always afford their initial endowment, so by revealed preference, every CE allocation is individually rational.
+\end{note}
+\begin{corollary}[CE Allocation is in Core]
+    If each agent's preference relation is locally non-satiated, then every CE allocation is in the core.
+\end{corollary}
+\begin{proof}
+    In exercise.
+\end{proof}
+\begin{note}
+    Not every P.O. allocation is in the core. But every CE allocation is a P.O. allocation in the core.
+    \begin{equation}
+        \begin{aligned}
+            \textnormal{CE}\subseteq \textnormal{P.O.}\cap \textnormal{Core}
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{note}
+
+
+\subsection{Second Welfare Theorem: P.O. with Endowments Used $\Rightarrow$ CE}
 \begin{theorem}[Second-order fundamental welfare theorem]
     Suppose that $x^*$ is Pareto efficient and consumers receive endowment worth $w^i=p\cdot {x^i}^*$ for all $i\in I$. Then, if a competitive equilibrium exists for such $w$, then $x^*$ is a competitive equilibrium allocation.
 \end{theorem}
 
 
+\subsection{Equilibrium with Transfers}
+What scope does planner have for redistribution using only decentralized market mechanism?
 
+To implement a more "equitable" allocation. Some possible mechanisms:
+\begin{enumerate}[$\circ$]
+    \item will need taxes or transfers (should be budget-balancing, i.e., no money leaves the economy).
+    \item taxes/transfers should be lump-sum.
+\end{enumerate}
+
+\begin{definition}[Price Equilibrium with Transfers]
+\normalfont
+    An allocation $x^*$ is supportable as a \textbf{price equilibrium with transfers} if there exists a price vector $p^*\in \mathbb{R}^L$ and lump-sum budget-balancing transfers $\{T_i:i=1,...,m\}$ so that $\sum_{i=1}^m T_i=0$, such that $\forall i$:
+    \begin{equation}
+        \begin{aligned}
+            x_i^*\in \arg\max_{x\in \mathbb{R}^L_+}u_i(x_i)\\
+            \textnormal{s.t. } p^*\cdot x_i^*\leq p^*\cdot w_i + T_i
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{definition}
 
 
 
