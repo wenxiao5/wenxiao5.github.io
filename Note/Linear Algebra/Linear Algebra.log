@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.20)  25 OCT 2023 22:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.20)  27 OCT 2023 20:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1363,7 +1363,7 @@ Package hyperref Info: Option `pageanchor' set `false' on input line 28.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<cover.jpg, id=404, 602.25pt x 301.125pt>
+<cover.jpg, id=412, 602.25pt x 301.125pt>
 File: cover.jpg Graphic file (type jpg)
 <use cover.jpg>
 Package pdftex.def Info: cover.jpg  used on input line 28.
@@ -1901,7 +1901,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 429.
 
 [9]
-<Commutative Diagram.png, id=733, 1029.8475pt x 307.1475pt>
+<Commutative Diagram.png, id=745, 1029.8475pt x 307.1475pt>
 File: Commutative Diagram.png Graphic file (type png)
 <use Commutative Diagram.png>
 Package pdftex.def Info: Commutative Diagram.png  used on input line 439.
@@ -1943,162 +1943,178 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 505.
 
-[11] [12] [13] [14]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 689.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lambda' on input line 689.
+(hyperref)                removing `math shift' on input line 506.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 689.
+(hyperref)                removing `math shift' on input line 506.
+
+[11] [12] [13] [14] [15]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 690.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\min' on input line 689.
+(hyperref)                removing `\lambda' on input line 690.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\|' on input line 689.
+(hyperref)                removing `subscript' on input line 690.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\|' on input line 689.
+(hyperref)                removing `\min' on input line 690.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 689.
+(hyperref)                removing `\|' on input line 690.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leq' on input line 689.
+(hyperref)                removing `\|' on input line 690.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 689.
+(hyperref)                removing `superscript' on input line 690.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leq' on input line 689.
+(hyperref)                removing `\leq' on input line 690.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lambda' on input line 689.
+(hyperref)                removing `superscript' on input line 690.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 689.
+(hyperref)                removing `\leq' on input line 690.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\max' on input line 689.
+(hyperref)                removing `\lambda' on input line 690.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\|' on input line 689.
+(hyperref)                removing `subscript' on input line 690.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\|' on input line 689.
+(hyperref)                removing `\max' on input line 690.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 689.
+(hyperref)                removing `\|' on input line 690.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 689.
+(hyperref)                removing `\|' on input line 690.
 
-[15]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 690.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 690.
+
+
 pdfTeX warning (ext4): destination with the same identifier (name{equation.2.9.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.695     \begin{equation}
+l.696     \begin{equation}
                           
 pdfTeX warning (ext4): destination with the same identifier (name{equation.2.9.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.695     \begin{equation}
+l.696     \begin{equation}
                           
 pdfTeX warning (ext4): destination with the same identifier (name{equation.2.9.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.695     \begin{equation}
+l.696     \begin{equation}
                           
 pdfTeX warning (ext4): destination with the same identifier (name{equation.2.9.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.695     \begin{equation}
+l.696     \begin{equation}
                           
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 708.
+(hyperref)                removing `math shift' on input line 709.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lambda' on input line 708.
+(hyperref)                removing `\lambda' on input line 709.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 708.
+(hyperref)                removing `superscript' on input line 709.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 708.
+(hyperref)                removing `math shift' on input line 709.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 708.
+(hyperref)                removing `math shift' on input line 709.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 708.
+(hyperref)                removing `superscript' on input line 709.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 708.
+(hyperref)                removing `math shift' on input line 709.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 708.
+(hyperref)                removing `math shift' on input line 709.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 708.
+(hyperref)                removing `superscript' on input line 709.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 708.
+(hyperref)                removing `math shift' on input line 709.
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{equation.2.9.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.713 \begin{equation}
+l.714 \begin{equation}
                       
 pdfTeX warning (ext4): destination with the same identifier (name{equation.2.9.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.713 \begin{equation}
+l.714 \begin{equation}
                       
 pdfTeX warning (ext4): destination with the same identifier (name{equation.2.9.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.713 \begin{equation}
+l.714 \begin{equation}
                       
 pdfTeX warning (ext4): destination with the same identifier (name{equation.2.9.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.713 \begin{equation}
-                       [16] [17] [18] [19] [20] [21
-pdfTeX warning (ext4): destination with the same identifier (name{equation.2.14.1}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.963 \chapter
-              {Linear Maps between Normed Spaces}]
+l.714 \begin{equation}
+                       [16] [17] [18] [19]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 924.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 924.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 924.
+
+[20] [21]
 Chapter 3.
 [22
 
@@ -2106,114 +2122,119 @@ Chapter 3.
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.0.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1018 \end{theorem}
-                    
+l.984 \end{theorem}
+                   
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.0.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1018 \end{theorem}
-                    ] [23] [24]
+l.984 \end{theorem}
+                   ] [23] [24]
 Chapter 4.
 [25
 
-] [26
+] [26] [27
+pdfTeX warning (ext4): destination with the same identifier (name{equation.4.1.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1177     \end{equation}
+                         
+pdfTeX warning (ext4): destination with the same identifier (name{equation.4.1.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1177     \end{equation}
+                         ]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1186.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1186.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1186.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 1186.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1186.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1186.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1186.
+
+[28
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1161 \begin{definition}\end{definition}
-                                         ]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1180.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1180.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1180.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 1180.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1180.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1180.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1180.
-
-[27]
-pdfTeX warning (ext4): destination with the same identifier (name{equation.4.3.1}) has been already used, duplicate ignored
+l.1216 \begin{equation}
+                       
+pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1216 \begin{equation}
+                       ]
+pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1210 \begin{equation}
+l.1216 \begin{equation}
                        
-pdfTeX warning (ext4): destination with the same identifier (name{equation.4.3.1}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1210 \begin{equation}
+l.1216 \begin{equation}
                        
-pdfTeX warning (ext4): destination with the same identifier (name{equation.4.3.1}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1210 \begin{equation}
+l.1216 \begin{equation}
                        
-pdfTeX warning (ext4): destination with the same identifier (name{equation.4.3.1}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1210 \begin{equation}
+l.1216 \begin{equation}
                        
-Underfull \hbox (badness 10000) in paragraph at lines 1257--1259
+Underfull \hbox (badness 10000) in paragraph at lines 1263--1265
 
  []
 
-[28
+[29
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.3.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1272 \end{proof}
-                  
+l.1302 \section{Special orthogonal group}
+                                         
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.3.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1272 \end{proof}
-                  
+l.1302 \section{Special orthogonal group}
+                                         
+pdfTeX warning (ext4): destination with the same identifier (name{equation.4.3.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1302 \section{Special orthogonal group}
+                                         
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.4.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1272 \end{proof}
-                  ]
+l.1302 \section{Special orthogonal group}
+                                         
+pdfTeX warning (ext4): destination with the same identifier (name{equation.4.4.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1302 \section{Special orthogonal group}
+                                         ]
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/it' will be
-(Font)              scaled to size 14.4pt on input line 1321.
- [29
-pdfTeX warning (ext4): destination with the same identifier (name{equation.4.4.1}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.1328 \end{equation}
-                     
-pdfTeX warning (ext4): destination with the same identifier (name{equation.4.4.1}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.1328 \end{equation}
-                     
-pdfTeX warning (ext4): destination with the same identifier (name{equation.4.5.1}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.1328 \end{equation}
-                     
-pdfTeX warning (ext4): destination with the same identifier (name{equation.4.5.1}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.1328 \end{equation}
-                     ] [30]
+(Font)              scaled to size 14.4pt on input line 1327.
+ [30]
 Chapter 5.
 [31
 
@@ -2221,134 +2242,123 @@ Chapter 5.
 pdfTeX warning (ext4): destination with the same identifier (name{equation.5.3.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1432 ...thbf{W})=\mathbf{B}\Sigma \mathbf{B}^T$$
+l.1438 ...thbf{W})=\mathbf{B}\Sigma \mathbf{B}^T$$
                                                   
 pdfTeX warning (ext4): destination with the same identifier (name{equation.5.3.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1432 ...thbf{W})=\mathbf{B}\Sigma \mathbf{B}^T$$
+l.1438 ...thbf{W})=\mathbf{B}\Sigma \mathbf{B}^T$$
                                                   
 pdfTeX warning (ext4): destination with the same identifier (name{equation.5.3.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1432 ...thbf{W})=\mathbf{B}\Sigma \mathbf{B}^T$$
+l.1438 ...thbf{W})=\mathbf{B}\Sigma \mathbf{B}^T$$
                                                   
 pdfTeX warning (ext4): destination with the same identifier (name{equation.5.3.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1432 ...thbf{W})=\mathbf{B}\Sigma \mathbf{B}^T$$
+l.1438 ...thbf{W})=\mathbf{B}\Sigma \mathbf{B}^T$$
                                                   ]
-Overfull \hbox (18.04411pt too wide) detected at line 1439
+Overfull \hbox (18.04411pt too wide) detected at line 1445
 \OML/cmm/m/it/10.95 Cov\OT1/cmr/m/n/10.95 (\OT1/cmr/bx/n/10.95 AX\OML/cmm/m/it/10.95 ; \OT1/cmr/bx/n/10.95 BY\OT1/cmr/m/n/10.95 ) = \U/msb/m/n/10.95 E\OT1/cmr/m/n/10.95 [(\OT1/cmr/bx/n/10.95 AX \OMS/cmsy/m/n/10.95 ^^@ \OT1/cmr/bx/n/10.95 A\U/msb/m/n/10.95 E\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 X\OT1/cmr/m/n/10.95 ))(\OT1/cmr/bx/n/10.95 BY \OMS/cmsy/m/n/10.95 ^^@ \OT1/cmr/bx/n/10.95 B\U/msb/m/n/10.95 E\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 Y\OT1/cmr/m/n/10.95 ))[]] = \OT1/cmr/bx/n/10.95 A\U/msb/m/n/10.95 E\OT1/cmr/m/n/10.95 [(\OT1/cmr/bx/n/10.95 X \OMS/cmsy/m/n/10.95 ^^@ \U/msb/m/n/10.95 E\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 X\OT1/cmr/m/n/10.95 ))(\OT1/cmr/bx/n/10.95 Y \OMS/cmsy/m/n/10.95 ^^@ \U/msb/m/n/10.95 E\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 Y\OT1/cmr/m/n/10.95 ))[]]\OT1/cmr/bx/n/10.95 B[] \OT1/cmr/m/n/10.95 = \OT1/cmr/bx/n/10.95 A\OML/cmm/m/it/10.95 Cov\OT1/cmr/m/n/10.95 (\OT1/cmr/bx/n/10.95 X\OML/cmm/m/it/10.95 ; \OT1/cmr/bx/n/10.95 Y\OT1/cmr/m/n/10.95 )\OT1/cmr/bx/n/10.95 B[]
  []
 
-<vector_by_vector.png, id=915, 600.2425pt x 616.3025pt>
+<vector_by_vector.png, id=940, 600.2425pt x 616.3025pt>
 File: vector_by_vector.png Graphic file (type png)
 <use vector_by_vector.png>
-Package pdftex.def Info: vector_by_vector.png  used on input line 1458.
+Package pdftex.def Info: vector_by_vector.png  used on input line 1464.
 (pdftex.def)             Requested size: 150.06026pt x 154.07524pt.
 [33] [34
 pdfTeX warning (ext4): destination with the same identifier (name{equation.5.5.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1509 \end{equation}
+l.1515 \end{equation}
                      
 pdfTeX warning (ext4): destination with the same identifier (name{equation.5.5.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1509 \end{equation}
+l.1515 \end{equation}
                       <./vector_by_vector.png>] [35
 pdfTeX warning (ext4): destination with the same identifier (name{equation.5.5.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1539 $$\Rightarrow X^TXw=X^Ty$$
-                                 ] [36] [37]
-pdfTeX warning (ext4): destination with the same identifier (name{equation.5.9.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1625 \begin{equation}
-                       
-pdfTeX warning (ext4): destination with the same identifier (name{equation.5.9.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1625 \begin{equation}
-                       
-pdfTeX warning (ext4): destination with the same identifier (name{equation.5.9.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1625 \begin{equation}
-                       
-pdfTeX warning (ext4): destination with the same identifier (name{equation.5.9.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1625 \begin{equation}
-                       
+l.1552 \subsection{Normal Equations}
+                                    ] [36]
+Chapter 6.
+[37
+
+] [38]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1640.
+(hyperref)                removing `math shift' on input line 1663.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 1640.
+(hyperref)                removing `superscript' on input line 1663.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1640.
+(hyperref)                removing `math shift' on input line 1663.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1640.
+(hyperref)                removing `math shift' on input line 1663.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 1640.
+(hyperref)                removing `superscript' on input line 1663.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1640.
+(hyperref)                removing `math shift' on input line 1663.
 
 
-pdfTeX warning (ext4): destination with the same identifier (name{equation.5.9.1}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{equation.6.3.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1641 \begin{equation}
+l.1664 \begin{equation}
                        
-pdfTeX warning (ext4): destination with the same identifier (name{equation.5.9.1}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{equation.6.3.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1641 \begin{equation}
+l.1664 \begin{equation}
                        
-pdfTeX warning (ext4): destination with the same identifier (name{equation.5.9.1}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{equation.6.3.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1641 \begin{equation}
+l.1664 \begin{equation}
                        
-pdfTeX warning (ext4): destination with the same identifier (name{equation.5.9.1}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{equation.6.3.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1641 \begin{equation}
-                        [38] [39] [40
+l.1664 \begin{equation}
+                        [39
+pdfTeX warning (ext4): destination with the same identifier (name{equation.6.3.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1692 $$A_k=\sum_{i=1}^ks_iu_iv_u^T$$
+                                      ] [40] [41
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{cite.Long2015Fully}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1684 \end{document}
+l.1707 \end{document}
                      
 pdfTeX warning (ext4): destination with the same identifier (name{cite.Long2015Fully}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1684 \end{document}
+l.1707 \end{document}
                      
 pdfTeX warning (ext4): destination with the same identifier (name{cite.Long2015Fully}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1684 \end{document}
+l.1707 \end{document}
                      
 pdfTeX warning (ext4): destination with the same identifier (name{cite.Long2015Fully}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1684 \end{document}
+l.1707 \end{document}
                      ] (./Linear Algebra.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
@@ -2359,24 +2369,24 @@ L3 programming layer <2023-10-10>
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `"Linear Algebra".out' has not changed.
-(rerunfilecheck)             Checksum: A7756E497F4C7464FDBF6EDEAC94A365;22797.
+(rerunfilecheck)             Checksum: 7192F944E83628F3927630A2919A8835;22848.
 Package logreq Info: Writing requests to '"Linear Algebra".run.xml'.
 \openout1 = `"Linear Algebra.run.xml"'.
 
  ) 
 Here is how much of TeX's memory you used:
- 42093 strings out of 474510
- 821279 string characters out of 5752974
+ 42128 strings out of 474510
+ 821819 string characters out of 5752974
  1965040 words of memory out of 5000000
- 63056 multiletter control sequences out of 15000+600000
+ 63074 multiletter control sequences out of 15000+600000
  600174 words of font info for 140 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  109i,17n,136p,831b,1335s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/hoekwater/manfnt-font/manfnt.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/newtx/ztmbi.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on "Linear Algebra.pdf" (45 pages, 1162831 bytes).
+Output written on "Linear Algebra.pdf" (46 pages, 1170817 bytes).
 PDF statistics:
- 1103 PDF objects out of 1200 (max. 8388607)
- 983 compressed objects within 10 object streams
- 276 named destinations out of 1000 (max. 500000)
- 868 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1138 PDF objects out of 1200 (max. 8388607)
+ 1016 compressed objects within 11 object streams
+ 293 named destinations out of 1000 (max. 500000)
+ 884 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -689,6 +689,9 @@ According to the setting, $p_0=1,p_N=0$, then $p_k=\frac{N-k}{N}$.
         \end{aligned}
         \nonumber
     \end{equation}
+    \begin{note}
+        If $X$ is multivariate, $M_X(t)=\mathbb{E}[e^{t^TX}]$.
+    \end{note}
 \end{definition}
 We can find $\frac{\partial M_X(t)}{\partial t}= \mathbb{E}\left[Xe^{tX}\right]$, then $\frac{\partial M_X(0)}{\partial t}= \mathbb{E}\left[X\right]$. More generally, we can find that $$\mathbb{E}\left[X^n\right]=\frac{\partial^n M_X(0)}{\partial t^n},n=1,2,...$$
 \begin{proposition}[MGF is useful!]
@@ -708,6 +711,7 @@ We can find $\frac{\partial M_X(t)}{\partial t}= \mathbb{E}\left[Xe^{tX}\right]$
         \item Poisson $\textnormal{Pois}(\lambda)$ ($P(X=k)=\frac{\lambda^ke^{-\lambda}}{k!}$): $$M_X(t)=e^{\lambda (e^t-1)}$$
         \item Uniform $U(a,b)$ ($f_X(k)=\frac{1}{b-a}$): $$M_X(t)=\frac{e^{tb}-e^{ta}}{t(b-a)}$$
         \item Normal $N(\mu,\sigma^2)$ ($f_X(k)=\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{(k-\mu)^2}{2\sigma^2}}$): $$M_X(t)=e^{t\mu+\frac{1}{2}\sigma^2 t^2}$$
+        \item Multivariate Normal $N(\mu,\Sigma)$: $$M_X(t)=e^{t^T\mu+\frac{1}{2}t^T\Sigma t}$$
         \item Exponential $\textnormal{Exp}(\lambda)$ ($f_X(k)=\lambda e^{-\lambda k}$): $$M_X(t)=(1-t\lambda^{-1})^{-1},\ t<\lambda$$
     \end{enumerate}
 \end{example}

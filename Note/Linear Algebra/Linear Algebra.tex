@@ -503,6 +503,7 @@ On the other hand, if $P$ is any invertible matrix, then $P$ is also a change of
 
 
 \section{Square Matrix $A_{n\times n}$: $det(A)$, singular}
+\subsection{Determinant $det(A)$}
 \begin{enumerate}
     \item A is singular if $det(A)=0$, else non-singular.
     \item If $det(A)\neq 0$, $A^{-1}$ exists and $A^{-1}=\frac{adj(A)}{det(A)}$
@@ -569,7 +570,7 @@ A $n\times n$ matrix $A$ with $n$ linearly independent eigenvalues $u$ is said t
     \nonumber
 \end{equation}
 
-\begin{theorem}
+\begin{theorem}[Linearly Independent Eigenvectors $\Rightarrow$ $A=UDU^{-1}$]
     If an $n\times n$ matrix $A$ has $n$ linearly independent eigenvectors $u_1,...,u_n$ corresponding to eigenvalues $\lambda_1,...,\lambda_n$, then $A = UDU^{-1}$ where $D$ is diagonal with entries $\lambda_1,...,\lambda_n$, and $U$ has columns $u_1,...,u_n$.
 \end{theorem}
 $A$ is \textbf{similar} to $D$ ($\exists P$ s.t. $A=PDP^{-1}$).
@@ -847,8 +848,6 @@ where $\lambda_1,..., \lambda_n$ are the eigenvalues of $A$ and the columns of $
     $x^TAx=y^T\Lambda y=\lambda_1y_1^2+\lambda_2y_2^2+...+\lambda_ny_n^2$
 
 \begin{theorem}
-    \quad
-
     If $\lambda_1,...\lambda_n$ are all non-negative, then symmetric matrix $A\succeq 0$;
     
     If $\lambda_1,...\lambda_n$ are all positive, then $A\succ 0$;
@@ -922,43 +921,10 @@ We expect $A^{(k)}\succ 0\Rightarrow \Delta_k>0$ for all $k$.
 \end{enumerate}
 \end{proposition}
 
-\section{Matrix Norm (Induced Norm) and Spectral Radius}
-$\|A\|=\max _{\|x\|=1}\|A x\|$. i.e., find the column with the highest sum of absolute values.
-
-Spectral Radius: for $n\times n$ matrix $A$, $$S(A)=\max_{i=1,...,n}|\lambda_i|$$
-
-\begin{proposition}
-$S(A)\leq \|A\|$
+\subsection{Cholesky Decomposition: $A=LL^T$}
+\begin{proposition}[Cholesky Decomposition]
+    Suppose $\boldsymbol{A}$ is a real matrix with \underline{symmetric positive-definite}. $\boldsymbol{A}$ can be decomposed into the product of two matrices, $$\boldsymbol{A}=\boldsymbol{L}\boldsymbol{L}^T$$where $\boldsymbol{L}$ is a real lower triangular matrix with positive diagonal entries.
 \end{proposition}
-\begin{proof}
-\begin{equation}
-    \begin{aligned}
-        \|A\|=\max _{\|x\|=1}\|A x\|\geq \|Au\|=|\lambda|\|u\|=|\lambda|
-    \end{aligned}
-    \nonumber
-\end{equation}
-\end{proof}
-
-\begin{proposition}
-    For symmetric $A_{n\times n}$, $S(A)= \|A\|$
-\end{proposition}
-\begin{proof}
-\quad
-
-$\forall x\in \mathbb{R}^n$, decompose it by $u_i$.
-Since $u_i$ are orthonormal and linearly independent. $x=\sum_{i=1}^n\alpha_i u_i$ for some $\alpha_i\in \mathbb{R},i=1,...,n$. $\|x\|^2=\sum_{i=1}^n|\alpha_i|^2$
-
-\begin{equation}
-    \begin{aligned}
-        \|Ax\|^2&=\|\sum_{i=1}^n\alpha_i A u_i\|^2=\|\sum_{i=1}^n\alpha_i \lambda_i u_i\|^2=\sum_{i=1}^n|\alpha_i|^2|\lambda_i|^2\\
-        &\leq \sum_{i=1}^n|\alpha_i|^2S(A)^2=S(A)^2 \Rightarrow	\|A\|\leq S(A)
-    \end{aligned}
-    \nonumber
-\end{equation}
-
-Since we proved $S(A)\leq \|A\|$ before, $S(A)=\|A\|$.
-\end{proof}
-
 
 \chapter{Linear Maps between Normed Spaces}
 \begin{definition}[Bounded Linear Transformation]
@@ -1062,7 +1028,7 @@ $$
 
 
 \chapter{Euclidean geometry basics}
-\section{Norm}
+\section{Metrics}
 \subsection{Vector's Norm}
 Vector $x \in \mathbb{R}^{n}$-n-dim Euclidean space
 $$
@@ -1098,31 +1064,71 @@ Other norms:
 3. Supremum norm or $l_{\infty}$-norm : $\|x\|_{\infty}=\max _{i}\left|x_{i}\right|$
 
 \subsection{Matrix's Norm}
-$A\in \mathbb{R}^{n\times m}$ is a matrix
+\begin{definition}[Matrix Norm]
+\normalfont
+    The matrix norm defined in real vector space is a function $\|\cdot\|: \mathbb{R}^{n\times m} \rightarrow \mathbb{R}$ that satisfies following properties: for all scalars $\alpha\in \mathbb{R}$ and matrices $A,B\in \mathbb{R}^{n\times m}$
+    \begin{enumerate}[(1).]
+        \item $\|A\|\geq 0$
+        \item $\|A\|=0 \Leftrightarrow A=0$
+        \item $\|\alpha A\|=|\alpha|\|A\|$
+        \item $\|A+B\|\leq\|A\|+\|B\|$ (sub-additive)
+        \item $\|AB\|\leq \|A\|\|B\|$ (sub-multiplicative)
+        \subitem In some definitions, it may not hold, but every norm can be rescaled to be sub-multiplicative. Here, we let it hold.
+    \end{enumerate}
+\end{definition}
 
-$\|A x\| \leqslant\|A\|\|x\|,\|A B\| \leqslant\|A\|\|B\|$
+\begin{definition}[Common Norms]
+    \normalfont
+    $A\in \mathbb{R}^{n\times m}$ is a matrix.
+    \begin{enumerate}[$\circ$]
+        \item ($\rho=1$, \textit{Default}): $\|A\|=\|A\|_1=\max _{\|x\|_1=1}\|A x\|=\max _{j} \sum_{i=1}^{n}\left|A_{i j}\right|$
+        \subitem i.e., find the column with the highest sum of absolute values.
+        \subitem $\|A\| \geqslant \frac{\|A x\|}{\|x\|}$, $\|Ax\| \leqslant\|A\|\|x\|$
+        \item (Frobenius Norm): $\|A\|_{F}=\sqrt{\sum_{i, j} a_{i j}^{2}}$
+        \subitem Frobenius norm property: $\|A\|_F^2=\left\langle A,A \right\rangle=trace(A^TA)$.
+        \item ($\rho=\infty$): $\|A\|_{\infty}=\max _{j} \sum_{j=1}^{n}\left|A_{i j}\right|$ \subitem i.e., find the row with the highest sum of absolute values.
+        \item ($\rho=2$, Spectral Norm, Euclidean Norm): ${\displaystyle \|A\|_{2}={\sqrt {\lambda _{\max }\left(A^{T}A\right)}}=\sigma _{\max }(A).}$
+        \subitem $\sigma_{k}$ is the \underline{singular value}
+    \end{enumerate}
+\end{definition}
 
-Default is $\rho=1$: $\|A\|=\max _{\|x\|=1}\|A x\|$.
 
-$\|A\|_{F}=\sqrt{\sum_{i, j} a_{i j}^{2}} \quad$ (Frobenius norm);  Frobenius norm property: $\|A\|_F^2=<A,A>=trace(A^TA)$
 
-$\|A\|_{1}=\max _{j} \sum_{i=1}^{n}\left|A_{i j}\right|$ i.e., find the column with the highest sum of absolute values.
+\subsection{Spectral Radius}
+\begin{definition}[Spectral Radius]
+    \normalfont
+    For $n\times n$ matrix $A$, \textbf{spectral radius} is the maximum eigenvalue. $$S(A)=\max_{i=1,...,n}|\lambda_i|$$
+\end{definition}
 
-$\|A\|_{\infty}=\max _{j} \sum_{j=1}^{n}\left|A_{i j}\right|$ i.e., find the row with the highest sum of absolute values.
+\begin{proposition}
+$S(A)\leq \|A\|$
+\end{proposition}
+\begin{proof}
+    $\|A\|=\max _{\|x\|=1}\|A x\|\geq \|Au\|=|\lambda|\|u\|=|\lambda|$, where $u$ is the corresponding eigenvector of $\lambda$ for $A$.
+\end{proof}
 
-${\displaystyle \|A\|_{2}={\sqrt {\lambda _{\max }\left(A^{T}A\right)}}=\sigma _{\max }(A).}$
-$\|A\|_{2}=\max _{k} \sigma_{k}. \sigma_{k}$ is the \underline{singular value} (square root of $A^TA$) of $A$ (spectral norm, Euclidean norm)
+\begin{proposition}
+    For symmetric $A_{n\times n}$, $S(A)= \|A\|$
+\end{proposition}
+\begin{proof}
+\quad
 
-$\|A\|=\max \left(\frac{\|A x\|}{\|x\|}\right) \Rightarrow\|A\| \geqslant \frac{\|A x\|}{\|x\|}$, $\|Ax\| \leqslant\|A\|\|x\|$
+$\forall x\in \mathbb{R}^n$, decompose it by $u_i$.
+Since $u_i$ are orthonormal and linearly independent. $x=\sum_{i=1}^n\alpha_i u_i$ for some $\alpha_i\in \mathbb{R},i=1,...,n$. $\|x\|^2=\sum_{i=1}^n|\alpha_i|^2$
 
-\subsection{Difference between Spectral Radius and Spectral Norm}
-Spectral Radius: $S(A)=\max_{i=1,...,n}|\lambda_i|$; Spectral Norm: $\|A\|_{2}=\max _{k} \sigma_{k}$
+\begin{equation}
+    \begin{aligned}
+        \|Ax\|^2&=\|\sum_{i=1}^n\alpha_i A u_i\|^2=\|\sum_{i=1}^n\alpha_i \lambda_i u_i\|^2=\sum_{i=1}^n|\alpha_i|^2|\lambda_i|^2\\
+        &\leq \sum_{i=1}^n|\alpha_i|^2S(A)^2=S(A)^2 \Rightarrow	\|A\|\leq S(A)
+    \end{aligned}
+    \nonumber
+\end{equation}
 
-For real symmetric matrices, $\|A\|_2=S(A)$.
+Since we proved $S(A)\leq \|A\|$ before, $S(A)=\|A\|$.
+\end{proof}
 
-For general matrices, $\|A\|_2\geq S(A)$.
 
-\section{ Euclidean distance, inner product}
+\subsection{Euclidean distance, inner product}
 \textbf{Euclidean distance} on $\mathbb{R}^n$:
 \begin{equation}
     \begin{aligned}
@@ -1508,14 +1514,23 @@ Trace:
     \nonumber
 \end{equation}
 
-\section{Matrix Inversion}
-\subsection{Woodbury matrix identity}
-$${\displaystyle \left(A+UCV\right)^{-1}=A^{-1}-A^{-1}U\left(C^{-1}+VA^{-1}U\right)^{-1}VA^{-1},}$$
-where $A, U, C$ and $V$ are conformable matrices: $A$ is $n\times n$, $C$ is $k\times k$, $U$ is $n\times k$, and $V$ is $k\times n$. This can be derived using blockwise matrix inversion.
+\section{Inverse Matrix}
+\begin{proposition}[Woodbury matrix identity]
+    $${\displaystyle \left(\boldsymbol{A}+\boldsymbol{U}\boldsymbol{C}\boldsymbol{V}\right)^{-1}=\boldsymbol{A}^{-1}-\boldsymbol{A}^{-1}\boldsymbol{U}\left(\boldsymbol{C}^{-1}+\boldsymbol{V}\boldsymbol{A}^{-1}\boldsymbol{U}\right)^{-1}\boldsymbol{V}\boldsymbol{A}^{-1},}$$
+    where $\boldsymbol{A}, \boldsymbol{U}, \boldsymbol{C}$ and $\boldsymbol{V}$ are conformable matrices: $\boldsymbol{A}$ is $n\times n$, $\boldsymbol{C}$ is $k\times k$, $\boldsymbol{U}$ is $n\times k$, and $\boldsymbol{V}$ is $k\times n$.
+\end{proposition}
+This can be derived using blockwise matrix inversion.
+\begin{proposition}[Blockwise inversion]
+    $$
+    {\displaystyle {\begin{bmatrix}\mathbf {A} &\mathbf {B} \\\mathbf {C} &\mathbf {D} \end{bmatrix}}^{-1}={\begin{bmatrix}\mathbf {A} ^{-1}+\mathbf {A} ^{-1}\mathbf {B} \left(\mathbf {D} -\mathbf {CA} ^{-1}\mathbf {B} \right)^{-1}\mathbf {CA} ^{-1}&-\mathbf {A} ^{-1}\mathbf {B} \left(\mathbf {D} -\mathbf {CA} ^{-1}\mathbf {B} \right)^{-1}\\-\left(\mathbf {D} -\mathbf {CA} ^{-1}\mathbf {B} \right)^{-1}\mathbf {CA} ^{-1}&\left(\mathbf {D} -\mathbf {CA} ^{-1}\mathbf {B} \right)^{-1}\end{bmatrix}}}
+    $$
+\end{proposition}
 
-\underline{Blockwise inversion: }$$
-{\displaystyle {\begin{bmatrix}\mathbf {A} &\mathbf {B} \\\mathbf {C} &\mathbf {D} \end{bmatrix}}^{-1}={\begin{bmatrix}\mathbf {A} ^{-1}+\mathbf {A} ^{-1}\mathbf {B} \left(\mathbf {D} -\mathbf {CA} ^{-1}\mathbf {B} \right)^{-1}\mathbf {CA} ^{-1}&-\mathbf {A} ^{-1}\mathbf {B} \left(\mathbf {D} -\mathbf {CA} ^{-1}\mathbf {B} \right)^{-1}\\-\left(\mathbf {D} -\mathbf {CA} ^{-1}\mathbf {B} \right)^{-1}\mathbf {CA} ^{-1}&\left(\mathbf {D} -\mathbf {CA} ^{-1}\mathbf {B} \right)^{-1}\end{bmatrix}}}
-$$
+Henderson, H. V., \& Searle, S. R. (1981). On deriving the inverse of a sum of matrices. \textit{Siam Review}, 23(1), 53-60. In this paper, they also provide a vector case.
+\begin{corollary}[Vector Case]
+    $$(\boldsymbol{A}+b \boldsymbol{u}\boldsymbol{v}')^{-1}=\boldsymbol{A}^{-1}-\frac{b}{1+b \boldsymbol{v}' \boldsymbol{A}^{-1}\boldsymbol{u}}\boldsymbol{A}^{-1}\boldsymbol{u}\boldsymbol{v}' \boldsymbol{A}^{-1}$$
+    where $b$ is constant and $\boldsymbol{u}, \boldsymbol{v}$ are column vectors.
+\end{corollary}
 
 \subsection{Block Matrix Determinant}
 If $A$ is invertible,
@@ -1552,6 +1567,14 @@ $$
 \left\|\boldsymbol{X} \boldsymbol{w}^{\prime}-\boldsymbol{y}\right\|^{2}=\left\|\boldsymbol{X} \boldsymbol{w}^{\prime}-\boldsymbol{X} \boldsymbol{w}\right\|^{2}+\|\boldsymbol{X} \boldsymbol{w}-\boldsymbol{y}\|^{2} \geq\|\boldsymbol{X} \boldsymbol{w}-\boldsymbol{y}\|^{2}
 $$
 \end{proof}
+
+\chapter{Matrix Decomposition}
+\section{Cholesky Decomposition}
+Suppose $\boldsymbol{A}$ is a real matrix with symmetric positive-definite. $\boldsymbol{A}$ can be decomposed into the product of two matrices, $\boldsymbol{L}$ and $\boldsymbol{L}^T$,
+$$\boldsymbol{A}=\boldsymbol{L}\boldsymbol{L}^T$$
+where $\boldsymbol{L}$ is a real lower triangular matrix with positive diagonal entries.
+
+
 
 \section{LU Decomposition (Restricted to Square)}
 Triangular matrix saves time when computing $Ax=b$.
