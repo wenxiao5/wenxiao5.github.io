@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.8)  17 OCT 2023 18:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.20)  7 NOV 2023 19:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -6,7 +6,7 @@ entering extended mode
 **"/Users/yangwenxiao/Desktop/个人主页wenxiao5.github.io/Note/Economic Theory/Game Theory"
 (/Users/yangwenxiao/Desktop/个人主页wenxiao5.github.io/Note/Economic Theory/Game Theory.tex
 LaTeX2e <2023-06-01> patch level 1
-L3 programming layer <2023-08-29>
+L3 programming layer <2023-10-10>
 (./elegantbook.cls
 Document Class: elegantbook 2022/08/15 v4.4 ElegantBook document class
 (/usr/local/texlive/2023/texmf-dist/tex/latex/kvoptions/kvoptions.sty
@@ -296,13 +296,13 @@ Package graphics Info: Driver file: pdftex.def on input line 107.
 \Gin@req@height=\dimen169
 \Gin@req@width=\dimen170
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/lipsum/lipsum.sty (/usr/local/texlive/2023/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty (/usr/local/texlive/2023/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2023-08-29 L3 programming layer (loader) 
+Package: expl3 2023-10-10 L3 programming layer (loader) 
  (/usr/local/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-File: l3backend-pdftex.def 2023-04-19 L3 backend support: PDF output (pdfTeX)
+File: l3backend-pdftex.def 2023-10-10 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count287
 \l__pdf_internal_box=\box53
 ))
-Package: l3keys2e 2023-08-29 LaTeX2e option processing using LaTeX3 keys
+Package: l3keys2e 2023-10-10 LaTeX2e option processing using LaTeX3 keys
 )
 Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
 \g__lipsum_par_int=\count288
@@ -545,7 +545,7 @@ Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
 ) (/usr/local/texlive/2023/texmf-dist/tex/generic/hologo/hologo.sty
 Package: hologo 2021-11-16 v1.15 A logo collection with bookmark support (HO)
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/titlesec/titlesec.sty
-Package: titlesec 2021/07/05 v2.14 Sectioning titles
+Package: titlesec 2023/10/17 v2.15 Sectioning titles
 \ttl@box=\box104
 \beforetitleunit=\skip62
 \aftertitleunit=\skip63
@@ -780,11 +780,11 @@ File: biblatex.cfg
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Document encoding is UTF8 ....
 Package biblatex Info: ... and expl3
-(biblatex)             2023-08-29 L3 programming layer (loader) 
+(biblatex)             2023-10-10 L3 programming layer (loader) 
 (biblatex)             is new enough (at least 2020/04/06),
 (biblatex)             setting 'casechanger=expl3'.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty (/usr/local/texlive/2023/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
-Package: xparse 2023-08-29 L3 Experimental document command parser
+Package: xparse 2023-10-10 L3 Experimental document command parser
 )
 Package: blx-case-expl3 2023/03/05 v3.19 expl3 case changing code for biblatex
 )) (/usr/local/texlive/2023/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/usr/local/texlive/2023/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/usr/local/texlive/2023/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
@@ -1359,7 +1359,7 @@ Package hyperref Info: Option `pageanchor' set `false' on input line 28.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<cover.png, id=388, 2055.68pt x 1155.31625pt>
+<cover.png, id=392, 2055.68pt x 1155.31625pt>
 File: cover.png Graphic file (type png)
 <use cover.png>
 Package pdftex.def Info: cover.png  used on input line 28.
@@ -1406,22 +1406,22 @@ LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
 
 
 ]
-<FOSD_1.png, id=424, 887.315pt x 636.3775pt>
+<FOSD_1.png, id=428, 887.315pt x 636.3775pt>
 File: FOSD_1.png Graphic file (type png)
 <use FOSD_1.png>
 Package pdftex.def Info: FOSD_1.png  used on input line 91.
 (pdftex.def)             Requested size: 177.45985pt x 127.27324pt.
-<FOSD_2.png, id=426, 845.1575pt x 616.3025pt>
+<FOSD_2.png, id=430, 845.1575pt x 616.3025pt>
 File: FOSD_2.png Graphic file (type png)
 <use FOSD_2.png>
 Package pdftex.def Info: FOSD_2.png  used on input line 92.
 (pdftex.def)             Requested size: 169.0285pt x 123.25832pt.
-<SOSD_1.png, id=427, 698.61pt x 465.74pt>
+<SOSD_1.png, id=431, 698.61pt x 465.74pt>
 File: SOSD_1.png Graphic file (type png)
 <use SOSD_1.png>
 Package pdftex.def Info: SOSD_1.png  used on input line 106.
 (pdftex.def)             Requested size: 174.65207pt x 116.43471pt.
-<SOSD_2.png, id=428, 708.6475pt x 461.725pt>
+<SOSD_2.png, id=432, 708.6475pt x 461.725pt>
 File: SOSD_2.png Graphic file (type png)
 <use SOSD_2.png>
 Package pdftex.def Info: SOSD_2.png  used on input line 107.
@@ -1429,7 +1429,7 @@ Package pdftex.def Info: SOSD_2.png  used on input line 107.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
 (Font)              scaled to size 10.0pt on input line 117.
  [2 <./FOSD_1.png> <./FOSD_2.png>]
-<SOSD_3.png, id=439, 630.355pt x 421.575pt>
+<SOSD_3.png, id=443, 630.355pt x 421.575pt>
 File: SOSD_3.png Graphic file (type png)
 <use SOSD_3.png>
 Package pdftex.def Info: SOSD_3.png  used on input line 145.
@@ -1877,12 +1877,12 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 [16
 
 ]
-<uhc.png, id=568, 1577.895pt x 979.66pt>
+<uhc.png, id=572, 1577.895pt x 979.66pt>
 File: uhc.png Graphic file (type png)
 <use uhc.png>
 Package pdftex.def Info: uhc.png  used on input line 703.
 (pdftex.def)             Requested size: 315.57341pt x 195.92853pt.
-<lhc.png, id=569, 1610.015pt x 983.675pt>
+<lhc.png, id=573, 1610.015pt x 983.675pt>
 File: lhc.png Graphic file (type png)
 <use lhc.png>
 Package pdftex.def Info: lhc.png  used on input line 710.
@@ -2679,31 +2679,40 @@ l.1624 \begin{equation}
                         [39] (./Game Theory.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
-L3 programming layer <2023-08-29>
+L3 programming layer <2023-10-10>
  ***********
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package rerunfilecheck Info: File `"Game Theory".out' has not changed.
-(rerunfilecheck)             Checksum: AE82D07926B20B8F6D1183D347EB5ABE;25409.
+
+Package rerunfilecheck Warning: File `"Game Theory".out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `"Game Theory".out':
+(rerunfilecheck)             Before: 0F0459A28D06F287F80B20CFBF28117C;25695
+(rerunfilecheck)             After:  AE82D07926B20B8F6D1183D347EB5ABE;25409.
 Package logreq Info: Writing requests to '"Game Theory".run.xml'.
 \openout1 = `"Game Theory.run.xml"'.
 
  ) 
 Here is how much of TeX's memory you used:
- 42106 strings out of 474934
- 820603 string characters out of 5759811
- 1959791 words of memory out of 5000000
- 62621 multiletter control sequences out of 15000+600000
+ 42110 strings out of 474510
+ 820670 string characters out of 5752974
+ 1962040 words of memory out of 5000000
+ 63048 multiletter control sequences out of 15000+600000
  596548 words of font info for 128 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  109i,21n,136p,1050b,1369s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{section.8.5} has been referenced but does not exist, replaced by a fixed one
+
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/hoekwater/manfnt-font/manfnt.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/newtx/ztmbi.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on "Game Theory.pdf" (40 pages, 5202056 bytes).
+Output written on "Game Theory.pdf" (40 pages, 5202153 bytes).
 PDF statistics:
- 959 PDF objects out of 1000 (max. 8388607)
- 833 compressed objects within 9 object streams
- 308 named destinations out of 1000 (max. 500000)
- 861 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 963 PDF objects out of 1000 (max. 8388607)
+ 837 compressed objects within 9 object streams
+ 309 named destinations out of 1000 (max. 500000)
+ 869 words of extra memory for PDF output out of 10000 (max. 10000000)
 

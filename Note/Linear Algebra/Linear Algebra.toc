@@ -65,31 +65,32 @@
 \contentsline {subsection}{\numberline {4.1.2}Matrix's Norm}{25}{subsection.4.1.2}%
 \contentsline {subsection}{\numberline {4.1.3}Spectral Radius}{26}{subsection.4.1.3}%
 \contentsline {subsection}{\numberline {4.1.4}Euclidean distance, inner product}{27}{subsection.4.1.4}%
-\contentsline {section}{\numberline {4.2}General Inner Products}{27}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1} Inner Product}{27}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Theorem: $*$ is inner product iff $\vec {x}*\vec {y}=\vec {x}^T H \vec {y}$ for some symmetric $H$}{28}{subsection.4.2.2}%
-\contentsline {section}{\numberline {4.3}Isometry}{29}{section.4.3}%
-\contentsline {section}{\numberline {4.4} Linear isometries i.e. orthogonal group}{29}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Special orthogonal group}{30}{section.4.5}%
-\contentsline {section}{\numberline {4.6}Translation}{30}{section.4.6}%
-\contentsline {section}{\numberline {4.7}All isometries can be represented by a composition of \textit {a translation} and \textit {an orthogonal transformation}}{30}{section.4.7}%
-\contentsline {chapter}{\numberline {5}Algebra Computation}{31}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Hessian Matrix}{31}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Taylor's Expansion}{31}{section.5.2}%
-\contentsline {section}{\numberline {5.3} Random Vectors and Random Matrices}{31}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Mean}{31}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}Variance, Covariance}{32}{subsection.5.3.2}%
-\contentsline {section}{\numberline {5.4} Matrix Multiplication}{33}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Matrix Derivation}{33}{section.5.5}%
-\contentsline {section}{\numberline {5.6}Inverse Matrix}{35}{section.5.6}%
-\contentsline {subsection}{\numberline {5.6.1}Block Matrix Determinant}{35}{subsection.5.6.1}%
-\contentsline {section}{\numberline {5.7}Linear Regression: Least Square}{36}{section.5.7}%
-\contentsline {subsection}{\numberline {5.7.1}Normal Equations}{36}{subsection.5.7.1}%
-\contentsline {chapter}{\numberline {6}Matrix Decomposition}{37}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Cholesky Decomposition}{37}{section.6.1}%
-\contentsline {section}{\numberline {6.2}LU Decomposition (Restricted to Square)}{37}{section.6.2}%
-\contentsline {section}{\numberline {6.3}SVD: Singular Value Decomposition}{38}{section.6.3}%
-\contentsline {subsection}{\numberline {6.3.1}Pseudo-inverse}{38}{subsection.6.3.1}%
-\contentsline {subsection}{\numberline {6.3.2}Analysis of $A^TA$ and $AA^T$}{39}{subsection.6.3.2}%
-\contentsline {subsection}{\numberline {6.3.3}Solve Normal Equations}{39}{subsection.6.3.3}%
-\contentsline {subsection}{\numberline {6.3.4}Low-Rank Approximation}{39}{subsection.6.3.4}%
+\contentsline {section}{\numberline {4.2}Inequalities}{28}{section.4.2}%
+\contentsline {section}{\numberline {4.3}General Inner Products}{28}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1} Inner Product}{28}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Theorem: $*$ is inner product iff $\vec {x}*\vec {y}=\vec {x}^T H \vec {y}$ for some symmetric $H$}{29}{subsection.4.3.2}%
+\contentsline {section}{\numberline {4.4}Isometry}{29}{section.4.4}%
+\contentsline {section}{\numberline {4.5} Linear isometries i.e. orthogonal group}{30}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Special orthogonal group}{30}{section.4.6}%
+\contentsline {section}{\numberline {4.7}Translation}{30}{section.4.7}%
+\contentsline {section}{\numberline {4.8}All isometries can be represented by a composition of \textit {a translation} and \textit {an orthogonal transformation}}{31}{section.4.8}%
+\contentsline {chapter}{\numberline {5}Algebra Computation}{32}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Hessian Matrix}{32}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Taylor's Expansion}{32}{section.5.2}%
+\contentsline {section}{\numberline {5.3} Random Vectors and Random Matrices}{32}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Mean}{32}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Variance, Covariance}{33}{subsection.5.3.2}%
+\contentsline {section}{\numberline {5.4} Matrix Multiplication}{34}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Matrix Derivation}{34}{section.5.5}%
+\contentsline {section}{\numberline {5.6}Inverse Matrix}{36}{section.5.6}%
+\contentsline {subsection}{\numberline {5.6.1}Block Matrix Determinant}{37}{subsection.5.6.1}%
+\contentsline {section}{\numberline {5.7}Linear Regression: Least Square}{37}{section.5.7}%
+\contentsline {subsection}{\numberline {5.7.1}Normal Equations}{37}{subsection.5.7.1}%
+\contentsline {chapter}{\numberline {6}Matrix Decomposition}{38}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Cholesky Decomposition}{38}{section.6.1}%
+\contentsline {section}{\numberline {6.2}LU Decomposition (Restricted to Square)}{38}{section.6.2}%
+\contentsline {section}{\numberline {6.3}SVD: Singular Value Decomposition}{39}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Pseudo-inverse}{39}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}Analysis of $A^TA$ and $AA^T$}{40}{subsection.6.3.2}%
+\contentsline {subsection}{\numberline {6.3.3}Solve Normal Equations}{40}{subsection.6.3.3}%
+\contentsline {subsection}{\numberline {6.3.4}Low-Rank Approximation}{40}{subsection.6.3.4}%
