@@ -1300,7 +1300,7 @@ Given $p\in \mathbb{R}^L$ and production plans in $\{y_j(p),j=1,...,J\}$, consum
         \begin{equation}
             \begin{aligned}
                 x_i^*\in x_i(p^*)=\arg\max_{x_i\in \mathbb{R}^L_+}\quad& u_i(x_i)\\
-        s.t.\quad& p^*\cdot x_i\leq p^*\cdot w_i+\sum_{j=1}^J\theta_{ij}p\cdot y^*_j(p)
+        s.t.\quad& p^*\cdot x_i\leq p^*\cdot w_i+\sum_{j=1}^J\theta_{ij}p^*\cdot y^*_j(p^*)
             \end{aligned}
             \nonumber
         \end{equation}
@@ -1503,6 +1503,190 @@ Production economy is a more general form of exchange economy. It is the same th
 
     All in all, SWT is proved.
 \end{proof}
+
+
+\section{Existence of Competitive Equilibrium}
+\subsection{Excess Demand in Exchange Economies}
+\begin{assumption}\label{C}
+    Suppose each consumer's preference relation is continuous, strongly monotone, and strictly convex, and $\sum_{i}w_i>>0$.
+\end{assumption}
+Based on this assumption \ref{C}, we have
+\begin{enumerate}[$\circ$]
+    \item Each agent's demand function $x_i:\mathbb{R}^L_{++} \rightarrow \mathbb{R}^L_+$ is well-defined, continuous, homogeneous of degree $0$, and satisfies Walras' Law (for individual).
+    \item Excess demand function $Z:\mathbb{R}_{++} \rightarrow \mathbb{R}^L$ given by $$Z(p)=\sum_{i=1}^m x_i(p)-\sum_{i=1}^m w_i$$ is
+    \begin{definition}[Condition (1) to (4)]
+        \normalfont
+        \begin{enumerate}[(1).]
+            \item Continuous;
+            \item Homogeneous of degree $0$;
+            \item Satisfies Walras' Law: $p\cdot Z(p)=0, \forall p$;
+            \item Bounded below: $\exists s>0$ s.t. $Z_l(p)\geq -s, \forall p, \forall l=1,...,L$.
+        \end{enumerate}
+    \end{definition}
+\end{enumerate}
+
+\subsection{Excess Demand in Production Economies}
+We use the same assumption \ref{C} for consumers' preferences, and we add a assumption on the production side.
+\begin{assumption}\label{F}
+    Suppose each firm's production set $Y_j$ is closed, strictly convex ($y,y'\in Y_j \Rightarrow \alpha y+(1-\alpha)y'\in \textnormal{int}Y_j, \forall \alpha\in (0,1)$), bounded above ($\exists \bar{y}_j\in \mathbb{R}^L$ s.t. $y\leq \bar{y}_j, \forall y_j\in Y_j$), and $0\in Y_j$.
+\end{assumption}
+Based on this assumption \ref{F}, we have
+\begin{enumerate}[$\circ$]
+    \item Each firm's supply function $y_j: \mathbb{R}_{++}^L \rightarrow \mathbb{R}^L$ is well-defined, continuous, and homogeneous of degree $0$.
+\end{enumerate}
+Based on assumption \ref{C} and \ref{F}, we have
+\begin{enumerate}[$\circ$]
+    \item Excess demand function $Z:\mathbb{R}_{++} \rightarrow \mathbb{R}^L$ given by $$Z(p)=\sum_{i=1}^m x_i(p)-\sum_{j=1}^Jy_j(p)-\sum_{i=1}^m w_i$$ is
+    \begin{definition}[Condition (1) to (4)]
+        \normalfont
+        \begin{enumerate}[(1).]
+            \item Continuous;
+            \item Homogeneous of degree $0$;
+            \item Satisfies Walras' Law: $p\cdot Z(p)=0, \forall p$;
+            \item Bounded below: $\exists s>0$ s.t. $Z_l(p)\geq -s, \forall p, \forall l=1,...,L$.
+        \end{enumerate}
+    \end{definition}
+    \item If $Z(p^*)=0$, then $p^*$ is a competitive equilibrium price vector, with corresponding equilibrium allocation $\left(x_1(p^*),...,x_m(p^*),y_1(p^*),...,y_J(p^*)\right)$.
+\end{enumerate}
+
+\subsection{Boundary Condition}
+Since $Z$ is homogeneous of degree $0$, we can normalize prices, set
+\begin{equation}
+    \begin{aligned}
+        \Delta:=\left\{p\in \mathbb{R}^L_+:\sum_{l=1}^Lp_l=1\right\}
+    \end{aligned}
+    \nonumber
+\end{equation}
+We give other notations:
+\begin{equation}
+    \begin{aligned}
+        \partial\Delta:&=\left\{p\in \Delta: p_l=0 \textnormal{ for some }l\right\}\\
+        \textnormal{int}\Delta:&=\left\{p\in \Delta: p_l>0, \forall l\right\}=\Delta\cap \mathbb{R}^L_{++}\\
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+Consider an exchange economy. Let $p\in \partial \Delta$. Let $w_i>>0$. If $\succeq_i$ is strongly monotone on $\mathbb{R}^L_{++}$, then demand of agent $i$ is undefined at $p_i$ (infinity for the zero price good).
+
+So, we add a condition for excess demand $Z$:
+\begin{definition}[Condition (5)]
+    \normalfont
+    \begin{enumerate}
+        \item[(5).] If $p^n\in \textnormal{int}\Delta, \forall n$ and $p^n \rightarrow p$, where $p\in \partial \Delta$, then $\max_l\{Z_l(p^n)\}\rightarrow +\infty$.
+    \end{enumerate}
+\end{definition}
+\begin{note}
+    \begin{enumerate}[-]
+        \item Condition (5) holds in an exchange economy with assumption \ref{C};
+        \item Condition (5) holds in a production economy with assumption \ref{C} and \ref{F};
+        \item Condition (5) is \underline{not} true in general, and the condition (5) does \underline{not} imply $p^n_l \rightarrow 0 \Rightarrow Z_l(p^n) \rightarrow +\infty$ (relative prices matter!)
+        \item By Walras' Law and lower bound on $Z$, then the converse holds:
+        \begin{equation}
+            \begin{aligned}
+                Z_l(p^n)\rightarrow +\infty \Rightarrow p^n_l \rightarrow 0
+            \end{aligned}
+            \nonumber
+        \end{equation}
+    \end{enumerate}
+\end{note}
+
+So, if condition (1) to (5) hold and $p^n \rightarrow p$ where $p^n >>0$ and $p_l>0$, then $\{Z_l(p^n)\}$ is bounded.
+
+\subsection{Existence of Competitive Equilibrium}
+\begin{theorem}[Condition (1) to (5) $\Rightarrow$ $\exists$ a competitive equilibrium]
+    Let $Z: \mathbb{R}^L_{++} \rightarrow \mathbb{R}^L$ be a function s.t. condition (1) to (5) are satisfied, that is
+    \begin{enumerate}[(1).]
+        \item Continuous;
+        \item Homogeneous of degree $0$;
+        \item Satisfies Walras' Law: $p\cdot Z(p)=0, \forall p$;
+        \item Bounded below: $\exists s>0$ s.t. $Z_l(p)\geq -s, \forall p, \forall l=1,...,L$.
+        \item If $p^n\in \textnormal{int}\Delta, \forall n$ and $p^n \rightarrow p$, where $p\in \partial \Delta$, then $\max_l\{Z_l(p^n)\}\rightarrow +\infty$.
+    \end{enumerate}
+    Then, $\exists \bar{p}\in \mathbb{R}^L_{++}$ s.t. $Z(\bar{p})=0$.
+\end{theorem}
+\begin{proof}
+    First, restrict attention to $p\in\Delta=\left\{p\in \mathbb{R}^L_+:\sum_{l=1}^Lp_l=1\right\}$.
+    \begin{enumerate}[$\circ$]
+        \item For $p\in \textnormal{int}\Delta$, define a subset of good $\Lambda(p)\subseteq \{1,...,L\}$ by
+        \begin{equation}
+            \begin{aligned}
+                \Lambda(p):=\left\{l\in \{1,...,L\}: Z_l(p)=\max_k Z_k(p)\right\}
+            \end{aligned}
+            \nonumber
+        \end{equation}
+        \item For $p\in \Delta\backslash\textnormal{int}\Delta=\partial \Delta$, let
+        \begin{equation}
+            \begin{aligned}
+                \Lambda(p):=\left\{l\in \{1,...,L\}: p_l=0\right\}
+            \end{aligned}
+            \nonumber
+        \end{equation}
+    \end{enumerate}
+    Then, note $\Lambda(p)\neq\emptyset, \forall p\in\Delta$.\\
+    Define the correspondence $\varphi: \Delta \rightarrow 2^\Delta$ that maps a price vector $p$ to a set of prices by
+    \begin{equation}
+        \begin{aligned}
+            \varphi(p):=\left\{q\in \Delta:q_l=0, \forall l\notin \Lambda(p)\right\}
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    As $\Lambda(p)\neq\emptyset, \forall p\in\Delta$, we have $\varphi(p)\neq \emptyset$ for all $p$ and
+    \begin{equation}
+        \begin{aligned}
+            \varphi(p):=\left\{\begin{matrix}
+                \left\{q\in \Delta:q\in\arg\max_{\tilde{q}\in\Delta}\tilde{q}\cdot Z(p) \right\}& \textnormal{ if }p\in \textnormal{int}\Delta\\
+                \{q\in\Delta:q\cdot p=0\}&\textnormal{ if }p\in \partial\Delta
+            \end{matrix}\right.
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    \begin{note}
+        \begin{enumerate}
+            \item $\varphi(p)\subseteq \partial \Delta \Leftrightarrow \Lambda(p)\neq\{1,...,L\}$
+            \item $p\in\partial \Delta \Rightarrow p$ is not a fixed point of $\varphi$.
+            \item $p$ is a fixed point of $\varphi$ $\Leftrightarrow$ $p\in \textnormal{int}\Delta$ and $\Lambda(p)=\{1,...,L\}$ $\Leftrightarrow$ $p\in \textnormal{int}\Delta$ and $\exists m\in \mathbb{R}$ s.t. $Z_l(p)=m, \forall l=\{1,...,L\}$.
+            \item $p$ is a fixed point of $\varphi$ $\Leftrightarrow$ $p\in \textnormal{int}\Delta$ and $Z(p)=0$. (By Walras' Law: $0=p\cdot Z(p)=m \sum_{l}p_l=m$.)
+            \item $Z(p)\neq 0$ $\Rightarrow$ $\Lambda(p)\neq\{1,...,L\}$ $\Rightarrow$ $\varphi(p)\subseteq \partial \Delta$.
+        \end{enumerate}
+    \end{note}
+    Now it suffices to show $\varphi$ has a fixed point. Note that $\forall p\in \Delta$, $\varphi(p)$ is non-empty, convex, and compact, and $\Delta$ is non-empty, convex, and compact.
+    \begin{claim}
+        $\varphi$ has closed graph.
+    \end{claim}
+    Let $p^n \rightarrow p\in\Delta$ and $q^n \rightarrow q\in\Delta$ where $(p^n,q^n)\in$ graph $\varphi$ $\forall n$. We want to show $(p,q)\in$ graph $\varphi$ (i.e., $q\in \varphi(p)$):
+    \begin{enumerate}[$\circ$]
+        \item \underline{Case 1}: Suppose $p\in \textnormal{int}\Delta$. Since $p>>0$, assume without losing generality, $p^n>>0$ $\forall n$. Suppose $l\notin \Lambda(p)$, we must show $q_l=0$. Since $p>>0$, $l\notin \Lambda(p) \Rightarrow Z_l(p)<\max_{k}Z_k(p)$. Since $Z$ is continuous, $\exists N$, such that $\forall n\geq N$, $Z_l(p^n)<\max_k Z_k(p^n)$ $\Rightarrow l\notin \Lambda(p^n), \forall n\geq N$ $\Rightarrow q^n_l=0, \forall n\geq N$ $\Rightarrow q_l=\lim_{n \rightarrow \infty}q^n_l=0$. So, $q\in \varphi(p)$.
+        \item \underline{Case 2}: Suppose $p\in \partial\Delta$. Without losing generality, we write $p=(0,...,0,p_{r+1},...,p_L)$, where $p_l>0$ for all $l=r+1,...,L$. So, $\Lambda(p)=\{1,...,r\}$ and $\varphi(p)=\{\tilde{q}\in\Delta:\tilde{q}_l=0,l=r+1,...,L\}$.
+        \begin{enumerate}[-]
+            \item \underline{Case 2A}: Suppose $\{p^n\}$ has a subsequence in $\textnormal{int}\Delta$. Without losing generality, let $\{p^n\}$ denote this subsequence. Since $p^n \rightarrow p\in\partial \Delta$, $\max_k Z_k(p^n) \rightarrow +\infty$. Also, by Walras' Law and lower bound in $Z$, $\{Z_l(p^n)\}$ is bounded for $l=r+1,...,L$.\\
+            Since $p^n\in \textnormal{int}\Delta, \forall n$, $\exists N_2$ s.t. $\forall n\geq N_2$, $\Lambda(p^n)\subseteq \{1,...,r\}$. Since $q^n\in \varphi(p^n), \forall n$ and $q^n_l=0,\forall l=r+1,...,L, \forall n\geq N_2$, we have $q_l=\lim_n q_l^n=0$. Hence, $q\in \varphi(p)$.
+            \item \underline{Case 2B}: No subsequence of $\{p^n\}$ lies in $\textnormal{int}\Delta$. Without losing generality, take $\{p^n\}\subseteq \partial \Delta$. Now, because $p_l>0$ for $l=r+1,...,L$, $\exists N_3$ s.t. $\forall n\geq N_3$, $p^n_l>0$ for $l=r+1,...,L$. Then, $\Lambda(p^n)\subseteq \{1,...,r\}, \forall n\geq N_3$.\\
+            By the same argument above (in Case 2A), we have $q^n\in\varphi(p^n),\forall n$ $\Rightarrow$ $q^n_l=0,\forall l=r+1,...,L, \forall n\geq N_3$ $\Rightarrow$ $q_l=\lim_{n \rightarrow \infty}q_l^n=0, \forall l=r+1,...,L$. Hence, $q\in\varphi(p)$.
+        \end{enumerate}
+    \end{enumerate}
+    All in all, $\varphi$ has closed graph. By Kakutani's Fixed Point Theorem, $\varphi$ has a fixed point. By above augment, $\bar{p}\in \textnormal{int}\Delta$ and $Z(\bar{p})=0$.
+\end{proof}
+
+
+\begin{corollary}
+    If an exchange economy satisfies assumption \ref{C}, then it has a competitive equilibrium. If a private ownership production economy satisfies assumption \ref{C} and \ref{F}, then it also has a competitive equilibrium.
+\end{corollary}
+
+
+\section{Uniqueness of Equilibrium}
+When is the equilibrium unique?
+
+One condition:
+\begin{definition}[Strong Weak Axiom]
+    \normalfont
+    The function $Z: \mathbb{R}_{++}^L \rightarrow \mathbb{R}^L$ satisfies the \underline{strong weak axiom} if for any $\bar{p}\in \mathbb{R}_{++}^L$ s.t. $Z(\bar{p})=0$ and $p\in \mathbb{R}^L_{++}$ s.t. $p\neq \alpha\bar{p}, \forall \alpha>0$, $$\bar{p}\cdot Z(p)>0$$
+\end{definition}
+
+
+
+
+
+
 
 
 
@@ -2796,8 +2980,55 @@ There exists ordinally efficient and envy-free mechanism.
 \end{example}
 
 
+\section{Pseduomarket (FF)}
+Consider an example that agent $A_1$ wants $a,b$ for $0.9$, $A_2$ wants $a,c$ for $0.9$, $A_3$ wants $b,c$ for $2$. Suppose the budget for each agent is $1$.
+
+Reminds that utility is only meaningful for the agent itself. Here, as the budget is the same, the demand of each agent is the same.
+
+\subsection{Problem of Implementability}
+An equilibrium (but can't be implemented): $A_1$ gets $\{\frac{1}{2}:\emptyset; \frac{1}{2}:a+b\}$; $A_2$ gets $\{\frac{1}{2}:\emptyset; \frac{1}{2}:a+c\}$; $A_3$ gets $\{\frac{1}{2}:\emptyset; \frac{1}{2}:b+c\}$.
 
 
+\begin{center}
+    \begin{tabular}{ccc}
+        \hline
+            Transfer Utility Economy& Pseduomarket\\
+        \hline
+            Allocation $x_j\in X_j,j=1,...,J$& Lottery $\tilde{x}_j\in \mathcal{L}(X_j)$\\
+            Price $p\in \mathbb{R}^I$& Budget $b_j$ and Price $p\in \mathbb{R}^I$\\
+            $u_j(x)=v_j(x)-p\cdot x$& $V_j(\tilde{x}_j)=\sum_x v_j(x) \mathbb{P}(\tilde{x}_j=x)$\\
+            Demand $D_j(p)=\arg\max_x u_j(x)$& $\tilde{D}_j(p)=\arg\max_{\tilde{x}:p\cdot\tilde{x}\leq b_j} V_j(\tilde{x})$\\
+            CE: $(p^*,x^*): x_j^*\in D_j(p^*), \sum_{j}x_j^*\leq S$& RE: $(p^*,\tilde{x}^*): \tilde{x}_j^*\in \tilde{D}_j(p^*), \sum_{j}\tilde{x}_j^*\leq S$\\
+            (equality holds for no zero $p^*$)\\
+        \hline
+    \end{tabular}\\
+    $S$ is supply, which equals to $\sum_i \omega_i$ if the economy with endowments.
+\end{center}
+
+We want an allocation being implementable that an allocation (a set of lotteries over agents) $\{w_1,...,w_J\}=\mathcal{W}\in \mathcal{L}(\prod_{j}X_j)$ (feasible bundles for each agent).
+
+Define $\bar{w}_j=\mathbb{E}[w_j]$ and $\bar{\mathcal{W}}=\mathbb{E}[\mathcal{W}]$
+
+\begin{definition}[Implementable]
+    \normalfont
+    A random equilibrium $(p^*,\tilde{x}^*)$ is \textbf{implementable} if there exists $\mathcal{W}$ over feasible allocations such that $w_j\in D_j(p^*)$ and $\bar{x}^*_j=\bar{w}_j, \forall j=1,...,J$.
+\end{definition}
+can be implemented by a distribution of allocations. (BvN)
+
+\begin{proposition}
+    Random equilibrium always exists.
+\end{proposition}
+
+\begin{definition}[Rich]
+    \normalfont
+    A set of valuations $\mathcal{V}^j=\{v_j(x):x\in X_j\}$ is \textbf{rich} if whenever $v_j(x)\in \mathcal{V}^j$ then $v_j(x)+a\cdot x\in \mathcal{V}^j$ for all $a\in \mathbb{R}^I$. That is $\exists x'$ such that $v_j(x')=v_j(x)+a\cdot x$.
+\end{definition}
+Complement may induce unimplementable problem.
+
+Suppose value functions live in $V$ and are \underline{rich}.
+\begin{theorem}
+    CE exists for all valuations in $V$ $\Leftrightarrow$ RE is implementable for all budgets profiles and all valuations in $V$.
+\end{theorem}
 
 
 \chapter{Auction}
