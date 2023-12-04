@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.20)  16 NOV 2023 16:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.20)  4 DEC 2023 11:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1356,7 +1356,7 @@ Package hyperref Info: Option `pageanchor' set `false' on input line 28.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<cover.png, id=469, 2055.68pt x 1155.31625pt>
+<cover.png, id=493, 2055.68pt x 1155.31625pt>
 File: cover.png Graphic file (type png)
 <use cover.png>
 Package pdftex.def Info: cover.png  used on input line 28.
@@ -1436,7 +1436,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 [2]
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
 (Font)              scaled to size 6.0pt on input line 160.
-<Pref_prop.png, id=750, 2051.665pt x 835.12pt>
+<Pref_prop.png, id=787, 2051.665pt x 835.12pt>
 File: Pref_prop.png Graphic file (type png)
 <use Pref_prop.png>
 Package pdftex.def Info: Pref_prop.png  used on input line 174.
@@ -2106,7 +2106,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 836.
 
 [20]
-<UMP-EMP.png, id=963, 611.28375pt x 363.3575pt>
+<UMP-EMP.png, id=999, 611.28375pt x 363.3575pt>
 File: UMP-EMP.png Graphic file (type png)
 <use UMP-EMP.png>
 Package pdftex.def Info: UMP-EMP.png  used on input line 878.
@@ -2828,114 +2828,234 @@ pdfTeX warning (ext4): destination with the same identifier (name{equation.4.3.1
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.1668 \end{proof}
-                  ] [38]
+                  ] [38] [39] [40
+pdfTeX warning (ext4): destination with the same identifier (name{equation.4.6.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1814 \end{proof}
+                  
+pdfTeX warning (ext4): destination with the same identifier (name{equation.4.6.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1814 \end{proof}
+                  ] [41
+pdfTeX warning (ext4): destination with the same identifier (name{equation.4.6.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1841 \end{equation}
+                     
+pdfTeX warning (ext4): destination with the same identifier (name{equation.4.6.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1841 \end{equation}
+                     
+pdfTeX warning (ext4): destination with the same identifier (name{equation.4.6.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1841 \end{equation}
+                     ] [42
+pdfTeX warning (ext4): destination with the same identifier (name{equation.4.7.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1917 \end{definition}
+                       
+pdfTeX warning (ext4): destination with the same identifier (name{equation.4.7.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1917 \end{definition}
+                       ]
+pdfTeX warning (ext4): destination with the same identifier (name{equation.4.7.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1923 \begin{equation}
+                       
+pdfTeX warning (ext4): destination with the same identifier (name{equation.4.7.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1923 \begin{equation}
+                       
+pdfTeX warning (ext4): destination with the same identifier (name{equation.4.7.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1923 \begin{equation}
+                       
+pdfTeX warning (ext4): destination with the same identifier (name{equation.4.7.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1923 \begin{equation}
+                        [43
+pdfTeX warning (ext4): destination with the same identifier (name{equation.4.7.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1961 \chapter
+               {Game Theory}]
 Chapter 5.
 
-LaTeX Warning: Reference `thm:Berge's Maximum Theorem' on page 39 undefined on input line 1751.
+LaTeX Warning: Reference `thm:Berge's Maximum Theorem' on page 44 undefined on input line 2005.
 
 
-LaTeX Warning: Reference `thm:Kakutani's Fixed Point Theorem' on page 39 undefined on input line 1755.
+LaTeX Warning: Reference `thm:Kakutani's Fixed Point Theorem' on page 44 undefined on input line 2009.
 
-[39
+[44
 
-] [40] [41] [42] [43] [44]
+] [45] [46] [47] [48] [49]
 Chapter 6.
-[45
+[50
 
-] [46] [47
+] [51] [52
 pdfTeX warning (ext4): destination with the same identifier (name{equation.6.1.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.2105 \end{theorem}
+l.2359 \end{theorem}
                     
 pdfTeX warning (ext4): destination with the same identifier (name{equation.6.1.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.2105 \end{theorem}
+l.2359 \end{theorem}
                     
 pdfTeX warning (ext4): destination with the same identifier (name{equation.6.1.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.2105 \end{theorem}
-                    ] [48] [49] [50] [51
+l.2359 \end{theorem}
+                    ] [53] [54] [55] [56
 pdfTeX warning (ext4): destination with the same identifier (name{equation.6.4.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.2354 \end{definition}
+l.2608 \end{definition}
                        
 pdfTeX warning (ext4): destination with the same identifier (name{equation.6.4.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.2354 \end{definition}
+l.2608 \end{definition}
                        ]
 pdfTeX warning (ext4): destination with the same identifier (name{equation.6.4.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2379     \begin{equation}
+l.2633     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.6.4.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2379     \begin{equation}
+l.2633     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.6.4.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2379     \begin{equation}
+l.2633     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.6.4.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2379     \begin{equation}
-                            [52]
+l.2633     \begin{equation}
+                            [57]
 
-LaTeX Warning: Reference `BST' on page 53 undefined on input line 2428.
+LaTeX Warning: Reference `BST' on page 58 undefined on input line 2682.
 
-[53]
+[58]
 pdfTeX warning (ext4): destination with the same identifier (name{equation.6.5.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2473 \begin{equation}
+l.2727 \begin{equation}
                        
 pdfTeX warning (ext4): destination with the same identifier (name{equation.6.5.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2473 \begin{equation}
+l.2727 \begin{equation}
                        
 pdfTeX warning (ext4): destination with the same identifier (name{equation.6.5.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2473 \begin{equation}
+l.2727 \begin{equation}
                        
 pdfTeX warning (ext4): destination with the same identifier (name{equation.6.5.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2473 \begin{equation}
-                        [54]
+l.2727 \begin{equation}
+                        [59]
 pdfTeX warning (ext4): destination with the same identifier (name{equation.6.5.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2500     \begin{equation}
+l.2754     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.6.5.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2500     \begin{equation}
+l.2754     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.6.5.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2500     \begin{equation}
+l.2754     \begin{equation}
                            
 pdfTeX warning (ext4): destination with the same identifier (name{equation.6.5.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2500     \begin{equation}
-                            [55] [56] [57] [58] [59] [60] [61] [62] [63] [64] [65] [66]
+l.2754     \begin{equation}
+                            [60] [61] [62] [63] [64] [65] [66] [67] [68] [69] [70] [71]
 Chapter 7.
-[67
+[72
 
-] [68] (./Economic Theory.aux)
+] [73
+pdfTeX warning (ext4): destination with the same identifier (name{equation.7.2.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.3406 \end{theorem}
+                    
+pdfTeX warning (ext4): destination with the same identifier (name{equation.7.2.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.3406 \end{theorem}
+                    
+pdfTeX warning (ext4): destination with the same identifier (name{equation.7.2.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.3406 \end{theorem}
+                    
+pdfTeX warning (ext4): destination with the same identifier (name{equation.7.2.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.3406 \end{theorem}
+                    
+pdfTeX warning (ext4): destination with the same identifier (name{equation.7.2.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.3406 \end{theorem}
+                    
+pdfTeX warning (ext4): destination with the same identifier (name{equation.7.2.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.3406 \end{theorem}
+                    
+pdfTeX warning (ext4): destination with the same identifier (name{equation.7.2.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.3406 \end{theorem}
+                    ]
+pdfTeX warning (ext4): destination with the same identifier (name{equation.7.2.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3408     \begin{equation}
+                           
+pdfTeX warning (ext4): destination with the same identifier (name{equation.7.2.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3408     \begin{equation}
+                           
+pdfTeX warning (ext4): destination with the same identifier (name{equation.7.2.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3408     \begin{equation}
+                           
+pdfTeX warning (ext4): destination with the same identifier (name{equation.7.2.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3408     \begin{equation}
+                            [74
+pdfTeX warning (ext4): destination with the same identifier (name{equation.7.2.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.3480 \end{theorem}
+                    ] [75] (./Economic Theory.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-10-10>
@@ -2951,24 +3071,24 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `"Economic Theory".out' has not changed.
-(rerunfilecheck)             Checksum: 623F0D8064B798C384163E0BDE2CDC3E;24276.
+(rerunfilecheck)             Checksum: F44110F26E5DFB4DB1984CB24C9FACD2;26176.
 Package logreq Info: Writing requests to '"Economic Theory".run.xml'.
 \openout1 = `"Economic Theory.run.xml"'.
 
  ) 
 Here is how much of TeX's memory you used:
- 42876 strings out of 474510
- 833281 string characters out of 5752974
+ 42998 strings out of 474510
+ 835137 string characters out of 5752974
  1970040 words of memory out of 5000000
- 63453 multiletter control sequences out of 15000+600000
- 587988 words of font info for 105 fonts, out of 8000000 for 9000
+ 63517 multiletter control sequences out of 15000+600000
+ 590237 words of font info for 111 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  109i,18n,136p,785b,2117s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/hoekwater/manfnt-font/manfnt.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/newtx/ztmbi.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on "Economic Theory.pdf" (73 pages, 5405419 bytes).
+Output written on "Economic Theory.pdf" (80 pages, 5441526 bytes).
 PDF statistics:
- 1801 PDF objects out of 2073 (max. 8388607)
- 1646 compressed objects within 17 object streams
- 675 named destinations out of 1000 (max. 500000)
- 996 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1922 PDF objects out of 2073 (max. 8388607)
+ 1759 compressed objects within 18 object streams
+ 731 named destinations out of 1000 (max. 500000)
+ 1044 words of extra memory for PDF output out of 10000 (max. 10000000)
 
