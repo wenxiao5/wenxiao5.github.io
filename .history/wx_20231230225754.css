@@ -13,7 +13,7 @@ body {
   color: rgb(41, 5, 77);
   background-color: rgb(251, 251, 251);
   text-align:left; /* for IE */
-  background-image:url('picture/BG9.jpeg');
+  background-image:url('picture/DALL·E\ 2023-12-30\ 22.57.17\ -\ A\ minimalistic\ and\ elegant\ personal\ website\ background\ with\ a\ primary\ color\ scheme\ of\ white\ and\ yellow.\ The\ design\ should\ feature\ subtle\ textures\ and\ .png');
   background-repeat:no-repeat;
   background-size:cover;
   background-attachment:fixed;
@@ -60,7 +60,7 @@ body {
 	padding-left: 4%;
 	padding-right: 4%;
     border: none;
-    background: rgba(226, 227, 226, 0.9);
+    background: rgba(226, 227, 226, 0.95);
     text-align: left;
     vertical-align: top;
 }
@@ -127,7 +127,7 @@ body {
 .motto {
     font-family: "STKaiti", "SimSun", serif;
     font-size: 120%;
-    color: #0c565e;
+    color: #fbfafa;
     margin-top: 10px;
     padding: 10px;
     background-color: rgba(249, 247, 247, 0);
@@ -238,7 +238,7 @@ h1, h2, h3 {
 h1 {margin-bottom: 0%;
 	font-size: 180%;
 	color: transparent;
-	background: linear-gradient(to right, #065159, #09273b, #0D0D0D);
+	background: linear-gradient(to right, #05655c, #15573a, #0D0D0D);
 	-webkit-text-fill-color: transparent;
 	background-clip: text;
 	-webkit-background-clip: text;
@@ -257,7 +257,7 @@ h2 {margin-bottom: 1%;
 	padding-top: 0.4em;
 	font-size: 110%;
 	color: transparent;
-	background: linear-gradient(to right, #065159, #09273b, #0D0D0D);
+	background: linear-gradient(to right, #144037, #155c42, #0D0D0D);
 	-webkit-text-fill-color: transparent;
 	background-clip: text;
 	-webkit-background-clip: text;

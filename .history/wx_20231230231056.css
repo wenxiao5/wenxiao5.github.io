@@ -238,7 +238,7 @@ h1, h2, h3 {
 h1 {margin-bottom: 0%;
 	font-size: 180%;
 	color: transparent;
-	background: linear-gradient(to right, #065159, #09273b, #0D0D0D);
+	background: linear-gradient(to right, #05655c, #15573a, #0D0D0D);
 	-webkit-text-fill-color: transparent;
 	background-clip: text;
 	-webkit-background-clip: text;
@@ -257,7 +257,7 @@ h2 {margin-bottom: 1%;
 	padding-top: 0.4em;
 	font-size: 110%;
 	color: transparent;
-	background: linear-gradient(to right, #065159, #09273b, #0D0D0D);
+	background: linear-gradient(to right, #144037, #155c42, #0D0D0D);
 	-webkit-text-fill-color: transparent;
 	background-clip: text;
 	-webkit-background-clip: text;
