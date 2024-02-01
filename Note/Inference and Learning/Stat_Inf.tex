@@ -3004,7 +3004,8 @@ Consider a model $Y=X^T\beta+e$, where $X\in \mathbb{R}^k$ and $\mathbb{E}_{P_0}
         \end{aligned}
         \nonumber
     \end{equation}
-    where $\lambda=\Gamma\beta$ and $v=\beta^Tu+e$.
+    where $\lambda=\Gamma\beta$ and $v=\beta^Tu+e$.\\
+    Note that $\mathbb{E}[Zv]=0$, which satisfies exogeneity. Hence, we can use OLS to estimate $\lambda$.
 \end{enumerate}
 
 
@@ -3031,6 +3032,30 @@ Consider a model $Y=X^T\beta+e$, where $X\in \mathbb{R}^k$ and $\mathbb{E}_{P_0}
         \end{aligned}
         \nonumber
     \end{equation}
+\end{enumerate}
+
+\paragraph*{Estimation of $\Gamma$ and $\lambda$:}
+\begin{enumerate}[(A).]
+    \item ``Plug In''
+    \begin{enumerate}
+        \item The estimation of $\Gamma$ is given by
+        \begin{equation}
+            \begin{aligned}
+                \hat{\Gamma}=\left(\frac{1}{m}\sum_{i=1}^m Z_iZ_i^T\right)^{-1}\left(\frac{1}{m}\sum_{i=1}^m Z_i X_i^T\right)
+            \end{aligned}
+            \nonumber
+        \end{equation}
+        The OLS estimator of regressing $X$ on $Z$ should converge to $\Gamma$.
+        \item The estimation of $\lambda$ is given by
+        \begin{equation}
+            \begin{aligned}
+                \hat{\lambda}=\left(\frac{1}{m}\sum_{i=1}^m Z_iZ_i^T\right)^{-1}\left(\frac{1}{m}\sum_{i=1}^m Z_i Y_i\right)
+            \end{aligned}
+            \nonumber
+        \end{equation}
+        which converges to $\lambda$ in probability.
+    \end{enumerate}
+    \item 
 \end{enumerate}
 
 

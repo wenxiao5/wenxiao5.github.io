@@ -142,7 +142,7 @@ By the definition of continuous function $f:\mathbb{R}^n \rightarrow \mathbb{R}$
 \subsection{Closed-valued, uhc and Closed Graph}
 For closed-valued correspondences these concepts can be more tightly connected. A closed-valued and upper hemicontinuous correspondence must have closed graph. For a closed-valued correspondence with a compact range, upper hemicontinuity is equivalent to closed graph.
 
-\begin{theorem}
+\begin{theorem}[uhc and Closed Graph]
     Let $X\subseteq \mathbb{E}^n$, $Y\subseteq \mathbb{E}^m$, and $\Psi: X \rightarrow 2^Y$.
     \begin{enumerate}
         \item $\Psi$ is \textbf{closed-valued} and \textbf{uhc} $\Rightarrow$ $\Psi$ has \textbf{closed graph}.
@@ -184,7 +184,7 @@ For closed-valued correspondences these concepts can be more tightly connected. 
 
 \subsection{Kakutani's Fixed Point Theorem: uhs, compact, convex values correspondence has a fixed point over compact convex set}
 \begin{theorem}[Kakutani's Fixed Point Theorem]\label{thm:Kakutani's Fixed Point Theorem}
-    Let $X \subseteq \mathbb{R}^n$ be a non-empty, \textbf{compact}, \textbf{convex} set and $\psi : X \rightarrow 2^X$ be an \textbf{upper hemi-continuous} correspondence with non-empty, \textbf{compact}, \textbf{convex} values. Then $\psi$ has a fixed point in $X$.
+    Let $X \subseteq \mathbb{R}^n$ be a non-empty, \textbf{compact}, \textbf{convex} set and $\psi : X \rightarrow 2^X$ be an \textbf{upper hemi-continuous} correspondence with non-empty and \textbf{convex} values. Then $\psi$ has a fixed point in $X$.
 \end{theorem}
 
 
@@ -2422,23 +2422,23 @@ Elements of $S_i$ are called pure strategies.
 \end{definition}
 
 \begin{theorem}[Existence of Nash Equilibrium]
-    A Nash equilibrium exists in $\Gamma$ if for all $i\in I$,
+    A Nash equilibrium exists in a finite game $\Gamma$, if for all $i\in I$,
     \begin{enumerate}[(i).]
         \item $S_i$ is non-empty, convex, compact, subset of $\mathbb{R}^m$ (i.e., for some finite dimensions of real numbers).
         \item $u_i(s_i,...,s_I)$ is continuous in $(s_i,...,s_I)$ and quasi-concave in any $s_i$.
     \end{enumerate}
 \end{theorem}
 \begin{proof}
-    We prove a lemma for the best response correspondence $b_i(s_{-i})=\argmax_{s_i\in S_i}u(s_i,s_{-i})$ firstly.
+    We prove a lemma for the best response correspondence $\beta_i(s_{-i})=\argmax_{s_i\in S_i}u(s_i,s_{-i})$ firstly.
     \begin{lemma}
-        Suppose $\{S_i\}_{i\in I}$ are non-empty. Suppose that $S_i$ is compact and convex and $u_i$ is continuous in $(s_i,...,s_I)$ and quasi-concave in any $s_i$, then $b_i(s_{-i})$ is non-empty, convex-valued and uhc.
+        Suppose $\{S_i\}_{i\in I}$ are non-empty. Suppose that $S_i$ is compact and convex and $u_i$ is continuous in $(s_i,...,s_I)$ and quasi-concave in any $s_i$, then best response correspondence $\beta_i(s_{-i})$ is non-empty, convex-valued and uhc.
     \end{lemma}
     \begin{proof}
         This lemma is proved by Berge's Maximum Theorem (Theroem \ref{thm:Berge's Maximum Theorem}).
     \end{proof}
-    Consider the function $b: S \rightarrow S$ with $b(s_i,...,s_I)=\{b_1(s_{-1}),...,b_I(s_{-I})\}$.
+    Consider the best response correspondence of the game $\beta$ with $\beta(s_i,...,s_I)=\{\beta_1(s_{-1}),...,\beta_I(s_{-I})\}$.
 
-    As we proved $b$ is non-empty, convex-valued and uhc from $S$ to $S$ where $S$ is non-empty, compact, and convex. By the Kakutani's Fixed Point Theorem (Theorem \ref{thm:Kakutani's Fixed Point Theorem}), we have $b$ has a fixed point $s\in S$, which should be the Nash equilibrium.
+    As we proved $\beta$ is non-empty, convex-valued and uhc from $S$ to $S$ where $S$ is non-empty, compact, and convex. By the Kakutani's Fixed Point Theorem (Theorem \ref{thm:Kakutani's Fixed Point Theorem}), we have $\beta$ has a fixed point $s\in S$, which should be the Nash equilibrium.
 \end{proof}
 
 \subsection{Bayesian Game}
