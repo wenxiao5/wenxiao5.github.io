@@ -2648,11 +2648,11 @@ Fix a normal-form game $G=\{N,\{S_i,i\in N\},\{u_i,i\in N\}\}$. Let $\gamma_i: \
 \section{Knowledge and Common Knowledge}
 \subsection{Knowledge and Information}
 \begin{enumerate}
-    \item Let $\Omega$ be a (finite) set of possible states of the world. Information is provided by a subset of $\Omega$. The smaller a subset is, the more information it provides.
+    \item Let $\Omega$ be a (finite) set of possible states of the world.
     \item Subsets $E\subseteq\Omega$ are \textbf{events}.
     \item \textbf{Knowledge} is modeled through a function $$K:2^\Omega \rightarrow 2^\Omega$$
     Interpretation: $K(E)$ (which we write as $KE$) is the event (the set of states) at which the agent knows that the event $E$ has occurred.
-    \item Given a state $\omega$, $\{E \subseteq \Omega : KE \ni \omega\}$
+    \item
     \begin{definition}[Information Function given Knowledge]
         \normalfont
         Given knowledge function $K:2^\Omega \rightarrow 2^\Omega$, we define the function $P : \Omega \rightarrow 2^\Omega$ by, $$P(\omega) = \cap\{E \subseteq \Omega : KE \ni \omega\}$$
@@ -2699,7 +2699,7 @@ These two equations provide the back and fourth relationship between knowledge a
 When $P$ is partitional we abuse notation and denote the partition by $P$ as well.
 
 \begin{theorem}[S5 $\Leftrightarrow$ P1\&P2 $\Leftrightarrow$ Partitional]
-    For a $P$ (and associated $K$), following conditions are equivalent:
+    For an information function $P$ (and associated knowledge operator $K$), following conditions are equivalent:
     \begin{enumerate}[$\circ$]
         \item $P$/$K$ is partitional;
         \item $P$ satisfies P1 and P2.
