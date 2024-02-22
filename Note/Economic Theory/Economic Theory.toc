@@ -93,40 +93,47 @@
 \contentsline {subsection}{\numberline {6.1.3}Strategic Form Game}{54}{subsection.6.1.3}%
 \contentsline {subsection}{\numberline {6.1.4}Nash Equilibrium and Existence}{56}{subsection.6.1.4}%
 \contentsline {subsection}{\numberline {6.1.5}Bayesian Game}{57}{subsection.6.1.5}%
-\contentsline {section}{\numberline {6.2}Mechanism Design}{57}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Signaling Game}{59}{section.6.3}%
-\contentsline {subsection}{\numberline {6.3.1}Canonical Game}{59}{subsection.6.3.1}%
-\contentsline {subsection}{\numberline {6.3.2}Nash Equilibrium}{60}{subsection.6.3.2}%
-\contentsline {subsection}{\numberline {6.3.3}Single-crossing}{60}{subsection.6.3.3}%
-\contentsline {subsubsection}{\numberline {6.3.3.1}Situation over real line}{60}{subsubsection.6.3.3.1}%
-\contentsline {section}{\numberline {6.4}Equilibrium Refinement}{61}{section.6.4}%
-\contentsline {subsection}{\numberline {6.4.1}Cho-Kreps Intuitive Criterion}{61}{subsection.6.4.1}%
-\contentsline {chapter}{\numberline {7}Market Design}{62}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Matching One-to-One}{62}{section.7.1}%
-\contentsline {subsection}{\numberline {7.1.1}Matching Markets: One-to-One}{63}{subsection.7.1.1}%
-\contentsline {subsection}{\numberline {7.1.2}Joint and Meet}{64}{subsection.7.1.2}%
-\contentsline {subsection}{\numberline {7.1.3}Strategic Incentives}{64}{subsection.7.1.3}%
-\contentsline {section}{\numberline {7.2}Matching Many-to-Many}{65}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Matching Many-to-One}{66}{section.7.3}%
-\contentsline {section}{\numberline {7.4}Networks}{68}{section.7.4}%
-\contentsline {section}{\numberline {7.5}Corporate Game Theory}{70}{section.7.5}%
-\contentsline {subsection}{\numberline {7.5.1}Core of Corporate Game and Farkas' lemma}{70}{subsection.7.5.1}%
-\contentsline {subsection}{\numberline {7.5.2}Doubly stochastic matrix and Birkhoff-von Neumann Theorem}{71}{subsection.7.5.2}%
-\contentsline {section}{\numberline {7.6}Constrained Demand Theory}{72}{section.7.6}%
-\contentsline {subsection}{\numberline {7.6.1}Substitutes Valuation}{72}{subsection.7.6.1}%
-\contentsline {subsection}{\numberline {7.6.2}Income Effect}{73}{subsection.7.6.2}%
-\contentsline {section}{\numberline {7.7}Object Allocation}{75}{section.7.7}%
-\contentsline {subsection}{\numberline {7.7.1}Allocation}{75}{subsection.7.7.1}%
-\contentsline {subsection}{\numberline {7.7.2}Exchange}{76}{subsection.7.7.2}%
-\contentsline {section}{\numberline {7.8}School Choice}{77}{section.7.8}%
-\contentsline {section}{\numberline {7.9}School Choice with Reserves}{79}{section.7.9}%
-\contentsline {subsection}{\numberline {7.9.1}Minority Reserves (slot-specific priority)}{80}{subsection.7.9.1}%
-\contentsline {section}{\numberline {7.10}Random Assignment}{80}{section.7.10}%
-\contentsline {section}{\numberline {7.11}Random Assignment in School Choice}{82}{section.7.11}%
-\contentsline {section}{\numberline {7.12}Pseduomarket (FF)}{82}{section.7.12}%
-\contentsline {subsection}{\numberline {7.12.1}Problem of Implementability}{82}{subsection.7.12.1}%
-\contentsline {chapter}{\numberline {8}Auction}{84}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Examples}{84}{section.8.1}%
-\contentsline {subsection}{\numberline {8.1.1}Auctions with Common-value}{84}{subsection.8.1.1}%
-\contentsline {section}{\numberline {8.2}Revenue Equivalence Theorem}{84}{section.8.2}%
-\contentsline {section}{\numberline {8.3}Optimal Auctions}{86}{section.8.3}%
+\contentsline {subsection}{\numberline {6.1.6}Zero-sum Game}{58}{subsection.6.1.6}%
+\contentsline {subsection}{\numberline {6.1.7}Correlated equilibrium}{60}{subsection.6.1.7}%
+\contentsline {subsection}{\numberline {6.1.8}Quantal Response Equilibrium}{60}{subsection.6.1.8}%
+\contentsline {section}{\numberline {6.2}Knowledge and Common Knowledge}{61}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Knowledge and Information}{61}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}Partitional Information Function}{62}{subsection.6.2.2}%
+\contentsline {subsection}{\numberline {6.2.3}Self-evident and Algebra}{63}{subsection.6.2.3}%
+\contentsline {section}{\numberline {6.3}Mechanism Design}{64}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Signaling Game}{66}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}Canonical Game}{66}{subsection.6.4.1}%
+\contentsline {subsection}{\numberline {6.4.2}Nash Equilibrium}{67}{subsection.6.4.2}%
+\contentsline {subsection}{\numberline {6.4.3}Single-crossing}{67}{subsection.6.4.3}%
+\contentsline {subsubsection}{\numberline {6.4.3.1}Situation over real line}{67}{subsubsection.6.4.3.1}%
+\contentsline {section}{\numberline {6.5}Equilibrium Refinement}{68}{section.6.5}%
+\contentsline {subsection}{\numberline {6.5.1}Cho-Kreps Intuitive Criterion}{68}{subsection.6.5.1}%
+\contentsline {chapter}{\numberline {7}Market Design}{69}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Matching One-to-One}{69}{section.7.1}%
+\contentsline {subsection}{\numberline {7.1.1}Matching Markets: One-to-One}{70}{subsection.7.1.1}%
+\contentsline {subsection}{\numberline {7.1.2}Joint and Meet}{71}{subsection.7.1.2}%
+\contentsline {subsection}{\numberline {7.1.3}Strategic Incentives}{71}{subsection.7.1.3}%
+\contentsline {section}{\numberline {7.2}Matching Many-to-Many}{72}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Matching Many-to-One}{73}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Networks}{75}{section.7.4}%
+\contentsline {section}{\numberline {7.5}Corporate Game Theory}{77}{section.7.5}%
+\contentsline {subsection}{\numberline {7.5.1}Core of Corporate Game and Farkas' lemma}{77}{subsection.7.5.1}%
+\contentsline {subsection}{\numberline {7.5.2}Doubly stochastic matrix and Birkhoff-von Neumann Theorem}{78}{subsection.7.5.2}%
+\contentsline {section}{\numberline {7.6}Constrained Demand Theory}{79}{section.7.6}%
+\contentsline {subsection}{\numberline {7.6.1}Substitutes Valuation}{79}{subsection.7.6.1}%
+\contentsline {subsection}{\numberline {7.6.2}Income Effect}{80}{subsection.7.6.2}%
+\contentsline {section}{\numberline {7.7}Object Allocation}{82}{section.7.7}%
+\contentsline {subsection}{\numberline {7.7.1}Allocation}{82}{subsection.7.7.1}%
+\contentsline {subsection}{\numberline {7.7.2}Exchange}{83}{subsection.7.7.2}%
+\contentsline {section}{\numberline {7.8}School Choice}{84}{section.7.8}%
+\contentsline {section}{\numberline {7.9}School Choice with Reserves}{86}{section.7.9}%
+\contentsline {subsection}{\numberline {7.9.1}Minority Reserves (slot-specific priority)}{87}{subsection.7.9.1}%
+\contentsline {section}{\numberline {7.10}Random Assignment}{87}{section.7.10}%
+\contentsline {section}{\numberline {7.11}Random Assignment in School Choice}{89}{section.7.11}%
+\contentsline {section}{\numberline {7.12}Pseduomarket (FF)}{89}{section.7.12}%
+\contentsline {subsection}{\numberline {7.12.1}Problem of Implementability}{89}{subsection.7.12.1}%
+\contentsline {chapter}{\numberline {8}Auction}{91}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Examples}{91}{section.8.1}%
+\contentsline {subsection}{\numberline {8.1.1}Auctions with Common-value}{91}{subsection.8.1.1}%
+\contentsline {section}{\numberline {8.2}Revenue Equivalence Theorem}{91}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Optimal Auctions}{93}{section.8.3}%
