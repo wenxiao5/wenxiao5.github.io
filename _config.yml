@@ -1,2 +1,9 @@
-theme: jekyll-theme-minimal
-image: https://github.com/xuaikun/xuaikun.github.io/blob/main/photo.JPG
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LW3J3D2D1L"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LW3J3D2D1L');
+</script>

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.20)  29 NOV 2023 08:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.20)  5 MAR 2024 16:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2382,28 +2382,58 @@ Overfull \hbox (18.04411pt too wide) detected at line 1479
 File: vector_by_vector.png Graphic file (type png)
 <use vector_by_vector.png>
 Package pdftex.def Info: vector_by_vector.png  used on input line 1498.
-(pdftex.def)             Requested size: 150.06026pt x 154.07524pt.
+(pdftex.def)             Requested size: 300.12051pt x 308.1505pt.
 [34] [35
 pdfTeX warning (ext4): destination with the same identifier (name{equation.5.5.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1549 \end{equation}
-                     
+l.1536 \end{equation}
+                      <./vector_by_vector.png>]
+pdfTeX warning (ext4): destination with the same identifier (name{equation.5.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1539 \begin{equation}
+                       
+pdfTeX warning (ext4): destination with the same identifier (name{equation.5.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1539 \begin{equation}
+                       
+pdfTeX warning (ext4): destination with the same identifier (name{equation.5.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1539 \begin{equation}
+                       
+pdfTeX warning (ext4): destination with the same identifier (name{equation.5.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1539 \begin{equation}
+                        [36
 pdfTeX warning (ext4): destination with the same identifier (name{equation.5.5.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1549 \end{equation}
-                      <./vector_by_vector.png>] [36
-pdfTeX warning (ext4): destination with the same identifier (name{equation.5.5.1}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.1595 \end{equation}
-                     ] [37
+l.1586 \end{corollary}
+                      ]
 pdfTeX warning (ext4): destination with the same identifier (name{equation.5.6.1}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.1624 \chapter
-               {Matrix Decomposition}]
+<to be read again> 
+                   \relax 
+l.1590 \begin{equation}
+                       
+pdfTeX warning (ext4): destination with the same identifier (name{equation.5.6.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1590 \begin{equation}
+                       
+pdfTeX warning (ext4): destination with the same identifier (name{equation.5.6.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1590 \begin{equation}
+                       
+pdfTeX warning (ext4): destination with the same identifier (name{equation.5.6.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1590 \begin{equation}
+                        [37]
 Chapter 6.
 [38
 
@@ -2503,7 +2533,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  109i,17n,136p,831b,1335s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/hoekwater/manfnt-font/manfnt.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/newtx/ztmbi.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on "Linear Algebra.pdf" (47 pages, 1175471 bytes).
+Output written on "Linear Algebra.pdf" (47 pages, 1175575 bytes).
 PDF statistics:
  1159 PDF objects out of 1200 (max. 8388607)
  1036 compressed objects within 11 object streams

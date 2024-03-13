@@ -90,95 +90,102 @@
 \contentsline {subsection}{\numberline {6.8.3}Random Effect Model}{71}{subsection.6.8.3}%
 \contentsline {subsection}{\numberline {6.8.4}Two-Way Fixed Effect Model}{72}{subsection.6.8.4}%
 \contentsline {subsection}{\numberline {6.8.5}Arellano Bond Approach}{73}{subsection.6.8.5}%
-\contentsline {section}{\numberline {6.9}Control Function Approach}{74}{section.6.9}%
-\contentsline {section}{\numberline {6.10}LATE (Local ATE)}{74}{section.6.10}%
-\contentsline {chapter}{\numberline {7}Machine Learning in Inference}{76}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Empirical Risk Minimization (ERM)}{76}{section.7.1}%
-\contentsline {subsection}{\numberline {7.1.1}Example: Linear MMSE (LMMSE) estimator}{76}{subsection.7.1.1}%
-\contentsline {subsection}{\numberline {7.1.2}Penalized ERM}{77}{subsection.7.1.2}%
-\contentsline {section}{\numberline {7.2}Stochastic Approximation}{78}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Stochastic Gradient Descent (SGD)}{80}{section.7.3}%
-\contentsline {section}{\numberline {7.4}SGD Application to Empirical Risk Minimization (ERM)}{81}{section.7.4}%
-\contentsline {subsection}{\numberline {7.4.1}Different Gradient Descent for ERM}{82}{subsection.7.4.1}%
-\contentsline {subsection}{\numberline {7.4.2}Constraints on Learning Problem}{82}{subsection.7.4.2}%
-\contentsline {chapter}{\numberline {8}Stochastic Integration Methods}{84}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Deterministic Methods (Better in Low Dimension)}{84}{section.8.1}%
-\contentsline {subsection}{\numberline {8.1.1}Riemann Integration}{84}{subsection.8.1.1}%
-\contentsline {subsection}{\numberline {8.1.2}Trapezoidal Rule}{84}{subsection.8.1.2}%
-\contentsline {subsection}{\numberline {8.1.3}Multidimensional Integration}{85}{subsection.8.1.3}%
-\contentsline {section}{\numberline {8.2}Stochastic Methods (Better in High Dimension)}{85}{section.8.2}%
-\contentsline {subsection}{\numberline {8.2.1}Classical Monte Carlo Integration}{85}{subsection.8.2.1}%
-\contentsline {subsection}{\numberline {8.2.2}Importance Sampling}{86}{subsection.8.2.2}%
-\contentsline {chapter}{\numberline {9}Particle Filtering}{88}{chapter.9}%
-\contentsline {section}{\numberline {9.1}Kalman Filtering (Linear Dynamic System)}{88}{section.9.1}%
-\contentsline {section}{\numberline {9.2}Particle Filtering (Nonlinear Dynamic System)}{88}{section.9.2}%
-\contentsline {subsection}{\numberline {9.2.1}Bayesian Recursive Filtering}{89}{subsection.9.2.1}%
-\contentsline {subsection}{\numberline {9.2.2}Particle Filter (bootstrap filter)}{89}{subsection.9.2.2}%
-\contentsline {chapter}{\numberline {10}EM Algorithm}{91}{chapter.10}%
-\contentsline {section}{\numberline {10.1}General Structure of the EM Algorithm}{91}{section.10.1}%
-\contentsline {section}{\numberline {10.2}Example 1: Variance Estimation}{93}{section.10.2}%
-\contentsline {subsection}{\numberline {10.2.1}Maximum-Likelihood (ML) Estimation}{93}{subsection.10.2.1}%
-\contentsline {subsection}{\numberline {10.2.2}EM Algorithm}{93}{subsection.10.2.2}%
-\contentsline {section}{\numberline {10.3}Example 2: Estimation of Gaussian Mixtures}{94}{section.10.3}%
-\contentsline {subsection}{\numberline {10.3.1}Unknown Means: ML estimation is hard}{94}{subsection.10.3.1}%
-\contentsline {subsection}{\numberline {10.3.2}Unknown Means: EM Algorithm}{95}{subsection.10.3.2}%
-\contentsline {subsection}{\numberline {10.3.3}Unknown Mixture Probabilities, Means and Variances}{96}{subsection.10.3.3}%
-\contentsline {section}{\numberline {10.4}Convergence of EM Algorithm}{96}{section.10.4}%
-\contentsline {section}{\numberline {10.5}EM As an Alternating Maximization Algorithm}{97}{section.10.5}%
-\contentsline {chapter}{\numberline {11}Hidden Markov model (HMM)}{99}{chapter.11}%
-\contentsline {section}{\numberline {11.1}Viterbi Algorithm: (MAP) estimate $X_{1:t}$ given $Y_{1:t}$}{99}{section.11.1}%
-\contentsline {subsection}{\numberline {11.1.1}MAP estimation problem}{99}{subsection.11.1.1}%
-\contentsline {subsection}{\numberline {11.1.2}Viterbi Algorithm}{100}{subsection.11.1.2}%
-\contentsline {section}{\numberline {11.2}Bayesian Estimation of a Sequence: Need (MMSE) estimate $X_{1:t}$ given $Y_{1:t}$}{101}{section.11.2}%
-\contentsline {section}{\numberline {11.3}Forward-Backward Algorithm: (MMSE) estimate $X_{1:t+1}$ given $Y_{1:t}$}{101}{section.11.3}%
-\contentsline {subsection}{\numberline {11.3.1}$\gamma _t(x) \triangleq \mathrm {P}\left \{X_t=x \mid \vec {Y}=\vec {y}\right \}$}{101}{subsection.11.3.1}%
-\contentsline {subsection}{\numberline {11.3.2}$\xi _t\left (x, x^{\prime }\right ) \triangleq \mathrm {P}\left \{X_t=x, X_{t+1}=x^{\prime } \mid \vec {Y}=\vec {y}\right \}$}{103}{subsection.11.3.2}%
-\contentsline {subsection}{\numberline {11.3.3}Scaling Factors}{103}{subsection.11.3.3}%
-\contentsline {chapter}{\numberline {12}Graphic Models}{104}{chapter.12}%
-\contentsline {section}{\numberline {12.1}Graph Theory}{104}{section.12.1}%
-\contentsline {section}{\numberline {12.2}Bayesian Networks}{105}{section.12.2}%
-\contentsline {section}{\numberline {12.3}Markov Networks}{105}{section.12.3}%
-\contentsline {subsection}{\numberline {12.3.1}General Form}{105}{subsection.12.3.1}%
-\contentsline {subsection}{\numberline {12.3.2}Hammersley-Clifford theorem}{106}{subsection.12.3.2}%
-\contentsline {subsection}{\numberline {12.3.3}Form of Gibbs distribution (Boltzmann distribution)}{106}{subsection.12.3.3}%
-\contentsline {section}{\numberline {12.4}Conversion of directed graph to undirected graph}{107}{section.12.4}%
-\contentsline {section}{\numberline {12.5} Inference and Learning}{107}{section.12.5}%
-\contentsline {subsection}{\numberline {12.5.1}Inference on Trees}{107}{subsection.12.5.1}%
-\contentsline {chapter}{\numberline {13}Variational Inference, Mean-Field Techniques}{110}{chapter.13}%
-\contentsline {section}{\numberline {13.1}Naive Mean-Field Methods}{110}{section.13.1}%
-\contentsline {subsection}{\numberline {13.1.1}Graphical Models}{111}{subsection.13.1.1}%
-\contentsline {subsection}{\numberline {13.1.2}Ising Model}{111}{subsection.13.1.2}%
-\contentsline {section}{\numberline {13.2}Exponential Families of Probability Distributions}{113}{section.13.2}%
-\contentsline {section}{\numberline {13.3}ML Estimation}{115}{section.13.3}%
-\contentsline {section}{\numberline {13.4}Maximum Entropy}{115}{section.13.4}%
-\contentsline {section}{\numberline {13.5}}{116}{section.13.5}%
-\contentsline {section}{\numberline {13.6}Connection between Exponential Families and Graphic Models}{117}{section.13.6}%
-\contentsline {subsection}{\numberline {13.6.1}Marginal polytope}{117}{subsection.13.6.1}%
-\contentsline {subsection}{\numberline {13.6.2}Locally Consistent Marginal Distributions}{117}{subsection.13.6.2}%
-\contentsline {subsection}{\numberline {13.6.3}Entropy on Tree Graphs}{119}{subsection.13.6.3}%
-\contentsline {subsection}{\numberline {13.6.4}Naive Mean-Field Methods In Graph}{120}{subsection.13.6.4}%
-\contentsline {subsection}{\numberline {13.6.5}Structural Mean Field Optimization}{120}{subsection.13.6.5}%
-\contentsline {subsection}{\numberline {13.6.6}Bethe Entropy Approximation}{120}{subsection.13.6.6}%
-\contentsline {chapter}{\numberline {14}$\ell _1$ Penalized Least Squares Minimization}{122}{chapter.14}%
-\contentsline {section}{\numberline {14.1}Problem Statement}{122}{section.14.1}%
-\contentsline {section}{\numberline {14.2}Special Cases}{123}{section.14.2}%
-\contentsline {subsection}{\numberline {14.2.1}Definition: Soft Threshold}{123}{subsection.14.2.1}%
-\contentsline {subsection}{\numberline {14.2.2}Identity $A$}{123}{subsection.14.2.2}%
-\contentsline {subsection}{\numberline {14.2.3}Orthonormal $A$}{123}{subsection.14.2.3}%
-\contentsline {subsection}{\numberline {14.2.4}Quadratic Optimization ($\lambda =0$)}{123}{subsection.14.2.4}%
-\contentsline {section}{\numberline {14.3}General Solution: Lasso}{124}{section.14.3}%
-\contentsline {section}{\numberline {14.4}General Solution: Iterative Soft Thresholding Algorithm (ISTA)}{124}{section.14.4}%
-\contentsline {subsection}{\numberline {14.4.1}Proximal Minimization Algorithm}{124}{subsection.14.4.1}%
-\contentsline {subsection}{\numberline {14.4.2}Apply to $\ell _1$-penalized least-squares}{125}{subsection.14.4.2}%
-\contentsline {section}{\numberline {14.5}Convergence Rate}{125}{section.14.5}%
-\contentsline {section}{\numberline {14.6}Fast Iterative Soft Thresholding Algorithm (FISTA)}{126}{section.14.6}%
-\contentsline {section}{\numberline {14.7}Alternating Direction Method of Multipliers (ADMM)}{126}{section.14.7}%
-\contentsline {chapter}{\numberline {15}Compressive Sensing}{128}{chapter.15}%
-\contentsline {section}{\numberline {15.1}Definitions related to Sparsity}{128}{section.15.1}%
-\contentsline {section}{\numberline {15.2}Measurement Matrix}{130}{section.15.2}%
-\contentsline {subsection}{\numberline {15.2.1}Matrix Preliminaries}{130}{subsection.15.2.1}%
-\contentsline {subsection}{\numberline {15.2.2}Recovery of k-Sparse Signals}{131}{subsection.15.2.2}%
-\contentsline {subsection}{\numberline {15.2.3}Restricted Isometry Property}{132}{subsection.15.2.3}%
-\contentsline {section}{\numberline {15.3}Robust Signal Recovery from Noiseless Observations}{132}{section.15.3}%
-\contentsline {section}{\numberline {15.4}Robust Signal Recovery from Noisy Observations}{134}{section.15.4}%
-\contentsline {subsection}{\numberline {15.4.1}Bounded Noise}{134}{subsection.15.4.1}%
+\contentsline {section}{\numberline {6.9}Control Function Approach (another approach to handle endogenieity)}{74}{section.6.9}%
+\contentsline {section}{\numberline {6.10}LATE (Local ATE): Application of I.V. on Potential Outcomes}{74}{section.6.10}%
+\contentsline {section}{\numberline {6.11}Difference in Difference (DiD)}{76}{section.6.11}%
+\contentsline {subsection}{\numberline {6.11.1}After OLS Regression}{77}{subsection.6.11.1}%
+\contentsline {subsection}{\numberline {6.11.2}Difference in Difference}{77}{subsection.6.11.2}%
+\contentsline {section}{\numberline {6.12}Extremum Estimation, M-Estimation}{78}{section.6.12}%
+\contentsline {subsection}{\numberline {6.12.1}Definitions}{78}{subsection.6.12.1}%
+\contentsline {subsection}{\numberline {6.12.2}Consistency of M-estimators}{79}{subsection.6.12.2}%
+\contentsline {subsection}{\numberline {6.12.3}Asymptotic Normality of M-estimators}{80}{subsection.6.12.3}%
+\contentsline {chapter}{\numberline {7}Machine Learning in Inference}{82}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Empirical Risk Minimization (ERM)}{82}{section.7.1}%
+\contentsline {subsection}{\numberline {7.1.1}Example: Linear MMSE (LMMSE) estimator}{82}{subsection.7.1.1}%
+\contentsline {subsection}{\numberline {7.1.2}Penalized ERM}{83}{subsection.7.1.2}%
+\contentsline {section}{\numberline {7.2}Stochastic Approximation}{84}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Stochastic Gradient Descent (SGD)}{86}{section.7.3}%
+\contentsline {section}{\numberline {7.4}SGD Application to Empirical Risk Minimization (ERM)}{87}{section.7.4}%
+\contentsline {subsection}{\numberline {7.4.1}Different Gradient Descent for ERM}{88}{subsection.7.4.1}%
+\contentsline {subsection}{\numberline {7.4.2}Constraints on Learning Problem}{88}{subsection.7.4.2}%
+\contentsline {chapter}{\numberline {8}Stochastic Integration Methods}{90}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Deterministic Methods (Better in Low Dimension)}{90}{section.8.1}%
+\contentsline {subsection}{\numberline {8.1.1}Riemann Integration}{90}{subsection.8.1.1}%
+\contentsline {subsection}{\numberline {8.1.2}Trapezoidal Rule}{90}{subsection.8.1.2}%
+\contentsline {subsection}{\numberline {8.1.3}Multidimensional Integration}{91}{subsection.8.1.3}%
+\contentsline {section}{\numberline {8.2}Stochastic Methods (Better in High Dimension)}{91}{section.8.2}%
+\contentsline {subsection}{\numberline {8.2.1}Classical Monte Carlo Integration}{91}{subsection.8.2.1}%
+\contentsline {subsection}{\numberline {8.2.2}Importance Sampling}{92}{subsection.8.2.2}%
+\contentsline {chapter}{\numberline {9}Particle Filtering}{94}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Kalman Filtering (Linear Dynamic System)}{94}{section.9.1}%
+\contentsline {section}{\numberline {9.2}Particle Filtering (Nonlinear Dynamic System)}{94}{section.9.2}%
+\contentsline {subsection}{\numberline {9.2.1}Bayesian Recursive Filtering}{95}{subsection.9.2.1}%
+\contentsline {subsection}{\numberline {9.2.2}Particle Filter (bootstrap filter)}{95}{subsection.9.2.2}%
+\contentsline {chapter}{\numberline {10}EM Algorithm}{97}{chapter.10}%
+\contentsline {section}{\numberline {10.1}General Structure of the EM Algorithm}{97}{section.10.1}%
+\contentsline {section}{\numberline {10.2}Example 1: Variance Estimation}{99}{section.10.2}%
+\contentsline {subsection}{\numberline {10.2.1}Maximum-Likelihood (ML) Estimation}{99}{subsection.10.2.1}%
+\contentsline {subsection}{\numberline {10.2.2}EM Algorithm}{99}{subsection.10.2.2}%
+\contentsline {section}{\numberline {10.3}Example 2: Estimation of Gaussian Mixtures}{100}{section.10.3}%
+\contentsline {subsection}{\numberline {10.3.1}Unknown Means: ML estimation is hard}{100}{subsection.10.3.1}%
+\contentsline {subsection}{\numberline {10.3.2}Unknown Means: EM Algorithm}{101}{subsection.10.3.2}%
+\contentsline {subsection}{\numberline {10.3.3}Unknown Mixture Probabilities, Means and Variances}{102}{subsection.10.3.3}%
+\contentsline {section}{\numberline {10.4}Convergence of EM Algorithm}{102}{section.10.4}%
+\contentsline {section}{\numberline {10.5}EM As an Alternating Maximization Algorithm}{103}{section.10.5}%
+\contentsline {chapter}{\numberline {11}Hidden Markov model (HMM)}{105}{chapter.11}%
+\contentsline {section}{\numberline {11.1}Viterbi Algorithm: (MAP) estimate $X_{1:t}$ given $Y_{1:t}$}{105}{section.11.1}%
+\contentsline {subsection}{\numberline {11.1.1}MAP estimation problem}{105}{subsection.11.1.1}%
+\contentsline {subsection}{\numberline {11.1.2}Viterbi Algorithm}{106}{subsection.11.1.2}%
+\contentsline {section}{\numberline {11.2}Bayesian Estimation of a Sequence: Need (MMSE) estimate $X_{1:t}$ given $Y_{1:t}$}{107}{section.11.2}%
+\contentsline {section}{\numberline {11.3}Forward-Backward Algorithm: (MMSE) estimate $X_{1:t+1}$ given $Y_{1:t}$}{107}{section.11.3}%
+\contentsline {subsection}{\numberline {11.3.1}$\gamma _t(x) \triangleq \mathrm {P}\left \{X_t=x \mid \vec {Y}=\vec {y}\right \}$}{107}{subsection.11.3.1}%
+\contentsline {subsection}{\numberline {11.3.2}$\xi _t\left (x, x^{\prime }\right ) \triangleq \mathrm {P}\left \{X_t=x, X_{t+1}=x^{\prime } \mid \vec {Y}=\vec {y}\right \}$}{109}{subsection.11.3.2}%
+\contentsline {subsection}{\numberline {11.3.3}Scaling Factors}{109}{subsection.11.3.3}%
+\contentsline {chapter}{\numberline {12}Graphic Models}{110}{chapter.12}%
+\contentsline {section}{\numberline {12.1}Graph Theory}{110}{section.12.1}%
+\contentsline {section}{\numberline {12.2}Bayesian Networks}{111}{section.12.2}%
+\contentsline {section}{\numberline {12.3}Markov Networks}{111}{section.12.3}%
+\contentsline {subsection}{\numberline {12.3.1}General Form}{111}{subsection.12.3.1}%
+\contentsline {subsection}{\numberline {12.3.2}Hammersley-Clifford theorem}{112}{subsection.12.3.2}%
+\contentsline {subsection}{\numberline {12.3.3}Form of Gibbs distribution (Boltzmann distribution)}{112}{subsection.12.3.3}%
+\contentsline {section}{\numberline {12.4}Conversion of directed graph to undirected graph}{113}{section.12.4}%
+\contentsline {section}{\numberline {12.5} Inference and Learning}{113}{section.12.5}%
+\contentsline {subsection}{\numberline {12.5.1}Inference on Trees}{113}{subsection.12.5.1}%
+\contentsline {chapter}{\numberline {13}Variational Inference, Mean-Field Techniques}{116}{chapter.13}%
+\contentsline {section}{\numberline {13.1}Naive Mean-Field Methods}{116}{section.13.1}%
+\contentsline {subsection}{\numberline {13.1.1}Graphical Models}{117}{subsection.13.1.1}%
+\contentsline {subsection}{\numberline {13.1.2}Ising Model}{117}{subsection.13.1.2}%
+\contentsline {section}{\numberline {13.2}Exponential Families of Probability Distributions}{119}{section.13.2}%
+\contentsline {section}{\numberline {13.3}ML Estimation}{121}{section.13.3}%
+\contentsline {section}{\numberline {13.4}Maximum Entropy}{121}{section.13.4}%
+\contentsline {section}{\numberline {13.5}}{122}{section.13.5}%
+\contentsline {section}{\numberline {13.6}Connection between Exponential Families and Graphic Models}{123}{section.13.6}%
+\contentsline {subsection}{\numberline {13.6.1}Marginal polytope}{123}{subsection.13.6.1}%
+\contentsline {subsection}{\numberline {13.6.2}Locally Consistent Marginal Distributions}{123}{subsection.13.6.2}%
+\contentsline {subsection}{\numberline {13.6.3}Entropy on Tree Graphs}{125}{subsection.13.6.3}%
+\contentsline {subsection}{\numberline {13.6.4}Naive Mean-Field Methods In Graph}{126}{subsection.13.6.4}%
+\contentsline {subsection}{\numberline {13.6.5}Structural Mean Field Optimization}{126}{subsection.13.6.5}%
+\contentsline {subsection}{\numberline {13.6.6}Bethe Entropy Approximation}{126}{subsection.13.6.6}%
+\contentsline {chapter}{\numberline {14}$\ell _1$ Penalized Least Squares Minimization}{128}{chapter.14}%
+\contentsline {section}{\numberline {14.1}Problem Statement}{128}{section.14.1}%
+\contentsline {section}{\numberline {14.2}Special Cases}{129}{section.14.2}%
+\contentsline {subsection}{\numberline {14.2.1}Definition: Soft Threshold}{129}{subsection.14.2.1}%
+\contentsline {subsection}{\numberline {14.2.2}Identity $A$}{129}{subsection.14.2.2}%
+\contentsline {subsection}{\numberline {14.2.3}Orthonormal $A$}{129}{subsection.14.2.3}%
+\contentsline {subsection}{\numberline {14.2.4}Quadratic Optimization ($\lambda =0$)}{129}{subsection.14.2.4}%
+\contentsline {section}{\numberline {14.3}General Solution: Lasso}{130}{section.14.3}%
+\contentsline {section}{\numberline {14.4}General Solution: Iterative Soft Thresholding Algorithm (ISTA)}{130}{section.14.4}%
+\contentsline {subsection}{\numberline {14.4.1}Proximal Minimization Algorithm}{130}{subsection.14.4.1}%
+\contentsline {subsection}{\numberline {14.4.2}Apply to $\ell _1$-penalized least-squares}{131}{subsection.14.4.2}%
+\contentsline {section}{\numberline {14.5}Convergence Rate}{131}{section.14.5}%
+\contentsline {section}{\numberline {14.6}Fast Iterative Soft Thresholding Algorithm (FISTA)}{132}{section.14.6}%
+\contentsline {section}{\numberline {14.7}Alternating Direction Method of Multipliers (ADMM)}{132}{section.14.7}%
+\contentsline {chapter}{\numberline {15}Compressive Sensing}{134}{chapter.15}%
+\contentsline {section}{\numberline {15.1}Definitions related to Sparsity}{134}{section.15.1}%
+\contentsline {section}{\numberline {15.2}Measurement Matrix}{136}{section.15.2}%
+\contentsline {subsection}{\numberline {15.2.1}Matrix Preliminaries}{136}{subsection.15.2.1}%
+\contentsline {subsection}{\numberline {15.2.2}Recovery of k-Sparse Signals}{137}{subsection.15.2.2}%
+\contentsline {subsection}{\numberline {15.2.3}Restricted Isometry Property}{138}{subsection.15.2.3}%
+\contentsline {section}{\numberline {15.3}Robust Signal Recovery from Noiseless Observations}{138}{section.15.3}%
+\contentsline {section}{\numberline {15.4}Robust Signal Recovery from Noisy Observations}{140}{section.15.4}%
+\contentsline {subsection}{\numberline {15.4.1}Bounded Noise}{140}{subsection.15.4.1}%
