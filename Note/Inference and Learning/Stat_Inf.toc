@@ -100,9 +100,10 @@
 \contentsline {subsection}{\numberline {6.12.2}Consistency of M-estimators}{79}{subsection.6.12.2}%
 \contentsline {subsection}{\numberline {6.12.3}Asymptotic Normality of M-estimators}{80}{subsection.6.12.3}%
 \contentsline {section}{\numberline {6.13}Binary Choice}{81}{section.6.13}%
-\contentsline {subsection}{\numberline {6.13.1}Estimation}{82}{subsection.6.13.1}%
-\contentsline {subsection}{\numberline {6.13.2}Consistency}{83}{subsection.6.13.2}%
-\contentsline {subsection}{\numberline {6.13.3}Asymptotic Normality of $\hat {\beta }_{MLE}$}{84}{subsection.6.13.3}%
+\contentsline {subsection}{\numberline {6.13.1}Latent Utility Models}{82}{subsection.6.13.1}%
+\contentsline {subsection}{\numberline {6.13.2}Estimation}{82}{subsection.6.13.2}%
+\contentsline {subsection}{\numberline {6.13.3}Consistency}{83}{subsection.6.13.3}%
+\contentsline {subsection}{\numberline {6.13.4}Asymptotic Normality of $\hat {\beta }_{MLE}$}{84}{subsection.6.13.4}%
 \contentsline {chapter}{\numberline {7}Machine Learning in Inference}{86}{chapter.7}%
 \contentsline {section}{\numberline {7.1}Empirical Risk Minimization (ERM)}{86}{section.7.1}%
 \contentsline {subsection}{\numberline {7.1.1}Example: Linear MMSE (LMMSE) estimator}{86}{subsection.7.1.1}%
