@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.3.11)  14 MAR 2024 12:31
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.3.11)  21 MAR 2024 16:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2105,15 +2105,15 @@ Overfull \hbox (11.6628pt too wide) in paragraph at lines 2931--2933
 Chapter 7.
 [82
 
-] [83] [84] [85] [86] [87] [88] [89]
-
-LaTeX Warning: Reference `BST' on page 90 undefined on input line 3995.
-
-[90] [91] [92] [93] [94] [95] [96] [97] [98] [99] [100] [101] [102] [103]
+] [83] [84] [85] [86] [87] [88]
 Chapter 8.
-[104
+[89
 
-] [105] [106] [107] (./Economic Theory.aux)
+] [90] [91] [92] [93] [94] [95] [96]
+
+LaTeX Warning: Reference `BST' on page 97 undefined on input line 4348.
+
+[97] [98] [99] [100] [101] [102] [103] [104] [105] [106] [107] [108] [109] [110] (./Economic Theory.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -2135,12 +2135,12 @@ Package logreq Info: Writing requests to '"Economic Theory".run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 43604 strings out of 474773
- 902599 string characters out of 5757724
- 1962839 words of memory out of 5000000
- 65035 multiletter control sequences out of 15000+600000
+ 43638 strings out of 474773
+ 903181 string characters out of 5757724
+ 1961839 words of memory out of 5000000
+ 65069 multiletter control sequences out of 15000+600000
  570684 words of font info for 118 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  99i,18n,107p,984b,2103s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Economic Theory.pdf (113 pages).
+Output written on Economic Theory.pdf (116 pages).
