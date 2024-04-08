@@ -2312,7 +2312,7 @@ Elements of $S_i$ are called pure strategies.
     \normalfont
     A strategy $\sigma_i\in \Delta(S_i)$ is a \textbf{dominant strategy} for $i$ in $G$, if we have $u_i(\sigma_i,\sigma_{-i})> u_i(\sigma'_i,\sigma_{-i}), \forall \sigma'_i\neq \sigma_i, \sigma_{-i}\in\times_{j\neq i}\Delta(S_j)$.\\
     A strategy $\sigma_i\in \Delta(S_i)$ is a \textbf{dominated strategy} for $i$ in $G$, if $\exists \sigma'_i\neq \sigma_i$, $u_i(\sigma_i,\sigma_{-i})<u_i(\sigma'_i,\sigma_{-i}), \forall \sigma_{-i}\in\times_{j\neq i}\Delta(S_j)$.\\
-    A strategy $\sigma_i\in \Delta(S_i)$ is a \textbf{weakly dominated strategy} for $i$ in $G$, if $\exists \sigma'_i\neq \sigma_i$, $u_i(\sigma_i,\sigma_{-i})\leq u_i(\sigma'_i,\sigma_{-i}), \forall \sigma_{-i}\in\times_{j\neq i}\Delta(S_j)$ and there is a $\sigma_{-i}\in \in\times_{j\neq i}\Delta(S_j)$, $u_i(\sigma_i,\sigma_{-i})< u_i(\sigma'_i,\sigma_{-i})$
+    A strategy $\sigma_i\in \Delta(S_i)$ is a \textbf{weakly dominated strategy} for $i$ in $G$, if $\exists \sigma'_i\neq \sigma_i$, $u_i(\sigma_i,\sigma_{-i})\leq u_i(\sigma'_i,\sigma_{-i}), \forall \sigma_{-i}\in\times_{j\neq i}\Delta(S_j)$ and there is a $\sigma_{-i}\in\times_{j\neq i}\Delta(S_j)$, $u_i(\sigma_i,\sigma_{-i})< u_i(\sigma'_i,\sigma_{-i})$
 \end{definition}
 
 \begin{lemma}
@@ -2445,7 +2445,7 @@ Elements of $S_i$ are called pure strategies.
 \begin{definition}[Bayesian Game]
     \normalfont
     A \textbf{Bayesian game} is defined by $$\Gamma=(I, \Omega, \{A_i\}_{i\in I}, \{u_i(\cdot)\}_{i\in I},\{\Theta_i\}_{i\in I}, \{F_i\}_{i\in I})$$
-    where $\Omega$ is the state space, $u_i(a_i,a_{-i},\theta_i)$ maps the actions of players and player $i$'s type $\theta_i\in \Theta_i$ to player $i$'s utilities, and $F_i\in\Delta\left(\Omega\times\Theta_i\right)$ is the (prior) distribution of the player $i$'s type.
+    where $\Omega$ is the state space, $u_i:A\times \Omega$ is $i$'s payoff function, and $F_i\in\Delta\left(\Omega\times\Theta_i\right)$ is the (prior) distribution of the player $i$'s type.
 \end{definition}
 
 \begin{definition}[Normal-form Bayesian game]
@@ -2459,7 +2459,7 @@ Elements of $S_i$ are called pure strategies.
     \end{equation}
     for all $s\in S$.
 
-    A \textbf{Bayesian Nash equilibrium} of a Bayesian game is a strategy profile $(s_1,...,s_n)$ that is a Nash equilibrium of the derived normal-form game.
+    A \textbf{Bayesian Nash equilibrium} (BNE) of a Bayesian game is a strategy profile $(s_1,...,s_n)$ that is a Nash equilibrium of the derived normal-form game.
 \end{definition}
 
 \begin{definition}[Best Response, Interim Payoff]
@@ -3074,116 +3074,6 @@ No Nash equilibrium that has higher payoffs for all players than Nash equilibriu
 
 
 
-
-
-\section{Mechanism Design}
-Design incentives for agents to reveal their types or achieve particular society outcomes.
-
-Given the set of agents, alternatives (for the society), and types (of agents) are $I, X, \Theta$ and a social choice function $f:\Theta=(\Theta_1,...,\Theta_I) \rightarrow X$.
-
-\begin{definition}[Mechanism]
-    \normalfont
-    A \textbf{mechanism} is represented as $$\Gamma=\left((S_1,...,S_I), g:S\triangleq(S_1,...,S_I) \rightarrow X\right)$$
-    where $S_i$ represents the strategy set of agent $i$.
-\end{definition}
-
-\begin{definition}[Implement]
-    \normalfont
-    $\Gamma$ (indirectly) \textbf{implements} a social choice function $f$ if $\exists \left(s_1^*(\cdot),...,s_I^*(\cdot)\right)$ of a game induced by $\Gamma$ such that $g(s_1^*(\theta_1),...,s_I^*(\theta_I))=f(\theta_1,...,\theta_I)$ for all $(\theta_1,...,\theta_I)\in \Theta$
-\end{definition}
-
-\begin{definition}[Direct Mechanism]
-    \normalfont
-    A mechanism is \textbf{direct mechanism} if $S_i=\Theta_i$ for all $i\in I$ and $g(\theta)=f(\theta)$ for all $\theta=(\theta_1,...,\theta_I)\in\Theta$. So, a direct mechanism can be represented by $\Gamma=(\Theta,f(\cdot))$.
-\end{definition}
-
-\begin{definition}[Weak Dominance]
-    \normalfont
-    A strategy is weakly dominant if for all $\theta_i\in\Theta_i$ and all $s_{-i}(\cdot)\in S_{-i}$, we have:
-    $$u_i(g(s_i(\theta_i),s_{-i}),\theta_i)\geq u_i(g(s'_i,s_{-i}),\theta_i)$$
-    for all $s'_i\neq s_i$.
-\end{definition}
-
-\begin{definition}[Dominant Strategy Equilibrium]
-    \normalfont
-    Strategy profile $s^*=(s_1^*(\cdot),...,s_I^*(\cdot))$ is a \textbf{dominant strategy (D-S) equilibrium} of $\Gamma=(S,g(\cdot))$ if for all $i\in I$ and $\theta_i\in \Theta$, we have:
-    \begin{equation}
-        \begin{aligned}
-            u_i(g(s_i^*(\theta_i),s_{-i}),\theta_i)&\geq u_i(g(s'_i,s_{-i}),\theta_i)
-        \end{aligned}
-        \nonumber
-    \end{equation}
-    for all $s'_i\in S_i$ and $s_{-i}\in S_{-i}$.
-\end{definition}
-
-\begin{definition}[Implement in dominant strategies]
-    \normalfont
-    $\Gamma$ \textbf{implements} $f$ in \textbf{dominant strategies} if $\exists$ a dominant strategy (D-S) equilibrium $s^*$ of $\Gamma$ such that $g(s^*(\theta))=f(\theta)$.
-\end{definition}
-
-\begin{definition}[Strategy-Proof, DSIC]
-    \normalfont
-    $f$ is \textbf{strategy-proof} (also called dominant-strategy-incentive-compatible, DSIC) if "$s^*_i(\theta_i)=\theta_i$ for all $\theta_i\in\Theta_i$ and all $i\in I$" is a dominant strategy (D-S) equilibrium of the direct mechanism $\Gamma=(\Theta,f(\cdot))$.
-\end{definition}
-
-\begin{theorem}[Revelation Principle]
-    Suppose that $\exists \Gamma=(S,g(\cdot))$ that (indirectly) implements $f$ in dominant strategies. Then $f$ is strategy-proof (DSIC).
-\end{theorem}
-
-\begin{center}\begin{figure}[htbp]
-    \centering
-    \begin{tikzpicture}[domain=0:3.25]
-        \node at (0,0) {Types: $\Theta$};
-        \draw[->](1,0)--(7,0) node[right] {Alternatives: $X$};
-        \draw[dashed,->](0.5,-0.5)--(3.5,-3);
-        \node at (4,-3) {$s^*(\theta)$};
-        \draw[dashed,->](4.5,-3)--(7.5,-0.5);
-        \draw[->](0,-0.5)--(3.5,-3.5);
-        \node at (4,-3.5) {$s^*=\theta$};
-        \draw[->](4.6,-3.5)--(8.1,-0.5);
-        \node at (0.5,-1.8) {Desirable};
-        \node at (0.5,-2.2) {Situation};
-        \node at (2.5,-1.3) {Mechanism};
-        \node at (2.5,-1.7) {$\Gamma$};
-        \node at (6.5,-2.5) {$f(\theta)$};
-        \node at (5.5,-1.5) {$g(s^*(\theta))$};
-    \end{tikzpicture}
-    \caption{How Mechanism Design works}
-    \label{}
-\end{figure}\end{center}
-
-\begin{theorem}[Gibbard-Satterthwaite theorem]
-    Suppose that $|X|\geq 3$ and a social choice function $f$ is surjective. Then,
-    \begin{center}
-        $f$ is strategy-proof (DSIC) $\Leftrightarrow$ $f$ is dictatorial (\ref{SWF_properties})
-    \end{center}
-\end{theorem}
-Some lemmas can help to prove the theorem.
-\begin{lemma}
-    If $f$ is strategy-proof (DSIC) and $f(\succeq)=x$ and $x\succeq_i y \Rightarrow x\succeq'_i y$ for all $i\in I$ and all $x\neq y\in X$, then $f(\succeq')=x$.
-\end{lemma}
-
-\begin{lemma}[Pareto Effeciency]
-    If $f$ is strategy-proof (DSIC) and $x\succ_i y$ for all $i\in I$, then $f(\succeq')\neq y$.
-\end{lemma}
-
-\begin{example}
-    Define $\succeq=\begin{pmatrix}
-        x&y\\
-        y&x\\
-        z&z
-    \end{pmatrix}$ and $\succeq'=\begin{pmatrix}
-        x&y\\
-        y&z\\
-        z&x
-    \end{pmatrix}$, each column 1/2 represents player 1/2's preferences.
-\end{example}
-
-
-
-
-
-
 \section{Signaling Game}
 \subsection{Canonical Game}
 \begin{definition}[Canonical Game]
@@ -3242,23 +3132,6 @@ Consider the situation that $\mathcal{T},\mathcal{S},\mathcal{A}\subseteq \mathb
     \normalfont
     The data of the game are said to satisfy the \textbf{single-crossing property} if the following holds: If $t\in \mathcal{T}$, $(s,\alpha)\in \mathcal{S}\times \Delta\mathcal{A}$ and $(s',\alpha')\in \mathcal{S}\times \Delta\mathcal{A}$ are such that $\alpha\in \Delta\mathcal{A}(s,\mathcal{T})$, $\alpha'\in \Delta\mathcal{A}(s',\mathcal{T})$, $s>s'$ and $u(t,s,\alpha)\geq u(t,s',\alpha')$, then for all $t'\in T$ such that $t'>t$, $u(t',s,\alpha)\geq u(t',s',\alpha')$.
 \end{definition}
-
-
-
-\section{Equilibrium Refinement}
-\subsection{Cho-Kreps Intuitive Criterion}
-\begin{definition}[Equilibrium Dominated Message]
-    \normalfont
-    A message is \textbf{equilibrium dominated} for a type if the type must do strictly worse by sending the message than it does in equilibrium (i.e., payoff in eq. is strictly better than maximum payoff from deviating).
-\end{definition}
-
-\begin{definition}[Cho-Kreps Intuitive Criterion]
-    \normalfont
-    If an information set is off the eq. path and a message is eq. dominated for a type, then beliefs should assign zero probability to the message coming from that type (if possible).
-\end{definition}
-
-
-
 
 \section{Adverse Selection}
 Consider a labor market that has many identical firms. In competitive equilibrium, firms' profits are $0$. Firms are price (wage) takers, risk-neutral, and CRS. There are continuum of workers with productivity levels $\theta\in\left[\underline{\theta},\overline{\theta}\right]$ (Assume workers work if it is indifferent for them between employment and non-employment).
@@ -3325,9 +3198,849 @@ Hence, there exists underemployment, which makes $1^{st}$ welfare theorem fails.
     CEs are given by $\mathbb{E}[\theta|r(\theta)\leq w]=w$. $w^*=0$ is always CE and $w^*=1$ is CE if $\alpha\leq\frac{1}{2}$.
 \end{example}
 
+\subsection{Game Theoretical Approach}
+\begin{enumerate}
+    \item Suppose there are two firms setting wages simultaneously.
+    \item Workers observe the wages in stage 1 and make an employment decision.
+\end{enumerate}
+Let $W^*$ be the set of CE wages and $w^*:=\max W^*$.
+\begin{lemma}\label{lemma:ad_l2}
+    $\forall w'\in\left(w^*,\overline{\theta}\right]$: $\mathbb{E}[\theta|r(\theta)\leq w']<w'$.
+\end{lemma}
+\begin{proof}
+    Suppose by the contradiction that $\exists w'\in \left(w^*,\overline{\theta}\right]$ s.t. $\mathbb{E}[\theta|r(\theta)\leq w']\geq w'$. Since $\mathbb{E}[\theta|r(\theta)\leq \overline{\theta}]<\overline{\theta}$, there must exist a $w''\in [w',\overline{\theta})$ s.t. $\mathbb{E}[\theta|r(\theta)\leq w'']=w''$ by intermediate value theorem, which contradicts to the definition of $w^*$.
+\end{proof}
+
+\begin{proposition}
+    \begin{enumerate}[(i).]
+        \item If $w^*>r(\underline{\theta})$ and $\exists \epsilon>0$ s.t. $\mathbb{E}[\theta|r(\theta)\leq w']>w',\forall w'\in \left(w^*-\epsilon,w^*\right)$. Then, there is a unique SPE where both firms set wage $=w^*$.
+        \item If $w^*=r(\underline{\theta})$ (complete market shutdown at $w^*$), there are multiple SPE that all give the same outcome as complete market shutdown where both firms set wage $=w^*$.
+    \end{enumerate}
+\end{proposition}
+\begin{proof}
+    \begin{lemma}\label{lemma:p1}
+        In all SPE, firms make zero profits.
+    \end{lemma}
+    \begin{proof}
+        Suppose not, i.e., at least one firm makes strictly positive profits. Then, the total profits of firms $1\&2$, $$\Pi=M(\bar{w})\left[\mathbb{E}[\theta|r(\theta)\leq\bar{w}]-\bar{w}\right]>0$$
+        where $\bar{w}$ is the max wage set by the two firms and $M(\bar{w})$ is the mass of workers willing to work at $\bar{w}$. At least one firm, $i$, makes profit $\leq\frac{\Pi}{2}$. Then, $i$'s profits from setting $\bar{w}+\delta$, with $\delta \rightarrow 0^+$, is higher:
+        \begin{equation}
+            \begin{aligned}
+                &M(\bar{w}+\delta)\left[\mathbb{E}[\theta|r(\theta)\leq\bar{w}+\delta]-\bar{w}-+\delta\right]\\
+                \geq &M(\bar{w})\left[\mathbb{E}[\theta|r(\theta)\leq\bar{w}+\delta]-\bar{w}-+\delta\right] \rightarrow \Pi \textnormal{ as }\delta \rightarrow 0
+            \end{aligned}
+            \nonumber
+        \end{equation}
+        Hence, the $i$ has incentive to deviate.
+    \end{proof}
+    \begin{lemma}\label{lemma:p2}
+        In all SPE, firm $i$ sets $w_i\leq w^*, i\in\{1,2\}$.
+    \end{lemma}
+    \begin{proof}
+        Directly given by Lemma \ref{lemma:ad_l2} and Lemma \ref{lemma:p1}.
+    \end{proof}
+    \begin{enumerate}[(i):]
+        \item In SPE, no firm $i$ sets $w_i<w^*$: suppose $w_i<w^*$ and let $j\neq i$, take any $w'_j$ s.t. $w'_j\in\left(w_i,w^*\right)$ and $w'_j>w^*-\epsilon$. Then, $j$ gets profit: $M(w'_j)\left[\mathbb{E}[\theta|r(\theta)\leq w'_j]-w'_j\right]>0$ (by Case (i)'s conditions).
+        \item By Lemma \ref{lemma:p2}, both firms set $w_i\leq w^*=r(\underline{\theta})$. Check that $\{(w_1,w_2):w_1,w_2\leq w^*\}$ is SPE wage profiles.
+    \end{enumerate}
+\end{proof}
+
+\subsection{Planner Intervention}
+Planner can't observe the true type $\theta$.
+
+The planner's tools:
+\begin{enumerate}
+    \item Take over the firms.
+    \item $w_e$, employment wage.
+    \item $w_u$, unemployment wage.
+\end{enumerate}
+s.t. budget balanced.
+
+\begin{definition}[Constrained Efficient]
+    \normalfont
+    A CE $w$ is \textbf{constrained efficient} if it cannot be Pareto improved upon by an intervention by the planner.
+\end{definition}
+
+\begin{proposition}[$w^*:=\max W^*$ is constrained efficient]
+    Let $W^*$ be the set of CE wages. $w^*:=\max W^*$ is constrained efficient.
+\end{proposition}
+\begin{proof}
+    Note that both firms are making zero profits by the Lemma \ref{lemma:p1}. Any CE wage $w\neq w^*$ can be Pareto improved by $\{w_e=w^*,w_u=0\}$. Then, we prove $w^*$ can't be Pareto improved.
+    \begin{enumerate}
+        \item Case 1: if $w^*$ gives full-employment in CE, then $w^*$ is Pareto efficient.
+        \item Case 1: suppose $w^*$ doesn't give full-employment in CE.
+        
+        Consider taking an intervention $w_e\&w_u$. Then, $\{\theta:r(\theta)+w_u\leq w_e\}=[\underline{\theta},\hat{\theta}]$ for some $\hat{\theta}\in[\underline{\theta},\overline{\theta}]$ such that
+        \begin{equation}
+            \begin{aligned}
+                r(\hat{\theta})+w_u=w_e
+            \end{aligned}
+            \label{con:1}
+        \end{equation}
+        The budget balanced gives
+        \begin{equation}
+            \begin{aligned}
+                w_e F(\hat{\theta})+w_u (1-F(\hat{\theta}))=\int_{\underline{\theta}}^{\hat{\theta}}\theta d F(\theta)
+            \end{aligned}
+            \label{con:2}
+        \end{equation}
+        Plug \eqref{con:1} into \eqref{con:2}:
+        \begin{equation}
+            \begin{aligned}
+                \left\{\begin{matrix}
+                    &w_u(\hat{\theta})=\int_{\underline{\theta}}^{\hat{\theta}}\theta d F(\theta)-r(\hat{\theta})F(\hat{\theta})=F(\hat{\theta})\left(\mathbb{E}[\theta|\theta\leq\hat{\theta}]-r(\hat{\theta})\right)\\
+                    &w_e(\hat{\theta})=\int_{\underline{\theta}}^{\hat{\theta}}\theta d F(\theta)+r(\hat{\theta})(1-F(\hat{\theta}))
+                \end{matrix}\right.
+            \end{aligned}
+            \nonumber
+        \end{equation}
+        Let $\theta^*$ be s.t. $r(\theta^*)=w^*$. Because $w^*$ is a CE price, $\mathbb{E}[\theta|\theta\leq\theta^*]=r(\theta^*)=w^*$. So, CE with $w^*$ can be implemented by $w_u(\theta^*)=0$ and $w_e(\theta^*)=w^*$.
+        \begin{enumerate}
+            \item If $\hat{\theta}<\theta^*$. $\underline{\theta}$ is worse off under the intervention since $w_e(\hat{\theta})<w^*$.
+            \item If $\hat{\theta}>\theta^*$. $\overline{\theta}$ is worse off under the intervention since $w_u(\hat{\theta})=F(\hat{\theta})\left(\mathbb{E}[\theta|\theta\leq\hat{\theta}]-r(\hat{\theta})\right)<0$ by the Lemma \ref{lemma:ad_l2}
+        \end{enumerate}
+    \end{enumerate}
+\end{proof}
+
+
+\subsection{Signaling}\label{sec:signaling}
+Suppose the worker $\theta\in[\underline{\theta},\overline{\theta}]$ can properly and costlessly reveal his type to the firms. Then,
+\begin{lemma}
+    All workers revel their types.
+\end{lemma}
+\paragraph*{Spence's Job Market Signaling Model} One worker has productivity $\theta\in\{\theta_L,\theta_H\}$ with $P(\theta_H)=\lambda$. The worker signal through his education with cost $e>0$. The education doesn't change his productivity. The payoff of the worker is the wage minus the cost:
+\begin{equation}
+    \begin{aligned}
+        u(w,e|\theta)=w-c(e,\theta)
+    \end{aligned}
+    \nonumber
+\end{equation}
+where $c(0,\theta)=0,c_e(e,\theta):=\frac{\partial c(e,\theta)}{\partial e}>0, c_\theta(e,\theta):=\frac{\partial c(e,\theta)}{\partial \theta}<0$, and $c_{e\theta}(e,\theta):=\frac{\partial^2 c(e,\theta)}{\partial e\partial \theta}<0$ (Single-Crossing Property, the difference $c(e,\theta_L)-c(e,\theta_H)$ is increasing in $e$ (i.e., $c_e(e,\theta_L)-c_e(e,\theta_H)>0$), which means if $c(e,\theta_L)$ and $c(e,\theta_H)$ intersect as functions of $e$, they only intersect at one time.)
+\begin{enumerate}[]
+    \item \underline{Stage 0}: Nature chooses the $\theta\in\{\theta_L,\theta_H\}$ with $P(\theta_H)=\lambda$.
+    \item \underline{Stage 1}: The worker learns $\theta$ and chooses $e(\theta)\geq 0$.
+    \item \underline{Stage 2}: Firms observe $e(\theta)$. Then, they simultaneously make wage offers $w_1$ and $w_2$.
+    \item \underline{Stage 3}: The worker observes $w_1,w_2$ and makes employment decision.
+\end{enumerate}
+Let $r(\theta_L)$ and $r(\theta_H)=0$. Let $\mu(e)\in[0,1]$ be the probability that in the beginning of stage 2, firms think that the worker is $\theta_H$ type with probability $\mu(e)$ when observing $e$. The corresponding expected productivity (the highest wage) that the firm can pay is
+\begin{equation}
+    \begin{aligned}
+        w(e)=\mu(e)\theta_H+(1-\mu(e))\theta_L
+    \end{aligned}
+    \nonumber
+\end{equation}
+In stage 2, both firm will set $w(e)$ (complete competition).
+
+\begin{definition}[Perfect Bayesian Equilibrium]
+    \normalfont
+    A PBE is a strategy profile ($e^*(\theta_L)$, $e^*(\theta_H)$, $w^*_1: \mathbb{R}_+ \rightarrow \mathbb{R}$, $w^*_2: \mathbb{R}_+ \rightarrow \mathbb{R}$), and a belief $\mu^*: \mathbb{R} \rightarrow [0,1]$ such that
+    \begin{enumerate}
+        \item $\forall \theta\in\{\theta_L,\theta_H\}$, the worker strategy optimal given firm strategies.
+        \item The belief $\mu^*(e)$ is derived from $\lambda, e^*(\theta_L), e^*(\theta_H)$ via Bayes' rule whenever possibly (on the equilibrium path). Outside the equilibrium path the belief $\mu^*(e)$ is arbitrarily.
+        \item Firms offer wages that form a NE of the stage 2 game, where their belief $\mu^*(e)$ about their workers' type. (sequential rationality).
+    \end{enumerate}
+\end{definition}
+We simplify the game by backward induction:
+\begin{enumerate}
+    \item \underline{Stage 3}: The worker chooses the highest wage off if it is $\geq 0$.
+    \item \underline{Stage 2}: After observing $e(\theta)$, firms chooses the wage as the expected productivity in NE,
+    \begin{equation}
+        \begin{aligned}
+            w^*(e)=\mu^*(e)\theta_H+(1-\mu^*(e))\theta_L
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    because it is a Bertrend competition.
+\end{enumerate}
+\paragraph*{Separating Equilibrium}
+In separating equilibrium, $e^*(\theta_L)\neq e^*(\theta_H)$.
+\begin{lemma}
+    In any separating PBE, $w^*(e^*(\theta))=\theta, \forall \theta\in\{\theta_L,\theta_H\}$.
+\end{lemma}
+\begin{proof}
+    By Bayes' rule, after firm observe $e^*(\theta_L)$, $\mu^*(e^*(\theta_L))=0$. Then, $w^*(e^*(\theta_L))=\theta_L$. ($e^*(\theta_H)$ is similar.)
+\end{proof}
+
+\begin{lemma}
+    In separating PBE, low type always chooses zero education, $\theta^*(\theta_L)=0$.
+\end{lemma}
+\begin{proof}
+    If not, the low type worker always has profitable deviation, $\theta^*(\theta_L)=0$.
+\end{proof}
+
+\begin{lemma}
+    Define $\underline{e}$ and $\overline{e}$ such that
+    \begin{enumerate}
+        \item $\theta_L=\theta_H-c(\underline{e},\theta_L)$ (the lowest effort can prevent the low type from mimicking high type) and
+        \item $\theta_L=\theta_H-c(\overline{e},\theta_H)$ (the highest effort can prevent the high type from pooling with low type).
+    \end{enumerate}
+    Then, in all separating PBEs, $e\in \left[\underline{e},\overline{e}\right]$.\\
+    Conversely, $\forall \hat{e}\in \left[\underline{e},\overline{e}\right]$, there is a separating PBE where $e^*(\theta_H)=\hat{e}$.
+\end{lemma}
+These different PBEs are Pareto ranked. High type prefers the PBE with a lower $e$ (the best is the one with $e^*(\theta_H)=\underline{e}$.)
+
+\paragraph*{Pooling PBE}
+$e^*(\theta)=e^*,\theta\in\{\theta_L,\theta_H\}$, $\mu^*(e^*)=\lambda$, and $w^*(e^*)=\mathbb{E}[\theta]$.
+
+\begin{lemma}
+    Define $e'$ by $\theta_L=\mathbb{E}[\theta]-c(e',\theta_L)$ (the highest effort can prevent the low type from choosing $e=0$ and get $w=\theta_L$.)\\
+    Then, for all pooling PBE, $e^*(\theta_L)=e^*(\theta_H)=e^*\in[0,e']$. Conversely, for all $\hat{e}\in [0,e']$, there is a pooling PBE with $e^*=\hat{e}$.
+\end{lemma}
+
+
+\subsection{Cho-Kreps Intuitive Criterion}
+\begin{definition}[Equilibrium Dominated Message]
+    \normalfont
+    A message is \textbf{equilibrium dominated} for a type if the type must do strictly worse by sending the message than it does in equilibrium (i.e., payoff in eq. is strictly better than maximum payoff from deviating).
+\end{definition}
+
+\begin{definition}[Cho-Kreps Intuitive Criterion]
+    \normalfont
+    If an information set is off the eq. path and a message is eq. dominated for a type, then beliefs should assign zero probability to the message coming from that type (if possible).
+\end{definition}
+
+Fix a PBE $e^*(\theta), \theta\in\{\theta_L,\theta_H\}, \mu^*(\cdot)$ (We know $w_1^*(e)=w_2^*(e)=\mu(e)\theta_H+(1-\mu(e))\theta_L$). Let $u^*(\theta),\theta\in\{\theta_L,\theta_H\}$ be the PBE utility of the type $\theta$ worker.
+
+The criterion requires the (off-path) belief $\mu^*(e):=P(\tilde{\theta}=\theta_H|e)=1-P(\tilde{\theta}=\theta_L|e)$ satisfies $$P(\tilde{\theta}=\theta|e)=0,\forall e,\theta$$ such that
+\begin{enumerate}
+    \item $u^*(\theta)>\max_{w\in[\underline{\theta},\overline{\theta}]}[w-c(e,\theta)]$
+    \item $\exists \theta'$ s.t. $u^*(\theta')\leq \max_{w\in[\underline{\theta},\overline{\theta}]}[w-c(e,\theta')]$ (make sure the sum of beliefs given $e$ is nonzero.)
+\end{enumerate}
+In this application, the only PBE that survives Intuitive Criterion is the best separating PBE, $e^*(\theta_H)=\underline{e}$ (the lowest effort).
+
+
+\subsection{Screening Model}
+Workers can undertake a contractible/observable task level $t\geq 0$. The utility of a worker is defined by $u(w,t,\theta):=w-c(t,\theta)$, where $c(\cdot,\cdot)$ satisfies the same assumption as in signaling model \ref{sec:signaling}.
+
+The Game follows
+\begin{enumerate}[]
+    \item \underline{Stage 1}: Two firms simultaneously determine sets of contracts, $(w,t)$.
+    \item \underline{Stage 2}: The worker observes all offer contracts and makes employment decision.
+    (If indifference, choose lower task contract, favor employment over unemployment. If contracts of firms are indifferent, choose each with probability 1/2.)
+\end{enumerate}
+
+The null contract is $(w,t)=(0,0)$. Assume WLOG at stage 1, each firm appears a non-empty set of contracts.
+
+\subsubsection*{Perfect Information}
+\begin{proposition}[Perfect Information]
+    If firms can observe the worker types, then in SPE firms make zero profit and type $\theta_i$ worker signs $(w^*_i,t^*_i)=(\theta_i,0)$.
+\end{proposition}
+\begin{proof}
+    \begin{claim}
+        Firms make zero profits from this contract.
+    \end{claim}
+    \begin{proof}
+        Suppose not,
+    \begin{enumerate}[$\circ$]
+        \item $w^*_i>\theta_i$ $\Rightarrow$ negative profits, firms benefit from offering null contract.
+        \item $w^*_i<\theta_i$ $\Rightarrow$ Let $\Pi$ be the total profits of the firms. Then one of the firms makes profit $\leq \frac{\Pi}{2}$. Then, this firm can benefit from offering $(w^*_i+\Delta,t^*_i)$, where $\Delta \rightarrow 0^+$.
+    \end{enumerate}
+    \end{proof}
+    Then, we prove the firms must choose $(w^*_i,t^*_i)=(\theta_i,0)$. Suppose by the way of contradiction that $t_i^*>0$. Then, one firm can profitably deviate by offering $(w^*_i,0)$.
+\end{proof}
+
+\subsubsection*{Asymmetric Information}
+\begin{lemma}\label{lemma:zero_profit}
+    In any SPE, firms obtain zero profits,
+\end{lemma}
+\begin{proof}
+    Firms must make profits $\geq 0$. Suppose by the way of contradiction that the total profit $\Pi>0$. Let $(w_L,t_L)$ be the contract signed by $\theta_L$ and $(w_H,t_H)$ be the contract signed by $\theta_H$. One firm can profitably deviate by offering $(w_L+\Delta,t_L)$ and $(w_H+\Delta,t_H)$, where $\Delta \in (0,\Pi)$.
+\end{proof}
+
+\begin{lemma}
+    There is \textbf{no} pooling SPE.
+\end{lemma}
+\begin{proof}
+    Suppose for a contradiction, $\exists$ an SPE where both worker types sign $(w_p=\mathbb{E}[\theta],t_p)$. Suppose one firm offers $(w_p,t_p)$, then another firm can only employ high type workers by offering $(\tilde{w},\tilde{t})$, where $\tilde{w}-c(\tilde{t},\theta_H)>\mathbb{E}[\theta]-c(t_p,\theta_H)$, $\tilde{w}-c(\tilde{t},\theta_L)<\mathbb{E}[\theta]-c(t_p,\theta_L)$, and $\tilde{w}<\theta_H$. (The existence is given by $\frac{\partial^2 c(t,\theta)}{\partial t\partial \theta}<0$.)
+\end{proof}
+
+\begin{lemma}
+    Let $(w_L,t_L)$ be the contract signed by $\theta_L$ and $(w_H,t_H)$ be the contract signed by $\theta_H$ in separating SPE. Then, $w_L=\theta_L$ and $w_H=\theta_H$.
+\end{lemma}
+\begin{proof}
+    Suppose $w_i>\theta_i,i\in\{L,H\}$, firms benefit from not offering this contract. So, $w_L\leq \theta_L$ and $w_H\leq \theta_H$.
+    \begin{enumerate}
+        \item \underline{$w_L=\theta_L$:} Suppose $w_L<\theta_L$. Either firm can profitably deviate by setting $(w'_L,t_L)$ such that $w_L<w'_L<\theta_L$. This offer can win all low-type workers and get a positive profit from hiring them. If $w'_L-c(t_L,\theta_H)\geq w_H-c(t_H,\theta_H)$, the offer can also hire high-type workers, which also give positive profit for the firm. Hence, there is a contradiction.
+        \item \underline{$w_H=\theta_H$:} Suppose $w_H<\theta_H$, firms get positive profits, which contradicts to the Lemma \ref{lemma:zero_profit}.
+    \end{enumerate}
+\end{proof}
+
+\begin{lemma}
+    $\theta_L$ signs the contract $(\theta_L,0)$ in SPE.
+\end{lemma}
+\begin{proof}
+    Suppose $t_L>0$. One firm can profitably deviate by offering $(\theta_L-\Delta,0)$.
+\end{proof}
+
+\begin{proposition}
+    In any (pure strategy) SPE, $\theta_L$ signs $(w_L,t_L)=(\theta_L,0)$ and $\theta_H$ signs $(w_H,t_H)=(\theta_H,t_H)$, where $t_H$ solves
+    \begin{equation}
+        \begin{aligned}
+            \theta_H-c(t_H,\theta_L)=\theta_L
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{proposition}
+
+If $\lambda:=P(\theta_H)$ is high, the pure SPE may not exist (exist $(\tilde{w},\tilde{t})$ can attract both types and make positive profit).
+
+Cross subsidizing deviation by a firm (prices one product above its market value to fund another product), $(\tilde{w},\tilde{t})$ (signed by low type) and $(\tilde{\tilde{w}},\tilde{\tilde{t}})$ (signed by high type), is a profitable deviation if $\lambda$ is large enough.
+
+
+\chapter{Mechanism Design}
+
+\section{Mechanism Design}
+Design incentives for agents to reveal their types or achieve particular society outcomes.
+
+Given
+\begin{enumerate}
+    \item the set of agents $I$ with utility function $u_i(x;\theta_i),i\in I$,
+    \item alternatives (outcomes for the society) $X$,
+    \item  types (of agents) $\Theta=(\Theta_1,...,\Theta_I)$ with prior probability $\phi$ over $\Theta$,
+    \item and a \textbf{social choice function} (SCF) $f:\Theta\rightarrow X$.
+\end{enumerate}
+
+\begin{definition}[Mechanism $\Gamma=(S,g)$]
+    \normalfont
+    A \textbf{mechanism} is represented as $$\Gamma=\left(S, g\right)$$
+    where $S\triangleq(S_1,...,S_I)(S_1,...,S_I)$ represents the set of strategies, $S_i$ represents the strategy set of agent $i$, and $g:S\triangleq(S_1,...,S_I) \rightarrow X$ is the outcome function that determines the social outcome.
+\end{definition}
+
+A \textbf{Bayesian game induced by} $\Gamma$ is $(I,S,\Theta,\phi,\tilde{u})$, where the payoffs functions are
+\begin{equation}
+    \begin{aligned}
+        \tilde{u}_i(s;\theta_i)=u_i(g(s);\theta_i)
+    \end{aligned}
+    \nonumber
+\end{equation}
+for all $i\in I, s\in S$, and $\theta_i\in\Theta_i$.
+
+
+\subsection{Implement in Dominant Strategies}
+\begin{definition}[$\Gamma$ Implements $f$]
+    \normalfont
+    A mechanism $\Gamma$ (indirectly) \textbf{implements} a social choice function (SCF) $f$ if there exists an ``equilibrium'' $s^*(\cdot)=\left(s_1^*(\cdot),...,s_I^*(\cdot)\right)$ of the Bayesian game induced by $\Gamma$ such that $$g(s_1^*(\theta_1),...,s_I^*(\theta_I))=f(\theta_1,...,\theta_I)$$ for all $(\theta_1,...,\theta_I)\in \Theta$. Here the ``equilibrium'' is a dominant strategy equilibrium or BNE.
+\end{definition}
+That is, the equilibrium in a game induced by $\Gamma$ gives the same outcome as the outcome of $f$ given by revealing agents' true types.
+
+\begin{definition}[Direct Mechanism]
+    \normalfont
+    A mechanism is \textbf{direct mechanism} if $S_i=\Theta_i$ for all $i\in I$ and $g(\theta)=f(\theta)$ for all $\theta=(\theta_1,...,\theta_I)\in\Theta$. So, a direct mechanism can be represented by $\Gamma=(\Theta,f(\cdot))$.
+\end{definition}
+
+
+A strategy is weakly dominant if for all $\theta_i\in\Theta_i$ and all $s_{-i}(\cdot)\in S_{-i}$, we have $u_i(g(s_i(\theta_i),s_{-i}),\theta_i)\geq u_i(g(s'_i,s_{-i}),\theta_i)$ for all $s'_i\neq s_i$.
+
+
+\begin{definition}[Dominant Strategy Equilibrium]
+    \normalfont
+    Strategy profile $s^*=(s_1^*(\cdot),...,s_I^*(\cdot))$ is a \textbf{dominant strategy (D-S) equilibrium} of $\Gamma=(S,g(\cdot))$ if for all $i\in I$ and $\theta_i\in \Theta$, we have, for all $s'_i\in S_i$ and $s_{-i}\in S_{-i}$:
+    \begin{equation}
+        \begin{aligned}
+            u_i(g(s_i^*(\theta_i),s_{-i}),\theta_i)&\geq u_i(g(s'_i,s_{-i}),\theta_i)
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    equivalently, in the Bayesian game induced by $\Gamma$,
+    \begin{equation}
+        \begin{aligned}
+            \tilde{u}_i(s_i^*(\theta_i),s_{-i},\theta_i)\geq \tilde{u}_i(s'_i,s_{-i},\theta_i)
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{definition}
+
+\begin{definition}[Implement in dominant strategies]
+    \normalfont
+    $\Gamma$ \textbf{implements} $f$ in \textbf{dominant strategies} if $\exists$ a dominant strategy (D-S) equilibrium $s^*$ of $\Gamma$ such that $g(s^*(\theta))=f(\theta)$.
+\end{definition}
+
+
+\subsection{Dominant-Strategy-Incentive-Compatible (DSIC)/Strategy-Proof}
+\begin{definition}[Strategy-Proof, DSIC]
+    \normalfont
+    $f$ is \textbf{strategy-proof} (also called dominant-strategy-incentive-compatible, \textbf{DSIC}) if $$s^*_i(\theta_i)=\theta_i,\quad \forall \theta_i\in\Theta_i,i\in I$$ is a dominant strategy (D-S) equilibrium of the direct mechanism $\Gamma=(\Theta,f(\cdot))$.
+\end{definition}
+
+\begin{theorem}[Revelation Principle]
+    If $\exists$ a mechanism $\Gamma=(S,g(\cdot))$ that implements $f$ in dominant strategies. Then $f$ is strategy-proof (DSIC).
+\end{theorem}
+\begin{proof}
+    Given $\Gamma$ implements $f$ in dominant strategies, there is a  D-S equilibrium $s^*=\left(s_1^*(\cdot),...,s_I^*(\cdot)\right)$ such that $g(s^*(\theta))=f(\theta)$.\\
+    By the definition of D-S equilibrium,
+    \begin{equation}
+        \begin{aligned}
+            u_i(g(s_i^*(\theta_i),s_{-i}),\theta_i)&\geq u_i(g(s'_i,s_{-i}),\theta_i)
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    By substituting $g(s^*(\theta))=f(\theta)$, we have
+    \begin{equation}
+        \begin{aligned}
+            u_i(f(\theta_i,\theta_{-i}),\theta_i)&\geq u_i(f(\theta'_i,\theta_{-i}),\theta_i),\quad \forall \theta'_i\in\Theta_i
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    which gives that $f$ is DSIC.
+\end{proof}
+
+\begin{center}\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[domain=0:3.25]
+        \node at (0,0) {Types: $\Theta$};
+        \draw[->](1,0)--(7,0) node[right] {Alternatives: $X$};
+        \draw[dashed,->](0.5,-0.5)--(3.5,-3);
+        \node at (4,-3) {$s^*(\theta)$};
+        \draw[dashed,->](4.5,-3)--(7.5,-0.5);
+        \draw[->](0,-0.5)--(3.5,-3.5);
+        \node at (4,-3.5) {$s^*=\theta$};
+        \draw[->](4.6,-3.5)--(8.1,-0.5);
+        \node at (0.5,-1.8) {Desirable};
+        \node at (0.5,-2.2) {Situation};
+        \node at (2.5,-1.3) {Mechanism};
+        \node at (2.5,-1.7) {$\Gamma$};
+        \node at (6.5,-2.5) {$f(\theta)$};
+        \node at (5.5,-1.5) {$g(s^*(\theta))$};
+    \end{tikzpicture}
+    \caption{How Mechanism Design works}
+    \label{}
+\end{figure}\end{center}
+
+\subsection{Bayesian-Incentive-Compatible (BIC)}
+\begin{definition}[BIC]
+    \normalfont
+    $f$ is Bayesian-incentive-compatible (B.I.C.) if $$s^*_i(\theta_i)=\theta_i,\quad \forall \theta_i\in\Theta_i,i\in I$$ is a BNE of the Bayesian game induced by the direct mechanism $\Gamma=(\Theta,f(\cdot))$.
+\end{definition}
+
+\begin{theorem}[Revelation Principle (BIC)]
+    If $\exists$ a mechanism $\Gamma=(S,g(\cdot))$ that implements $f$ in BNE. Then $f$ is BIC.
+\end{theorem}
 
 
 
+\begin{theorem}[Gibbard-Satterthwaite Theorem]
+    Suppose that $|X|\geq 3$ and a social choice function $f$ is surjective (i.e., $\forall x\in X$ $\exists (\theta_1,...,\theta_I)\in\Theta$ s.t. $f(\theta_1,...,\theta_I)=x$). Then,
+    \begin{center}
+        $f$ is strategy-proof (DSIC) $\Leftrightarrow$ $f$ is dictatorial (\ref{SWF_properties})
+    \end{center}
+\end{theorem}
+Some lemmas can help to prove the theorem.
+\begin{lemma}
+    If $f$ is strategy-proof (DSIC) and $f(\succeq)=x$ and $x\succeq_i y \Rightarrow x\succeq'_i y$ for all $i\in I$ and all $x\neq y\in X$, then $f(\succeq')=x$.
+\end{lemma}
+
+\begin{lemma}[Pareto Effeciency]
+    If $f$ is strategy-proof (DSIC) and $x\succ_i y$ for all $i\in I$, then $f(\succeq')\neq y$.
+\end{lemma}
+
+\begin{example}
+    Define $\succeq=\begin{pmatrix}
+        x&y\\
+        y&x\\
+        z&z
+    \end{pmatrix}$ and $\succeq'=\begin{pmatrix}
+        x&y\\
+        y&z\\
+        z&x
+    \end{pmatrix}$, each column 1/2 represents player 1/2's preferences.
+\end{example}
+
+
+
+\section{Quasi-linear Model}
+Consider $x=(k,\underbrace{t_1,...,t_I}_{t})\in X=K\times \mathbb{R}^I$, in our example, $K$ represents a set of choices for projects and $\mathbb{R}^I$ represents the set of transfers for all agents.
+
+Each agent has a quasi-linear function that represents her utility:
+\begin{equation}
+    \begin{aligned}
+        u_i(k,t,\theta_i)=v(k,\theta_i)+t_i
+    \end{aligned}
+    \nonumber
+\end{equation}
+where $v: K\times\Theta_i \rightarrow \mathbb{R}$ represents the utility without transfers.
+
+Let $p(\cdot)=\left(k(\cdot),t(\cdot)\right)$ represents the ``project-choice rule'' $k: \Theta \rightarrow K$ and the ``transfer rule'' $t: \Theta \rightarrow \mathbb{R}^I$.
+\begin{definition}[ex-post efficient]
+    \normalfont
+    $k(\cdot):\Theta \rightarrow K$ is \textbf{ex-post efficient} if $\nexists \left(\theta\in\Theta, k'\in K, t=(t_1,...,t_I)\in \mathbb{R}^I\right)$ such that
+    \begin{enumerate}[(1).]
+        \item $\sum_{i=1}^I t_i=0$
+        \item $v_i(k',\theta_i)+t_i> v_i(k(\theta),\theta_i)$, $\forall i\in I$
+    \end{enumerate}
+    i.e., we can't get a higher total social welfare. (Because of the transfers, a higher social welfare can make everyone better off.)
+\end{definition}
+
+\begin{proposition}[ex-post efficient $\Leftrightarrow$ maximizing the sum of utilities]
+    $\forall$ project-choice rule $k(\cdot)$, $k(\cdot)$ is ex-post efficient \underline{if and only if} $k(\cdot)$ maximizes the sum of utilities, i.e., $\forall \theta\in\Theta$ and $\forall k'\in K$,
+    \begin{equation}
+        \begin{aligned}
+            \sum_{i=1}^I v_i(k(\theta),\theta_i)\geq \sum_{i=1}^I v_i(k',\theta_i)
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{proposition}
+\begin{proof}
+    ``$\Leftarrow$'': Suppose by the way of contradiction that there exists $\left(\theta, k', t\right)$ such that $\sum_{i=1}^I t_i=0$ and $v_i(k',\theta_i)+t_i> v_i(k(\theta),\theta_i)$, $\forall i\in I$. Sum together, there is a contradiction.\\
+    ``$\Rightarrow$'': Suppose by the way of contradiction that there exists $(\theta,k')$, $\sum_{i=1}^I v_i(k(\theta),\theta_i)<\sum_{i=1}^I v_i(k',\theta_i)$. Then, we can define a $t$ such that satisfies $\sum_{i=1}^I t_i=0$ and $v_i(k',\theta_i)+t_i> v_i(k(\theta),\theta_i)$, $\forall i\in I$. Let $\Delta=\sum_{i=1}^I v_i(k',\theta_i)-\sum_{i=1}^I v_i(k(\theta),\theta_i)$, then $t_i=v_i(k(\theta),\theta_i)-v_i(k',\theta_i)+\frac{\Delta}{I},\forall i\in I$ is the transfer-choice we want.
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Auction}
+Based on
+\begin{enumerate}[$\circ$]
+    \item Klemperer, P. (1998). Auctions with almost common values: The Wallet Game'and its applications. \textit{European Economic Review}, 42(3-5), 757-769.
+\end{enumerate}
+
+
+\subsection{Examples: Auctions with Common-value}
+\begin{enumerate}[(1).]
+    \item Financial assets;
+    \item Oilfields;
+    \item A takeover target has a common value if the bidders are financial acquirers (e.g. LBO firms) who will follow similar management strategies if successful;
+    \item The Personal Communications Spectrum (PCS) licenses sold by the U.S. Government in the 1995 "Airwaves Auction".
+\end{enumerate}
+
+\subsection{First/Second Price Sealed-bid Auction}
+\begin{enumerate}[$\circ$]
+    \item A seller sells a indivisible object.
+    \item There are $N=\{1,...,n\}$ bidders, $i\in N$.
+    \item Each bidder has a valuation for the object, $X_i\sim F$, $x_i\in[\underline{x},\overline{x}]$. p.d.f. $f(\cdot)$ is strictly positive and continuous.
+    \item Strategy of $i$: $b_i:[\underline{x},\overline{x}] \rightarrow \mathbb{R}$, a \underline{bid function}.
+\end{enumerate}
+
+\begin{assumption}
+    1. Independence; 2. Symmetry; 3. Private Values; 4. Risk-neutrality.
+\end{assumption}
+
+Let $X=(X_1,...,X_n)$. The $k^{th}$-order statistic, $X^k$, is the $k^{th}$ the highest value in $X_1,...,X_n$.
+
+\begin{definition}[Second Price Auction]
+    \normalfont
+    Highest bidder wins and pays the second-highest bid. (If more than one bidders bid the highest value, they win with equal probability.)\\
+    It can be written as the form of Bayesian game: a bidder $i$'s utility function is
+    \begin{equation}
+        \begin{aligned}
+            u_i(b_1,...,b_n;x_i)=\left\{\begin{matrix}
+                \frac{1}{|\{j\in N:b_j=b_i\}|}x_i-b^2,&b_i=b^1\\
+                0,&b_i\neq b^1
+            \end{matrix}\right.
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    where $b^k$ is the $k$-th highest bid.
+\end{definition}
+
+\begin{theorem}[Second Price Auction: Bid Truthfully]
+    In the second-price sealed-bid auction, it is a (weakly) dominant strategy to bid your valuation, i.e., $\forall i\in N,\forall x_i\in[\underline{x},\overline{x}]$, $b_i(x_i)=x_i$.\\
+    That is, $\forall i, \forall b'_i\in \mathbb{R}$,
+    \begin{equation}
+        \begin{aligned}
+            u_i(x_i,b_{-i};x_i)\geq u_i(b'_i,b_{-i};x_i), \forall b_{-i}\in \mathbb{R}^{n-1}
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    (Moreover, if $\exists b'_{i}\neq x_i$, then $\exists b_{-i}\in \mathbb{R}^{n-1}$ such that $u_i(x_i,b_{-i};x_i)> u_i(b'_{i},b_{-i};x_i)$.)
+\end{theorem}
+\begin{proof}
+    Player $i$ has value $x_i$ and treats $b^1_{-i}$ as a random variable. The payoff conditional on winning is $$x_i-b^1_{-i}$$ By bidding $b_i=x_i$, $i$ ensures that $i$ wins if $b_i=x_i>b^1_{-i}\Leftrightarrow x_i-b^1_{-i}>0$ and $i$ loses if $b_i=x_i<b^1_{-i}\Leftrightarrow x_i-b^1_{-i}<0$.
+\end{proof}
+
+\begin{definition}[First Price Auction]
+    \normalfont
+    Highest bidder wins and pays her bid. (If more than one bidder bid the highest value, they win with equal probability.)\\
+    It can be written as the form of Bayesian game: a bidder $i$'s utility function is
+    \begin{equation}
+        \begin{aligned}
+            u_i(b_1,...,b_n;x_i)=\left\{\begin{matrix}
+                \frac{1}{|\{j\in N:b_j=b_i\}|}x_i-b_i,&b_i=b^1\\
+                0,&b_i\neq b^1
+            \end{matrix}\right.
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    where $b^k$ is the $k$-th highest bid.
+\end{definition}
+
+
+\subsubsection*{Bayesian Nash Equilibrium Analysis of First Price Auction}
+Conjecture that $\exists$ a BNE with the following properties:
+\begin{enumerate}
+    \item Symmetry: $b_1(\cdot)=b_2(\cdot)=\cdots=b_n(\cdot):=b(\cdot)$.
+    \item $b(\cdot)$ is differentiable.
+    \item $b'(\cdot)>0$.
+\end{enumerate}
+Take any bidder $i$ with valuation $x_i$. Assume $i$ knows $b(\cdot)$ and knows that the other bidder use the same $b(\cdot)$. Take any $b_i\in \mathbb{R}$ ($b_i:=b(x_i)$). (Not that, by the continuity of $X_i$, it is impossible to tie in this case.)
+
+Then, $i$'s expected payoff from bidding $b_i$ is
+\begin{equation}
+    \begin{aligned}
+        P(b(X_j)\leq b_i,\forall j\neq i)(x_i-b_i)=F^{n-1}(b^{-1}(b_i))(x_i-b_i)
+    \end{aligned}
+    \nonumber
+\end{equation}
+The necessary F.O.C. gives that optimal $b_i$ satisfies
+\begin{equation}
+    \begin{aligned}
+        (n-1)f(b^{-1}(b_i))\frac{1}{b'(b^{-1}(b_i))}F^{n-2}(b^{-1}(b_i))(x_i-b_i)-F^{n-1}(b^{-1}(b_i))=0
+    \end{aligned}
+    \nonumber
+\end{equation}
+Since $b(\cdot)$ is a symmetric BNE, the optimal $b_i$ must be $b(x_i)$, then $b^{-1}(b_i)=x_i$.
+\begin{equation}
+    \begin{aligned}
+        (n-1)f(x_i)\frac{1}{b'(x_i)}F^{n-2}(x_i)(x_i-b(x_i))-F^{n-1}(x_i)=0
+    \end{aligned}
+    \nonumber
+\end{equation}
+Hence,
+\begin{equation}
+    \begin{aligned}
+        \underbrace{(n-1)f(x_i)F^{n-2}(x_i)x_i+F^{n-1}(x_i)}_{\frac{\partial F^{n-1}(x_i)x_i}{\partial x_i}}-F^{n-1}(x_i)=\underbrace{(n-1)f(x_i)F^{n-2}(x_i)b(x_i)+b'(x_i)F^{n-1}(x_i)}_{\frac{\partial F^{n-1}(x_i)b(x_i)}{\partial x_i}}
+    \end{aligned}
+    \nonumber
+\end{equation}
+Taking integral at both sides in $[\underline{x},x]$,
+\begin{equation}
+    \begin{aligned}
+        F^{n-1}(x)x-\int_{\underline{x}}^x F^{n-1}(t) dt= F^{n-1}(x)b(x)
+    \end{aligned}
+    \nonumber
+\end{equation}
+That is,
+\begin{equation}
+    \begin{aligned}
+        b(x)=x-\frac{1}{F^{n-1}(x)}\int_{\underline{x}}^x F^{n-1}(t) dt
+    \end{aligned}
+    \label{FPA:symmetric BNE}
+\end{equation}
+Note $b(\cdot)$ is differentiable and $b'(\cdot)>0$. We can extend $b(\cdot)$ to $[\underline{x},\overline{x}]$ by setting $b(\underline{x})=\lim_{x \rightarrow \underline{x}} b(x)=\underline{x}$.
+
+\begin{proposition}[Symmetric BNE of First Price Auction]
+    $b(x)=x-\frac{1}{F^{n-1}(x)}\int_{\underline{x}}^x F^{n-1}(t) dt$ is a symmetric BNE of First Price Auction.
+\end{proposition}
+\begin{proof}
+    Any bid higher than $b(\overline{x})$ is suboptimal, and any bid lower than $b(\underline{x})$ is indifferent to the $b(\underline{x})$.\\
+    We prove that, for a bidder with $x_i$, she prefers to bid $b(x_i)$ than $b(y),\forall y$.\\
+    Bidding $b(y)$ gives expected payoff
+    \begin{equation}
+        \begin{aligned}
+            F^{n-1}(y)(x_i-b(y))&=F^{n-1}(y)(y-b(y))+F^{n-1}(y)(x_i-y)\\
+            (\textnormal{by \eqref{FPA:symmetric BNE}})&=\int_{\underline{x}}^y F^{n-1}(t) dt+F^{n-1}(y)(x_i-y)\\
+            &=\int_{\underline{x}}^{x_i} F^{n-1}(t) dt-\underbrace{\int_y^{x_i} [F^{n-1}(t)-F^{n-1}(y)] dt}_{\geq 0, \textnormal{ minimized at }y=x_i}
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{proof}
+
+\begin{theorem}[Lebrun, 1999]
+    Consider the bid function $b(\cdot)$ in \eqref{FPA:symmetric BNE}, the First Price Auction has essentially unique. (Bidders with types $x>\underline{x}$ bid $b(x)$ and bid for type $x=\underline{x}$ is not pinned down any further than the support $b_i(\underline{x})$ must lie in $(-\infty,b(\underline{x})]$.)
+\end{theorem}
+
+
+
+
+
+\section{Revenue Equivalence Theorem}
+Consider the Optimal Auctions in an Independent Private Values Setting. There is one object and $N$ bidders.
+\begin{enumerate}
+    \item Bidders are risk-neutral;
+    \item Bidders have private valuations;
+    \item each bidder $i$'s valuation independently drawn from a strictly increasing c.d.f. $F_i(v)$ (with p.d.f. $f_i(v),v\in \mathcal{X}_i$) that is continuous and bounded below;
+    \item Seller knows each $F_i$ (use $F$ and $f$ to represent all distributions) and have no value for the object.
+\end{enumerate}
+
+\begin{definition}[General Auction]
+    \normalfont
+    A general auction mechanism: bidders have values $x$ and \textbf{strategies} $\beta: \mathcal{X}\triangleq \prod_i^N \mathcal{X}_i \rightarrow \mathcal{B}$ generate message (bids) based on their values, then there is an \textbf{allocation rule} based on bids $\pi: \mathcal{B} \rightarrow \Delta N$ generates a distribution over all bidders and a \textbf{payment rule} $\mu: \mathcal{B} \rightarrow \mathbb{R}^N$ generates payment for all bidders.
+\end{definition}
+
+\begin{definition}[Direct Mechansim]
+    \normalfont
+    Consider a situation that bidders follow \textit{revelation principle} that provide their true values. Then the outcome can directly base on the true values.\\
+    Then a \textbf{direct mechanism} can be represented as $(Q,T)$, where $Q: \mathcal{X} \rightarrow \Delta N$ is the allocation rule and $T: \mathcal{X} \rightarrow \mathbb{R}^N$ is the payment rule, such that
+    \begin{equation}
+        \begin{aligned}
+            Q(x)=\pi(\beta(x)),\quad T(x)=\mu(\beta(x))
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{definition}
+
+\begin{proposition}[Revelation Principle]
+    Take any equilibrium of any auction mechanism $(\mathcal{B},\pi,\mu)$. There is a distinct direct mechanism $(Q,T)$ that produces the same outcome.
+\end{proposition}
+
+
+Consider a direct mechanism $(Q,T)$, an agent $i$ reports $v_i$ while others report their values.
+\begin{equation}
+    \begin{aligned}
+        \textbf{Expected allocation: }&q_i(z_i)=\int_{\mathcal{X}_{-i}}Q_i(z_i,x_{-i})dF_{-i}(x_{-i})\\
+        \textbf{Expected payment: }&t_i(z_i)=\int_{\mathcal{X}_{-i}}T_i(z_i,x_{-i})dF_{-i}(x_{-i})
+    \end{aligned}
+    \nonumber
+\end{equation}
+where $Q_i, T_i$ are $i^\textnormal{th}$ item of $Q,T$.\\
+The bidder wants to maximize
+\begin{equation}
+    \begin{aligned}
+        q_i(z_i) x_i - t_i(z_i)
+    \end{aligned}
+    \nonumber
+\end{equation}
+Define the maximum value is
+\begin{equation}
+    \begin{aligned}
+        u_i(x_i)=\max_{z_i\in \mathcal{X}_i}\{q_i(z_i) x_i - t_i(z_i)\}
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+\begin{assumption}
+    The condition for direct mechanism being incentive competitive (IC) is:
+    \begin{equation}
+        \begin{aligned}
+            u_i(x_i)\equiv q_i(x_i) x_i - t_i(x_i)\geq q_i(z_i) x_i - t_i(z_i), \forall x_i, z_i\in \mathcal{X}_i
+        \end{aligned}
+        \tag{Ass 1}
+        \label{Ass 1}
+    \end{equation}
+\end{assumption}
+
+
+Firstly, we can compute, for any $z_i\in \mathcal{X}_i$
+\begin{equation}
+    \begin{aligned}
+        &q_i(x_i)z_i-t_i(x_i)\\
+        =&q_i(x_i)x_i-t_i(x_i)+q_i(x_i)(z_i-x_i)\\
+        =&u_i(x_i)+q_i(x_i)(z_i-x_i)
+    \end{aligned}
+    \nonumber
+\end{equation}
+Based on the assumption \ref{Ass 1}, we have
+\begin{equation}
+    \begin{aligned}
+        u_i(z_i)\geq q_i(x_i)z_i-t_i(x_i)=u_i(x_i)+q_i(x_i)(z_i-x_i)
+    \end{aligned}
+    \nonumber
+\end{equation}
+which shows that $u_i(\cdot)$ is convex.
+
+If $u_i$ is differentiable, $u'_i(x_i)=q_i(x_i)$. Then, we can write the \textbf{Envelope theorem/condition}:
+\begin{equation}
+    \begin{aligned}
+        u_i(x_i)=u_i(0)+\int_0^{x_i} q_i(y_i)dy_i
+    \end{aligned}
+    \nonumber
+\end{equation}
+which only depends on the allocation rule.
+
+\begin{theorem}[Revenue Equivalence Theorem]
+    If the direct mechanism $(Q,T)$ is incentive competitive (IC), then for all $i,x$, the \textbf{expected payment} is
+    \begin{equation}
+        \begin{aligned}
+            t_i(x_i)=\underbrace{t_i(0)}_{e.g.=0}+q_i(x_i)x_i-\int_0^{x_i} q_i(y_i)dy_i
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{theorem}
+\begin{proof}
+    \begin{equation}
+        \begin{aligned}
+            u_i(x_i)= q_i(x_i) x_i - t_i(x_i)=u_i(0)+\int_0^{x_i} q_i(y_i)dy_i\\
+            \Rightarrow t_i(x_i)=q_i(x_i)x_i-u_i(0)-\int_0^{x_i} q_i(y_i)dy_i
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    Set $u_i(0)=-t_i(0)$, that is, if $i$'s value is zero, he pays zero.
+\end{proof}
+
+\begin{corollary}[Standard Revenue Equivalence Theorem]
+    Suppose that values are \underline{i.i.d.} and bidders are \underline{risk-neutral}.\\
+    Consider any auction and its \underline{symmetric} and \underline{increasing} equilibrium, in which the expected payment of bidders have $0$ value is $0$. Then the expected revenue to the seller is the \underline{same}.
+\end{corollary}
+\begin{proof}
+    If equilibrium, is symmetric and increasing, then object is \underline{always} allocated to the bidder with the highest value. Set $t_i(0)=0$.
+\end{proof}
+
+Standard Revenue Equivalence Theorem is based on \underline{symmetric}, \underline{independent}, and \underline{private} (uncorrelated) values.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Optimal Auctions}
+\underline{Goal:} Find the \textbf{optimal auction} that maximizes the seller's expected revenue subject to individual rationality (IR) and Bayesian incentive compatibility for the buyers.
+
+
+\begin{definition}[Virtual Valuation]
+    \normalfont
+    Bidder $i$'s \textbf{virtual valuation} is $\phi_i(v_i)=v_i-\frac{1-F_i(v_i)}{f(v_i)}$
+\end{definition}
+
+\begin{definition}[Bidder-Specific Reserve Price]
+    \normalfont
+    Bidder $i$'s bidder-specific reserve price $r_i^*$ is the value for which $\phi_i(r_i^*)=0$.
+\end{definition}
+
+\begin{theorem}[Myerson (1981)]
+    The optimal (single-good) auction in terms of a direct mechanism: The good is sold to the agent $i=\arg\max_i\phi_i(\hat{v}_i)$, as long as $v_i\geq r_i^*$. If the good is sold, the winning agent $i$ is charged the smallest valuation that he could have declared while still remaining the winner:
+    \begin{equation}
+        \begin{aligned}
+            \inf\{v_i^*:\phi_i(v_i^*)\geq 0 \textnormal{ and }\forall j\neq i, \phi_i(v_i^*)\geq \phi_j(\hat{v}_j)\}
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{theorem}
 
 
 
@@ -4402,202 +5115,6 @@ Suppose value functions live in $V$ and are \underline{rich}.
 \begin{theorem}
     CE exists for all valuations in $V$ $\Leftrightarrow$ RE is implementable for all budgets profiles and all valuations in $V$.
 \end{theorem}
-
-
-\chapter{Auction}
-Based on
-\begin{enumerate}[$\circ$]
-    \item Klemperer, P. (1998). Auctions with almost common values: The Wallet Game'and its applications. \textit{European Economic Review}, 42(3-5), 757-769.
-\end{enumerate}
-
-
-\section{Examples}
-\subsection{Auctions with Common-value}
-\begin{enumerate}[(1).]
-    \item Financial assets;
-    \item Oilfields;
-    \item A takeover target has a common value if the bidders are financial acquirers (e.g. LBO firms) who will follow similar management strategies if successful;
-    \item The Personal Communications Spectrum (PCS) licenses sold by the U.S. Government in the 1995 "Airwaves Auction".
-\end{enumerate}
-
-\section{Revenue Equivalence Theorem}
-Consider the Optimal Auctions in an Independent Private Values Setting. There is one object and $N$ bidders.
-\begin{enumerate}
-    \item Bidders are risk-neutral;
-    \item Bidders have private valuations;
-    \item each bidder $i$'s valuation independently drawn from a strictly increasing c.d.f. $F_i(v)$ (with p.d.f. $f_i(v),v\in \mathcal{X}_i$) that is continuous and bounded below;
-    \item Seller knows each $F_i$ (use $F$ and $f$ to represent all distributions) and have no value for the object.
-\end{enumerate}
-
-\begin{definition}[General Auction]
-    \normalfont
-    A general auction mechanism: bidders have values $x$ and \textbf{strategies} $\beta: \mathcal{X}\triangleq \prod_i^N \mathcal{X}_i \rightarrow \mathcal{B}$ generate message (bids) based on their values, then there is an \textbf{allocation rule} based on bids $\pi: \mathcal{B} \rightarrow \Delta N$ generates a distribution over all bidders and a \textbf{payment rule} $\mu: \mathcal{B} \rightarrow \mathbb{R}^N$ generates payment for all bidders.
-\end{definition}
-
-\begin{definition}[Direct Mechansim]
-    \normalfont
-    Consider a situation that bidders follow \textit{revelation principle} that provide their true values. Then the outcome can directly base on the true values.\\
-    Then a \textbf{direct mechanism} can be represented as $(Q,T)$, where $Q: \mathcal{X} \rightarrow \Delta N$ is the allocation rule and $T: \mathcal{X} \rightarrow \mathbb{R}^N$ is the payment rule, such that
-    \begin{equation}
-        \begin{aligned}
-            Q(x)=\pi(\beta(x)),\quad T(x)=\mu(\beta(x))
-        \end{aligned}
-        \nonumber
-    \end{equation}
-\end{definition}
-
-\begin{proposition}[Revelation Principle]
-    Take any equilibrium of any auction mechanism $(\mathcal{B},\pi,\mu)$. There is a distinct direct mechanism $(Q,T)$ that produces the same outcome.
-\end{proposition}
-
-
-Consider a direct mechanism $(Q,T)$, an agent $i$ reports $v_i$ while others report their values.
-\begin{equation}
-    \begin{aligned}
-        \textbf{Expected allocation: }&q_i(z_i)=\int_{\mathcal{X}_{-i}}Q_i(z_i,x_{-i})dF_{-i}(x_{-i})\\
-        \textbf{Expected payment: }&t_i(z_i)=\int_{\mathcal{X}_{-i}}T_i(z_i,x_{-i})dF_{-i}(x_{-i})
-    \end{aligned}
-    \nonumber
-\end{equation}
-where $Q_i, T_i$ are $i^\textnormal{th}$ item of $Q,T$.\\
-The bidder wants to maximize
-\begin{equation}
-    \begin{aligned}
-        q_i(z_i) x_i - t_i(z_i)
-    \end{aligned}
-    \nonumber
-\end{equation}
-Define the maximum value is
-\begin{equation}
-    \begin{aligned}
-        u_i(x_i)=\max_{z_i\in \mathcal{X}_i}\{q_i(z_i) x_i - t_i(z_i)\}
-    \end{aligned}
-    \nonumber
-\end{equation}
-
-\begin{assumption}
-    The condition for direct mechanism being incentive competitive (IC) is:
-    \begin{equation}
-        \begin{aligned}
-            u_i(x_i)\equiv q_i(x_i) x_i - t_i(x_i)\geq q_i(z_i) x_i - t_i(z_i), \forall x_i, z_i\in \mathcal{X}_i
-        \end{aligned}
-        \tag{Ass 1}
-        \label{Ass 1}
-    \end{equation}
-\end{assumption}
-
-
-Firstly, we can compute, for any $z_i\in \mathcal{X}_i$
-\begin{equation}
-    \begin{aligned}
-        &q_i(x_i)z_i-t_i(x_i)\\
-        =&q_i(x_i)x_i-t_i(x_i)+q_i(x_i)(z_i-x_i)\\
-        =&u_i(x_i)+q_i(x_i)(z_i-x_i)
-    \end{aligned}
-    \nonumber
-\end{equation}
-Based on the assumption \ref{Ass 1}, we have
-\begin{equation}
-    \begin{aligned}
-        u_i(z_i)\geq q_i(x_i)z_i-t_i(x_i)=u_i(x_i)+q_i(x_i)(z_i-x_i)
-    \end{aligned}
-    \nonumber
-\end{equation}
-which shows that $u_i(\cdot)$ is convex.
-
-If $u_i$ is differentiable, $u'_i(x_i)=q_i(x_i)$. Then, we can write the \textbf{Envelope theorem/condition}:
-\begin{equation}
-    \begin{aligned}
-        u_i(x_i)=u_i(0)+\int_0^{x_i} q_i(y_i)dy_i
-    \end{aligned}
-    \nonumber
-\end{equation}
-which only depends on the allocation rule.
-
-\begin{theorem}[Revenue Equivalence Theorem]
-    If the direct mechanism $(Q,T)$ is incentive competitive (IC), then for all $i,x$, the \textbf{expected payment} is
-    \begin{equation}
-        \begin{aligned}
-            t_i(x_i)=\underbrace{t_i(0)}_{e.g.=0}+q_i(x_i)x_i-\int_0^{x_i} q_i(y_i)dy_i
-        \end{aligned}
-        \nonumber
-    \end{equation}
-\end{theorem}
-\begin{proof}
-    \begin{equation}
-        \begin{aligned}
-            u_i(x_i)= q_i(x_i) x_i - t_i(x_i)=u_i(0)+\int_0^{x_i} q_i(y_i)dy_i\\
-            \Rightarrow t_i(x_i)=q_i(x_i)x_i-u_i(0)-\int_0^{x_i} q_i(y_i)dy_i
-        \end{aligned}
-        \nonumber
-    \end{equation}
-    Set $u_i(0)=-t_i(0)$, that is, if $i$'s value is zero, he pays zero.
-\end{proof}
-
-\begin{corollary}[Standard Revenue Equivalence Theorem]
-    Suppose that values are \underline{i.i.d.} and bidders are \underline{risk-neutral}.\\
-    Consider any auction and its \underline{symmetric} and \underline{increasing} equilibrium, in which the expected payment of bidders have $0$ value is $0$. Then the expected revenue to the seller is the \underline{same}.
-\end{corollary}
-\begin{proof}
-    If equilibrium, is symmetric and increasing, then object is \underline{always} allocated to the bidder with the highest value. Set $t_i(0)=0$.
-\end{proof}
-
-Standard Revenue Equivalence Theorem is based on \underline{symmetric}, \underline{independent}, and \underline{private} (uncorrelated) values.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\section{Optimal Auctions}
-\underline{Goal:} Find the \textbf{optimal auction} that maximizes the seller's expected revenue subject to individual rationality (IR) and Bayesian incentive compatibility for the buyers.
-
-
-\begin{definition}[Virtual Valuation]
-    \normalfont
-    Bidder $i$'s \textbf{virtual valuation} is $\phi_i(v_i)=v_i-\frac{1-F_i(v_i)}{f(v_i)}$
-\end{definition}
-
-\begin{definition}[Bidder-Specific Reserve Price]
-    \normalfont
-    Bidder $i$'s bidder-specific reserve price $r_i^*$ is the value for which $\phi_i(r_i^*)=0$.
-\end{definition}
-
-\begin{theorem}[Myerson (1981)]
-    The optimal (single-good) auction in terms of a direct mechanism: The good is sold to the agent $i=\arg\max_i\phi_i(\hat{v}_i)$, as long as $v_i\geq r_i^*$. If the good is sold, the winning agent $i$ is charged the smallest valuation that he could have declared while still remaining the winner:
-    \begin{equation}
-        \begin{aligned}
-            \inf\{v_i^*:\phi_i(v_i^*)\geq 0 \textnormal{ and }\forall j\neq i, \phi_i(v_i^*)\geq \phi_j(\hat{v}_j)\}
-        \end{aligned}
-        \nonumber
-    \end{equation}
-\end{theorem}
-
 
 
 

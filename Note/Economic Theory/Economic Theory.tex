@@ -11,7 +11,7 @@
 \title{\textbf{Microeconomic Theory}}
 \author{Wenxiao Yang}
 \institute{Haas School of Business, University of California Berkeley}
-\date{2023}
+\date{2024}
 \setcounter{tocdepth}{2}
 \cover{cover.png}
 \extrainfo{All models are wrong, but some are useful.}
@@ -3515,6 +3515,8 @@ A \textbf{Bayesian game induced by} $\Gamma$ is $(I,S,\Theta,\phi,\tilde{u})$, w
 \end{equation}
 for all $i\in I, s\in S$, and $\theta_i\in\Theta_i$.
 
+
+\subsection{Implement in Dominant Strategies}
 \begin{definition}[$\Gamma$ Implements $f$]
     \normalfont
     A mechanism $\Gamma$ (indirectly) \textbf{implements} a social choice function (SCF) $f$ if there exists an ``equilibrium'' $s^*(\cdot)=\left(s_1^*(\cdot),...,s_I^*(\cdot)\right)$ of the Bayesian game induced by $\Gamma$ such that $$g(s_1^*(\theta_1),...,s_I^*(\theta_I))=f(\theta_1,...,\theta_I)$$ for all $(\theta_1,...,\theta_I)\in \Theta$. Here the ``equilibrium'' is a dominant strategy equilibrium or BNE.
@@ -3553,13 +3555,15 @@ A strategy is weakly dominant if for all $\theta_i\in\Theta_i$ and all $s_{-i}(\
     $\Gamma$ \textbf{implements} $f$ in \textbf{dominant strategies} if $\exists$ a dominant strategy (D-S) equilibrium $s^*$ of $\Gamma$ such that $g(s^*(\theta))=f(\theta)$.
 \end{definition}
 
+
+\subsection{Dominant-Strategy-Incentive-Compatible (DSIC)/Strategy-Proof}
 \begin{definition}[Strategy-Proof, DSIC]
     \normalfont
-    $f$ is \textbf{strategy-proof} (also called dominant-strategy-incentive-compatible, \textbf{DSIC}) if ``$s^*_i(\theta_i)=\theta_i$ (reveal agent $i$'s true type) for all $\theta_i\in\Theta_i$ and all $i\in I$" is a dominant strategy (D-S) equilibrium of the direct mechanism $\Gamma=(\Theta,f(\cdot))$.
+    $f$ is \textbf{strategy-proof} (also called dominant-strategy-incentive-compatible, \textbf{DSIC}) if $$s^*_i(\theta_i)=\theta_i,\quad \forall \theta_i\in\Theta_i,i\in I$$ is a dominant strategy (D-S) equilibrium of the direct mechanism $\Gamma=(\Theta,f(\cdot))$.
 \end{definition}
 
 \begin{theorem}[Revelation Principle]
-    If there exists a $\Gamma=(S,g(\cdot))$ that implements $f$ in dominant strategies. Then $f$ is strategy-proof (DSIC).
+    If $\exists$ a mechanism $\Gamma=(S,g(\cdot))$ that implements $f$ in dominant strategies. Then $f$ is strategy-proof (DSIC).
 \end{theorem}
 \begin{proof}
     Given $\Gamma$ implements $f$ in dominant strategies, there is a  D-S equilibrium $s^*=\left(s_1^*(\cdot),...,s_I^*(\cdot)\right)$ such that $g(s^*(\theta))=f(\theta)$.\\
@@ -3602,12 +3606,26 @@ A strategy is weakly dominant if for all $\theta_i\in\Theta_i$ and all $s_{-i}(\
     \label{}
 \end{figure}\end{center}
 
-\begin{theorem}[Gibbard-Satterthwaite theorem]
-    Suppose that $|X|\geq 3$ and a social choice function $f$ is surjective. Then,
-    \begin{center}
-        $f$ is strategy-proof (DSIC) $\Leftrightarrow$ $f$ is dictatorial (\ref{SWF_properties})
-    \end{center}
+\subsection{Bayesian-Incentive-Compatible (BIC)}
+\begin{definition}[BIC]
+    \normalfont
+    $f$ is Bayesian-incentive-compatible (B.I.C.) if $$s^*_i(\theta_i)=\theta_i,\quad \forall \theta_i\in\Theta_i,i\in I$$ is a BNE of the Bayesian game induced by the direct mechanism $\Gamma=(\Theta,f(\cdot))$.
+\end{definition}
+
+\begin{theorem}[Revelation Principle (BIC)]
+    If $\exists$ a mechanism $\Gamma=(S,g(\cdot))$ that implements $f$ in BNE. Then $f$ is BIC.
 \end{theorem}
+
+BIC is a weaker condition than DSIC.
+
+
+\subsection{Negative Results: dictatorial SCF $f$}
+\begin{theorem}[Gibbard-Satterthwaite Theorem]
+    Suppose that $|X|\geq 3$ and a social choice function $f$ is surjective (i.e., $\forall x\in X$ $\exists (\theta_1,...,\theta_I)\in\Theta$ s.t. $f(\theta_1,...,\theta_I)=x$). Then, $f$ is strategy-proof (DSIC) $\Leftrightarrow$ $f$ is dictatorial (\ref{SWF_properties}, i.e., $\exists i^*\in\{1,...,I\}$ such that $f(\theta)\in \argmax_{x\in X}u_{i^*}(x;\theta_{i^*})$ for all $\theta\in \Theta$).
+\end{theorem}
+Note: By the revelation principle, under the conditions of the Theorem, there is no mechanism that implements a non-dictatorial SCF $f$ in dominant strategies.
+
+\begin{comment}
 Some lemmas can help to prove the theorem.
 \begin{lemma}
     If $f$ is strategy-proof (DSIC) and $f(\succeq)=x$ and $x\succeq_i y \Rightarrow x\succeq'_i y$ for all $i\in I$ and all $x\neq y\in X$, then $f(\succeq')=x$.
@@ -3628,7 +3646,7 @@ Some lemmas can help to prove the theorem.
         z&x
     \end{pmatrix}$, each column 1/2 represents player 1/2's preferences.
 \end{example}
-
+\end{comment}
 
 
 \section{Quasi-linear Model}

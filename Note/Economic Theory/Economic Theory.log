@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.3.11)  4 APR 2024 16:40
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.3.11)  7 APR 2024 23:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1366,11 +1366,11 @@ LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/n' will be
 
 
 
-] [2] [3] [4])
+] [2] [3] [4] [5])
 \tf@toc=\write9
 \openout9 = `"Economic Theory.toc"'.
 
- [5]
+ [6]
 Chapter 1.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
@@ -2105,13 +2105,22 @@ Overfull \hbox (11.6628pt too wide) in paragraph at lines 2931--2933
 Chapter 7.
 [82
 
-] [83] [84] [85] [86] [87] [88] [89] [90] [91]
+] [83]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 3622.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 3622.
+
+[84] [85] [86] [87] [88] [89] [90] [91]
 Chapter 8.
 [92
 
 ] [93] [94] [95] [96] [97] [98] [99]
 
-LaTeX Warning: Reference `BST' on page 100 undefined on input line 4498.
+LaTeX Warning: Reference `BST' on page 100 undefined on input line 4516.
 
 [100] [101] [102] [103] [104] [105] [106] [107] [108] [109] [110] [111] [112] [113] (./Economic Theory.aux)
  ***********
@@ -2135,12 +2144,12 @@ Package logreq Info: Writing requests to '"Economic Theory".run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 43654 strings out of 474773
+ 43655 strings out of 474773
  903455 string characters out of 5757724
  1962839 words of memory out of 5000000
  65085 multiletter control sequences out of 15000+600000
- 570684 words of font info for 118 fonts, out of 8000000 for 9000
+ 570991 words of font info for 119 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  99i,18n,107p,984b,2103s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Economic Theory.pdf (119 pages).
+Output written on Economic Theory.pdf (120 pages).
