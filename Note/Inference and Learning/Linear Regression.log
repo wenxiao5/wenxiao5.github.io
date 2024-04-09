@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.3.11)  3 APR 2024 21:47
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.3.11)  8 APR 2024 22:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1347,23 +1347,24 @@ LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/it' will be
 ]
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/b/n' will be
 (Font)              scaled to size 17.28pt on input line 33.
- (./Linear Regression.toc [1
+ (./Linear Regression.toc
+LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/n' will be
+(Font)              scaled to size 8.0pt on input line 17.
+LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/n' will be
+(Font)              scaled to size 6.0pt on input line 17.
+ [1
 
 
 
 ]
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 62.
- [2])
+(Font)              scaled to size 10.0pt on input line 63.
+ [2] [3])
 \tf@toc=\write9
 \openout9 = `"Linear Regression.toc"'.
 
- [3]
+ [4]
 Chapter 1.
-LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/n' will be
-(Font)              scaled to size 8.0pt on input line 59.
-LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/n' will be
-(Font)              scaled to size 6.0pt on input line 59.
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/b/n' will be
 (Font)              scaled to size 12.0pt on input line 78.
 [1
@@ -1389,135 +1390,177 @@ Overfull \hbox (3.38252pt too wide) in paragraph at lines 701--704
 []\TU/TeXGyreTermesX(0)/b/n/10.95 Remark[] $[]$ \TU/TeXGyreTermesX(0)/m/n/10.95 is not a very good estimator of $\OML/cmm/m/it/10.95 ^^R$\TU/TeXGyreTermesX(0)/m/n/10.95 . Concern $\OML/cmm/m/it/10.95 X[] > []$ \TU/TeXGyreTermesX(0)/m/n/10.95 could happen. So, $[]\OMS/cmsy/m/n/10.95 f[]\OML/cmm/m/it/10.95 ; X[]\OMS/cmsy/m/n/10.95 g$
  []
 
-[13] [14] [15] [16]
-Overfull \hbox (14.57666pt too wide) in paragraph at lines 1005--1007
+[13] [14]
+LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/n' will be
+(Font)              scaled to size 12.0pt on input line 875.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 875.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 875.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 875.
+
+[15]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 930.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\theta' on input line 930.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 930.
+
+[16] [17]
+Overfull \hbox (14.57666pt too wide) in paragraph at lines 1011--1013
 \TU/TeXGyreTermesX(0)/m/n/10.95 where $\OML/cmm/m/it/10.95 g\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 T\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 X[]; :::; X[]\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95 j \OML/cmm/m/it/10.95 ^^R\OT1/cmr/m/n/10.95 ) = \OML/cmm/m/it/10.95 ^^R[]e[]$ \TU/TeXGyreTermesX(0)/m/n/10.95 and $\OML/cmm/m/it/10.95 h\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 X[]; :::; X[]\OT1/cmr/m/n/10.95 ) = []$\TU/TeXGyreTermesX(0)/m/n/10.95 . Hence, $\OML/cmm/m/it/10.95 T\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 X[]; :::; X[]\OT1/cmr/m/n/10.95 )$
  []
 
-[17]
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/b/it' will be
-(Font)              scaled to size 10.95pt on input line 1048.
- [18]
-Overfull \hbox (6.66397pt too wide) in paragraph at lines 1115--1117
+(Font)              scaled to size 10.95pt on input line 1054.
+[18] [19]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1112.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1112.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1112.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1112.
+
+
+Overfull \hbox (6.66397pt too wide) in paragraph at lines 1122--1124
 []$\OML/cmm/m/it/10.95 X[]$ \TU/TeXGyreTermesX(0)/m/n/10.95 is sufficient and complete $\OMS/cmsy/m/n/10.95 )$ \TU/TeXGyreTermesX(0)/m/n/10.95 Any unbiased estimator given $\OML/cmm/m/it/10.95 X[]$ \TU/TeXGyreTermesX(0)/m/n/10.95 is UMVU, e.g. $[] \OT1/cmr/m/n/10.95 = \U/msb/m/n/10.95 E\OT1/cmr/m/n/10.95 [[]\OMS/cmsy/m/n/10.95 j\OML/cmm/m/it/10.95 X[]\OT1/cmr/m/n/10.95 ]$\TU/TeXGyreTermesX(0)/m/n/10.95 ; 
  []
 
-[19] [20] [21] [22] [23] [24]
-Overfull \hbox (4.8602pt too wide) in paragraph at lines 1394--1397
+[20] [21] [22] [23] [24] [25]
+Overfull \hbox (4.8602pt too wide) in paragraph at lines 1443--1446
 \TU/TeXGyreTermesX(0)/m/n/10.95 Consider the decision rule ”Reject $\OML/cmm/m/it/10.95 H[]$ \TU/TeXGyreTermesX(0)/m/n/10.95 iff $[] \OT1/cmr/m/n/10.95 = [] \OMS/cmsy/m/n/10.95 ^^U []$\TU/TeXGyreTermesX(0)/m/n/10.95 ”. The power function is $\OML/cmm/m/it/10.95 ^^L\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^V\OT1/cmr/m/n/10.95 ) = \OML/cmm/m/it/10.95 P[]\OT1/cmr/m/n/10.95 [[]] =
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1409.
+(hyperref)                removing `math shift' on input line 1458.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\alpha' on input line 1409.
+(hyperref)                removing `\alpha' on input line 1458.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1409.
+(hyperref)                removing `math shift' on input line 1458.
 
-[25] [26] [27]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1607.
-
+[26] [27] [28] [29]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1607.
+(hyperref)                removing `math shift' on input line 1656.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1607.
+(hyperref)                removing `subscript' on input line 1656.
 
-[28] [29] [30]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1656.
+
+[30] [31]
 Chapter 2.
-[31
+[32
 
-] [32] [33]
+] [33] [34] [35] [36] [37] [38] [39]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2151.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\begingroup' on input line 2151.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 2151.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\endgroup' on input line 2151.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@@over' on input line 2151.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 2151.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2151.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2194.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2194.
+
+[40] [41] [42] [43] [44]
+Chapter 3.
+[45
+
+] [46] [47]
 File: dirichlet_plot.png Graphic file (type bmp)
 <dirichlet_plot.png>
- [34]
+ [48]
 
-LaTeX Warning: Reference `ex:square_loss' on page 35 undefined on input line 1805.
+LaTeX Warning: Reference `ex:square_loss' on page 49 undefined on input line 2643.
 
-[35]
+[49]
 
-LaTeX Warning: Reference `ex:square_loss' on page 36 undefined on input line 1832.
+LaTeX Warning: Reference `ex:square_loss' on page 50 undefined on input line 2670.
 
-[36]
-Chapter 3.
-LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1890.
-[37
+[50]
+Chapter 4.
+[51
 
 ]
-Underfull \hbox (badness 2790) in paragraph at lines 1925--1926
+Underfull \hbox (badness 2790) in paragraph at lines 2763--2764
 []\TU/TeXGyreTermesX(0)/m/it/10.95 The weak law of large numbers (also called Khinchin’s law) states that the sample average
  []
 
-[38] [39] [40] [41] [42] [43] [44] [45] [46] [47]
-Overfull \hbox (29.95685pt too wide) in paragraph at lines 2479--2481
+[52] [53] [54] [55] [56] [57] [58] [59] [60] [61]
+Overfull \hbox (29.95685pt too wide) in paragraph at lines 3317--3319
 \TU/TeXGyreTermesX(0)/m/n/10.95 where the $[][] [] [][] \OML/cmm/m/it/10.95 Z[]e[] \OMS/cmsy/m/n/10.95 ^^X N\OT1/cmr/m/n/10.95 (0\OML/cmm/m/it/10.95 ; ^^[[]\OT1/cmr/m/n/10.95 )$ \TU/TeXGyreTermesX(0)/m/n/10.95 and $[][] [] [][] \OML/cmm/m/it/10.95 Z[]u[] \OMS/cmsy/m/n/10.95 ^^X N\OT1/cmr/m/n/10.95 (0\OML/cmm/m/it/10.95 ; r[]\OT1/cmr/m/n/10.95 )$ \TU/TeXGyreTermesX(0)/m/n/10.95 by LLN, and $[] [][] \OML/cmm/m/it/10.95 Z[] \OMS/cmsy/m/n/10.95 !
  []
 
-[48] [49] [50] [51] [52] [53]
-Overfull \hbox (53.10954pt too wide) detected at line 2832
+[62] [63] [64] [65] [66] [67]
+Overfull \hbox (53.10954pt too wide) detected at line 3670
 [][][][][]
  []
 
-[54]
+[68]
 
 Package amsmath Warning: Bracket group [\frac {1}{N}\sum _{i=1}^N\vec {X}_i^T \vec {X}_i] at formula start!
 (amsmath)                It could be a misspelled positional argument.
 (amsmath)                If it belongs to the formula add a \relax in
-(amsmath)                front to hide it on input line 2941.
+(amsmath)                front to hide it on input line 3779.
 
-[55] [56] [57] [58] [59] [60] [61] [62] [63] [64]
-Chapter 4.
-[65
-
-] [66] [67] [68] [69] [70] [71]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3868.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\begingroup' on input line 3868.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 3868.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\endgroup' on input line 3868.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@@over' on input line 3868.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 3868.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3868.
-
-[72]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3932.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3932.
-
-[73] [74] [75] [76] (./Linear Regression.aux)
+[69] [70] [71] [72] [73] [74] [75] [76] [77] [78] (./Linear Regression.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -1526,6 +1569,9 @@ L3 programming layer <2024-02-20>
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `"Linear Regression".out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
 Package logreq Info: Writing requests to '"Linear Regression".run.xml'.
@@ -1533,12 +1579,12 @@ Package logreq Info: Writing requests to '"Linear Regression".run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 42920 strings out of 474773
- 890885 string characters out of 5757724
- 1949839 words of memory out of 5000000
- 64346 multiletter control sequences out of 15000+600000
+ 42942 strings out of 474773
+ 891240 string characters out of 5757724
+ 1953839 words of memory out of 5000000
+ 64368 multiletter control sequences out of 15000+600000
  570857 words of font info for 116 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  99i,22n,107p,766b,1575s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Linear Regression.pdf (80 pages).
+Output written on Linear Regression.pdf (83 pages).

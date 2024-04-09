@@ -1174,149 +1174,6 @@ Recall: A matrix $A_{m\times k}$ has rank $k$ iff $Ax=0 \Rightarrow x=0$.
     And $\left(\bar{X},S^2\right)=\left(\frac{1}{n}\sum_{i=1}^n X_i,\frac{1}{n-1}\sum_{i=1}^n\left[X_i^2-\frac{(\sum_{i=1}^n X_i^2)^2}{n}\right]\right)$ is UMVU estimator of $(\mu,\sigma^2)$.
 \end{example}
 
-
-
-
-
-\section{Fisher Information}
-\subsection{Score Function}
-The score function is the derivative of the log likelihood function with respect to $\theta$.
-\begin{definition}[Score Function]
-    \normalfont
-    The \textbf{score function} is $$u(\theta,\vec{X})=\frac{\partial}{\partial \theta}\log f_{\vec{X}}(\vec{X}\mid\theta)$$
-    where $f_{\vec{X}}(\vec{X}\mid\theta)=L(\theta\mid X_1,...,X_n)=\prod_{i=1}^n f_{X_i}(X_i\mid\theta)$.
-\end{definition}
-
-\begin{definition}[``Regularity" Condition]
-    \normalfont
-    The regularity conditions are as follows:
-    \begin{enumerate}
-        \item The partial derivative of $f_{\vec{X}}(\vec{X}\mid\theta)$ with respect to $\theta$ exists almost everywhere. (It can fail to exist on a null set, as long as this set does not depend on $\theta$.)
-        \item The integral of $f_{\vec{X}}(\vec{X}\mid\theta)$ can be differentiated under the integral sign with respect to $\theta$.
-        \item The support of $f_{\vec{X}}(\vec{X}\mid\theta)$ does not depend on $\theta$.
-    \end{enumerate}
-\end{definition}
-
-\begin{lemma}
-    [``Regularity" Condition $\Rightarrow$ Mean of Score Function is Zero]
-    \normalfont
-    Under ``Regularity" condition and $X$ are continuous, the mean of score function, evaluated at the true parameter $\theta_0$, is zero:
-    \begin{equation}
-        \begin{aligned}
-            \mathbb{E}_{\theta_0}\left[u(\theta_0,\vec{X})\right]&=\int_{\vec{X}} \left[\frac{\partial}{\partial \theta}\log f_{\vec{X}}(\vec{X}\mid\theta_0)\right]f_{\vec{X}}(\vec{X}\mid\theta_0) d\vec{X}\\
-            &=\int_{\vec{X}}  \left[\frac{\partial}{\partial \theta}f_{\vec{X}}(\vec{X}\mid\theta_0)\right]d\vec{X}\\
-            (*)\quad &=\frac{\partial}{\partial \theta}\underbrace{\int_{\vec{X}}  f_{\vec{X}}(\vec{X}\mid\theta_0)d\vec{X}}_{=1}=0
-        \end{aligned}
-        \nonumber
-    \end{equation}
-    (*): Moving the derivative outside the integral can be done as long as the limits of integration are fixed, i.e. they do not depend on $\theta$.
-\end{lemma}
-
-
-\subsection{Fisher Information}
-\begin{definition}[Fisher Information]
-    \normalfont
-    The \textbf{Fisher information} is defined to be the variance of the score function at $\theta_0$.
-    \begin{equation}
-        \begin{aligned}
-            \mathcal{I}(\theta_0)=\mathbb{E}_{\theta_0}[u(\theta_0,\vec{X})u(\theta_0,\vec{X})^T]=\mathbb{E}_{\theta_0}\left[\left(\frac{\partial}{\partial \theta}\log f_{\vec{X}}(\vec{X}\mid\theta_0)\right)^2\right]
-        \end{aligned}
-        \nonumber
-    \end{equation}
-\end{definition}
-
-\begin{lemma}[Fisher Information with ``Regularity" Condition]
-    Under ``regularity" conditions, the \textbf{Fisher information} at $\theta_0$ can also be written as
-    \begin{equation}
-        \begin{aligned}
-            \mathcal{I}(\theta_0)=\text{Var}_{\theta_0}(u(\theta,\vec{X}))
-        \end{aligned}
-        \nonumber
-    \end{equation}
-\end{lemma}
-
-\begin{lemma}[Second Information Equality]
-    Under ``Regularity" condition, the Fisher information is equal to the minus Hessian matrix,
-    \begin{equation}
-        \begin{aligned}
-            \mathcal{I}(\theta_0)
-            =-\mathbb{E}_\theta\left[\frac{\partial^2}{\partial \theta^2}\log f_{\vec{X}}(\vec{X}\mid\theta_0)\right]
-        \end{aligned}
-        \nonumber
-    \end{equation}
-\end{lemma}
-\begin{proof}
-    \begin{equation}
-        \begin{aligned}
-            \frac{\partial^2}{\partial \theta^2}\log f_{\vec{X}}(\vec{X}\mid\theta)&=\frac{\frac{\partial^2}{\partial \theta^2} f_{\vec{X}}(\vec{X}\mid\theta)}{f_{\vec{X}}(\vec{X}\mid\theta)}-\left(\frac{\frac{\partial}{\partial \theta} f_{\vec{X}}(\vec{X}\mid\theta)}{f_{\vec{X}}(\vec{X}\mid\theta)}\right)^2\\
-            &=\frac{\frac{\partial^2}{\partial \theta^2} f_{\vec{X}}(\vec{X}\mid\theta)}{f_{\vec{X}}(\vec{X}\mid\theta)}-\left(\frac{\partial}{\partial \theta}\log f_{\vec{X}}(\vec{X}\mid\theta)\right)^2
-        \end{aligned}
-        \nonumber
-    \end{equation}
-    where
-    \begin{equation}
-        \begin{aligned}
-            \mathbb{E}_\theta\left[\frac{\frac{\partial^2}{\partial \theta^2} f_{\vec{X}}(\vec{X}\mid\theta)}{f_{\vec{X}}(\vec{X}\mid\theta)}\mid\theta\right]=\frac{\partial^2}{\partial \theta^2}\int_x f_{\vec{X}}(\vec{X}\mid\theta) dx=0
-        \end{aligned}
-        \nonumber
-    \end{equation}
-\end{proof}
-
-
-
-\subsection{Cramér-Rao Lower Bound}
-
-
-\begin{proposition}[Cramér-Rao Lower Bound]
-    Under ``regularity" conditions, for every estimator $\hat{\theta}$
-    \begin{equation}
-        \begin{aligned}
-            \text{Var}_\theta[\hat{\theta}(\vec{X})]\geq \frac{\left(\frac{d}{d\theta}\mathbb{E}_\theta[\hat{\theta}(\vec{X})]\right)^2}{\mathcal{I}(\theta)}\equiv \text{CRLB}(\theta)
-        \end{aligned}
-        \nonumber
-    \end{equation}
-    Specifically, if the estimator $\hat{\theta}$ is unbiased, $$\text{CRLB}(\theta)=\mathcal{I}(\theta)^{-1}$$
-\end{proposition}
-\begin{remark}
-    $\mathcal{I}(\theta)$ is called the \textbf{Fisher Information}; ``Regularity" conditions are satisfied by "smooth" exponential families; Proof uses Cauchy-Schwarz inequality.
-\end{remark}
-\textbf{\underline{3 Possibilities}}
-\begin{enumerate}[(1).]
-    \item CR inequality is applicable and attainable:
-    \begin{enumerate}
-        \item Estimating $p$ when $X\sim \text{i.i.d. Ber}(p)$;
-        \item Estimating $\mu$ when $X\sim \text{i.i.d. } N(\mu,\sigma^2)$.
-    \end{enumerate}
-    \item CR inequality is applicable, but not attainable:
-    \begin{enumerate}
-        \item Estimating $\sigma^2$ when $X\sim \text{i.i.d. } N(\mu,\sigma^2)$: $\text{Var}(S^2)=\frac{2\sigma^4}{n-1}>\frac{2\sigma^4}{n}=\mathcal{I}(\theta)^{-1}$ (CR bound).
-    \end{enumerate}
-    \item CR inequality is not applicable:
-    \begin{enumerate}
-        \item Estimating $\theta$ when $X\sim \text{i.i.d. }U[0,\theta]$: CR bound $\mathcal{I}(\theta)^{-1}=\frac{\theta^2}{n}$ and $\text{Var}(\hat{\theta}_{UMVU})=\frac{\theta^2}{n(n+2)}$
-    \end{enumerate}
-\end{enumerate}
-
-\begin{theorem}[MLE Covariance $\stackrel{n \rightarrow \infty}{\longrightarrow}$ Cramér-Rao Lower Bound]
-    Suppose the sample $\{X_i\}_{i=1}^n$ is i.i.d. The Maximum likelihood estimator (MLE) $\hat{\theta}=\arg\max_\theta L(\theta\mid X_1,...,X_n)$, under ``regularity" conditions, as $n \rightarrow \infty$
-    \begin{equation}
-        \begin{aligned}
-            \sqrt{n}\left(\hat{\theta}-\theta\right) \rightarrow N(0,\mathcal{I}(\theta)^{-1})
-        \end{aligned}
-        \nonumber
-    \end{equation}
-\end{theorem}
-\begin{proposition}[Approximation of MLE Covariance Matrix]
-    When the sample $x$ is made up of i.i.d. observations, the covariance matrix of the maximum likelihood estimator $\hat{\theta}$ is approximately equal to the inverse of the information matrix. $$\text{Cov}(\hat{\theta})\approx(\mathcal{I}(\theta))^{-1}$$
-\end{proposition}
-Hence, the covariance matrix can be estimated as $(\mathcal{I}(\hat{\theta}))^{-1}$. Similarly, \textit{SE} is estimated by $\sqrt{(\mathcal{I}(\hat{\theta}))^{-1}}$.
-
-
-
-
-
-
-
 \section{Hypothesis Testing}
 $X_1,...,X_n$ is a random sample from a discrete/continuous distribution with pmf/pdf $f(\cdot\mid \theta)$, where $\theta\in\Theta$ is unknown.
 
@@ -1704,8 +1561,6 @@ In this part as $n \rightarrow \infty$, we use $l(\theta), l'(\theta), l''(\thet
 
 
 \chapter{M-Estimation}
-\section{M-Estimation}\label{section:m-estimation}
-\subsection{Extremum Estimator and M-Estimator}
 Suppose there is a parameter of interest $\theta\in \mathbb{R}^d$. Data $Z$ is generated from $F_{\theta_0}$.
 \begin{definition}[Extremum Estimator]
     \normalfont
@@ -1774,31 +1629,130 @@ MLE is a special case of M-estimator.
     \end{lemma}
 \end{example}
 
-\subsection{General Information Notations}
-Define
-\begin{enumerate}[$\circ$]
-    \item $g(Z,\theta):=\frac{\partial}{\partial \theta}m(Z,\theta)\in \mathbb{R}^d$.
-    \item $G(Z,\theta):=\frac{\partial^2}{\partial \theta\partial \theta^T}m(Z,\theta)\in \mathbb{R}^{d\times d}$.
-\end{enumerate}
-\begin{definition}
-\normalfont
-\begin{enumerate}
-    \item Loss: $Q(\theta):=\mathbb{E}_{\theta}m(Z,\theta)$.
-    \item Score: $g(\theta):=\mathbb{E}_{\theta}g(Z,\theta)$.
-    \item Information Matrix: $\mathcal{I}(\theta):=\mathbb{E}[g(Z,\theta)g(Z,\theta)^T]$
-    \item Hessian: $G(\theta):=\mathbb{E}_{\theta}G(Z,\theta)= \mathbb{E}\left[\frac{\partial^2}{\partial \theta\partial \theta^T}m(Z,\theta)\right]$. (We use $G$ denote the true population Hessian, $G:=G(\theta_0)$).
-\end{enumerate}
+
+
+\section{Fisher Information}
+\subsection{Score Function}
+The score function is the derivative of the log likelihood function with respect to $\theta$.
+\begin{definition}[Score Function]
+    \normalfont
+    The \textbf{score function} is $$u(\theta,\vec{X})=\frac{\partial}{\partial \theta}\log f_{\vec{X}}(\vec{X}\mid\theta)$$
+    where $f_{\vec{X}}(\vec{X}\mid\theta)=L(\theta\mid X_1,...,X_n)=\prod_{i=1}^n f_{X_i}(X_i\mid\theta)$.
 \end{definition}
-\begin{example}[ (Poisson Distribution)]
-    A Poisson distribution with rate parameter $\lambda$ has p.m.f. $f(Z;\lambda)=\frac{\lambda^Z e^{-\lambda}}{Z!}$. Then, $g(Z;\lambda)=\frac{Z}{\lambda}-1 \Rightarrow \lambda_0=\mathbb{E}Z=\textnormal{Var}Z$. $I(\lambda_0)=\frac{1}{\lambda_0}, G(\lambda_0)=-\frac{1}{\lambda_0}$.
-\end{example}
-Under ``Regularity" condition, $\theta_0=\argmin_{\theta\in\Theta} Q(\theta)$, $g(\theta_0)=0^d$ ($1^{st}$ Information Equality / Alternative definition of $\theta_0$). In this case, $\mathcal{I}(\theta_0)=\textnormal{Var}[g(Z,\theta_0)]$.
-\begin{lemma}[Second Information Equality]
-    Under ``Regularity" condition, $G=-\mathcal{I}(\theta_0)$
+
+\begin{definition}[``Regularity" Condition]
+    \normalfont
+    The regularity conditions are as follows:
+    \begin{enumerate}
+        \item The partial derivative of $f_{\vec{X}}(\vec{X}\mid\theta)$ with respect to $\theta$ exists almost everywhere. (It can fail to exist on a null set, as long as this set does not depend on $\theta$.)
+        \item The integral of $f_{\vec{X}}(\vec{X}\mid\theta)$ can be differentiated under the integral sign with respect to $\theta$.
+        \item The support of $f_{\vec{X}}(\vec{X}\mid\theta)$ does not depend on $\theta$.
+    \end{enumerate}
+\end{definition}
+
+\begin{lemma}
+    [``Regularity" Condition $\Rightarrow$ Mean of Score Function is Zero]
+    \normalfont
+    Under ``Regularity" condition and $X$ are continuous, the mean of score function, evaluated at the true parameter $\theta_0$, is zero:
+    \begin{equation}
+        \begin{aligned}
+            \mathbb{E}_{\theta_0}\left[u(\theta_0,\vec{X})\right]&=\int_{\vec{X}} \left[\frac{\partial}{\partial \theta}\log f_{\vec{X}}(\vec{X}\mid\theta_0)\right]f_{\vec{X}}(\vec{X}\mid\theta_0) d\vec{X}\\
+            &=\int_{\vec{X}}  \left[\frac{\partial}{\partial \theta}f_{\vec{X}}(\vec{X}\mid\theta_0)\right]d\vec{X}\\
+            (*)\quad &=\frac{\partial}{\partial \theta}\underbrace{\int_{\vec{X}}  f_{\vec{X}}(\vec{X}\mid\theta_0)d\vec{X}}_{=1}=0
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    (*): Moving the derivative outside the integral can be done as long as the limits of integration are fixed, i.e. they do not depend on $\theta$.
+\end{lemma}
+
+
+\subsection{Fisher Information}
+\begin{definition}[Fisher Information]
+    \normalfont
+    The \textbf{Fisher information} is defined to be the variance of the score function.
+    \begin{equation}
+        \begin{aligned}
+            \mathcal{I}(\theta)=\text{Var}_\theta(u(\theta,\vec{X}))
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{definition}
+
+\begin{lemma}[Fisher Information with ``Regularity" Condition]
+    Under ``regularity" conditions, the \textbf{Fisher information} at $\theta_0$ can also be written as
+    \begin{equation}
+        \begin{aligned}
+            \mathcal{I}(\theta)=\text{Var}_\theta(u(\theta,\vec{X}))=\mathbb{E}_\theta[u(\theta,\vec{X})u(\theta,\vec{X})^T]
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{lemma}
+
+\begin{lemma}[Fisher Information]
+    For $\theta\in\Theta\subseteq \mathbb{R}$, the Fisher information can be written as
+    \begin{equation}
+        \begin{aligned}
+            \mathcal{I}(\theta)&=\text{Var}_\theta\left[\frac{\partial}{\partial \theta}\log f_{\vec{X}}(\vec{X}\mid\theta)\right]\\
+            &=\mathbb{E}_\theta\left[\left(\frac{\partial}{\partial \theta}\log f_{\vec{X}}(\vec{X}\mid\theta)\right)^2\right]=n\mathbb{E}_\theta\left[\left(\frac{\partial}{\partial \theta}\log f_X(X_i\mid\theta)\right)^2\right]\\
+            &=-\mathbb{E}_\theta\left[\frac{\partial^2}{\partial \theta^2}\log f_{\vec{X}}(\vec{X}\mid\theta)\right]=-n\mathbb{E}_\theta\left[\frac{\partial^2}{\partial \theta^2}\log f_X(X_i\mid\theta)\right]
+        \end{aligned}
+        \nonumber
+    \end{equation}
 \end{lemma}
 
 
 
+
+\subsection{Cramér-Rao Lower Bound}
+
+
+\begin{proposition}[Cramér-Rao Lower Bound]
+    Under ``regularity" conditions, for every estimator $\hat{\theta}$
+    \begin{equation}
+        \begin{aligned}
+            \text{Var}_\theta[\hat{\theta}(\vec{X})]\geq \frac{\left(\frac{d}{d\theta}\mathbb{E}_\theta[\hat{\theta}(\vec{X})]\right)^2}{\mathcal{I}(\theta)}\equiv \text{CRLB}(\theta)
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    Specifically, if the estimator $\hat{\theta}$ is unbiased, $$\text{CRLB}(\theta)=\mathcal{I}(\theta)^{-1}$$
+\end{proposition}
+\begin{remark}
+    $\mathcal{I}(\theta)$ is called the \textbf{Fisher Information}; ``Regularity" conditions are satisfied by "smooth" exponential families; Proof uses Cauchy-Schwarz inequality.
+\end{remark}
+\textbf{\underline{3 Possibilities}}
+\begin{enumerate}[(1).]
+    \item CR inequality is applicable and attainable:
+    \begin{enumerate}
+        \item Estimating $p$ when $X\sim \text{i.i.d. Ber}(p)$;
+        \item Estimating $\mu$ when $X\sim \text{i.i.d. } N(\mu,\sigma^2)$.
+    \end{enumerate}
+    \item CR inequality is applicable, but not attainable:
+    \begin{enumerate}
+        \item Estimating $\sigma^2$ when $X\sim \text{i.i.d. } N(\mu,\sigma^2)$: $\text{Var}(S^2)=\frac{2\sigma^4}{n-1}>\frac{2\sigma^4}{n}=\mathcal{I}(\theta)^{-1}$ (CR bound).
+    \end{enumerate}
+    \item CR inequality is not applicable:
+    \begin{enumerate}
+        \item Estimating $\theta$ when $X\sim \text{i.i.d. }U[0,\theta]$: CR bound $\mathcal{I}(\theta)^{-1}=\frac{\theta^2}{n}$ and $\text{Var}(\hat{\theta}_{UMVU})=\frac{\theta^2}{n(n+2)}$
+    \end{enumerate}
+\end{enumerate}
+
+\begin{theorem}[MLE Covariance $\stackrel{n \rightarrow \infty}{\longrightarrow}$ Cramér-Rao Lower Bound]
+    Suppose the sample $\{X_i\}_{i=1}^n$ is i.i.d. The Maximum likelihood estimator (MLE) $\hat{\theta}=\arg\max_\theta L(\theta\mid X_1,...,X_n)$, under ``regularity" conditions, as $n \rightarrow \infty$
+    \begin{equation}
+        \begin{aligned}
+            \sqrt{n}\left(\hat{\theta}-\theta\right) \rightarrow N(0,\mathcal{I}(\theta)^{-1})
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{theorem}
+\begin{proposition}[Approximation of MLE Covariance Matrix]
+    When the sample $x$ is made up of i.i.d. observations, the covariance matrix of the maximum likelihood estimator $\hat{\theta}$ is approximately equal to the inverse of the information matrix. $$\text{Cov}(\hat{\theta})\approx(\mathcal{I}(\theta))^{-1}$$
+\end{proposition}
+Hence, the covariance matrix can be estimated as $(\mathcal{I}(\hat{\theta}))^{-1}$. Similarly, \textit{SE} is estimated by $\sqrt{(\mathcal{I}(\hat{\theta}))^{-1}}$.
+
+
+
+\section{M-Estimation}\label{section:m-estimation}
 
 \subsection{Consistency of M-estimators}
 Consistency: $\hat{\theta} \stackrel{P_0}{\longrightarrow} \theta_0$ as $n \rightarrow \infty$.
@@ -1831,6 +1785,30 @@ Can $\hat{Q}(\theta)\stackrel{P_0}{\longrightarrow} Q(\theta)$ give the consiste
 %\end{proof}
 
 \subsection{Asymptotic Normality of M-estimators}
+Define
+\begin{enumerate}[$\circ$]
+    \item $g(Z,\theta):=\frac{\partial}{\partial \theta}m(Z,\theta)\in \mathbb{R}^d$.
+    \item $G(Z,\theta):=\frac{\partial^2}{\partial \theta\partial \theta^T}m(Z,\theta)\in \mathbb{R}^{d\times d}$.
+\end{enumerate}
+\begin{definition}
+\normalfont
+\begin{enumerate}
+    \item Loss: $Q(\theta):=\mathbb{E}_{\theta}m(Z,\theta)$.
+    \item Score: $g(\theta):=\mathbb{E}_{\theta}g(Z,\theta)$.
+    \item Information Matrix: $\mathcal{I}(\theta):=\mathbb{E}[g(Z,\theta)g(Z,\theta)^T]$
+    \item Hessian: $G(\theta):=\mathbb{E}_{\theta}G(Z,\theta)$. (We use $G$ denote the true population Hessian, $G:=G(\theta_0)$).
+\end{enumerate}
+\end{definition}
+\begin{example}[ (Poisson Distribution)]
+    A Poisson distribution with rate parameter $\lambda$ has p.m.f. $f(Z;\lambda)=\frac{\lambda^Z e^{-\lambda}}{Z!}$. Then, $g(Z;\lambda)=\frac{Z}{\lambda}-1 \Rightarrow \lambda_0=\mathbb{E}Z=\textnormal{Var}Z$. $I(\lambda_0)=\frac{1}{\lambda_0}, G(\lambda_0)=-\frac{1}{\lambda_0}$.
+\end{example}
+Since $\theta_0$ that $\theta_0=\argmin_{\theta\in\Theta} Q(\theta)$, $g(\theta_0)=0^d$ ($1^{st}$ Information Equality / Alternative definition of $\theta_0$).
+
+$\mathcal{I}(\theta_0)=\textnormal{Var}[g(Z,\theta_0)]$
+\begin{lemma}[Second Information Equality]
+    $G=-\mathcal{I}(\theta_0)$
+\end{lemma}
+
 Review: By the Taylor expansion for any $f-n$, the $h: \Theta \rightarrow \mathbb{R}^d$,
 \begin{equation}
     \begin{aligned}

@@ -1786,15 +1786,17 @@ Define
     \item Loss: $Q(\theta):=\mathbb{E}_{\theta}m(Z,\theta)$.
     \item Score: $g(\theta):=\mathbb{E}_{\theta}g(Z,\theta)$.
     \item Information Matrix: $\mathcal{I}(\theta):=\mathbb{E}[g(Z,\theta)g(Z,\theta)^T]$
-    \item Hessian: $G(\theta):=\mathbb{E}_{\theta}G(Z,\theta)= \mathbb{E}\left[\frac{\partial^2}{\partial \theta\partial \theta^T}m(Z,\theta)\right]$. (We use $G$ denote the true population Hessian, $G:=G(\theta_0)$).
+    \item Hessian: $G(\theta):=\mathbb{E}_{\theta}G(Z,\theta)$. (We use $G$ denote the true population Hessian, $G:=G(\theta_0)$).
 \end{enumerate}
 \end{definition}
 \begin{example}[ (Poisson Distribution)]
     A Poisson distribution with rate parameter $\lambda$ has p.m.f. $f(Z;\lambda)=\frac{\lambda^Z e^{-\lambda}}{Z!}$. Then, $g(Z;\lambda)=\frac{Z}{\lambda}-1 \Rightarrow \lambda_0=\mathbb{E}Z=\textnormal{Var}Z$. $I(\lambda_0)=\frac{1}{\lambda_0}, G(\lambda_0)=-\frac{1}{\lambda_0}$.
 \end{example}
-Under ``Regularity" condition, $\theta_0=\argmin_{\theta\in\Theta} Q(\theta)$, $g(\theta_0)=0^d$ ($1^{st}$ Information Equality / Alternative definition of $\theta_0$). In this case, $\mathcal{I}(\theta_0)=\textnormal{Var}[g(Z,\theta_0)]$.
+Since $\theta_0$ that $\theta_0=\argmin_{\theta\in\Theta} Q(\theta)$, $g(\theta_0)=0^d$ ($1^{st}$ Information Equality / Alternative definition of $\theta_0$).
+
+$\mathcal{I}(\theta_0)=\textnormal{Var}[g(Z,\theta_0)]$
 \begin{lemma}[Second Information Equality]
-    Under ``Regularity" condition, $G=-\mathcal{I}(\theta_0)$
+    $G=-\mathcal{I}(\theta_0)$
 \end{lemma}
 
 
