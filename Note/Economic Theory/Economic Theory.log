@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.3.11)  7 APR 2024 23:04
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.3.11)  11 APR 2024 17:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1292,8 +1292,9 @@ Package biblatex Info: Automatic encoding selection.
 \openout5 = `"Economic Theory.bcf"'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file '"Economic Theory".bbl' found.
- (./Economic Theory.bbl)
+Package biblatex Info: ... file '"Economic Theory".bbl' not found.
+
+No file "Economic Theory".bbl.
 Package biblatex Info: Reference section=0 on input line 26.
 Package biblatex Info: Reference segment=0 on input line 26.
 \c@lstlisting=\count544
@@ -1335,7 +1336,7 @@ File: cover.png Graphic file (type bmp)
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/b/n' will be
 (Font)              scaled to size 24.88pt on input line 28.
 LaTeX Font Info:    Trying to load font information for U+rsfs on input line 28.
- (/usr/local/texlive/2023/texmf-dist/tex/latex/jknapltx/ursfs.fd
+(/usr/local/texlive/2023/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Trying to load font information for U+msa on input line 28.
@@ -2114,15 +2115,15 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 3622.
 
-[84] [85] [86] [87] [88] [89] [90] [91]
+[84] [85] [86] [87] [88] [89] [90] [91] [92] [93] [94] [95]
 Chapter 8.
-[92
+[96
 
-] [93] [94] [95] [96] [97] [98] [99]
+] [97] [98] [99] [100] [101] [102] [103]
 
-LaTeX Warning: Reference `BST' on page 100 undefined on input line 4516.
+LaTeX Warning: Reference `BST' on page 104 undefined on input line 4746.
 
-[100] [101] [102] [103] [104] [105] [106] [107] [108] [109] [110] [111] [112] [113] (./Economic Theory.aux)
+[104] [105] [106] [107] [108] [109] [110] [111] [112] [113] [114] [115] [116] [117] (./Economic Theory.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -2144,12 +2145,12 @@ Package logreq Info: Writing requests to '"Economic Theory".run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 43655 strings out of 474773
- 903455 string characters out of 5757724
+ 43677 strings out of 474773
+ 903791 string characters out of 5757724
  1962839 words of memory out of 5000000
- 65085 multiletter control sequences out of 15000+600000
- 570991 words of font info for 119 fonts, out of 8000000 for 9000
+ 65108 multiletter control sequences out of 15000+600000
+ 571300 words of font info for 120 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 99i,18n,107p,984b,2103s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,20n,107p,984b,2103s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Economic Theory.pdf (120 pages).
+Output written on Economic Theory.pdf (124 pages).

@@ -126,32 +126,35 @@
 \contentsline {subsection}{\numberline {7.1.3}Bayesian-Incentive-Compatible (BIC)}{84}{subsection.7.1.3}%
 \contentsline {subsection}{\numberline {7.1.4}Negative Results: dictatorial SCF $f$}{84}{subsection.7.1.4}%
 \contentsline {section}{\numberline {7.2}Quasi-linear Model}{85}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Auction}{85}{section.7.3}%
-\contentsline {subsection}{\numberline {7.3.1}Examples: Auctions with Common-value}{86}{subsection.7.3.1}%
-\contentsline {subsection}{\numberline {7.3.2}First/Second Price Sealed-bid Auction}{86}{subsection.7.3.2}%
-\contentsline {section}{\numberline {7.4}Revenue Equivalence Theorem}{88}{section.7.4}%
-\contentsline {section}{\numberline {7.5}Optimal Auctions}{90}{section.7.5}%
-\contentsline {chapter}{\numberline {8}Market Design}{92}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Matching One-to-One}{92}{section.8.1}%
-\contentsline {subsection}{\numberline {8.1.1}Matching Markets: One-to-One}{93}{subsection.8.1.1}%
-\contentsline {subsection}{\numberline {8.1.2}Joint and Meet}{94}{subsection.8.1.2}%
-\contentsline {subsection}{\numberline {8.1.3}Strategic Incentives}{94}{subsection.8.1.3}%
-\contentsline {section}{\numberline {8.2}Matching Many-to-Many}{95}{section.8.2}%
-\contentsline {section}{\numberline {8.3}Matching Many-to-One}{96}{section.8.3}%
-\contentsline {section}{\numberline {8.4}Networks}{98}{section.8.4}%
-\contentsline {section}{\numberline {8.5}Corporate Game Theory}{100}{section.8.5}%
-\contentsline {subsection}{\numberline {8.5.1}Core of Corporate Game and Farkas' lemma}{100}{subsection.8.5.1}%
-\contentsline {subsection}{\numberline {8.5.2}Doubly stochastic matrix and Birkhoff-von Neumann Theorem}{101}{subsection.8.5.2}%
-\contentsline {section}{\numberline {8.6}Constrained Demand Theory}{102}{section.8.6}%
-\contentsline {subsection}{\numberline {8.6.1}Substitutes Valuation}{102}{subsection.8.6.1}%
-\contentsline {subsection}{\numberline {8.6.2}Income Effect}{103}{subsection.8.6.2}%
-\contentsline {section}{\numberline {8.7}Object Allocation}{105}{section.8.7}%
-\contentsline {subsection}{\numberline {8.7.1}Allocation}{105}{subsection.8.7.1}%
-\contentsline {subsection}{\numberline {8.7.2}Exchange}{106}{subsection.8.7.2}%
-\contentsline {section}{\numberline {8.8}School Choice}{107}{section.8.8}%
-\contentsline {section}{\numberline {8.9}School Choice with Reserves}{109}{section.8.9}%
-\contentsline {subsection}{\numberline {8.9.1}Minority Reserves (slot-specific priority)}{110}{subsection.8.9.1}%
-\contentsline {section}{\numberline {8.10}Random Assignment}{110}{section.8.10}%
-\contentsline {section}{\numberline {8.11}Random Assignment in School Choice}{112}{section.8.11}%
-\contentsline {section}{\numberline {8.12}Pseduomarket (FF)}{112}{section.8.12}%
-\contentsline {subsection}{\numberline {8.12.1}Problem of Implementability}{112}{subsection.8.12.1}%
+\contentsline {subsection}{\numberline {7.2.1}Vickrey-Clarke-Groves Mechanism}{86}{subsection.7.2.1}%
+\contentsline {subsection}{\numberline {7.2.2}Uniqueness of VCG Mechanism}{87}{subsection.7.2.2}%
+\contentsline {subsection}{\numberline {7.2.3}Budget Balancedness of VCG Mechanism}{89}{subsection.7.2.3}%
+\contentsline {section}{\numberline {7.3}Auction}{90}{section.7.3}%
+\contentsline {subsection}{\numberline {7.3.1}Examples: Auctions with Common-value}{90}{subsection.7.3.1}%
+\contentsline {subsection}{\numberline {7.3.2}First/Second Price Sealed-bid Auction}{90}{subsection.7.3.2}%
+\contentsline {section}{\numberline {7.4}Revenue Equivalence Theorem}{93}{section.7.4}%
+\contentsline {section}{\numberline {7.5}Optimal Auctions}{95}{section.7.5}%
+\contentsline {chapter}{\numberline {8}Market Design}{96}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Matching One-to-One}{96}{section.8.1}%
+\contentsline {subsection}{\numberline {8.1.1}Matching Markets: One-to-One}{97}{subsection.8.1.1}%
+\contentsline {subsection}{\numberline {8.1.2}Joint and Meet}{98}{subsection.8.1.2}%
+\contentsline {subsection}{\numberline {8.1.3}Strategic Incentives}{98}{subsection.8.1.3}%
+\contentsline {section}{\numberline {8.2}Matching Many-to-Many}{99}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Matching Many-to-One}{100}{section.8.3}%
+\contentsline {section}{\numberline {8.4}Networks}{102}{section.8.4}%
+\contentsline {section}{\numberline {8.5}Corporate Game Theory}{104}{section.8.5}%
+\contentsline {subsection}{\numberline {8.5.1}Core of Corporate Game and Farkas' lemma}{104}{subsection.8.5.1}%
+\contentsline {subsection}{\numberline {8.5.2}Doubly stochastic matrix and Birkhoff-von Neumann Theorem}{105}{subsection.8.5.2}%
+\contentsline {section}{\numberline {8.6}Constrained Demand Theory}{106}{section.8.6}%
+\contentsline {subsection}{\numberline {8.6.1}Substitutes Valuation}{106}{subsection.8.6.1}%
+\contentsline {subsection}{\numberline {8.6.2}Income Effect}{107}{subsection.8.6.2}%
+\contentsline {section}{\numberline {8.7}Object Allocation}{109}{section.8.7}%
+\contentsline {subsection}{\numberline {8.7.1}Allocation}{109}{subsection.8.7.1}%
+\contentsline {subsection}{\numberline {8.7.2}Exchange}{110}{subsection.8.7.2}%
+\contentsline {section}{\numberline {8.8}School Choice}{111}{section.8.8}%
+\contentsline {section}{\numberline {8.9}School Choice with Reserves}{113}{section.8.9}%
+\contentsline {subsection}{\numberline {8.9.1}Minority Reserves (slot-specific priority)}{114}{subsection.8.9.1}%
+\contentsline {section}{\numberline {8.10}Random Assignment}{114}{section.8.10}%
+\contentsline {section}{\numberline {8.11}Random Assignment in School Choice}{116}{section.8.11}%
+\contentsline {section}{\numberline {8.12}Pseduomarket (FF)}{116}{section.8.12}%
+\contentsline {subsection}{\numberline {8.12.1}Problem of Implementability}{116}{subsection.8.12.1}%
