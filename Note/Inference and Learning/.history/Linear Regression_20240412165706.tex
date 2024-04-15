@@ -1778,12 +1778,11 @@ MLE is a special case of M-estimator.
 Define $g(Z,\theta):=\frac{\partial}{\partial \theta}m(Z,\theta)\in \mathbb{R}^d$ and $G(Z,\theta):=\frac{\partial^2}{\partial \theta\partial \theta^T}m(Z,\theta)\in \mathbb{R}^{d\times d}$.
 \begin{definition}
 \normalfont
-Suppose the data $Z$ follows true distribution with parameter $\theta_0$.
 \begin{enumerate}
-    \item Loss: $Q(\theta):=\mathbb{E}_{\theta_0}m(Z,\theta)$.
-    \item Score: $g(\theta):=\mathbb{E}_{\theta_0}g(Z,\theta)$.
+    \item Loss: $Q(\theta):=\mathbb{E}_{\theta}m(Z,\theta)$.
+    \item Score: $g(\theta):=\mathbb{E}_{\theta}g(Z,\theta)$.
     %\item Information Matrix: $\mathcal{I}(\theta):=\mathbb{E}[g(Z,\theta)g(Z,\theta)^T]$
-    \item Hessian: $G(\theta):=\mathbb{E}_{\theta_0}G(Z,\theta)= \mathbb{E}_{\theta_0}\left[\frac{\partial^2}{\partial \theta\partial \theta^T}m(Z,\theta)\right]$. (We use $G$ denote the true population Hessian, $G:=G(\theta_0)$).
+    \item Hessian: $G(\theta):=\mathbb{E}_{\theta}G(Z,\theta)= \mathbb{E}_\theta\left[\frac{\partial^2}{\partial \theta\partial \theta^T}m(Z,\theta)\right]$. (We use $G$ denote the true population Hessian, $G:=G(\theta_0)$).
 \end{enumerate}
 \end{definition}
 In the MLE $m(Z,\theta)=\ln f(Z;\theta)$, we also use Information Matrix $\mathcal{I}(\theta):=\mathbb{E}[g(Z,\theta)g(Z,\theta)^T]$.
@@ -1838,7 +1837,7 @@ where $\bar{\theta}=\alpha\theta+(1-\alpha)\theta_0$ for some $\alpha\in (0,1)$.
     \begin{enumerate}
         \item[A1.] $\sup_{\theta\in\Theta}|\hat{Q}(\theta)-Q(\theta)| \stackrel{P}{\longrightarrow} 0$.
         \item[A2.] $G(\theta)$ is continuous in $\Theta$.
-        \item[A3.] $G:=G(\theta_0)=\mathbb{E}_{\theta_0}\left[\frac{\partial^2}{\partial \theta\partial \theta^T}m(Z,\theta_0)\right]$ is invertible.
+        \item[A3.] $G:=G(\theta_0)$ is invertible.
     \end{enumerate}
     Then,
     \begin{equation}
@@ -2009,30 +2008,10 @@ Suppose you are interested in firms' applications for patents. You estimate the 
 \end{equation}
 However, the truth (unbeknownst to you) is that patents actually follow a negative binomial model (which permits the variance to differ from the mean), but the mean is correctly specified.
 \begin{enumerate}
-    \item \underline{Will your estimator be consistent?} Yes. This is directly given by the result above.
-    \item \underline{Will your estimator be asymptotically normal?} Yes. The data are iid and the estimator is consistent, so the CLT holds under regularity conditions on the existence of second moments.
-    \item \underline{The information matrix equality \textbf{does not hold} if the likelihood is not correct.}
+    \item \underline{Will your estimator be consistent?} Yes
+    \item \underline{Will your estimator be asymptotically normal?}
+    \item \underline{The information matrix equality \textbf{does not hold} if the likelihood is not correct:}
     \item \underline{An estimator of the asymptotic variance of the quasi-maximum likelihood estimator} of the Poisson regression model that \textbf{is consistent} even if the Poisson assumption is incorrect:
-    \begin{equation}
-        \begin{aligned}
-            \sqrt{n}\left(\hat{\theta}-\theta_*\right) \stackrel{d}{\Rightarrow} N\left(0,G^{-1}\Omega G^{-1}\right)
-        \end{aligned}
-        \nonumber
-    \end{equation}
-    where $\theta_*$ is the pseudo-true parameter that estimated by the Poisson regression model.
-    \begin{equation}
-        \begin{aligned}
-            \Omega=\mathbb{E}[s(z,\theta_*)s(z,\theta_*)^T],\ G=\mathbb{E}\left[\frac{\partial^2}{\partial \theta\partial \theta^T}f(Z;\theta_0)\right]
-        \end{aligned}
-        \nonumber
-    \end{equation}
-    where $s(\cdot)$ is the score function. To obtain a consistent estimator, we would use $\hat{G}^{-1}\hat{\Omega}\hat{G}^{-1}$, where
-    \begin{equation}
-        \begin{aligned}
-            \hat{\Omega}=\frac{1}{n}\sum_{i=1}^n[s(z_i,\hat{\theta})s(z_i,\hat{\theta})^T],\ \hat{G}=\frac{1}{n}\sum_{i=1}^n\left[\frac{\partial^2}{\partial \theta\partial \theta^T}f(z_i;\hat{\theta})\right]
-        \end{aligned}
-        \nonumber
-    \end{equation}
 \end{enumerate}
 
 
@@ -2479,9 +2458,6 @@ The asymptotic normality gives
     \nonumber
 \end{equation}
 We can find the second information equality doesn't hold, $G\neq\Omega \Rightarrow G^{-1}\Omega G^{-1}\neq G^{-1}$.
-\begin{note}
-    \underline{Second information equality} gives $I=-G$ for maximization problem (e.g. MLE) and $I=G$ for minimization problem.
-\end{note}
 
 
 \subsection{Efficient NLS}
