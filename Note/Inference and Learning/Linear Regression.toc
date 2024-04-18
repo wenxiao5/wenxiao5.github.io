@@ -56,50 +56,53 @@
 \contentsline {subsection}{\numberline {2.3.3}Likelihood Ratio Test}{42}{subsection.2.3.3}%
 \contentsline {subsection}{\numberline {2.3.4}Wald is not invariant to parametrization}{43}{subsection.2.3.4}%
 \contentsline {section}{\numberline {2.4}Nonlinear Least Square}{43}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}Efficient NLS}{45}{subsection.2.4.1}%
-\contentsline {section}{\numberline {2.5}Quantile Regression}{46}{section.2.5}%
-\contentsline {subsection}{\numberline {2.5.1}Linear Quantile Regression Model}{46}{subsection.2.5.1}%
-\contentsline {subsection}{\numberline {2.5.2}Quantile Causal Effects}{47}{subsection.2.5.2}%
-\contentsline {chapter}{\numberline {3}Bootstrap}{49}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Traditional Monte-Carlo Approach}{49}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Bootstrap (When data is not enough)}{50}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Residual Bootstrap (for problem with not i.i.d. data)}{50}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Example: Linear}{51}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Example: Nonlinear Markov Process}{51}{subsection.3.3.2}%
-\contentsline {section}{\numberline {3.4}Posterior Simulation / Bayesian (Weighted) Bootstrap}{52}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Dirichlet Distribution Prior}{52}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Haldane Prior}{53}{subsection.3.4.2}%
-\contentsline {subsection}{\numberline {3.4.3}Linear Model Case}{53}{subsection.3.4.3}%
-\contentsline {subsection}{\numberline {3.4.4}Bernoulli Case}{54}{subsection.3.4.4}%
-\contentsline {chapter}{\numberline {4}Linear Predictors / Regression}{55}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Best Linear Predictor}{55}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Convergence of OLS}{56}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Approximation}{56}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Testing and Confidence Interval}{58}{subsection.4.2.2}%
-\contentsline {section}{\numberline {4.3}Long, Short, Auxilary Regression}{58}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Residual Regression}{60}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Card-Krueger Model}{61}{section.4.5}%
-\contentsline {subsection}{\numberline {4.5.1}Proxy Variable Regression}{62}{subsection.4.5.1}%
-\contentsline {section}{\numberline {4.6}Instrumental Variables}{63}{section.4.6}%
-\contentsline {subsection}{\numberline {4.6.1}Motivation}{63}{subsection.4.6.1}%
-\contentsline {subsection}{\numberline {4.6.2}I.V. Model}{63}{subsection.4.6.2}%
-\contentsline {subsection}{\numberline {4.6.3}Weak I.V.}{65}{subsection.4.6.3}%
-\contentsline {section}{\numberline {4.7}Linear Generalized Method of Moments (Linear GMM)}{66}{section.4.7}%
-\contentsline {subsection}{\numberline {4.7.1}Generalized Method of Moments (GMM)}{66}{subsection.4.7.1}%
-\contentsline {subsection}{\numberline {4.7.2}Linear GMM}{67}{subsection.4.7.2}%
-\contentsline {subsection}{\numberline {4.7.3}Properties of Linear GMM Estimator}{68}{subsection.4.7.3}%
-\contentsline {subsection}{\numberline {4.7.4}Alternative: Continuous Updating Estimator}{69}{subsection.4.7.4}%
-\contentsline {subsection}{\numberline {4.7.5}Inference}{69}{subsection.4.7.5}%
-\contentsline {subsection}{\numberline {4.7.6}OVER-ID Test}{70}{subsection.4.7.6}%
-\contentsline {subsection}{\numberline {4.7.7}Bootstrap GMM}{72}{subsection.4.7.7}%
-\contentsline {section}{\numberline {4.8}Panel Data Models}{72}{section.4.8}%
-\contentsline {subsection}{\numberline {4.8.1}Pooled OLS}{73}{subsection.4.8.1}%
-\contentsline {subsection}{\numberline {4.8.2}Fixed Effect Model}{74}{subsection.4.8.2}%
-\contentsline {subsection}{\numberline {4.8.3}Random Effect Model}{75}{subsection.4.8.3}%
-\contentsline {subsection}{\numberline {4.8.4}Two-Way Fixed Effect Model}{76}{subsection.4.8.4}%
-\contentsline {subsection}{\numberline {4.8.5}Arellano Bond Approach}{77}{subsection.4.8.5}%
-\contentsline {section}{\numberline {4.9}Control Function Approach (another approach to handle endogenieity)}{78}{section.4.9}%
-\contentsline {section}{\numberline {4.10}LATE (Local ATE): Application of I.V. on Potential Outcomes}{78}{section.4.10}%
-\contentsline {section}{\numberline {4.11}Difference in Difference (DiD)}{80}{section.4.11}%
-\contentsline {subsection}{\numberline {4.11.1}After OLS Regression}{81}{subsection.4.11.1}%
-\contentsline {subsection}{\numberline {4.11.2}Difference in Difference}{81}{subsection.4.11.2}%
+\contentsline {subsection}{\numberline {2.4.1}Efficient NLS: Weighted NLS}{45}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Example 1: $y_i=x_i^{\beta _0}+\epsilon _i$}{46}{subsection.2.4.2}%
+\contentsline {section}{\numberline {2.5}(Linear) Quantile Regression}{46}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Linear Quantile Regression Model}{47}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}Quantile Causal Effects}{48}{subsection.2.5.2}%
+\contentsline {subsection}{\numberline {2.5.3}M-estimator of Quantile}{49}{subsection.2.5.3}%
+\contentsline {section}{\numberline {2.6}Lasso}{50}{section.2.6}%
+\contentsline {chapter}{\numberline {3}Bootstrap}{51}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Traditional Monte-Carlo Approach}{51}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Bootstrap (When data is not enough)}{52}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Residual Bootstrap (for problem with not i.i.d. data)}{52}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Example: Linear}{53}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Example: Nonlinear Markov Process}{53}{subsection.3.3.2}%
+\contentsline {section}{\numberline {3.4}Posterior Simulation / Bayesian (Weighted) Bootstrap}{54}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Dirichlet Distribution Prior}{54}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Haldane Prior}{55}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Linear Model Case}{55}{subsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.4.4}Bernoulli Case}{56}{subsection.3.4.4}%
+\contentsline {chapter}{\numberline {4}Linear Predictors / Regression}{57}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Best Linear Predictor}{57}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Convergence of OLS}{58}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Approximation}{58}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Testing and Confidence Interval}{60}{subsection.4.2.2}%
+\contentsline {section}{\numberline {4.3}Long, Short, Auxilary Regression}{60}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Residual Regression}{62}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Card-Krueger Model}{63}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Proxy Variable Regression}{64}{subsection.4.5.1}%
+\contentsline {section}{\numberline {4.6}Instrumental Variables}{65}{section.4.6}%
+\contentsline {subsection}{\numberline {4.6.1}Motivation}{65}{subsection.4.6.1}%
+\contentsline {subsection}{\numberline {4.6.2}I.V. Model}{65}{subsection.4.6.2}%
+\contentsline {subsection}{\numberline {4.6.3}Weak I.V.}{67}{subsection.4.6.3}%
+\contentsline {section}{\numberline {4.7}Linear Generalized Method of Moments (Linear GMM)}{68}{section.4.7}%
+\contentsline {subsection}{\numberline {4.7.1}Generalized Method of Moments (GMM)}{68}{subsection.4.7.1}%
+\contentsline {subsection}{\numberline {4.7.2}Linear GMM}{69}{subsection.4.7.2}%
+\contentsline {subsection}{\numberline {4.7.3}Properties of Linear GMM Estimator}{70}{subsection.4.7.3}%
+\contentsline {subsection}{\numberline {4.7.4}Alternative: Continuous Updating Estimator}{71}{subsection.4.7.4}%
+\contentsline {subsection}{\numberline {4.7.5}Inference}{71}{subsection.4.7.5}%
+\contentsline {subsection}{\numberline {4.7.6}OVER-ID Test}{72}{subsection.4.7.6}%
+\contentsline {subsection}{\numberline {4.7.7}Bootstrap GMM}{74}{subsection.4.7.7}%
+\contentsline {section}{\numberline {4.8}Panel Data Models}{74}{section.4.8}%
+\contentsline {subsection}{\numberline {4.8.1}Pooled OLS}{75}{subsection.4.8.1}%
+\contentsline {subsection}{\numberline {4.8.2}Fixed Effect Model}{76}{subsection.4.8.2}%
+\contentsline {subsection}{\numberline {4.8.3}Random Effect Model}{77}{subsection.4.8.3}%
+\contentsline {subsection}{\numberline {4.8.4}Two-Way Fixed Effect Model}{78}{subsection.4.8.4}%
+\contentsline {subsection}{\numberline {4.8.5}Arellano Bond Approach}{79}{subsection.4.8.5}%
+\contentsline {section}{\numberline {4.9}Control Function Approach (another approach to handle endogenieity)}{80}{section.4.9}%
+\contentsline {section}{\numberline {4.10}LATE (Local ATE): Application of I.V. on Potential Outcomes}{80}{section.4.10}%
+\contentsline {section}{\numberline {4.11}Difference in Difference (DiD)}{82}{section.4.11}%
+\contentsline {subsection}{\numberline {4.11.1}After OLS Regression}{83}{subsection.4.11.1}%
+\contentsline {subsection}{\numberline {4.11.2}Difference in Difference}{83}{subsection.4.11.2}%

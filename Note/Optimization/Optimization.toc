@@ -71,10 +71,10 @@
 \contentsline {subsection}{\numberline {3.11.2}Sub-differential: set of all sub-gradient}{26}{subsection.3.11.2}%
 \contentsline {subsection}{\numberline {3.11.3}More examples}{27}{subsection.3.11.3}%
 \contentsline {chapter}{\numberline {4}Geometric Programming (GP)}{29}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Arithmetic Mean-Geometric Mean Inequality (A-G inequality) $\delta _1x_2+\delta _2x_2+\cdots +\delta _nx_n\geq x_1^{\delta _1}x_2^{\delta _2}\cdots x_n^{\delta _n}$}{29}{section.4.1}%
+\contentsline {section}{\numberline {4.1}Arithmetic Mean-Geometric Mean Inequality (AM-GM inequality) $\delta _1x_2+\delta _2x_2+\cdots +\delta _nx_n\geq x_1^{\delta _1}x_2^{\delta _2}\cdots x_n^{\delta _n}$}{29}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Unconstrained Geometric Programs}{30}{section.4.2}%
 \contentsline {subsection}{\numberline {4.2.1}Def: Posynomial}{30}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}General Strategy: A-G inequality}{30}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.2}General Strategy: AM-GM inequality}{30}{subsection.4.2.2}%
 \contentsline {subsection}{\numberline {4.2.3}Dual of the Unconstrained GP}{30}{subsection.4.2.3}%
 \contentsline {chapter}{\numberline {5}Polynomial Interpolation}{33}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Method 1: $M\vec {a}=\vec {y}$}{33}{section.5.1}%
@@ -158,7 +158,7 @@
 \contentsline {section}{\numberline {11.3}Karush–Kuhn–Tucker (KKT) Sufficient Conditions}{83}{section.11.3}%
 \contentsline {section}{\numberline {11.4}General Sufficiency Condition}{86}{section.11.4}%
 \contentsline {section}{\numberline {11.5}Barrier Method}{87}{section.11.5}%
-\contentsline {section}{\numberline {11.6}An Exmaple Using KKT or Barrier}{88}{section.11.6}%
+\contentsline {section}{\numberline {11.6}An Example Using KKT or Barrier}{88}{section.11.6}%
 \contentsline {subsection}{\numberline {11.6.1}Solution using KKT conditions}{88}{subsection.11.6.1}%
 \contentsline {subsection}{\numberline {11.6.2}Solution using logarithmic barrier}{89}{subsection.11.6.2}%
 \contentsline {section}{\numberline {11.7}Penalty Method (For ECP)}{89}{section.11.7}%
