@@ -1,0 +1,24 @@
+\contentsline {chapter}{\numberline {1}Geometric Programming (GP)}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Arithmetic Mean-Geometric Mean Inequality}{1}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}AM-GM inequality: $\frac {x_1+x_2+...+x_n}{n}\geq \sqrt [n]{x_1x_2...x_n}$}{1}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Weighted AM-GM inequality: $\DOTSB \sum@ \slimits@ _{i=1}^n\delta _ix_i\geq \DOTSB \prod@ \slimits@ _{i=1}^nx_i^{\delta _i}$}{1}{subsection.1.1.2}%
+\contentsline {section}{\numberline {1.2}Unconstrained Geometric Programs}{2}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Def: Posynomial}{2}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}General Strategy: AM-GM inequality}{2}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}Dual of the Unconstrained GP}{2}{subsection.1.2.3}%
+\contentsline {chapter}{\numberline {2}Polynomial Interpolation}{5}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Method 1: $M\vec {a}=\vec {y}$}{5}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Method 2: Lagrange Interpolation Formula}{5}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Lines of Best Fit}{6}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Least-Square Problem (Overconstrainted $A \vec {x}= \vec {b}$)}{6}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Lemma: closest point $\Leftrightarrow $ $(A\vec {x}^*-\vec {y})\bot \vec {a},\ \forall \vec {a}\in V$}{6}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Theorem: $\vec {x}^*=(A^TA)^{-1}A^T\vec {y}=A^+ \vec {y}$}{7}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.3}Def: Projection Matrix: $P=AA^+$; Projection of $\vec {y}$ on $V$: $A \vec {x}^*=P \vec {y}$}{7}{subsection.2.4.3}%
+\contentsline {subsection}{\numberline {2.4.4}Special Case: Projection on vector ${Proj}_{\vec {a}}(\vec {y})=\frac {(\vec {a}\cdot \vec {y})\vec {a}}{\|\vec {a}\|^2}$}{8}{subsection.2.4.4}%
+\contentsline {subsection}{\numberline {2.4.5}Theorem: Projection Matrix $=$ Sum of outer products of orthonormal basis}{8}{subsection.2.4.5}%
+\contentsline {subsection}{\numberline {2.4.6}Corollary: $Q$ has orthonormal columns $\Rightarrow $ $\vec {x}^*=Q^T \vec {y}$. ($Q^+=Q^T$)}{9}{subsection.2.4.6}%
+\contentsline {subsection}{\numberline {2.4.7}The Gram-Schmidt process}{9}{subsection.2.4.7}%
+\contentsline {section}{\numberline {2.5}Minimum-norm problems (Underconstrainted $A \vec {x}= \vec {b}$)}{10}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Applying the least-squares technique}{10}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}The short cut method}{11}{subsection.2.5.2}%
+\contentsline {subsection}{\numberline {2.5.3}The short cut method with $H$-norm}{12}{subsection.2.5.3}%

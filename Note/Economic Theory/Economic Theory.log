@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.3.11)  17 APR 2024 15:12
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.3.11)  24 APR 2024 12:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2106,24 +2106,29 @@ Overfull \hbox (11.6628pt too wide) in paragraph at lines 2931--2933
 Chapter 7.
 [82
 
-] [83]
+] [83] [84]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3622.
+(hyperref)                removing `math shift' on input line 3632.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3622.
+(hyperref)                removing `math shift' on input line 3632.
 
-[84] [85] [86] [87] [88] [89] [90] [91] [92] [93] [94] [95] [96] [97] [98]
+[85] [86] [87] [88] [89] [90] [91] [92] [93] [94] [95]
+Overfull \hbox (7.74785pt too wide) in paragraph at lines 4263--4264
+[]\TU/TeXGyreTermesX(0)/m/it/10.95 each bidder $\OML/cmm/m/it/10.95 i$\TU/TeXGyreTermesX(0)/m/it/10.95 ’s valuation independently drawn from a strictly increasing c.d.f. $\OML/cmm/m/it/10.95 F[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^R[]\OT1/cmr/m/n/10.95 )$ \TU/TeXGyreTermesX(0)/m/it/10.95 (with p.d.f. $\OML/cmm/m/it/10.95 f[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^R[]\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ; ^^R[] \OMS/cmsy/m/n/10.95 2
+ []
+
+[96] [97] [98] [99] [100] [101]
 Chapter 8.
-[99
+[102
 
-] [100] [101] [102] [103] [104] [105] [106]
+] [103] [104] [105] [106] [107] [108] [109]
 
-LaTeX Warning: Reference `BST' on page 107 undefined on input line 4878.
+LaTeX Warning: Reference `BST' on page 110 undefined on input line 5170.
 
-[107] [108] [109] [110] [111] [112] [113] [114] [115] [116] [117] [118] [119] [120] (./Economic Theory.aux)
+[110] [111] [112] [113] [114] [115] [116] [117] [118] [119] [120] [121] [122] [123] (./Economic Theory.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -2145,12 +2150,12 @@ Package logreq Info: Writing requests to '"Economic Theory".run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 43693 strings out of 474773
- 904050 string characters out of 5757724
+ 43701 strings out of 474773
+ 904075 string characters out of 5757724
  1962839 words of memory out of 5000000
- 65124 multiletter control sequences out of 15000+600000
- 571300 words of font info for 120 fonts, out of 8000000 for 9000
+ 65134 multiletter control sequences out of 15000+600000
+ 571284 words of font info for 118 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  99i,20n,107p,984b,2103s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Economic Theory.pdf (127 pages).
+Output written on Economic Theory.pdf (130 pages).
