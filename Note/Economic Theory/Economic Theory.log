@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.3.11)  1 MAY 2024 15:00
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.3.11)  6 MAY 2024 17:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2077,85 +2077,4 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1394.
 
 [34] [35]
-Underfull \hbox (badness 4832) in paragraph at lines 1472--1473
-[]\TU/TeXGyreTermesX(0)/m/n/10.95 An allocation $\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x[]; y[]\OT1/cmr/m/n/10.95 )$ \TU/TeXGyreTermesX(0)/m/n/10.95 and a price vector $\OML/cmm/m/it/10.95 p[] \OMS/cmsy/m/n/10.95 2 \U/msb/m/n/10.95 R[]$ \TU/TeXGyreTermesX(0)/m/n/10.95 are a \TU/TeXGyreTermesX(0)/m/it/10.95 competitive equilibrium \TU/TeXGyreTermesX(0)/m/n/10.95 in a
- []
-
-[36] [37] [38] [39] [40] [41]
-
-LaTeX Font Warning: Font shape `U/manual/m/it' undefined
-(Font)              using `U/manual/m/n' instead on input line 1792.
-
-[42] [43] [44] [45] [46] [47] [48] [49] [50]
-Chapter 6.
-[51
-
-] [52] [53] [54] [55] [56] [57] [58] [59] [60] [61] [62] [63] [64] [65] [66] [67]
-Overfull \hbox (72.75078pt too wide) in paragraph at lines 2913--2914
-[]\TU/TeXGyreTermesX(0)/m/n/10.95 We have discussed the extensive form game with perfect information (PIG), which is denoted by $\OML/cmm/m/it/10.95 G \OT1/cmr/m/n/10.95 = \OMS/cmsy/m/n/10.95 f\OML/cmm/m/it/10.95 N; A; H; Z; P; O; o; \OMS/cmsy/m/n/10.95 ^^_[]
- []
-
-File: BS.png Graphic file (type bmp)
-<BS.png>
-
-Overfull \hbox (11.6628pt too wide) in paragraph at lines 2931--2933
-[]\TU/TeXGyreTermesX(0)/m/n/10.95 In this example, a mixed strategy of the P1 can be represented by a probability distribution over $\OMS/cmsy/m/n/10.95 f\OML/cmm/m/it/10.95 OU; OD; IU; ID\OMS/cmsy/m/n/10.95 g$\TU/TeXGyreTermesX(0)/m/n/10.95 .
- []
-
-[68] [69] [70] [71] [72] [73] [74] [75] [76] [77] [78] [79] [80] [81]
-Chapter 7.
-[82
-
-] [83] [84]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3632.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3632.
-
-[85] [86] [87] [88] [89] [90] [91] [92] [93] [94] [95]
-Overfull \hbox (7.74785pt too wide) in paragraph at lines 4263--4264
-[]\TU/TeXGyreTermesX(0)/m/it/10.95 each bidder $\OML/cmm/m/it/10.95 i$\TU/TeXGyreTermesX(0)/m/it/10.95 ’s valuation independently drawn from a strictly increasing c.d.f. $\OML/cmm/m/it/10.95 F[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^R[]\OT1/cmr/m/n/10.95 )$ \TU/TeXGyreTermesX(0)/m/it/10.95 (with p.d.f. $\OML/cmm/m/it/10.95 f[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^R[]\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ; ^^R[] \OMS/cmsy/m/n/10.95 2
- []
-
-[96] [97] [98] [99] [100] [101]
-Chapter 8.
-[102
-
-] [103] [104] [105] [106] [107] [108] [109]
-
-LaTeX Warning: Reference `BST' on page 110 undefined on input line 5170.
-
-[110] [111] [112] [113] [114] [115] [116] [117] [118] [119] [120] [121] [122] [123] (./Economic Theory.aux)
- ***********
-LaTeX2e <2023-11-01> patch level 1
-L3 programming layer <2024-02-20>
- ***********
-
-
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: There were multiply-defined labels.
-
-Package rerunfilecheck Info: File `"Economic Theory".out' has not changed.
-(rerunfilecheck)             Checksum: <no file>.
-Package logreq Info: Writing requests to '"Economic Theory".run.xml'.
-\openout1 = `"Economic Theory.run.xml"'.
-
- ) 
-Here is how much of TeX's memory you used:
- 43701 strings out of 474773
- 904075 string characters out of 5757724
- 1962839 words of memory out of 5000000
- 65134 multiletter control sequences out of 15000+600000
- 571284 words of font info for 118 fonts, out of 8000000 for 9000
- 1348 hyphenation exceptions out of 8191
- 99i,20n,107p,984b,2103s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-Output written on Economic Theory.pdf (130 pages).
+U
