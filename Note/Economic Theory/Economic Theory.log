@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.3.11)  6 MAY 2024 17:39
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.3.11)  7 JUN 2024 19:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1043,7 +1043,7 @@ Library (tcolorbox): 'tcbfitting.code.tex' version '6.2.0'
 \c@tcb@cnt@corollary=\count521
 \c@tcb@cnt@lemma=\count522
 \c@tcb@cnt@proposition=\count523
-\c@exam=\count524
+\c@example=\count524
 \c@exer=\count525
 \c@prob=\count526
  (/usr/local/texlive/2023/texmf-dist/tex/latex/adforn/adforn.sty
@@ -1163,7 +1163,7 @@ Package tocloft Info: The document has chapter divisions on input line 51.
 \cfttabnumwidth=\skip132
 )
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/b/n' will be
-(Font)              scaled to size 10.95pt on input line 1473.
+(Font)              scaled to size 10.95pt on input line 1472.
 )
 \c@tcb@cnt@proof=\count540
 \c@tcb@cnt@claim=\count541
@@ -1440,9 +1440,12 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 93.
 
-LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/b/it' will be
-(Font)              scaled to size 10.95pt on input line 95.
-[2] [3] [4]
+[2] [3]
+Underfull \hbox (badness 1194) in paragraph at lines 161--162
+[]\TU/Palatino(0)/m/n/10.95 Let $\OML/cmm/m/it/10.95 X$ \TU/Palatino(0)/m/n/10.95 be a compact set and $\OT1/cmr/m/n/10.95 ^^I : \OML/cmm/m/it/10.95 X \OMS/cmsy/m/n/10.95 ! \OT1/cmr/m/n/10.95 2[]$ \TU/Palatino(0)/m/n/10.95 be a non-empty, compact-valued upper-
+ []
+
+[4]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 191.
@@ -1533,19 +1536,9 @@ File: Pref_prop.png Graphic file (type bmp)
 <Pref_prop.png>
  [9] [10] [11] [12] [13]
 Chapter 3.
-
-Underfull \hbox (badness 1314) in paragraph at lines 522--523
-[]\TU/TeXGyreTermesX(0)/m/it/10.95 Let $\OML/cmm/m/it/10.95 c$ \TU/TeXGyreTermesX(0)/m/it/10.95 be a choice function defined on a domain containing at least all subsets of $\OML/cmm/m/it/10.95 X$ \TU/TeXGyreTermesX(0)/m/it/10.95 of
- []
-
 [14
 
-] [15] [16]
-LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/it' will be
-(Font)              scaled to size 8.0pt on input line 675.
-LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/it' will be
-(Font)              scaled to size 6.0pt on input line 675.
- [17] [18] [19]
+] [15] [16] [17] [18] [19]
 Chapter 4.
 [20
 
@@ -2022,6 +2015,9 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1244.
 
+LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/b/it' will be
+(Font)              scaled to size 10.95pt on input line 1263.
+[31]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1266.
@@ -2058,9 +2054,13 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1266.
 
-[31] [32]
-Underfull \hbox (badness 1377) in paragraph at lines 1373--1376
-[]| \TU/TeXGyreTermesX(0)/m/it/10.95 By strong monotonicity, $\OML/cmm/m/it/10.95 u[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x[] \OT1/cmr/m/n/10.95 + (0\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 0\OML/cmm/m/it/10.95 ; ::; \OT1/cmr/m/n/10.95 0\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 1\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 0\OML/cmm/m/it/10.95 ; ::; \OT1/cmr/m/n/10.95 0)) \OML/cmm/m/it/10.95 > u[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x[]\OT1/cmr/m/n/10.95 )$\TU/TeXGyreTermesX(0)/m/it/10.95 , hence, $\OML/cmm/m/it/10.95 p \OMS/cmsy/m/n/10.95 ^^A \OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x[] \OT1/cmr/m/n/10.95 +
+LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/it' will be
+(Font)              scaled to size 8.0pt on input line 1280.
+LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/it' will be
+(Font)              scaled to size 6.0pt on input line 1280.
+[32]
+Underfull \hbox (badness 1281) in paragraph at lines 1373--1376
+[]| \TU/TeXGyreTermesX(0)/m/n/10.95 By strong monotonicity, $\OML/cmm/m/it/10.95 u[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x[] \OT1/cmr/m/n/10.95 + (0\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 0\OML/cmm/m/it/10.95 ; ::; \OT1/cmr/m/n/10.95 0\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 1\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 0\OML/cmm/m/it/10.95 ; ::; \OT1/cmr/m/n/10.95 0)) \OML/cmm/m/it/10.95 > u[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x[]\OT1/cmr/m/n/10.95 )$\TU/TeXGyreTermesX(0)/m/n/10.95 , hence, $\OML/cmm/m/it/10.95 p \OMS/cmsy/m/n/10.95 ^^A \OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x[] \OT1/cmr/m/n/10.95 +
  []
 
 [33]
@@ -2077,4 +2077,108 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1394.
 
 [34] [35]
-U
+Underfull \hbox (badness 2368) in paragraph at lines 1472--1473
+[]\TU/Palatino(0)/m/n/10.95 An allocation $\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x[]; y[]\OT1/cmr/m/n/10.95 )$ \TU/Palatino(0)/m/n/10.95 and a price vector $\OML/cmm/m/it/10.95 p[] \OMS/cmsy/m/n/10.95 2 \U/msb/m/n/10.95 R[]$ \TU/Palatino(0)/m/n/10.95 are a \TU/Palatino(0)/m/it/10.95 competitive equilibrium \TU/Palatino(0)/m/n/10.95 in a
+ []
+
+[36] [37] [38] [39] [40] [41] [42] [43] [44] [45] [46] [47] [48]
+Underfull \hbox (badness 4995) in paragraph at lines 2090--2092
+[]\TU/Palatino(0)/m/n/10.95 A consumption allocation $\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x[]; :::; x[]\OT1/cmr/m/n/10.95 )$\TU/Palatino(0)/m/n/10.95 , portfolio profile $\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 z[]; :::; z[]\OT1/cmr/m/n/10.95 )$\TU/Palatino(0)/m/n/10.95 , spot price vectors
+ []
+
+[49] [50]
+Chapter 6.
+[51
+
+] [52] [53] [54]
+Underfull \hbox (badness 1902) in paragraph at lines 2326--2329
+\TU/Palatino(0)/m/n/10.95 A strategy $\OML/cmm/m/it/10.95 ^^[[] \OMS/cmsy/m/n/10.95 2 \OT1/cmr/m/n/10.95 ^^A(\OML/cmm/m/it/10.95 S[]\OT1/cmr/m/n/10.95 )$ \TU/Palatino(0)/m/n/10.95 is the \TU/Palatino(0)/b/n/10.95 best response \TU/Palatino(0)/m/n/10.95 to beliefs $\OML/cmm/m/it/10.95 ^^V$ \TU/Palatino(0)/m/n/10.95 if it solves the problem of
+ []
+
+[55] [56] [57] [58] [59] [60] [61] [62] [63] [64] [65] [66] [67]
+Overfull \hbox (72.75078pt too wide) in paragraph at lines 2913--2914
+[]\TU/TeXGyreTermesX(0)/m/n/10.95 We have discussed the extensive form game with perfect information (PIG), which is denoted by $\OML/cmm/m/it/10.95 G \OT1/cmr/m/n/10.95 = \OMS/cmsy/m/n/10.95 f\OML/cmm/m/it/10.95 N; A; H; Z; P; O; o; \OMS/cmsy/m/n/10.95 ^^_[]
+ []
+
+[68]
+File: BS.png Graphic file (type bmp)
+<BS.png>
+
+Overfull \hbox (11.6628pt too wide) in paragraph at lines 2931--2938
+[]\TU/TeXGyreTermesX(0)/m/n/10.95 In this example, a mixed strategy of the P1 can be represented by a probability distribution over $\OMS/cmsy/m/n/10.95 f\OML/cmm/m/it/10.95 OU; OD; IU; ID\OMS/cmsy/m/n/10.95 g$\TU/TeXGyreTermesX(0)/m/n/10.95 .
+ []
+
+[69]
+Underfull \hbox (badness 5245) in paragraph at lines 2968--2969
+[]\TU/Palatino(0)/m/n/10.95 Formally, the subgame $\OT1/cmr/m/n/10.95 ^^@(\OML/cmm/m/it/10.95 h\OT1/cmr/m/n/10.95 )$ \TU/Palatino(0)/m/n/10.95 associated with $\OML/cmm/m/it/10.95 h \OT1/cmr/m/n/10.95 = (\OML/cmm/m/it/10.95 h[]; :::; h[]\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95 2 \OML/cmm/m/it/10.95 H$ \TU/Palatino(0)/m/n/10.95 is $\OT1/cmr/m/n/10.95 ^^@(\OML/cmm/m/it/10.95 h\OT1/cmr/m/n/10.95 ) =
+ []
+
+[70] [71] [72]
+Underfull \hbox (badness 1102) in paragraph at lines 3110--3111
+\TU/Palatino(0)/m/n/10.95 where $\OML/cmm/m/it/10.95 ^^V\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 t\OT1/cmr/m/n/10.95 ; \OML/cmm/m/it/10.95 s\OT1/cmr/m/n/10.95 )$ \TU/Palatino(0)/m/n/10.95 is the $\U/msb/m/n/10.95 R$\TU/Palatino(0)/m/n/10.95 's posterior belief about $\OML/cmm/m/it/10.95 t$ \TU/Palatino(0)/m/n/10.95 given $\OML/cmm/m/it/10.95 s$\TU/Palatino(0)/m/n/10.95 , $\OML/cmm/m/it/10.95 ^^V\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 t\OT1/cmr/m/n/10.95 ; \OML/cmm/m/it/10.95 s\OT1/cmr/m/n/10.95 ) = []$ \TU/Palatino(0)/m/n/10.95 if
+ []
+
+[73] [74] [75] [76] [77] [78] [79] [80] [81] [82]
+Chapter 7.
+[83
+
+] [84] [85]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 3632.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 3632.
+
+[86] [87] [88] [89] [90] [91] [92] [93] [94] [95] [96]
+Overfull \hbox (7.74785pt too wide) in paragraph at lines 4263--4264
+[]\TU/TeXGyreTermesX(0)/m/it/10.95 each bidder $\OML/cmm/m/it/10.95 i$\TU/TeXGyreTermesX(0)/m/it/10.95 ’s valuation independently drawn from a strictly increasing c.d.f. $\OML/cmm/m/it/10.95 F[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^R[]\OT1/cmr/m/n/10.95 )$ \TU/TeXGyreTermesX(0)/m/it/10.95 (with p.d.f. $\OML/cmm/m/it/10.95 f[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^R[]\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ; ^^R[] \OMS/cmsy/m/n/10.95 2
+ []
+
+[97] [98] [99] [100] [101] [102] [103] [104]
+Underfull \hbox (badness 1231) in paragraph at lines 4793--4794
+[]\TU/Palatino(0)/m/n/10.95 Any two mechanisms that are revenue-equivalent with fixed $\OML/cmm/m/it/10.95 n$ \TU/Palatino(0)/m/n/10.95 and $\OML/cmm/m/it/10.95 R$ \TU/Palatino(0)/m/n/10.95 remain revenue-
+ []
+
+[105] [106] [107] [108]
+Chapter 8.
+[109
+
+] [110] [111] [112] [113] [114] [115] [116] [117]
+
+LaTeX Warning: Reference `BST' on page 118 undefined on input line 5395.
+
+[118] [119]
+Underfull \hbox (badness 10000) in paragraph at lines 5507--5508
+[]\TU/Palatino(0)/m/n/10.95 If there exists an agent without substitutes valuation, then we can construct
+ []
+
+[120] [121] [122] [123] [124] [125] [126] [127] [128] [129] [130] [131] [132] (./Economic Theory.aux)
+ ***********
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-02-20>
+ ***********
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package rerunfilecheck Info: File `"Economic Theory".out' has not changed.
+(rerunfilecheck)             Checksum: <no file>.
+Package logreq Info: Writing requests to '"Economic Theory".run.xml'.
+\openout1 = `"Economic Theory.run.xml"'.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 43890 strings out of 474773
+ 907834 string characters out of 5757724
+ 1964839 words of memory out of 5000000
+ 65285 multiletter control sequences out of 15000+600000
+ 571492 words of font info for 144 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 99i,21n,107p,994b,2091s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+Output written on Economic Theory.pdf (139 pages).

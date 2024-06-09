@@ -1,0 +1,32 @@
+\contentsline {chapter}{\numberline {1}Linear Predictors / Regression}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Best Linear Predictor}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Convergence of OLS}{2}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Approximation}{2}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Testing and Confidence Interval}{4}{subsection.1.2.2}%
+\contentsline {section}{\numberline {1.3}Long, Short, Auxilary Regression}{4}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Residual Regression}{6}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Card-Krueger Model}{7}{section.1.5}%
+\contentsline {subsection}{\numberline {1.5.1}Proxy Variable Regression}{8}{subsection.1.5.1}%
+\contentsline {section}{\numberline {1.6}Instrumental Variables}{9}{section.1.6}%
+\contentsline {subsection}{\numberline {1.6.1}Motivation}{9}{subsection.1.6.1}%
+\contentsline {subsection}{\numberline {1.6.2}I.V. Model}{10}{subsection.1.6.2}%
+\contentsline {subsection}{\numberline {1.6.3}Weak I.V.}{12}{subsection.1.6.3}%
+\contentsline {section}{\numberline {1.7}Linear Generalized Method of Moments (Linear GMM)}{12}{section.1.7}%
+\contentsline {subsection}{\numberline {1.7.1}Generalized Method of Moments (GMM)}{12}{subsection.1.7.1}%
+\contentsline {subsection}{\numberline {1.7.2}Linear GMM}{13}{subsection.1.7.2}%
+\contentsline {subsection}{\numberline {1.7.3}Properties of Linear GMM Estimator}{14}{subsection.1.7.3}%
+\contentsline {subsection}{\numberline {1.7.4}Alternative: Continuous Updating Estimator}{15}{subsection.1.7.4}%
+\contentsline {subsection}{\numberline {1.7.5}Inference}{15}{subsection.1.7.5}%
+\contentsline {subsection}{\numberline {1.7.6}OVER-ID Test}{16}{subsection.1.7.6}%
+\contentsline {subsection}{\numberline {1.7.7}Bootstrap GMM}{18}{subsection.1.7.7}%
+\contentsline {section}{\numberline {1.8}Panel Data Models}{18}{section.1.8}%
+\contentsline {subsection}{\numberline {1.8.1}Pooled OLS}{19}{subsection.1.8.1}%
+\contentsline {subsection}{\numberline {1.8.2}Fixed Effect Model}{20}{subsection.1.8.2}%
+\contentsline {subsection}{\numberline {1.8.3}Random Effect Model}{21}{subsection.1.8.3}%
+\contentsline {subsection}{\numberline {1.8.4}Two-Way Fixed Effect Model}{22}{subsection.1.8.4}%
+\contentsline {subsection}{\numberline {1.8.5}Arellano Bond Approach}{23}{subsection.1.8.5}%
+\contentsline {section}{\numberline {1.9}Control Function Approach (another approach to handle endogenieity)}{24}{section.1.9}%
+\contentsline {section}{\numberline {1.10}LATE (Local ATE): Application of I.V. on Potential Outcomes}{25}{section.1.10}%
+\contentsline {section}{\numberline {1.11}Difference in Difference (DiD)}{27}{section.1.11}%
+\contentsline {subsection}{\numberline {1.11.1}After OLS Regression}{27}{subsection.1.11.1}%
+\contentsline {subsection}{\numberline {1.11.2}Difference in Difference}{27}{subsection.1.11.2}%

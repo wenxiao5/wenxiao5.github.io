@@ -246,32 +246,11 @@
 
 \RequirePackage{anyfontsize}
 \ifdefstring{\ELEGANT@math}{newtx}{
-  \let\oldencodingdefault\encodingdefault
-  \let\oldrmdefault\rmdefault
-  \let\oldsfdefault\sfdefault
-  \let\oldttdefault\ttdefault
-  \def\encodingdefault{T1}
-  \renewcommand{\rmdefault}{ntxtlf}
-  \renewcommand{\sfdefault}{qhv}
-  \renewcommand{\ttdefault}{ntxtt}
+  \RequirePackage{newtxtext}
   \RequirePackage{newtxmath}
-  \let\encodingdefault\oldencodingdefault
-  \let\rmdefault\oldrmdefault
-  \let\sfdefault\oldsfdefault
-  \let\ttdefault\oldttdefault
   \let\Bbbk\relax
   \RequirePackage{esint}
-  %%% use yhmath pkg, uncomment following code
-  % \let\oldwidering\widering
-  % \let\widering\undefined
-  % \RequirePackage{yhmath}
-  % \let\widering\oldwidering
-
-  %%% use esvect pkg, uncomment following code
-  % \RequirePackage{esvect}
-
   \DeclareSymbolFont{CMlargesymbols}{OMX}{cmex}{m}{n}
-  \let\sumop\relax\let\prodop\relax
   \DeclareMathSymbol{\sumop}{\mathop}{CMlargesymbols}{"50}
   \DeclareMathSymbol{\prodop}{\mathop}{CMlargesymbols}{"51}
 }{\relax}
@@ -286,31 +265,31 @@
   \definecolor{main}{RGB}{0,120,2}%
   \definecolor{second}{RGB}{230,90,7}%
   \definecolor{third}{RGB}{0,160,152}%
-}{\relax}
+}{
 \ifdefstring{\ELEGANT@color}{cyan}{
   \definecolor{structurecolor}{RGB}{31,186,190}%
   \definecolor{main}{RGB}{59,180,5}%
   \definecolor{second}{RGB}{175,153,8}%
   \definecolor{third}{RGB}{244,105,102}%
-}{\relax}
+}{
 \ifdefstring{\ELEGANT@color}{blue}{
   \definecolor{structurecolor}{RGB}{60,113,183}
   \definecolor{main}{RGB}{0,166,82}%
   \definecolor{second}{RGB}{255,134,24}%
   \definecolor{third}{RGB}{0,174,247}%
-}{\relax}
+}{
 \ifdefstring{\ELEGANT@color}{gray}{
   \definecolor{structurecolor}{RGB}{150,150,150}
   \definecolor{main}{RGB}{150,150,150}%
   \definecolor{second}{RGB}{150,150,150}%
   \definecolor{third}{RGB}{150,150,150}%
-}{\relax}
+}{
 \ifdefstring{\ELEGANT@color}{black}{
   \definecolor{structurecolor}{RGB}{0,0,0}
   \definecolor{main}{RGB}{0,0,0}%
   \definecolor{second}{RGB}{0,0,0}%
   \definecolor{third}{RGB}{0,0,0}%
-}{\relax}
+}{\relax}}}}}
 
 %green color
 \definecolor{structure1}{RGB}{0,120,2}%
@@ -908,53 +887,70 @@
   }
 \fi
 
+\RequirePackage{fontspec}
 \ifdefstring{\ELEGANT@mode}{fancy}{
   \tcbset{
     common/.style={
-      fontupper=\citshape,
+      %fontupper=\citshape,
       lower separated=false,
       % before upper={\setlength{\parindent}{\normalparindent}},
       coltitle=white,
-      colback=gray!5,
-      boxrule=0.5pt,
-      fonttitle=\bfseries,
+      colback=gray!4,
+      boxrule=0.1pt,
+      fonttitle=\bfseries\fontspec{Charter},
       enhanced,
       breakable,
       top=8pt,
       before skip=8pt,
       attach boxed title to top left={
-        yshift=-0.11in,
-        xshift=0.15in},
+        yshift=-0.08in,
+        xshift=0.1in
+        },
       boxed title style={
         boxrule=0pt,
         colframe=white,
-        arc=0pt,
-        outer arc=0pt},
+        arc=2pt,
+        outer arc=2pt},
       separator sign={.},},
     defstyle/.style={
       common,
-      colframe=main,  
-      colback=main!5,
-      colbacktitle=main, 
-      overlay unbroken and last={
-        \node[anchor=south east, outer sep=0pt] at (\linewidth-width,0) {
-          \textcolor{main}{$\clubsuit$}};}},
+      fontupper=\fontspec{Palatino},
+      colframe=main!80,
+      colback=main!4,
+      colbacktitle=main,
+      frame style={top color=white, bottom color=white, middle color=white, left color=main},
+    overlay={
+      \draw[main!80, line width=2.5pt] (frame.north west) -- (frame.south west); % 添加左侧的粗线条
+    },},
     thmstyle/.style={
       common,
-      colframe=second,  
-      colback=second!5,
-      colbacktitle=second, 
-      overlay unbroken and last={
-        \node[anchor=south east, outer sep=0pt] at (\linewidth-width,0) {
-          \textcolor{second}{$\heartsuit$}};}},
+      fontupper=\fontspec{Palatino},
+      colframe=second!80,
+      colback=second!4,
+      colbacktitle=second,
+      frame style={top color=white, bottom color=white, middle color=white, left color=second},
+    overlay={
+      \draw[second!80, line width=2.5pt] (frame.north west) -- (frame.south west); % 添加左侧的粗线条
+    },},
     prostyle/.style={
       common,
-      colframe=third,  
-      colback=third!5,
-      colbacktitle=third, 
-      overlay unbroken and last={
-        \node[anchor=south east, outer sep=0pt] at (\linewidth-width,0) {
-          \textcolor{third}{$\spadesuit$}};}},
+      fontupper=\fontspec{Palatino},
+      colframe=third!80,
+      colback=third!4,
+      colbacktitle=third,
+      frame style={top color=white, bottom color=white, middle color=white, left color=third},
+    overlay={
+      \draw[third!80, line width=2.5pt] (frame.north west) -- (frame.south west); % 添加左侧的粗线条
+    },},
+    examplestyle/.style={
+      common,
+      colframe=violet!80,
+      colback=violet!4,
+      colbacktitle=violet,
+      frame style={top color=white, bottom color=white, middle color=white, left color=violet},
+    overlay={
+      \draw[violet!80, line width=2.5pt] (frame.north west) -- (frame.south west); % 添加左侧的粗线条
+    },},
     ELEGANT@title/.code n args={2}
       {
         \ifblank{#2}
@@ -1149,12 +1145,15 @@
 % third（blue-prop):  assumptions property conclusion custom
 
 %% Example with counter
-\newcounter{exam}[chapter]
-\setcounter{exam}{0}
-\renewcommand{\theexam}{\thechapter.\arabic{exam}}
+\newcounter{example}[chapter]
+\setcounter{example}{0}
+\renewcommand{\theexample}{\thechapter.\arabic{example}}
 \newenvironment{example}[1][]{
-  \refstepcounter{exam}
-  \par\noindent\textbf{\color{main}{\examplename} \theexam #1 }\rmfamily}{
+  \refstepcounter{example}
+  \begin{tcolorbox}[examplestyle, title={\examplename~\theexample #1}]
+}{
+  \end{tcolorbox}
+}{
   \par\ignorespacesafterend}
 
 %% Exercise with counter
