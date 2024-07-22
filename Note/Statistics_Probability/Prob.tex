@@ -67,12 +67,6 @@
     \textbf{Coin Tossing:} $S=\{H,T\}$ has $\sigma-$algebra $\mathbb{B}=2^S=\{\emptyset,\{H\},\{T\},\{H,T\}\}$ (which is called the "discrete $\sigma-$algebra").
 \end{example}
 
-Standard $\sigma-$algebra when $S=\mathbb{R}$:
-\begin{definition}[Borel $\sigma-$algebra]
-    \normalfont
-    The \textbf{Borel} $\sigma-$algebra on $\mathbb{R}$, $\mathcal{B}(\mathbb{R})$, is the smallest $\sigma-$algebra contains all open sets.
-\end{definition}
-
 \subsection{Probability Function}
 \begin{definition}[Probability Function]
     \normalfont
@@ -100,17 +94,28 @@ Standard $\sigma-$algebra when $S=\mathbb{R}$:
 \end{example}
 
 \begin{note}
-    \textbf{Specifying $B\& P()$ in general:}
+    \textbf{Specifying $\mathbb{B}$ and $P(\cdot)$ in general:}
     \begin{enumerate}
         \item We don't specify $\mathbb{B}$ unless we have to.
-        \item It suffices to specify $P()$ on a subset of $\mathbb{B}$. (In the example, we can only specify $P(\{H\})$ and $P(\{T\})$).
+        \item It suffices to specify $P(\cdot)$ on a subset of $\mathbb{B}$. (In the example, we can only specify $P(\{H\})$ and $P(\{T\})$).
     \end{enumerate}
 \end{note}
 \begin{note}
-    \textbf{Generalization:}\\
-    If $S$ is \underline{(at most) countable}, then $\mathbb{B}=2^S$ is a standard choice. It suffices to specify $P(\{s\}), s\in S$.
+    \textbf{Generalization:}
+    \begin{enumerate}
+        \item If $S$ is \underline{(at most) countable}, then $\mathbb{B}=2^S$ is a standard choice. It suffices to specify $P(\{s\}), s\in S$.
+        \item If $S=\mathbb{R}$, then
+        \begin{enumerate}
+            \item $\mathbb{B}=2^S$ is ``too large''
+            \item $P(\{s\})=0, \forall s\in \mathbb{R}$ in some cases.
+        \end{enumerate}
+        Standard $\sigma-$algebra when $S=\mathbb{R}$:
+        \begin{definition}[Borel $\sigma-$algebra]
+            \normalfont
+            The \textbf{Borel} $\sigma-$algebra on $\mathbb{R}$, $\mathcal{B}(\mathbb{R})$, is the smallest $\sigma-$algebra contains all open sets.
+        \end{definition}
+    \end{enumerate}
 \end{note}
-
 
 \section{Random Variables}
 
@@ -125,6 +130,17 @@ Standard $\sigma-$algebra when $S=\mathbb{R}$:
     Any random variable $X$ induces a probability space $(S_X,\mathbb{B}_X,P_X)$, where $S_X=\mathbb{R}$, $\mathbb{B}_X=\mathcal{B}(\mathbb{R})$, and $P_X=P\circ X^{-1}$, that is, for all $B\in \mathcal{B}(\mathbb{R})$, $$P_X(B)=P\circ X^{-1}(B)\triangleq P(\{s\in S: X(s)\in B\})$$
     \textbf{Convention:} We work with $(S_X,B_X,P_X)$ and focus on specifying $P_X$.
 \end{definition}
+
+\begin{example}
+    \textbf{Coin Tossing:} $S=\{H,T\}$. Consider the $X(s)=\left\{\begin{matrix}
+        1,&s=H\\
+        0,&s=L
+    \end{matrix}\right.$. The induced probability function is $$P_X(B)=\left\{\begin{matrix}
+        0,&\textnormal{if }B\cap\{0,1\}=\emptyset\\
+        1,&\textnormal{if }\{0,1\}\subseteq B\\
+        \frac{1}{2},&\textnormal{otherwise}
+    \end{matrix}\right.$$
+\end{example}
 
 \subsection{Represeting / Specifying $P_X$: Cumulative Distribution Function}
 \begin{definition}[Cumulative Distribution Function]
@@ -189,6 +205,11 @@ So, we can specify $P_X$ (on $\mathcal{B}(\mathbb{R})$) by specifying $F_X$ (on 
         If $X$ is continuous, then $f_X(x)=\frac{d F_X(x)}{d x}$ "almost everywhere".
     \end{enumerate}
 \end{proposition}
+\begin{note}
+    Note that the PDF of a continuous random variable is not uniquely defined. We can always change the PDF at a finite set of points without affecting its integral, hence multiple PDFs can be associated with the same CDF. We will often refer to ``the PDF'' of $X$, $f_X(x)=\frac{d F_X(x)}{d x}$, ignoring the fact that it is nonunique.
+\end{note}
+
+
 
 \begin{note}
     \textbf{Useful Facts:}
@@ -247,7 +268,7 @@ So, we can specify $P_X$ (on $\mathcal{B}(\mathbb{R})$) by specifying $F_X$ (on 
         \item $\textnormal{Var}(X)=\mathbb{E}(X^2)-\mathbb{E}(X)^2\leq \mathbb{E}(X^2)$.
         \item $\mathbb{E}(aX+b)=a \mathbb{E}(X)+b$.
         \item $\textnormal{Var}(aX+b)=a^2 \textnormal{Var}(X)$.
-        \item $\mathbb{E}[g(X)]=g[\mathbb{E}(X)]$ when $g(X)=aX+b$ (linear). General form can be found in Jensen's inequality (Theorem \ref{Jen_in}).
+        \item $\mathbb{E}[g(X)]=g[\mathbb{E}(X)]$ when $g(X)=aX+b$ (linear). General form can be found in Jensen's inequality.
     \end{enumerate}
 \end{proposition}
 
@@ -507,6 +528,9 @@ We consider \underline{the most important special case ($n=2$)}.
     If $(X,Y)'$ is a discrete/continuous random vector with joint pmf/pdf $f_{X,Y}$ and marginal pmf/pdf $f_X, f_Y$, then $X,Y$ are independent ($X\perp Y$) \underline{if and only if}
     $$f_{X,Y}(x,y)=f_X(x)f_y(y),\ \forall (x,y)\in \mathbb{R}^2$$
 \end{proposition}
+\begin{note}
+    Here, we by default use the derivative as the PDF of a continuous random vector without considering the nonuniqueness of the PDF. If we consider the nonuniqueness of the PDF, the ``$\Rightarrow$'' does not hold, i.e., \(X \perp Y\) does not imply $f_{X,Y}(x,y) = f_X(x)f_Y(y), \forall (x,y) \in \mathbb{R}^2$.
+\end{note}
 
 
 \subsection{Conditional PMF, PDF, Expected Value, Mean, Variance}
@@ -612,7 +636,6 @@ We consider \underline{the most important special case ($n=2$)}.
         \item $\textnormal{Var}(aX+bY+c)=\textnormal{Var}(aX+aY)=a^2 \textnormal{Var}(X)+ b^2 \textnormal{Var}(Y)+2ab \textnormal{Cov}(X,Y)$
     \end{enumerate}
 \end{proposition}
-
 
 
 
@@ -1076,10 +1099,61 @@ Then, the MGF of $X+Y$ is
 where $Z\sim N(\mu_1+\mu_2,\sigma_1^2+\sigma_2^2)$
 \end{proof}
 
-\subsection{Multivariate/Joint Gaussian/Normal Distribution (MVN)}
-A $k$-dimensional random vector $(X_1,X_2,...,X_k)^T=\mathbf{X}\sim N(\mu,\Sigma)$.
+\subsection{Folded Normal Distribution $Y=|X|$}
+Suppose $X\sim N(\mu,\sigma^2)$ with p.d.f. ${\displaystyle f(x)={\frac {1}{\sigma {\sqrt {2\pi }}}}e^{-{\frac {1}{2}}\left({\frac {x-\mu }{\sigma }}\right)^{2}}}$. Then, the random variable $Y=|X|$ has a folded normal distribution.
 
-p.d.f. $${\displaystyle f_{\mathbf {X} }(x_{1},\ldots ,x_{k})={\frac {\exp \left(-{\frac {1}{2}}({\mathbf {x} }-{\boldsymbol {\mu }})^{\mathrm {T} }{\boldsymbol {\Sigma }}^{-1}({\mathbf {x} }-{\boldsymbol {\mu }})\right)}{\sqrt {(2\pi )^{k}|{\boldsymbol {\Sigma }}|}}}}$$
+The probability density function (PDF) is given by
+$${\displaystyle f_{Y}(x;\mu ,\sigma ^{2})={\frac {1}{\sqrt {2\pi \sigma ^{2}}}}\,e^{-{\frac {(x-\mu )^{2}}{2\sigma ^{2}}}}+{\frac {1}{\sqrt {2\pi \sigma ^{2}}}}\,e^{-{\frac {(x+\mu )^{2}}{2\sigma ^{2}}}}}$$
+for $x \geq 0$, and $0$ everywhere else.
+
+It follows that the cumulative distribution function (CDF) is given by:
+$${\displaystyle F_{Y}(x;\mu ,\sigma ^{2})={\frac {1}{2}}\left[{\mbox{erf}}\left({\frac {x+\mu }{\sqrt {2\sigma ^{2}}}}\right)+{\mbox{erf}}\left({\frac {x-\mu }{\sqrt {2\sigma ^{2}}}}\right)\right]}$$
+for $x\geq 0$, where $\mbox{erf}(z)=\frac{2}{\sqrt{\pi}}\int_{0}^{z}e^{-t^{2}}dt$ is the error function.
+\begin{theorem}
+    The mean of the folded distribution is
+    \begin{equation}
+        \begin{aligned}
+            {\displaystyle \mu _{Y}={\sqrt {\frac {2}{\pi }}}\sigma e^{-{\frac {\mu ^{2}}{2\sigma ^{2}}}}+\mu \left[1-2\Phi \left(-{\frac {\mu }{\sigma }}\right)\right]}
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    The variance then is expressed easily in terms of the mean:
+    \begin{equation}
+        \begin{aligned}
+            {\displaystyle \sigma _{Y}^{2}=\mu ^{2}+\sigma ^{2}-\mu _{Y}^{2}}
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{theorem}
+
+\subsection{(ReLU for) Normal Distribution $Z=\max\{0,X\}$}
+Suppose $X\sim N(\mu,\sigma^2)$ with p.d.f. ${\displaystyle f(x)={\frac {1}{\sigma {\sqrt {2\pi }}}}e^{-{\frac {1}{2}}\left({\frac {x-\mu }{\sigma }}\right)^{2}}}$. We want to study $Z=\mathbf{1}\{X\geq 0\}X$.
+\begin{equation}
+    \begin{aligned}
+        Z=\frac{X+Y}{2}
+    \end{aligned}
+    \nonumber
+\end{equation}
+where $Y=|X|$ follows fold normal distribution. Then, we can conclude that
+\begin{theorem}
+    The mean of $Z$ is
+    \begin{equation}
+        \begin{aligned}
+            \mu_Z=\frac{\mu+\mu_Y}{2}={\sqrt {\frac {1}{2\pi}}}\sigma e^{-{\frac {\mu ^{2}}{2\sigma ^{2}}}}+\mu \left[1-\Phi \left(-{\frac {\mu }{\sigma }}\right)\right]
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    The variance of $Z$ is
+    \begin{equation}
+        \begin{aligned}
+            \sigma_Z^2=\frac{\sigma^2+\sigma_Y^2}{4}=\frac{\mu ^{2}+2\sigma^{2}-\mu _{Y}^{2}}{4}
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{theorem}
+
+\subsection{Multivariate/Joint Gaussian/Normal Distribution (MVN)}
+A $k$-dimensional random vector $(X_1,X_2,...,X_k)^T=\mathbf{X}\sim N(\mu,\Sigma)$. Its p.d.f. is $${\displaystyle f_{\mathbf {X} }(x_{1},\ldots ,x_{k})={\frac {\exp \left(-{\frac {1}{2}}({\mathbf {x} }-{\boldsymbol {\mu }})^{\mathrm {T} }{\boldsymbol {\Sigma }}^{-1}({\mathbf {x} }-{\boldsymbol {\mu }})\right)}{\sqrt {(2\pi )^{k}|{\boldsymbol {\Sigma }}|}}}}$$
 
 A random vector is said to be $k$-variate normally distributed if every linear combination of its $k$ components has a univariate normal distribution.
 \begin{enumerate}[(1)]
@@ -1457,7 +1531,7 @@ Since $i$ is transient, $Y_i<\infty$ w.p.1.
 
 We can also extend the equation: $$\mathbb{E}(Y_i|X_0 = j)=\mathbf{1}_{i=j}+\sum_{k\text{ transient}}\mathbb{E}(Y_i|X_1=k)Q_{jk}$$
 
-\subsection{Expected Time till Absorption to a Recurrent Class: $\mathbb{E}(T_{abs}|X_0=j)=\sum_{i\in T_1\cup T_2\cup\cdots\cup T_s} M_{ji}$}
+\subsection{Expected Time till Absorption to a Recurrent Class}
 Let's define $$T_{abs}=\{\min_{n\geq 0}: X_n\in \text{a recurrent class}\}$$
 which is \textbf{the waiting time till the chain enters a recurrent class}.
 $T_{abs}$ also equals to the total time spent on transient states. $$T_{abs}=\sum_{i\in T_1\cup T_2\cup\cdots\cup T_s}Y_i$$
@@ -1915,7 +1989,7 @@ We want to prove $q_n\leq r$, $\forall n\geq 0$. Prove by induction:
 \end{example}
 Since $\mu=\frac{3}{2}>1$, we can solve $\frac{1}{8}+\frac{3}{8}r+\frac{3}{8}r^2+\frac{1}{8}r^3=r$. Because $r=1$ is always a solution $\Rightarrow (r-1)(r^2+4r-1)=0$ $r^*=\sqrt{5}-2$.
 
-\subsection{$G_n(s)=G_{n-1}(\psi(s))=\psi(\psi(\psi(\cdots\psi(s)\cdots)))=\psi(G_{n-1}(s))$}
+\subsection{$G_n(s)=G_{n-1}(\psi(s))=\psi(\psi(\psi(...\psi(s)...)))=\psi(G_{n-1}(s))$}
 For $n\geq 0$, let
 \begin{equation}
     \begin{aligned}

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.3.11)  6 JUN 2024 16:04
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.3.11)  1 JUL 2024 12:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1373,109 +1373,109 @@ LaTeX Warning: Reference `CLT' on page 2 undefined on input line 112.
 
 [2]
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/b/n' will be
-(Font)              scaled to size 8.0pt on input line 151.
+(Font)              scaled to size 8.0pt on input line 154.
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/b/n' will be
-(Font)              scaled to size 6.0pt on input line 151.
+(Font)              scaled to size 6.0pt on input line 154.
 
 
 Package amsmath Warning: Foreign command \over;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 166.
+(amsmath)                 on input line 169.
 
 [3] [4] [5]
-Underfull \hbox (badness 10000) in paragraph at lines 336--337
+Underfull \hbox (badness 10000) in paragraph at lines 341--342
 []\TU/TeXGyreTermesX(0)/m/n/10.95 (When it doesn’t work.) For the linear regression case, $\OML/cmm/m/it/10.95 v\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 P[]\OT1/cmr/m/n/10.95 ) =
  []
 
 
-Underfull \hbox (badness 1552) in paragraph at lines 336--337
+Underfull \hbox (badness 1552) in paragraph at lines 341--342
 [] []$\TU/TeXGyreTermesX(0)/m/n/10.95 . If the $\OT1/cmr/m/n/10.95 #$ \TU/TeXGyreTermesX(0)/m/n/10.95 of Covariates $\OML/cmm/m/it/10.95 > m$\TU/TeXGyreTermesX(0)/m/n/10.95 , the estimator is not
  []
 
 [6] [7]
-Underfull \hbox (badness 10000) in paragraph at lines 400--401
+Underfull \hbox (badness 10000) in paragraph at lines 405--406
 []\TU/TeXGyreTermesX(0)/m/n/10.95 Consider $\OML/cmm/m/it/10.95 ^^R\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 P[]\OT1/cmr/m/n/10.95 ) = \U/msb/m/n/10.95 E[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 Z\OT1/cmr/m/n/10.95 )$\TU/TeXGyreTermesX(0)/m/n/10.95 , then $\OML/cmm/m/it/10.95 ^^R\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 P[]\OT1/cmr/m/n/10.95 ) = [] = [] [][] \OML/cmm/m/it/10.95 Z[]$\TU/TeXGyreTermesX(0)/m/n/10.95 . $\OML/cmm/m/it/10.95 v\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 P[]\OT1/cmr/m/n/10.95 )(\OML/cmm/m/it/10.95 t\OT1/cmr/m/n/10.95 ) =
  []
 
 [8] [9] [10] [11] [12] [13] [14] [15]
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/n' will be
-(Font)              scaled to size 12.0pt on input line 891.
+(Font)              scaled to size 12.0pt on input line 898.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 891.
+(hyperref)                removing `math shift' on input line 898.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 891.
+(hyperref)                removing `superscript' on input line 898.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 891.
+(hyperref)                removing `math shift' on input line 898.
 
 [16]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 946.
+(hyperref)                removing `math shift' on input line 953.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\theta' on input line 946.
+(hyperref)                removing `\theta' on input line 953.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 946.
+(hyperref)                removing `math shift' on input line 953.
 
 [17] [18] [19]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1128.
+(hyperref)                removing `math shift' on input line 1135.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1128.
+(hyperref)                removing `math shift' on input line 1135.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1128.
+(hyperref)                removing `math shift' on input line 1135.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1128.
+(hyperref)                removing `math shift' on input line 1135.
 
 [20] [21] [22] [23]
-Underfull \hbox (badness 1755) in paragraph at lines 1317--1318
+Underfull \hbox (badness 1755) in paragraph at lines 1324--1325
 []\TU/Palatino(0)/m/n/10.95 Suppose the sample $\OMS/cmsy/m/n/10.95 f\OML/cmm/m/it/10.95 X[]\OMS/cmsy/m/n/10.95 g[]$ \TU/Palatino(0)/m/n/10.95 is i.i.d. The Maximum likelihood estimator (MLE) $[] \OT1/cmr/m/n/10.95 =
  []
 
 [24] [25] [26] [27]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1474.
+(hyperref)                removing `math shift' on input line 1481.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\alpha' on input line 1474.
+(hyperref)                removing `\alpha' on input line 1481.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1474.
+(hyperref)                removing `math shift' on input line 1481.
 
 [28] [29] [30]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1672.
+(hyperref)                removing `math shift' on input line 1679.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1672.
+(hyperref)                removing `subscript' on input line 1679.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1672.
+(hyperref)                removing `math shift' on input line 1679.
 
 [31]
-Underfull \hbox (badness 3557) in paragraph at lines 1696--1699
+Underfull \hbox (badness 3557) in paragraph at lines 1704--1707
 []$ $\OML/cmm/m/it/10.95 P[] [] \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 P[] [] \OT1/cmr/m/n/10.95 =
  []
 
@@ -1486,15 +1486,15 @@ Chapter 2.
 ] [35] [36] [37]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1939.
+(hyperref)                removing `math shift' on input line 1947.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 1939.
+(hyperref)                removing `superscript' on input line 1947.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1939.
+(hyperref)                removing `math shift' on input line 1947.
 
 [38] [39]
 Chapter 3.
@@ -1503,16 +1503,16 @@ Chapter 3.
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2051.
+(hyperref)                removing `math shift' on input line 2059.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2051.
+(hyperref)                removing `math shift' on input line 2059.
 
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/b/it' will be
-(Font)              scaled to size 10.95pt on input line 2058.
+(Font)              scaled to size 10.95pt on input line 2066.
 
-Overfull \hbox (8.00804pt too wide) in paragraph at lines 2074--2077
+Overfull \hbox (8.00804pt too wide) in paragraph at lines 2082--2085
 \TU/TeXGyreTermesX(0)/m/it/10.95 where $\OML/cmm/m/it/10.95 W \OT1/cmr/m/n/10.95 = [][] \OMS/cmsy/m/n/10.95 2 \U/msb/m/n/10.95 R[]$\TU/TeXGyreTermesX(0)/m/it/10.95 , $\OML/cmm/m/it/10.95 w\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 X[]\OT1/cmr/m/n/10.95 ) = [][] \OMS/cmsy/m/n/10.95 2 \U/msb/m/n/10.95 R[]$\TU/TeXGyreTermesX(0)/m/it/10.95 , and $[] \OT1/cmr/m/n/10.95 = [][]$\TU/TeXGyreTermesX(0)/m/it/10.95 . 
  []
 
@@ -1520,451 +1520,451 @@ Overfull \hbox (8.00804pt too wide) in paragraph at lines 2074--2077
 Chapter 4.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2344.
+(hyperref)                removing `math shift' on input line 2352.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\theta' on input line 2344.
+(hyperref)                removing `\theta' on input line 2352.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 2344.
+(hyperref)                removing `subscript' on input line 2352.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\new@ifnextchar' on input line 2344.
+(hyperref)                removing `\new@ifnextchar' on input line 2352.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 2344.
+(hyperref)                removing `subscript' on input line 2352.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\theta' on input line 2344.
+(hyperref)                removing `\theta' on input line 2352.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\in' on input line 2344.
+(hyperref)                removing `\in' on input line 2352.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Theta' on input line 2344.
+(hyperref)                removing `\Theta' on input line 2352.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\theta' on input line 2344.
+(hyperref)                removing `\theta' on input line 2352.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2344.
+(hyperref)                removing `math shift' on input line 2352.
 
 [46
 
 ] [47] [48]
-Underfull \hbox (badness 2591) in paragraph at lines 2479--2480
+Underfull \hbox (badness 2591) in paragraph at lines 2487--2488
 []$[]$\TU/Palatino(0)/m/n/10.95 : for any sequence $[] [] \OML/cmm/m/it/10.95 ^^R[]$\TU/Palatino(0)/m/n/10.95 , $[]\OT1/cmr/m/n/10.95 ([]) :=
  []
 
 [49] [50] [51] [52]
-Overfull \hbox (5.08554pt too wide) in paragraph at lines 2655--2656
+Overfull \hbox (5.08554pt too wide) in paragraph at lines 2663--2664
 []$[]$ \TU/TeXGyreTermesX(0)/m/n/10.95 of the Poisson regres-
  []
 
 [53] [54] [55]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2868.
+(hyperref)                removing `math shift' on input line 2876.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\begingroup' on input line 2868.
+(hyperref)                removing `\begingroup' on input line 2876.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 2868.
+(hyperref)                removing `superscript' on input line 2876.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\endgroup' on input line 2868.
+(hyperref)                removing `\endgroup' on input line 2876.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@@over' on input line 2868.
+(hyperref)                removing `\@@over' on input line 2876.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 2868.
+(hyperref)                removing `superscript' on input line 2876.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2868.
+(hyperref)                removing `math shift' on input line 2876.
 
 [56]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2911.
+(hyperref)                removing `math shift' on input line 2919.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2911.
+(hyperref)                removing `math shift' on input line 2919.
 
 [57] [58] [59] [60] [61] [62] [63] [64]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3443.
+(hyperref)                removing `math shift' on input line 3451.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 3443.
+(hyperref)                removing `subscript' on input line 3451.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 3443.
+(hyperref)                removing `subscript' on input line 3451.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 3443.
+(hyperref)                removing `superscript' on input line 3451.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 3443.
+(hyperref)                removing `\beta' on input line 3451.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 3443.
+(hyperref)                removing `subscript' on input line 3451.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\epsilon' on input line 3443.
+(hyperref)                removing `\epsilon' on input line 3451.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 3443.
+(hyperref)                removing `subscript' on input line 3451.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3443.
+(hyperref)                removing `math shift' on input line 3451.
 
 [65] [66]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3515.
+(hyperref)                removing `math shift' on input line 3523.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\alpha' on input line 3515.
+(hyperref)                removing `\alpha' on input line 3523.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3515.
+(hyperref)                removing `math shift' on input line 3523.
 
 
-Overfull \hbox (0.90651pt too wide) in paragraph at lines 3529--3533
+Overfull \hbox (0.90651pt too wide) in paragraph at lines 3537--3541
 \TU/TeXGyreTermesX(0)/m/n/10.95 Suppose you have a random sample $\OMS/cmsy/m/n/10.95 f\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 y[]\OT1/cmr/m/n/10.95 ; \OML/cmm/m/it/10.95 x[]\OT1/cmr/m/n/10.95 )\OMS/cmsy/m/n/10.95 g[]$ \TU/TeXGyreTermesX(0)/m/n/10.95 where the conditional distribution of $\OML/cmm/m/it/10.95 y[]$ \TU/TeXGyreTermesX(0)/m/n/10.95 given the p-dimensional
  []
 
 [67] [68] [69]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3698.
+(hyperref)                removing `math shift' on input line 3706.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 3698.
+(hyperref)                removing `subscript' on input line 3706.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 3698.
+(hyperref)                removing `subscript' on input line 3706.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 3698.
+(hyperref)                removing `superscript' on input line 3706.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 3698.
+(hyperref)                removing `\beta' on input line 3706.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 3698.
+(hyperref)                removing `subscript' on input line 3706.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\epsilon' on input line 3698.
+(hyperref)                removing `\epsilon' on input line 3706.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 3698.
+(hyperref)                removing `subscript' on input line 3706.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3698.
+(hyperref)                removing `math shift' on input line 3706.
 
 
-Overfull \hbox (7.73706pt too wide) in paragraph at lines 3699--3701
+Overfull \hbox (7.73706pt too wide) in paragraph at lines 3707--3709
 [] [] \OMS/cmsy/m/n/10.95 ) \OML/cmm/m/it/10.95 N []$\TU/TeXGyreTermesX(0)/m/n/10.95 , where $\OML/cmm/m/it/10.95 g\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 z[]; ^^L\OT1/cmr/m/n/10.95 ) = \OMS/cmsy/m/n/10.95 ^^@\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 y[] \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 exp\OMS/cmsy/m/n/10.95 f\OML/cmm/m/it/10.95 x[]^^L\OMS/cmsy/m/n/10.95 g\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 exp\OMS/cmsy/m/n/10.95 f\OML/cmm/m/it/10.95 x[]^^L\OMS/cmsy/m/n/10.95 g\OML/cmm/m/it/10.95 x[]$\TU/TeXGyreTermesX(0)/m/n/10.95 , $\OML/cmm/m/it/10.95 G \OT1/cmr/m/n/10.95 = \U/msb/m/n/10.95 E [] \OT1/cmr/m/n/10.95 =
  []
 
 
-Overfull \hbox (44.64824pt too wide) in paragraph at lines 3699--3701
+Overfull \hbox (44.64824pt too wide) in paragraph at lines 3707--3709
 \U/msb/m/n/10.95 E\OT1/cmr/m/n/10.95 [\OML/cmm/m/it/10.95 exp\OMS/cmsy/m/n/10.95 f\OT1/cmr/m/n/10.95 2\OML/cmm/m/it/10.95 x[]^^L[]\OMS/cmsy/m/n/10.95 g\OML/cmm/m/it/10.95 x[]x[]\OT1/cmr/m/n/10.95 ]$ \TU/TeXGyreTermesX(0)/m/n/10.95 and $\OT1/cmr/m/n/10.95 
  = [](\OML/cmm/m/it/10.95 g\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x[]; ^^L[]\OT1/cmr/m/n/10.95 )) = \U/msb/m/n/10.95 E\OT1/cmr/m/n/10.95 [(\OML/cmm/m/it/10.95 y[] \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 exp\OMS/cmsy/m/n/10.95 f\OML/cmm/m/it/10.95 x[]^^L[]\OMS/cmsy/m/n/10.95 g\OT1/cmr/m/n/10.95 )[]\OML/cmm/m/it/10.95 exp\OMS/cmsy/m/n/10.95 f\OT1/cmr/m/n/10.95 2\OML/cmm/m/it/10.95 x[]^^L[]\OMS/cmsy/m/n/10.95 g\OML/cmm/m/it/10.95 x[]x[]\OT1/cmr/m/n/10.95 ] = \U/msb/m/n/10.95 E\OT1/cmr/m/n/10.95 [\OML/cmm/m/it/10.95 ^^[[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x[]\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 exp\OMS/cmsy/m/n/10.95 f\OT1/cmr/m/n/10.95 2\OML/cmm/m/it/10.95 x[]^^L[]\OMS/cmsy/m/n/10.95 g\OML/cmm/m/it/10.95 x[]x[]\OT1/cmr/m/n/10.95 ]$\TU/TeXGyreTermesX(0)/m/n/10.95 . 
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3702.
+(hyperref)                removing `math shift' on input line 3710.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 3702.
+(hyperref)                removing `subscript' on input line 3710.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 3702.
+(hyperref)                removing `\beta' on input line 3710.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 3702.
+(hyperref)                removing `subscript' on input line 3710.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 3702.
+(hyperref)                removing `superscript' on input line 3710.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 3702.
+(hyperref)                removing `subscript' on input line 3710.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\epsilon' on input line 3702.
+(hyperref)                removing `\epsilon' on input line 3710.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 3702.
+(hyperref)                removing `subscript' on input line 3710.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3702.
+(hyperref)                removing `math shift' on input line 3710.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3707.
+(hyperref)                removing `math shift' on input line 3715.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 3707.
+(hyperref)                removing `subscript' on input line 3715.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\log' on input line 3707.
+(hyperref)                removing `\log' on input line 3715.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 3707.
+(hyperref)                removing `subscript' on input line 3715.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 3707.
+(hyperref)                removing `superscript' on input line 3715.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 3707.
+(hyperref)                removing `\beta' on input line 3715.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 3707.
+(hyperref)                removing `subscript' on input line 3715.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\epsilon' on input line 3707.
+(hyperref)                removing `\epsilon' on input line 3715.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 3707.
+(hyperref)                removing `subscript' on input line 3715.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3707.
+(hyperref)                removing `math shift' on input line 3715.
 
 
-Overfull \hbox (40.8769pt too wide) in paragraph at lines 3708--3710
+Overfull \hbox (40.8769pt too wide) in paragraph at lines 3716--3718
 [] \OT1/cmr/m/n/10.95 = []$\TU/TeXGyreTermesX(0)/m/n/10.95 , which gives asymptotic variance of the optimal NLWLS estimator $\OT1/cmr/m/n/10.95 (
 [])[] = \OML/cmm/m/it/10.95 ^^\[] [][]$\TU/TeXGyreTermesX(0)/m/n/10.95 . 
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3711.
+(hyperref)                removing `math shift' on input line 3719.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 3711.
+(hyperref)                removing `subscript' on input line 3719.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 3711.
+(hyperref)                removing `superscript' on input line 3719.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 3711.
+(hyperref)                removing `\beta' on input line 3719.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 3711.
+(hyperref)                removing `subscript' on input line 3719.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3711.
+(hyperref)                removing `math shift' on input line 3719.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3711.
+(hyperref)                removing `math shift' on input line 3719.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 3711.
+(hyperref)                removing `subscript' on input line 3719.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 3711.
+(hyperref)                removing `superscript' on input line 3719.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 3711.
+(hyperref)                removing `\beta' on input line 3719.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 3711.
+(hyperref)                removing `subscript' on input line 3719.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 3711.
+(hyperref)                removing `subscript' on input line 3719.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 3711.
+(hyperref)                removing `superscript' on input line 3719.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 3711.
+(hyperref)                removing `\beta' on input line 3719.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 3711.
+(hyperref)                removing `subscript' on input line 3719.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\cdot' on input line 3711.
+(hyperref)                removing `\cdot' on input line 3719.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 3711.
+(hyperref)                removing `subscript' on input line 3719.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 3711.
+(hyperref)                removing `superscript' on input line 3719.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 3711.
+(hyperref)                removing `\beta' on input line 3719.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 3711.
+(hyperref)                removing `subscript' on input line 3719.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3711.
+(hyperref)                removing `math shift' on input line 3719.
 
 [70]
-Overfull \hbox (15.71097pt too wide) detected at line 3742
+Overfull \hbox (15.71097pt too wide) detected at line 3750
 [][][][][]
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3748.
+(hyperref)                removing `math shift' on input line 3756.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 3748.
+(hyperref)                removing `subscript' on input line 3756.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 3748.
+(hyperref)                removing `superscript' on input line 3756.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 3748.
+(hyperref)                removing `\beta' on input line 3756.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 3748.
+(hyperref)                removing `subscript' on input line 3756.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3748.
+(hyperref)                removing `math shift' on input line 3756.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3748.
+(hyperref)                removing `math shift' on input line 3756.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 3748.
+(hyperref)                removing `subscript' on input line 3756.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 3748.
+(hyperref)                removing `superscript' on input line 3756.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 3748.
+(hyperref)                removing `\beta' on input line 3756.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 3748.
+(hyperref)                removing `subscript' on input line 3756.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 3748.
+(hyperref)                removing `subscript' on input line 3756.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 3748.
+(hyperref)                removing `superscript' on input line 3756.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 3748.
+(hyperref)                removing `\beta' on input line 3756.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 3748.
+(hyperref)                removing `subscript' on input line 3756.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\cdot' on input line 3748.
+(hyperref)                removing `\cdot' on input line 3756.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 3748.
+(hyperref)                removing `subscript' on input line 3756.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 3748.
+(hyperref)                removing `superscript' on input line 3756.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 3748.
+(hyperref)                removing `\beta' on input line 3756.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 3748.
+(hyperref)                removing `subscript' on input line 3756.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3748.
+(hyperref)                removing `math shift' on input line 3756.
 
 [71] [72]
 Chapter 5.
@@ -1981,9 +1981,6 @@ L3 programming layer <2024-02-20>
 
 
 LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 Package rerunfilecheck Info: File `Estimation.out' has not changed.
 (rerunfilecheck)             Checksum: D02F8553C3B19F3680C6C4F0B544AD0D;24280.
