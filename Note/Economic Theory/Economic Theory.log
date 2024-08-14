@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.3.11)  7 JUN 2024 19:17
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.3.11)  4 AUG 2024 17:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2091,12 +2091,12 @@ Chapter 6.
 [51
 
 ] [52] [53] [54]
-Underfull \hbox (badness 1902) in paragraph at lines 2326--2329
+Underfull \hbox (badness 1902) in paragraph at lines 2327--2330
 \TU/Palatino(0)/m/n/10.95 A strategy $\OML/cmm/m/it/10.95 ^^[[] \OMS/cmsy/m/n/10.95 2 \OT1/cmr/m/n/10.95 ^^A(\OML/cmm/m/it/10.95 S[]\OT1/cmr/m/n/10.95 )$ \TU/Palatino(0)/m/n/10.95 is the \TU/Palatino(0)/b/n/10.95 best response \TU/Palatino(0)/m/n/10.95 to beliefs $\OML/cmm/m/it/10.95 ^^V$ \TU/Palatino(0)/m/n/10.95 if it solves the problem of
  []
 
 [55] [56] [57] [58] [59] [60] [61] [62] [63] [64] [65] [66] [67]
-Overfull \hbox (72.75078pt too wide) in paragraph at lines 2913--2914
+Overfull \hbox (72.75078pt too wide) in paragraph at lines 2914--2915
 []\TU/TeXGyreTermesX(0)/m/n/10.95 We have discussed the extensive form game with perfect information (PIG), which is denoted by $\OML/cmm/m/it/10.95 G \OT1/cmr/m/n/10.95 = \OMS/cmsy/m/n/10.95 f\OML/cmm/m/it/10.95 N; A; H; Z; P; O; o; \OMS/cmsy/m/n/10.95 ^^_[]
  []
 
@@ -2104,64 +2104,57 @@ Overfull \hbox (72.75078pt too wide) in paragraph at lines 2913--2914
 File: BS.png Graphic file (type bmp)
 <BS.png>
 
-Overfull \hbox (11.6628pt too wide) in paragraph at lines 2931--2938
+Overfull \hbox (11.6628pt too wide) in paragraph at lines 2932--2939
 []\TU/TeXGyreTermesX(0)/m/n/10.95 In this example, a mixed strategy of the P1 can be represented by a probability distribution over $\OMS/cmsy/m/n/10.95 f\OML/cmm/m/it/10.95 OU; OD; IU; ID\OMS/cmsy/m/n/10.95 g$\TU/TeXGyreTermesX(0)/m/n/10.95 .
  []
 
 [69]
-Underfull \hbox (badness 5245) in paragraph at lines 2968--2969
+Underfull \hbox (badness 5245) in paragraph at lines 2969--2970
 []\TU/Palatino(0)/m/n/10.95 Formally, the subgame $\OT1/cmr/m/n/10.95 ^^@(\OML/cmm/m/it/10.95 h\OT1/cmr/m/n/10.95 )$ \TU/Palatino(0)/m/n/10.95 associated with $\OML/cmm/m/it/10.95 h \OT1/cmr/m/n/10.95 = (\OML/cmm/m/it/10.95 h[]; :::; h[]\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95 2 \OML/cmm/m/it/10.95 H$ \TU/Palatino(0)/m/n/10.95 is $\OT1/cmr/m/n/10.95 ^^@(\OML/cmm/m/it/10.95 h\OT1/cmr/m/n/10.95 ) =
  []
 
 [70] [71] [72]
-Underfull \hbox (badness 1102) in paragraph at lines 3110--3111
+Underfull \hbox (badness 1102) in paragraph at lines 3111--3112
 \TU/Palatino(0)/m/n/10.95 where $\OML/cmm/m/it/10.95 ^^V\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 t\OT1/cmr/m/n/10.95 ; \OML/cmm/m/it/10.95 s\OT1/cmr/m/n/10.95 )$ \TU/Palatino(0)/m/n/10.95 is the $\U/msb/m/n/10.95 R$\TU/Palatino(0)/m/n/10.95 's posterior belief about $\OML/cmm/m/it/10.95 t$ \TU/Palatino(0)/m/n/10.95 given $\OML/cmm/m/it/10.95 s$\TU/Palatino(0)/m/n/10.95 , $\OML/cmm/m/it/10.95 ^^V\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 t\OT1/cmr/m/n/10.95 ; \OML/cmm/m/it/10.95 s\OT1/cmr/m/n/10.95 ) = []$ \TU/Palatino(0)/m/n/10.95 if
  []
 
-[73] [74] [75] [76] [77] [78] [79] [80] [81] [82]
+[73] [74] [75] [76] [77] [78] [79] [80] [81] [82] [83] [84]
 Chapter 7.
-[83
+[85
 
-] [84] [85]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3632.
-
+] [86] [87]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3632.
+(hyperref)                removing `math shift' on input line 3714.
 
-[86] [87] [88] [89] [90] [91] [92] [93] [94] [95] [96]
-Overfull \hbox (7.74785pt too wide) in paragraph at lines 4263--4264
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 3714.
+
+[88] [89] [90] [91] [92] [93] [94] [95] [96] [97] [98]
+Overfull \hbox (7.74785pt too wide) in paragraph at lines 4345--4346
 []\TU/TeXGyreTermesX(0)/m/it/10.95 each bidder $\OML/cmm/m/it/10.95 i$\TU/TeXGyreTermesX(0)/m/it/10.95 ’s valuation independently drawn from a strictly increasing c.d.f. $\OML/cmm/m/it/10.95 F[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^R[]\OT1/cmr/m/n/10.95 )$ \TU/TeXGyreTermesX(0)/m/it/10.95 (with p.d.f. $\OML/cmm/m/it/10.95 f[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^R[]\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ; ^^R[] \OMS/cmsy/m/n/10.95 2
  []
 
-[97] [98] [99] [100] [101] [102] [103] [104]
-Underfull \hbox (badness 1231) in paragraph at lines 4793--4794
+[99] [100] [101] [102] [103] [104] [105] [106]
+Underfull \hbox (badness 1231) in paragraph at lines 4875--4876
 []\TU/Palatino(0)/m/n/10.95 Any two mechanisms that are revenue-equivalent with fixed $\OML/cmm/m/it/10.95 n$ \TU/Palatino(0)/m/n/10.95 and $\OML/cmm/m/it/10.95 R$ \TU/Palatino(0)/m/n/10.95 remain revenue-
  []
 
-[105] [106] [107] [108]
+[107] [108] [109] [110]
 Chapter 8.
-[109
+[111
 
-] [110] [111] [112] [113] [114] [115] [116] [117]
-
-LaTeX Warning: Reference `BST' on page 118 undefined on input line 5395.
-
-[118] [119]
-Underfull \hbox (badness 10000) in paragraph at lines 5507--5508
+] [112] [113] [114] [115] [116] [117] [118] [119] [120] [121] [122] [123]
+Underfull \hbox (badness 10000) in paragraph at lines 5711--5712
 []\TU/Palatino(0)/m/n/10.95 If there exists an agent without substitutes valuation, then we can construct
  []
 
-[120] [121] [122] [123] [124] [125] [126] [127] [128] [129] [130] [131] [132] (./Economic Theory.aux)
+[124] [125] [126] [127] [128] [129] [130] [131] [132] [133] [134] [135] [136] (./Economic Theory.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
-
-
-LaTeX Warning: There were undefined references.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -2173,12 +2166,12 @@ Package logreq Info: Writing requests to '"Economic Theory".run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 43890 strings out of 474773
- 907834 string characters out of 5757724
- 1964839 words of memory out of 5000000
- 65285 multiletter control sequences out of 15000+600000
+ 43915 strings out of 474773
+ 908317 string characters out of 5757724
+ 1963839 words of memory out of 5000000
+ 65310 multiletter control sequences out of 15000+600000
  571492 words of font info for 144 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  99i,21n,107p,994b,2091s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Economic Theory.pdf (139 pages).
+Output written on Economic Theory.pdf (143 pages).
