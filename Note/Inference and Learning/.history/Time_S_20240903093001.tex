@@ -1,0 +1,53 @@
+\documentclass[11pt]{elegantbook}
+\usepackage{graphicx}
+%\usepackage{float}
+\definecolor{structurecolor}{RGB}{40,58,129}
+\linespread{1.6}
+\setlength{\footskip}{20pt}
+\setlength{\parindent}{0pt}
+\newcommand{\argmax}{\operatornamewithlimits{argmax}}
+\newcommand{\argmin}{\operatornamewithlimits{argmin}}
+\elegantnewtheorem{proof}{Proof}{}{Proof}
+\elegantnewtheorem{claim}{Claim}{prostyle}{Claim}
+\DeclareMathOperator{\col}{col}
+\title{Time Series}
+\author{Wenxiao Yang}
+\institute{Haas School of Business, University of California Berkeley}
+\date{2024}
+\setcounter{tocdepth}{2}
+\extrainfo{All models are wrong, but some are useful.}
+
+\cover{cover.png}
+
+% modify the color in the middle of titlepage
+\definecolor{customcolor}{RGB}{32,178,170}
+\colorlet{coverlinecolor}{customcolor}
+\usepackage{cprotect}
+
+\addbibresource[location=local]{reference.bib} % bib
+
+\begin{document}
+\maketitle
+
+\frontmatter
+\tableofcontents
+
+\mainmatter
+
+\chapter{}
+\textbf{Data} in time series is denoted by
+\begin{equation}
+    \begin{aligned}
+        \{\underbrace{y_t}_{n\times 1}:1\leq t\leq T\}
+    \end{aligned}
+    \nonumber
+\end{equation}
+Some fundamental assumptions are needed for statistics.
+\begin{assumption}
+    Each $y_t$ is the realization of some random vector $Y_t$.
+\end{assumption}
+
+
+
+
+\end{document}

@@ -1,0 +1,119 @@
+\documentclass[11pt]{elegantbook}
+\usepackage{graphicx}
+%\usepackage{float}
+\definecolor{structurecolor}{RGB}{40,58,129}
+\linespread{1.6}
+\setlength{\footskip}{20pt}
+\setlength{\parindent}{0pt}
+\newcommand{\argmax}{\operatornamewithlimits{argmax}}
+\newcommand{\argmin}{\operatornamewithlimits{argmin}}
+\elegantnewtheorem{proof}{Proof}{}{Proof}
+\elegantnewtheorem{claim}{Claim}{prostyle}{Claim}
+\DeclareMathOperator{\col}{col}
+\title{Miguel Class}
+\author{Wenxiao Yang}
+\institute{Haas School of Business, University of California Berkeley}
+\date{2024}
+\setcounter{tocdepth}{2}
+\extrainfo{All models are wrong, but some are useful.}
+
+\cover{cover.png}
+
+% modify the color in the middle of titlepage
+\definecolor{customcolor}{RGB}{32,178,170}
+\colorlet{coverlinecolor}{customcolor}
+\usepackage{cprotect}
+
+
+\bibliographystyle{apalike_three}
+
+\begin{document}
+\maketitle
+
+\frontmatter
+\tableofcontents
+
+\mainmatter
+
+
+
+\chapter{Pricing}
+\section{Monopoly}
+\subsection{Base Case}
+The firm decides its price $p$ to maximize $\Pi(p)=p\cdot D(p)-C(D(p))$, where $D(\cdot)$ is the demand function and $C(\cdot)$ is the cost function.
+
+The monopoly problem is maximizing the profit
+\begin{equation}
+    \begin{aligned}
+        \max_p \Pi(p)=p\cdot D(p)-C(D(p))
+    \end{aligned}
+    \nonumber
+\end{equation}
+The F.O.C. (first-order condition) is
+\begin{equation}
+    \begin{aligned}
+        \frac{\partial \Pi(p)}{\partial p}=D(p)+pD'(p)-C'(D(p))D'(p)=0\\
+    \end{aligned}
+    \nonumber
+\end{equation}
+and the S.O.C. (second-order condition) is
+\begin{equation}
+    \begin{aligned}
+        \frac{\partial \Pi^2(p)}{\partial p^2}<0
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+The F.O.C. gives that
+\begin{equation}
+    \begin{aligned}
+        (p-C')D'&=-D\\
+        p-C'&=-\frac{D}{D'}\\
+        \underbrace{\frac{p-C'}{p}}_\text{Lerner Index}&=-\frac{D}{D'p}\\
+        &=-\frac{1}{\frac{d D}{d p}\frac{p}{D}}=-\frac{1}{\frac{\frac{d D}{D}}{\frac{d p}{p}}}:=\frac{1}{E}
+    \end{aligned}
+    \nonumber
+\end{equation}
+where $\frac{\frac{d D}{D}}{\frac{d p}{p}}<0$ is the elasticity of demand with respect to price. The absolute value of the elasticity is denoted by $E$.
+
+$E$ is supposed to be greater than $1$, otherwise, the optimal price is negative.
+
+In the demand function $D(p)=kp^{-E}$, where the elasticity is constant. Its elasticity is $-E$.
+
+
+The monopolist gives the production that is lower than social-optimal to maximize the profit (dead weight loss). Rent dissipation can give larger dead weight loss.
+
+\subsection{Multiple Products}
+\begin{equation}
+    \begin{aligned}
+        \max_{p}\sum_{i=1}^N p_i D_i(p)-C(D_1(p),...,D_N(p))
+    \end{aligned}
+    \nonumber
+\end{equation}
+Consider the case: Related Demand and Separable Costs, $C(D_1(p),...,D_N(p))=C_1(D_1(p))+...+C_N(D_N(p))$. The optimal pricing in this case satisfies
+\begin{equation}
+    \begin{aligned}
+        \frac{p_i-C_i}{p_i}=\frac{1}{E_{ii}}-\sum_{j\neq i}\frac{(p_j-C'_j)D_j E_{ij}}{R_i E_{ii}}
+    \end{aligned}
+    \nonumber
+\end{equation}
+where $E_{ij}=\frac{\partial D_i}{\partial p_j}\frac{p_j}{D_i}$ and $R_i$ is the revenue.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\bibliography{ref}
+
+\end{document}

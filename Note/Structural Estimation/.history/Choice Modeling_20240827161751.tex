@@ -1,0 +1,182 @@
+\documentclass[11pt]{elegantbook}
+\usepackage{graphicx}
+%\usepackage{float}
+\definecolor{structurecolor}{RGB}{40,58,129}
+\linespread{1.6}
+\setlength{\footskip}{20pt}
+\setlength{\parindent}{0pt}
+\newcommand{\argmax}{\operatornamewithlimits{argmax}}
+\newcommand{\argmin}{\operatornamewithlimits{argmin}}
+\elegantnewtheorem{proof}{Proof}{}{Proof}
+\elegantnewtheorem{claim}{Claim}{prostyle}{Claim}
+\DeclareMathOperator{\col}{col}
+\title{Structural Estimation}
+\author{Wenxiao Yang}
+\institute{Haas School of Business, University of California Berkeley}
+\date{2024}
+\setcounter{tocdepth}{2}
+\extrainfo{All models are wrong, but some are useful.}
+
+\cover{cover.png}
+
+% modify the color in the middle of titlepage
+\definecolor{customcolor}{RGB}{32,178,170}
+\colorlet{coverlinecolor}{customcolor}
+\usepackage{cprotect}
+
+
+\bibliographystyle{apalike_three}
+
+\begin{document}
+\maketitle
+
+\frontmatter
+\tableofcontents
+
+\mainmatter
+
+\chapter{Homogenous Products}
+How do we estimate demand for a homogenous product?
+\section{\cite{working1927statistical}}
+Supply and Demand for coffee:
+\begin{equation}
+    \begin{aligned}
+        Q^d_t=\alpha_0+\alpha_1 P_t+U_t\\
+        Q^s_t=\beta_0+\beta_1 P_t+V_t
+    \end{aligned}
+    \nonumber
+\end{equation}
+Equilibrium price and quantity are given by
+\begin{equation}
+    \begin{aligned}
+        Q^d_t=Q^s_t \Rightarrow \left\{\begin{matrix}
+            P_t=\frac{\beta_0-\alpha_0}{\alpha_1-\beta_1}+\frac{V_t-U_t}{\alpha_1-\beta_1}\\
+            Q_t=\frac{\alpha_1\beta_0-\alpha_0\beta_1}{\alpha_1-\beta_1}+\frac{\alpha_1V_t-\beta_1U_t}{\alpha_1-\beta_1}
+        \end{matrix}\right.
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+\chapter{Random Utility Models}
+\section{Random Utility Models}
+Let $j=1,...,J_i$ index the ``inside goods'' available to consumer $i$ while $j=0$ denotes the outside good. A consumer's choice set is characterized by $J_i$ and a set $\chi_i$, which may include
+\begin{enumerate}[$\circ$]
+    \item observed characteristics of consumer $i$,
+    \item observed characteristics of goods (including prices),
+    \item observed characteristics of the local market,
+    \item and characteristics of the market or goods that are unobserved to the researcher.
+\end{enumerate}
+Each consumer $i$ has a (conditional indirect) utility $u_{ij}$ for good $j$. Consumer knows her utilities for all goods and chooses the good with the highest utility.
+
+In this model, the heterogeneity of consumer preferences is modeled by random utilities:
+\begin{definition}[Random Utility Model]
+    Given the choice set $(J_i, \chi_i)$, each consumer's utility vector $(u_{ij})_{j=0,1,...,J_i}$ is an independent draw from a joint distribution $F_u(\cdot\mid J_i, \chi_i)$.
+\end{definition}
+Since only the ordinal ranking of goods matters for a consumer's behavior, we can normalize the location and scale of each consumer's utility vector without loss of generality. We assume that ``ties'' ($u_{ij}=u_{ik}$ for some $j\neq k$) occur with probability zero in the distribution $F_u(\cdot\mid J_i, \chi_i)$. Then, we can represent consumer $i$'s choice with the vector $(q_{i1},...,q_{iJ_i})$, where
+\begin{equation}
+    \begin{aligned}
+        q_{ij}=\mathbf{1}\{u_{ij}\geq u_{ik},\forall k\}
+    \end{aligned}
+    \nonumber
+\end{equation}
+The consumer-specific choice probabilities are then given by
+\begin{equation}
+    \begin{aligned}
+        s_{ij}:=\mathbb{E}[q_{ij}\mid J_i,\chi_i]=\int_{\mathcal{A}_{ij}}d F_u\left(u_{i0},...,u_{iJ_i}\mid J_i, \chi_i\right)
+    \end{aligned}
+    \nonumber
+\end{equation}
+where $\mathcal{A}_{ij}=\{(u_{i0},...,u_{iJ_i})\in\mathbb{R}^{J_i+1}\mid u_{ij}\geq u_{ik},\forall k\}$.
+
+
+\section{The Canonical Model}
+\begin{definition}[Canonical Model]
+    Discrete choice demand models are frequently formulated using a parametric random utility specification such as
+    \begin{equation}
+        \begin{aligned}
+            u_{ijt}=x_{jt}\beta_{it}-\alpha_{it}p_{jt}+\xi_{jt}+\epsilon_{ijt}
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    for $j>0$, with $u_{i0t}=\epsilon_{i0t}$.
+\end{definition}
+
+The notion of a “market” $t$ allows a precise characterization of the endogeneity problems inherent to demand estimation (In practice, markets are typically defined by natural combinations of time and geography). Let $\mathcal{J}_t$ denote the set of products (inside goods) available to consumers in market $t$, and let $J_t=|\mathcal{J}_t|$.
+
+Let $x_t=(x_{1t},...,x_{J_t,t}), p_t=(p_{1t},...,p_{J_t,t}), \xi_t=(\xi_{1t},..., \xi_{J_t,t})$, and $\chi_t=(x_t,p_t,\xi_t)$.
+
+\begin{enumerate}
+    \item $p_{jt}$ represents the price of good $j$ in market $t$, while $x_{jt}\in \mathbb{R}^K$ represents other observable characteristics of good $j$ in the market.
+    \item $\xi_{jt}$ is \textit{ a demand shock}, an unobserved factor associated with good $j$ and market $t$.
+    \subitem $\circ$ ($\xi_{jt}$ can represent any combination of latent taste variation and latent product characteristics common to consumers in market $t$. For example, a high value of $\xi_{jt}$ may simply indicate that consumers in market $t$ have a high mean taste for good $j$.)
+    \subitem $\circ$ ($\xi_{jt}$ is correlated with $p_{jt}$ and $x_{jt}$ by the endogeneity of prices and additional characteristics.)
+    \item $\epsilon_{ijt}$ is the \textit{utility shock}. It is most often specified as an i.i.d. draw from a standard type-1 extreme value distribution, yielding a \textit{mixed multinomial logit model}.
+    \subitem $\circ$ Choice probabilities in the population reflect a mixture of the choice probabilities conditional on each possible combination of ($\alpha_{it},\beta_{it}$). In this case, the choice probabilities in the population (i.e., the market shares) are given by
+    \begin{equation}
+        \begin{aligned}
+            s_{jt}=\int \frac{e^{x_{jt}\beta_{it}-\alpha_{it}p_{jt}+\xi_{jt}}}{\sum_{k=0}^{J_t}e^{x_{kt}\beta_{it}-\alpha_{it}p_{kt}+\xi_{kt}}}d F(\alpha_{it},\beta_{it};t)
+        \end{aligned}
+        \label{eq:mixed_multinomial_logit}
+    \end{equation}
+    where the latent taste parameters $\alpha_{it}$ and $\beta_{it}$ are often referred to as ``random coefficients,'' and $F(\cdot;t)$ denotes their joint distribution in market $t$.
+    \subitem $\circ$ Alternatively, a normal distribution will yield a mixed multinomial probit.
+    \item The joint distribution $F(\cdot;t)$ is commonly specified as follows.
+    \begin{enumerate}
+        \item Each component $k$ of the random coefficient vector $\beta_{it}$ typically specified takes the form
+        \begin{equation}
+            \begin{aligned}
+                \beta_{it}^{(k)}=\beta_{0}^{(k)}+\beta_{v}^{(k)}v_{it}^{(k)}+\sum_{l=1}^L\beta_{d}^{(l,k)}d_{ilt}
+            \end{aligned}
+            \label{eq:beta_it}
+        \end{equation}
+        Remind that the $\beta_{it}^{(k)}$ contributes as $x_{jt}^{(k)}\beta_{it}^{(k)}$.
+        \begin{enumerate}
+            \item The $\beta_{0}^{(k)}$ is a parameter shifting \underline{all} consumers' tastes for additional characteristics $x_{jt}^{(k)}$.
+            \item Each $d_{ilt}$ represents a \textit{characteristic} (e.g., demographic measure) of individual $i$; the $\beta_{d}^{(l,k)}$ governs the extent of variation in tastes for $x_{jt}^{(k)}$ with different values of $d_{ilt}$.
+            \item Each $v_{it}^{(k)}$ represents a \textit{taste shock}, which is a random variable with a pre-specified distribution (e.g., a standard normal); the $\beta_{v}^{(k)}$ governs the extent of variation in tastes for $x_{jt}^{(k)}$ with different values of $v_{it}^{(k)}$.
+        \end{enumerate}
+        \item A typical specification of $\alpha_{it}$ takes the form
+        \begin{equation}
+            \begin{aligned}
+                \ln\left(\alpha_{it}\right)=\alpha_0+\alpha_y y_{it}+\alpha_v v_{it}^{(0)}
+            \end{aligned}
+            \label{eq:alpha_it}
+        \end{equation}
+        where $y_{it}$ represents consumer-specific measures such as income that are posited to affect price sensitivity. The variables included in $y_{it}$ might overlap partially or entirely with $d_{it}$.
+    \end{enumerate}
+\end{enumerate}
+
+
+\section{Market-Level Data}
+We typically observe key data at the market level:
+\begin{enumerate}
+    \item $J_t$: the number of goods available to consumers in each market $t$;
+    \item $p_t,x_t$: prices and additional characteristics of goods in each market $t$;
+    \item $\tilde{s}_{jt}$: observed market shares, typically measured by $\tilde{s}_{jt}:=\frac{\textnormal{total quantity of good $j$ sold in market $t$}}{\textnormal{total number of consumers in market $t$}}$.
+    \item \textit{Distributions of $(d_{it},y_{it})$}: distribution of consumer characteristics in each market.
+    \item Additional variables $w_t$ that might serve as appropriate instruments.
+\end{enumerate}
+
+
+\section{The BLP Estimator}
+We follow \cite{berry1995automobile} in assuming that each $\epsilon_{ijt}$ is an i.i.d. draw from a standard type-1 extreme value (Gumbel) distribution and that each $v_{it}^{(k)}$ in \eqref{eq:beta_it} is an i.i.d. draw from a standard normal distribution.
+
+Let $$\theta\equiv(\alpha_0,\beta_0,\beta_d,\beta_v)$$
+represent all the parameters of the model. It will be useful to partition these as
+\begin{equation}
+    \begin{aligned}
+        \theta_1=(\alpha_0,\beta_0),\quad \theta_2=(\beta_d,\beta_v)
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+
+
+
+
+\bibliography{ref}
+
+
+
+
+\end{document}

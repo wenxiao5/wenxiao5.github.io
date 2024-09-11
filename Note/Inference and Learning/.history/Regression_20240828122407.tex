@@ -1,0 +1,1762 @@
+\documentclass[11pt]{elegantbook}
+\usepackage{graphicx}
+%\usepackage{float}
+\definecolor{structurecolor}{RGB}{40,58,129}
+\linespread{1.6}
+\setlength{\footskip}{20pt}
+\setlength{\parindent}{0pt}
+\newcommand{\argmax}{\operatornamewithlimits{argmax}}
+\newcommand{\argmin}{\operatornamewithlimits{argmin}}
+\elegantnewtheorem{proof}{Proof}{}{Proof}
+\elegantnewtheorem{claim}{Claim}{prostyle}{Claim}
+\DeclareMathOperator{\col}{col}
+\title{Regression}
+\author{Wenxiao Yang}
+\institute{Haas School of Business, University of California Berkeley}
+\date{2023}
+\setcounter{tocdepth}{2}
+\extrainfo{All models are wrong, but some are useful.}
+
+\cover{cover.png}
+
+% modify the color in the middle of titlepage
+\definecolor{customcolor}{RGB}{32,178,170}
+\colorlet{coverlinecolor}{customcolor}
+\usepackage{cprotect}
+
+\addbibresource[location=local]{reference.bib} % bib
+
+\begin{document}
+\maketitle
+
+\frontmatter
+\tableofcontents
+
+\mainmatter
+
+
+
+\chapter{Regression}
+\section{Best Linear Predictor}
+Consider a prediction problem that the distribution $F_{X,Y}$ is known, we observe $X=\begin{pmatrix}
+    1\\
+    R
+\end{pmatrix}\in \mathbb{R}^{K\times 1}$ and predict $Y\in \mathbb{R}$. Only linear functions of $X$ are allowed $\mathcal{L}=\{X'b:b\in \mathbb{R}^K\}$. We use square experience loss $(Y-X'b)^2$. We want to minimze Risk (mean squared error) $$\mathbb{E}_{X,Y}[(Y-X'b)^2]=\int_{x,y}(y-x'b)^2f_{x,y}(x,y)dxdy$$
+
+\begin{assumption}
+    Following inference is based on assumptions:
+    \begin{enumerate}[(i).]
+        \item $\mathbb{E}[Y^2]<\infty$;
+        \item $\mathbb{E}[\|X\|^2]<\infty$ (Frobenius norm);
+        \item $\mathbb{E}[(\alpha'X)^2]>0$ for any non-zero $\alpha\in \mathbb{R}^K$.
+    \end{enumerate}
+\end{assumption}
+
+Let $\beta_0=\arg\min_{b\in \mathbb{R}^k}\mathbb{E}_{X,Y}[(Y-X'b)^2]$. By the F.O.C.
+\begin{equation}
+    \begin{aligned}
+        \mathbb{E}[X(Y-X'\beta_0)]=0\\
+        \mathbb{E}[XY]-\mathbb{E}[XX']\beta_0=0\\
+        \mathbb{E}[XY]=\underbrace{\mathbb{E}[XX']}_{non-singular}\beta_0\\
+        \beta_0=\mathbb{E}[XX']^{-1}\mathbb{E}[XY]
+    \end{aligned}
+    \nonumber
+\end{equation}
+\begin{proposition}[Best Linear Predictor]
+    Hence, the mean-squared error minimizing linear predictor of $Y$ given $X$ is
+    \begin{equation}
+        \begin{aligned}
+            \mathbb{E}^*[Y|X]=X'\beta_0, \text{ where }\beta_0=\mathbb{E}[XX']^{-1}\mathbb{E}[XY]
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{proposition}
+\begin{equation}
+    \begin{aligned}
+        \mathbb{E}_{X,Y}[X(\underbrace{Y-X'\beta_0}_{\triangleq u})]=\begin{pmatrix}
+            \mathbb{E}[u]\\
+            \mathbb{E}[uR]
+        \end{pmatrix}=\boldsymbol{0}
+    \end{aligned}
+    \nonumber
+\end{equation}
+Hence, we have $\mathbb{E}[u]=0$, then $\mathbb{E}[uR]=0=\text{Cov}(u,R)$.
+\begin{lemma}
+    $\mathbb{E}[u]=\mathbb{E}[uR]=\text{Cov}(u,R)=0$, where $u=Y-\mathbb{E}^*[Y|X]$.
+\end{lemma}
+If $u>0$, it is underpredicting and if $u<0$, it is overpredicting.
+
+\subsection*{Result 1 (ure Partitioned Inverse Formula)}
+When we separate the constant term from other variables, we can write the \underline{Best Linear Predictor} as:
+\begin{proposition}[Best Linear Predictor (ure Partitioned Inverse Formula)]
+    $X=\begin{pmatrix}
+        1\\
+        R
+    \end{pmatrix}$, $\beta_0=\begin{pmatrix}
+        \alpha_0\\
+        \beta_*
+    \end{pmatrix}$, $\mathbb{E}[XX']^{-1}=\begin{bmatrix}
+        1	& \mathbb{E}[R]'\\
+        \mathbb{E}[R]	&\mathbb{E}[RR']
+    \end{bmatrix}^{-1}$, $\mathbb{E}[XY]=\begin{pmatrix}
+        \mathbb{E}[Y]\\
+        \mathbb{E}[RY]
+    \end{pmatrix}$. Then,
+    \begin{equation}
+        \begin{aligned}
+            \alpha_0=\mathbb{E}[Y]-\mathbb{E}[R]'\beta_*\\
+            \beta_*=\underbrace{\text{Var}(R)^{-1}}_{(K-1)\times(K-1)}\times \underbrace{\text{Cov}(R,Y)}_{(K-1)\times 1}
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{proposition}
+
+\section{Convergence of OLS}
+\subsection{Approximation}
+OLS Fit is
+\begin{equation}
+    \begin{aligned}
+        \hat{\beta}=\left[\frac{1}{N}\sum_{i=1}^N X_i X'_i\right]^{-1}\left[\frac{1}{N}\sum_{i=1}^N X_iY_i\right]
+    \end{aligned}
+    \nonumber
+\end{equation}
+\begin{theorem}[Weak Law of Large Numbers (wLLN)]
+    The weak law of large numbers (also called Khinchin's law) states that the sample average \underline{converges in probability} towards the expected value.
+    $${\displaystyle {\begin{matrix}{}\\{\overline {X}}_{n}\ {\xrightarrow {P}}\ \mu \qquad {\text{when}}\ n\to \infty .\\{}\end{matrix}}}$$
+    That is, for any positive number $\varepsilon$,
+    $${\displaystyle \lim _{n\to \infty }\Pr \!\left(\,|{\overline {X}}_{n}-\mu |<\varepsilon \,\right)=1.}$$
+\end{theorem}
+\begin{enumerate}
+    \item By LLN: $\frac{1}{N}\sum_{i=1}^N X_iY_i\xrightarrow{P} \mathbb{E}[XY]$
+    \item By LLN and $f(X)=X^{-1}$ is continuous, $\left[\frac{1}{N}\sum_{i=1}^N X_iX'_i\right]\xrightarrow{P} \mathbb{E}[XX']^{-1}$
+    \item Hence, $$\hat{\beta}=\left[\frac{1}{N}\sum_{i=1}^N X_i X'_i\right]^{-1}\left[\frac{1}{N}\sum_{i=1}^N X_iY_i\right] \xrightarrow{P} \mathbb{E}[XX']^{-1}\mathbb{E}[XY]= \beta_0$$
+\end{enumerate}
+
+\begin{theorem}[Central Limit Theorem (CLT)]\label{CLT}
+    $$Z=\frac{\overline{X}-\mu}{\frac{\sigma}{\sqrt{n}}} \xrightarrow {D} N(0,1) \text{ when}\ n\to \infty$$
+    $Z$ \underline{converges in distribution} to $N(0,1)$ as $n\to \infty$
+
+    (converges in distribution: $P(\frac{\overline{X}-\mu}{\frac{\sigma}{\sqrt{n}}}\leq a)\rightarrow \frac{1}{\sqrt{2\pi}}\int_{-\infty}^ae^{-\frac{x^2}{2}}dx$)
+\end{theorem}
+Application to OLS: Let $u=Y-X'\beta_0$. Then,
+\begin{equation}
+    \begin{aligned}
+        \hat{\beta}&=\left[\frac{1}{N}\sum_{i=1}^N X_i X'_i\right]^{-1}\left[\frac{1}{N}\sum_{i=1}^N X_iY_i\right]\\
+        &=\left[\frac{1}{N}\sum_{i=1}^N X_i X'_i\right]^{-1}\left[\frac{1}{N}\sum_{i=1}^N X_i(u_i+X'_i\beta_0)\right]\\
+        &=\beta_0+\left[\frac{1}{N}\sum_{i=1}^N X_i X'_i\right]^{-1}\left[\frac{1}{\sqrt{N}}\sum_{i=1}^N X_i u_i\right]
+    \end{aligned}
+    \nonumber
+\end{equation}
+Then,
+\begin{equation}
+    \begin{aligned}
+        \sqrt{N}(\hat{\beta}-\beta_0)&=\left[\frac{1}{N}\sum_{i=1}^N X_iX
+        '_i\right]^{-1}\left[\frac{1}{\sqrt{N}}\sum_{i=1}^N X_i u_i\right]
+    \end{aligned}
+    \nonumber
+\end{equation}
+\begin{enumerate}
+    \item By LLN, $\left[\frac{1}{N}\sum_{i=1}^N X_iX
+    '_i\right]^{-1} \xrightarrow{P} \mathbb{E}[XX']^{-1}\triangleq \Gamma_0^{-1}$.
+    \item By CLT, $\left[\frac{1}{\sqrt{N}}\sum_{i=1}^N X_i u_i\right]\sim \mathcal{N}(0,\Omega_0)$, where
+    \begin{equation}
+        \begin{aligned}
+            \Omega_0=Var[X_iu_i]=\mathbb{E}[\|X_iu_i\|^2]=\mathbb{E}[\|x_i\|^2u_i^2]\leq \left(\mathbb{E}[\|x_i\|^4]\right)^\frac{1}{2}\mathbb{E}[u_i^4]^{\frac{1}{2}}
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    Hence,
+    \begin{equation}
+        \begin{aligned}
+            \sqrt{N}(\hat{\beta}-\beta_0) \xrightarrow{D} N\left(0,\Gamma_0^{-1}\Omega_0 \Gamma_0^{-1}\right)
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{enumerate}
+The estimation of $\Gamma_0$ and $\Omega_0$:
+\begin{equation}
+    \begin{aligned}
+        \hat{\Gamma}&=\frac{1}{N}\sum_{i=1}^N X_i X'_i\\
+        \hat{\Omega}&=\frac{1}{N}\sum_{i=1}^N X_i\hat{u_i}\hat{u_i}'X'_i,\quad \text{where }\hat{u_i}=Y_i-X'_i\hat{\beta}
+    \end{aligned}
+    \nonumber
+\end{equation}
+We have
+\begin{equation}
+    \begin{aligned}
+        \hat{\Gamma}^{-1}\hat{\Omega}\hat{\Gamma}^{-1}\xrightarrow{P} \Gamma_0^{-1}\Omega_0 \Gamma_0^{-1}
+    \end{aligned}
+    \nonumber
+\end{equation}
+Then,
+\begin{equation}
+    \begin{aligned}
+        \hat{\beta}\xrightarrow{approx}N\left(\beta_0,\frac{\hat{\Gamma}^{-1}\hat{\Omega}\hat{\Gamma}^{-1}}{N}\right)
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+\subsection{Testing and Confidence Interval}
+Let $\hat{\Lambda}=\hat{\Gamma}^{-1}\hat{\Omega}\hat{\Gamma}^{-1}$, $\Lambda=\Gamma_0^{-1}\Omega_0 \Gamma_0^{-1}$, $\sqrt{N}(\hat{\beta}_k-\beta_k) \xrightarrow{D} N\left(0,\Lambda_{kk}\right)$. Hence,
+\begin{equation}
+    \begin{aligned}
+        T_N\triangleq \sqrt{N}\Lambda_{kk}^{-\frac{1}{2}}\left(\hat{\beta}_k-\beta_k\right)\xrightarrow{D} N(0,1)
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+Consider the event $A=\mathbf{1}\left\{|T_N|\leq 1.96\right\}$. We have
+\begin{equation}
+    \begin{aligned}
+        \textnormal{Pr}(A=1)=\Phi(1.96)-\Phi(-1.96)=0.95
+    \end{aligned}
+    \nonumber
+\end{equation}
+Specifically,
+\begin{equation}
+    \begin{aligned}
+        A&=\mathbf{1}\left\{|T_N|\leq 1.96\right\}\\
+        &=\mathbf{1}\left\{\hat{\beta}_k-1.96\frac{\Lambda_{kk}^{\frac{1}{2}}}{\sqrt{N}}\leq\beta_k\leq \hat{\beta}_k+1.96\frac{\Lambda_{kk}^{\frac{1}{2}}}{\sqrt{N}}\right\}
+    \end{aligned}
+    \nonumber
+\end{equation}
+The ``Random Interval'' is
+\begin{equation}
+    \begin{aligned}
+        \left[\hat{\beta}_k-1.96\frac{\Lambda_{kk}^{\frac{1}{2}}}{\sqrt{N}}, \hat{\beta}_k+1.96\frac{\Lambda_{kk}^{\frac{1}{2}}}{\sqrt{N}}\right]
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+
+\subsection*{Testing Linear Restrictions}
+Let $\theta=H\beta$, where $H$ is $p\times k$ and $\beta$ is $k\times 1$.
+\begin{equation}
+    \begin{aligned}
+        H_0: \theta=\theta_0;\quad H_1:\theta\neq \theta_0
+    \end{aligned}
+    \nonumber
+\end{equation}
+We have
+\begin{equation}
+    \begin{aligned}
+        \sqrt{N}(\hat{\theta}-\theta_0)=H\sqrt{N}\left(\hat{\beta}-\beta_0\right)\xrightarrow[H_0]{D} N(0,H\Lambda_0 H')
+    \end{aligned}
+    \nonumber
+\end{equation}
+Moreover,
+\begin{equation}
+    \begin{aligned}
+        W_0=N\left(\hat{\theta}-\theta_0\right)(H\Lambda_0 H')^{-1}\left(\hat{\theta}-\theta_0\right)\xrightarrow[H_0]{D}\chi_p^2
+    \end{aligned}
+    \nonumber
+\end{equation}
+where $\mathbb{E}[\chi_p^2]=p$.
+
+
+\section{Long, Short, Auxilary Regression}
+$Y\in \mathbb{R}^{1}$, $X\in \mathbb{R}^{K}$, $K\in \mathbb{R}^{J}$.
+Consider a researcher interested in the conditional distribution of the logarithm of weekly wages ($Y\in \mathbb{R}^{1}$) given years of competed schooling ($X\in \mathbb{R}^{K}$) and vector of additional worker attributes. This vector could include variables such as age, childhood test scores, and race. Let $W$ be this $J \times 1$ vector of additional variables.
+
+We can run regression by two ways:
+\begin{enumerate}
+    \item Long regression: $\mathbb{E}^*[Y|X,W]=X'\beta_0+W'\gamma_0$.
+    \item Short regression: $\mathbb{E}^*[Y|X]=X'b_0$.
+\end{enumerate}
+\begin{proposition}[Long Regression]
+    Long regression is another form of best linear predictor.
+    \begin{equation}
+        \begin{aligned}
+            \mathbb{E}^*[Y|X,W]&=\mathbb{E}^*[Y|Z]\\
+            &=Z'\left(\mathbb{E}[ZZ']^{-1}\mathbb{E}[ZY]\right)\\
+            &=X'\beta_0+W'\gamma_0
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    where $\begin{pmatrix}
+        \beta_0\\
+        \gamma_0
+    \end{pmatrix}=\mathbb{E}[ZZ']^{-1}\mathbb{E}[ZY]$, $Z=\begin{pmatrix}
+        X\\
+        W
+    \end{pmatrix}$.
+\end{proposition}
+
+\begin{proposition}[Auxiliary Regression]
+    $$\mathbb{E}^*[W|X]=\Pi_0 X$$
+    which is multivariate regression. For each row $j=1,...,J$, $$\mathbb{E}^*[W_j|X]=X'\Pi_{j0}$$
+    where $\Pi_{j0}=\mathbb{E}[XX']^{-1}\mathbb{E}[XW_j]$ and $\Pi_0=\begin{pmatrix}
+        \Pi_{10}'\\
+        \vdots\\
+        \Pi_{J0}'
+    \end{pmatrix}=\mathbb{E}[WX']\mathbb{E}[XX']^{-1}$.
+\end{proposition}
+\begin{theorem}[Law of Iterated Linear Predictors (LILP)]
+    $$\mathbb{E}^*[Y|X]=\mathbb{E}^*[\mathbb{E}^*[Y|X,W]|X]$$
+\end{theorem}
+\underline{Facts:} Linear predictor is linear operator, $\mathbb{E}^*[X+Y|W]=\mathbb{E}^*[X|W]+\mathbb{E}^*[Y|W]$.\\
+Let $Y=\mathbb{E}^*[Y|X,W]+u=X'\beta_0+W'\gamma_0+u$. Then,
+\begin{equation}
+    \begin{aligned}
+        \mathbb{E}^*[Y|X]&=\mathbb{E}^*[X'\beta_0+W'\gamma_0+u|X]\\
+        &=\mathbb{E}^*[X'\beta_0|X]+\mathbb{E}^*[W'\gamma_0|X]+\mathbb{E}^*[u|X]\\
+        &=X'\beta_0+(\Pi_0X)'\gamma_0+0\\
+        &=X'(\underbrace{\beta_0+\Pi_0'\gamma_0}_{b_0})
+    \end{aligned}
+    \nonumber
+\end{equation}
+\begin{proposition}[Short Regression]
+    $$\mathbb{E}^*[Y|X]=X'b_0$$
+    where $b_0=\beta_0+\Pi_0'\gamma_0$.
+\end{proposition}
+
+\section{Residual Regression}
+Let the variation in $W$ unexplained by $X$.
+\begin{equation}
+    \begin{aligned}
+        \underbrace{V}_{J\times 1}=\underbrace{W}_{J\times 1}-\underbrace{\mathbb{E}^*[W|X]}_{J\times 1}=W-\Pi_0X
+    \end{aligned}
+    \nonumber
+\end{equation}
+\begin{proposition}[Residual Regression]
+    Let $\tilde{Y}=Y-\mathbb{E}^*[Y|X]$,
+    $$\mathbb{E}^*[\tilde{Y}|V]=V'\gamma_0$$
+\end{proposition}
+\begin{proof}
+    \begin{equation}
+        \begin{aligned}
+            Y&=X'\beta_0+W'\gamma_0+u\\
+            \tilde{Y}&=X'\beta_0-\mathbb{E}^*[Y|X]+W'\gamma_0+u\\
+            &=-X'(\Pi'_0\gamma_0)+W'\gamma_0+u\\
+            &=V'\gamma_0+u\\
+            \mathbb{E}^*[\tilde{Y}|V]&=V'\gamma_0
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{proof}
+By long regression,
+\begin{equation}
+    \begin{aligned}
+        \mathbb{E}^*[Y|X,W]&=X'\beta_0+W'\gamma_0\\
+        &=X'b_0-X'(\Pi'_0\gamma_0)+W'\gamma_0\\
+        &=X'b_0+V'\gamma_0\\
+        &=\mathbb{E}^*[Y|X]+\mathbb{E}^*[\tilde{Y}|V]
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+\begin{theorem}[Frisch-Waugh Theorem]
+    \begin{equation}
+        \begin{aligned}
+            \mathbb{E}^*[Y|X,V]&=\mathbb{E}^*[Y|X]+\mathbb{E}^*[Y|V]-\mathbb{E}[Y]\\
+            &=\mathbb{E}^*[Y|X,W]
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{theorem}
+
+
+\begin{lemma}
+    If $Cov(X,W)=0$, then
+    \begin{equation}
+        \begin{aligned}
+            \mathbb{E}^*[Y|X,W]=\mathbb{E}^*[Y|X]+\mathbb{E}^*[Y|W]-\mathbb{E}[Y]
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{lemma}
+\begin{proof}
+    Let $u=Y-\mathbb{E}^*[Y|X,W]$.
+    \begin{equation}
+        \begin{aligned}
+            0&=\mathbb{E}[uW]\\
+            &=\mathbb{E}[(Y-\mathbb{E}^*[Y|X]-\mathbb{E}^*[Y|W]+\mathbb{E}[Y])W]\\
+            &=\underbrace{\mathbb{E}[(Y-\mathbb{E}^*[Y|W])W]}_{=0 \text{ by F.O.C.}}-\underbrace{\mathbb{E}[\mathbb{E}^*[Y|X]]}_{=\mathbb{E}[Y]}\mathbb{E}[W]+\mathbb{E}[Y]\mathbb{E}[W]
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{proof}
+
+
+\section{Card-Krueger Model}
+Consider a model about log-learning based on schooling, ability, luck.
+\begin{equation}
+    \begin{aligned}
+        Y(s)=\alpha_0+\beta_0 \underbrace{s}_{\text{schooling }s\in \mathbb{S}} +\underbrace{A}_\text{ability} + \underbrace{V}_\text{luck}
+    \end{aligned}
+    \nonumber
+\end{equation}
+Given a cost function about $s$:
+\begin{equation}
+    \begin{aligned}
+        C(s)=\underbrace{C}_\text{cost heterogeneity}s+\frac{k_0}{2}s^2
+    \end{aligned}
+    \nonumber
+\end{equation}
+\begin{assumption}
+    We assume
+    \begin{enumerate}
+        \item Information set $I_0=(C,A)$ are known by agent when choosing schooling.
+        \item $V$ is independent of $C,A$: $V|C,A\triangleq V$.
+    \end{enumerate}
+\end{assumption}
+Then, the observed schooling $s$ should satsify
+\begin{equation}
+    \begin{aligned}
+        s&=\arg\max_s \mathbb{E}[Y(s)-C(s)\mid I_0]\\
+        &=\arg\max_s \alpha_0+\beta_0 s+A-Cs-\frac{k_0}{2}s^2
+    \end{aligned}
+    \nonumber
+\end{equation}
+By F.O.C.
+\begin{equation}
+    \begin{aligned}
+        \beta_0-C-k_0 s=0 \Rightarrow s=\frac{\beta_0-C}{k_0}
+    \end{aligned}
+    \nonumber
+\end{equation}
+\begin{enumerate}
+    \item \textbf{Long Regression}:
+    \begin{equation}
+        \begin{aligned}
+            \mathbb{E}^*[Y|s,A]=\alpha_0+\beta_0s+A
+        \end{aligned}
+        \tag{LR}
+        \label{LR}
+    \end{equation}
+    \item Short Regression: $$\mathbb{E}^*[Y|s]=a_0+b_0s$$
+    \item \textbf{Auxillary Regression}: By the best linear predictor, the $\mathbb{E}^*[A|s]$ can be written as
+    \begin{equation}
+        \begin{aligned}
+            \mathbb{E}^*[A|s]&=\mathbb{E}[A]-\frac{\text{Cov}(A,s)}{\text{Var}(s)}\mathbb{E}[s]+\frac{\text{Cov}(A,s)}{\text{Var}(s)}s\\
+            &=\mathbb{E}[A]-\eta_0\mathbb{E}[s]+\eta_0 s
+        \end{aligned}
+        \tag{AR}
+        \label{AR}
+    \end{equation}
+    where $\eta_0=\frac{\text{Cov}(A,s)}{\text{Var}(s)}$ and $s=\frac{\beta_0-C}{k_0}$ and $\mathbb{E}[s]=\frac{\beta_0-\mu_C}{k_0}$,
+    \begin{equation}
+        \begin{aligned}
+            \text{Cov}(A,s)&=\text{Cov}\left(A,\frac{\beta_0-C}{k_0}\right)=-\frac{\text{Cov}(A,C)}{k_0}=-\frac{\sigma_{AC}}{k_0}\\
+            \text{Var}(s)&=\text{Var}\left(\frac{\beta_0-C}{k_0}\right)=\frac{\sigma_C^2}{k_0^2}\\
+            \eta_0&=-k_0\frac{\sigma_{AC}}{\sigma_C^2}=-k_0\frac{\sigma_{AC}}{\sigma_A\sigma_C}\frac{\sigma_A}{\sigma_C}=-k_0\rho_{AC}\frac{\sigma_A}{\sigma_C}
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    The Auxillary Regression is written as
+    \begin{equation}
+        \begin{aligned}
+            \mathbb{E}^*[A|s]=\mathbb{E}[A]+k_0\rho_{AC}\frac{\sigma_A}{\sigma_C}\frac{\beta_0-\mu_C}{k_0}-k_0\rho_{AC}\frac{\sigma_A}{\sigma_C} s\\
+            =\mathbb{E}[A]+\rho_{AC}\frac{\sigma_A}{\sigma_C}(\beta_0-\mu_C)-k_0\rho_{AC}\frac{\sigma_A}{\sigma_C} s
+        \end{aligned}
+        \tag{AR-1}
+        \label{AR-1}
+    \end{equation}
+    Hence, the \textbf{Short Regression}
+    \begin{equation}
+        \begin{aligned}
+            \mathbb{E}^*[Y|s]&=\mathbb{E}^*\left[\mathbb{E}^*[Y|s,A]|s\right]\\
+            &=\mathbb{E}^*\left[\alpha_0+\beta_0s+A|s\right]\\
+            &=\alpha_0+\beta_0s+\mathbb{E}^*[A|s]\\
+            &=\underbrace{\alpha_0+\mathbb{E}[A]+\rho_{AC}\frac{\sigma_A}{\sigma_C}(\beta_0-\mu_C)}_{a_0}+\underbrace{\left(\beta_0-k_0\rho_{AC}\frac{\sigma_A}{\sigma_C}\right)}_{b_0}s
+        \end{aligned}
+        \tag{SR}
+        \label{SR}
+    \end{equation}
+\end{enumerate}
+
+\subsection{Proxy Variable Regression}
+What if we don't observe $A$ or $C$. We observe some observed variables $W$ (\textbf{proxy variable}) instead.
+\begin{assumption}
+    We assume
+    \begin{enumerate}
+        \item Redundancy: $\mathbb{E}^*[Y|s,A,W]=\mathbb{E}^*[Y|s,A]$ ($W$ doesn't give extra information).
+        \item Conditional Uncorrelatedness: $\mathbb{E}^*[A|s,W]=\mathbb{E}^*[A|W]=\Pi_0+W'\Pi_W$ (Auxillary Regression).
+        \item Conditional Independence: $C\perp A | W=w$.
+    \end{enumerate}
+\end{assumption}
+The \textbf{Proxy Variable Regression} is given by
+\begin{equation}
+    \begin{aligned}
+        \mathbb{E}^*[Y|s,W]&=\mathbb{E}^*\left[\mathbb{E}^*[Y|s,A,W]|s,W\right]\\
+        &=\mathbb{E}^*\left[\mathbb{E}^*[Y|s,A]|s,W\right]\\
+        &=\mathbb{E}^*[\alpha_0+\beta_0s+A|s,W]\\
+        &=\alpha_0+\beta_0s+(\Pi_0+W'\Pi_W)\\
+        &=(\alpha_0+\Pi_0)+\beta_0 s+ W'\Pi_W
+    \end{aligned}
+    \tag{PVR}
+    \label{PVR}
+\end{equation}
+A \underline{general form} of \textbf{Proxy Variable Regression} with
+\begin{enumerate}
+    \item Long Regression: $\mathbb{E}^*[Y|X,A]=X'\beta_0+A'\gamma_0$
+    \item Redundancy: $\mathbb{E}^*[Y|X,A,W]=\mathbb{E}^*[Y|X,A]$
+    \item Conditional Uncorrelatedness: $\mathbb{E}^*[A|X,W]=\mathbb{E}^*[A|W]=\Pi_0 W$\\
+    where $\Pi_0$ is $P\times J$, $W$ is $J\times 1$, and $A$ is $P\times 1$.
+\end{enumerate}
+\begin{equation}
+    \begin{aligned}
+        \mathbb{E}^*[Y|X,W]&=\mathbb{E}^*\left[\mathbb{E}^*[Y|X,A,W]|X,W\right]\\
+        &=\mathbb{E}^*\left[\mathbb{E}^*[Y|X,A]|X,W\right]\\
+        &=\mathbb{E}^*\left[X'\beta_0+A'\gamma_0|X,W\right]\\
+        &=X'\beta_0+\mathbb{E}^*[A|X,W]'\gamma_0\\
+        &=X'\beta_0+W'\Pi'_0\gamma_0
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+
+\chapter{Endogeneity}
+\section{Motivation}
+Suppose we want to estimate an OLS model $y=\beta^Tx+e$, where $x\in \mathbb{R}^k$. The OLS estimator is given by
+\begin{equation}
+    \begin{aligned}
+        \hat{\beta}_\text{OLS}=\left(\frac{1}{m}\sum_{i=1}^mX_iX_i^T\right)^{-1}\left(\frac{1}{m}\sum_{i=1}^mX_iY_i\right)
+    \end{aligned}
+    \nonumber
+\end{equation}
+which converges (in probability) to
+\begin{equation}
+    \begin{aligned}
+        \mathbb{E}_{P_0}[XX^T]^{-1}\mathbb{E}_{P_0}[XY]=\beta+\mathbb{E}_{P_0}[XX^T]^{-1}\underbrace{\mathbb{E}_{P_0}[Xe]}_\text{assumed to be $0$ (Exogeneity)}
+    \end{aligned}
+    \nonumber
+\end{equation}
+What if the exogeneity doesn't hold?
+
+\begin{example}
+    \begin{enumerate}
+        \item $y=\beta x^*+e$, where $\mathbb{E}[x^*e]=0$. However, we don't have $x^*$ and we only have a noisy variable $x=x^*+v$ (with $\mathbb{E}[v]=0$). Then, $y=\beta(x-v)+e=\beta x+\epsilon$, where $\epsilon:=e-\beta v$. The probability limits of the OLS estimator satisfies
+        \begin{equation}
+            \begin{aligned}
+                \hat{\beta}_\text{OLS}-\beta=\frac{\mathbb{E}_{P_0}[x\epsilon]}{\mathbb{E}_{P_0}[x^2]}=\frac{\mathbb{E}_{P_0}[(x^*+v)(e-\beta v)]}{\mathbb{E}_{P_0}[(x^*+v)^2]}=-\frac{\beta\mathbb{E}_{P_0}[v^2]}{\mathbb{E}_{P_0}[(x^*+v)^2]}
+            \end{aligned}
+            \nonumber
+        \end{equation}
+        Hence, it is impossible to let the estimator converge to the true $\beta$.
+        \item Returns to Schooling: Consider a model $$\ln\text{Wage}=\beta_0+\beta_1\text{EDUC}+e$$
+        Suppose the $e$ is correlated to both the wage and the education. Given $e$ is positively correlated to the education, the OLS estimator is over-estimating.
+    \end{enumerate}
+\end{example}
+
+\section{I.V. Model}
+Consider a model $Y=X^T\beta+e$, where $X\in \mathbb{R}^k$ and $\mathbb{E}_{P_0}[xe]\neq 0$.
+
+\begin{definition}[Instrumental Variable]
+    %\normalfont
+    A variable $Z\in \mathbb{R}^l$ is an \textbf{instrumental variable} if it satisfies
+    \begin{enumerate}[(1).]
+        \item $\mathbb{E}_{P_0}[Ze]=0$ (exogeneity).
+        \item $\mathbb{E}_{P_0}[ZZ^T]$ is non-singular (tech).
+        \item $\text{Rank}(\mathbb{E}_{P_0}(ZX^T))=k$ (relevance), which requires $l\geq k$.
+    \end{enumerate}
+\end{definition}
+\begin{remark}
+    Exogeneity implies ``exclusion restriction'', which means the $Z$ can't directly affect $Y$ without affecting $X$.
+\end{remark}
+
+\subsection{Implementation:}
+\begin{enumerate}[$\circ$]
+    \item Outcome Equation: $$Y=X^T\beta+e$$
+    \item $1^{st}$ Stage Equation (no economic meaning, just for mathematical use): $$X=\Gamma^TZ+u$$
+    where $X$ and $u$ are $k\times 1$, $\Gamma$ are $l\times k$, and $Z$ is $l\times 1$. $Z\perp u$ and $\Gamma=\mathbb{E}[ZZ^T]^{-1}\mathbb{E}[ZX^T]$.
+    \item Reduced Form Equation:
+    \begin{equation}
+        \begin{aligned}
+            Y&=\beta^TX+e\\
+            &=\beta^T(\Gamma^TZ+u)+e\\
+            &=\lambda^T Z+v
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    where $\lambda=\Gamma\beta$ and $v=\beta^Tu+e$.\\
+    Note that $\mathbb{E}[Zv]=0$, which satisfies exogeneity. Hence, we can use OLS to estimate $\lambda$.
+\end{enumerate}
+
+
+\subsection{Identification based on $\Gamma$ and $\lambda$}
+Suppose $\lambda$ and $\Gamma$ are known, we want to recover $\beta$.
+\begin{equation}
+    \begin{aligned}
+        \lambda=\Gamma\beta
+    \end{aligned}
+    \nonumber
+\end{equation}
+\begin{enumerate}
+    \item \underline{Case 1}: $l=k$,
+    \begin{equation}
+        \begin{aligned}
+            \beta=\Gamma^{-1}\lambda
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    where $\Gamma^{-1}$ exists by relevance.
+    \item \underline{Case 2}: $l>k$,
+    \begin{equation}
+        \begin{aligned}
+            \Gamma^T\lambda=(\Gamma^T\Gamma)\beta \Rightarrow \beta=(\Gamma^T\Gamma)^{-1}\Gamma^T\lambda
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{enumerate}
+
+\subsection{``Plug In'': Estimation of $\Gamma$ and $\lambda$}
+\begin{enumerate}
+    \item The estimation of $\Gamma$ is given by
+    \begin{equation}
+        \begin{aligned}
+            \hat{\Gamma}=\left(\frac{1}{m}\sum_{i=1}^m Z_iZ_i^T\right)^{-1}\left(\frac{1}{m}\sum_{i=1}^m Z_i X_i^T\right)
+        \end{aligned}
+        \tag{hG}
+        \label{hG}
+    \end{equation}
+    The OLS estimator of regressing $X$ on $Z$ should converge to $\Gamma$ in probability.
+    \item The estimation of $\lambda$ is given by
+    \begin{equation}
+        \begin{aligned}
+            \hat{\lambda}=\left(\frac{1}{m}\sum_{i=1}^m Z_iZ_i^T\right)^{-1}\left(\frac{1}{m}\sum_{i=1}^m Z_i Y_i\right)
+        \end{aligned}
+        \tag{hl}
+        \label{hl}
+    \end{equation}
+    which converges to $\lambda$ in probability.
+\end{enumerate}
+\subsection{2SLS: Computational Method for Linear Models}
+The reduced form can also be written as
+\begin{equation}
+    \begin{aligned}
+        Y&=\beta^TX+e\\
+        &=\beta^T(\Gamma^TZ+u)+e\\
+        &=\beta^T\underbrace{(\Gamma^TZ)}_{W} +v
+    \end{aligned}
+    \label{IV_reduced_form}
+\end{equation}
+\begin{enumerate}
+    \item \textbf{Step 1:} Regress $X$ on $Z$. That is, estimate $\Gamma$ by OLS. The estimation $\hat{\Gamma}$ is given by \eqref{hG}.
+    \item \textbf{Step 2:} Assuming $\Gamma$ is known, we can regress $Y$ on $W$:
+    \begin{equation}
+        \begin{aligned}
+            \tilde{\beta}&=\left(\frac{1}{m}\sum_{i=1}^m W_iW_i^T\right)^{-1}\left(\frac{1}{m}\sum_{i=1}^m W_i Y_i\right)\\
+            &=\left(\Gamma^T\left(\frac{1}{m}\sum_{i=1}^m Z_iZ_i^T\right)\Gamma\right)^{-1}\Gamma^T\left(\frac{1}{m}\sum_{i=1}^m Z_i Y_i\right)
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    Then, we can estimate $\beta$ by substituting $\hat{\Gamma}$.
+    \begin{equation}
+        \begin{aligned}
+            \hat{\beta}_\textnormal{2SLS}=\left(\hat{\Gamma}^T\left(\frac{1}{m}\sum_{i=1}^m Z_iZ_i^T\right)\hat{\Gamma}\right)^{-1}\hat{\Gamma}^T\left(\frac{1}{m}\sum_{i=1}^m Z_i Y_i\right)
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    Specifically, in the case of $l=k$,
+    \begin{equation}
+        \begin{aligned}
+            \hat{\beta}_\textnormal{2SLS}=\left(\frac{1}{m}\sum_{i=1}^m Z_iX_i^T\right)^{-1}\left(\frac{1}{m}\sum_{i=1}^m Z_i Y_i\right)
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{enumerate}
+\begin{remark}
+    Why not use the following steps?
+    \begin{enumerate}
+        \item Regress $X$ on $Z$ to construct $\hat{W}:=\hat{\Gamma}^TZ$.
+        \item Regress $Y$ on $\hat{W}$.
+    \end{enumerate}
+    \textcolor{orange}{(Note that the mathematical foundation of OLS doesn't hold here because $\hat{W}$ is not i.i.d.)}
+\end{remark}
+
+\subsection{2SLS in Potential Outcome Framework}
+Consider the potential outcome framework: $X\in\{0,1\}$, $Y(X)$ represents the value of $Y$ given $X$. Then, $Y$ is given by
+\begin{equation}
+    \begin{aligned}
+        Y:&=X Y(1)+(1-X)Y(0)\\
+        Y:&=\underbrace{(Y(1)-Y(0))}_{\beta_1}X+Y(0)
+    \end{aligned}
+    \nonumber
+\end{equation}
+Suppose $X(Z)$ be the potential treatment status $X(0),X(1)$.
+\begin{equation}
+    \begin{aligned}
+        X:&=ZX(1)+(1-Z)X(0)\\
+        &=\underbrace{(X(1)-X(0))}_{\Gamma_1}Z+X(0)
+    \end{aligned}
+    \nonumber
+\end{equation}
+Then, in the form of $Y=\beta_0+\beta_1 X$, we can write
+\begin{equation}
+    \begin{aligned}
+        Y:&=\underbrace{(Y(1)-Y(0))}_{\beta_1}(\underbrace{(X(1)-X(0))}_{\Gamma_1}Z+X(0))+Y(0)\\
+        &=\beta_1\Gamma_1 Z + \beta_1X(0) + Y(0)
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+By the 2SLS,
+\begin{enumerate}
+    \item \textbf{Step 1:} Regress $X$ on $Z$ to get $\hat{\Gamma}_1=\frac{\widehat{\textnormal{Cov}(X,Z)}}{\widehat{\textnormal{Var}(Z)}}$.
+    \item \textbf{Step 2:} Regress $Y$ on $\Gamma_1 Z$ to get
+    \begin{equation}
+        \begin{aligned}
+            \hat{\beta_1}=\frac{\widehat{\textnormal{Cov}(Y,\Gamma_1 Z)}}{\widehat{\textnormal{Var}(\Gamma_1 Z)}}=\frac{\widehat{\textnormal{Cov}(Y,Z)}}{\Gamma_1\widehat{\textnormal{Var}(Z)}}
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    By substituting $\hat{\Gamma}_1$, we have
+    \begin{equation}
+        \begin{aligned}
+            \hat{\beta}_{2SLS}=\frac{\widehat{\textnormal{Cov}(Y,Z)}}{\widehat{\textnormal{Cov}(X,Z)}}\stackrel{P}{\longrightarrow}\frac{\textnormal{Cov}(Y,Z)}{\textnormal{Cov}(X,Z)}
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{enumerate}
+
+\begin{theorem}[2SLS in Potential Outcome Framework]\label{thm:2sls_in_potential_outcome_framework}
+    The convergence of $\hat{\beta}_{2SLS}$ is given by
+    \begin{equation}
+        \begin{aligned}
+            \frac{\textnormal{Cov}(Y,Z)}{\textnormal{Cov}(X,Z)}=\frac{\mathbb{E}[Y|Z=1]-\mathbb{E}[Y|Z=0]}{\mathbb{E}[X|Z=1]-\mathbb{E}[X|Z=0]}
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{theorem}
+\begin{proof}
+    \begin{equation}
+        \begin{aligned}
+            \textnormal{Cov}(Y,Z)&=\mathbb{E}[YZ]-\mathbb{E}[Y]P(Z=1)\\
+            &=\mathbb{E}[Y|Z=1]P(Z=1)-(\mathbb{E}[Y|Z=1]P(Z=1)+\mathbb{E}[Y|Z=0]P(Z=0))P(Z=1)\\
+            &=P(Z=1)\left(\mathbb{E}[Y|Z=1](1-P(Z=1))-\mathbb{E}[Y|Z=0]P(Z=0)\right)\\
+            &=P(Z=1)P(Z=0)\left(\mathbb{E}[Y|Z=1]-\mathbb{E}[Y|Z=0]\right)
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    Similarly,
+    \begin{equation}
+        \begin{aligned}
+            \textnormal{Cov}(X,Z)&=P(Z=1)P(Z=0)\left(\mathbb{E}[X|Z=1]-\mathbb{E}[X|Z=0]\right)
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{proof}
+
+
+\section{Weak I.V.}
+The ``relevance'' of the IV doesn't hold: $\mathbb{E}[ZX^T]\approx 0$. \underline{Why this is a problem?}
+
+Let's begin with a simple case that $l=k=1$. The 2SLS estimator is given by
+\begin{equation}
+    \begin{aligned}
+        \hat{\beta}_\textnormal{2SLS}=\frac{\frac{1}{m}\sum_{i=1}^mZ_iY_i}{\frac{1}{m}\sum_{i=1}^mZ_iX_i}=\beta+\frac{\frac{1}{m}\sum_{i=1}^mZ_ie_i}{\frac{1}{m}\sum_{i=1}^mZ_iX_i}
+    \end{aligned}
+    \nonumber
+\end{equation}
+where the small $Z_iX_i$ may lead to a large bias.
+
+Consider the $\mathbb{E}[ZX]=\frac{c}{\sqrt{m}},c\neq 0$. Then, the 2SLS estimator can be written as
+\begin{equation}
+    \begin{aligned}
+        \hat{\beta}_\textnormal{2SLS}=\beta+\frac{\frac{1}{m}\sum_{i=1}^mZ_ie_i}{\frac{c}{\sqrt{m}}\frac{1}{m}\sum_{i=1}^mZ_i^2+\frac{1}{m}\sum_{i=1}^mZ_iv_i}=\beta+\frac{\frac{1}{\sqrt{m}}\sum_{i=1}^mZ_ie_i}{c\frac{1}{m}\sum_{i=1}^mZ_i^2+\frac{1}{\sqrt{m}}\sum_{i=1}^mZ_iu_i}
+    \end{aligned}
+    \nonumber
+\end{equation}
+where the $\lim_{m \rightarrow \infty}\frac{1}{\sqrt{m}}\sum_{i=1}^mZ_ie_i\sim \mathcal{N}(0,\sigma^2)$ and $\lim_{m \rightarrow \infty}\frac{1}{\sqrt{m}}\sum_{i=1}^mZ_iu_i\sim \mathcal{N}(0,r^2)$ by LLN, and $\frac{1}{m}\sum_{i=1}^mZ_i^2 \rightarrow 1+0_P(1)$ with normalized $Z$. Hence, As $m \rightarrow \infty$,
+\begin{equation}
+    \begin{aligned}
+        \hat{\beta}_\textnormal{2SLS}\approx \beta+\frac{\mathcal{N}(0,\sigma^S)}{\mathcal{N}(c,r^2)}
+    \end{aligned}
+    \nonumber
+\end{equation}
+which gives that $\hat{\beta}_\textnormal{2SLS}$ is not good for nonzero $\mathbb{E}[ZX]$.
+
+
+\section{Control Function Approach (another approach to handle endogeneity)}
+Another approach to handle endogeneity.
+
+Suppose we are facing the problem of endogeneity that
+\begin{equation}
+    \begin{aligned}
+        Y_i=X_i\beta_i+U_i,\ \mathbb{E}[U|X]\neq 0
+    \end{aligned}
+    \nonumber
+\end{equation}
+Suppose $W$ is a variable that
+\begin{equation}
+    \begin{aligned}
+        \mathbb{E}[U|X,W]=\varphi(W)
+    \end{aligned}
+    \nonumber
+\end{equation}
+which is only a function of $W$. That is, the relationship between $X$ and $U$ can only be determined by $W$: $X \rightarrow W \rightarrow U$.
+\begin{definition}[Control Variable]
+    %\normalfont
+    W is a \textbf{Control Variable}.
+\end{definition}
+A control variable doesn't have to be an I.V.
+\begin{example}
+    $X=Z\gamma+V$, where $Z$ is I.V. that $\mathbb{E}[ZU]=0$. $\mathbb{E}[U|X,V]=\varphi(V)$.
+\end{example}
+
+Based on the control variable, we can write the regression as
+\begin{equation}
+    \begin{aligned}
+        Y_i&=X_i\beta_0+\gamma W_i+U_i\\
+        Y_i&=X_i\beta_0+\gamma W_i+\varphi(W_i)+\underbrace{U_i-\varphi(W_i)}_{\xi_i}
+    \end{aligned}
+    \nonumber
+\end{equation}
+where $\mathbb{E}[\xi_i|X_i,W_i]=0$.
+
+To implement this, we can decompose $\varphi(W_i):=\sum_{l=1}^L\pi_l\phi_l(W_i)$ (e.g. polynomial).
+
+\begin{note}
+    We may get inconsistent $\gamma$.
+\end{note}
+\begin{example}
+    Suppose $\varphi(W)=\Pi W$, then $Y_i=X_i\beta_0+\underbrace{(\gamma+\Pi)}_{\beta_1}W_i+\xi_i$. Hence, in OLS, $\hat{\beta}_0 \stackrel{P}{\longrightarrow} \beta_0$ and $\hat{\beta}_1 \stackrel{P}{\longrightarrow} \beta_1=\gamma+\Pi$.
+\end{example}
+
+
+\section{LATE (Local ATE): Application of I.V. on Potential Outcomes}
+Consider the potential outcome framework: $X\in\{0,1\}$, $Y(0),Y(1): Y:=X Y(1)+(1-X)Y(0)$.
+
+The Average treatment effect (ATE) is given by
+\begin{equation}
+    \begin{aligned}
+        ATE=\mathbb{E}[Y(1)-Y(0)]
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+Consider another variable $Z\in\{0,1\}$.
+\begin{enumerate}
+    \item $X$: the assigned treatment of an agent.
+    \item $Z$: the intended treatment of an agent. (instrument)
+\end{enumerate}
+
+Suppose $X(Z)$ be the potential treatment status $X(0),X(1)$. $X=ZX(1)+(1-Z)X(0)$.
+
+\begin{example}
+    Some people are suggested to stay at home, but they don't.
+\end{example}
+
+We have $Z \rightarrow X \rightarrow Y$ and $Z$ doesn't have a direct effect on $Y$.
+
+There are four possible cases:
+\begin{enumerate}
+    \item Never Treated (NT): $X(0)=X(1)=0$.
+    \item Always Treated (AT): $X(0)=X(1)=1$.
+    \item Complies (C): $X(0)=0,X(1)=1$.
+    \item Defiers (D): $X(0)=1,X(1)=0$.
+\end{enumerate}
+Usually, we assume the instruments are relevant and rule out the defiers.
+\begin{assumption}\label{ass:LATE}
+    $X_i(0)\leq X_i(1),\forall i$ and $X_j(0)<X_j(1)$ for some $j$.
+\end{assumption}
+
+According to Theorem \ref{thm:2sls_in_potential_outcome_framework}, the 2SLS estimator of $Y(1)-Y(0)$ can be given by
+\begin{equation}
+    \begin{aligned}
+        \hat{\beta}_{2SLS}=\frac{\widehat{\textnormal{Cov}(Y,Z)}}{\widehat{\textnormal{Cov}(X,Z)}}\stackrel{P}{\longrightarrow}\frac{\textnormal{Cov}(Y,Z)}{\textnormal{Cov}(X,Z)}=\frac{\mathbb{E}[Y|Z=1]-\mathbb{E}[Y|Z=0]}{\mathbb{E}[X|Z=1]-\mathbb{E}[X|Z=0]}
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+Since we rule out the possible of $(D)$, we can write
+\begin{equation}
+    \begin{aligned}
+        &\mathbb{E}[Y|Z=1]\\
+        =&\mathbb{E}[Y|AT,Z=1]\textnormal{Pr}(AT|Z=1)+\mathbb{E}[Y|NT,Z=1]\textnormal{Pr}(NT|Z=1)+\mathbb{E}[Y|C,Z=1]\textnormal{Pr}(C|Z=1)\\
+        =&\mathbb{E}[Y(1)|AT]\textnormal{Pr}(AT)+\mathbb{E}[Y(0)|NT]\textnormal{Pr}(NT)+\mathbb{E}[Y(1)|C]\textnormal{Pr}(C)
+    \end{aligned}
+    \nonumber
+\end{equation}
+We can also decompose the $\mathbb{E}[Y|Z=1]$.
+\begin{equation}
+    \begin{aligned}
+        \left\{\begin{matrix}
+            \mathbb{E}[Y|Z=1]&=\mathbb{E}[Y(1)|AT]\textnormal{Pr}(AT)+\mathbb{E}[Y(0)|NT]\textnormal{Pr}(NT)+\mathbb{E}[Y(1)|C]\textnormal{Pr}(C)\\
+            \mathbb{E}[Y|Z=0]&=\mathbb{E}[Y(1)|AT]\textnormal{Pr}(AT)+\mathbb{E}[Y(0)|NT]\textnormal{Pr}(NT)+\mathbb{E}[Y(0)|C]\textnormal{Pr}(C)
+        \end{matrix}\right.
+    \end{aligned}
+    \nonumber
+\end{equation}
+Then, we have
+\begin{equation}
+    \begin{aligned}
+        \mathbb{E}[Y|Z=1]-\mathbb{E}[Y|Z=0]=\textnormal{Pr}(C)\left(\mathbb{E}[Y(1)|C]-\mathbb{E}[Y(0)|C]\right)
+    \end{aligned}
+    \nonumber
+\end{equation}
+We also have $\mathbb{E}[X|Z=1]=\textnormal{Pr}(AT)+\textnormal{Pr}(C)$ and $\mathbb{E}[X|Z=0]=\textnormal{Pr}(AT)$. Hence,
+\begin{equation}
+    \begin{aligned}
+        \frac{\mathbb{E}[Y|Z=1]-\mathbb{E}[Y|Z=0]}{\mathbb{E}[X|Z=1]-\mathbb{E}[X|Z=0]}&=\frac{\textnormal{Pr}(C)\left(\mathbb{E}[Y(1)|C]-\mathbb{E}[Y(0)|C]\right)}{\textnormal{Pr}(C)}\\
+        &=\mathbb{E}[Y(1)|C]-\mathbb{E}[Y(0)|C]\\
+        &=\mathbb{E}[Y(1)-Y(0)|C]
+    \end{aligned}
+    \nonumber
+\end{equation}
+which is called \textbf{LATE}.
+
+\begin{proposition}
+    With Assumption \ref{ass:LATE}, the \textbf{LATE} is given by
+    \begin{equation}
+        \begin{aligned}
+            \mathbb{E}[Y(1)-Y(0)|C]=\frac{\mathbb{E}[Y|Z=1]-\mathbb{E}[Y|Z=0]}{\mathbb{E}[X|Z=1]-\mathbb{E}[X|Z=0]}=\frac{\textnormal{Cov}(Y,Z)}{\textnormal{Cov}(X,Z)}
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{proposition}
+
+\begin{remark}
+    \begin{enumerate}
+        \item In RCT, $\textnormal{Pr}(C)=1$, in which case ATE=LATE.
+    \end{enumerate}
+\end{remark}
+
+
+
+\chapter{Linear Generalized Method of Moments (Linear GMM)}
+\section{Generalized Method of Moments (GMM)}
+\begin{assumption}
+    GMM model assumes that, given the true probability of data $P_0$, there exists a unique parameter $\beta$ such that
+    \begin{equation}
+        \begin{aligned}
+            \mathbb{E}_{P_0}[g(\textnormal{Data},\beta_0)]=0
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    where $g(\cdot)$ is a residual function.
+\end{assumption}
+$\beta_0$ is given by
+\begin{equation}
+    \begin{aligned}
+        \beta_0=\argmin_{\beta}J(\beta,P_0)
+    \end{aligned}
+    \nonumber
+\end{equation}
+where
+\begin{equation}
+    \begin{aligned}
+        J(\beta,P_0):=\left(\mathbb{E}_{P_0}[g(Y,X,Z,\beta)]\right)^TW\left(\mathbb{E}_{P_0}[g(Y,X,Z,\beta)]\right)
+    \end{aligned}
+    \nonumber
+\end{equation}
+and the weight matrix $W\succ 0$ (is positive definite and symmetric).
+
+The GMM estimator is given by
+\begin{equation}
+    \begin{aligned}
+        \hat{\beta}_\textnormal{GMM}=\argmin_{\beta}J(\beta,P_m)
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+Using this for
+\begin{enumerate}
+    \item \underline{Linear Regression:} $g(Y,X,\beta):=(Y-X^T\beta)X$;
+    \item \underline{IV Model:} $g(Y,X,Z,\beta)=Z(Y-X^T\beta)$, which is called Linear GMM.
+\end{enumerate}
+
+\section{Linear GMM}
+\begin{definition}[Linear GMM]
+    %\normalfont
+    A \textbf{Linear GMM} is defined as
+    \begin{equation}
+        \begin{aligned}
+            \mathbb{E}_{P_0}[\underbrace{Z}_{l\times 1}(\underbrace{Y}_{1\times 1}-\beta_0^T\underbrace{X}_{k\times 1})]=0
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{definition}
+
+If $\textnormal{Rank}\left(\mathbb{E}_{P_0}[ZX^T]\right)=k$, there is a unique $\beta_0=$ minimizes $J(\beta,P_0)$ with $$J(\beta,P_0):=\left(\mathbb{E}_{P_0}[Z(Y-X^T\beta)]\right)^TW\left(\mathbb{E}_{P_0}[Z(Y-X^T\beta)]\right)$$
+\begin{equation}
+    \begin{aligned}
+        J(\hat{\beta},P_0):=\left(\frac{1}{m}\sum_{i=1}^mZ_i(Y_i-X_i^T\beta)\right)^TW\left(\frac{1}{m}\sum_{i=1}^mZ_i(Y_i-X_i^T\beta)\right)
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+The GMM estimator is given by
+\begin{equation}
+    \begin{aligned}
+        \hat{\beta}_\textnormal{GMM}
+        =\argmin_{\beta}\left(\frac{1}{m}\sum_{i=1}^mZ_i(Y_i-X_i^T\beta)\right)^TW\left(\frac{1}{m}\sum_{i=1}^mZ_i(Y_i-X_i^T\beta)\right)
+    \end{aligned}
+    \label{GMM_est}
+\end{equation}
+
+\begin{remark}
+    $W$ matters for $\hat{\beta}_\textnormal{GMM}$.
+\end{remark}
+The FOC of \eqref{GMM_est} is given by
+\begin{equation}
+    \begin{aligned}
+        \left(\frac{1}{m}\sum_{i=1}^mZ_iX_i^T\right)^TW\left(\frac{1}{m}\sum_{i=1}^mZ_iY_i-(\frac{1}{m}\sum_{i=1}^mZ_iX_i^T)\hat{\beta}_\textnormal{GMM}\right)=0
+    \end{aligned}
+    \nonumber
+\end{equation}
+Let $\hat{Q}:=\frac{1}{m}\sum_{i=1}^mZ_iX_i^T\in \mathbb{R}
+^{l\times k}$. Then,
+\begin{equation}
+    \begin{aligned}
+        \hat{\beta}_\textnormal{GMM}=\left(\hat{Q}^TW\hat{Q}\right)^{-1}\hat{Q}^TW\frac{1}{m}\sum_{i=1}^mZ_iY_i
+    \end{aligned}
+    \nonumber
+\end{equation}
+\begin{lemma}
+    If $W=(\frac{1}{m}\sum_{i=1}^mZ_iZ_i^T)^{-1}$, then $\hat{\beta}_\textnormal{GMM}=\hat{\beta}_\textnormal{2SLS}$
+\end{lemma}
+\begin{proof}
+    With $W^T=W$,
+    \begin{equation}
+        \begin{aligned}
+            \hat{\beta}_\textnormal{GMM}&=\left(\hat{Q}^TW\hat{Q}\right)^{-1}\hat{Q}^TW\frac{1}{m}\sum_{i=1}^mZ_iY_i\\
+            &\left(\hat{Q}^TWW^{-1}W\hat{Q}\right)^{-1}\hat{Q}^TW\frac{1}{m}\sum_{i=1}^mZ_iY_i\\
+            &=\left((W\hat{Q})^TW^{-1}(W\hat{Q})\right)^{-1}(W\hat{Q})^T\frac{1}{m}\sum_{i=1}^mZ_iY_i\\
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    Substitute $W$ by $W=(\frac{1}{m}\sum_{i=1}^mZ_iZ_i^T)^{-1}$. We have $W\hat{Q}=\hat{\Gamma}$. The lemma is proved.
+\end{proof}
+
+
+\section{Properties of Linear GMM Estimator}
+\begin{theorem}[Asymptotic]
+    $\sqrt{m}\left(\hat{\beta}_\textnormal{GMM}-\beta_0\right) \rightarrow \mathcal{N}(0,V_{P_0})$.
+\end{theorem}
+\begin{proof}
+    \begin{equation}
+        \begin{aligned}
+            \hat{\beta}_\textnormal{GMM}&=\left(\hat{Q}^TW\hat{Q}\right)^{-1}\hat{Q}^TW\frac{1}{m}\sum_{i=1}^mZ_i\underbrace{Y_i}_{X_i^T\beta_0+e_i}\\
+            &=\left(\hat{Q}^TW\hat{Q}\right)^{-1}\hat{Q}^TW\left(\underbrace{(\frac{1}{m}\sum_{i=1}^mZ_iX_i^T)}_{\hat{Q}}\beta_0+\frac{1}{m}\sum_{i=1}^mZ_ie_i\right)\\
+            &=\beta_0+\left(\hat{Q}^TW\hat{Q}\right)^{-1}\hat{Q}^TW\frac{1}{m}\sum_{i=1}^mZ_ie_i
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    By LLN, $\hat{Q} \stackrel{P}{\longrightarrow} Q:=\mathbb{E}[ZX^T]$. Then we have, $\hat{Q}^TW\hat{Q} \stackrel{P}{\longrightarrow} Q^TWQ$. Because $Q^TWQ$ is invertible, $(\hat{Q}^TW\hat{Q})^{-1} \stackrel{P}{\longrightarrow} (Q^TWQ)^{-1}$. So, $(\hat{Q}^TW\hat{Q})^{-1}=(Q^TWQ)^{-1}+o_{P_0}(1)$. Hence,
+    \begin{equation}
+        \begin{aligned}
+            \hat{\beta}_\textnormal{GMM}&=\beta_0+\left((Q^TWQ)^{-1}+o_{P_0}(1)\right)(Q^TW+o_{P_0}(1))\frac{1}{m}\sum_{i=1}^mZ_ie_i\\
+            &=\beta_0+((Q^TWQ)^{-1}Q^TW+o_{P_0}(1))\frac{1}{m}\sum_{i=1}^mZ_ie_i\\
+            &=\beta_0+(Q^TWQ)^{-1}Q^TW\frac{1}{m}\sum_{i=1}^mZ_ie_i+o_{P_0}(1)\frac{1}{m}\sum_{i=1}^mZ_ie_i
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    By orthogonality condition, $\mathbb{E}_{P_0}[Ze]=0$. And by central limit theorem, we have $\sqrt{m}\frac{1}{m}\sum_{i=1}^mZ_ie_i \rightarrow \mathcal{N}(0,\Omega_{P_0})$. Then, we represent $\hat{\beta}_\textnormal{GMM}$ as
+    \begin{equation}
+        \begin{aligned}
+            \hat{\beta}_\textnormal{GMM}=\beta_0+(Q^TWQ)^{-1}Q^TW\frac{1}{m}\sum_{i=1}^mZ_ie_i+o_{P_0}(\frac{1}{\sqrt{m}})
+        \end{aligned}
+        \label{hat_beta_minus_beta}
+    \end{equation}
+    which is called \textbf{asymptotic linear representation}.
+
+    Multiplying $\sqrt{m}$,
+    \begin{equation}
+        \begin{aligned}
+            \sqrt{m}(\hat{\beta}_\textnormal{GMM}-\beta_0)&=(Q^TWQ)^{-1}Q^TW\underbrace{\frac{1}{\sqrt{m}}\sum_{i=1}^mZ_ie_i}_{\rightarrow \mathcal{N}(0,\Omega_{P_0})}+o_{P_0}(1)\\
+            &\rightarrow \mathcal{N}\left(0,\underbrace{(Q^TWQ)^{-1}Q^TW\Omega_{P_0}WQ(Q^TWQ)^{-1}}_{\triangleq V_{P_0}}\right)
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{proof}
+
+\begin{corollary}
+    $\hat{\beta}_\textnormal{GMM} \stackrel{P}{\longrightarrow} \beta_0$.
+\end{corollary}
+\begin{proof}
+    $\hat{\beta}_\textnormal{GMM}-\beta_0=O_{P_0}(\frac{1}{\sqrt{m}}) \rightarrow o_{P_0}(1)$.
+\end{proof}
+
+
+\paragraph*{Efficiency Consideration} We want to choose the weight matrix to minimize the asymptotic variance within GMM estimator, $W^*=\argmin_{W}V_{P_0}$.
+\begin{theorem}
+    $W^*=\Omega_{P_0}^{-1}$. That is, $V^*_{P_0}:=\left(Q^T\Omega_{P_0}^{-1}Q\right)^{-1}\leq V_{P_0}, \forall W$.
+\end{theorem}
+Then, we want to compute the efficient GMM by $\Omega_{P_0}:=\mathbb{E}[e^2ZZ^T]$.
+\begin{equation}
+    \begin{aligned}
+        \hat{W}^*=\left(\hat{\Omega}\right)^{-1}
+    \end{aligned}
+    \nonumber
+\end{equation}
+where $\hat{\Omega}=\frac{1}{m}\sum_{i=1}^m\hat{e}_i^2ZZ^T$ and $\hat{e}_i$ is given by
+\begin{equation}
+    \begin{aligned}
+        \hat{e}_i:=Y_i-X_i^T\hat{\beta}
+    \end{aligned}
+    \nonumber
+\end{equation}
+where $\hat{\beta}$ can be any GMM estimator, e.g., $W=I$ or a 2SLS estimator. As long as we can make sure $\hat{\Omega}\stackrel{P}{\longrightarrow}\Omega_{P_0}$.
+
+Finally, we have $\hat{\beta}_\textnormal{EFFI}:=\hat{W}^*=W^*+o_{P_0}(1)$,
+\begin{equation}
+    \begin{aligned}
+        \sqrt{m}\left(\hat{\beta}_\textnormal{EFFI}-\beta_0\right) \rightarrow \mathcal{N}(0,\left(Q^T\Omega_{P_0}^{-1}Q\right)^{-1})
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+\begin{remark}
+    If $\mathbb{E}_{P_0}[e^2|Z]=\sigma^2_e$, then 2SLS is efficient.
+    \begin{equation}
+        \begin{aligned}
+            \Omega^{-1}=\left(\mathbb{E}_{P_0}[e^2ZZ^T]\right)^{-1}=\frac{1}{\sigma^2_e}\underbrace{\left(\mathbb{E}_{P_0}[ZZ^T]\right)^{-1}}_{W\text{ used in 2SLS}}
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{remark}
+
+
+\section{Alternative: Continuous Updating Estimator}
+Based on the idea of efficiency, we may use
+\begin{equation}
+    \begin{aligned}
+        \hat{\beta}_\textnormal{CUE}=\argmin_{\beta}\left(\frac{1}{m}\sum_{i=1}^m g(\textnormal{Data}_i,\beta)\right)^T\left(\frac{1}{m}\sum_{i=1}^m\hat{e}_i^2ZZ^T\right)\left(\frac{1}{m}\sum_{i=1}^m g(\textnormal{Data}_i,\beta)\right)
+    \end{aligned}
+    \nonumber
+\end{equation}
+However, it may not be convex.
+
+\subsection{Inference}
+Suppose we want test $H_0:\Gamma(\beta_0)=\theta_0=0$ or $H_0: \theta_0=\Gamma(\beta_0)\neq\hat{\theta}=\Gamma(\hat{\beta})$.
+\begin{theorem}[Construct Chi-square]
+    By using the asymptotic variance of GMM, $V_{{P_0}}$,
+    $$m(\hat{\theta}-\theta)^T\left(R(\beta_0)^TV_{P_0}R(\beta_0)\right)^{-1}(\hat{\theta}-\theta) \Rightarrow \chi^2_l$$
+    where $R(\beta_0):=\frac{d \Gamma(\beta_0)}{d\beta}\in \mathbb{R}^{k\times l}$.
+\end{theorem}
+\begin{proof}
+    Let
+    $$\overbrace{m(\hat{\theta}-\theta)^T\underbrace{\left(R(\beta_0)^TV_{P_0}R(\beta_0)\right)^{-1}}_{\triangleq\Omega}(\hat{\theta}-\theta)}^\mathcal{W} \Rightarrow \chi^2_l$$
+    We have
+    \begin{equation}
+        \begin{aligned}
+            \hat{\theta}-\theta_0=\Gamma(\hat{\beta})-\Gamma(\beta_0)=\underbrace{\frac{d\Gamma(\beta_0)}{d\beta}}_{R(\beta_0)}(\hat{\beta}-\beta_0)+o_{P_0}(m^{-\frac{1}{2}})\\
+            %\hat{\beta}=\beta_0+\left(Q^TWQ\right)^{-1}Q^T
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    \begin{equation}
+        \begin{aligned}
+            \mathcal{W}=\left(\sqrt{m}R(\beta_0)(\hat{\beta}-\beta_0)+o_{P_0}(1)\right)^T\Omega \left(\sqrt{m}R(\beta_0)(\hat{\beta}-\beta_0)+o_{P_0}(1)\right)
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    As $\sqrt{m}\left(\hat{\beta}-\beta_0\right)\Rightarrow \mathcal{N}(0,V_{P_0})$, by continuous mapping theorem, we have
+    \begin{equation}
+        \begin{aligned}
+            \mathcal{W} \Rightarrow \left(\mathcal{N}(0,R(\beta_0)V_{P_0}R(\beta_0)^T)\right)^T\Omega\left(\mathcal{N}(0,R(\beta_0)V_{P_0}R(\beta_0)^T)\right)
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    Let $M:=R(\beta_0)V_{P_0}R(\beta_0)^T$. Since $M$ is symmetric, it can be decomposed by $M=LL^T$. Then, $M^{-1}=(L^{T})^{-1}L^{-1}$. We have $L^{-1}M(L^{T})^{-1}=I$.\\
+    Since $\Omega=M^{-1}=(L^{-1})^TL^{-1}$,
+    \begin{equation}
+        \begin{aligned}
+            \mathcal{W}\Rightarrow \left(\mathcal{N}(0,I)\right)^T\left(\mathcal{N}(0,I)\right)=\chi^2_l
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{proof}
+Based on this theorem, we have the ``real'' Wald test for $H_0:\Gamma(\beta_0)=\theta_0=0$.
+\begin{equation}
+    \begin{aligned}
+        \mathcal{W}=m(\hat{\theta}-\theta)^T\left(R(\hat{\beta})^T\hat{V}_{P_0}R(\hat{\beta})\right)^{-1}(\hat{\theta}-\theta) \Rightarrow \chi^2_l
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+
+\section{OVER-ID Test}
+Remind that $$J(\beta,P_0):=\left(\mathbb{E}_{P_0}[Z(Y-X^T\beta)]\right)^TW\left(\mathbb{E}_{P_0}[Z(Y-X^T\beta)]\right)$$
+We want to test
+$$H_0: J(\beta,P_0)=0$$
+which is equivalent to $\mathbb{E}[Ze]=0$. $H_1: J(\beta,P_0)> 0$, which is equivalent to $\mathbb{E}[Ze]\neq 0$.
+\begin{theorem}
+    If $W$ is efficient weighting matrix ($W=\hat{\Omega}^{-1}$), then $m J(\hat{\beta},P_m) \Rightarrow \chi^2_{l-k}$
+\end{theorem}
+\begin{proof}
+    Remind \eqref{hat_beta_minus_beta} that $\hat{\beta}=\beta_0+(Q^TWQ)^{-1}Q^TW\frac{1}{m}\sum_{i=1}^mZ_ie_i+o_{P_0}(\frac{1}{\sqrt{m}})$ and $Q:=\mathbb{E}[ZX^T]$. Then,
+    \begin{equation}
+        \begin{aligned}
+            Z_i(Y_i-X_i^T\hat{\beta})&=Z_i(X_i^T\beta_0+e_i-X_i^T\hat{\beta})\\
+            &=-Q(\hat{\beta}-\beta_0)+\frac{1}{m}\sum_{i=1}^mZ_ie_i+o_{P_0}(\frac{1}{\sqrt{m}})
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    which gives
+    \begin{equation}
+        \begin{aligned}
+            \frac{1}{m}\sum_{i=1}^mZ_i(Y_i-X_i^T\hat{\beta})=\left(I-Q(Q^TWQ)^{-1}Q^TW\right)\frac{1}{m}\sum_{i=1}^mZ_ie_i+o_{P_0}(\frac{1}{\sqrt{m}})
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    By decomposing $W$ by $W:=LL^T$,
+    \begin{equation}
+        \begin{aligned}
+            m J(\hat{\beta},P_m)=\left(L^T\frac{1}{\sqrt{m}}\sum_{i=1}^mZ_i(Y_i-X_i^T\hat{\beta})\right)^T\left(L^T\frac{1}{\sqrt{m}}\sum_{i=1}^mZ_i(Y_i-X_i^T\hat{\beta})\right)
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    where
+    \begin{equation}
+        \begin{aligned}
+            L^T\frac{1}{\sqrt{m}}\sum_{i=1}^mZ_i(Y_i-X_i^T\hat{\beta})&=\left(L^T-\underbrace{L^TQ}_{:=M}((L^TQ)^T(L^TQ))^{-1}(L^TQ)^TL^T\right)\frac{1}{\sqrt{m}}\sum_{i=1}^mZ_ie_i+o_{P_0}(1)\\
+            &=\underbrace{\left(I-M(M^TM)^{-1}M^T\right)}_{:=R_M}\left(L^T\left(\frac{1}{\sqrt{m}}\sum_{i=1}^mZ_ie_i\right)\right)+o_{P_0}(1)
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    where $R_M$ satisfies $R_M=R_M^TR_M$, which shows $R_M$ has eigenvalues $\in\{0,1\}$ and its number of eigenvalues equal to $1$ is $l-k$.\\
+    Hence,
+    \begin{equation}
+        \begin{aligned}
+            m J(\hat{\beta},P_m)=\left(L^T\left(\frac{1}{\sqrt{m}}\sum_{i=1}^mZ_ie_i\right)\right)^TR_M\left(L^T\left(\frac{1}{\sqrt{m}}\sum_{i=1}^mZ_ie_i\right)\right)+o_{P_0}(1)
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    As $\left(L^T\left(\frac{1}{\sqrt{m}}\sum_{i=1}^mZ_ie_i\right)\right) \Rightarrow \xi \sim \mathcal{N}(0,L^T\Omega L)$. So,
+    \begin{equation}
+        \begin{aligned}
+            mJ(\hat{\beta},P_m) \Rightarrow \xi^TR_m\xi
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    If $W=\Omega^{-1}$, then $L^T\Omega L=I$, which gives
+    \begin{equation}
+        \begin{aligned}
+            mJ(\hat{\beta},P_m) &\Rightarrow \xi_*^TR_m\xi_*,\ \xi_*\sim \mathcal{N}(0,I)\\
+            &=\sum_{j=1}^{l-k}\omega_j^2,\omega_j\sim \mathcal{N}(0,1)\\
+            &\sim \chi^2_{l-k}
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{proof}
+\begin{remark}
+    \begin{enumerate}
+        \item Test by $c_\alpha$, which gives $\textnormal{Pr}(\chi^2_{l-k}\geq c_\alpha)=\alpha\in (0,1)$.
+        \item Only make sense for $l>k$.
+        \begin{enumerate}
+            \item You ``spent'' $k$ degrees of freedom estimating $\beta_0$.
+            \item The rest $(l-k)$ is ``spent'' on testing.
+        \end{enumerate}
+    \end{enumerate}
+\end{remark}
+
+\section{Bootstrap GMM}
+Now, we gives estimator by using bootstrap data,
+\begin{equation}
+    \begin{aligned}
+        \hat{\beta}^*=\argmin_\beta J(\beta,P_m^*)
+    \end{aligned}
+    \nonumber
+\end{equation}
+where
+\begin{equation}
+    \begin{aligned}
+        J(\beta,P_m^*):=\left(\frac{1}{m}\sum_{i=1}^mZ_i^*(Y_i^*-{X_i^*}^T\beta)-\mathbb{E}_{P_m}[Z(Y-X^T\hat{\beta})]\right)^TW\left(\frac{1}{m}\sum_{i=1}^mZ_i^*(Y_i^*-{X_i^*}^T\beta)-\mathbb{E}_{P_m}[Z(Y-X^T\hat{\beta})]\right)
+    \end{aligned}
+    \nonumber
+\end{equation}
+where $\mathbb{E}_{P_m}[Z(Y-X^T\hat{\beta})]=\frac{1}{m}\sum_{i=1}^m Z_i\hat{e}_i$, which is used to debias. Then,
+\begin{equation}
+    \begin{aligned}
+        \hat{\beta}_\textnormal{GMM}=\left(\hat{Q}^{*T}W\hat{Q}^*\right)^{-1}\hat{Q}^{*T}W\left(\frac{1}{m}\sum_{i=1}^m(Z_i^*Y_i^*-Z_i\hat{e}_i)\right)
+    \end{aligned}
+    \nonumber
+\end{equation}
+\paragraph*{Bootstrap OVER-ID Test}
+The distribution $m J(\hat{\beta}^*,P_m^*)$ is the \underline{same} as $m J(\hat{\beta},P_m)$ regardless of $W$.
+
+
+\chapter{Panel Data Models}
+\section{Definitions}
+\begin{definition}[Panel Data]
+    %\normalfont
+    For each unit $i$, it has time $\{1,...,T\}$.
+    \begin{center}
+        \begin{tabular}{cc}
+            \hline
+                & $t=1$\\
+                $i=1$& $\vdots$\\
+                & $t=T$\\
+            \hline
+                & $t=1$\\
+                $i=2$& $\vdots$\\
+                & $t=T$\\
+            \hline
+            $\vdots$&$\vdots$
+        \end{tabular}
+    \end{center}
+\end{definition}
+The typical model is given by
+\begin{equation}
+    \begin{aligned}
+        Y_{i_t}=\underbrace{\alpha_i}_\textnormal{Fixed Effect}+X_{i_t}^T\beta+\epsilon_{i_t}
+    \end{aligned}
+    \nonumber
+\end{equation}
+$\alpha_i$ is a fixed effect, which is unobserved, random, and time invariant.
+\begin{assumption}
+    \begin{enumerate}
+        \item $\{\alpha_i,\left(X_{i_t}\right)_{t=1}^T,\left(Y_{i_t}\right)_{t=1}^T,\left(\epsilon_{i_t}\right)_{t=1}^T\}$ is i.i.d. for all $i\in\{1,...,N\}$. (Within a unit, data at different time can be dependent, which means there are no estimators within units.)
+        \item $N \rightarrow \infty$, $T$ is fixed.
+    \end{enumerate}
+\end{assumption}
+
+\section{Pooled OLS}
+\begin{equation}
+    \begin{aligned}
+        Y_{i_t}=X_{i_t}^T\beta_0+\underbrace{e_{i_t}}_{:=\alpha_i+\epsilon_{i_t}}
+    \end{aligned}
+    \nonumber
+\end{equation}
+Use the notations of vectors $\vec{Y}_{i}:=\begin{bmatrix}
+    Y_{i_1}\\
+    \vdots\\
+    Y_{i_T}
+\end{bmatrix}$, $\vec{X}_{i}:=\begin{bmatrix}
+    X_{i_1}\\
+    \vdots\\
+    X_{i_T}
+\end{bmatrix}$, $\vec{e}_i:=\mathbf{1}\alpha_i+\vec{\epsilon}_i$, where $\mathbf{1}=\begin{bmatrix}1\\ \vdots \\ 1\end{bmatrix}$. Then, the equation can be written as
+\begin{equation}
+    \begin{aligned}
+        \vec{Y}_i=\vec{X}_i\beta_0+\vec{e}_i
+    \end{aligned}
+    \nonumber
+\end{equation}
+The pooled OLS estimator is
+\begin{equation}
+    \begin{aligned}
+        \hat{\beta}_\textnormal{pool}:=\left(\frac{1}{N}\sum_{i=1}^N \vec{X}_i^T \vec{X}_i\right)^{-1}\left(\frac{1}{N}\sum_{i=1}^N \vec{X}_i^T \vec{Y}_i\right)
+    \end{aligned}
+    \nonumber
+\end{equation}
+\paragraph*{Properties}
+\begin{equation}
+    \begin{aligned}
+        \hat{\beta}_\textnormal{pool}=\beta_0+\left(\frac{1}{N}\sum_{i=1}^N \vec{X}_i^T \vec{X}_i\right)^{-1}\left(\frac{1}{N}\sum_{i=1}^N \vec{X}_i^T \vec{e}_i\right)
+    \end{aligned}
+    \nonumber
+\end{equation}
+For consistency:
+\begin{enumerate}
+    \item $\frac{1}{N}\sum_{i=1}^N \vec{X}_i^T \vec{X}_i \stackrel{P}{\longrightarrow} \mathbb{E}[\vec{X}^T \vec{X}]$, which is required to be non singular.
+    \item $\frac{1}{N}\sum_{i=1}^N \vec{X}_i^T \vec{e}_i \stackrel{P}{\longrightarrow} \mathbb{E}[\vec{X}^T \vec{e}]$, where
+    \begin{equation}
+        \begin{aligned}
+            \mathbb{E}[\vec{X}^T \vec{e}]=\underbrace{\mathbb{E}[\vec{X}^T \mathbf{1}\alpha]}_{\textcolor{red}{\textnormal{need assumed to be 0}}}+\underbrace{\mathbb{E}[\vec{X}^T \vec{\epsilon}]}_{:=0 \textnormal{, by assumption}}
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{enumerate}
+The pooled OLS estimator is inconsistent if $X_{it}$ is correlated with $\alpha_i$.
+\begin{assumption}
+    $X_{it}$ is uncorrelated with $\alpha_i$, $\mathbb{E}[X_{it}\alpha_i]=0$.
+\end{assumption}
+
+Asymptotic Normality:
+\begin{equation}
+    \begin{aligned}
+        \sqrt{N}\left(\hat{\beta}_\textnormal{pool}-\beta_0\right)&=\underbrace{\left(\frac{1}{N}\sum_{i=1}^N \vec{X}_i^T \vec{X}_i\right)}_{\mathbb{E}[\vec{X}^T \vec{X}]+o_{P_0}(1)}^{-1}\underbrace{\left(\frac{1}{\sqrt{N}}\sum_{i=1}^N \vec{X}_i^T \vec{e}_i\right)}_{\textnormal{by CLT:} \Rightarrow N(0,\mathbb{E}[\vec{X}^T \vec{e}\vec{e}^T \vec{X}])}\\
+        & \Rightarrow N\left(0,\mathbb{E}[\vec{X}^T \vec{X}]^{-1}\mathbb{E}[\vec{X}^T \vec{e}\vec{e}^T \vec{X}]\mathbb{E}[\vec{X}^T \vec{X}]^{-1}\right)
+    \end{aligned}
+    \nonumber
+\end{equation}
+where $\mathbb{E}[\vec{X}^T \vec{e}\vec{e}^T \vec{X}]=\vec{X}^T \mathbb{E}[\vec{e}\vec{e}^T\mid\vec{X}]\vec{X}$. Specifically, $\mathbb{E}[e_se_t\mid \vec{X}]=\mathbb{E}[\alpha^2+\epsilon_s\epsilon_t\mid \vec{X}]\neq 0, \forall s\neq t$. Hence, the variance of the normal distribution is not identical matrix. We need to compute the variance:
+\begin{equation}
+    \begin{aligned}
+        [\frac{1}{N}\sum_{i=1}^N\vec{X}_i^T \vec{X}_i]^{-1}[\frac{1}{N}\sum_{i=1}^N\vec{X}_i^T \hat{\vec{e}}_i\hat{\vec{e}}_i^T \vec{X}_i][\vec{X}_i^T \vec{X}_i]^{-1}
+    \end{aligned}
+    \nonumber
+\end{equation}
+where $\hat{\vec{e}}_i=\vec{Y}_i-\vec{X}_i\hat{\beta}_\textnormal{pool}$.
+
+\section{Fixed Effect Model}
+\begin{equation}
+    \begin{aligned}
+        Y_{i_t}=\underbrace{\alpha_i}_\textnormal{Fixed Effect}+X_{i_t}^T\beta+\epsilon_{i_t}
+    \end{aligned}
+    \nonumber
+\end{equation}
+where is \textcolor{red}{no assumption over $\alpha$ and $\vec{X}_i$}.
+
+\paragraph*{``Naive'' Time Difference}(losing many data, inefficient):
+\begin{equation}
+    \begin{aligned}
+        \Delta Y_i&=Y_{i_t}-Y_{i_{t-1}}, \textnormal{ for some }t\\
+        \Delta Y_i&=\Delta X_i\beta_0+\Delta\epsilon_i
+    \end{aligned}
+    \nonumber
+\end{equation}
+We get OLS estimator
+\begin{equation}
+    \begin{aligned}
+        \hat{\beta}_\textnormal{Diff}=\frac{\sum_{i=1}^n \Delta X_i\Delta Y_i}{\sum_{i=1}^n \Delta X_i^2}
+    \end{aligned}
+    \nonumber
+\end{equation}
+With assumptions $\mathbb{E}[X_t\epsilon_t]=\mathbb{E}[X_t\epsilon_{t-1}]=\mathbb{E}[X_{t-1}\epsilon_t]=\mathbb{E}[X_{t-1}\epsilon_{t-1}]=0$, we have $\mathbb{E}[\Delta X\Delta\epsilon]=0$, which gives the consistency.
+
+\paragraph*{Fixed Effect Estimator}(most used):
+Let
+\begin{equation}
+    \begin{aligned}
+        \bar{Y}_i=\frac{1}{T}\sum_{t=1}^T Y_{i_t}=\alpha_i+\bar{X}_i\beta+\bar{\epsilon}_i
+    \end{aligned}
+    \nonumber
+\end{equation}
+``Dot'' Model:
+\begin{equation}
+    \begin{aligned}
+        \dot{Y}_{i_t}=Y_{i_t}-\bar{Y}_i=\dot{X}_{i_t}\beta_0+\dot{\epsilon}_{i_t}
+    \end{aligned}
+    \nonumber
+\end{equation}
+Use the notations of vectors $\vec{\dot{Y}}_{i}:=\begin{bmatrix}
+    \dot{Y}_{i_1}\\
+    \vdots\\
+    \dot{Y}_{i_T}
+\end{bmatrix}=\vec{Y}_i-\mathbf{1}\left(\mathbf{1}^T \mathbf{1}\right)^{-1} \mathbf{1}^T \vec{Y}_i=:Q \vec{Y}_i$, where $Q:=I-\mathbf{1}\left(\mathbf{1}^T \mathbf{1}\right)^{-1} \mathbf{1}^T$ (notice that $QQ=Q$).
+
+Then, the equation $\vec{\dot{Y}}_i=\vec{\dot{X}}_i\beta_0+\vec{\dot{\epsilon}}_i$ can be written as
+\begin{equation}
+    \begin{aligned}
+        Q \vec{Y}_i=Q \vec{X}_i\beta_0+Q \vec{\epsilon}_i
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+Run OLS
+\begin{equation}
+    \begin{aligned}
+        \hat{\beta}_{FE}=\left(\frac{1}{N}\sum_{i=1}^N \vec{X}_i^T Q\vec{X}_i\right)^{-1}\left(\frac{1}{N}\sum_{i=1}^N \vec{X}_i^T Q\vec{Y}_i\right)
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+\begin{assumption}
+    We assume $\mathbb{E}[\vec{X}^T Q\vec{\epsilon}]=0$, which is equivalent to $\mathbb{E}[\vec{\dot{X}}_i^T \vec{\dot{\epsilon}}_i]=0$.
+\end{assumption}
+
+\begin{note}
+    ``Strict exogeneity'' is sufficient for above assumption: $\mathbb{E}[X_{s}\epsilon_{t}]=0, \forall s,t$ ($\epsilon$ is uncorrelated with past, present, and future $X$'s).
+\end{note}
+
+Consistency:
+\begin{equation}
+    \begin{aligned}
+        \hat{\beta}_{FE}=\beta_0+\left(\frac{1}{N}\sum_{i=1}^N \vec{X}_i^T Q\vec{X}_i\right)^{-1}\left(\frac{1}{N}\sum_{i=1}^N \vec{X}_i^T Q\vec{\epsilon}_i\right)
+    \end{aligned}
+    \nonumber
+\end{equation}
+The sufficient condition is $\mathbb{E}[\vec{X}^TQ\vec{\epsilon}]=0$, that is the motivation of giving the above assumption.
+\begin{theorem}
+    $\sqrt{N}(\hat{\beta}_{FE}-\beta_0) \Rightarrow N\left(0,(\mathbb{E}[\vec{X}^TQ \vec{X}])^{-1}\mathbb{E}[\vec{X}^T Q \vec{\epsilon}\vec{\epsilon}^T Q \vec{X}](\mathbb{E}[\vec{X}^TQ \vec{X}])^{-1}\right)$
+\end{theorem}
+
+\begin{remark}
+    \begin{enumerate}
+        \item Actually, all we want to do is constructing a matrix $Q$ such that $Q\alpha_i=0$, so that we can get rid of fixed effect. Another example of this kind of matrix is $D=\begin{bmatrix}
+            -1&1&0&\cdots&0&0\\
+            0&-1&1&\cdots&0&0\\
+            &&&\cdots&&\\
+            0&0&0&\cdots&-1&1\\
+        \end{bmatrix}$.
+    \item Time invariant covariant? No.
+    \item Dummy interpretation: $$Y_{i_t}=\gamma_1 D1_{i_t}+\gamma_2 D2_{i_t}+\vdots+ \gamma_N DN_{i_t}+ X_{i_t}\beta+\epsilon_{i_t}$$
+    where $Dj_{i_t}=1$ if $i=j$ and $Dj_{i_t}=0$ if $i\neq j$.
+    \item Fixed effect can't be estimated.
+    \end{enumerate}
+\end{remark}
+
+\section{Random Effect Model}
+(Based on many assumptions, but more efficient than fixed effect. However, still not suggested.)
+\begin{assumption}
+    $\alpha_i$ is orthogonal to $X_{it}$, $\textnormal{Cov}(\alpha_i X_{i_t})=0$.
+\end{assumption}
+\begin{equation}
+    \begin{aligned}
+        Y_{i_t}=X_{i_t}\beta_0+e_{i_t},\ e_{i_t}=\alpha_i+\epsilon_{i_t}
+    \end{aligned}
+    \nonumber
+\end{equation}
+which can be written as the form of vector
+\begin{equation}
+    \begin{aligned}
+        \vec{Y}_i=\vec{X}_i\beta_0+\vec{e}_i, \vec{e}_i=\alpha_i \mathbf{1}+\vec{\epsilon}_i
+    \end{aligned}
+    \label{1}
+\end{equation}
+The R.E. estimator is the OLS estimator for \eqref{1}. The pooled OLS estimator:
+\begin{equation}
+    \begin{aligned}
+        \sqrt{N}\left(\hat{\beta}_\textnormal{pool}-\beta_0\right)&\Rightarrow N\left(0,\mathbb{E}[\vec{X}^T \vec{X}]^{-1}\mathbb{E}[\vec{X}^T \vec{e}\vec{e}^T \vec{X}]\mathbb{E}[\vec{X}^T \vec{X}]^{-1}\right)
+    \end{aligned}
+    \nonumber
+\end{equation}
+where $\mathbb{E}[\vec{X}^T \vec{e}\vec{e}^T \vec{X}]=\vec{X}^T \mathbb{E}[\vec{e}\vec{e}^T\mid\vec{X}]\vec{X}$. Specifically, $\mathbb{E}[e_se_t\mid \vec{X}]=\mathbb{E}[\alpha^2+\epsilon_s\epsilon_t\mid \vec{X}]\neq 0, \forall s\neq t$.
+\begin{equation}
+    \begin{aligned}
+        \mathbb{E}[\vec{e}\vec{e}^T\mid\vec{X}]&=\mathbb{E}[(\alpha \mathbf{1}+\vec{\epsilon})(\alpha \mathbf{1}+\vec{\epsilon})^T\mid\vec{X}]\\
+        (\textnormal{assuming }\alpha\perp \vec{\epsilon})\quad
+        &=\mathbb{E}[\alpha^2 \mathbf{1}\mathbf{1}^T\mid \vec{X}]+\mathbb{E}[\vec{\epsilon}\vec{\epsilon}^T\mid \vec{X}]\\
+        (\textnormal{assuming homoscedasticity and Cov}(\epsilon_s,\epsilon_t)=0)\quad &=\sigma_\alpha^2 \mathbf{1}\mathbf{1}^T+\sigma_\epsilon^2 I\\
+        &:=\Omega
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+Given $\Omega$ (or $\hat{\Omega}$),
+\begin{equation}
+    \begin{aligned}
+        \hat{\beta}_{RE}=\left(\frac{1}{N}\sum_{i=1}^N \vec{X}_i^T \Omega^{-1}\vec{X}_i\right)^{-1}\left(\frac{1}{N}\sum_{i=1}^N \vec{X}_i^T \Omega^{-1}\vec{Y}_i\right)
+    \end{aligned}
+    \nonumber
+\end{equation}
+So,
+\begin{equation}
+    \begin{aligned}
+        \sqrt{N}\left(\hat{\beta}_{RE}-\beta_0\right) \Rightarrow N\left(0, \underbrace{(\mathbb{E}[\vec{X}^T\Omega^{-1}\vec{X}])^{-1}}_{V_{RE}}\right)
+    \end{aligned}
+    \nonumber
+\end{equation}
+\paragraph*{Hausmon Test} We want to test $H_0: \textnormal{Cov}(\alpha_i,X_{i_t})=0$. Under $H_0$:
+\begin{equation}
+    \begin{aligned}
+        \sqrt{N}\left(\hat{\beta}_{RE}-\beta_0\right) \Rightarrow N\left(0, V_{RE}\right)\\
+        \sqrt{N}\left(\hat{\beta}_{FE}-\beta_0\right) \Rightarrow N\left(0, V_{FE}\right)\\
+        \textnormal{where }V_{FE}\geq V_{RE}
+    \end{aligned}
+    \nonumber
+\end{equation}
+\begin{theorem}
+    Under $H_0$, $\hat{H}:=N\left(\hat{\beta}_{FE}-\hat{\beta}_{RE}\right)^T\left(V_{FE}-V_{RE}\right)^{-1}\left(\hat{\beta}_{FE}-\hat{\beta}_{RE}\right)\Rightarrow \chi_{\textnormal{dim}(\beta_0)}^2$.
+\end{theorem}
+
+\section{Two-Way Fixed Effect Model}
+In this model, we consider an extra ``time fixed effect'' $V_t$.
+\begin{equation}
+    \begin{aligned}
+        Y_{i_t}=\alpha_i+V_t+X_{i_t}\beta_0+\epsilon_{i_t}
+    \end{aligned}
+    \nonumber
+\end{equation}
+\begin{enumerate}
+    \item \underline{Principle of deleting fixed effect}: $$\dot{Y}_{i_t}=Y_{i_t}-\bar{Y}_i-\bar{Y}_t+\bar{Y}$$
+    where $\bar{Y}_t:=\frac{1}{N}\sum_{i=1}^N Y_{i_t}$ and $\bar{Y}:=\frac{1}{NT}\sum_{t,i} Y_{it}$. Then,
+    \begin{equation}
+        \begin{aligned}
+            \dot{Y}_{i_t}=\dot{X}_{i_t}\beta_0+\dot{\epsilon}_{i_t}
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    where $\dot{X}_{i_t}$ and $\dot{\epsilon}_{i_t}$ are given in the same way.
+    \item \underline{Hybrid Model} (better?):
+    \begin{equation}
+        \begin{aligned}
+            Y_{i_t}=\alpha_i+\gamma_2\delta 2_t+\gamma_3\delta 3_t+\cdots +\gamma_T\delta T_t+X_{i_t}\beta_0+\epsilon_{i_t}
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    where $\delta s_t=\left\{\begin{matrix}
+        1,&s=t\\
+        0,&s\neq t
+    \end{matrix}\right.$. Then, in the matrix form,
+    \begin{equation}
+        \begin{aligned}
+            Y_{i_t}=\alpha_i+Z_{i_t}^T\Theta+\epsilon_{i_t}, \textnormal{ where }Z_{i_t}^T=\begin{bmatrix}
+                X\\
+                \delta 2\\
+                \vdots\\
+                \delta T
+            \end{bmatrix}
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{enumerate}
+
+
+\section{Arellano Bond Approach}
+\begin{enumerate}
+    \item ``Strict exogeneity'': $\mathbb{E}[X_{s}\epsilon_{t}]=0, \forall s,t$ ($\epsilon$ is uncorrelated with past, present, and future $X$'s).
+    \item ``Sequential exogeneity'': $\mathbb{E}[X_{s}\epsilon_{t}]=0, \forall t\geq s$ ($\epsilon$ is uncorrelated with past  $X$'s).
+\end{enumerate}
+
+Reminds that Fixed Effect model has assumption $\mathbb{E}[\vec{\dot{X}}_i \vec{\dot{\epsilon}}_i]=0$, which can be given by ``strict exogeneity''. However, the assumption of ``strict exogeneity'' is too strong.
+\begin{example}
+    $Y_{i_t}=\alpha_i+\rho \underbrace{Y_{i_{t-1}}}_{X_{i_t}}+\epsilon_{i_t}$, which doesn't satisfy the ``strict exogeneity'': $\mathbb{E}[X_{i_{t+1}}\epsilon_{i_t}]=\mathbb{E}[Y_{i_t}\epsilon_{i_t}]\neq 0$.
+\end{example}
+
+Instead of using the ``strict exogeneity'' assumption, \underline{we can use ``sequential exogeneity'' assumption}.
+
+Consider model $$\Delta Y_{i_t}=\Delta X_{i_t}\beta_0+\Delta \epsilon_{i_t}$$
+we have
+\begin{equation}
+    \begin{aligned}
+        \mathbb{E}[X_s(\Delta\epsilon_t)]=\underbrace{\mathbb{E}[X_s\epsilon_t]}_{=0,\forall s\leq t}-\underbrace{\mathbb{E}[X_s\epsilon_{t-1}]}_{=0,\forall s\leq t-1}
+    \end{aligned}
+    \nonumber
+\end{equation}
+Moreover, we suppose $ \mathbb{E}[X_s\Delta X_t]\neq 0$, then $\{X_s,s\leq t-1\}$ are I.V. for the model above!
+
+$\mathbb{E}[X_s\left(\Delta Y_t- \Delta X_t\beta_0\right)]=0, \forall t,s:s\leq t-1$.
+\begin{center}
+    \begin{tabular}{cc}
+        \hline
+        $t=2$& $\mathbb{E}[X_1\left(\Delta Y_2- \Delta X_2\beta_0\right)]$\\
+        \hline
+        $t=3$& $\mathbb{E}[X_1\left(\Delta Y_3- \Delta X_3\beta_0\right)]$\\
+        & $\mathbb{E}[X_2\left(\Delta Y_3- \Delta X_3\beta_0\right)]$\\
+        \hline
+        $\vdots$&$\vdots$
+    \end{tabular}
+\end{center}
+All in all, we have $$\mathbb{E}[g(\vec{\Delta Y},\vec{\Delta X},\vec{X},\beta_0)]=\begin{bmatrix}
+    \mathbb{E}[X_1\left(\Delta Y_2- \Delta X_2\beta_0\right)]\\
+    \mathbb{E}[X_1\left(\Delta Y_3- \Delta X_3\beta_0\right)]\\
+    \mathbb{E}[X_2\left(\Delta Y_3- \Delta X_3\beta_0\right)]\\
+    \vdots
+\end{bmatrix}=0$$
+We can use GMM to estimate the parameters:
+\begin{equation}
+    \begin{aligned}
+        \hat{\beta}=\argmin_\beta\left(\frac{1}{N}\sum_{i=1}^Ng(\vec{\Delta Y}_i,\vec{\Delta X}_i,\vec{X}_i,\beta_0)\right)^TW\left(\frac{1}{N}\sum_{i=1}^Ng(\vec{\Delta Y}_i,\vec{\Delta X}_i,\vec{X}_i,\beta_0)\right)
+    \end{aligned}
+    \nonumber
+\end{equation}
+Arellano Bond estimator is GMM estimator over I.D.
+
+\chapter{Difference in Difference (DiD)}
+The setup is the potential outcomes in Panel data.
+
+Consider a two-way fixed effect model on the potential outcomes. For $D_{i_t}\in\{0,1\}$, $Y_{i_t}$ is given by
+\begin{equation}
+    \begin{aligned}
+        Y_{i_t}(0)&=\alpha_i+\delta_t+\gamma X_{i_t}+\epsilon_{i_t}(0)\\
+        Y_{i_t}(1)&=\alpha_i+\delta_t+\gamma X_{i_t}+\epsilon_{i_t}(1)+\theta
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+\begin{assumption}\label{ass:DiD}
+    We use following assumptions:
+    \begin{enumerate}
+        \item $\epsilon_{i_t}(0)=\epsilon_{i_t}(1):=\epsilon_{i_t}$
+        \item $\mathbb{E}[\epsilon_{i_t}|X_{i_t}]=0$
+    \end{enumerate}
+\end{assumption}
+
+The ATE is given by
+\begin{equation}
+    \begin{aligned}
+        ATE:=\mathbb{E}[Y_{t}(1)-Y_{t}(0)]=\theta+\underbrace{\mathbb{E}[\epsilon_{i_t}(1)-\epsilon_{i_t}(0)]}_\textnormal{by assumption $=0$}
+    \end{aligned}
+    \nonumber
+\end{equation}
+\begin{lemma}
+    With Assumption \ref{ass:DiD}, $ATE=\theta$.
+\end{lemma}
+
+\begin{equation}
+    \begin{aligned}
+        Y_{i_t}=D_{i_t}Y_{i_t}(1)+(1-D_{i_t})Y_{i_t}(0)=\alpha_i+\delta_t+\theta D_{i_t}+\gamma X_{i_t}+\epsilon_{i_t}
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+\subsection{After OLS Regression}
+Let $T=2$, we have
+\begin{equation}
+    \begin{aligned}
+        Y_{i_2}=\delta_2+\theta D_{i_2}+\gamma X_{i_2}+e_{i_2}, \textnormal{ where }e_{i_2}=\alpha_i+\epsilon_{i_2}
+    \end{aligned}
+    \nonumber
+\end{equation}
+\begin{theorem}
+    If $\mathbb{E}[e_{i_2}|X_{i_2},D_{i_2}]=\Pi_0+\Pi_1 X_{i_2}$, then the control function estimator (OLS) is consistent:
+    \begin{equation}
+        \begin{aligned}
+            \hat{\theta}_\textnormal{CF} \stackrel{P}{\longrightarrow} ATE=\theta
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{theorem}
+
+However, what if $\alpha_i<\alpha_j$, the assumption $\mathbb{E}[e_{i_2}|X_{i_2},D_{i_2}]=\Pi_0+\Pi_1 X_{i_2}$ doesn't hold.
+
+\subsection{Difference in Difference}
+\begin{equation}
+    \begin{aligned}
+        \Delta Y_i:=Y_{i_2}-Y_{i_1}=\underbrace{\delta_2-\delta_1}_{\delta}+\theta\Delta D_i+\gamma\Delta X_i+\Delta\epsilon_i
+    \end{aligned}
+    \nonumber
+\end{equation}
+\paragraph*{Case without covariate ($\gamma=0$)}
+\begin{equation}
+    \begin{aligned}
+        \Delta Y_i=\delta+\theta D_{i_2}+\Delta\epsilon_i
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+\begin{assumption}[Parallel Trends Assumption]
+    $\mathbb{E}[\Delta\epsilon|D_2=1]=\mathbb{E}[\Delta\epsilon|D_2=0]$.
+\end{assumption}
+\begin{theorem}
+    Parallel Trends Assumption is equivalent to each of following conditions.
+    \begin{equation}
+        \begin{aligned}
+            PT &\Leftrightarrow \mathbb{E}[\Delta Y(1)|D_2=1]=\mathbb{E}[\Delta Y(1)|D_2=0]\\
+            &\Leftrightarrow \mathbb{E}[\Delta Y(0)|D_2=1]=\mathbb{E}[\Delta Y(0)|D_2=0]\\
+            &\Leftrightarrow \textnormal{Cov}(D_2,\Delta\epsilon)=0
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{theorem}
+
+The DiD estimator is numerically same with OLS:
+\begin{equation}
+    \begin{aligned}
+        \hat{\theta}_\textnormal{DiD}=\frac{\frac{1}{N}\sum_{i=1}^N\Delta Y_iD_{i_2}}{\frac{1}{N}\sum_{i=1}^N D_{i_2}}-\frac{\frac{1}{N}\sum_{i=1}^N\Delta Y_i(1-D_{i_2})}{1-\frac{1}{N}\sum_{i=1}^N D_{i_2}}
+    \end{aligned}
+    \tag{DiD}
+    \label{DiD}
+\end{equation}
+
+\paragraph*{Case with covariates}
+\begin{equation}
+    \begin{aligned}
+        \Delta Y_i=\delta+\theta D_{i_2}+\gamma\Delta X_i+\Delta\epsilon_i
+    \end{aligned}
+    \nonumber
+\end{equation}
+\begin{assumption}
+    $\mathbb{E}[\Delta\epsilon|D_2=1,\Delta X]=\mathbb{E}[\Delta\epsilon|D_2=0,\Delta X]$, which is equivalent to $\mathbb{E}[\Delta Y(d)|D_2=1,\Delta X]=\mathbb{E}[\Delta Y(d)|D_2=0,\Delta X],\forall d\in\{0,1\}$.
+\end{assumption}
+
+\begin{remark}
+    The DiD estimator \eqref{DiD} is no longer consistent:
+    \begin{equation}
+        \begin{aligned}
+            \hat{\theta}_\textnormal{DiD} \stackrel{P}{\longrightarrow} \theta+\underbrace{\gamma\left(\mathbb{E}[\Delta X|D_2=1]-\mathbb{E}[\Delta X|D_2=0]\right)}_\textnormal{``selection on observables''}
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{remark}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

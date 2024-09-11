@@ -1,0 +1,338 @@
+\documentclass[11pt]{elegantbook}
+\usepackage{graphicx}
+%\usepackage{float}
+\definecolor{structurecolor}{RGB}{40,58,129}
+\linespread{1.6}
+\setlength{\footskip}{20pt}
+\setlength{\parindent}{0pt}
+\newcommand{\argmax}{\operatornamewithlimits{argmax}}
+\newcommand{\argmin}{\operatornamewithlimits{argmin}}
+\elegantnewtheorem{proof}{Proof}{}{Proof}
+\elegantnewtheorem{claim}{Claim}{prostyle}{Claim}
+\DeclareMathOperator{\col}{col}
+\title{Time Series}
+\author{Wenxiao Yang}
+\institute{Haas School of Business, University of California Berkeley}
+\date{2024}
+\setcounter{tocdepth}{2}
+\extrainfo{All models are wrong, but some are useful.}
+
+\cover{cover.png}
+
+% modify the color in the middle of titlepage
+\definecolor{customcolor}{RGB}{32,178,170}
+\colorlet{coverlinecolor}{customcolor}
+\usepackage{cprotect}
+
+\addbibresource[location=local]{reference.bib} % bib
+
+\begin{document}
+\maketitle
+
+\frontmatter
+\tableofcontents
+
+\mainmatter
+
+\chapter{Time Series Analysis}
+\section{Goals and Terminology}
+\subsection*{Goals and Challenge}
+\textbf{Data} in time series is denoted by
+\begin{equation}
+    \begin{aligned}
+        \{\underbrace{y_t}_{n\times 1}:1\leq t\leq T\}
+    \end{aligned}
+    \nonumber
+\end{equation}
+%Some fundamental assumptions are needed for statistics.
+\begin{assumption}
+    Each $y_t$ is the realization of some random vector $Y_t$.
+\end{assumption}
+The \textbf{objective} is to provide data-based answers to questions about the distribution of $\{Y_t:1\leq t\leq T\}$.
+
+The \textbf{challenge} we face is $Y_1,Y_2,...,Y_T$ are \textit{not necessarily independent}. Time series analysis gives the models and methods that can accommodate dependence.
+
+\subsection*{Terminology}
+Some terminologies we need to know:
+\begin{definition}[Stochastic Process]
+    A \textbf{stochastic process} is a collection $\{Y_t:t\in\mathcal{T}\}$ of random variables/vectors (defined on the same probability space).
+    \begin{enumerate}
+        \item $\{Y_t:t\in\mathcal{T}\}$ is \textbf{discrete time process} if $\mathcal{T}=\{1,...,T\}$ or $\mathcal{T}=\mathbb{N}=\{1,2,...\}$ or $\mathcal{T}=\mathbb{Z}=\{...,-1,0,1,...\}$.
+        \item $\{Y_t:t\in\mathcal{T}\}$ is \textbf{continuous time process} if $\mathcal{T}=[0,1]$ or $\mathcal{T}=\mathbb{R}_+$ or $\mathcal{T}=\mathbb{R}$.
+    \end{enumerate}
+\end{definition}
+Observed data $Y_t$ is a realization of a discrete time process with $\mathcal{T}=\{1,...,T\}$.
+
+\begin{definition}[Strictly Stationary (Discrete and Scalar Process)]
+    A scalar\footnote{i.e., $Y_t$ is $1\times 1$} process $\{Y_t:t\in \mathbb{Z}\}$ is \textbf{strictly stationary} \textit{if and only if}
+    \begin{equation}
+        \begin{aligned}
+            \left(Y_t,...,Y_{t+k}\right)\underbrace{\sim}_\textnormal{``is distributed as''} \left(Y_0,...,Y_{k}\right),\ \forall t\in \mathbb{Z},k\geq 0
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{definition}
+\begin{note}
+    \begin{enumerate}
+        \item If $Y_t\sim i.i.d.$, then $\{Y_t:t\in \mathbb{Z}\}$ is strictly stationary.
+        \item If $\{Y_t:t\in \mathbb{Z}\}$ is strictly stationary, then $Y_t$ are identically distributed (i.e., ``marginal stationary'').
+        \begin{example}[ Strictly Stationary and Dependent]
+            A constant process that $...=Y_{-1}=Y_0=Y_1=...$ is strictly stationary.
+        \end{example}
+    \end{enumerate}
+    All these above hold for strictly stationary vector process.
+\end{note}
+
+\begin{lemma}[Property of Strictly Stationary]
+    If $\{Y_t:t\in \mathbb{Z}\}$ is strictly stationary with $\mathbb{E}[Y_t^2]<\infty$ ($\forall t$), then
+    \begin{enumerate}
+        \item Same Expectation:
+        \begin{equation}
+            \begin{aligned}
+                \mathbb{E}[Y_t]=\mu,\ \forall t \textnormal{ (for some constant $\mu$)}
+            \end{aligned}
+            \label{s}
+            \tag{*}
+        \end{equation}
+        \item Covariance only depends on time length:
+        \begin{equation}
+            \begin{aligned}
+                \textnormal{Cov}(Y_t,Y_{t-j})=\gamma(j),\ \forall t,j \textnormal{ (for some function $\gamma(\cdot)$)}
+            \end{aligned}
+            \label{ss}
+            \tag{**}
+        \end{equation}
+        Note $\gamma(0)= \textnormal{Var}(Y_t),\forall t$.
+    \end{enumerate}
+\end{lemma}
+
+A subset of strictly stationary processes that has second moment (i.e., $\mathbb{E}[Y_t^2]<\infty$) can be defined as \textbf{covariance stationary}.
+\begin{definition}[Covariance Stationary]
+    A process $\{Y_t:t\in \mathbb{Z}\}$ is \textbf{covariance stationary} \textit{iff} $\mathbb{E}[Y_t^2]<\infty$ ($\forall t$) and it satisfies \eqref{s} and \eqref{ss}.
+\end{definition}
+\begin{note}
+    Not every strictly stationary process is covariance stationary. (e.g., if it does not have second moment).
+\end{note}
+
+
+\begin{definition}[Autocovariance and Autocorrelation Functions]
+    $\gamma(\cdot)$ in \eqref{ss} is called \textbf{autocovariance function} of $\{Y_t:t\in \mathbb{Z}\}$.\\
+    The \textbf{autocorrelation function} is
+    \begin{equation}
+        \begin{aligned}
+            \rho(j)=\textnormal{Corr}(Y_t,Y_{t-j})=\frac{Cov(Y_t,Y_{t-j})}{\sqrt{\textnormal{Var}(Y_t)\textnormal{Var}(Y_{t-j})}}=\frac{\gamma(j)}{\gamma(0)}.
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{definition}
+\begin{lemma}
+    The autocovariance function satisfies the following properties:
+    \begin{enumerate}
+        \item $\gamma(\cdot)$ is \textbf{even} i.e., $\gamma(j)=\gamma(-j)$.
+        \item $\gamma(\cdot)$ is \textbf{positive semi-definite} (psd) i.e., for any  $n\in \mathbb{N}$ and any $a_1,...,a_n$,
+        \begin{equation}
+            \begin{aligned}
+                \sum_{i=1}^n\sum_{j=1}^na_ia_j\gamma(i-j)=\textnormal{Var}(\sum_{i=1}^na_iY_i)\geq 0
+            \end{aligned}
+            \nonumber
+        \end{equation}
+    \end{enumerate}
+\end{lemma}
+
+
+\section{Moving-Average Process}
+\begin{definition}[White Noise]
+    A process $\{\epsilon_t:t\in \mathbb{Z}\}$ is a \textbf{white noise} process iff it is covariance stationary with $\mathbb{E}[\epsilon_t]=0$ and
+    \begin{equation}
+        \begin{aligned}
+            \textnormal{Cov}(\epsilon_t,\epsilon_{t-j})=\left\{\begin{matrix}
+                \sigma^2,& \textnormal{ if }j=0\\
+                0,& \textnormal{ otherwise}
+            \end{matrix}\right.
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    We use \textit{notation} $\epsilon_t\sim \textnormal{WN}(0,\sigma^2)$.
+\end{definition}
+\begin{note}
+    \begin{enumerate}
+        \item If $\epsilon_t\sim \textnormal{i.i.d.}(0,\sigma^2)$, then $\{\epsilon_t:t\in \mathbb{Z}\}$ is white noise, i.e., $\epsilon_t\sim \textnormal{WN}(0,\sigma^2)$.
+        \item Gauss-Markov theorem assumes WN errors.
+        \item WN terms are used as ``building blocks'': often a variable can be generated as
+        \begin{equation}
+            \begin{aligned}
+                Y_t=h(\epsilon_t,\epsilon_{t-1},...) \textnormal{ for some function $h(\cdot)$ and some $\epsilon_t\sim \textnormal{WN}(0,\sigma^2)$.}
+            \end{aligned}
+            \nonumber
+        \end{equation}
+    \end{enumerate}
+\end{note}
+
+\subsection{Moving-Average Process}
+\begin{definition}[Finite Moving-Average Process]
+    \begin{enumerate}
+        \item First-order moving average process: $Y_t\sim \textnormal{MA}(1)$ iff
+        \begin{equation}
+            \begin{aligned}
+                Y_t=\mu+\epsilon_t+\theta\epsilon_{t-1}
+            \end{aligned}
+            \nonumber
+        \end{equation}
+        where $\epsilon_t\sim \textnormal{WN}(0,\sigma^2)$.
+        \begin{claim}
+            $\{Y_t\}$ is covariance stationary: $\mathbb{E}[Y_t]=\mu$ and its autocovariance function is
+            \begin{equation}
+                \begin{aligned}
+                    \gamma(j):=\textnormal{Cov}(Y_t,Y_{t-j})=\left\{\begin{matrix}
+                        (1+\theta^2)\sigma^2,&j=0\\
+                        \theta\sigma^2,&j=1\\
+                        0,&j\geq 2
+                    \end{matrix}\right.
+                \end{aligned}
+                \nonumber
+            \end{equation}
+        \end{claim}
+        \item $Y_t\sim \textnormal{MA}(q)$ (for some $q\in \mathbb{N}$) iff
+        \begin{equation}
+            \begin{aligned}
+                Y_t=\mu+\epsilon_t+\sum_{i=1}^{q}\theta_i\epsilon_{t-i}
+            \end{aligned}
+            \nonumber
+        \end{equation}
+        where $\epsilon_t\sim \textnormal{WN}(0,\sigma^2)$.
+        \begin{claim}
+            $\{Y_t\}$ is covariance stationary: $\mathbb{E}[Y_t]=\mu$ and its autocovariance function is
+            \begin{equation}
+                \begin{aligned}
+                    \gamma(j):=\textnormal{Cov}(Y_t,Y_{t-j})=\left\{\begin{matrix}
+                        \left(\sum_{i=0}^{q-j}\theta_i\theta_{i+j}\right)\sigma^2,&j\leq q\\
+                        0,&j\geq q+1
+                    \end{matrix}\right.
+                \end{aligned}
+                \nonumber
+            \end{equation}
+            where $\theta_0=1$.
+        \end{claim}
+    \end{enumerate}
+\end{definition}
+
+\begin{definition}[Infinite Moving-Average Process]
+    $Y_t\sim \textnormal{MA}(\infty)$ iff
+        \begin{equation}
+            \begin{aligned}
+                Y_t=\mu+\sum_{i=0}^{\infty}\psi_i\epsilon_{t-i}
+            \end{aligned}
+            \nonumber
+        \end{equation}
+        where $\epsilon_t\sim \textnormal{WN}(0,\sigma^2)$ and \underline{$\sum_{i=0}^{\infty}\psi_i^2<\infty$}
+\end{definition}
+
+\subsection{Conditions for Infinite Moving-Average Process}
+\begin{note}
+    Conjecture:
+    \begin{enumerate}
+        \item $\{Y_t\}$ is covariance stationary;
+        \item $\mathbb{E}[Y_t]=\mu$ and
+        \item its autocovariance function is $$\gamma(j):=\textnormal{Cov}(Y_t,Y_{t-j})=(\sum_{i=0}^{\infty}\psi_i\psi_{i+j})\sigma^2,\forall j\geq 0.$$
+    \end{enumerate}
+\end{note}
+The necessary condition to make these conjectures correct is
+\begin{equation}
+    \begin{aligned}
+        \mathbb{E}[Y_t^2]&=(\mathbb{E}[Y_t])^2+\Gamma(0)\\
+        &=\mu^2+(\sum_{i=0}^{\infty}\psi_i^2)\sigma^2<\infty\\
+        \Leftrightarrow \sum_{i=0}^{\infty}\psi_i^2&<\infty
+    \end{aligned}
+    \nonumber
+\end{equation}
+\begin{claim}
+    With the `right' definition of ``$\sum_{i=0}^{\infty}$'', the conjecture is correct.
+\end{claim}
+\begin{remark}
+    \begin{enumerate}
+        \item If $X_0,X_1,...$ are i.i.d. with $X_0=0$, then $\sum_{i=0}^\infty X_i$ denote $\lim_{n \rightarrow \infty}\sum_{i=0}^n X_i$ (assuming the limit exists).
+        \item $\exists$ various models of stochastic convergence.
+        \item There: convergence in mean square.
+    \end{enumerate}
+\end{remark}
+\begin{definition}[Stochastic Convergence in Mean Square]
+    If $X_0,X_1,...$ are random (with $\mathbb{E}[X_i^2]<\infty,\forall i$), then $\sum_{i=0}^\infty X_i$ denotes any $S$ such that $\lim_{n \rightarrow \infty}\mathbb{E}[(S-\sum_{i=0}^n X_i)^2]=0$.
+\end{definition}
+\begin{lemma}
+    The properties of the $S$ are
+    \begin{enumerate}
+        \item $S$ is ``essentially unique.''
+        \item $\mathbb{E}[S]=\sum_{i=0}^\infty \mathbb{E}[X_i]=\lim_{n \rightarrow \infty}\sum_{i=0}^n \mathbb{E}[X_i]$
+        \item $\textnormal{Var}[S]=...=\lim_{n \rightarrow \infty}\textnormal{Var}[\sum_{i=0}^n X_i]$
+        \item (Higher order moments of $S$ are similar) $\cdots$
+    \end{enumerate}
+\end{lemma}
+
+\begin{theorem}[Cauchy Criterion]
+    $\sum_{i=0}^\infty X_i$ exists iff
+    \begin{equation}
+        \begin{aligned}
+            \lim_{n \rightarrow \infty}\sup_{m>n}\mathbb{E}[(S_m-S_n)^2]=0,
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    where $S_n=\sum_{i=0}^n X_i$.
+\end{theorem}
+In the \underline{$MA(\infty)$ context}: The condition that can make
+\begin{equation}
+    \begin{aligned}
+        \lim_{n \rightarrow \infty}\sup_{m>n}\mathbb{E}[(Y_{t,m}-Y_{t,n})^2]=0
+    \end{aligned}
+    \nonumber
+\end{equation}
+where $Y_{t,n}=\mu+\sum_{i=0}^n\psi_i\epsilon_{t-i}$.\\
+This condition is given as: If $m>n$,
+\begin{equation}
+    \begin{aligned}
+        &Y_{t,m}-Y_{t,n}=\sum_{i=n+1}^m\psi_i\epsilon_{t-i}\\
+        \Rightarrow & \mathbb{E}[(Y_{t,m}-Y_{t,n})^2]=\mathbb{E}\left[\left(\sum_{i=n+1}^m\psi_i\epsilon_{t-i}\right)^2\right]=\left(\sum_{i=n+1}^m\psi_i^2\right)\sigma^2\\
+        \Rightarrow & \sup_{m>n}\mathbb{E}[(Y_{t,m}-Y_{t,n})^2]=\left(\sum_{i=n+1}^\infty\psi_i^2\right)\sigma^2\\
+        \Rightarrow & \lim_{n \rightarrow \infty}\sup_{m>n}\mathbb{E}[(Y_{t,m}-Y_{t,n})^2]=\left(\lim_{n \rightarrow \infty}\sum_{i=n+1}^\infty\psi_i^2\right)\sigma^2
+    \end{aligned}
+    \nonumber
+\end{equation}
+Thus,
+\begin{equation}
+    \begin{aligned}
+        \lim_{n \rightarrow \infty}\sup_{m>n}\mathbb{E}[(Y_{t,m}-Y_{t,n})^2]=0 &\textnormal{ iff }\lim_{n \rightarrow \infty}\sum_{i=n+1}^\infty\psi_i^2=0\\
+        &\textnormal{ iff }\sum_{i=0}^\infty\psi_i^2<\infty
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+
+\subsection{Remarks about MA models}
+\begin{enumerate}
+    \item $MA(\infty)$ models are useful in theoretical work.
+    \item The $MA(\infty)$ class is ``large'': Wold decomposition (theorem)
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

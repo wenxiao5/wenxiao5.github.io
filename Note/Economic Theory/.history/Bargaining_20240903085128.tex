@@ -1,0 +1,298 @@
+\documentclass[11pt]{elegantbook}
+\usepackage{graphicx}
+%\usepackage{float}
+\definecolor{structurecolor}{RGB}{40,58,129}
+\linespread{1.6}
+\setlength{\footskip}{20pt}
+\setlength{\parindent}{0pt}
+\newcommand{\argmax}{\operatornamewithlimits{argmax}}
+\newcommand{\argmin}{\operatornamewithlimits{argmin}}
+\elegantnewtheorem{proof}{Proof}{}{Proof}
+\elegantnewtheorem{claim}{Claim}{prostyle}{Claim}
+\DeclareMathOperator{\col}{col}
+\title{Dynamic Programming and Bargaining}
+\author{Wenxiao Yang}
+\institute{Haas School of Business, University of California Berkeley}
+\date{2024}
+\setcounter{tocdepth}{2}
+\extrainfo{All models are wrong, but some are useful.}
+
+\cover{cover.png}
+
+% modify the color in the middle of titlepage
+\definecolor{customcolor}{RGB}{32,178,170}
+\colorlet{coverlinecolor}{customcolor}
+\usepackage{cprotect}
+
+
+\bibliographystyle{apalike_three}
+
+\begin{document}
+\maketitle
+
+\frontmatter
+\tableofcontents
+
+\mainmatter
+
+\chapter{Dynamic Programming in Continuous Time}
+This chapter is based on the notes of Jesús Fernández-Villaverde and Galo Nuño, Wikipedia, and the notes of Benjamin Moll.
+
+\section{Optimal Control and Hamiltonian}
+Consider a problem
+\begin{equation}
+    \begin{aligned}
+        \max_{u(t)}\ &J=\int_{t_0}^{t_1}I(x(t),u(t),t)dt\\
+        \textnormal{s.t. }&\dot{x}(t)=f(x(t),u(t),t)\\
+    \end{aligned}
+    \nonumber
+\end{equation}
+The solution method involves defining an ancillary function known as the control Hamiltonian
+\begin{definition}[Hamiltonian]
+    $\mathcal{H}(x(t),u(t),\lambda(t),t)\equiv I(x(t),u(t),t)+\lambda^T(t)f(x(t),u(t),t)$
+\end{definition}
+
+\begin{proposition}
+    The \textbf{first-order necessary conditions} for a maximum are given by
+    \begin{enumerate}
+        \item Maximum principle:
+        \begin{equation}
+            \begin{aligned}
+                \mathcal{H}_u(x(t),u(t),\lambda(t),t)=0
+            \end{aligned}
+            \nonumber
+        \end{equation}
+        \item State transition function:
+        \begin{equation}
+            \begin{aligned}
+                \dot{x}(t)=\mathcal{H}_\lambda(x(t),u(t),\lambda(t),t)=f(x(t),u(t),t)
+            \end{aligned}
+            \nonumber
+        \end{equation}
+        \item Costate equations:
+        \begin{equation}
+            \begin{aligned}
+                \dot{\lambda}(t)=-\mathcal{H}_x(x(t),u(t),\lambda(t),t)=-[I_x(x(t),u(t),t)+\lambda^T(t)f_x(x(t),u(t),t)]
+            \end{aligned}
+            \nonumber
+        \end{equation}
+        with boundary condition for co-state variable(s) $\lambda(t)$, called
+        “transversality condition”
+        \begin{equation}
+            \begin{aligned}
+                \lambda(t_1)=0 \textnormal{ or }\lim_{t_1 \rightarrow \infty}\lambda(t_1)=0 \textnormal{ for infinite time horizons}
+            \end{aligned}
+            \nonumber
+        \end{equation}
+    \end{enumerate}
+    A \textbf{sufficient condition} for a maximum is the concavity of the Hamiltonian evaluated at the solution, i.e.
+    \begin{equation}
+        \begin{aligned}
+            \mathcal{H}_{uu}\left(x^*(t),u^*(t),\lambda(t),t\right)\leq 0
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    where $u^*(t)$ is the optimal control and $x^*(t)$ is the resulting optimal trajectory for the state variable. Therefore, the necessary conditions are sufficient if the functions $I(x(t),u(t),t)$ and $f(x(t),u(t),t)$ are concave in both $x(t)$ and $u(t)$.
+\end{proposition}
+\begin{proof}[Derivation from the Lagrangian]
+    The Lagrangian is
+    \begin{equation}
+        \begin{aligned}
+            \mathcal{L}=\int_{t_0}^{t_1}\left(I(x(t),u(t),t)+\lambda^T(t)\left[f(x(t),u(t),t)-\dot{x}(t)\right]\right)dt
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    In order to eliminate $\dot{x}(t)$, we can use integration by parts on the last term:
+    \begin{equation}
+        \begin{aligned}
+            \int_{t_0}^{t_1}\lambda^T(t)\dot{x}(t)dt&=\int_{t_0}^{t_1}\lambda^T(t)dx(t)\\
+            &=\lambda^T(t)x(t)\big|_{t_0}^{t_1}+\int_{t_0}^{t_1}\dot{\lambda}^T(t)x(t)dt\\
+            &=\lambda^T(t_1)x(t_1)-\lambda^T(t_0)x(t_0)
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{proof}
+
+\begin{definition}[Generic Deterministic Optimal Control Problem]
+    The generic deterministic optimal control problem is
+    \begin{equation}
+        \begin{aligned}
+            v(x_0)=\max_{\{\alpha(t)\}_{t\geq 0}}&\int_0^\infty e^{-\rho t}r(x(t),\alpha(t))dt\\
+            \textnormal{s.t. }&\dot{x}(t)=f(x(t),\alpha(t))\\
+            &x(0)=x_0
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    \begin{note}
+        $\frac{dx(t)}{dt}$ can be written as $\dot{x}(t)$.
+    \end{note}
+    Here, $x\in\mathbb{X}\subset \mathbb{R}^N$ is the \textbf{state} vector, $\alpha\in \mathbb{A}\subset \mathbb{R}^M$ is the \textbf{control} vector, $\rho>0$ is the \textbf{discount factor}, $f(\cdot):\mathbb{A}\times \mathbb{X} \rightarrow \mathbb{R}^N$ the \textbf{drift}, and $r(\cdot):\mathbb{A}\times \mathbb{X} \rightarrow \mathbb{R}$ is the instantaneous \textbf{reward} (utility).
+\end{definition}
+%By Lagrangian functional: $\mathcal{L}(x(t),\alpha(t),\lambda(t))=e^{-\rho t}r(x(t),\alpha(t))+\lambda (f(x(t),\alpha(t))-\dot{x}(t))$.
+We can obtain conditions for an optimum using the Hamiltonian.
+The current-value Hamiltonian is
+    \begin{equation}
+        \begin{aligned}
+            \mathcal{H}(x,\alpha,\lambda)=r(x,\alpha)+\lambda f(x,\alpha)
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    where $\lambda\in \mathbb{R}^N$ is the ``co-state'' vector.
+\begin{note}
+    $\frac{\partial\mathcal{H}(x,\alpha,\lambda)}{\partial x}$ and $\frac{\partial\mathcal{H}(x,\alpha,\lambda)}{\partial \alpha}$ can be written as $\mathcal{H}_x(x,\alpha,\lambda)$ and $\mathcal{H}_\alpha(x,\alpha,\lambda)$ respectively.
+\end{note}
+\begin{proposition}
+    The first-order necessary conditions for an optimum are
+    \begin{equation}
+        \begin{aligned}
+            &\mathcal{H}_\alpha(x(t),\alpha(t),\lambda(t))=0\\
+            &\dot{\lambda}(t)=\rho\lambda(t)-\mathcal{H}_x(x(t),\alpha(t),\lambda(t))\\
+            &\dot{x}(t)=f(x(t),\alpha(t))
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    for all $t\geq 0$.
+\end{proposition}
+
+
+
+\chapter{\cite{fuchs2022dynamic}: Dynamic Bargaining with Private Information}
+
+\section{``Classic'' Coase Conjecture}
+Consider a seller facing a buyer has private value of the good $v\in[1,2]$ that is distributed according to an atomless distribution with full support, $F(v)$. The seller has cost $c\geq 0$ to serve the buyer. Every period of an infinite horizon game, the uninformed seller makes an offer $p_t$. If $p_t$ is accepted, the game ends with payoffs $v-p_t$ and $p_t-c$ for the buyer and the seller, respectively. If $p_t$ is rejected, the seller makes another offer at time $t+\Delta$. Both buyer and seller discount future with the rate $r$. Thus, $\Delta$ can be thought of as the commitment power of the seller.
+
+Since higher-value buyers lose more from delay, the Skimming Property holds in any equilibrium.
+\begin{lemma}[Skimming Property]
+    If type $v$ is willing to accept an offer $p_t$, then all higher types strictly prefer to accept this offer.
+\end{lemma}
+Denote by $k_t$ the highest type remaining before the offer at time $t$ is made. Then, the seller beliefs at time $t$ are $v\in[1,k_t]$ with truncated distribution $F(v)/F(k_t)$, where $k_0=2$.
+
+
+A distinction arises in this game: (1). $c<1$ (the gap case); (2). $c=1$ (the no-gap case).
+
+As shown by \cite{fudenberg1985infinite} and \cite{gul1986foundations}, the game must end in a finite number of rounds (uniformly bounded for all $\Delta$). The intuition is: the difference between distinguishing $k_t$ and an immediate trading $1$ is $k_t-1$. If the $k_t-1$ is relative small to $1-c$. The seller prefers an immediate trade rather than keep bargaining. So, there is a critical $k_t$ that is close enough to $1$ and the seller offers $p_t=1$ to get an immediate trade.
+
+By the backward induction, equilibrium must be unique (up to seller's randomization at time $0$). These equilibria have the property that the seller value depends only on the state of the game, $k_t$, a property called ``stationarity'' that is similar to the equilibria being Markov.
+
+Stationary equilibria continue to exist when $c = 1$, but other nonstationary equilibrium can be constructed by \cite{ausubel1989reputation}.
+
+Formally, the Coase conjecture (\cite{coase1972durability}) states that
+\begin{proposition}[Coase Conjecture]
+    As $\Delta \rightarrow 0$ (i.e., the seller loses all ability to commit to prices), prices fall to the lowest buyer valuation, $p_0 \rightarrow 1$, and there is no inefficient delay.
+\end{proposition}
+
+
+\section{Exogenously Interdependent Values}
+Suppose the cost of selling to type $v$ is an increasing function of the buyer's type $c(v)$ with $c'(v)$. We assume that immediate trade is strictly efficient for all $v\in (1,2]$, $c(v)<v$.
+
+The equilibrium dynamics depend on the degree of adverse selection.
+\begin{enumerate}
+    \item If there is little adverse selection, i.e., $\mathbb{E}[c(v)]\leq 1$, the continuous-time limit of the unique stationary equilibrium has immediate trade (\cite{deneckere2006bargaining}).
+    \item If there is more adverse selection, $\mathbb{E}[c(v)]>1$, the seller would prefer not to trade at all rather than offering $p_0=1$ and trading with all types, so trade cannot be efficient in equilibrium.\\
+    No trade cannot be an equilibrium either:
+    \begin{enumerate}
+        \item For no trade to be an equilibrium, prices would always have to be above $2$. If the price were ever lower, a mass of buyers $(2-\epsilon,2]$ would accept this price, contradicting to no trade.
+        \item If the price were always above $2$, there would be a profitable deviation for the seller. The seller could offer $p_0 = c(2) < 2$ and then offer a sequence of prices that would lead to no losses.
+    \end{enumerate}
+    What then do equilibria look like?
+\end{enumerate}
+Suppose the continuous-time limit equilibrium strategy of the buyer is characterized by a continuous downward-sloping demand function, $P(v)$. Then, the seller's best response problem is to choose the speed to maximize her expected value given $k_t$:
+\begin{equation}
+    \begin{aligned}
+        r V(k_t) = \max_{\dot{k}_t\in[0,\infty]}\left(P(k_t)-c(k_t)-V(k_t)\right)(-\dot{k}_t)\frac{f(k_t)}{F(k_t)}+V'(k_t)\dot{k}_t
+    \end{aligned}
+    \nonumber
+\end{equation}
+When trade happens, the seller collects $P(k_t)-c(k_t)$ and the game ends. Trade happens with a probability flow
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\bibliography{ref}
+
+
+
+
+\end{document}

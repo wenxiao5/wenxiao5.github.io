@@ -1,0 +1,33 @@
+\begin{thebibliography}{}
+
+\bibitem[Angrist, Graddy, and Imbens(2000)]{angrist2000interpretation}
+Angrist, J.~D., Graddy, K., and Imbens, G.~W. (2000).
+\newblock The interpretation of instrumental variables estimators in simultaneous equations models with an application to the demand for fish.
+\newblock {\em The Review of Economic Studies}, 67(3):499--527.
+
+\bibitem[Berry, Levinsohn, and Pakes(1995)]{berry1995automobile}
+Berry, S., Levinsohn, J., and Pakes, A. (1995).
+\newblock Automobile prices in market equilibrium.
+\newblock {\em Econometrica: Journal of the Econometric Society}, pages 841--890.
+
+\bibitem[Berry(1994)]{berry1994estimating}
+Berry, S.~T. (1994).
+\newblock Estimating discrete-choice models of product differentiation.
+\newblock {\em The RAND Journal of Economics}, pages 242--262.
+
+\bibitem[Berry and Haile(2021)]{berry2021foundations}
+Berry, S.~T. and Haile, P.~A. (2021).
+\newblock Foundations of demand estimation.
+\newblock In {\em Handbook of industrial organization}, volume~4, pages 1--62. Elsevier.
+
+\bibitem[Nevo(2001)]{nevo2001measuring}
+Nevo, A. (2001).
+\newblock Measuring market power in the ready-to-eat cereal industry.
+\newblock {\em Econometrica}, 69(2):307--342.
+
+\bibitem[Working(1927)]{working1927statistical}
+Working, E.~J. (1927).
+\newblock What do statistical “demand curves” show?
+\newblock {\em The Quarterly Journal of Economics}, 41(2):212--235.
+
+\end{thebibliography}

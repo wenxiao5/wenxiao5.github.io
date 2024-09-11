@@ -1,0 +1,99 @@
+\contentsline {section}{\numberline {1}Lattice Programming}{5}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Lattice}{5}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Supermodularity}{6}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}Definition: Supermodular $g(x \vee y)+g(x \wedge y) \geq g(x)+g(y), \forall x, y \in X$}{6}{subsubsection.1.2.1}%
+\contentsline {subsubsection}{\numberline {1.2.2}Lemma: Supermodular $\Leftrightarrow $ $ \frac {\partial ^{2} g(x)}{\partial x_{i} \partial x_{j}} \geq 0, \forall i \neq j $}{6}{subsubsection.1.2.2}%
+\contentsline {subsubsection}{\numberline {1.2.3}Lemma: Preservation of Supermodularity}{7}{subsubsection.1.2.3}%
+\contentsline {subsection}{\numberline {1.3}Parametric Optimization Problems}{8}{subsection.1.3}%
+\contentsline {subsubsection}{\numberline {1.3.1}Theorem: Maximizer of supermodular func is ascending, the maximum value is also supermodular}{8}{subsubsection.1.3.1}%
+\contentsline {section}{\numberline {2}$L^\natural $-Convexity}{10}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Discrete Midpoint Convexity}{10}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}$L^\natural $-Convexity on $\mathbb {Z}^n$}{10}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}$L^\natural $-Convexity on $\mathcal {F}^{n}(\mathcal {F}=\mathbb {Z}$ or $\Re )$}{11}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Properties of $L^\natural $-Convexity}{11}{subsection.2.4}%
+\contentsline {subsubsection}{\numberline {2.4.1}Proposition: $L^\natural $-convex $\Leftrightarrow $ $ a_{i j} \leq 0, \forall i \neq j, a_{i i} \geq 0, \DOTSB \sum@ \slimits@ _{j=1}^{n} a_{i j} \geq 0, \forall i $}{11}{subsubsection.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.4.2}Corollary: $L^{\natural }$-convex $\DOTSB \relbar \joinrel \rightarrow $ convex $+$ submodular}{12}{subsubsection.2.4.2}%
+\contentsline {subsubsection}{\numberline {2.4.3}Theorem: Minimizer of $L^\natural $-convex func is nondecreasing with bounded sensitivity, the minimum value is also $L^\natural $-convex}{13}{subsubsection.2.4.3}%
+\contentsline {subsection}{\numberline {2.5}Relationship with Multimodularity}{13}{subsection.2.5}%
+\contentsline {section}{\numberline {3}Optimization with decisions truncated by random variables}{13}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Unconstrained Problem}{14}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Reformulation}{14}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}$n=1$}{14}{subsubsection.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.1.3}$n\geq 2$}{15}{subsubsection.3.1.3}%
+\contentsline {subsection}{\numberline {3.2}Transformation for Constrained Problem}{16}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Generalization}{16}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Positive Dependence}{16}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Transformation}{17}{subsubsection.3.3.2}%
+\contentsline {section}{\numberline {4}Single-Leg Capacity Allocation}{17}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Two-Class Model}{17}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Theorem: convex $f$, $\operatorname *{argmin}E_{D}f(u\wedge D)=\operatorname *{argmin}f(u)$}{17}{subsubsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.2}Discrete, $\mathcal {F}=\mathbb {Z}$}{18}{subsubsection.4.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.3}Continuous, $\mathcal {F}=\mathbb {R}$}{19}{subsubsection.4.1.3}%
+\contentsline {subsection}{\numberline {4.2}Multi-Class Model}{19}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Sequence of Events}{19}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}Dynamic Programming}{20}{subsubsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.3}Discrete Case}{20}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Discrete Case: Reformulation}{22}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}Discrete Case: Computation}{23}{subsubsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.4}Continuous Case}{24}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5} Generalized Newsvendor Problem: High-before-low arrival pattern}{24}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}Heuristics}{24}{subsection.4.6}%
+\contentsline {subsection}{\numberline {4.7} Bounds on Optimal Expected Revenue}{25}{subsection.4.7}%
+\contentsline {subsubsection}{\numberline {4.7.1}Upper Bound}{25}{subsubsection.4.7.1}%
+\contentsline {subsubsection}{\numberline {4.7.2}Lower Bound}{25}{subsubsection.4.7.2}%
+\contentsline {subsection}{\numberline {4.8}Dynamical Models}{25}{subsection.4.8}%
+\contentsline {subsubsection}{\numberline {4.8.1}Discrete Time}{26}{subsubsection.4.8.1}%
+\contentsline {subsubsection}{\numberline {4.8.2}Continuous Time: Poisson arrival}{26}{subsubsection.4.8.2}%
+\contentsline {subsubsection}{\numberline {4.8.3}Optimal Policy: discrete time}{26}{subsubsection.4.8.3}%
+\contentsline {subsubsection}{\numberline {4.8.4}Structural Properties}{26}{subsubsection.4.8.4}%
+\contentsline {subsubsection}{\numberline {4.8.5}Discrete Case: Computation}{27}{subsubsection.4.8.5}%
+\contentsline {section}{\numberline {5}Network Revenue Management with Independent Demands}{27}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Settings}{27}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}HJB Equation}{28}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Upgrades}{29}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Upsells}{29}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Linear programming-based upper bound}{30}{subsection.5.5}%
+\contentsline {subsection}{\numberline {5.6}Dynamic Programming Decomposition (DPD)}{31}{subsection.5.6}%
+\contentsline {subsubsection}{\numberline {5.6.1}Deterministic Linear Program}{31}{subsubsection.5.6.1}%
+\contentsline {subsubsection}{\numberline {5.6.2}Lagrangian Relaxation}{32}{subsubsection.5.6.2}%
+\contentsline {section}{\numberline {6}Overbooking}{34}{section.6}%
+\contentsline {section}{\numberline {7}Choice Modeling}{34}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Basics}{34}{subsection.7.1}%
+\contentsline {subsubsection}{\numberline {7.1.1}Assortment Optimization Problem (AOP)}{34}{subsubsection.7.1.1}%
+\contentsline {subsubsection}{\numberline {7.1.2}Joint Assortment and Pricing Optimization Problem (JAPOP)}{35}{subsubsection.7.1.2}%
+\contentsline {subsection}{\numberline {7.2}Maximum Utility Models (MUM)}{35}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Basic Attraction Model (BAM)}{35}{subsection.7.3}%
+\contentsline {subsubsection}{\numberline {7.3.1}Settings}{35}{subsubsection.7.3.1}%
+\contentsline {subsubsection}{\numberline {7.3.2}Luce Axioms for BAM}{36}{subsubsection.7.3.2}%
+\contentsline {subsubsection}{\numberline {7.3.3}Mutinomial Logit Choice Model (MNL): BAM with RUM}{36}{subsubsection.7.3.3}%
+\contentsline {subsubsection}{\numberline {7.3.4}Mixture of BAMs: Different type consumers}{37}{subsubsection.7.3.4}%
+\contentsline {subsection}{\numberline {7.4}Generalized Attraction Model (GAM)}{37}{subsection.7.4}%
+\contentsline {subsubsection}{\numberline {7.4.1}Motivation}{37}{subsubsection.7.4.1}%
+\contentsline {subsubsection}{\numberline {7.4.2}Model}{37}{subsubsection.7.4.2}%
+\contentsline {subsubsection}{\numberline {7.4.3}Parsimonious GAM: $w_{j}=\theta v_{j}$}{38}{subsubsection.7.4.3}%
+\contentsline {subsubsection}{\numberline {7.4.4}Independence of Irrelevant Alternatives (IIA)}{38}{subsubsection.7.4.4}%
+\contentsline {subsection}{\numberline {7.5}Nested Logit Model (to avoid IIA)}{38}{subsection.7.5}%
+\contentsline {subsubsection}{\numberline {7.5.1}Notation}{38}{subsubsection.7.5.1}%
+\contentsline {subsubsection}{\numberline {7.5.2}Model}{39}{subsubsection.7.5.2}%
+\contentsline {subsubsection}{\numberline {7.5.3}RUM-based justification}{39}{subsubsection.7.5.3}%
+\contentsline {subsection}{\numberline {7.6}Exponomial Choice (EC) Model}{40}{subsection.7.6}%
+\contentsline {subsection}{\numberline {7.7}Random Consideration Set Model (RCS)}{40}{subsection.7.7}%
+\contentsline {subsection}{\numberline {7.8}Markov Chain (MC) Choice Model}{41}{subsection.7.8}%
+\contentsline {subsubsection}{\numberline {7.8.1}Notation}{42}{subsubsection.7.8.1}%
+\contentsline {subsubsection}{\numberline {7.8.2}How it works}{42}{subsubsection.7.8.2}%
+\contentsline {subsubsection}{\numberline {7.8.3}Compute Parameters}{42}{subsubsection.7.8.3}%
+\contentsline {subsection}{\numberline {7.9}Contextual MNL Model}{43}{subsection.7.9}%
+\contentsline {subsection}{\numberline {7.10} Rank List-based Choice Model}{44}{subsection.7.10}%
+\contentsline {subsubsection}{\numberline {7.10.1} Motivation}{44}{subsubsection.7.10.1}%
+\contentsline {subsubsection}{\numberline {7.10.2} Notations}{45}{subsubsection.7.10.2}%
+\contentsline {subsubsection}{\numberline {7.10.3} Model}{45}{subsubsection.7.10.3}%
+\contentsline {subsubsection}{\numberline {7.10.4} Testing the Performance of Robust Approach}{48}{subsubsection.7.10.4}%
+\contentsline {subsubsection}{\numberline {7.10.5} Limitations}{48}{subsubsection.7.10.5}%
+\contentsline {subsection}{\numberline {7.11} Threshold Utility Model}{49}{subsection.7.11}%
+\contentsline {section}{\numberline {8} (Joint Pricing and) Assortment Optimization}{49}{section.8}%
+\contentsline {subsection}{\numberline {8.1} Assortment Optimization Problem}{49}{subsection.8.1}%
+\contentsline {subsubsection}{\numberline {8.1.1} Notations}{49}{subsubsection.8.1.1}%
+\contentsline {subsection}{\numberline {8.2} Pricing and Assortment Planning under the MNL model and Variants}{50}{subsection.8.2}%
+\contentsline {subsubsection}{\numberline {8.2.1}MNL Model}{50}{subsubsection.8.2.1}%
+\contentsline {subsubsection}{\numberline {8.2.2} Joint Pricing and Assortment Planning under MNL Model}{51}{subsubsection.8.2.2}%
+\contentsline {subsubsection}{\numberline {8.2.3} The MNL Model with Linear Deterministic Utilities}{51}{subsubsection.8.2.3}%

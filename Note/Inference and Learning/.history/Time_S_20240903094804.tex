@@ -1,0 +1,64 @@
+\documentclass[11pt]{elegantbook}
+\usepackage{graphicx}
+%\usepackage{float}
+\definecolor{structurecolor}{RGB}{40,58,129}
+\linespread{1.6}
+\setlength{\footskip}{20pt}
+\setlength{\parindent}{0pt}
+\newcommand{\argmax}{\operatornamewithlimits{argmax}}
+\newcommand{\argmin}{\operatornamewithlimits{argmin}}
+\elegantnewtheorem{proof}{Proof}{}{Proof}
+\elegantnewtheorem{claim}{Claim}{prostyle}{Claim}
+\DeclareMathOperator{\col}{col}
+\title{Time Series}
+\author{Wenxiao Yang}
+\institute{Haas School of Business, University of California Berkeley}
+\date{2024}
+\setcounter{tocdepth}{2}
+\extrainfo{All models are wrong, but some are useful.}
+
+\cover{cover.png}
+
+% modify the color in the middle of titlepage
+\definecolor{customcolor}{RGB}{32,178,170}
+\colorlet{coverlinecolor}{customcolor}
+\usepackage{cprotect}
+
+\addbibresource[location=local]{reference.bib} % bib
+
+\begin{document}
+\maketitle
+
+\frontmatter
+\tableofcontents
+
+\mainmatter
+
+\chapter{Time Series Analysis}
+\section{Goals and Terminology}
+\textbf{Data} in time series is denoted by
+\begin{equation}
+    \begin{aligned}
+        \{\underbrace{y_t}_{n\times 1}:1\leq t\leq T\}
+    \end{aligned}
+    \nonumber
+\end{equation}
+%Some fundamental assumptions are needed for statistics.
+\begin{assumption}
+    Each $y_t$ is the realization of some random vector $Y_t$.
+\end{assumption}
+The \textbf{objective} is to provide data-based answers to questions about the distribution of $\{Y_t:1\leq t\leq T\}$.
+
+The \textbf{challenge} we face is $Y_1,Y_2,...,Y_T$ are \textit{not necessarily independent}. Time series analysis gives the models and methods that can accommodate dependence.
+
+Some terminologies we need to know:
+\begin{definition}[Stochastic Process]
+    A \textbf{stochastic process} is a collection $\{Y_t:t\in\mathcal{T}\}$ of random variables/vectors (defined on the same probability space).
+    \begin{enumerate}
+        \item $\{Y_t:t\in\mathcal{T}\}$ is \textbf{discrete time process} if $\mathcal{T}=\{1,...,T\}$ or $\mathcal{T}=\mathbb{N}=\{1,2,...\}$ or $\mathcal{T}=\mathbb{Z}=\{...,-1,0,1,...\}$.
+        \item $\{Y_t:t\in\mathcal{T}\}$ is \textbf{continuous time process} if $\mathcal{T}=[0,1]$ or $\mathcal{T}=\mathbb{R}_+$ or $\mathcal{T}=\mathbb{R}$.
+    \end{enumerate}
+\end{definition}
+
+
+\end{document}

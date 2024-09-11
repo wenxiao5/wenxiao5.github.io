@@ -1,0 +1,88 @@
+\documentclass[11pt]{elegantbook}
+\usepackage{graphicx}
+%\usepackage{float}
+\definecolor{structurecolor}{RGB}{40,58,129}
+\linespread{1.6}
+\setlength{\footskip}{20pt}
+\setlength{\parindent}{0pt}
+\newcommand{\argmax}{\operatornamewithlimits{argmax}}
+\newcommand{\argmin}{\operatornamewithlimits{argmin}}
+\elegantnewtheorem{proof}{Proof}{}{Proof}
+\elegantnewtheorem{claim}{Claim}{prostyle}{Claim}
+\DeclareMathOperator{\col}{col}
+\title{Miguel Class}
+\author{Wenxiao Yang}
+\institute{Haas School of Business, University of California Berkeley}
+\date{2024}
+\setcounter{tocdepth}{2}
+\extrainfo{All models are wrong, but some are useful.}
+
+\cover{cover.png}
+
+% modify the color in the middle of titlepage
+\definecolor{customcolor}{RGB}{32,178,170}
+\colorlet{coverlinecolor}{customcolor}
+\usepackage{cprotect}
+
+
+\bibliographystyle{apalike_three}
+
+\begin{document}
+\maketitle
+
+\frontmatter
+\tableofcontents
+
+\mainmatter
+
+
+
+\chapter{Pricing}
+\section{Monopoly}
+The firm decides its price $p$ to maximize $\Pi(p)=p\cdot D(p)-C(D(p))$, where $D(\cdot)$ is the demand function and $C(\cdot)$ is the cost function.
+
+The monopoly problem is maximizing the profit
+\begin{equation}
+    \begin{aligned}
+        \max_p \Pi(p)=p\cdot D(p)-C(D(p))
+    \end{aligned}
+    \nonumber
+\end{equation}
+The F.O.C. (first-order condition) is
+\begin{equation}
+    \begin{aligned}
+        \frac{\partial \Pi(p)}{\partial p}=D(p)+pD'(p)-C'(D(p))D'(p)=0\\
+    \end{aligned}
+    \nonumber
+\end{equation}
+and the S.O.C. (second-order condition) is
+\begin{equation}
+    \begin{aligned}
+        \frac{\partial \Pi^2(p)}{\partial p^2}<0
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+The F.O.C. gives that
+\begin{equation}
+    \begin{aligned}
+        (p-C')D'&=-D\\
+        p-C'&=-\frac{D}{D'}\\
+        \underbrace{\frac{p-C'}{p}}_\text{Lerner Index}&=-\frac{D}{D'p}\\
+        &=-\frac{1}{\frac{d D}{d p}\frac{p}{D}}=-\frac{1}{\frac{\frac{d D}{D}}{\frac{d p}{p}}}:=\frac{1}{E}
+    \end{aligned}
+    \nonumber
+\end{equation}
+where $\frac{\frac{d D}{D}}{\frac{d p}{p}}<0$ is the elasticity of demand with respect to price. The absolute value of the elasticity is denoted by $E$.
+
+$E$ is supposed to be greater than $1$, otherwise, the optimal price is negative.
+
+In the demand function $D(p)=kp^{-E}$, where the (absolute) elasticity is constant. Its elasticity is $-Ekp^{-E-1}\frac{p}{kp^{-E}}=-E$.
+
+
+
+
+
+\bibliography{ref}
+
+\end{document}
