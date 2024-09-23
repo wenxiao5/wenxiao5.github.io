@@ -1,0 +1,279 @@
+\documentclass[11pt]{elegantbook}
+\usepackage{graphicx}
+%\usepackage{float}
+\definecolor{structurecolor}{RGB}{40,58,129}
+\linespread{1.6}
+\setlength{\footskip}{20pt}
+\setlength{\parindent}{0pt}
+\newcommand{\argmax}{\operatornamewithlimits{argmax}}
+\newcommand{\argmin}{\operatornamewithlimits{argmin}}
+\elegantnewtheorem{proof}{Proof}{}{Proof}
+\elegantnewtheorem{claim}{Claim}{prostyle}{Claim}
+\DeclareMathOperator{\col}{col}
+\title{Miguel Class}
+\author{Wenxiao Yang}
+\institute{Haas School of Business, University of California Berkeley}
+\date{2024}
+\setcounter{tocdepth}{2}
+\extrainfo{All models are wrong, but some are useful.}
+
+\cover{cover.png}
+
+% modify the color in the middle of titlepage
+\definecolor{customcolor}{RGB}{32,178,170}
+\colorlet{coverlinecolor}{customcolor}
+\usepackage{cprotect}
+
+
+\bibliographystyle{apalike_three}
+
+\begin{document}
+\maketitle
+
+\frontmatter
+\tableofcontents
+
+\mainmatter
+
+
+
+\chapter{Pricing}
+\section{Monopoly}
+\subsection{Base Case}
+The firm decides its price $p$ to maximize $\Pi(p)=p\cdot D(p)-C(D(p))$, where $D(\cdot)$ is the demand function and $C(\cdot)$ is the cost function.
+
+The monopoly problem is maximizing the profit
+\begin{equation}
+    \begin{aligned}
+        \max_p \Pi(p)=p\cdot D(p)-C(D(p))
+    \end{aligned}
+    \nonumber
+\end{equation}
+The F.O.C. (first-order condition) is
+\begin{equation}
+    \begin{aligned}
+        \frac{\partial \Pi(p)}{\partial p}=D(p)+pD'(p)-C'(D(p))D'(p)=0\\
+    \end{aligned}
+    \nonumber
+\end{equation}
+and the S.O.C. (second-order condition) is
+\begin{equation}
+    \begin{aligned}
+        \frac{\partial \Pi^2(p)}{\partial p^2}<0
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+The F.O.C. gives that
+\begin{equation}
+    \begin{aligned}
+        (p-C')D'&=-D\\
+        p-C'&=-\frac{D}{D'}\\
+        \underbrace{\frac{p-C'}{p}}_\text{Lerner Index}&=-\frac{D}{D'p}\\
+        &=-\frac{1}{\frac{d D}{d p}\frac{p}{D}}=-\frac{1}{\frac{\frac{d D}{D}}{\frac{d p}{p}}}:=\frac{1}{E}
+    \end{aligned}
+    \nonumber
+\end{equation}
+where $\frac{\frac{d D}{D}}{\frac{d p}{p}}<0$ is the elasticity of demand with respect to price. The absolute value of the elasticity is denoted by $E$.
+
+$E$ is supposed to be greater than $1$, otherwise, the optimal price is negative.
+
+In the demand function $D(p)=kp^{-E}$, where the elasticity is constant. Its elasticity is $-E$.
+
+
+The monopolist gives the production that is lower than social-optimal to maximize the profit (dead weight loss). Rent dissipation can give larger dead weight loss.
+
+\subsection{Multiple Products}
+\begin{equation}
+    \begin{aligned}
+        \max_{p}\sum_{i=1}^N p_i D_i(p)-C(D_1(p),...,D_N(p))
+    \end{aligned}
+    \nonumber
+\end{equation}
+\paragraph*{Related Demand and Separable Costs:} $C(D_1(p),...,D_N(p))=C_1(D_1(p))+...+C_N(D_N(p))$. The optimal pricing in this case satisfies
+\begin{equation}
+    \begin{aligned}
+        \frac{p_i-C'_i}{p_i}=\frac{1}{E_{ii}}-\sum_{j\neq i}\frac{(p_j-C'_j)D_j E_{ij}}{R_i E_{ii}}
+    \end{aligned}
+    \nonumber
+\end{equation}
+where $E_{ij}=\frac{\partial D_i}{\partial p_j}\frac{p_j}{D_i}$ and $R_i$ is the revenue.
+
+\textbf{Intuition:} In the case of substitutes/complements, we want to increase/decrease the price of products compared to the one product case. (Positive/negative externality by increasing price of substitutes).
+
+
+\textbf{Similar Intuition:}
+Consider a two-period model that the demand at second period depends on the price at first period (assuming $\frac{\partial D_2}{\partial p_1}<0$).
+\begin{enumerate}
+    \item $q_1=D_1(p_1)$; $C_1(q_1)$
+    \item $q_2=D_2(p_2,p_1)$; $C_2(q_2)$
+\end{enumerate}
+Then, $\frac{p_1-C'_1}{p_1}<\frac{1}{E_1}$ (the negative externality of prices).
+
+\paragraph*{Independent Demands and Related Costs:}
+\begin{example}
+    Different intensity of demand across periods.
+    \begin{enumerate}
+        \item Period 1: Low demand. $q_1=D_1(p_1)$.
+        \item Period 2: High demand. $q_2=D_2(p_2)$, where $D_1(p)=\lambda D_2(p)$ for some $\lambda<1$.
+        \item Marginal cost of Production is $c$ and the Marginal cost of capacity is $\gamma$.
+    \end{enumerate}
+\end{example}
+Intuition: if $\lambda \rightarrow 0$, the marginal cost at period $\rightarrow c+\gamma$ and the marginal cost at period 1 $=c$. Then, we have
+\begin{equation}
+    \begin{aligned}
+        \frac{p_2-(c+\gamma)}{p_2}=\frac{1}{E_2},\ \frac{p_1-c}{p_1}=\frac{1}{E_1}
+    \end{aligned}
+    \nonumber
+\end{equation}
+Now, let's consider a not too small $\lambda$. The problem is given as
+\begin{equation}
+    \begin{aligned}
+        \max_{p_1,p_2,k}&\ (p_1-c)D_1(p_1)+(p_2-c)D_2(p_2)-\gamma k\\
+        s.t.\ & D_1(p_1)\leq k\\
+        & D_2(p_2)\leq k
+    \end{aligned}
+    \nonumber
+\end{equation}
+The Lagrangian is given by
+\begin{equation}
+    \begin{aligned}
+        \mathcal{L}=(p_1-c)D_1(p_1)+(p_2-c)D_2(p_2)-\gamma k+\lambda_1(k-D_1(p_1))+\lambda_2(k-D_2(p_2))
+    \end{aligned}
+    \nonumber
+\end{equation}
+\begin{equation}
+    \begin{aligned}
+        \frac{\partial \mathcal{L}}{\partial k}=-\gamma+\lambda_1+\lambda_2=0 \Leftrightarrow \gamma=\lambda_1+\lambda_2
+    \end{aligned}
+    \nonumber
+\end{equation}
+Skip the process: $\frac{p_1-(c+\lambda_1)}{p_1}=\frac{1}{E_1}$, $\frac{p_2-(c+\lambda_2)}{p_2}=\frac{1}{E_2}$. Example: If $\lambda_1=0, k>D_1(p_1)$, the second period pays all the capacity cost.
+
+\begin{example}[ (Learning by Doing)]
+    Suppose there are two periods $t=1,2$. The demand is $q_t=D_t(p_t)$. The cost in period one is $c_1(q_1)$ and $c_2(q_2,q_1)$ ($\frac{\partial c_2}{\partial q_1}<0$, the more you produce in period one, the lower the cost you are facing in period two).
+\end{example}
+In continuous form, the cost form is
+\begin{equation}
+    \begin{aligned}
+        C(w(t))
+    \end{aligned}
+    \nonumber
+\end{equation}
+where $\dot{w}(t)=\frac{d w}{d t}=q(t)$. We want to maximize
+\begin{equation}
+    \begin{aligned}
+        \max_{q(t),w(t)}\ &\int_0^\infty e^{-\pi t}[q(t)p(q(t))-C(w(t))q(t)]dt\\
+        &\textnormal{s.t. }\dot{w}(t)=q(t)
+    \end{aligned}
+    \nonumber
+\end{equation}
+By Hamiltonian (skip), average of future marginal costs is
+\begin{equation}
+    \begin{aligned}
+        A(t)=\int_t^\infty C(w(s))\pi e^{-\pi(s-t)}ds
+    \end{aligned}
+    \nonumber
+\end{equation}
+\begin{equation}
+    \begin{aligned}
+        \frac{P(t)-A(t)}{P(t)}=\frac{1}{E(t)}
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+\subsection{Durable Goods}
+The demand in one period is substitute to demand in other periods.
+\begin{example}
+    Two periods $t=1,2$. Three consumers: $v_1=1$ per period, $v_2=2$ per period, and $v_3=3$ per period. The cost of production is zero. The seller chooses $p_1,p_2$.
+\end{example}
+(Consumer may forward-looking).
+
+
+Moorthy (1988), Levinthal, D. A., \& Purohit, D. (1989).
+
+$t=1,2$ and zero production cost. The values of consumers $v\sim U[0,1]$ and the discount factor is $\delta<1$. The selling price $p_1,p_2$.
+
+Suppose the consumers bought in first period have $v\geq v_1^*$, which must satisfies
+\begin{equation}
+    \begin{aligned}
+        \delta (v_1^* - p_2)&= v_1^* - p_1 + \delta v_1^*\\
+        v_1^*&=p_1-\delta p_2
+    \end{aligned}
+    \nonumber
+\end{equation}
+The price in second period should be $p_2=\frac{v_1^*}{2}$. Then, $v_1^*=p_1-\delta \frac{v_1^*}{2} \Rightarrow v_1^*=\frac{2p_1}{2+\delta}$. The price in the first period is given by
+\begin{equation}
+    \begin{aligned}
+        \max_{p_1}\ p_1(1-v_1^*)+\delta \frac{(v_1^*)^2}{4}=p_1\frac{2+\delta-2p_1}{2+\delta}+\delta \frac{p_1^2}{(2+\delta)^2}
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+\paragraph*{Leasing (instead of selling):} The leasing price is $p$ in each period, which is given by $\argmax_p p(1-p)=\frac{1}{2}$.
+
+Leasing may generate more profits than selling for the seller.
+
+\paragraph*{Intuition:}
+\begin{enumerate}
+    \item Too much flexibility for seller $\Rightarrow$ losses of capital of first period buyers.
+    \item Intertemporal price discrimination (first period buyers pay higher price) ``price skimming''.
+\end{enumerate}
+\begin{theorem}[Coase Conjecture]
+    Suppose the seller can change the price faster and faster. What happens to the profits of the seller? The profit goes to zero.
+\end{theorem}
+
+Why there is selling in the world?
+\begin{enumerate}
+    \item Moral hazard of leasing.
+    \item Leasing is not anonymous. Reveal reservation price $\Rightarrow$ Price discrimination in leasing. (Even worse than selling.) (Long-term contract + renegotiation = selling).
+    \item Commit to sequences of prices.
+    \begin{enumerate}
+        \item Deposit to third party
+        \item Reputation
+    \end{enumerate}
+    \item Increasing cost
+    \item ``Most-favored Nation'' clause.
+    \item Consumers are not informed about the production costs.
+    \item New consumers coming into the market.
+\end{enumerate}
+
+\subsection{Learning Demand}
+Firms may not be able to learn the demand function perfectly.
+
+It is relatively easy to learn a quasi-concave profit function. In the case that the profit function is not quasi-concave, the firm may not be able to learn the profit function. (stay at local maximum because of the loss from learning).
+
+Learning the optimal features: By assuming the distribution of marginal increase $\frac{\partial \pi_j}{\partial x_j}$ is symmetric about $0$, we can use Brownian motion to model the continuous profit function.
+
+
+\section{Short-run Competition}
+\subsection{Bertrand Paradox}
+Consider two firms with marginal cost $c$:
+\begin{equation}
+    \begin{aligned}
+        \Pi^i(p_i,p_j)=(p_i-c)D_i(p_i,p_j)
+    \end{aligned}
+    \nonumber
+\end{equation}
+where
+\begin{equation}
+    \begin{aligned}
+        D_i(p_i,p_j)=\left\{\begin{matrix}
+            D_i(p_i),& p_i<p_j,\\
+            \frac{1}{2}D_i(p_i),& p_i=p_j,\\
+            0,& p_i>p_j
+        \end{matrix}\right.
+    \end{aligned}
+    \nonumber
+\end{equation}
+The NE is $p_i=p_j=c$. $\Pi^i=\Pi^j=0$.
+
+\subsection{Static Solution to Bertrand Paradox}
+\subsubsection{Capacity Constraints}
+
+
+
+
+\bibliography{ref}
+
+\end{document}

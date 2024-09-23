@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.3.11)  10 SEP 2024 13:58
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.3.11)  22 SEP 2024 22:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1127,24 +1127,46 @@ LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/n' will be
 Chapter 2.
 [4
 
-] [5]
+] [5] [6]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 320.
+(hyperref)                removing `\@ifnextchar' on input line 363.
 
+[7]
+File: Nest.png Graphic file (type bmp)
+<Nest.png>
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 439.
+
+[8]
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/b/it' will be
-(Font)              scaled to size 10.95pt on input line 338.
-[6] [7] [8]
+(Font)              scaled to size 10.95pt on input line 457.
+ [9] [10] [11] [12]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 490.
+(hyperref)                removing `\@ifnextchar' on input line 788.
 
-[9]
+[13] [14]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 544.
+(hyperref)                removing `\@ifnextchar' on input line 842.
 
-[10] (./Choice Modeling.bbl [11]) [12
+[15] [16] [17] [18]
+Chapter 3.
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 1010.
+
+
+Overfull \hbox (2.516pt too wide) in paragraph at lines 1011--1012
+[]\TU/TeXGyreTermesX(0)/m/n/10.95 [[]] allows substitution patterns to reflect consumer-level heterogeneity in tastes
+ []
+
+(./Choice Modeling.bbl [19
+
+] [20]) [21
 
 ] (./Choice Modeling.aux)
  ***********
@@ -1155,12 +1177,12 @@ Package rerunfilecheck Info: File `"Choice Modeling".out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 35712 strings out of 474773
- 746573 string characters out of 5757724
- 1942839 words of memory out of 5000000
- 57168 multiletter control sequences out of 15000+600000
- 567135 words of font info for 119 fonts, out of 8000000 for 9000
+ 35767 strings out of 474773
+ 747562 string characters out of 5757724
+ 1947839 words of memory out of 5000000
+ 57220 multiletter control sequences out of 15000+600000
+ 567151 words of font info for 121 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 99i,19n,107p,703b,1331s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,20n,107p,703b,1331s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Choice Modeling.pdf (14 pages).
+Output written on Choice Modeling.pdf (23 pages).

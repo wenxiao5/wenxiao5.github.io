@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.3.11)  5 SEP 2024 11:21
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.3.11)  23 SEP 2024 11:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1103,33 +1103,71 @@ LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/b/n' will be
 
 ]
 Chapter 1.
-(./Experiment.bbl [1
+[1
 
 
-]) [2
+]
+Chapter 2.
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 45.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 58.
+
+[2
+
+]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 65.
+
+LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/n' will be
+(Font)              scaled to size 10.0pt on input line 79.
+[3]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 81.
+
+[4]
+Chapter 3.
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 95.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 100.
+
+[5
+
+]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 109.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 113.
+
+(./Experiment.bbl [6]) [7
 
 ] (./Experiment.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
-
-
-Package rerunfilecheck Warning: File `Experiment.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `Experiment.out':
-(rerunfilecheck)             Before: 5C1E2CEFA6E8A0BB4F8F219B66DB2890;223
-(rerunfilecheck)             After:  4EF35A093764D131DA90655B13BC5CDD;223.
+Package rerunfilecheck Info: File `Experiment.out' has not changed.
+(rerunfilecheck)             Checksum: 05385B7A6F113310B24B69FBBC38D326;4790.
  ) 
 Here is how much of TeX's memory you used:
- 35435 strings out of 474773
- 740117 string characters out of 5757724
- 1924839 words of memory out of 5000000
- 56936 multiletter control sequences out of 15000+600000
- 564621 words of font info for 83 fonts, out of 8000000 for 9000
+ 35456 strings out of 474773
+ 740606 string characters out of 5757724
+ 1932839 words of memory out of 5000000
+ 56956 multiletter control sequences out of 15000+600000
+ 564629 words of font info for 84 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 99i,11n,107p,692b,738s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,12n,107p,1271b,738s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Experiment.pdf (4 pages).
+Output written on Experiment.pdf (9 pages).

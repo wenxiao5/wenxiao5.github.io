@@ -10,6 +10,11 @@ Berry, S., Levinsohn, J., and Pakes, A. (1995).
 \newblock Automobile prices in market equilibrium.
 \newblock {\em Econometrica: Journal of the Econometric Society}, pages 841--890.
 
+\bibitem[Berry, Levinsohn, and Pakes(2004)]{berry2004differentiated}
+Berry, S., Levinsohn, J., and Pakes, A. (2004).
+\newblock Differentiated products demand systems from a combination of micro and macro data: The new car market.
+\newblock {\em Journal of political Economy}, 112(1):68--105.
+
 \bibitem[Berry(1994)]{berry1994estimating}
 Berry, S.~T. (1994).
 \newblock Estimating discrete-choice models of product differentiation.
@@ -20,10 +25,29 @@ Berry, S.~T. and Haile, P.~A. (2021).
 \newblock Foundations of demand estimation.
 \newblock In {\em Handbook of industrial organization}, volume~4, pages 1--62. Elsevier.
 
+\bibitem[Goldberg(1995)]{goldberg1995product}
+Goldberg, P.~K. (1995).
+\newblock Product differentiation and oligopoly in international markets: The case of the us automobile industry.
+\newblock {\em Econometrica: Journal of the Econometric Society}, pages 891--951.
+
+\bibitem[McFadden(1972)]{mcfadden1972conditional}
+McFadden, D. (1972).
+\newblock Conditional logit analysis of qualitative choice behavior.
+
+\bibitem[McFadden(1981)]{mcfadden1981econometric}
+McFadden, D. (1981).
+\newblock Econometric models of probabilistic choice, structural analysis of discrete data with econometric applications.
+\newblock {\em Cambridge: MIT press}.
+
 \bibitem[Nevo(2001)]{nevo2001measuring}
 Nevo, A. (2001).
 \newblock Measuring market power in the ready-to-eat cereal industry.
 \newblock {\em Econometrica}, 69(2):307--342.
+
+\bibitem[Petrin(2002)]{petrin2002quantifying}
+Petrin, A. (2002).
+\newblock Quantifying the benefits of new products: The case of the minivan.
+\newblock {\em Journal of political Economy}, 110(4):705--729.
 
 \bibitem[Working(1927)]{working1927statistical}
 Working, E.~J. (1927).

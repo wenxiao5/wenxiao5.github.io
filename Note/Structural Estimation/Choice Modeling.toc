@@ -4,12 +4,25 @@
 \contentsline {subsection}{\numberline {1.2.1}Motivation}{1}{subsection.1.2.1}%
 \contentsline {subsection}{\numberline {1.2.2}Model}{2}{subsection.1.2.2}%
 \contentsline {chapter}{\numberline {2}Random Utility Models}{4}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Random Utility Models}{4}{section.2.1}%
-\contentsline {section}{\numberline {2.2}The Canonical Model}{5}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Market-Level Data}{6}{section.2.3}%
-\contentsline {section}{\numberline {2.4}\cite {berry1994estimating}: IV-based estimation with unobserved demand shock}{6}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}Inversion}{7}{subsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.4.2}Supply Side Recover}{8}{subsection.2.4.2}%
-\contentsline {section}{\numberline {2.5}\cite {berry1995automobile}: Estimation using random-coefficients logit model}{9}{section.2.5}%
-\contentsline {section}{\numberline {2.6}\cite {nevo2001measuring}: Measuring Market Power}{10}{section.2.6}%
-\contentsline {subsection}{\numberline {2.6.1}Supply}{10}{subsection.2.6.1}%
+\contentsline {section}{\numberline {2.1}Gumbel Distribution}{4}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Random Utility Models}{5}{section.2.2}%
+\contentsline {section}{\numberline {2.3}The Canonical Model}{5}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Market-Level Data}{7}{section.2.4}%
+\contentsline {section}{\numberline {2.5}\cite {mcfadden1972conditional,mcfadden1981econometric}}{7}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Elasticity of Multinomial Logit Model}{7}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}Nested Logit Model}{8}{subsection.2.5.2}%
+\contentsline {section}{\numberline {2.6}\cite {berry1994estimating}: IV-based estimation with unobserved demand shock}{8}{section.2.6}%
+\contentsline {subsection}{\numberline {2.6.1}Welfare}{9}{subsection.2.6.1}%
+\contentsline {subsection}{\numberline {2.6.2}Inversion}{9}{subsection.2.6.2}%
+\contentsline {subsection}{\numberline {2.6.3}Elasticity}{11}{subsection.2.6.3}%
+\contentsline {subsection}{\numberline {2.6.4}Supply Side Recover}{11}{subsection.2.6.4}%
+\contentsline {subsection}{\numberline {2.6.5}Instruments}{12}{subsection.2.6.5}%
+\contentsline {subsection}{\numberline {2.6.6}Nested Logit Model}{12}{subsection.2.6.6}%
+\contentsline {section}{\numberline {2.7}\cite {berry1995automobile}: Estimation using random-coefficients logit model}{14}{section.2.7}%
+\contentsline {section}{\numberline {2.8}\cite {nevo2001measuring}: Measuring Market Power}{15}{section.2.8}%
+\contentsline {subsection}{\numberline {2.8.1}Supply}{15}{subsection.2.8.1}%
+\contentsline {subsection}{\numberline {2.8.2}Demand}{16}{subsection.2.8.2}%
+\contentsline {subsection}{\numberline {2.8.3}Estimation}{17}{subsection.2.8.3}%
+\contentsline {chapter}{\numberline {3}Estimation with Extra Data}{19}{chapter.3}%
+\contentsline {section}{\numberline {3.1}\cite {petrin2002quantifying}: Using demographic data of consumers}{19}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Demand}{19}{subsection.3.1.1}%

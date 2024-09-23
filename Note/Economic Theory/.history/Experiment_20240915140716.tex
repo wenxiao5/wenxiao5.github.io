@@ -1,0 +1,151 @@
+\documentclass[11pt]{elegantbook}
+\usepackage{graphicx}
+%\usepackage{float}
+\definecolor{structurecolor}{RGB}{40,58,129}
+\linespread{1.6}
+\setlength{\footskip}{20pt}
+\setlength{\parindent}{0pt}
+\newcommand{\argmax}{\operatornamewithlimits{argmax}}
+\newcommand{\argmin}{\operatornamewithlimits{argmin}}
+\elegantnewtheorem{proof}{Proof}{}{Proof}
+\elegantnewtheorem{claim}{Claim}{prostyle}{Claim}
+\DeclareMathOperator{\col}{col}
+\title{Experimental Economics}
+\author{Wenxiao Yang}
+\institute{Haas School of Business, University of California Berkeley}
+\date{2024}
+\setcounter{tocdepth}{2}
+\extrainfo{All models are wrong, but some are useful.}
+
+\cover{cover.png}
+
+% modify the color in the middle of titlepage
+\definecolor{customcolor}{RGB}{32,178,170}
+\colorlet{coverlinecolor}{customcolor}
+\usepackage{cprotect}
+
+
+\bibliographystyle{apalike_three}
+
+\begin{document}
+\maketitle
+
+\frontmatter
+\tableofcontents
+
+\mainmatter
+
+
+
+\chapter{Becker-DeGroot-Marschak Mechanism}
+\cite{karni1987preference} showed that the BDM is not incentive compatible when the object being valued is a lottery. The BDM can elicit the certainty equivalents of given lotteries if and only if the respondent's preferences can be represented by expected utility functional.
+
+
+\chapter{}
+\section{\cite{simonson1989choice}: Choice Based on Reasons: The Case of Attraction and Compromise Effects}
+Two effects about consumers' choices are introduced:
+\begin{enumerate}
+    \item \textbf{Attraction Effect} (asymmetric dominance effect): When an asymmetrically dominated or relatively inferior alternative is added to a set, the attractiveness and choice probability of the dominating alternative increase.
+    \item \textbf{Compromise Effect}: An alternative would tend to gain market share when it becomes a compromise or middle option in the set.
+\end{enumerate}
+This paper use the framework that decision makers make the choice that is supported by the best overall reasons to analyze these attraction and compromise effects.
+
+It’s good that this paper aims to explain both the attraction and compromise effects through a single framework. However, the mechanism and explanation the paper proposes for these two effects is not fully validated by the experiments.
+
+Decision-makers take into account others’ evaluations and make choices based on their expectations of the evaluators’ preferences. One reason for choosing middle alternatives may be the uncertainty surrounding these preferences. But what if the evaluators’ preferences are clearly defined and extreme? I would propose an experiment where participants are told their decisions will be evaluated by evaluators with a common, extreme preference. According to the theory presented in the paper, participants would then be more likely to choose an extreme alternative that aligns with the evaluators’ preferences, rather than opting for a middle option. This could help further test and refine the proposed mechanism and explanation.
+
+
+\section{\cite{simonson1992choice}: Choice in Context: Tradeoff Contrast and Extremeness Aversion}
+This paper takes a context-based approach to explain tradeoff contrast and extremeness aversion, which also offers a new mechanism for understanding the attraction and compromise effects described in earlier work. By framing decision-making through the lens of reference dependence and loss aversion, it provides a powerful alternative to the traditional value maximization framework in classical economic theory, where such psychological influences are often overlooked.
+
+This perspective is especially useful for firms in designing product lines and attributes, as it highlights how the context in which products are presented can significantly influence consumer preferences. However, while the theory is compelling, it would be even more impactful if we could quantify these context effects and the degree of loss aversion. Such quantification could broaden the practical applications.
+
+In the future (or perhaps this is already done), it would be beneficial to develop formal models that integrate this framework into economic theory, enabling its use in quantitative analysis. A formalization of context effects and loss aversion within an economic model would bridge the gap between behavioral insights and actionable, data-driven decision-making.
+
+\section{\cite{evangelidis2018asymmetric}: The Asymmetric Impact of Context on Advantaged Versus Disadvantaged Options}
+This paper study the asymmetric impact of context effects, that is the context effect is more frequently observed when we add an option that is similar to the disadvantaged option (weaker and lower-share option) into a binary choice set. This is an increasing finding and a marginal contribution to the previous literature. To help explain this finding, a hierarchical decision-making framework is proposed:
+\begin{enumerate}
+    \item Firstly, decision makers examine whether one of the alternatives dominates all the others in the set. If there is no such alternative,
+    \item decision makers then search for the next easiest solution - an option that allows them to avoid considering the subjective value of an attribute and making detailed analyses of trade-offs. If they still cannot find such an option,
+    \item they determine which of the two attributes is most important to them and select the option that scores the highest on that attribute. 
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\bibliography{ref_BE}
+
+
+
+
+\end{document}
