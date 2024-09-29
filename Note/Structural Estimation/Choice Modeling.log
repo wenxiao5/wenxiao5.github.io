@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.3.11)  22 SEP 2024 22:19
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.3.11)  26 SEP 2024 16:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -157,13 +157,13 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 )
 \Hy@SectionHShift=\skip50
 )
-Package hyperref Info: Option `breaklinks' set `true' on input line 125.
-Package hyperref Info: Option `unicode' set `true' on input line 125.
-Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 125.
-Package hyperref Info: Option `bookmarksopen' set `true' on input line 125.
-Package hyperref Info: Option `colorlinks' set `true' on input line 125.
-Package hyperref Info: Option `plainpages' set `false' on input line 125.
-Package hyperref Info: Option `linktocpage' set `true' on input line 125.
+Package hyperref Info: Option `breaklinks' set `true' on input line 116.
+Package hyperref Info: Option `unicode' set `true' on input line 116.
+Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 116.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 116.
+Package hyperref Info: Option `colorlinks' set `true' on input line 116.
+Package hyperref Info: Option `plainpages' set `false' on input line 116.
+Package hyperref Info: Option `linktocpage' set `true' on input line 116.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
  (/usr/local/texlive/2023/texmf-dist/tex/generic/iftex/ifvtex.sty
@@ -218,7 +218,7 @@ Package: fontspec-xetex 2024/02/13 v2.9a Font selection for XeLaTeX and LuaLaTeX
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/fontspec/fontspec.cfg))) (/usr/local/texlive/2023/texmf-dist/tex/latex/newtx/TeXGyreTermesX.fontspec)
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/n' will be
-(Font)              scaled to size 10.95pt on input line 183.
+(Font)              scaled to size 10.95pt on input line 174.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/anyfontsize/anyfontsize.sty
 Invalid UTF-8 byte or sequence at line 3 replaced by U+FFFD.
 Invalid UTF-8 byte or sequence at line 3 replaced by U+FFFD.
@@ -932,7 +932,7 @@ Package tocloft Info: The document has chapter divisions on input line 51.
 \cfttabnumwidth=\skip110
 )
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/b/n' will be
-(Font)              scaled to size 10.95pt on input line 1472.
+(Font)              scaled to size 10.95pt on input line 1463.
 )
 \c@tcb@cnt@proof=\count410
 \c@tcb@cnt@claim=\count411
@@ -1093,15 +1093,17 @@ LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/it' will be
 ]
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/b/n' will be
 (Font)              scaled to size 17.28pt on input line 34.
- (./Choice Modeling.toc)
+ (./Choice Modeling.toc [1
+
+
+
+])
 \tf@toc=\write8
 \openout8 = `"Choice Modeling.toc"'.
 
- [1
-
-
-
-]
+LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/n' will be
+(Font)              scaled to size 10.0pt on input line 36.
+ [2]
 Chapter 1.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
@@ -1120,10 +1122,7 @@ LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/b/n' will be
 [1
 
 
-]
-LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 154.
- [2] [3]
+] [2] [3]
 Chapter 2.
 [4
 
@@ -1148,25 +1147,35 @@ LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/b/it' will be
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\@ifnextchar' on input line 788.
 
-[13] [14]
+[13] [14] [15]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 842.
+(hyperref)                removing `\@ifnextchar' on input line 933.
 
-[15] [16] [17] [18]
+[16] [17] [18]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 1101.
+
+[19] [20]
 Chapter 3.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 1010.
+(hyperref)                removing `\@ifnextchar' on input line 1166.
 
 
-Overfull \hbox (2.516pt too wide) in paragraph at lines 1011--1012
+Overfull \hbox (2.516pt too wide) in paragraph at lines 1167--1168
 []\TU/TeXGyreTermesX(0)/m/n/10.95 [[]] allows substitution patterns to reflect consumer-level heterogeneity in tastes
  []
 
-(./Choice Modeling.bbl [19
+[21
 
-] [20]) [21
+]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 1214.
+
+[22] (./Choice Modeling.bbl [23]) [24
 
 ] (./Choice Modeling.aux)
  ***********
@@ -1177,12 +1186,12 @@ Package rerunfilecheck Info: File `"Choice Modeling".out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 35767 strings out of 474773
- 747562 string characters out of 5757724
+ 35752 strings out of 474773
+ 747250 string characters out of 5757724
  1947839 words of memory out of 5000000
- 57220 multiletter control sequences out of 15000+600000
+ 57205 multiletter control sequences out of 15000+600000
  567151 words of font info for 121 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  99i,20n,107p,703b,1331s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Choice Modeling.pdf (23 pages).
+Output written on Choice Modeling.pdf (27 pages).

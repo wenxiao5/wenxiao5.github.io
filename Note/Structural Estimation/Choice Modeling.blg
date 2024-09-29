@@ -1,0 +1,49 @@
+This is BibTeX, Version 0.99d (TeX Live 2023)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: Choice Modeling.aux
+The style file: apalike_three.bst
+Database file #1: ref.bib
+Warning--can't use both volume and number fields in berry2021foundations
+Warning--empty journal in mcfadden1972conditional
+You've used 12 entries,
+            1977 wiz_defined-function locations,
+            552 strings with 5572 characters,
+and the built_in function-call counts, 4890 in all, are:
+= -- 507
+> -- 129
+< -- 17
++ -- 42
+- -- 40
+* -- 402
+:= -- 802
+add.period$ -- 36
+call.type$ -- 12
+change.case$ -- 80
+chr.to.int$ -- 12
+cite$ -- 14
+duplicate$ -- 214
+empty$ -- 366
+format.name$ -- 65
+if$ -- 987
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 12
+newline$ -- 62
+num.names$ -- 36
+pop$ -- 66
+preamble$ -- 1
+purify$ -- 80
+quote$ -- 0
+skip$ -- 165
+stack$ -- 0
+substring$ -- 414
+swap$ -- 45
+text.length$ -- 5
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 72
+warning$ -- 2
+while$ -- 48
+width$ -- 0
+write$ -- 156
+(There were 2 warnings)

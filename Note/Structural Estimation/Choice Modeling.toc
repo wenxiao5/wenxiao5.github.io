@@ -19,10 +19,18 @@
 \contentsline {subsection}{\numberline {2.6.5}Instruments}{12}{subsection.2.6.5}%
 \contentsline {subsection}{\numberline {2.6.6}Nested Logit Model}{12}{subsection.2.6.6}%
 \contentsline {section}{\numberline {2.7}\cite {berry1995automobile}: Estimation using random-coefficients logit model}{14}{section.2.7}%
-\contentsline {section}{\numberline {2.8}\cite {nevo2001measuring}: Measuring Market Power}{15}{section.2.8}%
-\contentsline {subsection}{\numberline {2.8.1}Supply}{15}{subsection.2.8.1}%
-\contentsline {subsection}{\numberline {2.8.2}Demand}{16}{subsection.2.8.2}%
-\contentsline {subsection}{\numberline {2.8.3}Estimation}{17}{subsection.2.8.3}%
-\contentsline {chapter}{\numberline {3}Estimation with Extra Data}{19}{chapter.3}%
-\contentsline {section}{\numberline {3.1}\cite {petrin2002quantifying}: Using demographic data of consumers}{19}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Demand}{19}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {2.7.1}Simplified Example}{14}{subsection.2.7.1}%
+\contentsline {subsection}{\numberline {2.7.2}More Flexibility}{15}{subsection.2.7.2}%
+\contentsline {section}{\numberline {2.8}\cite {nevo2001measuring}: Measuring Market Power}{16}{section.2.8}%
+\contentsline {subsection}{\numberline {2.8.1}Supply}{16}{subsection.2.8.1}%
+\contentsline {subsection}{\numberline {2.8.2}Demand}{17}{subsection.2.8.2}%
+\contentsline {subsection}{\numberline {2.8.3}Estimation}{18}{subsection.2.8.3}%
+\contentsline {section}{\numberline {2.9}\cite {miller2017understanding}: Random Coefficients Nested Logit (RCNL)}{19}{section.2.9}%
+\contentsline {subsection}{\numberline {2.9.1}Random Coefficients Nested Logit (RCNL)}{20}{subsection.2.9.1}%
+\contentsline {chapter}{\numberline {3}Estimation with More Data}{21}{chapter.3}%
+\contentsline {section}{\numberline {3.1}\cite {petrin2002quantifying}: Using demographic data of consumers}{21}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Demand}{21}{subsection.3.1.1}%
+\contentsline {section}{\numberline {3.2}\cite {berry2004differentiated}: Micro-BLP}{22}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Data}{22}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Model}{22}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Estimation}{23}{subsection.3.2.3}%

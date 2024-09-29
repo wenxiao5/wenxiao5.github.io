@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.3.11)  17 SEP 2024 10:56
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.3.11)  25 SEP 2024 10:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1350,7 +1350,7 @@ LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/b/n' will be
 ]
 Chapter 1.
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/b/n' will be
-(Font)              scaled to size 12.0pt on input line 39.
+(Font)              scaled to size 12.0pt on input line 65.
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/n' will be
 (Font)              scaled to size 8.0pt on input line 67.
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/it' will be
@@ -1368,60 +1368,118 @@ LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/b/it' will be
 
 ]
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 156.
+(Font)              scaled to size 10.0pt on input line 151.
  [2] [3] [4]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 309.
+(hyperref)                removing `math shift' on input line 304.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\infty' on input line 309.
+(hyperref)                removing `\infty' on input line 304.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 309.
+(hyperref)                removing `math shift' on input line 304.
 
 [5]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 316.
+(hyperref)                removing `math shift' on input line 312.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\infty' on input line 316.
+(hyperref)                removing `\infty' on input line 312.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 316.
+(hyperref)                removing `math shift' on input line 312.
 
-[6]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 441.
-
+[6] [7] [8]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 441.
+(hyperref)                removing `math shift' on input line 529.
 
-[7] [8] [9] [10] (./Time_S.aux)
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 529.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 530.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 530.
+
+[9]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 583.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 583.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 583.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\gamma' on input line 583.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\forall' on input line 583.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 583.
+
+[10] [11]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 652.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\Leftrightarrow' on input line 652.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 652.
+
+[12] [13] [14]
+Chapter 2.
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 789.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 789.
+
+[15
+
+] (./Time_S.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `Time_S.out' has not changed.
-(rerunfilecheck)             Checksum: 70EA2850464DBFDE76668DEA63114D48;1906.
+(rerunfilecheck)             Checksum: 6474CB3A9261EBC0E1AB234E8112837C;5433.
 Package logreq Info: Writing requests to 'Time_S.run.xml'.
 \openout1 = `Time_S.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 42714 strings out of 474773
- 887497 string characters out of 5757724
- 1950839 words of memory out of 5000000
- 64114 multiletter control sequences out of 15000+600000
+ 42746 strings out of 474773
+ 888032 string characters out of 5757724
+ 1951839 words of memory out of 5000000
+ 64146 multiletter control sequences out of 15000+600000
  572476 words of font info for 151 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 99i,19n,107p,755b,2133s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,17n,107p,755b,1468s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Time_S.pdf (12 pages).
+Output written on Time_S.pdf (17 pages).
