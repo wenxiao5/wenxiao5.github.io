@@ -25,10 +25,19 @@ Berry, S.~T. and Haile, P.~A. (2021).
 \newblock Foundations of demand estimation.
 \newblock In {\em Handbook of industrial organization}, volume~4, pages 1--62. Elsevier.
 
+\bibitem[Conlon and Gortmaker(2020)]{conlon2020best}
+Conlon, C. and Gortmaker, J. (2020).
+\newblock Best practices for differentiated products demand estimation with pyblp.
+\newblock {\em The RAND Journal of Economics}, 51(4):1108--1161.
+
 \bibitem[Goldberg(1995)]{goldberg1995product}
 Goldberg, P.~K. (1995).
 \newblock Product differentiation and oligopoly in international markets: The case of the us automobile industry.
 \newblock {\em Econometrica: Journal of the Econometric Society}, pages 891--951.
+
+\bibitem[Grieco et~al.()]{grieco2022conformant}
+Grieco, P.~L., Murry, C., Pinkse, J., and Sagl, S.
+\newblock Conformant and efficient estimation of discrete choice demand models.
 
 \bibitem[McFadden(1972)]{mcfadden1972conditional}
 McFadden, D. (1972).

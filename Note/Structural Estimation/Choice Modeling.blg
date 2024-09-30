@@ -4,46 +4,48 @@ The top-level auxiliary file: Choice Modeling.aux
 The style file: apalike_three.bst
 Database file #1: ref.bib
 Warning--can't use both volume and number fields in berry2021foundations
+Warning--empty year in grieco2022conformant
+Warning--empty journal in grieco2022conformant
 Warning--empty journal in mcfadden1972conditional
-You've used 12 entries,
+You've used 14 entries,
             1977 wiz_defined-function locations,
-            552 strings with 5572 characters,
-and the built_in function-call counts, 4890 in all, are:
-= -- 507
-> -- 129
-< -- 17
-+ -- 42
-- -- 40
-* -- 402
-:= -- 802
-add.period$ -- 36
-call.type$ -- 12
-change.case$ -- 80
-chr.to.int$ -- 12
-cite$ -- 14
-duplicate$ -- 214
-empty$ -- 366
-format.name$ -- 65
-if$ -- 987
+            561 strings with 5870 characters,
+and the built_in function-call counts, 5678 in all, are:
+= -- 583
+> -- 165
+< -- 18
++ -- 54
+- -- 52
+* -- 473
+:= -- 939
+add.period$ -- 41
+call.type$ -- 14
+change.case$ -- 96
+chr.to.int$ -- 14
+cite$ -- 18
+duplicate$ -- 243
+empty$ -- 418
+format.name$ -- 81
+if$ -- 1136
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 12
-newline$ -- 62
-num.names$ -- 36
-pop$ -- 66
+missing$ -- 14
+newline$ -- 71
+num.names$ -- 42
+pop$ -- 84
 preamble$ -- 1
-purify$ -- 80
+purify$ -- 96
 quote$ -- 0
-skip$ -- 165
+skip$ -- 184
 stack$ -- 0
-substring$ -- 414
-swap$ -- 45
+substring$ -- 469
+swap$ -- 46
 text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 72
-warning$ -- 2
-while$ -- 48
+type$ -- 84
+warning$ -- 4
+while$ -- 54
 width$ -- 0
-write$ -- 156
-(There were 2 warnings)
+write$ -- 178
+(There were 4 warnings)

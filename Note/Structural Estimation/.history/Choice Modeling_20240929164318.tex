@@ -1319,29 +1319,15 @@ Micro-BLP uses some ad-hoc and arbitrary micro moments. There is a more general 
     \end{aligned}
     \nonumber
 \end{equation}
-where $\hat{L}$ is a likelihood function that exploits the micro-data variation to identify $\theta$ and $\hat{\Pi}$ are the macro-moments that identify the linear parameters $\beta$.
-
-The log-likelihood function is given by
-\begin{equation}
-    \begin{aligned}
-        \log\hat{L}(\theta,\delta)=\underbrace{\sum_{t=1}^T\sum_{j=0}^{J_t}\sum_{i=1}^{N_t}D_{it}y_{ijt}\log\left(\frac{\sigma_{ijt}(\theta,\delta\mid d_{it})}{\sigma_{jt}(\theta,\delta)}\right)}_\textnormal{micro moments}+\underbrace{\sum_{t=1}^T N_t \sum_{j=0}^{J_t} s_{jt}\log\sigma_{jt}(\theta,\delta)}_\textnormal{macro ``restriction''($s_{jt}=\sigma_{jt}(\delta,\theta)$)}
-    \end{aligned}
-    \nonumber
-\end{equation}
-where $D_{it}$ is an indicator of whether consumer $i$ is in the micro sample and $d_{it}$ are consumer demographics.
-
-The macro-moments function is given by
-\begin{equation}
-    \begin{aligned}
-        \hat{\Pi}(\beta,\delta)=\frac{1}{2}\hat{m}(\beta,\delta)'\hat{W}\hat{m}(\beta,\delta)
-    \end{aligned}
-    \nonumber
-\end{equation}
-where $\hat{m}(\beta,\delta)=\sum_{t=1}^T\sum_{j=0}^{J_t}Z_{jt}(\delta_{jt}-\beta x_{jt})$.
 
 
-\chapter{Frontier Methods}
-\section{\cite{conlon2020best}: PyBLP}
+
+
+
+
+
+
+
 
 
 

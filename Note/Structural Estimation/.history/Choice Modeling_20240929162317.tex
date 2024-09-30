@@ -1277,8 +1277,6 @@ Estimation via GMM is based on three moments:
     \end{aligned}
     \nonumber
 \end{equation}
-This solves for $\delta$.
-
 As in BLP, simulate, drawing $v_i$ from normal, $z_i$ from CPS (not from micro-data, which is non-representative) and do contraction mapping.
 \begin{note}
     Rather than a moment we could call it a constraint (It's like a moment with infinite weight).
@@ -1295,53 +1293,28 @@ where
 \begin{equation}
     \begin{aligned}
         \mathbb{E}[z_i\mid y_i^1,\beta,\delta]&=\int_z z d F(z\mid y_i^1,\beta,\delta)\\
-        &=\int_z z \frac{\textnormal{Pr}(y_i^1\mid z,\beta,\delta)}{\textnormal{Pr}(y_i^1\mid \beta,\delta)} d F(z)
+        &=\int_z z \frac{\textnormal{Pr}(y_i^1\mid z,\beta,\delta)}{\textnormal{Pr}(y_i^1\mid \beta,\delta)} d F(z\mid y_i^1,\beta,\delta)
     \end{aligned}
     \nonumber
 \end{equation}
-This pin down $\beta^o$.
-
-\textbf{Moment 3: Predicted second choice characteristics given first choice characteristics}
-\begin{equation}
-    \begin{aligned}
-        \frac{1}{N}\sum_{i}\left(x_{y_i^2}-\mathbb{E}[x_{y_i^2}\mid y_i^1,\beta,\delta]\right)=0
-    \end{aligned}
-    \nonumber
-\end{equation}
-This pin down $\beta^u$.
 
 
-\section{\cite{grieco2022conformant}: Efficient Micro-BLP}
-Micro-BLP uses some ad-hoc and arbitrary micro moments. There is a more general estimator that uses all available information efficiently:
-\begin{equation}
-    \begin{aligned}
-        \left(\hat{\beta},\hat{\theta},\hat{\delta}\right)=\arg\min_{\beta,\theta,\delta}\left(-\log\hat{L}(\theta,\delta)+\hat{\Pi}(\beta,\delta)\right)
-    \end{aligned}
-    \nonumber
-\end{equation}
-where $\hat{L}$ is a likelihood function that exploits the micro-data variation to identify $\theta$ and $\hat{\Pi}$ are the macro-moments that identify the linear parameters $\beta$.
-
-The log-likelihood function is given by
-\begin{equation}
-    \begin{aligned}
-        \log\hat{L}(\theta,\delta)=\underbrace{\sum_{t=1}^T\sum_{j=0}^{J_t}\sum_{i=1}^{N_t}D_{it}y_{ijt}\log\left(\frac{\sigma_{ijt}(\theta,\delta\mid d_{it})}{\sigma_{jt}(\theta,\delta)}\right)}_\textnormal{micro moments}+\underbrace{\sum_{t=1}^T N_t \sum_{j=0}^{J_t} s_{jt}\log\sigma_{jt}(\theta,\delta)}_\textnormal{macro ``restriction''($s_{jt}=\sigma_{jt}(\delta,\theta)$)}
-    \end{aligned}
-    \nonumber
-\end{equation}
-where $D_{it}$ is an indicator of whether consumer $i$ is in the micro sample and $d_{it}$ are consumer demographics.
-
-The macro-moments function is given by
-\begin{equation}
-    \begin{aligned}
-        \hat{\Pi}(\beta,\delta)=\frac{1}{2}\hat{m}(\beta,\delta)'\hat{W}\hat{m}(\beta,\delta)
-    \end{aligned}
-    \nonumber
-\end{equation}
-where $\hat{m}(\beta,\delta)=\sum_{t=1}^T\sum_{j=0}^{J_t}Z_{jt}(\delta_{jt}-\beta x_{jt})$.
 
 
-\chapter{Frontier Methods}
-\section{\cite{conlon2020best}: PyBLP}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
