@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.3.11)  23 SEP 2024 11:08
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.3.11)  30 SEP 2024 10:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1151,7 +1151,22 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\@ifnextchar' on input line 113.
 
-(./Experiment.bbl [6]) [7
+[6]
+Chapter 4.
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 119.
+
+LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/b/n' will be
+(Font)              scaled to size 12.0pt on input line 136.
+[7
+
+]
+LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/n' will be
+(Font)              scaled to size 8.0pt on input line 167.
+LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/n' will be
+(Font)              scaled to size 6.0pt on input line 167.
+ [8] (./Experiment.bbl [9]) [10
 
 ] (./Experiment.aux)
  ***********
@@ -1159,15 +1174,15 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `Experiment.out' has not changed.
-(rerunfilecheck)             Checksum: 05385B7A6F113310B24B69FBBC38D326;4790.
+(rerunfilecheck)             Checksum: A778FB4082A7F4270EA0DB70F57E9C62;5192.
  ) 
 Here is how much of TeX's memory you used:
- 35456 strings out of 474773
- 740606 string characters out of 5757724
- 1932839 words of memory out of 5000000
- 56956 multiletter control sequences out of 15000+600000
- 564629 words of font info for 84 fonts, out of 8000000 for 9000
+ 35468 strings out of 474773
+ 741054 string characters out of 5757724
+ 1934839 words of memory out of 5000000
+ 56965 multiletter control sequences out of 15000+600000
+ 564653 words of font info for 87 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  99i,12n,107p,1271b,738s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Experiment.pdf (9 pages).
+Output written on Experiment.pdf (12 pages).

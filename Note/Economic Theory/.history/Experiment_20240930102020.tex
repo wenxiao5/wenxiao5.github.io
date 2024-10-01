@@ -171,28 +171,18 @@ In the \textit{interim stage}, the expected score of $i$ given $y_i$ is
 \paragraph*{Overconfidence} Given $y_i$ is unbiased, we have
 \begin{equation}
     \begin{aligned}
-        \mathbb{E}_{Y_i\mid x_i}[\mathbb{E}[X_i\mid y_i]]=\alpha m_S +(1-\alpha)x_i
+        \mathbb{E}_{Y_i}[\mathbb{E}[X_i\mid y_i]]
     \end{aligned}
     \nonumber
 \end{equation}
-where $x_i$ is the true score $x_i$.
 
-Therefore, if the quiz is easier than expected ($x_i>m_S$), we have $m_S<\mathbb{E}_{Y_i\mid x_i}[\mathbb{E}[X_i\mid y_i]]<x_i$. That is, we observe underestimation. If the quiz is harder than expected ($x_i<m_S$), we have $m_S>\mathbb{E}_{Y_i\mid x_i}[\mathbb{E}[X_i\mid y_i]]>x_i$. That is, we observe overestimation.
 
-\paragraph*{Overplacement}
-Suppose that individual $i$ is told her true score $x_i$ and is asked report her expectation about individual $j$'s score.
 
-To infer $X_j=S+L_j$, we study the inference for the overall average score on the quiz $S$ because $\mathbb{E}[X_j\mid x_i]=\mathbb{E}[S\mid x_i]$. Using Bayes's law, $i$'s expectation of $S$ given $x_i$ is
-\begin{equation}
-    \begin{aligned}
-        \mathbb{E}[S\mid x_i]=\beta m_S + (1-\beta)x_i, \textnormal{ where }\beta=\frac{v_L}{v_S+v_L}
-    \end{aligned}
-    \nonumber
-\end{equation}
-Therefore, $i$ exhibits an overplacement ($m_S<\mathbb{E}[X_j\mid x_i]<x_i$) if her own score is above the prior expected average (because the quiz was easier than expected), and exhibits an underplacement ($m_S>\mathbb{E}[X_j\mid x_i]>x_i$) if her own score is below the prior expected average (because the quiz was harder than expected).
 
-\paragraph*{Overprecision}
-Estimations made by people whose signals are less informative about their true scores ought to be more regressive and ought therefore to display greater underestimation on easy tasks, as well as more overestimation on difficult tasks.
+
+
+
+
 
 
 

@@ -133,7 +133,7 @@ There are three most common problems identified in overconfidence:
 
 This article proposes \textit{a theory of confidence}: After experiencing a task, people often have imperfect information about their own performances but even worse information about the performances of others. As a result, people's post-task estimates of themselves are regressive, and their estimates of others are even more regressive. Consequently, when performance is exceptionally high, people will underestimate their own performances, underestimate others even more so, and thus believe that they are better than others. When performance is low, people will overestimate themselves, overestimate others even more so, and thus believe that they are worse than others.
 
-\subsection*{Formal Model}
+\paragraph*{Formal Model}
 People hold a subjective probability distribution (SPD) of their own score and an SPD of others' scores over the range of possible outcomes on any task.
 \begin{enumerate}
     \item \textit{Overestimation} occurs when a person's SPD of his or her own score has a mean that is greater than the person's actual score on the task.
@@ -168,31 +168,16 @@ In the \textit{interim stage}, the expected score of $i$ given $y_i$ is
     \end{aligned}
     \nonumber
 \end{equation}
-\paragraph*{Overconfidence} Given $y_i$ is unbiased, we have
-\begin{equation}
-    \begin{aligned}
-        \mathbb{E}_{Y_i\mid x_i}[\mathbb{E}[X_i\mid y_i]]=\alpha m_S +(1-\alpha)x_i
-    \end{aligned}
-    \nonumber
-\end{equation}
-where $x_i$ is the true score $x_i$.
 
-Therefore, if the quiz is easier than expected ($x_i>m_S$), we have $m_S<\mathbb{E}_{Y_i\mid x_i}[\mathbb{E}[X_i\mid y_i]]<x_i$. That is, we observe underestimation. If the quiz is harder than expected ($x_i<m_S$), we have $m_S>\mathbb{E}_{Y_i\mid x_i}[\mathbb{E}[X_i\mid y_i]]>x_i$. That is, we observe overestimation.
 
-\paragraph*{Overplacement}
-Suppose that individual $i$ is told her true score $x_i$ and is asked report her expectation about individual $j$'s score.
 
-To infer $X_j=S+L_j$, we study the inference for the overall average score on the quiz $S$ because $\mathbb{E}[X_j\mid x_i]=\mathbb{E}[S\mid x_i]$. Using Bayes's law, $i$'s expectation of $S$ given $x_i$ is
-\begin{equation}
-    \begin{aligned}
-        \mathbb{E}[S\mid x_i]=\beta m_S + (1-\beta)x_i, \textnormal{ where }\beta=\frac{v_L}{v_S+v_L}
-    \end{aligned}
-    \nonumber
-\end{equation}
-Therefore, $i$ exhibits an overplacement ($m_S<\mathbb{E}[X_j\mid x_i]<x_i$) if her own score is above the prior expected average (because the quiz was easier than expected), and exhibits an underplacement ($m_S>\mathbb{E}[X_j\mid x_i]>x_i$) if her own score is below the prior expected average (because the quiz was harder than expected).
 
-\paragraph*{Overprecision}
-Estimations made by people whose signals are less informative about their true scores ought to be more regressive and ought therefore to display greater underestimation on easy tasks, as well as more overestimation on difficult tasks.
+
+
+
+
+
+
 
 
 
