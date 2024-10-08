@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.3.11)  24 SEP 2024 17:04
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.3.11)  1 OCT 2024 16:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1120,7 +1120,17 @@ LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/n' will be
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\@ifnextchar' on input line 512.
 
-[9] (./M_class.bbl [10]) [11
+[9] [10]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 623.
+
+[11]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 671.
+
+[12] (./M_class.bbl [13]) [14
 
 ] (./M_class.aux)
  ***********
@@ -1128,15 +1138,15 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `M_class.out' has not changed.
-(rerunfilecheck)             Checksum: 8D979EB7E4F9D7899C746CAF3A66F8F4;2480.
+(rerunfilecheck)             Checksum: 5A30E6D73FD59C49F706817E0CB24C37;2999.
  ) 
 Here is how much of TeX's memory you used:
- 35695 strings out of 474773
- 745961 string characters out of 5757724
- 1940839 words of memory out of 5000000
- 57155 multiletter control sequences out of 15000+600000
- 565897 words of font info for 115 fonts, out of 8000000 for 9000
+ 35703 strings out of 474773
+ 746115 string characters out of 5757724
+ 1944839 words of memory out of 5000000
+ 57162 multiletter control sequences out of 15000+600000
+ 565905 words of font info for 116 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 99i,15n,107p,689b,1471s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,21n,107p,689b,1471s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on M_class.pdf (13 pages).
+Output written on M_class.pdf (16 pages).

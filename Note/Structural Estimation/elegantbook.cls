@@ -923,6 +923,16 @@
     overlay={
       \draw[second!80, line width=2.5pt] (frame.north west) -- (frame.south west); % 添加左侧的粗线条
     },},
+    assumptionstyle/.style={
+      common,
+      fontupper=\fontspec{Palatino},
+      colframe=assumptioncolor!80,
+      colback=assumptioncolor!4,
+      colbacktitle=assumptioncolor,
+      frame style={top color=white, bottom color=white, middle color=white, left color=assumptioncolor},
+    overlay={
+      \draw[assumptioncolor!80, line width=2.5pt] (frame.north west) -- (frame.south west); % 添加左侧的粗线条
+    },},
     prostyle/.style={
       common,
       fontupper=\fontspec{Palatino},
@@ -1013,6 +1023,7 @@
   \ELEGANT@newtheorem{axiom}{axi}{thmstyle}
   \ELEGANT@newtheorem{corollary}{cor}{thmstyle}
   \ELEGANT@newtheorem{lemma}{lem}{thmstyle}
+  \ELEGANT@newtheorem{assumption}{asm}{assumptionstyle}
   \ELEGANT@newtheorem{proposition}{pro}{prostyle}
 }{\relax}
 
@@ -1031,7 +1042,8 @@
     \bfseries\color{second}}{}{0.5em}{\thmname{#1} \thmnumber{#2} \thmnote{(#3)}}
   \newtheoremstyle{prostyle}{3pt}{3pt}{\citshape}{-3pt}{
     \bfseries\color{third}}{}{0.5em}{\thmname{#1} \thmnumber{#2} \thmnote{(#3)}}
-
+  \newtheoremstyle{assumptionstyle}{3pt}{3pt}{\citshape}{-3pt}{
+      \bfseries\color{assumptioncolor}}{}{0.5em}{\thmname{#1} \thmnumber{#2} \thmnote{(#3)}}
   % define an internal control sequence \ELEGANT@newtheorem for simple mode's newtheorem
   % #1 is the environment name, #2 is the style
   % style: thmstyle, defstyle, prostyle
@@ -1062,6 +1074,7 @@
   \ELEGANT@newtheorem{corollary}{thmstyle}
   \ELEGANT@newtheorem{lemma}{thmstyle}
   \ELEGANT@newtheorem{proposition}{prostyle}
+  \ELEGANT@newtheorem{assumption}{asm}{assumptionstyle}
 }{\relax}
 
 % define an user control sequence \elegantnewtheorem
@@ -1180,7 +1193,7 @@
 
 \newenvironment{solution}{\par\noindent\textbf{\color{main}\solutionname} \citshape}{\par}
 \newenvironment{remark}{\noindent\textbf{\color{second}\remarkname}}{\par}
-\newenvironment{assumption}{\par\noindent\textbf{\color{third}\assumptionname} \citshape}{\par}
+%\newenvironment{assumption}{\par\noindent\textbf{\color{third}\assumptionname} \citshape}{\par}
 \newenvironment{conclusion}{\par\noindent\textbf{\color{third}\conclusionname} \citshape}{\par}
 \newenvironment{property}{\par\noindent\textbf{\color{third}\propertyname} \citshape}{\par}
 \newenvironment{custom}[1]{\par\noindent\textbf{\color{third} #1} \citshape}{\par}
@@ -1346,6 +1359,7 @@
 
 \definecolor{lightgrey}{rgb}{0.9,0.9,0.9}
 \definecolor{frenchplum}{RGB}{190,20,83}
+\definecolor{assumptioncolor}{RGB}{5, 19, 125}
 \lstset{language=[LaTeX]TeX,
   texcsstyle=*\color{winered},
   numbers=none,

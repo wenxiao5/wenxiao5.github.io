@@ -37,3 +37,8 @@
 \contentsline {section}{\numberline {3.3}\cite {grieco2022conformant}: Efficient Micro-BLP}{24}{section.3.3}%
 \contentsline {chapter}{\numberline {4}Frontier Methods}{25}{chapter.4}%
 \contentsline {section}{\numberline {4.1}\cite {conlon2020best}: PyBLP}{25}{section.4.1}%
+\contentsline {chapter}{\numberline {5}Non-parametric Identification}{26}{chapter.5}%
+\contentsline {section}{\numberline {5.1}\cite {berry2014identification}: nonparametric random utility discrete choice model}{26}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Random Utility Discrete Choice}{26}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Identification of Demand}{27}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}Identification of Changes in Consumer Welfare}{28}{subsection.5.1.3}%

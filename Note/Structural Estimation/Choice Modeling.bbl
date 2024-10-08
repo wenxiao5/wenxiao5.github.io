@@ -5,6 +5,11 @@ Angrist, J.~D., Graddy, K., and Imbens, G.~W. (2000).
 \newblock The interpretation of instrumental variables estimators in simultaneous equations models with an application to the demand for fish.
 \newblock {\em The Review of Economic Studies}, 67(3):499--527.
 
+\bibitem[Berry, Gandhi, and Haile(2013)]{berry2013connected}
+Berry, S., Gandhi, A., and Haile, P. (2013).
+\newblock Connected substitutes and invertibility of demand.
+\newblock {\em Econometrica}, 81(5):2087--2111.
+
 \bibitem[Berry, Levinsohn, and Pakes(1995)]{berry1995automobile}
 Berry, S., Levinsohn, J., and Pakes, A. (1995).
 \newblock Automobile prices in market equilibrium.
@@ -19,6 +24,11 @@ Berry, S., Levinsohn, J., and Pakes, A. (2004).
 Berry, S.~T. (1994).
 \newblock Estimating discrete-choice models of product differentiation.
 \newblock {\em The RAND Journal of Economics}, pages 242--262.
+
+\bibitem[Berry and Haile(2014)]{berry2014identification}
+Berry, S.~T. and Haile, P.~A. (2014).
+\newblock Identification in differentiated products markets using market level data.
+\newblock {\em Econometrica}, 82(5):1749--1797.
 
 \bibitem[Berry and Haile(2021)]{berry2021foundations}
 Berry, S.~T. and Haile, P.~A. (2021).
