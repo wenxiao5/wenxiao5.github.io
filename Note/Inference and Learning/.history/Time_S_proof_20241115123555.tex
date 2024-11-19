@@ -1,0 +1,79 @@
+\section{Proof}
+\subsection{Proof of Lemma \ref{lemma:MA_infty_covariance_stationary}}\label{Proof_lemma:MA_infty_covariance_stationary}
+\begin{note}
+    Conjecture:
+    \begin{enumerate}
+        \item $\{Y_t\}$ is covariance stationary;
+        \item $\mathbb{E}[Y_t]=\mu$ and
+        \item its autocovariance function is $$\gamma(j):=\textnormal{Cov}(Y_t,Y_{t-j})=(\sum_{i=0}^{\infty}\psi_i\psi_{i+j})\sigma^2,\forall j\geq 0.$$
+    \end{enumerate}
+\end{note}
+The necessary condition to make these conjectures correct is
+\begin{equation}
+    \begin{aligned}
+        \mathbb{E}[Y_t^2]&=(\mathbb{E}[Y_t])^2+\Gamma(0)\\
+        &=\mu^2+(\sum_{i=0}^{\infty}\psi_i^2)\sigma^2<\infty\\
+        \Leftrightarrow \sum_{i=0}^{\infty}\psi_i^2&<\infty
+    \end{aligned}
+    \nonumber
+\end{equation}
+which is sufficient given our definition of $MA(\infty)$.
+\begin{claim}
+    With the `right' definition of ``$\sum_{i=0}^{\infty}$'', the conjecture is correct.
+\end{claim}
+\begin{remark}
+    \begin{enumerate}
+        \item If $X_0,X_1,...$ are i.i.d. with $X_0=0$, then $\sum_{i=0}^\infty X_i$ denote $\lim_{n \rightarrow \infty}\sum_{i=0}^n X_i$ (assuming the limit exists).
+        \item $\exists$ various models of stochastic convergence.
+        \item There: convergence in mean square.
+    \end{enumerate}
+\end{remark}
+\begin{definition}[Stochastic Convergence in Mean Square]
+    If $X_0,X_1,...$ are random (with $\mathbb{E}[X_i^2]<\infty,\forall i$), then $\sum_{i=0}^\infty X_i$ denotes any $S$ such that $\lim_{n \rightarrow \infty}\mathbb{E}[(S-\sum_{i=0}^n X_i)^2]=0$.
+\end{definition}
+\begin{lemma}
+    The properties of the $S$ are
+    \begin{enumerate}
+        \item $S$ is ``essentially unique.''
+        \item $\mathbb{E}[S]=\sum_{i=0}^\infty \mathbb{E}[X_i]=\lim_{n \rightarrow \infty}\sum_{i=0}^n \mathbb{E}[X_i]$
+        \item $\textnormal{Var}[S]=...=\lim_{n \rightarrow \infty}\textnormal{Var}[\sum_{i=0}^n X_i]$
+        \item (Higher order moments of $S$ are similar) $\cdots$
+    \end{enumerate}
+\end{lemma}
+
+\begin{theorem}[Cauchy Criterion]
+    $\sum_{i=0}^\infty X_i$ exists iff
+    \begin{equation}
+        \begin{aligned}
+            \lim_{n \rightarrow \infty}\sup_{m>n}\mathbb{E}[(S_m-S_n)^2]=0,
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    where $S_n=\sum_{i=0}^n X_i$.
+\end{theorem}
+In the \underline{$MA(\infty)$ context}: The condition that can make
+\begin{equation}
+    \begin{aligned}
+        \lim_{n \rightarrow \infty}\sup_{m>n}\mathbb{E}[(Y_{t,m}-Y_{t,n})^2]=0
+    \end{aligned}
+    \nonumber
+\end{equation}
+where $Y_{t,n}=\mu+\sum_{i=0}^n\psi_i\epsilon_{t-i}$.\\
+This condition is given as: If $m>n$,
+\begin{equation}
+    \begin{aligned}
+        &Y_{t,m}-Y_{t,n}=\sum_{i=n+1}^m\psi_i\epsilon_{t-i}\\
+        \Rightarrow & \mathbb{E}[(Y_{t,m}-Y_{t,n})^2]=\mathbb{E}\left[\left(\sum_{i=n+1}^m\psi_i\epsilon_{t-i}\right)^2\right]=\left(\sum_{i=n+1}^m\psi_i^2\right)\sigma^2\\
+        \Rightarrow & \sup_{m>n}\mathbb{E}[(Y_{t,m}-Y_{t,n})^2]=\left(\sum_{i=n+1}^\infty\psi_i^2\right)\sigma^2\\
+        \Rightarrow & \lim_{n \rightarrow \infty}\sup_{m>n}\mathbb{E}[(Y_{t,m}-Y_{t,n})^2]=\left(\lim_{n \rightarrow \infty}\sum_{i=n+1}^\infty\psi_i^2\right)\sigma^2
+    \end{aligned}
+    \nonumber
+\end{equation}
+Thus,
+\begin{equation}
+    \begin{aligned}
+        \lim_{n \rightarrow \infty}\sup_{m>n}\mathbb{E}[(Y_{t,m}-Y_{t,n})^2]=0 &\textnormal{ iff }\lim_{n \rightarrow \infty}\sum_{i=n+1}^\infty\psi_i^2=0\\
+        &\textnormal{ iff }\sum_{i=0}^\infty\psi_i^2<\infty
+    \end{aligned}
+    \nonumber
+\end{equation}

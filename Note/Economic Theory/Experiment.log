@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.3.11)  7 OCT 2024 12:12
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.3.11)  18 NOV 2024 14:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1094,15 +1094,17 @@ LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/it' will be
 ]
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/b/n' will be
 (Font)              scaled to size 17.28pt on input line 34.
- (./Experiment.toc)
+ (./Experiment.toc [1
+
+
+
+])
 \tf@toc=\write8
 \openout8 = `Experiment.toc'.
 
- [1
-
-
-
-]
+LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/n' will be
+(Font)              scaled to size 10.0pt on input line 36.
+ [2]
 Chapter 1.
 [1
 
@@ -1124,8 +1126,6 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\@ifnextchar' on input line 65.
 
-LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 79.
 [3]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
@@ -1183,23 +1183,121 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 [10
 
-] (./Experiment.bbl [11] [12
+] [11]
+Chapter 6.
 
-]) [13] (./Experiment.aux)
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 219.
+
+[12
+
+]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 230.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 234.
+
+[13]
+Chapter 7.
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 246.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 250.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 258.
+
+[14
+
+]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 262.
+
+[15]
+Chapter 8.
+[16
+
+]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 304.
+
+[17]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 316.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 324.
+
+[18] [19]
+Chapter 9.
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 336.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 339.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 344.
+
+[20
+
+]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 348.
+
+[21]
+Chapter 10.
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 360.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 363.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 366.
+
+[22
+
+]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 370.
+
+(./Experiment.bbl [23] [24
+
+] [25]) [26] (./Experiment.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `Experiment.out' has not changed.
-(rerunfilecheck)             Checksum: BB4A00D50E83EE81C1D3E1825B643F7E;6707.
+(rerunfilecheck)             Checksum: D59779F1CDAAA4F24D1071C1BF285542;16729.
  ) 
 Here is how much of TeX's memory you used:
- 35478 strings out of 474773
- 741345 string characters out of 5757724
+ 35501 strings out of 474773
+ 741766 string characters out of 5757724
  1934839 words of memory out of 5000000
- 56975 multiletter control sequences out of 15000+600000
+ 56998 multiletter control sequences out of 15000+600000
  564653 words of font info for 87 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 99i,12n,107p,1271b,738s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,13n,107p,1517b,738s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Experiment.pdf (15 pages).
+Output written on Experiment.pdf (29 pages).
