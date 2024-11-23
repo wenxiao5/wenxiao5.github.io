@@ -4,7 +4,8 @@
 %%
 %% This work may be distributed and/or modified freely
 %% available at https://github.com/ElegantLaTeX/ElegantBook
-% 
+%% Revised by Wenxiao Yang: 2024/09/24
+%
 %%%%%%%%%%%%%%%%%%%%%
 % % !Mode:: "TeX:UTF-8"
 \NeedsTeXFormat{LaTeX2e}
@@ -35,13 +36,6 @@
 \DeclareVoidOption{black}{\ekv{color=black}}
 \DeclareVoidOption{nocolor}{\ekv{color=none}}
 
-\DeclareVoidOption{chinese}{\ekv{scheme=chinese}}
-
-\DeclareStringOption[ctexfont]{chinesefont}
-\DeclareVoidOption{ctexfont}{\ekv{chinesefont=ctexfont}}
-\DeclareVoidOption{founder}{\ekv{chinesefont=founder}}
-\DeclareVoidOption{nofont}{\ekv{chinesefont=nofont}}
-
 \DeclareVoidOption{en}{\ekv{lang=en}}
 \DeclareVoidOption{cn}{\ekv{lang=cn}}
 \DeclareVoidOption{it}{\ekv{lang=it}}
@@ -56,9 +50,6 @@
 \DeclareVoidOption{fancy}{\ekv{mode=fancy}}
 \DeclareVoidOption{simple}{\ekv{mode=simple}}
 \DeclareBoolOption[false]{usesamecnt}
-
-\DeclareVoidOption{answer}{\ekv{result=answer}}
-\DeclareVoidOption{noanswer}{\ekv{result=noanswer}}
 
 \DeclareVoidOption{normal}{\ekv{device=normal}}
 \DeclareVoidOption{pad}{\ekv{device=pad}}
@@ -81,9 +72,9 @@
 \DeclareVoidOption{chapter}{\ekv{thmcnt=chapter}}
 \DeclareVoidOption{section}{\ekv{thmcnt=section}}
 
-\DeclareStringOption[biber]{bibend}
-\DeclareVoidOption{biber}{\ekv{bibend=biber}}
-\DeclareVoidOption{bibtex}{\ekv{bibend=bibtex}}
+%\DeclareStringOption[biber]{bibend}
+%\DeclareVoidOption{biber}{\ekv{bibend=biber}}
+%\DeclareVoidOption{bibtex}{\ekv{bibend=bibtex}}
 
 
 % ----- Math option -----
@@ -246,32 +237,11 @@
 
 \RequirePackage{anyfontsize}
 \ifdefstring{\ELEGANT@math}{newtx}{
-  \let\oldencodingdefault\encodingdefault
-  \let\oldrmdefault\rmdefault
-  \let\oldsfdefault\sfdefault
-  \let\oldttdefault\ttdefault
-  \def\encodingdefault{T1}
-  \renewcommand{\rmdefault}{ntxtlf}
-  \renewcommand{\sfdefault}{qhv}
-  \renewcommand{\ttdefault}{ntxtt}
+  \RequirePackage{newtxtext}
   \RequirePackage{newtxmath}
-  \let\encodingdefault\oldencodingdefault
-  \let\rmdefault\oldrmdefault
-  \let\sfdefault\oldsfdefault
-  \let\ttdefault\oldttdefault
   \let\Bbbk\relax
   \RequirePackage{esint}
-  %%% use yhmath pkg, uncomment following code
-  % \let\oldwidering\widering
-  % \let\widering\undefined
-  % \RequirePackage{yhmath}
-  % \let\widering\oldwidering
-
-  %%% use esvect pkg, uncomment following code
-  % \RequirePackage{esvect}
-
   \DeclareSymbolFont{CMlargesymbols}{OMX}{cmex}{m}{n}
-  \let\sumop\relax\let\prodop\relax
   \DeclareMathSymbol{\sumop}{\mathop}{CMlargesymbols}{"50}
   \DeclareMathSymbol{\prodop}{\mathop}{CMlargesymbols}{"51}
 }{\relax}
@@ -286,31 +256,31 @@
   \definecolor{main}{RGB}{0,120,2}%
   \definecolor{second}{RGB}{230,90,7}%
   \definecolor{third}{RGB}{0,160,152}%
-}{\relax}
+}{
 \ifdefstring{\ELEGANT@color}{cyan}{
   \definecolor{structurecolor}{RGB}{31,186,190}%
   \definecolor{main}{RGB}{59,180,5}%
   \definecolor{second}{RGB}{175,153,8}%
   \definecolor{third}{RGB}{244,105,102}%
-}{\relax}
+}{
 \ifdefstring{\ELEGANT@color}{blue}{
   \definecolor{structurecolor}{RGB}{60,113,183}
   \definecolor{main}{RGB}{0,166,82}%
   \definecolor{second}{RGB}{255,134,24}%
   \definecolor{third}{RGB}{0,174,247}%
-}{\relax}
+}{
 \ifdefstring{\ELEGANT@color}{gray}{
   \definecolor{structurecolor}{RGB}{150,150,150}
   \definecolor{main}{RGB}{150,150,150}%
   \definecolor{second}{RGB}{150,150,150}%
   \definecolor{third}{RGB}{150,150,150}%
-}{\relax}
+}{
 \ifdefstring{\ELEGANT@color}{black}{
   \definecolor{structurecolor}{RGB}{0,0,0}
   \definecolor{main}{RGB}{0,0,0}%
   \definecolor{second}{RGB}{0,0,0}%
   \definecolor{third}{RGB}{0,0,0}%
-}{\relax}
+}{\relax}}}}}
 
 %green color
 \definecolor{structure1}{RGB}{0,120,2}%
@@ -403,10 +373,10 @@
 \RequirePackage[title,titletoc,header]{appendix}
 
 
-\RequirePackage[
-  backend=\ELEGANT@bibend,
-  citestyle=\ELEGANT@citestyle,
-  bibstyle=\ELEGANT@bibstyle]{biblatex}
+%\RequirePackage[
+  %backend=\ELEGANT@bibend,
+  %citestyle=\ELEGANT@citestyle,
+  %bibstyle=\ELEGANT@bibstyle]{biblatex}
 
 \ifdefstring{\ELEGANT@lang}{cn}{
   \renewcommand{\baselinestretch}{1.3}
@@ -908,53 +878,80 @@
   }
 \fi
 
+\RequirePackage{fontspec}
 \ifdefstring{\ELEGANT@mode}{fancy}{
   \tcbset{
     common/.style={
-      fontupper=\citshape,
+      %fontupper=\citshape,
       lower separated=false,
       % before upper={\setlength{\parindent}{\normalparindent}},
       coltitle=white,
-      colback=gray!5,
-      boxrule=0.5pt,
-      fonttitle=\bfseries,
+      colback=gray!4,
+      boxrule=0.1pt,
+      fonttitle=\bfseries\fontspec{Charter},
       enhanced,
       breakable,
       top=8pt,
       before skip=8pt,
       attach boxed title to top left={
-        yshift=-0.11in,
-        xshift=0.15in},
+        yshift=-0.08in,
+        xshift=0.1in
+        },
       boxed title style={
         boxrule=0pt,
         colframe=white,
-        arc=0pt,
-        outer arc=0pt},
+        arc=2pt,
+        outer arc=2pt},
       separator sign={.},},
     defstyle/.style={
       common,
-      colframe=main,  
-      colback=main!5,
-      colbacktitle=main, 
-      overlay unbroken and last={
-        \node[anchor=south east, outer sep=0pt] at (\linewidth-width,0) {
-          \textcolor{main}{$\clubsuit$}};}},
+      fontupper=\fontspec{Palatino},
+      colframe=main!80,
+      colback=main!4,
+      colbacktitle=main,
+      frame style={top color=white, bottom color=white, middle color=white, left color=main},
+    overlay={
+      \draw[main!80, line width=2.5pt] (frame.north west) -- (frame.south west); % 添加左侧的粗线条
+    },},
     thmstyle/.style={
       common,
-      colframe=second,  
-      colback=second!5,
-      colbacktitle=second, 
-      overlay unbroken and last={
-        \node[anchor=south east, outer sep=0pt] at (\linewidth-width,0) {
-          \textcolor{second}{$\heartsuit$}};}},
+      fontupper=\fontspec{Palatino},
+      colframe=second!80,
+      colback=second!4,
+      colbacktitle=second,
+      frame style={top color=white, bottom color=white, middle color=white, left color=second},
+    overlay={
+      \draw[second!80, line width=2.5pt] (frame.north west) -- (frame.south west); % 添加左侧的粗线条
+    },},
+    assumptionstyle/.style={
+      common,
+      fontupper=\fontspec{Palatino},
+      colframe=assumptioncolor!80,
+      colback=assumptioncolor!4,
+      colbacktitle=assumptioncolor,
+      frame style={top color=white, bottom color=white, middle color=white, left color=assumptioncolor},
+    overlay={
+      \draw[assumptioncolor!80, line width=2.5pt] (frame.north west) -- (frame.south west); % 添加左侧的粗线条
+    },},
     prostyle/.style={
       common,
-      colframe=third,  
-      colback=third!5,
-      colbacktitle=third, 
-      overlay unbroken and last={
-        \node[anchor=south east, outer sep=0pt] at (\linewidth-width,0) {
-          \textcolor{third}{$\spadesuit$}};}},
+      fontupper=\fontspec{Palatino},
+      colframe=third!80,
+      colback=third!4,
+      colbacktitle=third,
+      frame style={top color=white, bottom color=white, middle color=white, left color=third},
+    overlay={
+      \draw[third!80, line width=2.5pt] (frame.north west) -- (frame.south west); % 添加左侧的粗线条
+    },},
+    examplestyle/.style={
+      common,
+      colframe=violet!80,
+      colback=violet!4,
+      colbacktitle=violet,
+      frame style={top color=white, bottom color=white, middle color=white, left color=violet},
+    overlay={
+      \draw[violet!80, line width=2.5pt] (frame.north west) -- (frame.south west); % 添加左侧的粗线条
+    },},
     ELEGANT@title/.code n args={2}
       {
         \ifblank{#2}
@@ -1026,6 +1023,7 @@
   \ELEGANT@newtheorem{axiom}{axi}{thmstyle}
   \ELEGANT@newtheorem{corollary}{cor}{thmstyle}
   \ELEGANT@newtheorem{lemma}{lem}{thmstyle}
+  \ELEGANT@newtheorem{assumption}{asm}{assumptionstyle}
   \ELEGANT@newtheorem{proposition}{pro}{prostyle}
 }{\relax}
 
@@ -1044,7 +1042,8 @@
     \bfseries\color{second}}{}{0.5em}{\thmname{#1} \thmnumber{#2} \thmnote{(#3)}}
   \newtheoremstyle{prostyle}{3pt}{3pt}{\citshape}{-3pt}{
     \bfseries\color{third}}{}{0.5em}{\thmname{#1} \thmnumber{#2} \thmnote{(#3)}}
-
+  \newtheoremstyle{assumptionstyle}{3pt}{3pt}{\citshape}{-3pt}{
+      \bfseries\color{assumptioncolor}}{}{0.5em}{\thmname{#1} \thmnumber{#2} \thmnote{(#3)}}
   % define an internal control sequence \ELEGANT@newtheorem for simple mode's newtheorem
   % #1 is the environment name, #2 is the style
   % style: thmstyle, defstyle, prostyle
@@ -1075,6 +1074,7 @@
   \ELEGANT@newtheorem{corollary}{thmstyle}
   \ELEGANT@newtheorem{lemma}{thmstyle}
   \ELEGANT@newtheorem{proposition}{prostyle}
+  \ELEGANT@newtheorem{assumption}{asm}{assumptionstyle}
 }{\relax}
 
 % define an user control sequence \elegantnewtheorem
@@ -1149,12 +1149,15 @@
 % third（blue-prop):  assumptions property conclusion custom
 
 %% Example with counter
-\newcounter{exam}[chapter]
-\setcounter{exam}{0}
-\renewcommand{\theexam}{\thechapter.\arabic{exam}}
+\newcounter{example}[chapter]
+\setcounter{example}{0}
+\renewcommand{\theexample}{\thechapter.\arabic{example}}
 \newenvironment{example}[1][]{
-  \refstepcounter{exam}
-  \par\noindent\textbf{\color{main}{\examplename} \theexam #1 }\rmfamily}{
+  \refstepcounter{example}
+  \begin{tcolorbox}[examplestyle, title={\examplename~\theexample #1}]
+}{
+  \end{tcolorbox}
+}{
   \par\ignorespacesafterend}
 
 %% Exercise with counter
@@ -1190,7 +1193,7 @@
 
 \newenvironment{solution}{\par\noindent\textbf{\color{main}\solutionname} \citshape}{\par}
 \newenvironment{remark}{\noindent\textbf{\color{second}\remarkname}}{\par}
-\newenvironment{assumption}{\par\noindent\textbf{\color{third}\assumptionname} \citshape}{\par}
+%\newenvironment{assumption}{\par\noindent\textbf{\color{third}\assumptionname} \citshape}{\par}
 \newenvironment{conclusion}{\par\noindent\textbf{\color{third}\conclusionname} \citshape}{\par}
 \newenvironment{property}{\par\noindent\textbf{\color{third}\propertyname} \citshape}{\par}
 \newenvironment{custom}[1]{\par\noindent\textbf{\color{third} #1} \citshape}{\par}
@@ -1356,6 +1359,7 @@
 
 \definecolor{lightgrey}{rgb}{0.9,0.9,0.9}
 \definecolor{frenchplum}{RGB}{190,20,83}
+\definecolor{assumptioncolor}{RGB}{5, 19, 125}
 \lstset{language=[LaTeX]TeX,
   texcsstyle=*\color{winered},
   numbers=none,

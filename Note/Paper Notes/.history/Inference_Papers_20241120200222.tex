@@ -1,0 +1,98 @@
+\documentclass[11pt]{elegantbook}
+\usepackage{graphicx}
+%\usepackage{float}
+\definecolor{structurecolor}{RGB}{40,58,129}
+\linespread{1.6}
+\setlength{\footskip}{20pt}
+\setlength{\parindent}{0pt}
+\newcommand{\argmax}{\operatornamewithlimits{argmax}}
+\newcommand{\argmin}{\operatornamewithlimits{argmin}}
+\elegantnewtheorem{proof}{Proof}{}{Proof}
+\elegantnewtheorem{claim}{Claim}{prostyle}{Claim}
+\DeclareMathOperator{\col}{col}
+\title{Applied Metrics Papers}
+\author{Wenxiao Yang}
+\institute{Haas School of Business, University of California Berkeley}
+\date{2024}
+\setcounter{tocdepth}{2}
+\extrainfo{All models are wrong, but some are useful.}
+
+\cover{cover}
+
+% modify the color in the middle of titlepage
+\definecolor{customcolor}{RGB}{32,178,170}
+\colorlet{coverlinecolor}{customcolor}
+\usepackage{cprotect}
+
+\bibliographystyle{apalike_three}
+
+\begin{document}
+\maketitle
+
+\frontmatter
+\tableofcontents
+
+\mainmatter
+
+\chapter{Identification of Prediction Errors}
+\section{\cite{rambachan2024identifying}: Identifying Prediction Mistakes in Observational Data}
+
+
+\subsection{Expected Utility Maximization at Accurate Beliefs}
+A decision maker (DM) makes a binary choice $c\in\{0,1\}$ for each individual, which is summarized by characteristics $x\in \mathcal{X}$ and an unknown outcome $y^*\in \mathcal{Y}$ (observable when $c=1$).
+
+These three variables are summarized by a joint distribution, $(X,C,Y^*)\sim P(\cdot)$. We assume finite full support of $x$, i.e. there is a $\delta>0$ such that $P(x):=P(X=x)\geq \delta,\forall x\in \mathcal{X}$.
+
+As the $Y^*$ is only observable when $C=1$. We define
+\begin{equation}
+    \begin{aligned}
+        Y:=C\cdot Y^*
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\appendix
+
+
+
+
+
+
+
+
+
+
+\bibliography{ref_paper}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

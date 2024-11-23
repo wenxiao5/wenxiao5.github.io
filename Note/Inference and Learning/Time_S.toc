@@ -33,6 +33,7 @@
 \contentsline {subsection}{\numberline {4.3.1}OLS Estimator $\hat {\phi }_{OLS}=\frac {\DOTSB \sum@ \slimits@ _{t=2}^TY_{t-1}Y_t}{\DOTSB \sum@ \slimits@ _{t=2}^T Y_{t-1}^2}$ is MLE}{26}{subsection.4.3.1}%
 \contentsline {subsection}{\numberline {4.3.2}OLS Estimator is Biased}{27}{subsection.4.3.2}%
 \contentsline {subsection}{\numberline {4.3.3}OLS Estimator is Consistent}{27}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.4}$L^1-$mixingale}{29}{subsection.4.3.4}%
 \contentsline {section}{\numberline {4.4}OLS for $VAR(1)$}{33}{section.4.4}%
 \contentsline {section}{\numberline {4.5}GMM for Time Series}{34}{section.4.5}%
 \contentsline {chapter}{\numberline {5}Non-stationary Time Series}{39}{chapter.5}%
