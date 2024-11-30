@@ -34,11 +34,14 @@
 \contentsline {subsection}{\numberline {4.3.2}OLS Estimator is Biased}{27}{subsection.4.3.2}%
 \contentsline {subsection}{\numberline {4.3.3}OLS Estimator is Consistent}{27}{subsection.4.3.3}%
 \contentsline {subsection}{\numberline {4.3.4}$L^1-$mixingale}{29}{subsection.4.3.4}%
+\contentsline {subsection}{\numberline {4.3.5}Uniformly Integrality}{30}{subsection.4.3.5}%
+\contentsline {subsection}{\numberline {4.3.6}OLS Estimator has Asymptotic Normality}{31}{subsection.4.3.6}%
+\contentsline {subsection}{\numberline {4.3.7}Estimation of Variance $1-\phi ^2$}{33}{subsection.4.3.7}%
 \contentsline {section}{\numberline {4.4}OLS for $VAR(1)$}{33}{section.4.4}%
 \contentsline {section}{\numberline {4.5}GMM for Time Series}{34}{section.4.5}%
 \contentsline {chapter}{\numberline {5}Non-stationary Time Series}{39}{chapter.5}%
 \contentsline {section}{\numberline {5.1}}{39}{section.5.1}%
 \contentsline {subsection}{\numberline {5.1.1}Unit Root Testing}{39}{subsection.5.1.1}%
 \renewcommand {\cftchappresnum }{Appendix }\renewcommand {\cftchapaftersnum }{}\setlength {\cftchapnumwidth }{\widthof {\textbf {Appendix~999}}} 
-\contentsline {chapter}{\numberline {A}Proof}{45}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Proof of Lemma \ref {lemma:MA_infty_covariance_stationary}}{45}{section.A.1}%
+\contentsline {chapter}{\numberline {A}Proof}{47}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Proof of Lemma \ref {lemma:MA_infty_covariance_stationary}}{47}{section.A.1}%

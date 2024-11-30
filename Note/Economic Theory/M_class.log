@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.3.11)  19 NOV 2024 17:01
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.3.11)  26 NOV 2024 16:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1173,23 +1173,30 @@ Package amsmath Warning: Bracket group [a^i] at formula start!
 (amsmath)                If it belongs to the formula add a \relax in
 (amsmath)                front to hide it on input line 1630.
 
-[27] [28] [29] [30] [31] [32] (./M_class.bbl [33]) [34
+[27] [28] [29] [30] [31] [32] [33] [34] [35] [36] (./M_class.bbl [37]) [38
 
 ] (./M_class.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
-Package rerunfilecheck Info: File `M_class.out' has not changed.
-(rerunfilecheck)             Checksum: 312B4D31BFC0F533A233A6D2E6422CE3;10751.
+
+
+Package rerunfilecheck Warning: File `M_class.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `M_class.out':
+(rerunfilecheck)             Before: EF04DD75DB914FCF07978510B756E4D1;12147
+(rerunfilecheck)             After:  D45BE25A17C4CCEFBFE8AE169F376747;12637.
  ) 
 Here is how much of TeX's memory you used:
- 35767 strings out of 474773
- 747327 string characters out of 5757724
- 1946839 words of memory out of 5000000
- 57224 multiletter control sequences out of 15000+600000
+ 35770 strings out of 474773
+ 747373 string characters out of 5757724
+ 1947839 words of memory out of 5000000
+ 57227 multiletter control sequences out of 15000+600000
  567615 words of font info for 123 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  99i,23n,107p,689b,1471s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on M_class.pdf (37 pages).
+Output written on M_class.pdf (41 pages).
