@@ -15,7 +15,7 @@ body {
     font-size: 120%;
     font-family: "思源宋体", "华文楷体", serif;
     color: #2c3e50;
-    background: linear-gradient(to bottom, rgba(249, 245, 240, 0.3), rgba(234, 231, 226, 0.3)), 
+    background: linear-gradient(to bottom, rgba(249, 245, 240, 0.5), rgba(234, 231, 226, 0.5)), 
                 url('picture/BG9.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
