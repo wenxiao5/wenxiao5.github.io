@@ -1,7 +1,0 @@
-{"rule":"PRP_MD_NN","sentence":"^\\QAlso, by the implicit function theorem, we can analysis how the \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q affects \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q \\E(?:Dummy|Ina|Jimmy-)[0-9]+$"}
-{"rule":"DT_JJ_NO_NOUN","sentence":"^\\QA matching is stable if there are no priority violates.\\E$"}
-{"rule":"ENGLISH_WORD_REPEAT_BEGINNING_RULE","sentence":"^\\QEach agent has a vector of initial endowments \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
-{"rule":"DT_JJ_NO_NOUN","sentence":"^\\QA matching is stable if for all school\\E$"}
-{"rule":"A_RB_NN","sentence":"^\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q where \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q is the uniformly discount for future utility.\\E$"}
-{"rule":"ENGLISH_WORD_REPEAT_BEGINNING_RULE","sentence":"^\\QSuppose in perfect competition, a firm's expected profit is denoted by \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
-{"rule":"ENGLISH_WORD_REPEAT_BEGINNING_RULE","sentence":"^\\QSuppose in perfect competition, a firm's expected profit in each period is denoted by \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
