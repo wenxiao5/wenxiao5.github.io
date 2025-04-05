@@ -1,0 +1,160 @@
+\documentclass[12pt]{article}
+
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage{amssymb,amsmath,amsthm,amsfonts,array,adjustbox,booktabs,comment,caption,colortbl,diagbox,eurosym,epigraph,footmisc,geometry,graphicx,multirow,natbib,pdflscape,setspace,subcaption,tikz,xcolor,comment}
+\usetikzlibrary{positioning,shapes.geometric, shapes, arrows, calc, decorations.pathreplacing, arrows.meta,fit}
+\usepackage[title]{appendix}
+\usepackage[hyphens]{url}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc} % choose a font encoding that has more characters
+\usepackage[utf8]{inputenc} % if you are using UTF-8 encoding in your .tex file
+
+
+\usepackage{enumerate}
+\usepackage{authblk}
+\usepackage{times}
+\usepackage{physics}
+\usepackage{float} % Add this line for [H] option
+\geometry{left=1in,right=1in,top=1in,bottom=1in}
+
+
+\newcommand{\argmax}{\operatornamewithlimits{argmax}}
+\newcommand{\argmin}{\operatornamewithlimits{argmin}}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}{Proposition}
+\newtheorem{remark}{Remark}
+\newtheorem{lemma}{Lemma}
+\newtheorem{claim}{Claim}\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+\newtheorem{assumption}{Assumption}
+\setlength{\parindent}{17pt}
+\usepackage{indentfirst} % add a paragraph indent after a sectional heading
+
+\hypersetup{
+	colorlinks,
+	linkcolor={red!80!black},
+	citecolor={blue!50!black},
+	urlcolor={blue!80!black}
+}
+
+\usepackage{mleftright,bbm}
+\newcommand{\E}[1]{\mathbb{E}\mleft[#1\mright]}
+\newcommand{\I}[1]{\mathbbm{1}\mleft[#1\mright]}
+
+\setlength{\epigraphwidth}{\textwidth}
+\renewcommand{\epigraphsize}{\normalsize}
+\setlength{\epigraphrule}{0pt}
+\renewcommand{\textflush}{flushleft}
+\renewcommand{\sourceflush}{flushright}
+
+
+
+\author{Wenxiao Yang}
+
+\date{\today}
+\begin{document}
+\title{220B HW1}
+\maketitle
+
+\section*{Problems}
+
+\begin{enumerate}
+
+\item Prove that the utilitarian social choice rule, as defined in the slides on social choice, violates IIA.
+
+We construct a counterexample with two individuals and two alternatives to demonstrate the violation of IIA.
+    \begin{itemize}
+        \item \textbf{Individuals:} $i = 1, 2$.
+        \item \textbf{Alternatives:} $x$ and $y$.
+        \item \textbf{Fixed weights:} $\lambda_1 = \lambda_2 = 0.5$ (non-dictatorial).
+    \end{itemize}
+    
+    \noindent \textbf{Profile $\theta$:}
+    \begin{itemize}
+        \item Individual 1's vNM utility: 
+        \[
+        u_1(x;\theta_1) = 2, \quad u_1(y;\theta_1) = 1 \quad \implies \quad x \succ_1 y.
+        \]
+        \item Individual 2's vNM utility: 
+        \[
+        u_2(x;\theta_2) = 1, \quad u_2(y;\theta_2) = 2 \quad \implies \quad y \succ_2 x.
+        \]
+    \end{itemize}
+    
+    \noindent \textbf{Social Preference under $\theta$:}
+    \[
+    \begin{aligned}
+        \text{Utilitarian sum for } x &: \quad 0.5 \cdot 2 + 0.5 \cdot 1 = 1.5, \\
+        \text{Utilitarian sum for } y &: \quad 0.5 \cdot 1 + 0.5 \cdot 2 = 1.5.
+    \end{aligned}
+    \]
+    Thus, the social preference is \textit{indifferent}: $x \sim y$.
+    \vspace{1em}
+    
+    \noindent \textbf{Profile $\theta'$:}\\
+    Individual 1's utility is rescaled via an affine transformation (preserving ordinal rankings):
+    \begin{itemize}
+        \item Individual 1's vNM utility: 
+        \[
+        u_1(x;\theta'_1) = 4, \quad u_1(y;\theta'_1) = 2 \quad \implies \quad x \succ_1 y \text{ (unchanged)}.
+        \]
+        \item Individual 2's utility remains: 
+        \[
+        u_2(x;\theta'_2) = 1, \quad u_2(y;\theta'_2) = 2 \quad \implies \quad y \succ_2 x \text{ (unchanged)}.
+        \]
+    \end{itemize}
+    
+    \noindent \textbf{Social Preference under $\theta'$:}
+    \[
+    \begin{aligned}
+        \text{Utilitarian sum for } x &: \quad 0.5 \cdot 4 + 0.5 \cdot 1 = 2.5, \\
+        \text{Utilitarian sum for } y &: \quad 0.5 \cdot 2 + 0.5 \cdot 2 = 2.
+    \end{aligned}
+    \]
+    Thus, the social preference is \textit{strict}: $x \succ y$.
+    \vspace{1em}
+    
+    \noindent \textbf{Violation of IIA:}
+    \begin{itemize}
+        \item Individual ordinal preferences between $x$ and $y$ are identical in $\theta$ and $\theta'$:
+        \[
+        x \succ_1 y \text{ and } y \succ_2 x \quad \text{in both profiles}.
+        \]
+        \item However, the social preference flips from indifference ($x \sim y$) in $\theta$ to strict preference ($x \succ y$) in $\theta'$.
+        \item This violates IIA because the social preference between $x$ and $y$ depends on \textit{cardinal utility values}, not just ordinal rankings. The change in scaling (an affine transformation) altered the social preference even though individual ordinal rankings were unchanged.
+    \end{itemize}
+    
+    \noindent \textbf{Conclusion:} The utilitarian social choice function violates IIA because it aggregates cardinal utilities, making social preferences sensitive to the \textit{intensity} of individual preferences. This contradicts IIA's requirement that social preferences depend only on individual ordinal rankings of $x$ and $y$.
+
+\item In the slides on auctions, we proved that in a first price auction, a bidder with value $v$ bids
+\[
+b(v) = \mathbb{E} \left[ v^{(2)} \mid v^{(1)} = v \right],
+\]
+where $v^{(2)}$ is the second-order statistic and $v^{(1)}$ is the first-order statistic. Provide some intuition for this expression. (This is an intentionally open-ended question, and I’m not sure that there’s a single right answer. Try going through the steps we used to derive this expression to see if that gives you some intuition.)
+
+\item In Rubinstein’s (1982) alternating-offers bargaining model, two players negotiate over how to divide a “pie” (of size normalized to 1). The game is played in discrete time as follows:
+    \begin{itemize}
+        \item At time 0, player A makes an offer about how to split the pie.
+        \item If player B accepts the offer, the game ends with that division.
+        \item If B rejects, then at time 1, player B makes an offer.
+        \item If A accepts, the game ends; if not, the game continues with the roles switching.
+    \end{itemize}
+    If player $k$ gets a share $x$ of the pie then their payoff in that period is $x$, and that of the other player is $1-x$. In every period in which they don’t agree, then both get 0. Both players discount future payoffs. Let $\delta_A$ and $\delta_B$ be the discount factors for players A and B (with $0 < \delta_i < 1$). Derive a subgame-perfect Nash equilibrium (SPNE), and show that it is characterized by immediate agreement. Bonus: show that this is the unique SPNE.
+
+\item Consider a set of firms that is trying to collude. Imagine that each firm experiences cost shocks. I would like you to think about the implications of these shocks for collusion. Write down a model to tell an interesting story about information and collusion. You might touch on some of the following questions:
+    \begin{enumerate}
+        \item Suppose that the cost shocks are privately observed by each firm. How do the equilibrium outcomes compare to a world without cost shocks?
+        \item Does transparency (of costs) help or hurt firms’ ability to collude?
+        \item Suppose that firms have the ability to disclose their realized cost shocks to their rivals. How do the results change?
+        \item How does the answer depend on the nature of competition (e.g. Bertrand vs. Cournot)?
+        \item Policy implications?
+    \end{enumerate}
+    This is by no means an exhaustive list of the interesting questions you might ask, nor do you need to touch upon every question. The point of this exercise is for you to be creative, and get a feel for modeling. Feel free to draw on the literature. Don’t feel you need a complicated model, if a simple model will suffice to get your point across.
+
+\end{enumerate}
+
+\end{document}

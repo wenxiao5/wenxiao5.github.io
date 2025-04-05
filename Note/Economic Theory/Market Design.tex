@@ -1,0 +1,1243 @@
+\documentclass[11pt]{elegantbook_2}
+\usepackage{graphicx}
+%\usepackage{float}
+\definecolor{structurecolor}{RGB}{40,58,129}
+\linespread{1.6}
+\setlength{\footskip}{20pt}
+\setlength{\parindent}{0pt}
+\newcommand{\argmax}{\operatornamewithlimits{argmax}}
+\newcommand{\argmin}{\operatornamewithlimits{argmin}}
+\elegantnewtheorem{claim}{Claim}{prostyle}{Claim}
+\DeclareMathOperator{\col}{col}
+\title{Market Design}
+\author{Wenxiao Yang}
+\institute{Haas School of Business, University of California Berkeley}
+\date{2025}
+\setcounter{tocdepth}{2}
+\extrainfo{Mind offline, notes online.}
+
+\cover{HZ.jpg}
+
+% modify the color in the middle of titlepage
+\definecolor{customcolor}{RGB}{250,255,240}
+\colorlet{coverlinecolor}{customcolor}
+\usepackage{cprotect}
+
+
+\bibliographystyle{apalike_three}
+
+\begin{document}
+\maketitle
+
+\frontmatter
+\tableofcontents
+
+\mainmatter
+
+
+
+\chapter{Market Design}
+Based on
+\begin{enumerate}[$\circ$]
+    \item Two-Sided Matching: A Study in Game-Theoretic Modeling and Analysis, Roth, Alvin E.\& Sotomayor, Matilda, 1990.
+    \item Fleiner, T. (2003). A fixed-point approach to stable matchings and some applications. \textit{Mathematics of Operations research}, 28(1), 103-126.
+    \item Hatfield, J. W., \& Kominers, S. D. (2017). Contract design and stability in many-to-many matching. \textit{Games and Economic Behavior}, 101, 78-97.
+    \item MIT 14.16 Strategy and Information, Mihai Manea
+\end{enumerate}
+\section{Matching One-to-One}
+Suppose there are doctors ($D$) and hospitals ($H$). For a doctor $d$, define a relation $\succeq_d$ over $H\cup\{d\}$; for a hospital $h$, define a relation $\succeq_h$ over $D\cup\{h\}$. A matching market is defined by $$\left(D,H,\{\succeq_i\}_{i\in D\cup H}\right)$$
+
+\begin{note}
+    Given a matching $\mu: D\cup H \rightarrow D\cup H$, we would call $\mu(d)$ be "$d$'s match".
+\end{note}
+
+\begin{definition}[Involution]
+    %\normalfont
+    A matching $\mu: D\cup H \rightarrow D\cup H$ is \textbf{involution} such that $$\mu (d)\neq d \Rightarrow \mu(d)\in H, \forall d\in D$$ and $$\mu (h)\neq h \Rightarrow \mu(h)\in D, \forall h\in H$$
+\end{definition}
+
+\begin{definition}[Stable]
+    %\normalfont
+    A matching $\mu: D\cup H \rightarrow D\cup H$ is \textbf{stable} if it is
+    \begin{enumerate}[$\circ$]
+        \item Individually Rational: $\nexists$ $i$ for whom $i>\mu(i)$.
+        \item (Pairwise) Unblocked: $\nexists$ $(d,h)$ such that $d\succ_h \mu(h)$ and $h\succ_d \mu(d)$.
+    \end{enumerate}
+\end{definition}
+
+\begin{theorem}[Gale-Shapley, 1962]
+    For any matching market, a stable matching $\mu$ exists.
+\end{theorem}
+\begin{proof}
+    We prove it by an algorithm:
+    \begin{definition}[Deferred Acceptance Algorithm (DA)]
+        %\normalfont
+        At each round, every doctor applies for his most preferred hospital among those haven't rejected him. Each hospital chooses its most preferred doctors among its applicants and the one on the previous waitlist, and then rejects others.
+    \end{definition}
+    Observation: DA terminates $\mu$. We want to prove
+    \begin{enumerate}
+        \item $\mu$ is IR (obviously);
+        \item $\mu$ is unblocked.
+        \subitem Suppose there is a block $(d,h)$ such that $d\succ_h \mu(h)$ and $h\succ_d \mu(d)$. That is impossible, because the $d\neq \mu(h)$, the $d$ must be rejected by $h$, which means $h\preceq_d \mu(d)$.
+    \end{enumerate}
+\end{proof}
+
+\begin{note}
+    We call "$h$ is \textbf{achievable} for $d$" if $\mu(d)=h$ for some stable matching $\mu$.
+\end{note}
+
+
+\subsection{Matching Markets: One-to-One}
+\begin{definition}[$D$-Optimal Matching]
+    %\normalfont
+    A matching $\mu: D\cup H \rightarrow D\cup H$ is \textbf{$D$-optimal}, denoted by $\mu^D$, if for any stable $\mu'$ we have that $\mu^D\succeq_D \mu'$ (the best stable matching for all doctors).
+\end{definition}
+
+\begin{theorem}[Deferred Acceptance Algorithm $\Rightarrow$ $D$-Optimal Matching]
+    Deferred Acceptance Algorithm (with D proposing) terminates in $\mu^D$.
+\end{theorem}
+\begin{proof}
+    %Suppose $d$ proposes to some $h$.
+    %\begin{enumerate}
+        %\item If $d$ is unacceptable ($d$ is below $\{h\}$) in $h$'s ranking, then $h$ is unachievable anyway.
+        %\item Suppose $\exists d'\succ_h d$. If $h$ is achievable for $d'$, we have $h\succ_{d'} h'$
+    %\end{enumerate}
+    ...Theorem 2.12 (Gale and Shapley)
+\end{proof}
+
+\begin{theorem}[Lone-Wolf Theorem]
+    The set of matched agent is identical in every stable $\mu$.
+\end{theorem}
+\begin{proof}
+    $|\mu^D(H)|\geq |\mu(H)|\geq |\mu^H(H)|$; by symmetry, $|\mu^H(D)|\geq |\mu(D)|\geq |\mu^D(D)|$. Because $|\mu^D(H)|=|\mu^D(D)|$ and $|\mu^H(H)|=|\mu^H(D)|$ by one-to-one, so everything is equal.
+\end{proof}
+
+\subsection{Joint and Meet}
+\begin{definition}[Joint and Meet]
+    %\normalfont
+    \begin{enumerate}
+        \item \textbf{Join $\mu \vee_D \mu'$} assign the more preferred match to every $d$ and the less preferred match to every $h$, that is,
+        \begin{equation}
+            \begin{aligned}
+                \mu \vee_D \mu'(d)=\left\{\begin{matrix}
+                    \mu(d),&\textnormal{ if }\mu(d)>_d\mu'(d)\\
+                    \mu'(d),&\textnormal{ otherwise}
+                \end{matrix}\right., \forall d\in D
+            \end{aligned}
+            \nonumber
+        \end{equation}
+        \begin{equation}
+            \begin{aligned}
+                \mu \vee_D \mu'(h)=\left\{\begin{matrix}
+                    \mu(h),&\textnormal{ if }\mu(h)<_h\mu'(h)\\
+                    \mu'(h),&\textnormal{ otherwise}
+                \end{matrix}\right., \forall h\in H
+            \end{aligned}
+            \nonumber
+        \end{equation}
+        \item \textbf{Meet $\mu\wedge_D\mu'$} assign the less preferred match to every $d$ and the more preferred match to every $h$, that is,
+        \begin{equation}
+            \begin{aligned}
+                \mu \wedge_D \mu'(d)=\left\{\begin{matrix}
+                    \mu(d),&\textnormal{ if }\mu(d)<_d\mu'(d)\\
+                    \mu'(d),&\textnormal{ otherwise}
+                \end{matrix}\right., \forall d\in D
+            \end{aligned}
+            \nonumber
+        \end{equation}
+        \begin{equation}
+            \begin{aligned}
+                \mu \wedge_D \mu'(h)=\left\{\begin{matrix}
+                    \mu(h),&\textnormal{ if }\mu(h)>_h\mu'(h)\\
+                    \mu'(h),&\textnormal{ otherwise}
+                \end{matrix}\right., \forall h\in H
+            \end{aligned}
+            \nonumber
+        \end{equation}
+    \end{enumerate}
+\end{definition}
+
+\begin{theorem}[Join and Meet of Stable Matchings are Stable]
+    If $\mu$ and $\mu'$ are stable, then $\mu\vee_D\mu'$ and $\mu\wedge_D\mu'$ are stable.
+\end{theorem}
+
+\subsection{Strategic Incentives}
+\begin{enumerate}[$\circ$]
+    \item Type $=$ preference list.
+    \item SCF: $f: \Theta \rightarrow \mathcal{M}$, where $\mathcal{M}$ is a set of stable matchings;
+    \item Is $f$ strategy-proof?
+    \item Does there exist a stable and strategy-proof (direct) mechanism?
+\end{enumerate}
+
+\begin{definition}
+    %\normalfont
+    We say a mechanism $\varphi$ is strategy-proof (SP) if $\varphi(\succ_i,\succ_{-i})\geq \varphi (\succ'_i,\succ_{-i})$ for all $i\in I$ and $\succ'_i$ and $\succ_{-i}$.
+\end{definition}
+
+\begin{theorem}[Impossibility theorem (Roth)]
+    There is no stable and strategy-proof (SP) mechanism.
+\end{theorem}
+
+The mechanism that yields the D-optimal stable matching (in terms of the stated preferences) makes it a dominant strategy for each doctor to state his true preferences. (Similarly, the mechanism that yields the H-optimal stable matching makes it a dominant strategy for every hospital to state its true preferences.)
+\begin{theorem}[Dubins and Freedman; Roth]
+    The doctor($D$)-optimal stable mechanism is strategy-proof for doctors.
+\end{theorem}
+\begin{proof}
+    %Suppose under truthful $\succ$ (all doctors), a doctor $d$ has $\mu(d)=h$. $d$ changes his report to $\succ'_d$ such that $\mu'(d)=h'\succ_d h$.\\
+    %Consider $\succ''_d$ which $\succ'_d$ truncated below $h'$.\\
+    %Now, run a doctor-proposing DA (conside $\mu^D$) under $\succ''_d$. $d$ is unmatched.
+\end{proof}
+
+
+\section{Matching Many-to-Many}
+Contracts are denoted by $x\in X$, $x_D\in D$, $x_H\in H$. $F\triangleq D\cup H$.
+
+Consider a set of contracts $Y\subseteq X$,
+\begin{enumerate}[$\circ$]
+    \item $Y_D$ = doctors listed in $Y$;
+    \item $Y_d$ = the contract in $Y$ that list the doctor $d$;
+    \item $\succ_d$ over set of contracts that name the doctor $d$;
+    \item The set of contracts $f\in F$ chooses from $Y$: $C_f(Y)=\max_{\succ_f}\{Z\subseteq X:Z\subseteq Y_f\}\subseteq Y_f$;
+    \item The set of contracts doctors choose from $Y$: $C_D(Y)=\cup_{d\in D}C_d(Y)$.
+    \item The set of contracts doctors reject from $Y$: $R_D(Y)=Y\backslash C_D(Y)$.
+\end{enumerate}
+The outcome of matching is $Y\subseteq X$.
+
+\begin{definition}[Stable Contracts]
+    %\normalfont
+    $A\subseteq X$ is \textbf{stable} if
+    \begin{enumerate}[$\circ$]
+        \item Individually Rational (IR): for all $f\in F$: $C_f(A)=A_f$;
+        \item Unblocked: $\nexists$ non-empty $Z\subseteq X$ such that $Z\cap A=\emptyset $ and for all $f\in F$, $Z_f\subseteq C_f(A\cup Z)$.
+    \end{enumerate}
+\end{definition}
+
+\begin{example}
+    Preferences over doctor $d$: $\{x,y\}>\{x\}>\emptyset>\{y\}$; Preferences over hospital $h$: $\{y\}>\{x,y\}>\{x\}>\emptyset$.\\
+    $\{x\}$ $\Rightarrow$ $\{x,y\}$ $\Rightarrow$ $\{y\}$ $\Rightarrow$ $\emptyset$ $\Rightarrow$ $\{x\}$.
+\end{example}
+
+\begin{definition}[Substitutability Condition]
+    %\normalfont
+    Preference of $f$ satisfies the \textbf{substitutability condition} if for all $Y\subseteq X$ and $x,z\in X\backslash Y$:
+    $$z\notin C_f(Y\cup\{z\}) \Rightarrow z\notin C_f(Y\cup\{z\}\cup\{x\})$$
+    ($Y'\subseteq Y\subseteq X \Rightarrow R_f(Y')\subseteq R_f(X)$, where $R$ is the rejection choice.)
+\end{definition}
+If $z$ is rejected given a set, then it should also be rejected given a larger set.
+
+
+\begin{theorem}
+    If contracts are substitutes, then $Y\subseteq X$ is stable \underline{if and only if} pairwise stable.
+\end{theorem}
+\begin{proof}
+    Prove $\Leftarrow$:
+    (If not pairwise stable $\Rightarrow$ not stable)\\
+    Suppose that $Z$ is a block. So, $Z\subseteq C_f(A\cup Z)$ for all $f$ listed in $Z$.\\
+    We can pick a $z\in Z$ such that $z\in C_f(A\cup Z)$. By the substitutability condition, $z\in C_f(A\cup \{z\})$. So, it is stable.
+\end{proof}
+
+\begin{theorem}
+    If contracts are substitutes, then a stable outcome exists.
+\end{theorem}
+
+\begin{definition}[Lattice]
+    %\normalfont
+    On a \textbf{lattice}, $L=(X,<,\wedge,\vee)$ (or we just use $L=(X,<)$), $<$ is a partial order on $X$ in such a way that any two elements $x$ and $y$ of $X$ have a unique greatest lower bound (glb) $x \wedge y$ (meet) and a unique lowest upper bound (lub) $x \vee y$ (join).
+\end{definition}
+
+
+
+\begin{definition}[Complete Lattice]
+    %\normalfont
+    A lattice $L=(X,<)$ is \textbf{complete} if there are both a meet (i.e. a greatest lower bound) and a join (i.e. a least upper bound) for any subset $Y\subseteq X$.\\
+    These generalized meet and join operations on $Y$ are denoted by $\wedge Y$ and $\vee Y$.
+\end{definition}
+
+\begin{definition}[Monotone Function over Lattice]
+    %\normalfont
+    A function from one lattice to another lattice $f:(X,<) \rightarrow (X',<')$ is \textbf{monotone} if $x\leq y \Rightarrow f(x)\leq' f(y)$ for any $x,y\in X$.
+\end{definition}
+
+\begin{theorem}[Tarski 1955]
+    Let $L=(X,<)$ be a complete lattice and $f: L \rightarrow L$ be monotone ($\leq$) function on $L$. Then, the set $\{x\in L: f(x)=x\}$ of fixed points is a non-empty, complete lattice with order $\leq$.
+\end{theorem}
+\begin{proof}
+    Fleiner, T. (2003). A fixed-point approach to stable matchings and some applications. \textit{Mathematics of Operations research}, 28(1), 103-126.
+\end{proof}
+
+
+%Given sets of contracts $X^D$ and $X^H$.
+
+%Operator $f(X^D,X^H)$ produces $\left(X\backslash R_H(X^H), X\backslash R_D(X^D)\right)$. Fixed point: $\left\{\begin{matrix}
+    %X^D=&X\backslash R_H(X^H)\\
+    %X^H=&X\backslash R_D(X^D)
+%\end{matrix}\right.$. $X^D\cap X^H=A$ is stable.\\
+%(Find the intercection of contracts that are not rejected in both $X^D$ and $X^H$, which is stable.)
+
+
+
+
+%Operator $g(X^D,X^H)$ produces $g_H(X^H)=\{x\in X: x\in C_H(X^H\cup\{x\})\}$ and $g_D(X^D)=\{x\in X: x\in C_D(X^D\cup\{x\})\}$. Fixed point: $\left\{\begin{matrix}
+    %X^D=&g_H(X^H)\\
+    %X^H=&g_D(X^D)
+%\end{matrix}\right.$. $X^D\cap X^H=A$ is stable.\\
+%(Find the intercection of contracts that are accepted both $X^D$ and $X^H$, which is stable.)
+
+
+%Define partial order, $(X^D,X^H)\geq (\bar{X}^D,\bar{X}^H)$ if $X^D\subseteq \bar{X}^D$ and $X^H \supseteq  \bar{X}^H$.
+
+%If $(X^D,X^H)\geq (\bar{X}^D,\bar{X}^H)$, then $g(X^D,X^H)\geq g(\bar{X}^D,\bar{X}^H)$
+
+
+%Check if $X^D\subseteq \bar{X}^D$, then $g(X^D)\supseteq g(\bar{X}^D)$, by substitutability.
+
+
+%Prove $X^D\cap X^H=A$ is stable:\\
+%Given the claim $C_D(X^D)=A$ (prove later)
+%\begin{enumerate}[1).]
+    %\item IR: $C_D(X^D)=A$ by $C(A)=A$;
+    %\item Unblocked: $z\in X\backslash A$ that blocks. Then $z\notin X^H \Rightarrow z\in C_D(A\cup\{z\})$ and $z\notin C_D(X^D\cup\{z\})$, but $C_D(X^D)=A \Rightarrow z\notin C_D(A\cup\{z\})$.
+%\end{enumerate}
+
+
+If some contracts are not substitute, there are no stable outcomes exist.
+
+\section{Matching Many-to-One}
+\underline{Settings}
+\begin{enumerate}[$\circ$]
+    \item Doctors, $D$; Hospitals, $H$; Contracts $X=D\times H\times \textnormal{terms}$;
+    \item Hospitals preference $\succ_h$ over $2^X$;
+    \item Doctors preference $\succ_d$ over $X$ (compare one contract with another one contract, not compare over sets of contracts);
+    \item Outcome is $Y\subseteq X$ s.t. $|Y_d|\leq 1$ for all $d\in D$ (a doctor signs at most one contract).
+\end{enumerate}
+
+What restriction do we need to have a stable matching? Not as strong as substitute.
+
+\begin{corollary}
+    Doctor-proposing DA algorithm produces a doctor-optimal stable matching.
+\end{corollary}
+
+\begin{example} The preferences of agents are
+    \begin{enumerate}[$\circ$]
+        \item $d_1: h_1\succ h_2$; $d_2: h_1\succ h_2$; $d_3: h_2\succ h_1$;
+        \item $h_1: d_3\succ d_1,d_2\succ d_1\succ d_2$; $h_2: d_1\succ d_2\succ d_3$.
+    \end{enumerate}
+    There are two stable outcomes
+    \begin{enumerate}
+        \item $(d_1,h_2)$, $(d_3,h_1)$;
+        \item $(d_1,h_1), (d_2,h_1), (d_3,h_2)$.
+    \end{enumerate}
+    \begin{remark}
+        Lone-Wolf Theorem doesn't hold.
+    \end{remark}
+
+    Assume the $d_2$'s true preference is $h_2\succ h_1$ and he reveals it, there is only one stable matching: $(d_1,h_2)$, $(d_3,h_1)$. So, the $d_2$ may benefit from lying.\\
+    \begin{remark}
+        Strategy-proof doesn't hold.
+    \end{remark}
+\end{example}
+
+\begin{definition}[Law of Aggagate Demand/ Cardianlity Monotomicity (CM)]
+    %\normalfont
+    For $h$, $Y\subseteq Y'\subseteq X \Rightarrow |C_h(Y)|\leq |C_h(Y')|$
+\end{definition}
+
+\begin{theorem}
+    Under substitutes and CM, doctor-proposing DA is strategy-proof and LWT holds.
+\end{theorem}
+
+\begin{theorem}[Rural Hosptial Theorem]
+    Under substitutes / CM, hospitals have same numbers of contracts in every stable outcome.
+\end{theorem}
+
+\subsubsection*{Cadets-branch matching}
+Can be found in:
+\begin{enumerate}[$\circ$]
+    \item Jagadeesan, R. (2019). Cadet-branch matching in a Kelso-Crawford economy. \textit{American Economic Journal: Microeconomics}, 11(3), 191-224.
+\end{enumerate}
+
+
+\begin{remark}
+    Contracts are not substitutes.
+\end{remark}
+
+\begin{definition}[Unilateral Substitute]
+    %\normalfont
+    Contracts are \textbf{unilateral substitutes} if for all $z,x\in X$ and $Y\subseteq X$ \underline{such that $z_D\notin Y_D$} if $z\notin C_h(Y\cup\{z\}) \Rightarrow z\notin C_h(Y\cup\{z\}\cup\{x\})$
+\end{definition}
+
+\begin{remark}
+    Preferences of branches satisfying unilateral substitute.
+\end{remark}
+
+\begin{remark}
+    The outcome of doctor-proposing DA algorithm is doctor-optimal and stable.
+\end{remark}
+
+\section{Networks}
+Based on
+\begin{enumerate}[$\circ$]
+    \item Fleiner, T., Jankó, Z., Tamura, A., \& Teytelboym, A. (2015). Trading networks with bilateral contracts. arXiv preprint arXiv:1510.01210.
+    \item Fleiner, T., Jankó, Z., Schlotter, I., \& Teytelboym, A. (2023). Complexity of stability in trading networks. \textit{International Journal of Game Theory}, 1-20.
+\end{enumerate}
+
+Considering a trading network represented by a directed graph, where nodes are firms $F$ and edges $X$ are contracts (income arrow can be understood as buying products and outcome arrow can be understood as selling products).
+
+The choice function of $f\in F$ is represented by $C^f$, the choice of $f$ over $Y_f\subseteq X_f$ is $C^f(Y_f)\subseteq Y_f$, where $X_f$ is the set of contracts involving $f$.
+
+The choice sets of buyer side (B) and seller side (S) are defined as
+\begin{equation}
+    \begin{aligned}
+        C_B^f(Y|Z)&\triangleq C^f(Y_f^B\cup Z_f^S)\cap X_f^B\\
+        C_S^f(Z|Y)&\triangleq C^f(Z_f^S\cup Y_f^B)\cap X_f^S
+    \end{aligned}
+    \nonumber
+\end{equation}
+where $Y$ is the contracts from buyer side and $Z$ is the contratcts from seller side.
+
+
+\begin{definition}[Irrelevance of Rejected Contracts]
+    %\normalfont
+    Irrelevance of Rejected Contracts (IRC): $C(A)\subseteq B\subseteq A \Rightarrow C(A)=C(B)$
+\end{definition}
+
+\begin{definition}[Fully Substitute]
+    %\normalfont
+    $C^f$ is \textbf{fully substitute} if for $Y'\subseteq Y\subseteq X$ and $Z'\subseteq Z\subseteq X$,
+    \begin{equation}
+        \begin{aligned}
+            R_B^f(Y'|Z)\subseteq R_B^f(Y|Z)\\
+            R_S^f(Z'|Y)\subseteq R_S^f(Z|Y)
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    and
+    \begin{equation}
+        \begin{aligned}
+            R_B^f(Y|Z)\subseteq R_B^f(Y|Z')\\
+            R_S^f(Z|Y)\subseteq R_S^f(Z|Y')
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{definition}
+Define partial order, $(Y,Z)\geq (Y',Z')$ if $Y\subseteq Y'$ and $Z\supseteq  Z'$.
+
+
+\begin{definition}[Stable Outcome, Hatfield and Kominers (2012)]
+    %\normalfont
+    An outcome $A\subseteq X$ is stable if it is
+    \begin{enumerate}
+        \item Individual Rational: $\forall f\in F$, $C^f (A_f)=A_f$;
+        \item Unblocked: there is no non-empty set $Z\subseteq X$ s.t. $Z\cap A=\emptyset$ and $\forall f\in F(Z)$, $Z_f\subseteq C^f(A\cup Z)$, where $F(Z)$ is the set of the firms are lined to $Z$.
+    \end{enumerate}
+\end{definition}
+
+\begin{definition}[Trail]
+    %\normalfont
+    \textbf{Trail} is the set of distinct edges $T=(X^1,X^2,...,X^M)$ such that the buyer side (the firm who is the buyer in the edge) of $X^i$ is exactly the seller side (the firm who is the seller in the edge) of $X^{i+1}$, which is denoted by $b(X^i)=s(X^{i+1})$, $i=1,...,M-1$.
+\end{definition}
+
+
+\begin{definition}[Trail-stable Outcome]
+    %\normalfont
+    An outcome $A\subseteq X$ is \textbf{trail-stable} if its is
+    \begin{enumerate}
+        \item Individual Rational;
+        \item There is no locally blocking trail $T=(X^1,X^2,...,X^M)$ such that
+        \subitem $X^1\in C^{S(X^1)}(A\cup X^1)$;
+        \subitem $\{X^i,X^{i+1}\}\in C^{b(X^{i})}(A\cup X^i\cup X^{i+1})$;
+        \subitem $X^M\in C^{b(X^M)}(A\cup X^M)$.
+    \end{enumerate}
+\end{definition}
+
+\begin{theorem}[Fleiner et al. 2016]
+    If $C^f$ is fully substitute and IRC for all $f\in F$, then a trail-stable outcome exists.
+\end{theorem}
+\begin{proof}
+    $Y\subseteq X$ and $Z\subseteq X$,
+    \begin{equation}
+        \begin{aligned}
+            \Phi (Y,Z)=\left(X\backslash R_S(Z|Y), X\backslash R_B(Y|Z)\right)
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    where $R_B(Y|Z)=\cup_{f\in F}R_B^f(Y|Z)$.
+    \begin{claim}
+        If $(Y,Z)$ is a fixed point of $\Phi$, then $A=Y\cap Z$ is trail-stable outcome.
+    \end{claim}
+    \begin{lemma}
+        $C^f$ is fully substitute and IRC, and $(Y,Z)$ such that $Y \cap Z=A$, $C_S(Z|Y)=A$, $C_B(Y|Z)=A$. Then, for a contract $x\in X\backslash A$ and $A\subseteq A'\subseteq X$ if $C_S^{S(x)}(A\cup x|A')$ then $x\in C_S^{S(x)}(Z\cup x|A')$.
+    \end{lemma}
+    $\Phi$ will be monotone for the partial order $\geq$. As $(Y,Z)\geq (Y',Z')$, then $\Phi(Y,Z)\geq \Phi (Y',Z')$. Using Tarski fixed-point theorem, there is a $(Y,Z)$ fixed point.
+    .....
+
+
+    \textbf{Read} \textnormal{Fleiner, T., Jankó, Z., Tamura, A., \& Teytelboym, A. (2015). Trading networks with bilateral contracts. arXiv preprint arXiv:1510.01210.}
+\end{proof}
+
+
+\begin{proposition}
+    $A$ is trail-stable $\Rightarrow$ $\exists$ $(Y,Z)$ such that $Y\cap Z=A$ and $(Y,Z)$ is a fixed point of $\Phi$.
+\end{proposition}
+
+
+\section{Corporate Game Theory}
+There is a set of players $N=\{1,...,n\}$. The subset of players $S\subseteq N$ is called \textit{coalition}.
+
+There is a value function about coalition $v: 2^N \rightarrow \mathbb{R}$, which assumes $v(N)\geq \max_{S\subseteq N}v(S)$.
+
+\begin{definition}[Cooperative Game]
+    %\normalfont
+    A cooperative (or coalitional) game is described by the pair $\left<N,v\right>$.
+\end{definition}
+
+\begin{enumerate}
+    \item Assume a TU (transferable utility) Economy. $S$ can divide $v(S)$ among its members; $S$ may implement any payoffs $(x_i)_{i\in S}$ with $\sum_{i\in S}x_i=v(S)$ (no externalities). %The efficiency requires $\sum_{i\in N}x_i=v(N)$.
+    \begin{definition}[Transferable Utility]
+        %\normalfont
+        Utility is transferable if one player can losslessly transfer part of its utility to another player.
+    \end{definition}
+    \item Individual Rational (IR) requires $x_i\geq v(\{i\})$.
+    \item $v(S)\geq 0$ is the \textit{worth} of coalition $S$;
+    \item \textit{Outcome} is a \textit{partition} $(S_k)_{k=1,...,\bar{k}}$ of $N$ and an \textit{allocation} $(x_i)_{i\in N}$ specifying the division of the worth each $S_k$ among its members:
+    \begin{enumerate}
+        \item $S_j\cap S_k=\emptyset,\forall j\neq k$ and $\cup_{k=1}^{\bar{k}}S_k=N$;
+        \item $\sum_{i\in S_k}x_i=v(S_k),\forall k\in\{1,...,\bar{k}\}$.
+    \end{enumerate}
+\end{enumerate}
+
+\begin{example}
+    \paragraph*{A majority game}
+    \begin{enumerate}[-]
+        \item Three parties (players 1,2, and 3) can share a unit of total surplus.
+        \item Any majority-coalition of 2 or 3 parties-may control the allocation of output.
+        \item Output is shared among the members of the winning coalition. $$
+        \begin{gathered}
+        v(\{1\})=v(\{2\})=v(\{3\})=0 \\
+        v(\{1,2\})=v(\{1,3\})=v(\{2,3\})=v(\{1,2,3\})=1
+        \end{gathered}
+        $$
+    \end{enumerate}
+    
+    \paragraph*{Firm and workers}
+    \begin{enumerate}[-]
+        \item A firm, player 0, may hire from the pool of workers $\{1,2, \ldots, n\}$.
+        \item Profit from hiring $k$ workers is $f(k)$.
+        $$
+        v(S)= \begin{cases}f(|S|-1) & \text { if } 0 \in S \\ 0 & \text { otherwise }\end{cases}
+        $$
+    \end{enumerate}
+\end{example}
+
+\subsection{Core}
+Suppose that it is efficient for the grand coalition to form:
+\begin{equation}
+    \begin{aligned}
+        v(N)\geq\sum_{k=1}^{\bar{k}}v(S_k) \textnormal{ for every partition }(S_k)_{k=1,...,\bar{k}} \textnormal{ of }N
+    \end{aligned}
+    \nonumber
+\end{equation}
+Consider an allocation $(x_i)_{i\in N}$ chosen by the grand coalition. Use notation $x_S=\sum_{i\in S}x_i$. Allocation $(x_i)_{i\in N}$ is \textit{feasible} if $x_N=v(N)$.
+\begin{definition}
+    A coalition $S$ can \textbf{block} the allocation $(x_i)_{i\in N}$ if $x_S<v(S)$.
+\end{definition}
+\begin{definition}[Core]
+    %\normalfont
+    The \textbf{core} is the set of feasible allocations where no coalition of agents can block the grand coalition.
+    $$C(v,N)=\left\{x\in \mathbb{R}^n: x_N=v(N), x_S\geq v(S), \forall S\subseteq N\right\}$$
+\end{definition}
+
+Which games have nonempty core?
+\subsection{Bondareva-Shapley Theorem: Sufficient and Necessary Condition for Nonempty Cores}
+\begin{definition}[Balancedness]
+    A vector $(\lambda_S\geq 0)_{S\subseteq N}$ is \textbf{balanced} if $\sum_{\{S\subseteq N\mid i\in S\}}\lambda_S=1,\forall i\in N$ (all $S$ contains $i$).\\
+    A payoff function $v$ is \textbf{balanced} if
+    \begin{equation}
+        \begin{aligned}
+            \sum_{S\subseteq N}\lambda_S v(S)\leq v(N) \textnormal{ for every balanced }(\lambda_S\geq 0)_{S\subseteq N}
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{definition}
+\begin{note}
+    \underline{Interpretation:} each player has a unit of time, which can be distributed among his coalitions. If each member of coalition $S$ is active in $S$ for $\lambda_S$ time, a payoff of $\lambda_Sv(S)$ is generated. A game is balanced if there is no allocation of time across coalitions that yields a total value $> v(N)$.
+\end{note}
+
+\begin{theorem}[Bondareva-Shapley Theorem]\label{BST}
+    The coalitional game $\left<N,v\right>$ has non-empty core ($C(v,N)\neq \emptyset$) \underline{if and only if} it is balanced.
+\end{theorem}
+\begin{proof}
+    Consider the linear program
+    \begin{equation}
+        \begin{aligned}
+            X:=&\min \sum_{i\in N}x_i\\
+            &\textnormal{s.t. }\sum_{i\in S}x_i\geq v(S),\forall S\subseteq N
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    $C(v,N)=\left\{x\in \mathbb{R}^n: \sum_{i\in N}x_i=v(N), \sum_{i\in S}x_i\geq v(S), \forall S\subseteq N\right\}\neq \emptyset \Leftrightarrow X\leq v(N)$.\\
+    The dual program of the linear program $X$ is
+    \begin{equation}
+        \begin{aligned}
+            Y:=&\max \sum_{S\subseteq N}\lambda_S v(S)\\
+            &\textnormal{s.t. } \lambda_S\geq 0,\forall S\subseteq N \textnormal{ and }\sum_{S\ni i}\lambda_S=1,\forall i\in N
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    $v$ is balanced $\Leftrightarrow$ $Y\leq v(N)$. The primal linear program has an optimal solution. By the duality theorem of linear programming, $X = Y$. Therefore,
+    \begin{equation}
+        \begin{aligned}
+            C(v,N)\neq \emptyset \Leftrightarrow v \textnormal{ is balanced}
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{proof}
+
+\subsection{Convex Games Have Nonempty Cores}
+\begin{definition}[Convex Game]
+    A game $\left<v,N\right>$ is convex if for any pair of coalitions $S$ and $T$, $$v(S\cup T)+v(S\cap T)\geq v(S)+v(T)$$
+\end{definition}
+Convexity implies that the marginal contribution of a player $i$ to a coalition increases as the coalition expands,
+\begin{equation}
+    \begin{aligned}
+        S\cup T \textnormal{ and }i\notin T \Rightarrow v(T\cup\{i\})-v(T)\geq v(S\cup\{i\})-v(S)
+    \end{aligned}
+    \nonumber
+\end{equation}
+which can be induced by the convexity of $v$:
+\begin{equation}
+    \begin{aligned}
+        v\left((S\cup\{i\})\cup T\right)+v\left((S\cup\{i\})\cap T\right)\geq v\left(S\cup\{i\}\right)+v(T)
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+\begin{theorem}
+    Every convex game has a non-empty core.
+\end{theorem}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{}
+Consider $B(N)$ be the solutions to: $\left\{\begin{matrix}
+    \sum_{S:i\in S}y_S=1,&\forall i\in N\\
+    y_S\geq 0,& \forall S\subseteq N
+\end{matrix}\right.$
+
+\begin{lemma}[Farkas' lemma]
+    Let $A\in \mathbb{R}^{m\times n}$ and $b\in \mathbb{R}^m$. Then, \textbf{exactly one} of the following statement is true
+    \begin{enumerate}[(1).]
+        \item There exists $x\in \mathbb{R}^n$ such that $Ax=b$ and $x\geq 0$
+        \item There exists $y\in \mathbb{R}^n$ such that $A^Ty\geq 0$ and $b^T y<0$.
+    \end{enumerate}
+\end{lemma}
+
+\begin{lemma}
+
+\end{lemma}
+
+\begin{proof}
+    \begin{lemma}[(Alternative) Farkas' lemma]
+        Let $A$ be $m\times n$ matrix, $b\in \mathbb{R}^m$ and $F=\{x\in \mathbb{R}^n: Ax\geq b,x\geq 0\}$. Then, either $Cx=d$ or $\exists z$ such that for $y_S\geq 0$, $C^Tz-A^Ty_S=0$ and such that $d^Tz-b^Ty_S<0$, but not both.
+    \end{lemma}
+    By using this lemma, we can conclude $\left\{\begin{matrix}
+        v(N)z-\sum_S v(S)y_S<0\\
+        z-\sum{y_S}=0\\
+        y_S\geq 0
+    \end{matrix}\right.$ must hold at the same time, (let $z=1$, the last two lines are $B(N)$).
+
+    Hence, $\forall y_S\in B(N)$, we have $v(N)\geq \sum_S v(S)y_S$.
+\end{proof}
+
+\subsection{Doubly stochastic matrix and Birkhoff-von Neumann Theorem}
+
+Consider a matching game between sellers and buyers: $v(\{i,j\})=v_{ij}$, $v(\{i\})=0$ for buyer $i$ and $v(\{j\})\geq 0$ for seller $j$.
+
+\underline{Core:}
+\begin{equation}
+    \begin{aligned}
+        \max_{\alpha}\quad &\sum_i\sum_j v_{ij}\alpha_{ij}\\
+        \textnormal{s.t.}\quad&\sum_{i}\alpha_{ij}=1,\forall j\\
+        &\sum_{j}\alpha_{ij}=1,\forall i\\
+        &\alpha_{ij}\geq 0
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+\begin{definition}[Doubly Stochastic Matrix]
+    %\normalfont
+    A \textbf{doubly stochastic matrix} is a square matrix $X=(x_{ij})$ of non-negative real numbers, each of whose rows and columns sums to $1$.\\
+    The class of $n\times n$ doubly stochastic matrices is a convex polytope (convex set in euclidean space) known as the \textbf{Birkhoff polytope}.
+\end{definition}
+
+\begin{theorem}[Birkhoff-von Neumann Theorem]
+    A matrix is doubly stochastic if and only if it is a convex combination of permutation matrices.
+\end{theorem}
+By this theorem, we can set efficient "integer" assignment.
+
+Can the efficient allocation be competitive equilibrium (CE)?
+\begin{theorem}
+    The core of assignment of game is non-empty.
+\end{theorem}
+\begin{proof}
+    The duality of core can be written as
+    \begin{equation}
+        \begin{aligned}
+            \min \quad&  \sum_{j}u_j^S + \sum_{i}u_i^B\\
+            \textnormal{s.t.}\quad& u_j^S+u_i^B\geq v_{ij}, \forall i,j
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    By strong duality, the minimum value should be equal to $V(N)$.
+
+    Hence, $\sum_{j\in T}u_j^S + \sum_{i\in T}u_i^B\geq V(T)$ for a subset $T\subseteq N$. That is, the core is non-empty.
+\end{proof}
+
+\begin{corollary}
+    For an assignment game, outcome is in the core \underline{if and only if} the outcome is CE outcome.
+\end{corollary}
+
+
+
+\section{Constrained Demand Theory}
+\subsection{Substitutes Valuation}
+There are buyers $i\in N$ and goods $j\in J$ with quantities $S\in \mathbb{Z}^J$ sold by a seller.
+
+A buyer's utility is $v(x)-p\cdot x$, where $v(0)=0$, $p\in \mathbb{R}^J$, and $x\in \{0,1\}^J$. The buyer's demand is represented by $D(p)\argmax_{x}\left\{v(x)-p\cdot x\right\}$.
+
+The competitive equilibrium $\left(p^*,(x^{*i})_{i\in N}\right)$ here are
+\begin{enumerate}
+    \item $x^{*i}\in D^i(p^*)$ for every $i\in N$ and
+    \item $\sum_{i}x^{*i}\leq S_i$, where the equality holds for $p_i>0$.
+\end{enumerate}
+
+\begin{definition}[Substitutes Valuation]
+    %\normalfont
+    A valuation $v_i$ is a \textbf{substitutes valuation} if $\forall p: p'=p+\lambda e^j$ ($\lambda>0$), where $D^i(p)=\{x\}$ and $D^i(p')=\{x'\}$, we have that $x'_k\geq x_k$ for all $k\neq j$. (The increase of product $j$'s price increases other product's demand).
+\end{definition}
+
+\begin{theorem}[Substitutes Valuation $\Rightarrow$ Competitive Equilibrium Exists]\label{thm:substitute}
+    If agents have substitutes valuations, then a competitive equilibrium exists.
+\end{theorem}
+
+\begin{theorem}
+    If there exists an agent without substitutes valuation, then we can construct \underline{unit-demand preferences} for other agents such that no competitive equilibrium exists.
+\end{theorem}
+
+
+\subsection{Income Effect}
+There are buyers $i\in N$ and goods $j\in J$. The endowments (money and goods) of agents are denoted by $w=(w_0,w_I)$.
+
+\underline{Outcome:} The indivisible (bought) goods is represented by $x_I\in\{0,1\}^J$ and the (left) divisible money is represented by $x_0\in(\underline{m},\infty)$. $$w_0=x_0+p_I\cdot x_I$$ must hold, where $p_I$ is the vector of prices of goods.
+
+\underline{Utility Function:} An agent's utility function is defined by $u^i:(\underline{m},\infty)\times \{0,1\}^J \rightarrow (-\infty, +\infty)$ with assumptions of strictly increasing in $x_0$, $\lim_{x_0 \rightarrow \underline{m}}u^i(x_0,x_I)=-\infty$, and $\lim_{x_0 \rightarrow \infty}u^i(x_0,x_I)=+\infty$.
+
+\begin{example}
+    Examples of feasible utility functions:
+    \begin{enumerate}
+        \item $u^i(x)=v(x)-p\cdot x$ with $\underline{m}=-\infty$;
+        \item $u^i(x_0,x_I)=\log(x_0)-\log(-V_Q^i(x_I))$ with $V_Q^i:\{0,1\}^J \rightarrow (-\infty,0)$.
+    \end{enumerate}
+\end{example}
+
+\underline{Demand:}
+\begin{enumerate}[$\circ$]
+    \item $D_\textnormal{Marshallian}^i(p,w)=\{x^*:x^*\in\arg\max_{x} u^i(x) \textnormal{ s.t. }p\cdot x\leq p\cdot w\}$
+    \item $D_\textnormal{Hicksian}^i(p,u)=\{x^*:x^*\in\arg\min_{x} p\cdot x \textnormal{ s.t. }u^i(x)\geq u\}$ which is the dual of $D_\textnormal{Marshallian}^i$.
+\end{enumerate}
+\begin{definition}[Competitive Equilibrium]
+    %\normalfont
+    Given $(w^i)_{i\in I}$ s.t. $\sum_{i\in N}w_I^i=y_I$. A \textbf{competitive equilibrium} is a price vector $p_I^*\in \mathbb{R}^J$ and ${x_I^i}^*\in D_\textnormal{Marshallian}(p_I^*,w^i)$ for each $i\in N$ such that $\sum_{i\in N}{x_I^i}^*=y_I$.
+\end{definition}
+
+Based on the idea of duality, we can analyze problem based on the dual demand, Hicksian demand.
+\begin{definition}[Hicksian Valuation]
+    %\normalfont
+    Hicksian valuation is defined by $-1$ times "the money that can lead to the utility $u$ with goods $x_I$": $$V_\textnormal{Hicksian}^i(x_I,u)=-(u^i(\cdot,x_I))^{-1}(u)$$
+\end{definition}
+
+
+\begin{proposition}[Using Hicksian Valuation to Represent Hicksian Demand]
+    $D_\textnormal{Hicksian}^i(p_I,u)=\arg\max_{x_I}\left\{v_\textnormal{Hicksian}^i(x_I,u)-p_I\cdot x_I\right\}$
+\end{proposition}
+\begin{proof}
+    $D_\textnormal{Hicksian}^i(p_I,u)=\arg\min_{x_I}\{(u^i(\cdot,x_I))^{-1}(u)+p_I\cdot x_I\}=\arg\max_{x_I}\left\{V_\textnormal{Hicksian}^i(x_I,u)-p_I\cdot x_I\right\}$
+\end{proof}
+
+
+\begin{definition}[Hicksian Economy]
+    %\normalfont
+    Hicksian economy: for a profile $(u^i)_{i\in N}$ is a transferable utility (TU) economy in which each agent's "valuation" is a Hicksian valuation $V_\textnormal{Hicksian}^i$.
+\end{definition}
+Hicksian Economy works in finding Competitive Equilibrium
+\begin{theorem}[Equilibrium Existence Duality(EED)]\label{EED}
+    Competitive Equilibrium exists for all feasible endowment profiles \underline{if and only if} Competitive Equilibrium exists in the Hicksian economies for all profiles of utility levels.
+\end{theorem}
+
+\begin{center}
+    \begin{tabular}{ccc}
+        \hline
+            Marshallian& Hicksian\\
+        \hline
+            Housing Market & Assignment Game\\
+            Utility is not Quasi-linear & Utility is Quasi-linear\\
+            Unit Demand& Unit Demand\\
+            Existence in Housing Market& Existence in Assignment Game\\
+            $\times$& Lattice structure and Convexity of structure of CE prices\\
+            Net-substitutes& $\Rightarrow$ Substitutes\\
+        \hline
+    \end{tabular}
+\end{center}
+
+Like the Theorem \ref{thm:substitute}, we want the Hicksian valuations be "substitutes".
+\begin{definition}[Net-Substitutes]
+    %\normalfont
+    A agent's utility $u^i$ is \underline{net-substitutes} if $\forall u$, $D^i_H(p;u)=\{x\}$ and $D^i_H(p'_j,p_{-j};u)=\{x'\}$, $p'_j>p_j \Rightarrow x'_k\geq x_k$ for all $k\neq j$.
+\end{definition}
+
+\begin{theorem}
+    Net-Substitutes Valuation $\Rightarrow$ competitive equilibrium exists.
+\end{theorem}
+\begin{proof}
+    Net-substitutes $\Rightarrow$ substitutes holds in Hicksian economy. Hence, CE exists. By \ref{EED}, CE exists in original economy.
+\end{proof}
+
+\begin{definition}[Gross-Substitutes]
+    %\normalfont
+    A agent's utility $u^i$ is \underline{gross-substitutes} if $\forall w$, $D^i_M(p;w)=\{x\}$ and $D^i_M(p'_j,p_{-j};w)=\{x'\}$, $p'_j>p_j \Rightarrow x'_k\geq x_k$ for all $k\neq j$.
+\end{definition}
+
+\begin{example}
+    In quasi housing market, we consider an example, of holding a house which price increases, the demand of another bad house doesn't change under Hicksian demand, which makes net-substitutes hold. But, the Marshallian demand decreases, which makes gross-substitutes don't hold.
+\end{example}
+
+\begin{example}
+\textbf{Net, but not gross}:\\
+Suppose there is a firm $f$ thinking about workers $s_1,s_2$. $f$ values worker at $\$ 5$ each, and the hiring budget is $\$ 6$;
+\begin{enumerate}[$\circ$]
+    \item $p_1=2,p_2=4$;
+    \item $p_1=3,p_2=4$
+\end{enumerate}
+Obviously, the gross-substitutes (Marshallian Demand) leads to hiring both under $p_1=2,p_2=4$ and only hiring $s_1$ under $p_1=3,p_2=4$.\\
+Let's consider the net-substitutes (Hicksian Demand): As the utility given under $p_1=2,p_2=4$ is $\$ 10$. We can find hiring two workers is still the optimal strategy.
+\end{example}
+
+
+\begin{example}
+    \textbf{Net, but no auction:}\\
+    Suppose there are two identical firms $f_1,f_2$ and workers $s_1,s'_1,s_2$. The value of workers is $\$ 5$ each, but a firm want at most one of $s_1,s'_1$ and has hiring budget $\$ 6$. A worker has reservation wage of $\$ 1$.\\
+    \underline{Equilibrium:} $\$1$ for worker $s_1,s'_1$ and $\$ 5$ for $s_2$; One firm hires one of $s_1,s'_1$ and the other hires $s_2$.
+\end{example}
+
+
+\section{Object Allocation}
+Exchange: $i\in N$ agent; Agents have strict preference $\succ_i$ over objects. (We use $\succ$ denote $\{\succ_i\}_{i\in N}$).
+
+\underline{Two settings:}
+\begin{enumerate}
+    \item Exchange: an agent shows up with exactly one object.
+    \item Allocation: One planner owns $N$ objects; agents have $\emptyset$.
+\end{enumerate}
+
+A \textbf{mechanism} $\Phi(\succ)$ gives a outcome $\mu$.
+We want the final outcome $\mu$ be
+\begin{enumerate}
+    \item Individual Rationality (IR): for all $i\in N$, $\mu_i\succeq i$ (Exchange) and $\mu_i\succeq \emptyset$ (Allocation).
+    \item Pareto Efficient (PE): $\nexists \mu'$ such that $\mu'_i\succeq \mu_i$ for all $i\in N$, strict for at least one.
+    \item Strategy-Proof (SP): $\Phi$ induces a game. We want that, in this game, truth-telling is a weakly dominant strategy for all agent $i\in N$.
+\end{enumerate}
+
+\subsection{Allocation}
+(Random) Serial Dictatorship: Randomly order the agents, ask one by one, and allocate a remaining object. $\Rightarrow$ it satisfies IR, PE, SP, but \underline{unfair}(?).
+
+\subsection{Exchange}
+\begin{definition}[Core]
+    %\normalfont
+    The \textbf{core} is the set of all allocations $\mu$ such that there is no $S\subseteq N$ and $\mu'$ for which:
+    \begin{enumerate}[$\circ$]
+        \item for $i\in S$, $\mu'_i=j$ for some $j\in S$
+        \item $\mu'_i\succeq \mu_i$ for all $i\in S$, at least one strict.
+    \end{enumerate}
+    Core: IR+PE.
+\end{definition}
+\begin{theorem}[Core is a Singleton]
+    There is a unique element in the core.
+\end{theorem}
+\begin{proof}
+    Run the algorithm: Top Trading Cycles (TTC).
+\end{proof}
+\begin{definition}[Top Trading Cycles (TTC)]
+    %\normalfont
+    Agent = node.
+    \begin{enumerate}
+        \item Step 1: every agent point at her favorite object/agent.
+        \subitem (1A): Find cycles.
+        \subitem (1B): Allocate object to agent who is pointing at it in cycle.
+        \subitem (1C): Remove the cycle.
+        \item Step 2: every (remaining) agent point at her favorite object/agent.
+        \subitem (2A): Find cycles.
+        \subitem (2B): Allocate object to agent who is pointing at it in cycle.
+        \subitem (2C): Remove the cycle.
+        \item Repeat $\cdots$
+    \end{enumerate}
+\end{definition}
+\begin{proposition}
+    TTC produces an allocation that satisfies IR, PE, SP.
+\end{proposition}
+
+\begin{theorem}[TTC $\Leftrightarrow$ IR, PE, SP (Ma, 1999)]
+    There is at most $1$ IR, PE, SP mechanism (TTC).
+\end{theorem}
+\begin{proof}
+    \begin{definition}
+        %\normalfont
+        The \textbf{size} of a preference profile $\succ$ is the total number of objects agents find acceptable in $\succ$:
+        \begin{equation}
+            \begin{aligned}
+                S(\succ)=\sum_{i\in N}\# \textnormal{acceptable objects in }\succ_i
+            \end{aligned}
+            \nonumber
+        \end{equation}
+    \end{definition}
+    Consider two $\Phi$ and $\Psi$ that disagree for some $\succ$, the $\succ$ is defined to be \underline{bad}.\\
+    We define the \underline{minimal bad profile} as a bad profile of minimal size.
+    Consider the two outcomes given by these mechanisms:
+    \begin{center}
+        \begin{tabular}{ccc}
+            \hline
+                $\Phi(\succ)$&\textnormal{same} & $A(\Phi)$\\
+            \hline
+                $\Psi(\succ)$&\textnormal{same} & $A(\Psi)$\\
+            \hline
+        \end{tabular}
+    \end{center}
+    the sum of different parts are $A\triangleq A(\Phi)+A(\Psi)$.
+    \begin{lemma}
+        If $\Phi$ and $\Psi$ are SP, and $\succ$ is a minimal bad profile, then each agent in $A$ has exactly two acceptable objects.
+    \end{lemma}
+    \begin{proof}
+        Suppose there exists $i\in A$ such that she has $>2$ acceptable objects.\\
+        Without losing generality, we consider $\Phi_i(\succ)\succ_i\Psi_i(\succ)$.\\
+        Remove all objects from his preference list except $\Phi_i(\succ)$ and endowment of $i$ (call it $\{i\}$). The new preference profile is denoted by $\succ'_i$.\\
+        Since $\Phi$ is SP, $\Phi_i(\succ')=\Phi_i(\succ)$; since $\Psi$ is SP, $\Psi_i(\succ')\prec_i\Phi_i(\succ)$.\\
+        So, we have $\succ'$ is a bad profile and $S(\succ')<S(\succ)$, a contradiction.
+    \end{proof}
+\end{proof}
+
+
+\section{School Choice}
+\underline{Model:}
+\begin{enumerate}
+    \item There is a set of school $S$; a school is denoted by $s\in S$; Quota for each $s$ is $q_s$;
+    \item $I$ is the set of all students; A student is denoted by $i\in I$; Student $i$ has preference $\succ_i$.
+    \item School places = objects.
+    \item Each school has a priority order over students $\pi_s$.
+    \item Matching $\mu: I \rightarrow S$ such that $\forall s\in S: \# \mu^{-1}(s)\leq q_s$.
+    \item Matching violates priority if $\exists s\in S$ such that
+    \begin{enumerate}[(i).]
+        \item $s\succ_i\mu(i)$ and
+        \item either ``Wastefulness: $\# \mu^{-1}(s)< q_s$'' or ``Justified Envy: $i\pi_s j$ for some $j\in \mu^{-1}(s)$''
+    \end{enumerate}
+    $\approx$ existence of a blocking pair.\\
+    \underline{A matching is \textbf{stable}} if there are no priority violates.\\
+    (As we don't consider the preference of $j$ in (ii), it is not true stable $\Rightarrow$ (Pareto) efficient.)
+\end{enumerate}
+
+\begin{example}
+    Boston (Immediate Acceptance)
+    \begin{enumerate}[(1).]
+        \item Step 1: students apply for favorite schools; school accepts applicants up to capacity and reject rest permanently.
+        \item Step k: students apply for favorite schools among those with capacity and hasn't already rejected them; schools accept applicants up to capacity $q_s$ and reject rest permanently.
+    \end{enumerate}
+\end{example}
+
+\begin{proposition}
+DA gives a matching that satisfies \underline{stability and SP} (not PE).
+\end{proposition}
+
+Run TTC:
+\begin{definition}[Top Trading Cycles (TTC)]
+    %\normalfont
+    Schools and Students (agents) = nodes.
+    \begin{enumerate}
+        \item Step 1: every agent point at her favorite object/agent.
+        \subitem (1A): Find cycles.
+        \subitem (1B): Allocate object (school) to agent (student) who is pointing at it in cycle. (Usually based on the students' preference.)
+        \subitem (1C): Remove the cycle.
+        \item Step 2: every (remaining) agent point at her favorite object/agent.
+        \subitem (2A): Find cycles.
+        \subitem (2B): Allocate object to agent who is pointing at it in cycle.
+        \subitem (2C): Remove the cycle.
+        \item Repeat $\cdots$
+    \end{enumerate}
+\end{definition}
+
+\begin{proposition}
+    TTC produces an allocation that satisfies \underline{PE and SP} (not stable).
+\end{proposition}
+Hence, we need to make a trade-off between priority violation and efficiency.
+
+\begin{theorem}[Keslen]
+    For all $S, \{q_s\}_{s\in S}$, there exists $I,\succ_i,\{\pi_s\}_{s\in S}$ s.t. in the SOSM, every student gets either their last choice or second-last choice.
+\end{theorem}
+
+
+\begin{theorem}[Abdulkadiroğlu, Pathak, Roth, AER]
+    There is no (PE+)SP mechanism that Pareto-dominates SOSM.
+\end{theorem}
+
+\begin{theorem}
+    There is no PE+SP mechanism that selects a PE+stable matching whenever it exists.
+\end{theorem}
+
+\begin{definition}[Kesten/Tang+Yu Algorithm]
+    %\normalfont
+    Suppose the number of student is not larger than the total capacity $\# I\leq \sum_s q_s$.
+    \begin{enumerate}[(i).]
+        \item Step 0: Run DA, set SOSM $\mu_0$. Find under-demanded schools = a school that doesn't reject any students.\\
+        Assign $\mu^{-1}(s)$ permanently. Call these schools/students ``settled''. Remove all settled schools and students.
+        \item Step k: Rerun DA on everyone unsettled.
+    \end{enumerate}
+\end{definition}
+
+\begin{definition}[Priority-Neutral(PN), Reny 2022]
+    %\normalfont
+    $\mu$ is \textbf{priority-neutral}(PN) iff $\exists$ no matching $u$ that can make any student whose priority is violated at $\mu$ better off \underline{unless} $u$ violates the priority of some student and make them worse off.\\
+    We call $\mu$ is \textbf{priority-efficient} if it is PN and PE.
+\end{definition}
+
+\begin{theorem}[Reny 2022]
+    \begin{enumerate}
+        \item $\exists$ a unique Priority-efficient matching;
+        \item Priority efficient $\Leftrightarrow$ SO priority neutral matching;
+        \item It can be found by the \underline{CUTE Algorithm};
+        \item $\mu$ is priority efficient $\Leftrightarrow$ no matching $u$ can make \underline{any student better off} unless $u$ \underline{unless} $u$ violates the priority of some student and make them worse off.
+    \end{enumerate}
+\end{theorem}
+
+
+\section{School Choice with Reserves}
+Consider a school choice model, students can be divided into majority ($M$) and minority ($m$), $I=I^M\cup I^m$. Quotas of schools are represented by $q_s=(q,q^M), s\in S$, where $q^M$ is the quota for majority.
+
+\begin{definition}[Stability]
+    %\normalfont
+    A matching is stable if, for all $s\in S$ such that $s\succ_i \mu(i)$,
+    \begin{enumerate}
+        \item Either: ``No Wastefulness: $|\mu^{-1}(s)| = q_s$'' and ``No Justified Envy: $i'\pi_s i$ for all $i'\in \mu^{-1}(s)$''
+        \item Or: $i\in I^M$, ``$|\mu^{-1}(s)\cap I^M| = q_s^M$'' and ``$i'\pi_s i$ for all $i'\in \mu^{-1}(s)\cap I^M$''
+    \end{enumerate}
+\end{definition}
+
+\begin{definition}[Stronger Quota]
+    %\normalfont
+    A $\tilde{setting}$ (with $\tilde{q}_s$) has \textbf{stronger quota} than setting (with $q_s$) if $\tilde{q}_s=q_s$ but $q_s^M\geq \tilde{q}_s^M$.
+\end{definition}
+
+\begin{definition}[Good Mechanism]
+    %\normalfont
+    Mechanism $\Phi$ is \textbf{good}, if whenever a $\tilde{setting}$ has stronger quotas than its setting, it doesn't make all \underline{minority} students worse off.
+\end{definition}
+
+
+\begin{theorem}[Kojima 2012]
+    There is no stable good mechanism.
+\end{theorem}
+
+\subsection{Minority Reserves (slot-specific priority)}
+Suppose $r_s^m$ is reserved for minority only. That is $q_s=q_s^M+r_s^m$.
+\begin{definition}[Minority Reserves]
+    %\normalfont
+     School has minority reserve $r_s^m$ whenever $\#$ of admitted minority students is less than $r_s^m$, then any minority students is admitted ahead of majority students.
+\end{definition}
+\begin{definition}[No Blocking Pair]
+    %\normalfont
+    \textbf{No blocking pair} if $s\succ_i \mu(i)$, then $|\mu(s)|=q_s$ and,
+    \begin{enumerate}
+        \item Either: $i\in I^m$ and ``$i'\pi_s i$ for all $i'\in \mu^{-1}(s)$''
+        \item Or: $i\in I^M$, ``$|\mu^{-1}(s)\cap I^m| > r_s^m$'' and ``$i'\pi_s i$ for all $i'\in \mu^{-1}(s)$''
+        \item Or: $i\in I^M$, ``$|\mu^{-1}(s)\cap I^m| \leq r_s^m$'' and ``$i'\pi_s i$ for all $i'\in \mu^{-1}(s)\cap I^M$''
+    \end{enumerate}
+\end{definition}
+
+\begin{theorem}[Smart Reserves]
+    Suppose $\mu$ is a stable matching without affirmative action. Let $r_s^m$ be such that $$r_s^m\geq |\mu^{-1}(s)\cap I^m|, \forall s\in S$$
+    Then, either $\mu$ is stable w.r.t. $r^m$ or $\exists$ stable matching under $r^m$ that Pareto-dominates $\mu$ for $I^m$.
+\end{theorem}
+
+
+\section{Random Assignment}
+Suppose there are agents $i\in I$ and objects $j\in J$, where $|I|=|J|$. Agents have preferences $\succ_i$ over objects, and objects have priorities $\rhd_j$ over agents.
+
+An allocation is represented by a matrix that each row and each column has sum to $1$ probability.
+
+There are two mechanism can be used:
+\begin{enumerate}[(i).]
+    \item RSD (Random: draw a priority order $\rhd$ uniformly.)
+    \item TTC with uniform random endowment.
+\end{enumerate}
+\begin{theorem}
+    These two mechanisms are equivalent (bijection).
+\end{theorem}
+
+
+RSD is not Pareto-efficiently.
+
+\begin{proposition}
+    For a row of an allocation matrix ($\tilde{\mu}$) for agent $i$, $\tilde{\mu}_i\succ_i\tilde{\mu}'_i$
+    \begin{enumerate}[$\circ$]
+        \item \underline{if and only if} $\tilde{\mu}_i\succ_{FOSD}\tilde{\mu}'_i$ (first-order stochastic dominance).
+        \item \underline{if and only if} $\mathbb{E}U(\tilde{\mu}_i)\geq\mathbb{E}U(\tilde{\mu}'_i)$ under expected utility.
+    \end{enumerate}
+\end{proposition}
+
+\begin{definition}
+    %\normalfont
+    $\tilde{\mu}$ is \textbf{ordinally efficient (sd-efficient)} if there is no $\tilde{\mu}'$ which is $\succ_{FOSD}$ by all agents. (\textit{ex-ante efficient} with respect to cardinal utility)\\
+    $\tilde{\mu}$ is \textbf{ex-post efficient} if those are only Pareto efficient outcome in the support.
+\end{definition}
+
+\begin{definition}
+    %\normalfont
+    $\tilde{\mu}$ is \textbf{ordinally envy-free} if $\tilde{\mu}_i\succ_{FOSD}\tilde{\mu}_j, \forall i,j$.
+\end{definition}
+RSD is not envy-free.
+
+There exists ordinally efficient and envy-free mechanism.
+\begin{definition}[Probabilitistic Serial Algorithm]
+    %\normalfont
+    Based on the preference of agents:
+    \begin{enumerate}
+        \item Give each agent his most preferred object with the same proportion such that the sum of each object is at most 1.
+        \item Repeat by using remaining objects.
+    \end{enumerate}
+    \begin{example}
+        Preference: A: $Obj1\succ Obj3\succ Obj2$; B: $Obj1\succ Obj2 \succ Obj3$; C: $Obj2\succ Obj3\succ Obj1$
+        \begin{enumerate}
+            \item [$t=\frac{1}{2}$] A: $\frac{1}{2} Obj 1$; B: $\frac{1}{2} Obj 1$; C: $\frac{1}{2} Obj 2$.
+            \item [$t=\frac{3}{4}$] A:$ \frac{1}{2} Obj 1+\frac{1}{4} Obj 3$; B: $\frac{1}{2} Obj 1+\frac{1}{4} Obj 2$; C: $\frac{3}{4} Obj 2$.
+            \item [$t=1$] :$ \frac{1}{2} Obj 1+\frac{1}{2} Obj 3$; B: $\frac{1}{2} Obj 1+\frac{1}{4} Obj 2+\frac{1}{4} Obj 3$; C: $\frac{3}{4} Obj 2+\frac{1}{4} Obj 3$.
+        \end{enumerate}
+    \end{example}
+\end{definition}
+\begin{theorem}[Welfare Theorem]
+    Probabilistic Serial Algorithm gives ordinally efficient and envy-free outcome.
+\end{theorem}
+
+\begin{definition}[Equal Treatment of Equals (ETE)]
+    %\normalfont
+    Equal Treatment of Equals: if same preference $\succ_i$ $\Rightarrow$ the same bundle $\tilde{\mu}_i$.
+\end{definition}
+
+
+\begin{proposition}
+    For $n=3$, RSD is \textit{ordinally efficient, ETE, Strategy-Proof}. (These three properties are incompatible when $n>3$).
+\end{proposition}
+
+\section{Random Assignment in School Choice}
+\begin{example}
+    \begin{enumerate}[$\circ$]
+        \item Preference of Agents: $A: s_2\succ s_3\succ s_1$; $B: s_2\succ s_3\succ s_1$; $C: s_1\succ s_2\succ s_3$.
+        \item Priority of Schools: $s_1: A\succ B\succ C$, $s_2: C\succ (A,B)$, $s_3: C\succ B\succ A$.
+    \end{enumerate}
+    There are two stable outcomes: $\mu: A-s_2, B-s_3, C-s_1$; $\mu': A-s_3, B-s_2, C-s_1$.
+
+    It can't be strategy proof. In $\mu$, $B$ can lie: $s_2\succ s_1\succ s_3$, to make the outcome become $\mu'$. In $\mu'$, $A$ can lie: $s_2\succ s_1\succ s_3$, to make the outcome become $\mu$.
+\end{example}
+
+\begin{definition}[Stable Imporovement Cycle (S.I.C.)]
+    %\normalfont
+    Each student points at schools they prefer and where he doesn't have a lower priority among those students who prefer students to their assignment.
+\end{definition}
+
+\begin{theorem}
+    If a stable matching is not in the student-optimal stable set, then $\exists$ a S.I.C.
+\end{theorem}
+\begin{example}
+    \begin{enumerate}[$\circ$]
+        \item Preference of Agents: $A: s_2\succ s_1\succ s_3$; $B: s_3\succ s_2\succ s_1$; $C: s_2\succ s_3\succ s_1$.
+        \item Priority of Schools: $s_1: A\succ (B,C)$, $s_2: B\succ (A,C)$, $s_3: C\succ (A,B)$.
+    \end{enumerate}
+    DA: $A:s_1, B:s_2, C:s_3$.
+    Another allocation: $A:s_1, B:s_3, C:s_2$.
+
+    Consider DA, $A$ wants $s_2$: $C$ also wants $s_2$, which has the same priority as $A$, so $A$ can point at $s_2$. $B$ points at $s_3$. $C$ can also point at $s_2$. So, there is a S.I.C.
+\end{example}
+
+
+\section{Pseduomarket (FF)}
+Consider an example that agent $A_1$ wants $a,b$ for $0.9$, $A_2$ wants $a,c$ for $0.9$, $A_3$ wants $b,c$ for $2$. Suppose the budget for each agent is $1$.
+
+Reminds that utility is only meaningful for the agent itself. Here, as the budget is the same, the demand of each agent is the same.
+
+\subsection{Problem of Implementability}
+An equilibrium (but can't be implemented): $A_1$ gets $\{\frac{1}{2}:\emptyset; \frac{1}{2}:a+b\}$; $A_2$ gets $\{\frac{1}{2}:\emptyset; \frac{1}{2}:a+c\}$; $A_3$ gets $\{\frac{1}{2}:\emptyset; \frac{1}{2}:b+c\}$.
+
+
+\begin{center}
+    \begin{tabular}{ccc}
+        \hline
+            Transfer Utility Economy& Pseduomarket\\
+        \hline
+            Allocation $x_j\in X_j,j=1,...,J$& Lottery $\tilde{x}_j\in \mathcal{L}(X_j)$\\
+            Price $p\in \mathbb{R}^I$& Budget $b_j$ and Price $p\in \mathbb{R}^I$\\
+            $u_j(x)=v_j(x)-p\cdot x$& $V_j(\tilde{x}_j)=\sum_x v_j(x) \mathbb{P}(\tilde{x}_j=x)$\\
+            Demand $D_j(p)=\arg\max_x u_j(x)$& $\tilde{D}_j(p)=\arg\max_{\tilde{x}:p\cdot\tilde{x}\leq b_j} V_j(\tilde{x})$\\
+            CE: $(p^*,x^*): x_j^*\in D_j(p^*), \sum_{j}x_j^*\leq S$& RE: $(p^*,\tilde{x}^*): \tilde{x}_j^*\in \tilde{D}_j(p^*), \sum_{j}\tilde{x}_j^*\leq S$\\
+            (equality holds for no zero $p^*$)\\
+        \hline
+    \end{tabular}\\
+    $S$ is supply, which equals to $\sum_i \omega_i$ if the economy with endowments.
+\end{center}
+
+We want an allocation being implementable that an allocation (a set of lotteries over agents) $\{w_1,...,w_J\}=\mathcal{W}\in \mathcal{L}(\prod_{j}X_j)$ (feasible bundles for each agent).
+
+Define $\bar{w}_j=\mathbb{E}[w_j]$ and $\bar{\mathcal{W}}=\mathbb{E}[\mathcal{W}]$
+
+\begin{definition}[Implementable]
+    %\normalfont
+    A random equilibrium $(p^*,\tilde{x}^*)$ is \textbf{implementable} if there exists $\mathcal{W}$ over feasible allocations such that $w_j\in D_j(p^*)$ and $\bar{x}^*_j=\bar{w}_j, \forall j=1,...,J$.
+\end{definition}
+can be implemented by a distribution of allocations. (BvN)
+
+\begin{proposition}
+    Random equilibrium always exists.
+\end{proposition}
+
+\begin{definition}[Rich]
+    %\normalfont
+    A set of valuations $\mathcal{V}^j=\{v_j(x):x\in X_j\}$ is \textbf{rich} if whenever $v_j(x)\in \mathcal{V}^j$ then $v_j(x)+a\cdot x\in \mathcal{V}^j$ for all $a\in \mathbb{R}^I$. That is $\exists x'$ such that $v_j(x')=v_j(x)+a\cdot x$.
+\end{definition}
+Complement may induce unimplementable problem.
+
+Suppose value functions live in $V$ and are \underline{rich}.
+\begin{theorem}
+    CE exists for all valuations in $V$ $\Leftrightarrow$ RE is implementable for all budgets profiles and all valuations in $V$.
+\end{theorem}
+
+
+
+
+
+
+
+
+
+\bibliography{ref}
+
+\end{document}

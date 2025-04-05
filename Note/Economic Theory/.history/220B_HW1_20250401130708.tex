@@ -1,0 +1,313 @@
+\documentclass[12pt]{article}
+
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage{amssymb,amsmath,amsthm,amsfonts,array,adjustbox,booktabs,comment,caption,colortbl,diagbox,eurosym,epigraph,footmisc,geometry,graphicx,multirow,natbib,pdflscape,setspace,subcaption,tikz,xcolor,comment}
+\usetikzlibrary{positioning,shapes.geometric, shapes, arrows, calc, decorations.pathreplacing, arrows.meta,fit}
+\usepackage[title]{appendix}
+\usepackage[hyphens]{url}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc} % choose a font encoding that has more characters
+\usepackage[utf8]{inputenc} % if you are using UTF-8 encoding in your .tex file
+
+
+\usepackage{enumerate}
+\usepackage{authblk}
+\usepackage{times}
+\usepackage{physics}
+\usepackage{float} % Add this line for [H] option
+\geometry{left=1in,right=1in,top=1in,bottom=1in}
+
+
+\newcommand{\argmax}{\operatornamewithlimits{argmax}}
+\newcommand{\argmin}{\operatornamewithlimits{argmin}}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}{Proposition}
+\newtheorem{remark}{Remark}
+\newtheorem{lemma}{Lemma}
+\newtheorem{claim}{Claim}\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+\newtheorem{assumption}{Assumption}
+\setlength{\parindent}{17pt}
+\usepackage{indentfirst} % add a paragraph indent after a sectional heading
+
+\hypersetup{
+	colorlinks,
+	linkcolor={red!80!black},
+	citecolor={blue!50!black},
+	urlcolor={blue!80!black}
+}
+
+\usepackage{mleftright,bbm}
+\newcommand{\E}[1]{\mathbb{E}\mleft[#1\mright]}
+\newcommand{\I}[1]{\mathbbm{1}\mleft[#1\mright]}
+
+\setlength{\epigraphwidth}{\textwidth}
+\renewcommand{\epigraphsize}{\normalsize}
+\setlength{\epigraphrule}{0pt}
+\renewcommand{\textflush}{flushleft}
+\renewcommand{\sourceflush}{flushright}
+
+
+
+\author{Wenxiao Yang}
+
+\date{\today}
+\begin{document}
+\title{220B HW1}
+\maketitle
+
+\section*{Problems}
+
+\begin{enumerate}
+
+\item Prove that the utilitarian social choice rule, as defined in the slides on social choice, violates IIA.
+\begin{proof}
+We construct a counterexample with two individuals and two alternatives.
+
+\noindent \textbf{Profile $\theta$:}
+\begin{itemize}
+    \item Individual 1: $u_1(x;\theta_1) = 2$, $u_1(y;\theta_1) = 1$ 
+    \item Individual 2: $u_2(x;\theta_2) = 1$, $u_2(y;\theta_2) = 2$
+\end{itemize}
+
+With equal weights $\lambda_1 = \lambda_2 = 0.5$, the utilitarian sum is 1.5 for both $x$ and $y$, so $x \sim y$.
+
+\noindent \textbf{Profile $\theta'$:}
+\begin{itemize}
+    \item Individual 1: $u_1(x;\theta'_1) = 4$, $u_1(y;\theta'_1) = 2$ 
+    \item Individual 2: $u_2(x;\theta'_2) = 1$, $u_2(y;\theta'_2) = 2$
+\end{itemize}
+
+Now the utilitarian sum is 2.5 for $x$ and 2 for $y$, so $x \succ y$.
+
+This violates IIA because individual ordinal preferences are unchanged ($x \succ_1 y$ and $y \succ_2 x$ in both profiles), but social preference changes from indifference to strict preference due to cardinal utility values.
+\end{proof}
+\item In the slides on auctions, we proved that in a first price auction, a bidder with value $v$ bids
+\[
+b(v) = \mathbb{E} \left[ v^{(2)} \mid v^{(1)} = v \right],
+\]
+where $v^{(2)}$ is the second-order statistic and $v^{(1)}$ is the first-order statistic. Provide some intuition for this expression. (This is an intentionally open-ended question, and I'm not sure that there's a single right answer. Try going through the steps we used to derive this expression to see if that gives you some intuition.)
+
+\textbf{Intuition:}
+In a first-price auction, the Bayesian Nash Equilibrium strategy \( b(v) = \mathbb{E}[v^{(2)} \mid v^{(1)} = v] \) arises because bidders must balance winning probability and profit. If a bidder with the highest valuation \( v \) bids their true value, they gain zero profit. Instead, they optimally "shade" their bid to the expected maximum valuation of others (the second-highest valuation \( v^{(2)} \)) *conditional* on their own \( v \) being the highest. This ensures they pay exactly what they expect their strongest competitor's bid would be, maximizing profit while maintaining a high chance of winning. Mathematically, this expectation integrates over the distribution of others' lower valuations, reflecting the trade-off between marginally increasing bids (to win) and reducing profit (to pay less). Thus, the equilibrium strategy elegantly encodes both competition and information asymmetry into a single conditional expectation.
+
+
+\item In Rubinstein's (1982) alternating-offers bargaining model, two players negotiate over how to divide a "pie" (of size normalized to 1). The game is played in discrete time as follows:
+    \begin{itemize}
+        \item At time 0, player A makes an offer about how to split the pie.
+        \item If player B accepts the offer, the game ends with that division.
+        \item If B rejects, then at time 1, player B makes an offer.
+        \item If A accepts, the game ends; if not, the game continues with the roles switching.
+    \end{itemize}
+    If player $k$ gets a share $x$ of the pie then their payoff in that period is $x$, and that of the other player is $1-x$. In every period in which they don't agree, then both get 0. Both players discount future payoffs. Let $\delta_A$ and $\delta_B$ be the discount factors for players A and B (with $0 < \delta_i < 1$). Derive a subgame-perfect Nash equilibrium (SPNE), and show that it is characterized by immediate agreement. Bonus: show that this is the unique SPNE.
+\begin{proof}
+Let's denote by $x_A$ the share that player A gets in equilibrium when A makes the offer, and by $x_B$ the share that player B gets when B makes the offer.
+
+In a subgame where A makes an offer, B will accept any offer that gives B at least $\delta_B x_B$, which is what B would get by rejecting and waiting to make a counteroffer in the next period. Therefore, A will offer exactly $1-x_A = \delta_B x_B$ to B, keeping $x_A = 1-\delta_B x_B$ for himself.
+
+Similarly, in a subgame where B makes an offer, A will accept any offer that gives A at least $\delta_A x_A$. So B will offer exactly $1-x_B = \delta_A x_A$ to A, keeping $x_B = 1-\delta_A x_A$ for himself.
+
+This gives us a system of two equations:
+\begin{align}
+x_A &= 1-\delta_B x_B\\
+x_B &= 1-\delta_A x_A
+\end{align}
+
+Solving this system:
+\begin{align}
+x_A &= 1-\delta_B(1-\delta_A x_A)\\
+\Rightarrow x_A &= 1-\delta_B+\delta_A\delta_B x_A\\
+\Rightarrow x_A(1-\delta_A\delta_B) &= 1-\delta_B\\
+\Rightarrow x_A &= \frac{1-\delta_B}{1-\delta_A\delta_B}
+\end{align}
+
+Similarly:
+\begin{align}
+x_B &= \frac{1-\delta_A}{1-\delta_A\delta_B}
+\end{align}
+
+In the SPNE, player A initially offers $\delta_B x_B = \delta_B\frac{1-\delta_A}{1-\delta_A\delta_B}$ to player B, keeping $1-\delta_B x_B = \frac{1-\delta_B}{1-\delta_A\delta_B}$ for himself. Player B accepts this offer immediately.
+
+This equilibrium is characterized by immediate agreement because:
+\begin{enumerate}
+    \item When A makes an offer, B accepts if offered at least $\delta_B x_B$
+    \item When B makes an offer, A accepts if offered at least $\delta_A x_A$
+    \item In equilibrium, players offer exactly these threshold amounts
+    \item Since $0 < \delta_i < 1$, both players prefer immediate agreement to waiting
+\end{enumerate}
+
+For uniqueness, we can use the "one-shot deviation principle." Suppose there exists another SPNE with different payoffs. Then at least one player would have an incentive to deviate by offering slightly more to the other player to induce immediate acceptance, contradicting the equilibrium property. The stationarity of the game ensures that the equilibrium shares must satisfy our system of equations, which has a unique solution.
+\end{proof}
+
+
+\item Consider a set of firms that is trying to collude. Imagine that each firm experiences cost shocks. I would like you to think about the implications of these shocks for collusion. Write down a model to tell an interesting story about information and collusion. You might touch on some of the following questions:
+    \begin{enumerate}
+        \item Suppose that the cost shocks are privately observed by each firm. How do the equilibrium outcomes compare to a world without cost shocks?
+        \item Does transparency (of costs) help or hurt firms' ability to collude?
+        \item Suppose that firms have the ability to disclose their realized cost shocks to their rivals. How do the results change?
+        \item How does the answer depend on the nature of competition (e.g. Bertrand vs. Cournot)?
+        \item Policy implications?
+    \end{enumerate}
+    This is by no means an exhaustive list of the interesting questions you might ask, nor do you need to touch upon every question. The point of this exercise is for you to be creative, and get a feel for modeling. Feel free to draw on the literature. Don't feel you need a complicated model, if a simple model will suffice to get your point across.
+\end{enumerate}
+
+Suppose there are two firms $1,2$ that are competing in a Bertrand competition by setting prices. Each firm $i$ faces an i.i.d. marginal cost $c_i\in \{c_L,c_H\}$ with equal probability. The demand for firm $i$ is given by:
+\begin{equation}
+    \begin{aligned}
+        D_i(p_i,p_j)=\left\{\begin{matrix}
+            a-p_i,& p_i<p_j,\\
+            \frac{a-p_i}{2},& p_i=p_j,\\
+            0,& p_i>p_j
+        \end{matrix}\right.
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+\paragraph{Case 1: Private cost shocks}
+Suppose the cost is privately observed by each firm. Suppose in collusion, firms set price $p^M\in\left[\frac{a+c_L}{2},\frac{a+c_H}{2}\right]$ in each period, which generates a monopoly profit $\Pi^M(c)=\frac{(p^M-c)(a-p^M)}{2}$ for a firm with cost $c$. The expected payoff from sustaining collusion is $W=\frac{\Pi^M(c_L)+\Pi^M(c_H)}{2}<\frac{(a-c_L)^2+(a-c_H)^2}{16}$  Suppose in perfect competition, a firm's expected profit in each period is denoted by $\Pi^P$.
+
+If a firm $i$ has cost $c_L$, it may be beneficial to deviate to $p=\frac{a+c_L}{2}$ that gives a profit $\Pi^D(c_L)=\frac{(a-c_L)^2}{4}$ in that period and give $\Pi^P$ in following periods. Thus, the collusion can sustain if and only if:
+\begin{equation}
+    \begin{aligned}
+        \Pi^D(c_L)+\frac{\delta}{1-\delta}\Pi^P\leq \Pi^M(c_L)+\frac{\delta}{1-\delta}W\\
+        \Pi^D(c_L)-\Pi^M(c_L)\leq \frac{\delta}{1-\delta}(W-\Pi^P)
+        \end{aligned}
+        \nonumber
+\end{equation}
+where $\Pi^P>0$ and $\Pi^M(c_H)<\Pi^M(c_L)\leq\frac{(a-c)^2}{8}=\frac{\Pi^D(c_L)}{2}$.
+
+If without cost shocks $c_L=c_H$, we have $\Pi^M(c_L)=\Pi^M(c_H)=\frac{\Pi^D(c_L)}{2}=W$ and $\Pi^P=0$. Thus, the LHS of the inequality decreases and the RHS increases, so the inequality is more likely to hold. That is, the collusion is more likely to sustain without cost shocks.
+
+\paragraph{Case 2: Transparency}
+With transparency, firms can form a collision that firms set price $p^M(c)=\argmax_p (p-c)(a-p)=\frac{a+c}{2}$ in each period. Thus, the one who has a lower cost capture the whole market if there is cost asymmetry and firms share the market equally if there is no cost asymmetry. In this case, the profit from sustain collusion is higher than the case without transparency, i.e., $W_T=\frac{\frac{(a-c_L)^2}{8}+\frac{(a-c_L)^2}{4}+\frac{(a-c_H)^2}{8}}{4}=\frac{(a-c_L)^2+(a-c_H)^2}{16}+\frac{(a-c_L)^2-(a-c_H)^2}{32}$ is higher.
+
+The firm $1$ has no incentive to deviate if $c_1=c_L$ and $c_2=c_H$. If $c_1=c_2=c_L$, the profit from deviation is $\Pi^D_T(c_L)=\frac{(a-c_L)^2}{4}$, which is the same as before. In this case, the collusion can sustain if and only if:
+\begin{equation}
+    \begin{aligned}
+        \Pi^D_T(c_L)+\frac{\delta}{1-\delta}\Pi^P_T\leq \Pi^M_T(c_L,c_L)+\frac{\delta}{1-\delta}W_T\\
+        \Pi^D_T(c_L)-\Pi^M_T(c_L,c_L)\leq \frac{\delta}{1-\delta}(W_T-\Pi^P_T)
+    \end{aligned}
+    \nonumber
+\end{equation}
+where $\Pi^M_T(c_L,c_L)=\frac{(a-c_L)^2}{8}=\frac{\Pi^D_T(c_L)}{2}$.
+
+As the benefit from collusion $W_T-\Pi^P_T$ increases and the benefit from deviation $\Pi^D_T(c_L)-\Pi^M_T(c_L,c_L)=\frac{(a-c_L)^2}{8}\leq\Pi^D(c_L)-\Pi^M(c_L)$ decreases, the RHS of the inequality increases and the LHS decreases, so the inequality is more likely to hold. That is, the collusion is more likely to sustain with transparency.
+
+
+
+My model uses unit demand setting to capture equilibrium without collusion.
+
+Consider a market with $n$ firms competing in prices. Each firm $i$ has a private marginal cost $c_i$ drawn independently from a distribution $F$ on $[\underline{c}, \overline{c}]$. Firms simultaneously set prices $p_i$, and the firm with the lowest price captures the entire market demand $D(p) = 1$ (unit demand) if $p\leq p_m$ and $D(p)=0$ if $p>p_m$. The profit of firm $i$ with $p\leq p_m$ is:
+\begin{equation}
+    \begin{aligned}
+        \pi_i(p_i, p_{-i}) = 
+        \begin{cases}
+            p_i - c_i, & \text{if } p_i < \min_{j \neq i} p_j \\
+            \frac{p_i - c_i}{k}, & \text{if } p_i = \min_{j \neq i} p_j \text{ and } k \text{ firms tie for lowest price} \\
+            0, & \text{if } p_i > \min_{j \neq i} p_j
+        \end{cases}
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+This setting is strategically equivalent to a first-price auction where:
+\begin{itemize}
+    \item Bidders are firms
+    \item Valuations are the negative of costs: $v_i = -c_i$
+    \item Bids are the negative of prices: $b_i = -p_i$
+    \item The highest bidder (lowest price) wins
+\end{itemize}
+
+I only show the simple example of two firms $k=2$ and uniform cost distribution $c_i\sim F\triangleq\textnormal{Unif}([0,1])$. The $p_m$ is assumed to be greater than $1$, $p_m>1$.
+
+\paragraph{Case 1: Private cost shocks}
+Suppose the cost is privately observed by each firm.
+\begin{enumerate}
+    \item Without collusion, suppose firms adopt a symmetric and increasing pricing strategy, $p(c)$. The firm $i$'s expected payoff from setting $p_i$ is
+    \begin{equation}
+        \begin{aligned}
+            \Pi(p)=[1-F(p^{-1}(p_i))](p_i-c)=(1-p^{-1}(p_i))(p_i-c)\\
+            \textnormal{F.O.C. }1-p^{-1}(p_i)-\frac{1}{p'(p^{-1}(p_i))}(p_i-c)=0\\
+            1-c-\frac{1}{p'(c)}(p_i-c)=0\\
+            \frac{\partial p(c)(1-c)}{\partial c}=(1-c)p'(c)-p_i=-c\\
+            \int_{x}^{1}\frac{\partial p(c)(1-c)}{\partial c}dc=\int_{x}^{1}-cdc\\
+            p(x)(1-x)=\frac{1-x^2}{2}\\
+            p(x)=\frac{1+x}{2}
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    Thus, the expected profit of each form without collusion is $\Pi^P=\int_0^1 (1-x)(\frac{1+x}{2}-x)dx=\frac{1}{6}$.
+    \item In collusion with private cost shocks, the detectable collusive price cannot depend on the cost. The collusive price should be $p^M=p_m$ that generates a profit $\Pi^M(c)=\frac{p_m-c}{2}$ for a firm with cost $c$. The expected profit from sustaining collusion is $W=\int_0^1 \Pi^M(c)dc=\frac{p_m-\frac{1}{2}}{2}$.
+\end{enumerate}
+
+If a firm $i$ has cost $c$, it may be beneficial to deviate to $p_m-\epsilon$ where $\epsilon>0$ is a small number that is ignored in the following analysis, that gives a profit $\Pi^D(c)=p_m-c$ in that period and give $\Pi^P=\frac{1}{6}$ in following periods. Thus, the probability of collusion can sustain is:
+\begin{equation}
+    \begin{aligned}
+        &\textnormal{Pr}\left[\Pi^D(c)+\frac{\delta}{1-\delta}\Pi^P\leq \Pi^M(c)+\frac{\delta}{1-\delta}W\right]\\
+        =&\textnormal{Pr}\left[\Pi^D(c)-\Pi^M(c)\leq \frac{\delta}{1-\delta}\left(W-\Pi^P\right)\right]\\
+        =&1-F\left[p_m-\frac{\delta}{1-\delta}\left(p_m-\frac{5}{6}\right)\right]\\
+        =&\left\{\begin{matrix}
+            1,&p_m-\frac{\delta}{1-\delta}\left(p_m-\frac{5}{6}\right)<0\\
+            1-\left(p_m-\frac{\delta}{1-\delta}\left(p_m-\frac{5}{6}\right)\right),&p_m-\frac{\delta}{1-\delta}\left(p_m-\frac{5}{6}\right)\in[0,1]\\
+            0,&p_m-\frac{\delta}{1-\delta}\left(p_m-\frac{5}{6}\right)>1
+        \end{matrix}\right.
+        %\Pi^D(0)-\Pi^M(0)\leq \frac{\delta}{1-\delta}\left(W-\Pi^P\right)\\
+        %p_m-c+\frac{\delta}{1-\delta}\frac{1}{6}\leq \frac{p_m-c}{2}+\frac{\delta}{1-\delta}\frac{p_m-\frac{1}{2}}{2}\\
+        %p_m-c\leq\frac{\delta}{1-\delta}\left(p_m-\frac{5}{6}\right)\\
+        %c\geq p_m-\frac{\delta}{1-\delta}\left(p_m-\frac{5}{6}\right)
+        \end{aligned}
+        \label{eq_p}
+\end{equation}
+where $\max_c\left(\Pi^D(c)-\Pi^M(c)\right)=\Pi^D(0)-\Pi^M(0)=\frac{p_m}{2}$.
+
+If without cost shocks that $c\equiv \frac{1}{2}$, we have $\max\{\Pi^D(c)-\Pi^M(c)\}=\frac{p_m-\frac{1}{2}}{2}=W$ and $\Pi^P=0<\frac{1}{6}$. Thus, the LHS of the inequality decreases and the RHS increases, so the inequality is more likely to hold. That is, \textbf{the collusion is more likely to sustain without cost shocks}.
+
+\paragraph{Case 2: Transparency} Now firms can observe each other's cost.
+\begin{enumerate}
+    \item Without collusion, the perfect competition makes the firm $i$ set $p_i=\max\{c_i,c_j-\epsilon\}$ to win the market if and only if $c_i< c_j$. Thus, the expected profit of firm without collusion is $\Pi^P_T=\int_0^1 \int_x^1 (t-x) dt dx=\frac{1}{6}$. (which is the same as the case without transparency, $\Pi^P_T=\Pi^P$)
+    \item In collusion with transparency, the collusive price of firm $i$ can be $$\left\{\begin{matrix}
+        p_m,&c_i\leq c_{-i}\\
+        \textnormal{ any }p>p_m,&c_i>c_{-i}
+    \end{matrix}\right.$$ That is, the firm with the lower cost captures the whole market. The collusion generates a profit $\Pi^M_T(c_i,c_{-i})=p_m-c_i$ if $c_i< c_{-i}$ and $\Pi^M_T(c_i,c_{-i})=0$ if $c_i>c_{-i}$. The deviation profit is $\Pi^D_T(c_i,c_{-i})=p_m-c_i-\epsilon$ (we ignore the small number $\epsilon$ in the following analysis).
+    
+    The expected profit from sustaining collusion is $W_T=\int_0^1 (p_m-c)(1-c)dc=\frac{p_m-\frac{1}{3}}{2}$. (which is higher than the case without transparency, $W_T>W$).
+\end{enumerate}
+
+With cost $(c_i,c_{-i})$, the firm $i$ has incentive to deviate if and only if
+\begin{equation}
+    \begin{aligned}
+        \Pi^D_T(c_i,c_{-i})+\frac{\delta}{1-\delta}\Pi^P_T\leq \Pi^M_T(c_i,c_{-i})+\frac{\delta}{1-\delta}W_T,\forall (c_i,c_{-i})\in[0,1]^2\\
+        \max_{(c_i,c_{-i})}\left(\Pi^D_T(c_i,c_{-i})-\Pi^M_T(c_i,c_{-i})\right)\leq \frac{\delta}{1-\delta}\left(W_T-\Pi^P_T\right)
+    \end{aligned}
+    \nonumber
+\end{equation}
+where $\max_{(c_i,c_{-i})}\left(\Pi^D_T(c_i,c_{-i})-\Pi^M_T(c_i,c_{-i})\right)=p_m$.
+
+The firm $1$ has no incentive to deviate if $c_1=c_L$ and $c_2=c_H$. If $c_1=c_2=c_L$, the profit from deviation is $\Pi^D_T(c_L)=\frac{(a-c_L)^2}{4}$, which is the same as before. In this case, the probability of the collusion can sustain is:
+\begin{equation}
+    \begin{aligned}
+        &\textnormal{Pr}\left[\Pi^D_T(c_i,c_{-i})+\frac{\delta}{1-\delta}\Pi^P_T\leq \Pi^M_T(c_i,c_{-i})+\frac{\delta}{1-\delta}W_T\right]\\
+        =&\textnormal{Pr}\left[\Pi^D_T(c_i,c_{-i})-\Pi^M_T(c_i,c_{-i})\leq \frac{\delta}{1-\delta}(W_T-\Pi^P_T)\right]\\
+        =&\left\{\begin{matrix}
+            1,&\text{if }p_m-\frac{\delta}{1-\delta}\left(\frac{p_m}{2}-\frac{1}{3}\right)<0\\
+            1-\frac{\left(p_m-\frac{\delta}{1-\delta}\left(\frac{p_m}{2}-\frac{1}{3}\right)\right)^2}{2}&\text{if }p_m-\frac{\delta}{1-\delta}\left(\frac{p_m}{2}-\frac{1}{3}\right)\in[0,1]\\
+            \frac{1}{2},&\text{if }p_m-\frac{\delta}{1-\delta}\left(\frac{p_m}{2}-\frac{1}{3}\right)>1
+        \end{matrix}\right.
+    \end{aligned}
+    \label{eq_t}
+\end{equation}
+
+Consider both $\textnormal{Pr}[\Pi^D(c)+\frac{\delta}{1-\delta}\Pi^P\leq \Pi^M(c)+\frac{\delta}{1-\delta}W]$ in \eqref{eq_p} and $\textnormal{Pr}[\Pi^D_T(c_i,c_{-i})+\frac{\delta}{1-\delta}\Pi^P_T\leq \Pi^M_T(c_i,c_{-i})+\frac{\delta}{1-\delta}W_T]$ in \eqref{eq_t} as functions of $\frac{\delta}{1-\delta}$. They are both increasing functions of $\frac{\delta}{1-\delta}$. Note that $p_m>1$, so the increasing rate of \eqref{eq_t} is smaller than \eqref{eq_p}, $\left(\frac{p_m}{2}-\frac{1}{3}\right)\left(p_m-\frac{\delta}{1-\delta}\left(\frac{p_m}{2}-\frac{1}{3}\right)\right)<p_m-\frac{5}{6}$. Since the zero point of \eqref{eq_t} is $\frac{p_m-1}{\frac{p_m}{2}-\frac{1}{3}}$ which is larger than the zero point of \eqref{eq_p} $\frac{p_m-1}{\frac{p_m}{2}-\frac{5}{6}}$, there is no intersection of the two functions. That is, the probability of collusion is always higher with transparency.
+\begin{equation}
+    \begin{aligned}
+        \textnormal{Pr}\left[\Pi^D_T(c_i,c_{-i})+\frac{\delta}{1-\delta}\Pi^P_T\leq \Pi^M_T(c_i,c_{-i})+\frac{\delta}{1-\delta}W_T\right]\bigg|_{\frac{\delta}{1-\delta}=\frac{p_m-1}{\frac{p_m}{2}-\frac{1}{3}}}=0\\
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+
+\end{document}

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.3.11)  29 NOV 2024 12:03
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.3.11)  1 DEC 2024 19:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1537,48 +1537,48 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 [26] [27] [28]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1611.
+(hyperref)                removing `math shift' on input line 1622.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 1611.
+(hyperref)                removing `superscript' on input line 1622.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1611.
+(hyperref)                removing `math shift' on input line 1622.
 
 [29]
-Underfull \hbox (badness 10000) in paragraph at lines 1675--1680
+Underfull \hbox (badness 10000) in paragraph at lines 1686--1691
 
  []
 
 [30] [31] [32]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1837.
+(hyperref)                removing `math shift' on input line 1848.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\phi' on input line 1837.
+(hyperref)                removing `\phi' on input line 1848.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 1837.
+(hyperref)                removing `superscript' on input line 1848.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1837.
+(hyperref)                removing `math shift' on input line 1848.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1858.
+(hyperref)                removing `math shift' on input line 1869.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1858.
+(hyperref)                removing `math shift' on input line 1869.
 
 [33] [34] [35] [36]
-Overfull \hbox (0.50111pt too wide) in paragraph at lines 2091--2092
+Overfull \hbox (0.50111pt too wide) in paragraph at lines 2102--2103
 \TU/TeXGyreTermesX(0)/m/n/10.95 Then, we find $\OML/cmm/m/it/10.95 W[] \OT1/cmr/m/n/10.95 = []$ \TU/TeXGyreTermesX(0)/m/n/10.95 such that $[] [] \OML/cmm/m/it/10.95 V$\TU/TeXGyreTermesX(0)/m/n/10.95 . By (iii), $\OML/cmm/m/it/10.95 V \OT1/cmr/m/n/10.95 = [][] [][[]\OML/cmm/m/it/10.95 g[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^R[]\OT1/cmr/m/n/10.95 )] = ^^@[](0) + [][][^^@[](\OML/cmm/m/it/10.95 j\OT1/cmr/m/n/10.95 ) +
  []
 
@@ -1603,10 +1603,10 @@ Package rerunfilecheck Info: File `Time_S.out' has not changed.
 (rerunfilecheck)             Checksum: 0C4EAED8A6F51D8142896289A244C468;9352.
  ) 
 Here is how much of TeX's memory you used:
- 36062 strings out of 474773
- 752775 string characters out of 5757724
+ 36067 strings out of 474773
+ 752860 string characters out of 5757724
  1966839 words of memory out of 5000000
- 57501 multiletter control sequences out of 15000+600000
+ 57506 multiletter control sequences out of 15000+600000
  572935 words of font info for 152 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  99i,22n,107p,695b,1963s stack positions out of 10000i,1000n,20000p,200000b,200000s

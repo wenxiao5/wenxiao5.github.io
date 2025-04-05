@@ -1,0 +1,28 @@
+\begin{thebibliography}{}
+
+\bibitem[Athey et~al.(2019)]{athey2019surrogate}
+Athey, S., Chetty, R., Imbens, G.~W., and Kang, H. (2019).
+\newblock The surrogate index: Combining short-term proxies to estimate long-term treatment effects more rapidly and precisely.
+\newblock Technical report, National Bureau of Economic Research.
+
+\bibitem[Chandar et~al.(2022)]{chandar2022using}
+Chandar, P., St.~Thomas, B., Maystre, L., Pappu, V., Sanchis-Ojeda, R., Wu, T., Carterette, B., Lalmas, M., and Jebara, T. (2022).
+\newblock Using survival models to estimate user engagement in online experiments.
+\newblock In {\em Proceedings of the ACM Web Conference 2022}, pages 3186--3195.
+
+\bibitem[Fillmore et~al.(2007)]{fillmore2007moderate}
+Fillmore, K.~M., Stockwell, T., Chikritzhs, T., Bostrom, A., and Kerr, W. (2007).
+\newblock Moderate alcohol use and reduced mortality risk: systematic error in prospective studies and new hypotheses.
+\newblock {\em Annals of epidemiology}, 17(5):S16--S23.
+
+\bibitem[Neyman(1923)]{neyman1923}
+Neyman, J. (1923).
+\newblock On the application of probability theory to agricultural experiments.
+\newblock {\em Statistical Science}, (9):S465––S472.
+
+\bibitem[Rubin(1980)]{rubin1980}
+Rubin, D.~B. (1980).
+\newblock Randomization analysis of experimental data: The fisher randomization test comment.
+\newblock {\em Journal of the American Statistical Association}, 75(371):591--593.
+
+\end{thebibliography}

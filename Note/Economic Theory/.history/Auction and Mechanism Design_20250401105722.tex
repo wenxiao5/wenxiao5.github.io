@@ -1,0 +1,1703 @@
+\documentclass[11pt]{elegantbook_2}
+\usepackage{graphicx}
+%\usepackage{float}
+\definecolor{structurecolor}{RGB}{40,58,129}
+\linespread{1.6}
+\setlength{\footskip}{20pt}
+\setlength{\parindent}{0pt}
+\newcommand{\argmax}{\operatornamewithlimits{argmax}}
+\newcommand{\argmin}{\operatornamewithlimits{argmin}}
+\elegantnewtheorem{claim}{Claim}{prostyle}{Claim}
+\DeclareMathOperator{\col}{col}
+\title{Mechanism Design}
+\author{Wenxiao Yang}
+\institute{Haas School of Business, University of California Berkeley}
+\date{2025}
+\setcounter{tocdepth}{2}
+\extrainfo{Mind offline, notes online.}
+
+\cover{HZ.jpg}
+
+% modify the color in the middle of titlepage
+\definecolor{customcolor}{RGB}{250,255,240}
+\colorlet{coverlinecolor}{customcolor}
+\usepackage{cprotect}
+
+
+\bibliographystyle{apalike_three}
+
+\begin{document}
+\maketitle
+
+\frontmatter
+\tableofcontents
+
+\mainmatter
+
+
+
+
+
+
+
+
+
+
+\chapter{Mechanism Design}
+\section{Social Choice Function/Mechanism}
+Mechanism design focuses on creating incentives for agents to truthfully reveal their private information or to achieve desired societal outcomes. A ``direct'' mechanism is defined by:
+\begin{enumerate}
+    \item A set of agents $I$, each with a utility function $u_i(x;\theta_i)$, where $i \in I$;
+    \item A set of alternatives (or societal outcomes) $X$;
+    \item A set of agent types $\Theta=(\Theta_1,...,\Theta_I)$, with a prior probability distribution $\phi$ over $\Theta$;
+    \item A \textbf{social choice function} (SCF) $f:\Theta\rightarrow X$, mapping types to outcomes.
+\end{enumerate}
+\begin{note}
+    In social choice theory, a social welfare/choice function (SWF/SCF) is typically defined as a function that maps a set of individual preferences to a social preference relation. However, in this context, we define the SCF as a function that maps a set of types to a social outcome, which aligns more closely with the concept of a `social choice mechanism.'
+\end{note}
+\begin{definition}[Properties of a Social Choice Function]\label{SWF_properties}
+    %\normalfont
+    The properties of a social choice function $f$ are defined as follows:
+    \begin{enumerate}[$\circ$]
+        \item \textbf{Unrestricted Domain / Universal Domain (UD)}: The domain of $f$ includes all possible preferences of agents, i.e., $f:\Theta \rightarrow X$ (this property is generally satisfied).
+        \item \textbf{Non-Dictatorship (ND)}: There does not exist an agent $i^* \in \{1, \dots, I\}$ such that $f(\theta) \in \argmax_{x \in X} u_{i^*}(x; \theta_{i^*})$ for all $\theta \in \Theta$. (In other words, no single agent's preferences always determine the social outcome.)
+        \item \textbf{Weak Pareto Efficiency (PA) / Unanimity}: There does not exist an alternative $x \neq f(\theta)$ such that $u_i(x; \theta_i) \geq u_i(f(\theta); \theta_i)$ for all $i \in I$, with strict inequality for at least one agent $j \in I$.
+        \item \textbf{Independence of Irrelevant Alternatives (IIA)}: For any $\theta, \theta' \in \Theta$, if $u_i(x, \theta) > u_i(y, \theta) \Leftrightarrow u_i(x, \theta') > u_i(y, \theta')$ for all $i\in I$ and some $\{x, y\} \subseteq X$, then $x = f(\theta) \Rightarrow y \neq f(\theta')$.
+    \end{enumerate}
+\end{definition}
+
+
+\subsection{Arrow's Theorem}
+\begin{theorem}[Arrow's Impossibility Theorem]\label{Arrow_Theorem}
+    Suppose $|X|\geq 3$. Then, there exists no social choice function satisfying all of Arrow's four axioms.
+\end{theorem}
+Note: Any dictatorship satisfies UD, PA, and IIA.
+
+\section{Mechanism Design}
+\begin{definition}[Mechanism $\Gamma=(S,g)$]
+    A \textbf{mechanism} is represented as $$\Gamma=\left(S, g\right),$$
+    where $S\triangleq(S_1,...,S_I)$ represents the set of strategies, with $S_i$ being the strategy set of agent $i$, and $g:S\triangleq(S_1,...,S_I) \rightarrow X$ is the outcome function that determines the social outcome.
+\end{definition}
+
+A \textbf{Bayesian game induced by} $\Gamma$ is $(I,S,\Theta,\phi,\tilde{u})$, where the payoff functions are defined as:
+\begin{equation}
+    \tilde{u}_i(s;\theta_i)=u_i(g(s);\theta_i),
+\end{equation}
+for all $i\in I$, $s\in S$, and $\theta_i\in\Theta_i$.
+
+
+\subsection{Implement in Dominant Strategies}
+\begin{definition}[$\Gamma$ Implements $f$]
+    %\normalfont
+    A mechanism $\Gamma$ (indirectly) \textbf{implements} a social choice function (SCF) $f$ if there exists an ``equilibrium'' $s^*(\cdot)=\left(s_1^*(\cdot),...,s_I^*(\cdot)\right)$ of the Bayesian game induced by $\Gamma$ such that $$g(s_1^*(\theta_1),...,s_I^*(\theta_I))=f(\theta_1,...,\theta_I)$$ for all $(\theta_1,...,\theta_I)\in \Theta$. Here the ``equilibrium'' is a dominant strategy equilibrium or BNE.
+\end{definition}
+That is, the equilibrium in a game induced by $\Gamma$ gives the same outcome as the outcome of $f$ given by revealing agents' true types.
+
+\begin{definition}[Direct Mechanism]
+    %\normalfont
+    A mechanism is \textbf{direct mechanism} if agents directly report their types (types are observable). $S_i=\Theta_i$ for all $i\in I$ and $g(\theta)=f(\theta)$ for all $\theta=(\theta_1,...,\theta_I)\in\Theta$. So, a direct mechanism can be represented by $\Gamma=(\Theta,f(\cdot))$.
+\end{definition}
+In indirect mechanism agents don't report their types directly. Types can be observed only indirectly through signals or behavior.
+
+A strategy is weakly dominant if for all $\theta_i\in\Theta_i$ and all $s_{-i}(\cdot)\in S_{-i}$, we have $u_i(g(s_i(\theta_i),s_{-i}),\theta_i)\geq u_i(g(s'_i,s_{-i}),\theta_i)$ for all $s'_i\neq s_i$.
+
+
+\begin{definition}[Dominant Strategy Equilibrium]
+    %\normalfont
+    Strategy profile $s^*=(s_1^*(\cdot),...,s_I^*(\cdot))$ is a \textbf{dominant strategy (D-S) equilibrium} of $\Gamma=(S,g(\cdot))$ if for all $i\in I$ and $\theta_i\in \Theta$, we have, for all $s'_i\in S_i$ and $s_{-i}\in S_{-i}$:
+    \begin{equation}
+        \begin{aligned}
+            u_i(g(s_i^*(\theta_i),s_{-i}),\theta_i)&\geq u_i(g(s'_i,s_{-i}),\theta_i)
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    equivalently, in the Bayesian game induced by $\Gamma$,
+    \begin{equation}
+        \begin{aligned}
+            \tilde{u}_i(s_i^*(\theta_i),s_{-i},\theta_i)\geq \tilde{u}_i(s'_i,s_{-i},\theta_i)
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{definition}
+
+\begin{definition}[Implement in dominant strategies]
+    %\normalfont
+    $\Gamma$ \textbf{implements} $f$ in \textbf{dominant strategies} if $\exists$ a dominant strategy (D-S) equilibrium $s^*$ of $\Gamma$ such that $g(s^*(\theta))=f(\theta)$.
+\end{definition}
+``$\Gamma$ implements $f$ in dominant strategies'' means that the results of the direct mechanism, $(\Theta,f(\cdot))$, are equivalent to the results of a D-S equilibrium of another (indirect) mechanism $\Gamma$. That is, $\Gamma$ can be used as $(\Theta,f(\cdot))$ ``equivalently.''
+\begin{center}\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[domain=0:3.25]
+        \node at (0,0) {Types: $\Theta$};
+        \draw[->](1,0)--(7,0) node[right] {Alternatives: $X$};
+        \draw[dashed,->](0.5,-0.5)--(3.5,-3);
+        \node at (4,-3) {$s^*(\theta)$};
+        \draw[dashed,->](4.5,-3)--(7.5,-0.5);
+        \draw[->](0,-0.5)--(3.5,-3.5);
+        \node at (4,-3.5) {$s^*=\theta$};
+        \draw[->](4.6,-3.5)--(8.1,-0.5);
+        \node at (0.5,-1.8) {Desirable};
+        \node at (0.5,-2.2) {Situation};
+        \node at (2.5,-0.9) {Indirect};
+        \node at (2.5,-1.3) {Mechanism};
+        \node at (2.5,-1.7) {$\Gamma$};
+        \node at (6.5,-2.5) {$f(\theta)$};
+        \node at (5.5,-1.5) {$g(s^*(\theta))$};
+    \end{tikzpicture}
+    \caption{How Mechanism Design works}
+    \label{}
+\end{figure}\end{center}
+
+
+
+
+\subsection{Dominant-Strategy-Incentive-Compatible (DSIC)/Strategy-Proof}
+\begin{definition}[Strategy-Proof, DSIC]
+    %\normalfont
+    $f$ is \textbf{strategy-proof} (also called dominant-strategy-incentive-compatible, \textbf{DSIC}) if $$s^*_i(\theta_i)=\theta_i,\quad \forall \theta_i\in\Theta_i,i\in I$$ is a dominant strategy (D-S) equilibrium of the direct mechanism $\Gamma=(\Theta,f(\cdot))$.
+\end{definition}
+
+\begin{theorem}[Revelation Principle]
+    If $\exists$ a mechanism $\Gamma=(S,g(\cdot))$ that implements $f$ in dominant strategies (i.e., $\exists$ a D-S equilibrium $s^*$ of $\Gamma$ such that $g(s^*(\theta))=f(\theta)$). Then $f$ is strategy-proof (DSIC).
+    \begin{note}
+        Based on the Revelation Principle, if a ``indirect'' mechanism has a D-S equilibrium $s^*$, then there exists a ``direct'' DSIC mechanism $f$ with $f(\theta)=g(s^*(\theta))$.
+    \end{note}
+\end{theorem}
+\begin{proof}
+    Given $\Gamma$ implements $f$ in dominant strategies, there is a  D-S equilibrium $s^*=\left(s_1^*(\cdot),...,s_I^*(\cdot)\right)$ such that $g(s^*(\theta))=f(\theta)$.\\
+    By the definition of D-S equilibrium,
+    \begin{equation}
+        \begin{aligned}
+            u_i(g(s_i^*(\theta_i),s_{-i}),\theta_i)&\geq u_i(g(s'_i,s_{-i}),\theta_i)
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    By substituting $g(s^*(\theta))=f(\theta)$, we have
+    \begin{equation}
+        \begin{aligned}
+            u_i(f(\theta_i,\theta_{-i}),\theta_i)&\geq u_i(f(\theta'_i,\theta_{-i}),\theta_i),\quad \forall \theta'_i\in\Theta_i
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    which gives that $f$ is DSIC.
+\end{proof}
+
+
+
+\subsection{Bayesian-Incentive-Compatible (BIC)}
+\begin{definition}[BIC]
+    %\normalfont
+    $f$ is Bayesian-incentive-compatible (B.I.C.) if $$s^*_i(\theta_i)=\theta_i,\quad \forall \theta_i\in\Theta_i,i\in I$$ is a BNE of the Bayesian game induced by the direct mechanism $\Gamma=(\Theta,f(\cdot))$.
+\end{definition}
+BIC is a weaker condition than DSIC, because a BNE must also be a D-S equilibrium.
+
+\begin{theorem}[Revelation Principle (BIC)]\label{theorem:revelation principle BIC}
+    If $\exists$ a mechanism $\Gamma=(S,g(\cdot))$ that implements $f$ in BNE (i.e., $\exists$ a BNE $s^*$ of $\Gamma$ such that $g(s^*(\theta))=f(\theta)$). Then $f$ is BIC.
+    \begin{note}
+        Based on the Revelation Principle, if a ``indirect'' mechanism has a BNE $s^*$, then there exists a ``direct'' BIC mechanism $f$ with $f(\theta)=g(s^*(\theta))$.
+    \end{note}
+\end{theorem}
+
+\section{More on Social Choice}
+\subsection{Gibbard-Satterthwaite Theorem: Strategy-proof $f$ $\Leftrightarrow$ Dictatorial}
+\begin{theorem}[Gibbard-Satterthwaite Theorem]\label{Gibbard-Satterthwaite_Theorem}
+    Suppose $|X|\geq 3$ and a social choice function $f$ is surjective (i.e., $\forall x\in X$, $\exists (\theta_1,...,\theta_I)\in\Theta$ such that $f(\theta_1,...,\theta_I)=x$). Then, $f$ is strategy-proof (DSIC) $\Leftrightarrow$ $f$ is dictatorial (i.e., $\exists i^*\in\{1,...,I\}$ such that $f(\theta)\in \argmax_{x\in X}u_{i^*}(x;\theta_{i^*})$ for all $\theta\in \Theta$).
+\end{theorem}
+\noindent\textbf{Note:} By the revelation principle, under the conditions of the theorem, there is no mechanism that implements a non-dictatorial SCF $f$ in dominant strategies.
+
+\begin{remark}
+    Combining Arrow's Impossibility Theorem~\ref{Arrow_Theorem} and the Gibbard-Satterthwaite Theorem~\ref{Gibbard-Satterthwaite_Theorem}, if we wish to avoid dictatorship, we must relax some of the axioms. The most viable candidates are:
+    \begin{enumerate}
+        \item Independence of Irrelevant Alternatives (IIA) (Arrow)
+        \item Strategy-proofness (Gibbard-Satterthwaite)
+        \item Universal domain (both)
+    \end{enumerate}
+\end{remark}
+\begin{note}
+    Impossibility results are often circumvented by making domain-limiting assumptions.
+\end{note}
+
+\subsection{Harsanyi's (Possibility) Theorem}
+To formally establish this theorem, we need to define the social choice function within the Arrow framework. To distinguish it from the social choice function in our mechanism design framework (which is essentially a social choice mechanism), we refer to the social choice function in the Arrow framework as a \textbf{social welfare function (SWF)}.
+
+\begin{definition}[Social Welfare Function (SWF)]
+    %\normalfont
+    A \textbf{social welfare (choice) function} (SWF) is a mapping $$f:\Theta=(\Theta_1,...,\Theta_I) \rightarrow \mathcal{P}, $$
+    where $\mathcal{P}$ denotes the set of all social preference relations over $X$ and the relation $\trianglerighteq = f(\theta)$ is interpreted as the \textbf{social preference relation}. Note that it is not required to be rational (i.e., complete and transitive).
+\end{definition}
+
+We impose additional structure relative to Arrow's framework:
+\begin{enumerate}
+    \item There is a finite set of consequences $\mathcal{C}$.
+    \item The set of alternatives (or societal outcomes) $X$ is the set of all lotteries on $\mathcal{C}$, i.e., $X=\Delta(\mathcal{C})$ (Note: not finite).
+\end{enumerate}
+
+\begin{definition}[Harsanyi's Three Axioms]
+    Harsanyi's three axioms are as follows:
+    \begin{enumerate}
+        \item \textbf{EU Preferences}: Each agent's preference $\succcurlyeq_i$ (or $\theta_i$ equivalently) can be represented by a von Neumann-Morgenstern utility function $u_i(\cdot;\theta_i)$ such that $$x \succcurlyeq_i y \Leftrightarrow \mathbb{E}_x[u_i(x;\theta_i)] \geq \mathbb{E}_y[u_i(y;\theta_i)].$$ Let $\mathcal{R}$ denote the set of such preferences.
+        \item \textbf{Pareto Indifference}: If $x \sim_i y$ for all $i \in I$, then $x \sim y$.
+        \item \textbf{Social EU}: For each $(\succcurlyeq_1,\ldots,\succcurlyeq_I) \in \mathcal{R}^I$, the \textit{social welfare function} satisfies the vNM EU axioms: there exists $u(\cdot;\theta)$ such that $$x f(\theta) y \Leftrightarrow \mathbb{E}_x[u(x;\theta)] \geq \mathbb{E}_y[u(y;\theta)].$$
+    \end{enumerate}
+\end{definition}
+
+\begin{theorem}
+    If Harsanyi's three axioms are satisfied, then for each $\theta \in \Theta$, there exists $\lambda(\theta) \in \Delta(I)$ such that $u(\cdot;\theta) = \sum_{i \in I} \lambda_i(\theta) u_i(\cdot;\theta_i)$.
+\end{theorem}
+
+Recall that Arrow's axioms in this context are given as follows:
+\begin{definition}[Arrow's Axioms]
+    A social welfare function $f: \Theta \rightarrow \mathcal{P}$ satisfies the following properties under the Arrow framework:
+    \begin{enumerate}[$\circ$]
+        \item \textbf{Unrestricted Domain (UD)}.
+        \item \textbf{Non-Dictatorship (ND)}: There is no agent $i \in I$ such that, for all $\{x, y\} \subseteq X$, $\mathbb{E}_x[u_i(x;\theta_i)] \geq \mathbb{E}_y[u_i(y;\theta_i)]$ implies $x f(\theta) y$. (In other words, no single agent always determines the social preference.)
+        \item \textbf{Weak Pareto Efficiency (PA)}: For all $\{x, y\} \subseteq X$ and any preference profile $\theta \in \Theta$, if $\mathbb{E}_x[u_i(x;\theta_i)] \geq \mathbb{E}_y[u_i(y;\theta_i)]$ for all $i \in I$, then $x f(\theta) y$.
+        \item \textbf{Independence of Irrelevant Alternatives (IIA)}: For any $\theta, \theta' \in \Theta$, if $\mathbb{E}_x[u_i(x, \theta)] \geq \mathbb{E}_y[u_i(y, \theta)] \Leftrightarrow \mathbb{E}_x[u_i(x, \theta')] \geq \mathbb{E}_y[u_i(y, \theta')]$ for all $i$ and some $\{x, y\} \subseteq X$, then $x f(\theta) y \Rightarrow x f(\theta') y$.
+    \end{enumerate}
+\end{definition}
+
+When $\lambda(\theta)$ is constant and non-degenerate, we obtain a social choice function $f$ defined by
+\begin{equation}
+    \begin{aligned}
+        x f(\theta) y \Leftrightarrow \sum_{i=1}^I \lambda_i \mathbb{E}_x[u_i(x;\theta)] \geq \sum_{i=1}^I \lambda_i \mathbb{E}_y[u_i(y;\theta)].
+    \end{aligned}
+    \nonumber
+\end{equation}
+This is often referred to as \textbf{utilitarian social choice}, which is widely used in practice. It has the following properties:
+\begin{enumerate}
+    \item It satisfies Pareto efficiency.
+    \item It is not dictatorial.
+    \item Its domain is limited to EU preferences.
+    \item It violates IIA.
+\end{enumerate}
+
+\begin{lemma}
+    The utilitarian social choice function violates IIA.
+\end{lemma}
+\begin{proof}
+    We construct a counterexample with two individuals and two alternatives to demonstrate the violation of IIA.
+    \begin{itemize}
+        \item Individuals: $i = 1, 2$.
+        \item Alternatives: $x$ and $y$.
+        \item Fixed weights: $\lambda_1 = \lambda_2 = 0.5$ (non-dictatorial).
+    \end{itemize}
+    \noindent \textbf{Profile $\theta$:}
+    \begin{itemize}
+        \item Individual 1's vNM utility: 
+        \[
+        u_1(x;\theta_1) = 2, \quad u_1(y;\theta_1) = 1 \quad \implies \quad x \succ_1 y.
+        \]
+        \item Individual 2's vNM utility: 
+        \[
+        u_2(x;\theta_2) = 1, \quad u_2(y;\theta_2) = 2 \quad \implies \quad y \succ_2 x.
+        \]
+    \end{itemize}
+    \noindent \textbf{Social Preference under $\theta$:}
+    \begin{align*}
+        \text{Utilitarian sum for } x &: \quad 0.5 \cdot 2 + 0.5 \cdot 1 = 1.5, \\
+        \text{Utilitarian sum for } y &: \quad 0.5 \cdot 1 + 0.5 \cdot 2 = 1.5.
+    \end{align*}
+    Thus, the social preference is \textit{indifferent}: $x \sim y$.\\
+    \noindent \textbf{Profile $\theta'$:}\\
+    Individual 1's utility is rescaled via an affine transformation (preserving ordinal rankings):
+    \begin{itemize}
+        \item Individual 1's vNM utility: 
+        \[
+        u_1(x;\theta'_1) = 4, \quad u_1(y;\theta'_1) = 2 \quad \implies \quad x \succ_1 y \text{ (unchanged)}.
+        \]
+        \item Individual 2's utility remains: 
+        \[
+        u_2(x;\theta'_2) = 1, \quad u_2(y;\theta'_2) = 2 \quad \implies \quad y \succ_2 x \text{ (unchanged)}.
+        \]
+    \end{itemize}
+    \noindent \textbf{Social Preference under $\theta'$:}
+    \begin{align*}
+        \text{Utilitarian sum for } x &: \quad 0.5 \cdot 4 + 0.5 \cdot 1 = 2.5, \\
+        \text{Utilitarian sum for } y &: \quad 0.5 \cdot 2 + 0.5 \cdot 2 = 2.
+    \end{align*}
+    Thus, the social preference is \textit{strict}: $x \succ y$.\\
+    \noindent \textbf{Violation of IIA:}
+    \begin{itemize}
+        \item Individual ordinal preferences between $x$ and $y$ are identical in $\theta$ and $\theta'$:
+        \[
+        x \succ_1 y \text{ and } y \succ_2 x \quad \text{in both profiles}.
+        \]
+        \item However, the social preference flips from indifference ($x \sim y$) in $\theta$ to strict preference ($x \succ y$) in $\theta'$.
+        \item This violates IIA because the social preference between $x$ and $y$ depends on \textit{cardinal utility values}, not just ordinal rankings. The change in scaling (an affine transformation) altered the social preference even though individual ordinal rankings were unchanged.
+    \end{itemize}
+    \noindent \textbf{Conclusion:} The utilitarian social choice function violates IIA because it aggregates cardinal utilities, making social preferences sensitive to the \textit{intensity} of individual preferences. This contradicts IIA's requirement that social preferences depend only on individual ordinal rankings of $x$ and $y$.
+\end{proof}
+
+\begin{comment}
+Some lemmas can help to prove the theorem.
+\begin{lemma}
+    If $f$ is strategy-proof (DSIC) and $f(\succcurlyeq)=x$ and $x\succcurlyeq_i y \Rightarrow x\succcurlyeq'_i y$ for all $i\in I$ and all $x\neq y\in X$, then $f(\succcurlyeq')=x$.
+\end{lemma}
+
+\begin{lemma}[Pareto Effeciency]
+    If $f$ is strategy-proof (DSIC) and $x\succ_i y$ for all $i\in I$, then $f(\succcurlyeq')\neq y$.
+\end{lemma}
+
+\begin{example}
+    Define $\succcurlyeq=\begin{pmatrix}
+        x&y\\
+        y&x\\
+        z&z
+    \end{pmatrix}$ and $\succcurlyeq'=\begin{pmatrix}
+        x&y\\
+        y&z\\
+        z&x
+    \end{pmatrix}$, each column 1/2 represents player 1/2's preferences.
+\end{example}
+\end{comment}
+
+
+\section{Quasi-linear Model}
+Consider $x=(k,\underbrace{t_1,...,t_I}_{t})\in X=K\times \mathbb{R}^I$, in our example, $K$ represents a set of choices for projects and $\mathbb{R}^I$ represents the set of transfers for all agents.
+
+Each agent has a quasi-linear function that represents her utility:
+\begin{equation}
+    \begin{aligned}
+        u_i(k,t,\theta_i)=v(k,\theta_i)+t_i
+    \end{aligned}
+    \nonumber
+\end{equation}
+where $v: K\times\Theta_i \rightarrow \mathbb{R}$ represents the utility without transfers.
+
+Let $p(\cdot)=\left(k(\cdot),t(\cdot)\right)$ represents the ``project-choice rule'' $k: \Theta \rightarrow K$ and the ``transfer rule'' $t: \Theta \rightarrow \mathbb{R}^I$.
+\begin{definition}[ex-post efficient]
+    %\normalfont
+    $k(\cdot):\Theta \rightarrow K$ is \textbf{ex-post efficient} if $\nexists \left(\theta\in\Theta, k'\in K, t=(t_1,...,t_I)\in \mathbb{R}^I\right)$ such that
+    \begin{enumerate}[(1).]
+        \item $\sum_{i=1}^I t_i=0$
+        \item $v_i(k',\theta_i)+t_i> v_i(k(\theta),\theta_i)$, $\forall i\in I$
+    \end{enumerate}
+    i.e., we can't get a higher total social welfare. (Because of the transfers, a higher social welfare can make everyone better off.)
+\end{definition}
+
+\begin{proposition}[ex-post efficient $\Leftrightarrow$ maximizing the sum of utilities]
+    $\forall$ project-choice rule $k(\cdot)$, $k(\cdot)$ is ex-post efficient \underline{if and only if} $k(\cdot)$ maximizes the sum of utilities, i.e., $\forall \theta\in\Theta$ and $\forall k'\in K$,
+    \begin{equation}
+        \begin{aligned}
+            \sum_{i=1}^I v_i(k(\theta),\theta_i)\geq \sum_{i=1}^I v_i(k',\theta_i)
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{proposition}
+\begin{proof}
+    ``$\Leftarrow$'': Suppose by the way of contradiction that there exists $\left(\theta, k', t\right)$ such that $\sum_{i=1}^I t_i=0$ and $v_i(k',\theta_i)+t_i> v_i(k(\theta),\theta_i)$, $\forall i\in I$. Sum together, there is a contradiction.\\
+    ``$\Rightarrow$'': Suppose by the way of contradiction that there exists $(\theta,k')$, $\sum_{i=1}^I v_i(k(\theta),\theta_i)<\sum_{i=1}^I v_i(k',\theta_i)$. Then, we can define a $t$ such that satisfies $\sum_{i=1}^I t_i=0$ and $v_i(k',\theta_i)+t_i> v_i(k(\theta),\theta_i)$, $\forall i\in I$. Let $\Delta=\sum_{i=1}^I v_i(k',\theta_i)-\sum_{i=1}^I v_i(k(\theta),\theta_i)$, then $t_i=v_i(k(\theta),\theta_i)-v_i(k',\theta_i)+\frac{\Delta}{I},\forall i\in I$ is the transfer-choice we want.
+\end{proof}
+
+\subsection{Vickrey-Clarke-Groves Mechanism}
+\begin{proposition}[VCG Mechanism]
+    Suppose $k^*(\cdot)$ is ex-post efficient project choice rule. For each $i\in \{1,...,I\}$, let $h_i:\Theta_{-i} \rightarrow \mathbb{R}$ be an arbitrary function.\\
+    Define the transfer rule $t(\cdot)$ as follows
+    \begin{equation}
+        \begin{aligned}
+            t_i(\theta_i,\theta_{-i})=\sum_{j\neq i}v_j(k^*(\theta_i,\theta_{-i}),\theta_j)+h_i(\theta_{-i})
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    Then the SCF $f(\cdot)=\left(k^*(\cdot),t(\cdot)\right)$ is DSIC.
+\end{proposition}
+\begin{proof}
+    Take any $i,\theta\in\Theta$ and let $\hat{\theta}_i\in\Theta_i$.
+    Reporting truthfully gives higher profits than misreporting $\hat{\theta}_i$:
+        \begin{equation}
+            \begin{aligned}
+                v_i(k^*(\theta_i,\theta_{-i}),\theta_i)+t_i(\theta_i,\theta_{-i})&=v_i(k^*(\theta_i,\theta_{-i}),\theta_i)+\sum_{j\neq i}v_j(k^*(\theta),\theta_j)+h_i(\theta_{-i})\\
+                &=\sum_{j=1}^Iv_j(k^*(\theta),\theta_j)+h_i(\theta_{-i})\\
+                &\geq \sum_{j=1}^Iv_j(k^*(\hat{\theta}_i,\theta_{-i}),\theta_j)+h_i(\theta_{-i})\\
+                &=v_i(k^*(\hat{\theta}_i,\theta_{-i}),\theta_i)+t_i(\hat{\theta}_i,\theta_{-i})
+            \end{aligned}
+            \nonumber
+        \end{equation}
+    Hence, VCG mechanism with SCF $f(\cdot)=\left(k^*(\cdot),t(\cdot)\right)$ is DSIC.
+\end{proof}
+
+\begin{definition}[Pivotal VCG Mechanism (Special Case)]
+    %\normalfont
+    Let $h_i(\theta_{-i})=\max_{k\in K}\sum_{j\neq i}v_j(k,\theta_j)$.
+    \begin{equation}
+        \begin{aligned}
+            t_i(\theta_i,\theta_{-i})=\sum_{j\neq i}v_j(k^*(\theta_i,\theta_{-i}),\theta_j)-\max_{k\in K}\sum_{j\neq i}v_j(k,\theta_j)\leq 0
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    \begin{enumerate}
+        \item $i$ is \textbf{pivotal} if $k^*(\theta)$ doesn't maximize $\max_{k\in K}\sum_{j\neq i}v_j(k,\theta_j)$.
+        \item $i$ is \textbf{not pivotal} if $k^*(\theta)$ maximizes $\max_{k\in K}\sum_{j\neq i}v_j(k,\theta_j)$.
+    \end{enumerate}
+    \begin{note}
+        $i$ is \textbf{not pivotal} $\Rightarrow$ $t_i(\theta)=0$.
+    \end{note}
+\end{definition}
+
+\begin{example}
+    Suppose $k\in\{0,1\}, \theta\in \Theta\subset \mathbb{R}^I$, $v_i(k,\theta_i)=k\theta_i$. Since $\sum_{i=1}^Iv_i(k,\theta_i)=k\sum_{i=1}^I\theta_i$, $k^*(\cdot)$ is ex-post efficient: $k^*(\theta)=1 \Leftrightarrow \sum_{i=1}^I\theta_i\geq 0$. The pivotal VCG transfers:
+    \begin{equation}
+        \begin{aligned}
+            t_i(\theta)=\left\{\begin{matrix}
+                \sum_{j\neq i}\theta_j-0&\textnormal{ if }\sum_{j=1}^I \theta_j\geq 0>\sum_{j\neq i}\theta_j\\
+                0-\sum_{j\neq i}\theta_j&\textnormal{ if }\sum_{j=1}^I \theta_j< 0\leq\sum_{j\neq i}\theta_j\\
+                0&\textnormal{ otherwise}
+            \end{matrix}\right.
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{example}
+
+\begin{example}[ (Second Price Auction)]
+    One indivisible object to be allocated to one of $1,...,I$. Social decision is deciding who gets the object, $K=\{1,...,I\}$, $k=i$ means ``i receives the object''. $\Theta_i\subseteq \mathbb{R}_+$, $\theta_i\in\Theta_i$ denotes $i$'s valuation for the object $v_i(k,\theta_i)=\left\{\begin{matrix}
+        \theta_i,& \textnormal{ if }k=i\\
+        0,& \textnormal{ if }k\neq i
+    \end{matrix}\right.$.
+    Ex-post efficient $k^*(\cdot)$ allocates the object to the individual with the highest valuation. The pivotal VCG transfers:
+    \begin{equation}
+        \begin{aligned}
+            t_i(\cdot)=\left\{\begin{matrix}
+                0-\theta^{(2)}\textnormal{(the second highest)},& \textnormal{ if }k^*(\theta)=i \textnormal{ ($i$ is pivotal)}\\
+                0=\theta^{(1)}-\theta^{(1)},&\textnormal{ if }k^*(\theta)\neq i
+            \end{matrix}\right.
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{example}
+
+
+\begin{example}[ (Uniform-Price Auction)]
+    $m$-identical indivisible objects ($m<I$). Each agent can consume $0$ or $1$ object. $K=\{M\subset \{1,...,I\}\mid |M|=m\}$, where $k=M$ is the set of agents who receive an object. $v_i(k,\theta_i)=\left\{\begin{matrix}
+        \theta_i,&i\in k\\
+        0,&i\notin k
+    \end{matrix}\right.$. The ex-post efficient $k^*(\cdot)$ allocates the objects to top $m$-valuation agents. The pivotal VCG transfers:
+    \begin{equation}
+        \begin{aligned}
+            t_i(\theta)=\left\{\begin{matrix}
+                \left(\sum_{j=1}^m\theta_{(j)}-\theta_i\right)-\left(\sum_{j=1}^{m+1}\theta_{(j)}-\theta_i\right)=-\theta^{(m+1)}&,i\in k^*(\theta)\\
+                0&,i\notin k^*(\theta)
+            \end{matrix}\right.
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{example}
+
+\begin{example}[ (Package Auction)]
+    $2$ identical indivisible objects to be allocated $I=3$ agents. Each agent can consume $0$, $1$, or $2$ units. $K=\{(1,1,0),(1,0,1),(0,1,1),(2,0,0),(0,2,0),(0,0,2)\}$. $\Theta_i=\{\theta_i=(v_1,v_2)\in \mathbb{R}^2_+\mid v_2\geq v_1\geq 0\}$. Consider an example,
+    \begin{center}
+        \begin{tabular}{c|c|c|c}
+            \hline
+                &$\theta_1$ &$\theta_2$&$\theta_3$\\
+            \hline
+                $v_1$&$3$ &$4$&$1$\\
+            \hline
+                $v_2$&$4$ &$5$&$6$\\
+            \hline
+        \end{tabular}
+    \end{center}
+    The ex-post efficient $k^*(\theta)=(1,1,0)$. Then,
+    \begin{equation}
+        \begin{aligned}
+            t_1(\theta)=4-6=-2, t_2(\theta)=3-6=-3, t_3(\theta)=7-7=0
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{example}
+
+
+\subsection{Uniqueness of VCG Mechanism}
+\begin{assumption}
+    $K$ is a compact subset of a topological space which all singletons are closed (metric spaces $K\subset \mathbb{R}^n$, $K$ compact, or any finite $K$.)
+\end{assumption}
+
+Let $V_{usc}$ be the set of upper hemicontinuous functions $v: K \rightarrow \mathbb{R}$. ($v$ is upper hemicontinuous if $\forall \alpha\in \mathbb{R}: \{k\in K\mid v(k)\geq \alpha\}$ is closed.)
+
+\textbf{Facts}: A upper hemicontinuous function attains the maximum over a compact set. Sum of upper hemicontinuous functions is upper hemicontinuous.
+
+\begin{proposition}[Green \& Laffont 1979]\label{prop:Uniq_VCG_mechanism}
+    Suppose that $\forall i: \{v_i(\cdot,\theta_i): K \rightarrow \mathbb{R}\mid \theta_i\in\Theta_i\}=V_{usc}$. Then, any ex-post efficient and DSIC direct mechanism is a VCG mechanism.
+\end{proposition}
+\begin{proof}
+    Take any $f(\cdot)=\left(k^*(\cdot),t_i(\cdot)\right)$ such that it is ex-post efficient and DSIC. We prove it is VCG mechanism by showing there is a $h_{i}$ satisfies the definition of VCG mechanism.\\
+    Define $\forall i, h_i:\Theta \rightarrow \mathbb{R}$ such that
+    \begin{equation}
+        \begin{aligned}
+            h_i(\theta)=-\sum_{j\neq i}v_j(k^*(\theta_i,\theta_{-i}),\theta_j)+t_i(\theta_i,\theta_{-i})
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    \textbf{We want to show $h_i(\theta)$ is independent of $\theta_i$ and is actually $h_i(\theta_{-i})$.}\\
+    That is, $\forall \theta_i,\hat{\theta}_i,\theta_{-i}$, we want to show $h_i(\theta_i,\theta_{-i})=h_i(\hat{\theta}_i,\theta_{-i})$.
+    \begin{lemma}\label{lemma:k_h}
+        If $k^*(\theta_i,\theta_{-i})=k^*(\hat{\theta}_i,\theta_{-i})$, then $h_i(\theta_i,\theta_{-i})=h_i(\hat{\theta}_i,\theta_{-i})$.
+    \end{lemma}
+    \begin{proof}
+        $k^*(\theta_i,\theta_{-i})=k^*(\hat{\theta}_i,\theta_{-i})$ requires
+        \begin{equation}
+            \begin{aligned}
+                v_i(k^*(\theta_i,\theta_{-i}),\theta_i)+t_i(\theta_i,\theta_{-i})&\geq v_i(k^*(\hat{\theta}_i,\theta_{-i}),\theta_i)+t_i(\hat{\theta}_i,\theta_{-i})\\
+                v_i(k^*(\hat{\theta}_i,\theta_{-i}),\hat{\theta}_i)+t_i(\hat{\theta}_i,\theta_{-i})&\geq v_i(k^*(\theta_i,\theta_{-i}),\hat{\theta}_i)+t_i(\theta_i,\theta_{-i})
+            \end{aligned}
+            \nonumber
+        \end{equation}
+        Since $v_i(k^*(\hat{\theta}_i,\theta_{-i}),\hat{\theta}_i)=v_i(k^*(\theta_i,\theta_{-i}),\hat{\theta}_i)$, we have $t_i(\hat{\theta}_i,\theta_{-i})=t_i(\theta_i,\theta_{-i})$. Hence, $h_i(\theta_i,\theta_{-i})=h_i(\hat{\theta}_i,\theta_{-i})$.
+    \end{proof}
+    \begin{enumerate}
+        \item \underline{Case 1:} ``$k^*(\theta_i,\theta_{-i})=k^*(\hat{\theta}_i,\theta_{-i})$'', $h_i(\theta_i,\theta_{-i})=h_i(\hat{\theta}_i,\theta_{-i})$ is given by Lemma \ref{lemma:k_h}.
+        \item \underline{Case 2:} ``$k^*(\theta_i,\theta_{-i})\neq k^*(\hat{\theta}_i,\theta_{-i})$''\\
+        Suppose by the way of contradiction $h_i(\theta_i,\theta_{-i})\neq h_i(\hat{\theta}_i,\theta_{-i})$, WLOG, we consider $h_i(\theta_i,\theta_{-i})>h_i(\hat{\theta}_i,\theta_{-i})$. There is an $\epsilon>0$ s.t. $h_i(\theta_i,\theta_{-i})>h_i(\hat{\theta}_i,\theta_{-i})+\epsilon$.\\
+        Define $v: K \rightarrow \mathbb{R}$ such that
+        \begin{equation}
+            \begin{aligned}
+                v(k)=\left\{\begin{matrix}
+                    -\sum_{j\neq i}v_j(k^*(\theta_i,\theta_{-i}),\theta_j),& \textnormal{ if }k=k^*(\theta_i,\theta_{-i})\\
+                    -\sum_{j\neq i}v_j(k^*(\hat{\theta}_i,\theta_{-i}),\theta_j)+\epsilon,& \textnormal{ if }k=k^*(\hat{\theta}_i,\theta_{-i})\\
+                    -C,&\textnormal{ otherwise}\
+                \end{matrix}\right.
+            \end{aligned}
+            \nonumber
+        \end{equation}
+        where $C>\max_{k\in K}\sum_{j\neq i}v_j(k^*(k,\theta_{-i}),\theta_j)$.\\
+        Hence, $v$ is upper hemicontinuous, $v\in V_{usc}$.
+
+        By the assumption that $\forall i: \{v_i(\cdot,\theta_i): K \rightarrow \mathbb{R}\mid \theta_i\in\Theta_i\}=V_{usc}$, we know $\exists \theta^\epsilon_i\in\Theta_i$ s.t. $v_i(\cdot,\theta^\epsilon_i)=v(\cdot)$.
+        \begin{enumerate}[$\circ$]
+            \item Because $k^*(\cdot)$ is ex-post efficient,
+            \begin{equation}
+                \begin{aligned}
+                    v_i(k^*(\theta^\epsilon_i,\theta_{-i}),\theta^\epsilon_i)+\sum_{j\neq i} v_j(k^*(\theta^\epsilon_i,\theta_{-i}),\theta_j)&\geq v_i(k^*(\hat{\theta}_i,\theta_{-i}),\theta^\epsilon_i)+\sum_{j\neq i} v_j(k^*(\hat{\theta}_i,\theta_{-i}),\theta_j)\\
+                    &=v(k^*(\hat{\theta}_i,\theta_{-i}))+\sum_{j\neq i} v_j(k^*(\hat{\theta}_i,\theta_{-i}),\theta_j)=\epsilon
+                \end{aligned}
+                \nonumber
+            \end{equation}
+            By the definition of $v(\cdot)$, we have
+            \begin{equation}
+                \begin{aligned}
+                    v_i(k^*(\theta^\epsilon_i,\theta_{-i}),\theta^\epsilon_i)+\sum_{j\neq i} v_j(k^*(\theta^\epsilon_i,\theta_{-i}),\theta_j)=v(k^*(\theta^\epsilon_i,\theta_{-i}))+\sum_{j\neq i} v_j(k^*(\theta^\epsilon_i,\theta_{-i}),\theta_j)\leq \epsilon
+                \end{aligned}
+                \nonumber
+            \end{equation}
+            Hence, we can conclude $k^*(\theta^\epsilon_i,\theta_{-i})=k^*(\hat{\theta}_i,\theta_{-i})$. Then, by the Lemma \ref{lemma:k_h}, $h_i(\theta^\epsilon_i,\theta_{-i})=h_i(\hat{\theta}_i,\theta_{-i})$.
+            \item Because $f(\cdot)=\left(k^*(\cdot),t_i(\cdot)\right)$ is DSIC, the agent with $\theta^\epsilon_i$ gets the highest profit from truthfully reporting
+            \begin{equation}
+                \begin{aligned}
+                    v_i(k^*(\theta^\epsilon_i,\theta_{-i}),\theta^\epsilon_i)+t_i(\theta^\epsilon_i,\theta_{-i})&\geq v_i(k^*(\theta_i,\theta_{-i}),\theta^\epsilon_i)+t_i(\theta_i,\theta_{-i})\\
+                    \Leftrightarrow -\sum_{j\neq i}v_j(k^*(\theta^\epsilon_i,\theta_{-i}),\theta_j)+\epsilon+t_i(\theta^\epsilon_i,\theta_{-i})&\geq-\sum_{j\neq i}v_j(k^*(\theta_i,\theta_{-i}),\theta_j)+t_i(\theta_i,\theta_{-i})\\
+                    \Leftrightarrow h_i(\theta^\epsilon_i,\theta_{-i})+\epsilon&\geq h_i(\theta_i,\theta_{-i})\\
+                    \Leftrightarrow h_i(\hat{\theta}_i,\theta_{-i})+\epsilon&\geq h_i(\theta_i,\theta_{-i})
+                \end{aligned}
+                \nonumber
+            \end{equation}
+            There is a contradiction.
+        \end{enumerate}
+    \end{enumerate}
+\end{proof}
+
+
+\subsection{Budget Balancedness of VCG Mechanism}
+\begin{definition}[Budget-Balanced VCG Mechanism]
+    %\normalfont
+    A VCG mechanism is \textbf{budget-balanced} if $\sum_{i=1}^It_i(\theta)=0$.
+\end{definition}
+
+Based on the Proposition \ref{prop:Uniq_VCG_mechanism}, we can show the following corollary.
+\begin{corollary}
+    Suppose $I\geq 2$, $|K|\geq 2$, and $\forall i: \{v_i(\cdot,\theta_i): K \rightarrow \mathbb{R}\mid \theta_i\in\Theta_i\}=V_{usc}$. Then, there does not exist a budget-
+    balanced VCG mechanism.
+\end{corollary}
+
+
+\begin{example}
+    $K=\{0,1\},\Theta_i=[-1,1], v_i(k,\theta_i)=k\theta_i$. Take a VCG mechanism $k^*(\cdot)$ ex-post efficient, $h_1:\Theta_2 \rightarrow \mathbb{R}$, $h_2:\Theta_1 \rightarrow \mathbb{R}$.
+    \begin{equation}
+        \begin{aligned}
+            t_1(\theta)+t_2(\theta)&=v_2(k^*(\theta),\theta_2)+h_1(\theta_2)+v_1(k^*(\theta),\theta_1)+h_2(\theta_1)\\
+            &=\max\{0,\theta_1+\theta_2\}+h_1(\theta_2)+h_2(\theta_1)
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    Suppose by the contradiction that it is a budget-balanced VCG mechanism.
+    \begin{equation}
+        \begin{aligned}
+            \max\{0,\theta_1+\theta_2\}+h_1(\theta_2)+h_2(\theta_1)=0
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    We have
+    \begin{equation}
+        \begin{aligned}
+            h_2(1)-h_2(0)=\max\{0,\theta_1\}-\max\{0,\theta_1+1\}
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    The LHS is constant and the RHS is a function of $\theta_1$, which gives a contradiction.
+\end{example}
+
+
+\subsection{Expected-externality Mechanism (BIC Mechanism)}
+\begin{definition}[EE Mechanism]
+%\normalfont
+    $(k^*(\cdot),t(\cdot))$ is an Expected-externality (EE/AGV) mechanism if $k^*(\cdot)$ is ex-post efficient and there are functions $h_i:\Theta_i: \mathbb{R}$ for all $i$ s.t.
+    \begin{equation}
+        \begin{aligned}
+            t_i(\theta)=\underbrace{\mathbb{E}_{\tilde{\theta}_{-i}}\left[\sum_{j\neq i}v_j(k^*(\theta_i,\tilde{\theta}_{-i}),\theta_j)\right]}_{\triangleq \xi_i(\theta_i)}+h_i(\theta_{-i})
+        \end{aligned}
+        \label{EE}
+    \end{equation}
+    where $\xi_i(\theta_i)\triangleq\mathbb{E}_{\tilde{\theta}_{-i}}\left[\sum_{j\neq i}v_j(k^*(\theta_i,\tilde{\theta}_{-i}))\right]$ is the expected externality $i$ imposes on others, from $i$'s interim perspective when her type is $\theta_i$.
+\end{definition}
+
+\begin{proposition}
+    EE mechanisms are BIC.
+\end{proposition}
+\begin{proof}
+    Take any $i$ and $\theta_i,\hat{\theta}_i\in\Theta_i$. $i$'s expected payoff from truthfully reproting is
+    \begin{equation}
+        \begin{aligned}
+            &\mathbb{E}_{\tilde{\theta}_{-i}}\left[v_i(k^*(\theta_i,\tilde{\theta}_{-i}),\theta_i)+t_i(\theta_i,\tilde{\theta}_{-i})\right]\\
+            \textnormal{(substitute \eqref{EE}) }=&\mathbb{E}_{\tilde{\theta}_{-i}}\left[\sum_{j=1}^I v_j(k^*(\theta_i,\tilde{\theta}_{-i}),\theta_j)\right]+\mathbb{E}_{\tilde{\theta}_{-i}}[h_i(\tilde{\theta}_{-i})]\\
+           \textnormal{($k^*$ is ex-post efficient) } \geq& \mathbb{E}_{\tilde{\theta}_{-i}}\left[\sum_{j=1}^I v_j(k^*(\hat{\theta}_i,\tilde{\theta}_{-i}),\theta_j)\right]+\mathbb{E}_{\tilde{\theta}_{-i}}[h_i(\tilde{\theta}_{-i})]\\
+           =& \mathbb{E}_{\tilde{\theta}_{-i}}\left[\sum_{j=1}^I v_j(k^*(\hat{\theta}_i,\tilde{\theta}_{-i}),\theta_j)\right]+\mathbb{E}_{\tilde{\theta}_{-i}}[t_i(\hat{\theta}_i,\tilde{\theta}_{-i})-\xi_i(\hat{\theta_i})]\\
+           =&\mathbb{E}_{\tilde{\theta}_{-i}}\left[v_i(k^*(\hat{\theta}_i,\tilde{\theta}_{-i}),\theta_i)+t_i(\hat{\theta}_i,\tilde{\theta}_{-i})\right]
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{proof}
+
+
+\subsection{Budget-Balanced EE Mechanism}
+Budget balancedness requires
+\begin{equation}
+    \begin{aligned}
+        0=\sum_{i=1}^I t_i(\theta)=\sum_{i=1}^I[\xi_i(\theta_i)+h_i(\theta_{-i})] \Leftrightarrow \sum_{i=1}^I h_i(\theta_{-i})=-\sum_{i=1}^I \xi_i(\theta_i)
+    \end{aligned}
+    \nonumber
+\end{equation}
+Suppose $h_i(\theta_{-i})$ is in the form of $h_i(\theta_{-i})=c\sum_{j\neq i} \xi_j(\theta_j)$. Then,
+\begin{equation}
+    \begin{aligned}
+        \sum_{i=1}^I h_i(\theta_{-i})=c(I-1)\sum_{i=1}^I \xi_i(\theta_i) \Rightarrow c=-\frac{1}{I-1}
+    \end{aligned}
+    \nonumber
+\end{equation}
+\begin{proposition}
+    The EE mechanism where $h_i(\theta_{-i})=-\frac{1}{I-1}\sum_{j\neq i} \xi_j(\theta_j)$ is budget-balanced, $$t_i(\theta)=\xi_i(\theta_i)-\frac{1}{I-1}\sum_{j\neq i} \xi_j(\theta_j)$$
+\end{proposition}
+
+\begin{corollary}
+    $\exists$ a BIC, ex-post efficient and budget-balanced direct mechanism.
+\end{corollary}
+
+
+\begin{example}
+    Project choice with $K=\{0,1\}$, $\theta_i\sim U[-1,1]$, $v_j(k,\theta_j)=k\theta_j$. Let $k^*(\cdot)$ be:
+    \begin{equation}
+        \begin{aligned}
+            k^*(\theta)=\left\{\begin{matrix}
+                1,&\textnormal{ if }\theta_1+\theta_2\geq 0\\
+                0,&\textnormal{ if }\theta_1+\theta_2<0
+            \end{matrix}\right.
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    Then,
+    \begin{equation}
+        \begin{aligned}
+            \xi_i(\theta_i)&\triangleq\mathbb{E}_{\tilde{\theta}_{-i}}\left[v_{-i}(k^*(\theta_i,\tilde{\theta}_{-i}))\right]\\
+            &=\int_{-1}^{-\theta_i}0\times \frac{1}{2} d\tilde{\theta}_{-i}+\int_{-\theta_i}^1 \tilde{\theta}_{-i}\times \frac{1}{2} d\tilde{\theta}_{-i}=\frac{1}{4}(1-\theta_i^2)
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    Hence, the budget-balanced EE mechanism is given by
+    \begin{equation}
+        \begin{aligned}
+            t_i(\theta_i)=\xi_i(\theta_i)-\xi_j(\theta_j)=\frac{1}{4}(\theta_j^2-\theta_i^2)
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{example}
+
+\subsection{Linear Utility Model}
+Suppose types are real numbers $\Theta_i=[\underline{\theta}_i,\overline{\theta}_i]$ and $v_i(k,t,\theta_i)=\theta_i\cdot v_i(k)+t_i$, where $v_i:K \rightarrow \mathbb{R}_i$.
+
+Given a direct mechanism $\left(\Theta,k(\cdot),t(\cdot)\right)$, define interim expected values of $v_i(\cdot)$ and $t_i(\cdot)$:
+\begin{equation}
+    \begin{aligned}
+        \bar{v}_i(\theta_i)=\mathbb{E}_{\theta_{-i}}\left[v_i(\theta_i,\theta_{-i})\right]\\
+        \bar{t}_i(\theta_i)=\mathbb{E}_{\theta_{-i}}\left[t_i(\theta_i,\theta_{-i})\right]
+    \end{aligned}
+    \nonumber
+\end{equation}
+The expected utility of agent $i$ when all agents report truthfully,
+\begin{equation}
+    \begin{aligned}
+        U_i(\theta_i)&=\mathbb{E}_{\theta_{-i}}\left[\theta_iv_i(\theta_i,\theta_{-i})+t_i(\theta_i,\theta_{-i})\right]\\
+        &=\theta_i \bar{v}_i(\theta_i)+\bar{t}_i(\theta_i)
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+\begin{proposition}\label{Linear utility model_BIC}
+    A direct mechanism $\left(\Theta,k(\cdot),t(\cdot)\right)$ is BIC \underline{iff} $\forall i\in\{1,...,I\}$
+    \begin{enumerate}[(1).]
+        \item $\bar{v}_i(\theta_i)$ is non-decreasing in $\theta_i$.
+        \item $\forall \theta_i\in\Theta_i$, $U_i(\theta_i)=U_i(\underline{\theta}_i)+\int_{\underline{\theta}_i}^{\theta_i}\bar{v}_i(s)ds$
+    \end{enumerate}
+\end{proposition}
+\begin{proof}
+    ``$\Rightarrow$'': Given the direct mechanism is BIC. Take any $i$, $\theta_i,\hat{\theta}_i\in\Theta$, agents with $\theta_i,\hat{\theta}_i$ both report truthfully
+    \begin{equation}
+        \begin{aligned}
+            \theta_i \bar{v}_i(\theta_i)+\bar{t}_i(\theta_i)&\geq \theta_i \bar{v}_i(\hat{\theta}_i)+\bar{t}_i(\hat{\theta}_i)\\
+            \hat{\theta}_i \bar{v}_i(\hat{\theta}_i)+\bar{t}_i(\hat{\theta}_i)&\geq \hat{\theta}_i \bar{v}_i(\theta_i)+\bar{t}_i(\theta_i)\\
+            \Rightarrow [\theta_i-\hat{\theta}_i][\bar{v}_i(\theta_i)-\bar{v}_i(\hat{\theta}_i)]&\geq 0
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    Hence, $\bar{v}_i(\theta_i)$ is non-decreasing.\\
+    $U_i(\theta_i)=\max_{\hat{\theta}_i\in\Theta_i}\left[\theta_i\bar{v}_i(\hat{\theta}_i)+t_i(\hat{\theta}_i)\right]$ by BIC is maximized at $\hat{\theta}_i=\theta_i$.\\
+    By Envelope Theorem,
+    \begin{equation}
+        \begin{aligned}
+            U_i(\theta_i)&=U_i(\underline{\theta}_i)+\int_{\underline{\theta}_i}^{\theta_i}U'_i(s)ds\\
+            &=U_i(\underline{\theta}_i)+\int_{\underline{\theta}_i}^{\theta_i}\bar{v}_i(s)ds
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    ``$\Leftarrow$'': Take any $i$, $\theta_i,\hat{\theta}_i\in\Theta$. $i$'s expected interim payoff from reporting $\hat{\theta}_i$ instead of $\theta_i$ is
+    \begin{equation}
+        \begin{aligned}
+            &\underbrace{\theta_i \bar{v}_i(\theta_i)+\bar{t}_i(\theta_i)}_{U_i(\theta_i)}-\left[\theta_i \bar{v}_i(\hat{\theta}_i)+\bar{t}_i(\hat{\theta}_i)\right]\\
+            =&U_i(\theta_i)-\left[U_i(\hat{\theta}_i)+(\theta-\hat{\theta}_i)\bar{v}_i(\hat{\theta}_i)\right]\\
+            =&U_i(\underline{\theta}_i)+\int_{\underline{\theta}_i}^{\theta_i}\bar{v}_i(s)ds-[U_i(\underline{\theta}_i)+\int_{\underline{\theta}_i}^{\hat{\theta}_i}\bar{v}_i(s)ds]-(\theta-\hat{\theta}_i)\bar{v}_i(\hat{\theta}_i)\\
+            =&\int_{\theta_i}^{\hat{\theta}_i}(\bar{v}_i(\hat{\theta}_i)-\bar{v}_i(s))ds\geq 0
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    So the direct mechanism is BIC.
+\end{proof}
+
+
+\chapter{Auction}
+\section{Auction}
+Based on
+\begin{enumerate}[$\circ$]
+    \item Klemperer, P. (1998). Auctions with almost common values: The Wallet Game'and its applications. \textit{European Economic Review}, 42(3-5), 757-769.
+\end{enumerate}
+
+
+\subsection{Examples: Auctions with Common-value}
+\begin{enumerate}[(1).]
+    \item Financial assets;
+    \item Oilfields;
+    \item A takeover target has a common value if the bidders are financial acquirers (e.g. LBO firms) who will follow similar management strategies if successful;
+    \item The Personal Communications Spectrum (PCS) licenses sold by the U.S. Government in the 1995 "Airwaves Auction".
+\end{enumerate}
+
+\subsection{First / Second Price Sealed-bid Auction}
+\begin{enumerate}[$\circ$]
+    \item A seller sells an indivisible object.
+    \item There are $N=\{1,...,n\}$ bidders, $i\in N$.
+    \item Each bidder has a valuation for the object, $X_i\sim F$, $x_i\in[\underline{x},\overline{x}]$. p.d.f. $f(\cdot)$ is strictly positive and continuous.
+    \item Strategy of $i$: $b_i:[\underline{x},\overline{x}] \rightarrow \mathbb{R}$, a \underline{bid function}.
+\end{enumerate}
+
+\begin{assumption}
+    1. Independence; 2. Symmetry; 3. Private Values; 4. Risk-neutrality.
+\end{assumption}
+
+Let $X=(X_1,...,X_n)$. The $k^{th}$-order statistic, $X^k$, is the $k^{th}$ the highest value in $X_1,...,X_n$.
+
+\begin{definition}[Second Price Auction]
+    %\normalfont
+    Highest bidder wins and pays the second-highest bid. (If more than one bidders bid the highest value, they win with equal probability.)\\
+    It can be written as the form of Bayesian game: a bidder $i$'s utility function is
+    \begin{equation}
+        \begin{aligned}
+            u_i(b_1,...,b_n;x_i)=\left\{\begin{matrix}
+                \frac{1}{|\{j\in N:b_j=b_i\}|}x_i-b^2,&b_i=b^1\\
+                0,&b_i\neq b^1
+            \end{matrix}\right.
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    where $b^k$ is the $k$-th highest bid.
+\end{definition}
+
+\begin{theorem}[Second Price Auction: Bid Truthfully]
+    In the second-price sealed-bid auction, it is a (weakly) dominant strategy to bid your valuation, i.e., $\forall i\in N,\forall x_i\in[\underline{x},\overline{x}]$, $b_i(x_i)=x_i$.\\
+    That is, $\forall i, \forall b'_i\in \mathbb{R}$,
+    \begin{equation}
+        \begin{aligned}
+            u_i(x_i,b_{-i};x_i)\geq u_i(b'_i,b_{-i};x_i), \forall b_{-i}\in \mathbb{R}^{n-1}
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    (Moreover, if $\exists b'_{i}\neq x_i$, then $\exists b_{-i}\in \mathbb{R}^{n-1}$ such that $u_i(x_i,b_{-i};x_i)> u_i(b'_{i},b_{-i};x_i)$.)
+\end{theorem}
+\begin{proof}
+    Player $i$ has value $x_i$ and treats $b^1_{-i}$ as a random variable. The payoff conditional on winning is $$x_i-b^1_{-i}$$ By bidding $b_i=x_i$, $i$ ensures that $i$ wins if $b_i=x_i>b^1_{-i}\Leftrightarrow x_i-b^1_{-i}>0$ and $i$ loses if $b_i=x_i<b^1_{-i}\Leftrightarrow x_i-b^1_{-i}<0$.
+\end{proof}
+
+\begin{note}
+    Second-price auction and ascending auction are strategically equivalent.
+\end{note}
+
+\begin{definition}[First Price Auction]
+    %\normalfont
+    Highest bidder wins and pays her bid. (If more than one bidder bid the highest value, they win with equal probability.)\\
+    It can be written as the form of Bayesian game: a bidder $i$'s utility function is
+    \begin{equation}
+        \begin{aligned}
+            u_i(b_1,...,b_n;x_i)=\left\{\begin{matrix}
+                \frac{1}{|\{j\in N:b_j=b_i\}|}x_i-b_i,&b_i=b^1\\
+                0,&b_i\neq b^1
+            \end{matrix}\right.
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    where $b^k$ is the $k$-th highest bid.
+\end{definition}
+
+
+\subsubsection*{Bayesian Nash Equilibrium Analysis of First Price Auction}
+Conjecture that $\exists$ a BNE with the following properties:
+\begin{enumerate}
+    \item Symmetry: $b_1(\cdot)=b_2(\cdot)=\cdots=b_n(\cdot):=b(\cdot)$.
+    \item $b(\cdot)$ is differentiable.
+    \item $b'(\cdot)>0$.
+\end{enumerate}
+Take any bidder $i$ with valuation $x_i$. Assume $i$ knows $b(\cdot)$ and knows that the other bidder use the same $b(\cdot)$. Take any $b_i\in \mathbb{R}$ ($b_i:=b(x_i)$). (Not that, by the continuity of $X_i$, it is impossible to tie in this case.)
+
+Then, $i$'s expected payoff from bidding $b_i$ is
+\begin{equation}
+    \begin{aligned}
+        P(b(X_j)\leq b_i,\forall j\neq i)(x_i-b_i)=F^{n-1}(b^{-1}(b_i))(x_i-b_i)
+    \end{aligned}
+    \nonumber
+\end{equation}
+The necessary F.O.C. gives that optimal $b_i$ satisfies
+\begin{equation}
+    \begin{aligned}
+        (n-1)f(b^{-1}(b_i))\frac{1}{b'(b^{-1}(b_i))}F^{n-2}(b^{-1}(b_i))(x_i-b_i)-F^{n-1}(b^{-1}(b_i))=0
+    \end{aligned}
+    \nonumber
+\end{equation}
+Since $b(\cdot)$ is a symmetric BNE, the optimal $b_i$ must be $b(x_i)$, then $b^{-1}(b_i)=x_i$.
+\begin{equation}
+    \begin{aligned}
+        (n-1)f(x_i)\frac{1}{b'(x_i)}F^{n-2}(x_i)(x_i-b(x_i))-F^{n-1}(x_i)=0
+    \end{aligned}
+    \nonumber
+\end{equation}
+Hence,
+\begin{equation}
+    \begin{aligned}
+        \underbrace{(n-1)f(x_i)F^{n-2}(x_i)x_i+F^{n-1}(x_i)}_{\frac{\partial F^{n-1}(x_i)x_i}{\partial x_i}}-F^{n-1}(x_i)=\underbrace{(n-1)f(x_i)F^{n-2}(x_i)b(x_i)+b'(x_i)F^{n-1}(x_i)}_{\frac{\partial F^{n-1}(x_i)b(x_i)}{\partial x_i}}
+    \end{aligned}
+    \nonumber
+\end{equation}
+Taking integral at both sides in $[\underline{x},x]$,
+\begin{equation}
+    \begin{aligned}
+        F^{n-1}(x)x-\int_{\underline{x}}^x F^{n-1}(t) dt= F^{n-1}(x)b(x)
+    \end{aligned}
+    \nonumber
+\end{equation}
+That is,
+\begin{equation}
+    \begin{aligned}
+        b(x)=x-\frac{1}{F^{n-1}(x)}\int_{\underline{x}}^x F^{n-1}(t) dt
+    \end{aligned}
+    \label{FPA:symmetric BNE}
+\end{equation}
+That is,
+\begin{equation}
+    \begin{aligned}
+        b(x)=\mathbb{E}[X^2\mid X_1=x]
+    \end{aligned}
+    \nonumber
+\end{equation}
+Note $b(\cdot)$ is differentiable and $b'(\cdot)>0$. We can extend $b(\cdot)$ to $[\underline{x},\overline{x}]$ by setting $b(\underline{x})=\lim_{x \rightarrow \underline{x}} b(x)=\underline{x}$.
+
+\begin{proposition}[Symmetric BNE of First Price Auction]
+    $b(x)=x-\frac{1}{F^{n-1}(x)}\int_{\underline{x}}^x F^{n-1}(t) dt$ is a symmetric BNE of First Price Auction.
+\end{proposition}
+\begin{proof}
+    Any bid higher than $b(\overline{x})$ is suboptimal, and any bid lower than $b(\underline{x})$ is indifferent to the $b(\underline{x})$.\\
+    We prove that, for a bidder with $x_i$, she prefers to bid $b(x_i)$ than $b(y),\forall y$.\\
+    Bidding $b(y)$ gives expected payoff
+    \begin{equation}
+        \begin{aligned}
+            F^{n-1}(y)(x_i-b(y))&=F^{n-1}(y)(y-b(y))+F^{n-1}(y)(x_i-y)\\
+            (\textnormal{by \eqref{FPA:symmetric BNE}})&=\int_{\underline{x}}^y F^{n-1}(t) dt+F^{n-1}(y)(x_i-y)\\
+            &=\int_{\underline{x}}^{x_i} F^{n-1}(t) dt-\underbrace{\int_y^{x_i} [F^{n-1}(t)-F^{n-1}(y)] dt}_{\geq 0, \textnormal{ minimized at }y=x_i}
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{proof}
+
+\begin{theorem}[Lebrun, 1999]
+    Consider the bid function $b(\cdot)$ in \eqref{FPA:symmetric BNE}, the First Price Auction has essentially unique. (Bidders with types $x>\underline{x}$ bid $b(x)$ and bid for type $x=\underline{x}$ is not pinned down any further than the support $b_i(\underline{x})$ must lie in $(-\infty,b(\underline{x})]$.)
+\end{theorem}
+
+The equilibrium expected payoffs of a bidder in first-price auction and second price auction with valuation $x$ is
+\begin{equation}
+    \begin{aligned}
+        \int_{\underline{x}}^x F^{n-1}(t)dt
+    \end{aligned}
+    \nonumber
+\end{equation}
+The equilibrium expected revenue of the seller in first-price auction and second price auction is
+\begin{equation}
+    \begin{aligned}
+        \overline{x}-\int_{\underline{x}}^{\overline{x}} [nF^{n-1}(t)-(n-1)F^n(t)]dt
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+
+\begin{example}[ (First-Price Auction as Pricing Competition with Random Marginal Costs)]
+Consider a market with $n$ firms competing in prices. Each firm $i$ has a private marginal cost $c_i$ drawn independently from a distribution $F$ on $[\underline{c}, \overline{c}]$. Firms simultaneously set prices $p_i$, and the firm with the lowest price captures the entire market demand $D(p) = 1$ (unit demand). The profit of firm $i$ is:
+\begin{equation}
+    \begin{aligned}
+        \pi_i(p_i, p_{-i}) = 
+        \begin{cases}
+            p_i - c_i, & \text{if } p_i < \min_{j \neq i} p_j \\
+            \frac{p_i - c_i}{k}, & \text{if } p_i = \min_{j \neq i} p_j \text{ and } k \text{ firms tie for lowest price} \\
+            0, & \text{if } p_i > \min_{j \neq i} p_j
+        \end{cases}
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+This setting is strategically equivalent to a first-price auction where:
+\begin{itemize}
+    \item Bidders are firms
+    \item Valuations are the negative of costs: $v_i = -c_i$
+    \item Bids are the negative of prices: $b_i = -p_i$
+    \item The highest bidder (lowest price) wins
+\end{itemize}
+
+Using our results from first-price auctions, the symmetric Bayesian Nash equilibrium pricing strategy is:
+\begin{equation}
+    \begin{aligned}
+        p(c) = c + \frac{1}{[1-F(c)]^{n-1}}\int_{c}^{\overline{c}} [1-F(t)]^{n-1} dt
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+This shows that firms mark up their prices above marginal cost, with the markup decreasing as the number of competitors increases. The markup also depends on the distribution of costs - more uncertainty about competitors' costs leads to higher markups.
+
+The equilibrium expected profit of a firm with cost $c$ is:
+\begin{equation}
+    \begin{aligned}
+        \int_{c}^{\overline{c}} [1-F(t)]^{n-1} dt
+    \end{aligned}
+    \nonumber
+\end{equation}
+Alternatively, we can express the expected profit across all possible cost realizations:
+\begin{equation}
+    \begin{aligned}
+        \int_{\underline{c}}^{\overline{c}}\left(\int_{c}^{\overline{c}} [1-F(t)]^{n-1} dt\right)dF(c)
+    \end{aligned}
+    \nonumber
+\end{equation}
+\end{example}
+
+
+
+\section{Revenue Equivalence Theorem and Optimal Auctions}
+Consider the Optimal Auctions in an Independent Private Values Setting.
+\begin{assumption}\label{IPV:assumption}
+    There is one object and $N$ bidders.
+    \begin{enumerate}
+        \item Bidders are risk-neutral;
+        \item Bidders have private valuations;
+        \item each bidder $i$'s valuation independently drawn from a strictly increasing c.d.f. $F_i(\theta_i)$ (with p.d.f. $f_i(\theta_i),\theta_i\in \Theta_i$) that is continuous and bounded below;
+        \item Seller knows each $F_i$ (use $F$ and $f$ to represent all distributions) and have no value for the object.
+    \end{enumerate}
+\end{assumption}
+
+\begin{comment}
+\begin{definition}[General Auction]
+    %\normalfont
+    A general auction mechanism: bidders have values $x$ and \textbf{strategies} $\beta: \mathcal{X}\triangleq \prod_i^N \mathcal{X}_i \rightarrow \mathcal{B}$ generate message (bids) based on their values, then there is an \textbf{allocation rule} based on bids $\pi: \mathcal{B} \rightarrow \Delta N$ generates a distribution over all bidders and a \textbf{payment rule} $\mu: \mathcal{B} \rightarrow \mathbb{R}^N$ generates payment for all bidders.
+\end{definition}
+
+\begin{definition}[Direct Mechansim]
+    %\normalfont
+    Consider a situation that bidders follow \textit{revelation principle} that provide their true values. Then the outcome can directly base on the true values.\\
+    Then a \textbf{direct mechanism} can be represented as $(Q,T)$, where $Q: \mathcal{X} \rightarrow \Delta N$ is the allocation rule and $T: \mathcal{X} \rightarrow \mathbb{R}^N$ is the payment rule, such that
+    \begin{equation}
+        \begin{aligned}
+            Q(x)=\pi(\beta(x)),\quad T(x)=\mu(\beta(x))
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{definition}
+
+\begin{proposition}[Revelation Principle]
+    Take any equilibrium of any auction mechanism $(\mathcal{B},\pi,\mu)$. There is a distinct direct mechanism $(Q,T)$ that produces the same outcome.
+\end{proposition}
+
+
+Consider a direct mechanism $(Q,T)$, an agent $i$ reports $v_i$ while others report their values.
+\begin{equation}
+    \begin{aligned}
+        \textbf{Expected allocation: }&q_i(z_i)=\int_{\mathcal{X}_{-i}}Q_i(z_i,x_{-i})dF_{-i}(x_{-i})\\
+        \textbf{Expected payment: }&t_i(z_i)=\int_{\mathcal{X}_{-i}}T_i(z_i,x_{-i})dF_{-i}(x_{-i})
+    \end{aligned}
+    \nonumber
+\end{equation}
+where $Q_i, T_i$ are $i^\textnormal{th}$ item of $Q,T$.\\
+The bidder wants to maximize
+\begin{equation}
+    \begin{aligned}
+        q_i(z_i) x_i - t_i(z_i)
+    \end{aligned}
+    \nonumber
+\end{equation}
+Define the maximum value is
+\begin{equation}
+    \begin{aligned}
+        u_i(x_i)=\max_{z_i\in \mathcal{X}_i}\{q_i(z_i) x_i - t_i(z_i)\}
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+\begin{assumption}
+    The condition for direct mechanism being incentive competitive (IC) is:
+    \begin{equation}
+        \begin{aligned}
+            u_i(x_i)\equiv q_i(x_i) x_i - t_i(x_i)\geq q_i(z_i) x_i - t_i(z_i), \forall x_i, z_i\in \mathcal{X}_i
+        \end{aligned}
+        \tag{Ass 1}
+        \label{Ass 1}
+    \end{equation}
+\end{assumption}
+
+
+Firstly, we can compute, for any $z_i\in \mathcal{X}_i$
+\begin{equation}
+    \begin{aligned}
+        &q_i(x_i)z_i-t_i(x_i)\\
+        =&q_i(x_i)x_i-t_i(x_i)+q_i(x_i)(z_i-x_i)\\
+        =&u_i(x_i)+q_i(x_i)(z_i-x_i)
+    \end{aligned}
+    \nonumber
+\end{equation}
+Based on the assumption \ref{Ass 1}, we have
+\begin{equation}
+    \begin{aligned}
+        u_i(z_i)\geq q_i(x_i)z_i-t_i(x_i)=u_i(x_i)+q_i(x_i)(z_i-x_i)
+    \end{aligned}
+    \nonumber
+\end{equation}
+which shows that $u_i(\cdot)$ is convex.
+
+If $u_i$ is differentiable, $u'_i(x_i)=q_i(x_i)$. Then, we can write the \textbf{Envelope theorem/condition}:
+\begin{equation}
+    \begin{aligned}
+        u_i(x_i)=u_i(0)+\int_0^{x_i} q_i(y_i)dy_i
+    \end{aligned}
+    \nonumber
+\end{equation}
+which only depends on the allocation rule.
+
+\begin{theorem}[Revenue Equivalence Theorem]
+    If the direct mechanism $(Q,T)$ is incentive competitive (IC), then for all $i,x$, the \textbf{expected payment} is
+    \begin{equation}
+        \begin{aligned}
+            t_i(x_i)=\underbrace{t_i(0)}_{e.g.=0}+q_i(x_i)x_i-\int_0^{x_i} q_i(y_i)dy_i
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{theorem}
+\begin{proof}
+    \begin{equation}
+        \begin{aligned}
+            u_i(x_i)= q_i(x_i) x_i - t_i(x_i)=u_i(0)+\int_0^{x_i} q_i(y_i)dy_i\\
+            \Rightarrow t_i(x_i)=q_i(x_i)x_i-u_i(0)-\int_0^{x_i} q_i(y_i)dy_i
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    Set $u_i(0)=-t_i(0)$, that is, if $i$'s value is zero, he pays zero.
+\end{proof}
+
+\begin{corollary}[Standard Revenue Equivalence Theorem]
+    Suppose that values are \underline{i.i.d.} and bidders are \underline{risk-neutral}.\\
+    Consider any auction and its \underline{symmetric} and \underline{increasing} equilibrium, in which the expected payment of bidders have $0$ value is $0$. Then the expected revenue to the seller is the \underline{same}.
+\end{corollary}
+\begin{proof}
+    If equilibrium, is symmetric and increasing, then object is \underline{always} allocated to the bidder with the highest value. Set $t_i(0)=0$.
+\end{proof}
+
+Standard Revenue Equivalence Theorem is based on \underline{symmetric}, \underline{independent}, and \underline{private} (uncorrelated) values.
+\end{comment}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\underline{Goal:} Find the \textbf{optimal auction} that maximizes the seller's expected revenue subject to individual rationality (IR) and Bayesian incentive compatibility for the buyers.
+
+
+\begin{note}
+    Note that, in symmetric BNE, the bidders' strategies are same $b(\cdot)$, but the bidders' values can draw from different and independent distributions $\{F_i\}_{i=1}^I$
+\end{note}
+
+
+\subsection{IR, BIC, Direct Mechanism}
+Given a direct mechanism $\left(\Theta,y(\cdot),t(\cdot)\right)$, define
+\begin{equation}
+    \begin{aligned}
+        &\textnormal{Expected Allocation: } \bar{y}_i(\theta_i)=\mathbb{E}_{\theta_{-i}}\left[y_i(\theta_i,\theta_{-i})\right]\\
+        &\textnormal{Expected Payment: } \bar{t}_i(\theta_i)=\mathbb{E}_{\theta_{-i}}\left[t_i(\theta_i,\theta_{-i})\right]
+    \end{aligned}
+    \nonumber
+\end{equation}
+The expected utility of agent $i$ when all agents report truthfully,
+\begin{equation}
+    \begin{aligned}
+        U_i(\theta_i)&=\mathbb{E}_{\theta_{-i}}\left[\theta_iy_i(\theta_i,\theta_{-i})+t_i(\theta_i,\theta_{-i})\right]\\
+        &=\theta_i \bar{y}_i(\theta_i)+\bar{t}_i(\theta_i)
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+\begin{definition}[Individual Rationality]
+    %\normalfont
+    A direct mechanism $\left(\Theta,y(\cdot),t(\cdot)\right)$ is \textbf{individual-rational (IR)} if $\forall i,\theta_i\in\Theta_i$, $U_i(\theta_i)\geq 0$.
+\end{definition}
+
+\begin{corollary}[Corollary of Proposition \ref{Linear utility model_BIC}]
+    A direct mechanism $\left(\Theta,y(\cdot),t(\cdot)\right)$ is \textbf{BIC and IR} iff $\forall i\in\{1,...,I\}$
+    \begin{enumerate}[(1).]
+        \item $\bar{y}_i(\theta_i)$ is non-decreasing in $\theta_i$.
+        \item $\forall \theta_i\in\Theta_i$, $U_i(\theta_i)=U_i(\underline{\theta}_i)+\int_{\underline{\theta}_i}^{\theta_i}\bar{y}_i(s)ds$
+        \item $U_i(\underline{\theta}_i)\geq 0$
+    \end{enumerate}
+\end{corollary}
+For a BIC $\&$ IR mechanism, \textit{the expected auction payment} $\bar{t}_i(\theta_i)$ can be represented as
+\begin{equation}
+    \begin{aligned}
+        U_i(\theta_i)&=U_i(\underline{\theta}_i)+\int_{\underline{\theta}_i}^{\theta_i}\bar{y}_i(s)ds\\
+        \theta_i \bar{y}_i(\theta_i)+\bar{t}_i(\theta_i)&=U_i(\underline{\theta}_i)+\int_{\underline{\theta}_i}^{\theta_i}\bar{y}_i(s)ds
+    \end{aligned}
+    \nonumber
+\end{equation}
+\begin{equation}
+    \begin{aligned}
+        \bar{t}_i(\theta_i)&=-\theta_i \bar{y}_i(\theta_i)+U_i(\underline{\theta}_i)+\int_{\underline{\theta}_i}^{\theta_i}\bar{y}_i(s)ds
+    \end{aligned}
+    \label{t_star}
+\end{equation}
+
+\subsection{Revenue Equivalence Theorem}
+For a BIC $\&$ IR direct mechanism, the \textit{seller's expected revenues} from bidder $i$:
+\begin{equation}
+    \begin{aligned}
+        \mathbb{E}_\theta[-t_i(\theta)]&=-\int_\Theta t_i(\theta)f(\theta) d\theta\\
+        &=-\int_{\Theta_i} \underbrace{\left(\int_{\Theta_{-i}}t_i(\theta_i,\theta_{-i})f_{-i}(\theta_{-i})d\theta_{-i}\right)}_{\bar{t}_i(\theta_i)}f_i(\theta_i) d\theta_i\\
+        &=-\int_{\underline{\theta}_i}^{\overline{\theta}_i}\left(-\theta_i \bar{y}_i(\theta_i)+U_i(\underline{\theta}_i)+\int_{\underline{\theta}_i}^{\theta_i}\bar{y}_i(s)ds\right)f_i(\theta_i) d\theta_i\\
+        &=-\underbrace{\int_{\underline{\theta}_i}^{\overline{\theta}_i}\int_{\underline{\theta}_i}^{\theta_i}\bar{y}_i(s)dsf_i(\theta_i) d\theta_i}_{\triangleq \star}+\int_{\underline{\theta}_i}^{\overline{\theta}_i}\theta_i \bar{y}_i(\theta_i)f_i(\theta_i) d\theta_i-U_i(\underline{\theta}_i)
+    \end{aligned}
+    \nonumber
+\end{equation}
+applying integration by parts
+\begin{equation}
+    \begin{aligned}
+        \star&=\int_{\underline{\theta}_i}^{\overline{\theta}_i}\left(\int_{\underline{\theta}_i}^{\theta_i}\bar{y}_i(s)ds\right)d F_i(\theta_i)\\
+        &=\left(\int_{\underline{\theta}_i}^{\theta_i}\bar{y}_i(s)ds\right)F_i(\theta_i)\bigg|_{\underline{\theta}_i}^{\overline{\theta}_i}-\int_{\underline{\theta}_i}^{\overline{\theta}_i}F_i(\theta_i)d\left(\int_{\underline{\theta}_i}^{\theta_i}\bar{y}_i(s)ds\right)\\
+        &=\int_{\underline{\theta}_i}^{\overline{\theta}_i}\bar{y}_i(s)ds-\int_{\underline{\theta}_i}^{\overline{\theta}_i}\bar{y}_i(\theta_i)F_i(\theta_i)d\theta_i\\
+        &=\int_{\underline{\theta}_i}^{\overline{\theta}_i}(1-F_i(s))\bar{y}_i(s) ds
+    \end{aligned}
+    \nonumber
+\end{equation}
+Hence,
+\begin{equation}
+    \begin{aligned}
+        \mathbb{E}_\theta[-t_i(\theta)]&=-\int_{\underline{\theta}_i}^{\overline{\theta}_i}(1-F_i(\theta_i))\bar{y}_i(\theta_i) d\theta_i+\int_{\underline{\theta}_i}^{\overline{\theta}_i}\theta_i \bar{y}_i(\theta_i)f_i(\theta_i) d\theta_i-U_i(\underline{\theta}_i)\\
+        &=\int_\Theta y_i(\theta)\left[\theta_i-\frac{1-F_i(\theta_i)}{f_i(\theta_i)}\right]f(\theta)d\theta-U_i(\underline{\theta}_i)
+    \end{aligned}
+    \nonumber
+\end{equation}
+The \textit{total expected revenue of the seller} is
+\begin{equation}
+    \begin{aligned}
+        \sum_{i=1}^I\mathbb{E}_\theta[-t_i(\theta)]=\int_\Theta \sum_{i=1}^I y_i(\theta)\left[\theta_i-\frac{1-F_i(\theta_i)}{f_i(\theta_i)}\right]f(\theta)d\theta-\sum_{i=1}^IU_i(\underline{\theta}_i)
+    \end{aligned}
+    \label{eq:revenue}
+\end{equation}
+
+\begin{theorem}[Revenue Equivalence Theorem]
+    In the setting of Assumption \ref{IPV:assumption}, BIC $\&$ IR direct mechanisms, with the same allocation rule $y(\cdot)$ and the same interim utilities of the lowest types $(U_i(\underline{\theta}_i))_{i=1,...,I}$, generate the same revenues \eqref{eq:revenue} and the same expected payments of all types bidders \eqref{t_star}.
+\end{theorem}
+\begin{corollary}[Revenue Equivalence Theorem (indirect form)]
+    Any two auction formats $A$ and $B$, fix a BNE of $A$ and a BNE of $B$ such that
+    \begin{enumerate}
+        \item For every $\theta\in\Theta$, these two BNEs allocate the object with same probabilities;
+        \item Interim expected payoff of $\underline{\theta}_i$ is the same for both BNEs.
+    \end{enumerate}
+    Then, $A$ and $B$ generate the same expected revenues \eqref{eq:revenue} and the same expected payments of all types bidders \eqref{t_star}.
+\end{corollary}
+\begin{proof}
+    Based on the Revelation Principle \ref{theorem:revelation principle BIC}, direct auction mechanisms induced by A and B are BIC and IR. By Revenue Equivalence Theorem, the corollary is proved.
+\end{proof}
+
+\subsection{Optimal Auctions}
+The optimal auction design is given by
+\begin{equation}
+    \begin{aligned}
+        \max_{\textnormal{BIC and IR }y(\cdot)}\int_\Theta \sum_{i=1}^I y_i(\theta)\left[\theta_i-\frac{1-F_i(\theta_i)}{f_i(\theta_i)}\right]f(\theta)d\theta-\sum_{i=1}^IU_i(\underline{\theta}_i)
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+\begin{definition}[Virtual Valuation]
+    %\normalfont
+    Define bidder $i$'s \textbf{virtual valuation} is $c_i(v_i)=v_i-\frac{1-F_i(v_i)}{f(v_i)}$.
+\end{definition}
+
+\begin{assumption}[Regularity Condition]
+    Any bidder $i$'s virtual valuation $c_i(v_i)=v_i-\frac{1-F_i(v_i)}{f(v_i)}$ is strictly increasing.
+\end{assumption}
+
+\begin{corollary}[Optimal Auction Mechanism]
+    Assume regularity. Then the expected revenue maximizing direct auction mechanism $(y(\cdot),t(\cdot))$ can be described as follows
+    \begin{enumerate}[(1).]
+        \item $y(\cdot): \Theta \rightarrow K$ is defined as follows. For any $\theta\in \Theta$, $\max_{i\in\{1,...,I\}}c_i(\theta_i)<0$, the seller keeps the object ($y_i(\theta)=0,\forall  i$). Otherwise, the object is allocated to the highest virtual valuation bidder.
+        \item Define $t(\cdot):\Theta \rightarrow K$,
+        \begin{equation}
+            \begin{aligned}
+                t_i(\theta):=-\theta_i y_i(\theta_i,\theta_{-i})+U_i(\underline{\theta}_i)+\int_{\underline{\theta}_i}^{\theta_i}y_i(s,\theta_{-i})ds
+            \end{aligned}
+            \nonumber
+        \end{equation}
+        which satisfies \eqref{t_star}.
+    \end{enumerate}
+\end{corollary}
+
+\begin{example}
+    Suppose $\Theta_i=[0,1],\theta_i\sim U[0,1]$. $c_i(\theta_i)=\theta_i-\frac{1-\theta_i}{1}=2\theta_i-1$, which is strictly increasing in $\theta_i$ (regularity satisfied). Then, the optimal auction mechanism is allocating the object to the highest (virtual) valuation bidder (iff his value $\theta_i\geq\frac{1}{2}$).
+\end{example}
+
+\begin{definition}[Bidder-Specific Reserve Price]
+    %\normalfont
+    Bidder $i$'s bidder-specific reserve price $r_i^*$ is the value for which $c_i(r_i^*)=0$.
+\end{definition}
+
+\begin{theorem}[Myerson (1981)]
+    The optimal (single-good) auction in terms of a direct mechanism: The good is sold to the agent $i=\arg\max_i\phi_i(\hat{v}_i)$, as long as $v_i\geq r_i^*$. If the good is sold, the winning agent $i$ is charged the smallest valuation that he could have declared while still remaining the winner:
+    \begin{equation}
+        \begin{aligned}
+            \inf\{v_i^*:c_i(v_i^*)\geq 0 \textnormal{ and }\forall j\neq i, c_i(v_i^*)\geq c_j(\hat{v}_j)\}
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{theorem}
+
+\section{Additional bidders vs. optimal reserve prices}
+Consider a symmetric IPV setting with a regular distribution $F$. A bidder is defined as \textit{serious} if $a \geq v_0$.
+\begin{theorem}[Bulow \& Klemperer, AER, 1996]
+    Provided that all bidders are serious, the revenue from the optimal auction with $N$ bidders is strictly less than the revenue from a second-price auction without a reserve price and $N+1$ bidders.
+\end{theorem}
+The authors extend this result to asymmetric distributions and settings with interdependent values, as long as the signals received by the buyers about their potentially common value are independent.
+
+\begin{lemma}[Bulow \& Klemperer, AER, 1996 (proof by Kirkegaard, 2006)]
+    In the symmetric, regular, IPV case, among mechanisms which never keep the good (i.e. no reserve price, $\sum_{i}y_i(\theta)$ for all $\theta$) the second-price auction is optimal.
+\end{lemma}
+
+\section{Myerson-Satterthwaite Theorem}
+The result says that there is no efficient way for two parties to trade a good when they each have secret and probabilistically varying valuations for it, without the risk of forcing one party to trade at a loss.
+
+Suppose there is an indivisible object hold by a seller (agent 1), and there is a buyer (agent 2) who wants to buy the object. Agent $i$ has a valuation $\theta_i\in[\underline{\theta}_i,\overline{\theta_i}]$ for the object, which draws from the distribution $\Phi(\cdot)$ (with p.d.f. $\phi(\theta_i),\forall \theta_i\in [\underline{\theta}_i,\overline{\theta_i}]$.) To consider the nontrivial situation, we assume $\underline{\theta}_1<\overline{\theta}_2$ and $\underline{\theta}_2<\overline{\theta}_1$.
+
+
+\begin{definition}[Double Auction]
+    %\normalfont
+    A \underline{direct \textbf{double auction} mechanism} is a pair $(y(\cdot),t(\cdot))$, where $y(\cdot):\Theta \rightarrow [0,1]$ and $t(\cdot): \Theta \rightarrow \mathbb{R}$. $y(\theta_1,\theta_2)$ denote the probability of trade at $(\theta_1,\theta_2)$ and $t(\theta_1,\theta_2)$ is the buyer's expected payment to the seller at $(\theta_1,\theta_2)$.
+\end{definition}
+
+Fix a direct mechanism $(y(\cdot),t(\cdot))$. For an agent with $\theta_i$, the interim expected probability of trade is
+\begin{equation}
+    \begin{aligned}
+        \bar{y}_i(\theta_i)=\mathbb{E}_{\theta_{-i}}\left[y(\theta_i,\theta_{-i})\right]
+    \end{aligned}
+    \nonumber
+\end{equation}
+and the interim expected payment is
+\begin{equation}
+    \begin{aligned}
+        \bar{t}_i(\theta_i)=\mathbb{E}_{\theta_{-i}}\left[t(\theta_i,\theta_{-i})\right]
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+Define the interim expected payoffs when both agent report truthfully
+\begin{equation}
+    \begin{aligned}
+        U_1(\theta_1)&=-\theta_1\bar{y}_1(\theta_1)+\bar{t}_1(\theta_1)\\
+        U_2(\theta_2)&=\theta_2\bar{y}_2(\theta_2)-\bar{t}_2(\theta_2)
+    \end{aligned}
+    \nonumber
+\end{equation}
+Note that the payoff of seller is actually $U_1(\theta_1)+\theta_1$, here we only consider the difference of payoff induced by a trade so we can only focus on $U_1(\theta_1)$ now.
+\begin{enumerate}
+    \item \underline{BIC requires}
+    \begin{equation}
+        \begin{aligned}
+            U_1(\theta_1)&\geq-\theta_1\bar{y}_1(\hat{\theta}_1)+\bar{t}_1(\hat{\theta}_1),\quad &\forall \theta_1,\hat{\theta}_1\in\Theta_1\\
+            U_2(\theta_2)&\geq\theta_2\bar{y}_2(\hat{\theta}_2)-\bar{t}_2(\hat{\theta}_2),\quad &\forall \theta_2,\hat{\theta}_2\in\Theta_2
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    \item \underline{IR requires}
+    \begin{equation}
+        \begin{aligned}
+            U_i(\theta_i)\geq 0,\quad \forall i\in\{1,2\},\theta_i\in\Theta_i
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    \item \underline{Ex-post efficient requires}
+    \begin{equation}
+        \begin{aligned}
+            y(\theta)=\left\{\begin{matrix}
+                1,& \textnormal{ if }\theta_2>\theta_1\\
+                0,& \textnormal{ if }\theta_1>\theta_2
+            \end{matrix}\right.
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    \item \underline{Budget-balanced (BB)} is automatically satisfied.
+\end{enumerate}
+
+\begin{lemma}
+    Assume $(y(\cdot),t(\cdot))$ is BIC, then:
+    \begin{enumerate}
+        \item \underline{Buyer:} $\bar{y}_2(\cdot)$ is non-decreasing in $\theta_2$.
+        \item \underline{Buyer:} $\forall \theta_2\in\Theta_2$, $U_2(\theta_2)=U_2(\underline{\theta}_2)+\int_{\underline{\theta}_2}^{\theta_2}\bar{y}_2(s)ds$.
+        \item \underline{Seller:} $\bar{y}_1(\cdot)$ is non-increasing in $\theta_1$.
+        \item \underline{Seller:} $\forall \theta_1\in\Theta_1$, $U_1(\theta_1)=U_1(\overline{\theta}_1)+\int_{\theta_1}^{\overline{\theta}_1}\bar{y}_1(s)ds$.
+        \item
+        \begin{equation}
+            \begin{aligned}
+                U_1(\overline{\theta}_i)+U_2(\underline{\theta}_2)=\int_\Theta \left(\left[\theta_2-\frac{1-\Phi_2(\theta_2)}{\phi_2(\theta_2)}\right]-\left[\theta_1+\frac{\Phi_1(\theta_1)}{\phi_1(\theta_1)}\right]\right)y(\theta)\phi(\theta)d\theta
+            \end{aligned}
+            \nonumber
+        \end{equation}
+    \end{enumerate}
+\end{lemma}
+The proof of 1-4 of the lemma is similar to the proof of Proposition \ref{Linear utility model_BIC} and the proof of 5 follows the similar step as derivation of expected revenues of the seller in optimal auctions \eqref{eq:revenue}.
+
+\begin{theorem}[Myerson-Satterthwaite Theorem]
+    $\nexists$ a direct mechanism satisfying BB (which must be satisfied), BIC, IR, and ex-post efficient.
+\end{theorem}
+\begin{proof}
+    Suppose by the way of contradiction that there exists a direct $(y(\cdot),t(\cdot))$ satisfying BB, BIC, IR, and ex-post efficient.\\
+    By the requirement of IR and above lemma,
+    \begin{equation}
+        \begin{aligned}
+            0&\leq \int_{\underline{\theta}_2}^{\overline{\theta}_2}\int_{\underline{\theta}_1}^{\overline{\theta}_1} \left(\left[\theta_2-\frac{1-\Phi_2(\theta_2)}{\phi_2(\theta_2)}\right]-\left[\theta_1+\frac{\Phi_1(\theta_1)}{\phi_1(\theta_1)}\right]\right)y(\theta_1,\theta_2)\phi_1(\theta_1)\phi_2(\theta_2)d\theta_1d\theta_2
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    By the requirement of ex-post efficient that $y(\theta)=\left\{\begin{matrix}
+        1,& \textnormal{ if }\theta_2>\theta_1\\
+        0,& \textnormal{ if }\theta_1>\theta_2
+    \end{matrix}\right.$,
+    \begin{equation}
+        \begin{aligned}
+            0&\leq \int_{\underline{\theta}_2}^{\overline{\theta}_2}\int_{\underline{\theta}_1}^{\min\{\overline{\theta}_1,\theta_2\}} \left(\left[\theta_2-\frac{1-\Phi_2(\theta_2)}{\phi_2(\theta_2)}\right]-\left[\theta_1+\frac{\Phi_1(\theta_1)}{\phi_1(\theta_1)}\right]\right)\phi_1(\theta_1)\phi_2(\theta_2)d\theta_1d\theta_2\\
+            &=\int_{\underline{\theta}_2}^{\overline{\theta}_2}\int_{\underline{\theta}_1}^{\min\{\overline{\theta}_1,\theta_2\}} \left(\theta_2\phi_2(\theta_2)-1+\Phi_2(\theta_2)\right)\phi_1(\theta_1)d\theta_1d\theta_2\\
+            &\quad -\int_{\underline{\theta}_2}^{\overline{\theta}_2}\int_{\underline{\theta}_1}^{\min\{\overline{\theta}_1,\theta_2\}}\underbrace{\left(\theta_1\phi_1(\theta_1)+\Phi_1(\theta_1)\right)}_{\frac{\partial \theta_1\Phi_1(\theta_1)}{\partial \theta_1}}\phi_2(\theta_2)d\theta_1d\theta_2\\
+            &\textnormal{(Note $\Phi_1(\min\{\overline{\theta}_1,\theta_2\})=\Phi_1(\theta_2)$)}\\
+            &=\int_{\underline{\theta}_2}^{\overline{\theta}_2}\left(\theta_2\phi_2(\theta_2)-1+\Phi_2(\theta_2)\right)\Phi_1(\theta_2)d\theta_2
+            -\int_{\underline{\theta}_2}^{\overline{\theta}_2}\min\{\overline{\theta}_1,\theta_2\}\Phi_1(\theta_2)\phi_2(\theta_2)d\theta_2\\
+            &=\int_{\underline{\theta}_2}^{\overline{\theta}_1}\left(-1+\Phi_2(\theta_2)\right)\Phi_1(\theta_2)d\theta_2+\mathbf{1}\{\overline{\theta}_1<\overline{\theta}_2\}\int_{\overline{\theta}_1}^{\overline{\theta}_2}\left(\theta_2\phi_2(\theta_2)-1+\Phi_2(\theta_2)-\overline{\theta}_1\phi_2(\theta_2)\right)d\theta_2\\
+            &=\int_{\underline{\theta}_2}^{\overline{\theta}_1}\left(-1+\Phi_2(\theta_2)\right)\Phi_1(\theta_2)d\theta_2>0
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    So, there is a contradiction.
+\end{proof}
+
+
+
+\section{Equilibrium in Auctions with Entry}
+\begin{enumerate}[$\circ$]
+    \item Levin, D., \& Smith, J. L. (1994). Equilibrium in auctions with entry. The American Economic Review, 585-599.
+\end{enumerate}
+A single item offered to a group of $N$ potential bidders. There are two stage: each potential  entrant decides whether to enter by a fixed cost $c$, then an auction is conducted among $n$ participants (the number of bidders who enter).
+\begin{assumption}
+    \begin{enumerate}
+        \item The seller and all potential bidders are risk-neutral.
+        \item We assume the seller's valuation is $0$ and the possible value's range being $[0,\bar{v}]$.
+        \item The domain of possible values for the item ($V$) and the domain of estimates ($x$) are compact: $V\in[0,\bar{v}-\underline{v}]$ and $x\in [0,\bar{x}]$.
+        \item Information is symmetric and bidders randomly draw values from the same distribution.
+        \item The auction mechanism ($m$) and the number of potential bidders ($N$) are common knowledge, and the number of actual bidders is revealed prior to stage 2.
+        \item A unique symmetric Nash equilibrium exists and individual behavior conforms to the symmetric Nash equilibrium.
+    \end{enumerate}
+\end{assumption}
+
+Given the number of bidders $n$, cost $c$, and mechanism $m$, the \textit{ex-ante} expected gain from entering and bidding according to the symmetric Nash equilibrium of each potential entrant is denoted by $\mathbb{E}[\pi\mid n,m]$.
+
+If $\mathbb{E}[\pi\mid n,m]$ is decreasing in $n$, $\exists$ an unique integer $n^*$ such that $\mathbb{E}[\pi\mid n^*,m]\geq 0>\mathbb{E}[\pi\mid n^*+1,m]$. We focus on the case that $n^*\in (0,N)$.
+
+A symmetric entry equilibrium must yield the same probability of entry for all potential bidders, which is denoted by $q^*\in (0,1)$ and each potential entrant must be indifferent between entering or not:
+\begin{equation}
+    \begin{aligned}
+        \sum_{n=1}^N\left[
+            \begin{pmatrix}
+            N-1\\
+            n-1
+        \end{pmatrix}
+        (q^*)^{n-1}(1-q^*)^{N-n}\mathbb{E}[\pi\mid n,m]
+        \right]=0
+    \end{aligned}
+    \label{EAE_1}
+\end{equation}
+where $\begin{pmatrix}N-1\\n-1\end{pmatrix}(q^*)^{n-1}(1-q^*)^{N-n}$ is the probability that exactly $n-1$ rivals also enter. The number of bidders has mean $\bar{n}:=q^*N$ and variance $\bar{n}(1-q^*)$.
+
+We focus on the mechanism that a bidder wins and pays for the item only if his bid is the highest.
+\begin{note}
+    Different to the original paper, we focus on the ``free entry'' case (i.e., the mechanism can be denoted by the reserve prices $R=\{R_1,...,R_N\}$, where $R_n$ means the reserve price enforced by the seller if $n$ bidders enter).
+\end{note}
+We let $T$ represent the event that trade occurs (i.e., the highest bid is greater than the reserve price) and let $T_n(R_n):=\textnormal{Pr}[V_{(n)}\geq R_n]$ represent the probability of trade given $n$ bidders enter and the seller's mechanism $R$.
+
+Using symmetry, a bidder's \textit{ex-ante} expected profit, conditional on entering an auction with $n$ bidders, can be written as $\frac{V_n-W_n}{n}-c$, where $V_n:=\mathbb{E}[V_{(n)}\mid V_{(n)}\geq R_n]$ is the expected value of the item to the highest bidder and $W_n$ is the expected payment this bidder makes to the seller, both conditional on trade occurring under the given mechanism.
+
+We use $\Omega$ to denote $\{R,c,N\}$ and $B_i(q,\Omega)$ to denote the $i^{th}$ bidder's expected profit from entering when all $N-1$ rivals are using arbitrary entry probability $q$:
+\begin{equation}
+    \begin{aligned}
+        B_i(q,\Omega)&=\sum_{n=1}^N\left[
+            \begin{pmatrix}
+            N-1\\
+            n-1
+        \end{pmatrix}
+        (q)^{n-1}(1-q)^{N-n}T_n(R_n)\frac{V_n-W_n}{n}
+        \right]-c\\
+        &=\frac{1}{Nq}\sum_{n=1}^N\left[
+            \begin{pmatrix}
+            N\\
+            n
+        \end{pmatrix}
+        (q)^{n}(1-q)^{N-n}T_n(R_n)\left(V_n-W_n\right)
+        \right]-c\\
+    \end{aligned}
+    \nonumber
+\end{equation}
+If the $i^{th}$ bidder also elects to enter with probability $q$, the expected profit of all $N$ parties must be:
+\begin{equation}
+    \begin{aligned}
+        B(q,\Omega)&=NqB_i(q,\Omega)\\
+        &=\sum_{n=1}^N p_n T_n(R_n)(V_n-W_n)-\bar{n}c
+    \end{aligned}
+    \nonumber
+\end{equation}
+where $p_n:=\begin{pmatrix}N\\n\end{pmatrix}(q)^{n}(1-q)^{N-n}$ is the binomial probability that exactly $n$ bidders enter in total.
+
+The seller's expected revenue is
+\begin{equation}
+    \begin{aligned}
+        \Pi(q,\Omega)=\sum_{n=1}^N p_n T_n(R_n)W_n
+    \end{aligned}
+    \nonumber
+\end{equation}
+and the total social welfare is
+\begin{equation}
+    \begin{aligned}
+        S(q,\Omega)=B(q,\Omega)+\Pi(q,\Omega)=\sum_{n=1}^N p_n T_n(R_n)V_n-\bar{n}c
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+To make it is indifferent between entering and not, $q^*\in (0,1)$, we must have $B_i(q^*,\Omega)=0$, i.e.,
+\begin{equation}
+    \begin{aligned}
+        \frac{1}{Nq^*}\sum_{n=1}^N\left[
+            \begin{pmatrix}
+            N\\
+            n
+        \end{pmatrix}
+        (q^*)^{n}(1-q^*)^{N-n}T_n(R_n)\left(V_n-W_n\right)
+        \right]-c=0
+    \end{aligned}
+    \label{EAE_2}
+\end{equation}
+Then, we can define the symmetric entry equilibrium given $\Omega$, $q^*=q(\Omega)$.
+\begin{assumption}
+    In this paper, we focus on the mechanism that the expected profit of an entrant is negatively correlated with the number of bidders when $R=0$, which is equivalent to $\frac{\partial q^*}{\partial c}<0$ and $\frac{\partial q^*}{\partial (V_i-W_i)}<0$ (Lemma 1 in original paper).
+\end{assumption}
+
+Hence, we can find that the total social welfare is equivalent to the expected revenue of the seller.
+\begin{equation}
+    \begin{aligned}
+        &S(q^*,\Omega)=\sum_{n=1}^N p_n T_n(R_n)V_n-\bar{n}c\\
+        =&\Pi(q^*,\Omega)=\sum_{n=1}^N p_n T_n(R_n)W_n
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+\begin{proposition}[Revenue Equivalence Holds for Symmetric Entry]
+    Any two mechanisms that are revenue-equivalent with fixed $n$ and $R$ remain revenue-equivalent with induced entry.
+\end{proposition}
+
+We can write $\tilde{W}_n:=T_n(R_n)W_n$ and $\tilde{V}_n:=T_n(R_n)V_n$. Hence, the \eqref{EAE_2} can be written as
+\begin{equation}
+    \begin{aligned}
+        \frac{1}{Nq^*}\sum_{i=1}^n p_n \left(\tilde{V}_n-\tilde{W}_n\right)=c
+    \end{aligned}
+    \label{EAE_3}
+\end{equation}
+
+\begin{lemma}\label{Lemma:opt_q}
+    In independent private value auctions, $\frac{\partial S}{\partial q}(q^*,\Omega)=0$.
+\end{lemma}
+\begin{proof}
+    Given $S(q,\Omega)=\sum_{n=1}^N p_n \tilde{V}_n-\bar{n}c$,
+    \begin{equation}
+        \begin{aligned}
+            \frac{\partial S(q,\Omega)}{\partial q}&=\sum_{n=1}^N \frac{\partial p_n}{\partial q} T_n(R_n)V_n-Nc\\
+            &=\sum_{n=1}^N\begin{pmatrix}N\\n\end{pmatrix}\left[n q^{n-1}(1-q)^{N-n}-(N-n)q^n(1-q)^{N-n-1}\right]\tilde{V}_n-Nc\\
+            &=\frac{\sum_{n=1}^N p_n \tilde{V}_n (n-qN)}{q(1-q)}-Nc
+        \end{aligned}
+        \label{EAE_4}
+    \end{equation}
+    Substituting \eqref{EAE_3}, we get
+    \begin{equation}
+        \begin{aligned}
+            \frac{\partial S(q^*,\Omega)}{\partial q}&=\frac{\sum_{n=1}^N p_n \tilde{V}_n (n-q^*N)}{q^*(1-q^*)}-\frac{1}{q^*}\sum_{i=1}^n p_n \left(\tilde{V}_n-\tilde{W}_n\right)\\
+            &=\frac{1}{q^*}\sum_{n=1}^N p_n \left[\frac{\tilde{V}_n (n-q^*N)}{1-q^*}-\left(\tilde{V}_n-\tilde{W}_n\right)\right]\\
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    In independent private value auctions, the expected payment is given by
+    \begin{equation}
+        \begin{aligned}
+            \tilde{W}_n&=\int_{0}^{\bar{v}}v n(n-1)f(v)(1-F(v))F(v)^{n-2}dv\\
+            &=n\tilde{V}_{n-1}-(n-1)\tilde{V}_{n}
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    \begin{equation}
+        \begin{aligned}
+            \tilde{V}_n-\tilde{W}_n=n\left(\tilde{V}_n-\tilde{V}_{n-1}\right)
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    This is the same result as (Milgrom and Weber, 1982 theorem
+    0), but we need to note that this result depends on the optimal reservation price being $0$ which is based on the assumption the value of the seller is zero. The intuition is: $\tilde{V}_n-\tilde{V}_{n-1}$ is the difference between the highest value among first $n$ values and the highest value among first $n-1$ values. There is only $\frac{1}{n}$ probability that the $n^{th}$ value is the highest value among the first $n$ values. However, $\tilde{V}_n-\tilde{W}_n$ always gives the difference between the highest value and the second-highest value among first $n$ values.
+
+    Then,
+    \begin{equation}
+        \begin{aligned}
+            \frac{\partial S(q^*,\Omega)}{\partial q}&=\frac{1}{q^*}\sum_{n=1}^N p_n \left[\frac{\tilde{V}_n (n-q^*N)}{1-q^*}-n\left(\tilde{V}_n-\tilde{V}_{n-1}\right)\right]\\
+            &=\frac{1}{q^*}\sum_{n=1}^N p_n \left[n\tilde{V}_{n-1}-\frac{\tilde{V}_n q^*(N-n)}{1-q^*}\right]\\
+            &=\frac{1}{q^*}\left[\sum_{n=1}^N p_nn\tilde{V}_{n-1}-\sum_{n=1}^{N-1} p_{n+1}(n+1)\tilde{V}_n\right]\\
+            &=\frac{1}{q^*}p_1\tilde{V}_{0}=0
+        \end{aligned}
+        \nonumber
+    \end{equation}
+\end{proof}
+
+
+\begin{proposition}[Optimal Reservation Price is the Seller's Value]
+    Any mechanism that maximizes the seller's expected revenue also induces socially optimal entry. Such a mechanism has reservation price $R=0$.
+\end{proposition}
+\begin{proof}
+    We want to maximize $\sum_{n=1}^N p_n T_n(R_n)V_n-\bar{n}c$, where $T_n(R_n)V_n$ can be written as
+    \begin{equation}
+        \begin{aligned}
+            T_n(R_n)V_n&=\textnormal{Pr}[V_{(n)}\geq R_n]\mathbb{E}[V_{(n)}\mid V_{(n)}\geq R_n]\\
+            &=\textnormal{Pr}[V_{(n)}\geq R_n]
+            \int_{R_n}^{\bar{v}}x \frac{f_{V_{(n)}}(x)}{\textnormal{Pr}[V_{(n)}\geq R_n]}dx\\
+            &=
+            \int_{R_n}^{\bar{v}}x f_{V_{(n)}}(x) dx
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    which is maximized at $R_n=0$. Hence, fixing $q$, $S(q,R)$ is maximized at $R=0$.
+
+    Then, by the Lemma \ref{Lemma:opt_q} and the concavity of $S(q,R)$ on $q$, the social welfare is maximized at $R=0$.
+\end{proof}
+Then, the seller's expected revenue and the total social welfare can be written as
+\begin{equation}
+    \begin{aligned}
+        S(q^*,\Omega)=\sum_{n=1}^N \underbrace{\begin{pmatrix}N\\n\end{pmatrix}(q^*)^{n}(1-q^*)^{N-n}}_{:=p_n} \underbrace{\int_{0}^{\bar{v}}x f_{V_{(n)}}(x) dx}_{:=\tilde{V}_n}-\bar{n}c
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+
+
+\begin{proposition}[Effect of Market Thickness]
+    In independent private value auctions, the level of social welfare generated by optimal auctions decreases monotonically as $N$ increases beyond $n^*$.
+\end{proposition}
+\begin{proof}
+    Given $N>n^*$, the symmetric equilibrium gives $q^s=q^s(N)<1$. Suppose $N$ drops by $1$ to $N-1$ while each remaining member continuous to use $q^S(N)$. The impact on social welfare is
+    \begin{equation}
+        \begin{aligned}
+            \Delta S&=\sum_{n=1}^Np_n\tilde{V}_n-\sum_{n=1}^{N-1}\phi_n\tilde{V}_n-q^sc\\
+            &=\sum_{n=1}^Np_n\tilde{V}_n\frac{n-q^sN}{(1-q^s)N}-q^sc
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    where $\phi_n=\begin{pmatrix}N-1\\n\end{pmatrix}(q^s)^{n}(1-q^s)^{N-n-1}=\frac{N-n}{N(1-q^s)}p_n$. By \eqref{EAE_4} and Lemma \ref{Lemma:opt_q}, we have
+    \begin{equation}
+        \begin{aligned}
+            \Delta S=\frac{q^s}{N}\frac{\partial S}{\partial q}=0
+        \end{aligned}
+        \nonumber
+    \end{equation}
+    Hence, dropping one potential entrant while holding entry probabilities constant leaves social welfare unchanged. By relaxing the restriction on entry probability, the $q^s$ will increase and then increase the level of social welfare.
+\end{proof}
+
+\begin{corollary}
+    The expected revenue of any seller who use his optimal mechanism increases monotonically as $N$ decreases beyond $n^*$.
+\end{corollary}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\bibliography{ref}
+
+\end{document}

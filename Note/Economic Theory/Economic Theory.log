@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.3.11)  6 SEP 2024 17:37
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.3.11)  17 MAR 2025 11:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -7,7 +7,11 @@ entering extended mode
 (/Users/yangwenxiao/Desktop/个人主页wenxiao5.github.io/Note/Economic Theory/Economic Theory.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
-(./elegantbook.cls
+(./elegantbook_2.cls
+
+LaTeX Warning: You have requested document class `elegantbook_2',
+               but the document class provides `elegantbook'.
+
 Document Class: elegantbook 2022/08/15 v4.4 ElegantBook document class
 (/usr/local/texlive/2023/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
@@ -157,13 +161,13 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 )
 \Hy@SectionHShift=\skip50
 )
-Package hyperref Info: Option `breaklinks' set `true' on input line 125.
-Package hyperref Info: Option `unicode' set `true' on input line 125.
-Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 125.
-Package hyperref Info: Option `bookmarksopen' set `true' on input line 125.
-Package hyperref Info: Option `colorlinks' set `true' on input line 125.
-Package hyperref Info: Option `plainpages' set `false' on input line 125.
-Package hyperref Info: Option `linktocpage' set `true' on input line 125.
+Package hyperref Info: Option `breaklinks' set `true' on input line 107.
+Package hyperref Info: Option `unicode' set `true' on input line 107.
+Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 107.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 107.
+Package hyperref Info: Option `colorlinks' set `true' on input line 107.
+Package hyperref Info: Option `plainpages' set `false' on input line 107.
+Package hyperref Info: Option `linktocpage' set `true' on input line 107.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
  (/usr/local/texlive/2023/texmf-dist/tex/generic/iftex/ifvtex.sty
@@ -218,7 +222,7 @@ Package: fontspec-xetex 2024/02/13 v2.9a Font selection for XeLaTeX and LuaLaTeX
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/fontspec/fontspec.cfg))) (/usr/local/texlive/2023/texmf-dist/tex/latex/newtx/TeXGyreTermesX.fontspec)
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/n' will be
-(Font)              scaled to size 10.95pt on input line 183.
+(Font)              scaled to size 11.49753pt on input line 164.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/anyfontsize/anyfontsize.sty
 Invalid UTF-8 byte or sequence at line 3 replaced by U+FFFD.
 Invalid UTF-8 byte or sequence at line 3 replaced by U+FFFD.
@@ -811,10 +815,11 @@ Library (tcolorbox): 'tcbfitting.code.tex' version '6.2.0'
 \c@tcb@cnt@axiom=\count390
 \c@tcb@cnt@corollary=\count391
 \c@tcb@cnt@lemma=\count392
-\c@tcb@cnt@proposition=\count393
-\c@example=\count394
-\c@exer=\count395
-\c@prob=\count396
+\c@tcb@cnt@assumption=\count393
+\c@tcb@cnt@proposition=\count394
+\c@example=\count395
+\c@exer=\count396
+\c@prob=\count397
  (/usr/local/texlive/2023/texmf-dist/tex/latex/adforn/adforn.sty
 Package: adforn 2019/10/13 v1.1b adforn CFR
 LaTeX Font Info:    Trying to load font information for U+OrnementsADF on input line 4.
@@ -830,24 +835,24 @@ Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
 \f@nch@O@olf=\skip72
 \f@nch@O@orf=\skip73
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count397
+\lst@mode=\count398
 \lst@gtempboxa=\box132
 \lst@token=\toks45
-\lst@length=\count398
+\lst@length=\count399
 \lst@currlwidth=\dimen317
-\lst@column=\count399
-\lst@pos=\count400
+\lst@column=\count400
+\lst@pos=\count401
 \lst@lostspace=\dimen318
 \lst@width=\dimen319
-\lst@newlines=\count401
-\lst@lineno=\count402
+\lst@newlines=\count402
+\lst@lineno=\count403
 \lst@maxwidth=\dimen320
  (/usr/local/texlive/2023/texmf-dist/tex/latex/listings/lstpatch.sty
 File: lstpatch.sty 2024/02/21 1.10 (Carsten Heinz)
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2024/02/21 1.10 (Carsten Heinz)
-\c@lstnumber=\count403
-\lst@skipnumbers=\count404
+\c@lstnumber=\count404
+\lst@skipnumbers=\count405
 \lst@framebox=\box133
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2024/02/21 1.10 listings configuration
@@ -881,15 +886,15 @@ Package bm Info: No bold for \U/msa/m/n, using \pmb.
 Package bm Info: No bold for \U/msb/m/n, using \pmb.
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2023/07/08 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count405
-\calc@Bcount=\count406
+\calc@Acount=\count406
+\calc@Bcount=\count407
 \calc@Adimen=\dimen321
 \calc@Bdimen=\dimen322
 \calc@Askip=\skip74
 \calc@Bskip=\skip75
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count407
+\calc@Ccount=\count408
 \calc@Cskip=\skip76
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/tocloft/tocloft.sty
 Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
@@ -923,8 +928,8 @@ Package tocloft Info: The document has chapter divisions on input line 51.
 \cftbeforefigskip=\skip103
 \cftfigindent=\skip104
 \cftfignumwidth=\skip105
-\c@lofdepth=\count408
-\c@lotdepth=\count409
+\c@lofdepth=\count409
+\c@lotdepth=\count410
 \cftbeforelottitleskip=\skip106
 \cftafterlottitleskip=\skip107
 \cftbeforetabskip=\skip108
@@ -932,9 +937,8 @@ Package tocloft Info: The document has chapter divisions on input line 51.
 \cfttabnumwidth=\skip110
 )
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/b/n' will be
-(Font)              scaled to size 10.95pt on input line 1472.
+(Font)              scaled to size 11.49753pt on input line 1026.
 )
-\c@tcb@cnt@proof=\count410
 \c@tcb@cnt@claim=\count411
  (/usr/local/texlive/2023/texmf-dist/tex/latex/cprotect/cprotect.sty
 Package: cprotect 2011/01/27 v1.0e (Bruno Le Floch)
@@ -950,7 +954,12 @@ Package: suffix 2006/07/15 1.5a Variant command support
 )
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... none found.
- (./Economic Theory.aux
+
+
+LaTeX Warning: Unused global option(s):
+    [11.5pt].
+
+(./Economic Theory.aux
 
 LaTeX Warning: Label `' multiply defined.
 
@@ -963,40 +972,34 @@ LaTeX Warning: Label `*' multiply defined.
 
 LaTeX Warning: Label `' multiply defined.
 
-
-LaTeX Warning: Label `' multiply defined.
-
-
-LaTeX Warning: Label `' multiply defined.
-
 )
 \openout1 = `"Economic Theory.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 26.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 26.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 29.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 29.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-Package hyperref Info: Link coloring ON on input line 26.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+Package hyperref Info: Link coloring ON on input line 29.
  (./Economic Theory.out) (./Economic Theory.out)
 \@outlinefile=\write7
 \openout7 = `"Economic Theory.out"'.
@@ -1010,17 +1013,17 @@ Package hyperref Info: Link coloring ON on input line 26.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(56.9055pt, 483.69687pt, 56.9055pt)
-* v-part:(T,H,B)=(72.26997pt, 700.5069pt, 72.26997pt)
+* h-part:(L,W,R)=(71.13188pt, 455.24411pt, 71.13188pt)
+* v-part:(T,H,B)=(71.13188pt, 702.78308pt, 71.13188pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
-* \textwidth=483.69687pt
-* \textheight=700.5069pt
-* \oddsidemargin=-15.36449pt
-* \evensidemargin=-15.36449pt
-* \topmargin=-73.12352pt
-* \headheight=61.74242pt
-* \headsep=11.38109pt
+* \textwidth=455.24411pt
+* \textheight=702.78308pt
+* \oddsidemargin=-1.1381pt
+* \evensidemargin=-1.1381pt
+* \topmargin=-41.59085pt
+* \headheight=12.0pt
+* \headsep=28.45274pt
 * \topskip=11.0pt
 * \footskip=20.0pt
 * \marginparwidth=53.0pt
@@ -1052,7 +1055,7 @@ Package footmisc Info: Declaring symbol style lamport* on input line 744.
 Package footmisc Info: Declaring symbol style lamport*-robust on input line 765.
 )
 \c@lstlisting=\count414
-Package hyperref Info: Option `pageanchor' set `false' on input line 28.
+Package hyperref Info: Option `pageanchor' set `false' on input line 30.
 *geometry* verbose mode - [ newgeometry ] result:
 * driver: xetex
 * paper: a4paper
@@ -1067,9 +1070,9 @@ Package hyperref Info: Option `pageanchor' set `false' on input line 28.
 * \textheight=845.04684pt
 * \oddsidemargin=-72.26999pt
 * \evensidemargin=-72.26999pt
-* \topmargin=-145.3935pt
-* \headheight=61.74242pt
-* \headsep=11.38109pt
+* \topmargin=-112.72273pt
+* \headheight=12.0pt
+* \headsep=28.45274pt
 * \topskip=11.0pt
 * \footskip=20.0pt
 * \marginparwidth=53.0pt
@@ -1085,74 +1088,95 @@ Package hyperref Info: Option `pageanchor' set `false' on input line 28.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-File: cover.png Graphic file (type bmp)
-<cover.png>
+File: HZ.jpg Graphic file (type bmp)
+<HZ.jpg>
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/b/n' will be
-(Font)              scaled to size 24.88pt on input line 28.
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 28.
+(Font)              scaled to size 26.12407pt on input line 30.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 30.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 28.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 30.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 28.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 30.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/b/n' will be
-(Font)              scaled to size 14.4pt on input line 28.
+(Font)              scaled to size 15.12003pt on input line 30.
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/it' will be
-(Font)              scaled to size 10.95pt on input line 28.
+(Font)              scaled to size 11.49753pt on input line 30.
+ [1
+
+
+
+] (./Economic Theory.toc
+LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/n' will be
+(Font)              scaled to size 10.50003pt on input line 11.
  [1
 
 
 
 ]
-LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/b/n' will be
-(Font)              scaled to size 17.28pt on input line 30.
- (./Economic Theory.toc
-LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/b/n' will be
-(Font)              scaled to size 10.0pt on input line 1.
-LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 11.
- [1
 
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
 
+[2]
 
-] [2] [3] [4] [5])
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[3])
 \tf@toc=\write8
 \openout8 = `"Economic Theory.toc"'.
 
- [6]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[4]
 Chapter 1.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 36.
+(hyperref)                removing `math shift' on input line 40.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Psi' on input line 36.
+(hyperref)                removing `\Psi' on input line 40.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\rightarrow' on input line 36.
+(hyperref)                removing `\rightarrow' on input line 40.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 36.
+(hyperref)                removing `superscript' on input line 40.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 36.
+(hyperref)                removing `math shift' on input line 40.
 
-LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/n' will be
-(Font)              scaled to size 8.0pt on input line 46.
-LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/n' will be
-(Font)              scaled to size 6.0pt on input line 46.
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/b/n' will be
-(Font)              scaled to size 12.0pt on input line 55.
+(Font)              scaled to size 10.50003pt on input line 44.
+LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/n' will be
+(Font)              scaled to size 7.35002pt on input line 51.
+LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/n' will be
+(Font)              scaled to size 5.25002pt on input line 51.
+LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/it' will be
+(Font)              scaled to size 10.50003pt on input line 67.
 [1
 
 
@@ -1164,747 +1188,1039 @@ File: lhc.png Graphic file (type bmp)
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 93.
+(hyperref)                removing `math shift' on input line 98.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Psi' on input line 93.
+(hyperref)                removing `\Psi' on input line 98.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 93.
+(hyperref)                removing `math shift' on input line 98.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 93.
+(hyperref)                removing `math shift' on input line 98.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Leftrightarrow' on input line 93.
+(hyperref)                removing `\Leftrightarrow' on input line 98.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 93.
+(hyperref)                removing `math shift' on input line 98.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 93.
+(hyperref)                removing `math shift' on input line 98.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 93.
+(hyperref)                removing `math shift' on input line 98.
 
-[2] [3]
-Underfull \hbox (badness 1194) in paragraph at lines 161--162
-[]\TU/Palatino(0)/m/n/10.95 Let $\OML/cmm/m/it/10.95 X$ \TU/Palatino(0)/m/n/10.95 be a compact set and $\OT1/cmr/m/n/10.95 ^^I : \OML/cmm/m/it/10.95 X \OMS/cmsy/m/n/10.95 ! \OT1/cmr/m/n/10.95 2[]$ \TU/Palatino(0)/m/n/10.95 be a non-empty, compact-valued upper-
- []
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[2]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[3]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
 
 [4]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 191.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\exists' on input line 191.
+LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/n' will be
+(Font)              scaled to size 8.40002pt on input line 184.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 191.
+(hyperref)                removing `math shift' on input line 196.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 191.
+(hyperref)                removing `\exists' on input line 196.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\cap' on input line 191.
+(hyperref)                removing `math shift' on input line 196.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 191.
+(hyperref)                removing `math shift' on input line 196.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 191.
+(hyperref)                removing `\cap' on input line 196.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\infty' on input line 191.
+(hyperref)                removing `subscript' on input line 196.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Psi' on input line 191.
+(hyperref)                removing `superscript' on input line 196.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 191.
+(hyperref)                removing `\infty' on input line 196.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 191.
+(hyperref)                removing `\Psi' on input line 196.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 191.
+(hyperref)                removing `superscript' on input line 196.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Psi' on input line 191.
+(hyperref)                removing `math shift' on input line 196.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 191.
+(hyperref)                removing `math shift' on input line 196.
 
-[5] [6]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\Psi' on input line 196.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 196.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 12.4pt, for example:
+(fancyhdr)                \setlength{\headheight}{12.4pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-0.4pt}.
+
+[5]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 12.4pt, for example:
+(fancyhdr)                \setlength{\headheight}{12.4pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-0.4pt}.
+
+[6]
 Chapter 2.
 [7
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 264.
+(hyperref)                removing `math shift' on input line 269.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Leftrightarrow' on input line 264.
+(hyperref)                removing `\Leftrightarrow' on input line 269.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 264.
+(hyperref)                removing `math shift' on input line 269.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 289.
+(hyperref)                removing `math shift' on input line 294.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Leftrightarrow' on input line 289.
+(hyperref)                removing `\Leftrightarrow' on input line 294.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 289.
+(hyperref)                removing `math shift' on input line 294.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
 
 [8]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[9]
 File: Pref_prop.png Graphic file (type bmp)
 <Pref_prop.png>
- [9] [10] [11] [12] [13]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[10]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[11]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[12]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[13]
 Chapter 3.
 [14
 
-] [15] [16] [17] [18] [19]
+]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[15]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[16]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[17]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[18]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[19]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[20]
 Chapter 4.
-[20
+[21
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 832.
+(hyperref)                removing `math shift' on input line 841.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\begingroup' on input line 832.
+(hyperref)                removing `\begingroup' on input line 841.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\partial' on input line 832.
+(hyperref)                removing `\partial' on input line 841.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\left' on input line 832.
+(hyperref)                removing `\left' on input line 841.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 832.
+(hyperref)                removing `superscript' on input line 841.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\right' on input line 832.
+(hyperref)                removing `\right' on input line 841.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\endgroup' on input line 832.
+(hyperref)                removing `\endgroup' on input line 841.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@@over' on input line 832.
+(hyperref)                removing `\@@over' on input line 841.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\partial' on input line 832.
+(hyperref)                removing `\partial' on input line 841.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 832.
+(hyperref)                removing `subscript' on input line 841.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lambda' on input line 832.
+(hyperref)                removing `\lambda' on input line 841.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 832.
+(hyperref)                removing `superscript' on input line 841.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 832.
+(hyperref)                removing `subscript' on input line 841.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 832.
+(hyperref)                removing `math shift' on input line 841.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 832.
+(hyperref)                removing `math shift' on input line 841.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lambda' on input line 832.
+(hyperref)                removing `\lambda' on input line 841.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 832.
+(hyperref)                removing `superscript' on input line 841.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\left' on input line 832.
+(hyperref)                removing `\left' on input line 841.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 832.
+(hyperref)                removing `subscript' on input line 841.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sum@' on input line 832.
+(hyperref)                removing `\sum@' on input line 841.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\slimits@' on input line 832.
+(hyperref)                removing `\slimits@' on input line 841.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 832.
+(hyperref)                removing `subscript' on input line 841.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 832.
+(hyperref)                removing `superscript' on input line 841.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 832.
+(hyperref)                removing `subscript' on input line 841.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\begingroup' on input line 832.
+(hyperref)                removing `\begingroup' on input line 841.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\partial' on input line 832.
+(hyperref)                removing `\partial' on input line 841.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 832.
+(hyperref)                removing `subscript' on input line 841.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\endgroup' on input line 832.
+(hyperref)                removing `\endgroup' on input line 841.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@@over' on input line 832.
+(hyperref)                removing `\@@over' on input line 841.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\partial' on input line 832.
+(hyperref)                removing `\partial' on input line 841.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 832.
+(hyperref)                removing `subscript' on input line 841.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\right' on input line 832.
+(hyperref)                removing `\right' on input line 841.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 832.
-
-[21]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 850.
+(hyperref)                removing `math shift' on input line 841.
 
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Rightarrow' on input line 850.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lambda' on input line 850.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 850.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\begingroup' on input line 850.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\partial' on input line 850.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\endgroup' on input line 850.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@@over' on input line 850.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\partial' on input line 850.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 850.
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
 
 [22]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 897.
+(hyperref)                removing `math shift' on input line 859.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\equiv' on input line 897.
+(hyperref)                removing `\Rightarrow' on input line 859.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 897.
+(hyperref)                removing `\lambda' on input line 859.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 907.
+(hyperref)                removing `superscript' on input line 859.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 907.
+(hyperref)                removing `\begingroup' on input line 859.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 907.
+(hyperref)                removing `\partial' on input line 859.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\begingroup' on input line 907.
+(hyperref)                removing `\endgroup' on input line 859.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\begingroup' on input line 907.
+(hyperref)                removing `\@@over' on input line 859.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\partial' on input line 907.
+(hyperref)                removing `\partial' on input line 859.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\endgroup' on input line 907.
+(hyperref)                removing `math shift' on input line 859.
 
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@@over' on input line 907.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\partial' on input line 907.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 907.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\endgroup' on input line 907.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@@over' on input line 907.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\begingroup' on input line 907.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\partial' on input line 907.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\endgroup' on input line 907.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@@over' on input line 907.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\partial' on input line 907.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 907.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 907.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 907.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 907.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 907.
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
 
 [23]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 937.
+(hyperref)                removing `math shift' on input line 906.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 937.
+(hyperref)                removing `\equiv' on input line 906.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 953.
+(hyperref)                removing `math shift' on input line 906.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\equiv' on input line 953.
+(hyperref)                removing `math shift' on input line 916.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\cdot' on input line 953.
+(hyperref)                removing `superscript' on input line 916.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 953.
-
-[24] [25]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1003.
+(hyperref)                removing `subscript' on input line 916.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\begingroup' on input line 1003.
+(hyperref)                removing `\begingroup' on input line 916.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\partial' on input line 1003.
+(hyperref)                removing `\begingroup' on input line 916.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1003.
+(hyperref)                removing `\partial' on input line 916.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\endgroup' on input line 1003.
+(hyperref)                removing `\endgroup' on input line 916.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@@over' on input line 1003.
+(hyperref)                removing `\@@over' on input line 916.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\partial' on input line 1003.
+(hyperref)                removing `\partial' on input line 916.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1003.
+(hyperref)                removing `subscript' on input line 916.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leq' on input line 1003.
+(hyperref)                removing `\endgroup' on input line 916.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1003.
+(hyperref)                removing `\@@over' on input line 916.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1011.
+(hyperref)                removing `\begingroup' on input line 916.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\begingroup' on input line 1011.
+(hyperref)                removing `\partial' on input line 916.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\partial' on input line 1011.
+(hyperref)                removing `\endgroup' on input line 916.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1011.
+(hyperref)                removing `\@@over' on input line 916.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\endgroup' on input line 1011.
+(hyperref)                removing `\partial' on input line 916.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@@over' on input line 1011.
+(hyperref)                removing `math shift' on input line 916.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\partial' on input line 1011.
+(hyperref)                removing `math shift' on input line 916.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\equiv' on input line 1011.
+(hyperref)                removing `math shift' on input line 916.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\begingroup' on input line 1011.
+(hyperref)                removing `math shift' on input line 916.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\partial' on input line 1011.
+(hyperref)                removing `math shift' on input line 916.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[24]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 946.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1011.
+(hyperref)                removing `math shift' on input line 946.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\endgroup' on input line 1011.
+(hyperref)                removing `math shift' on input line 962.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@@over' on input line 1011.
+(hyperref)                removing `\equiv' on input line 962.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\partial' on input line 1011.
+(hyperref)                removing `\cdot' on input line 962.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\begingroup' on input line 1011.
+(hyperref)                removing `math shift' on input line 962.
 
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\partial' on input line 1011.
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
 
+[25]
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\endgroup' on input line 1011.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@@over' on input line 1011.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\partial' on input line 1011.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1011.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1011.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\begingroup' on input line 1011.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\partial' on input line 1011.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1011.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\endgroup' on input line 1011.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@@over' on input line 1011.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\partial' on input line 1011.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1011.
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
 
 [26]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1012.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\begingroup' on input line 1012.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\partial' on input line 1012.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 1012.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\endgroup' on input line 1012.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@@over' on input line 1012.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\partial' on input line 1012.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 1012.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leq' on input line 1012.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1012.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1020.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\begingroup' on input line 1020.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\partial' on input line 1020.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 1020.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\endgroup' on input line 1020.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@@over' on input line 1020.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\partial' on input line 1020.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\equiv' on input line 1020.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\begingroup' on input line 1020.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\partial' on input line 1020.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 1020.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\endgroup' on input line 1020.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@@over' on input line 1020.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\partial' on input line 1020.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\begingroup' on input line 1020.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\partial' on input line 1020.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\endgroup' on input line 1020.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@@over' on input line 1020.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\partial' on input line 1020.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1020.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1020.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\begingroup' on input line 1020.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\partial' on input line 1020.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 1020.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\endgroup' on input line 1020.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@@over' on input line 1020.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\partial' on input line 1020.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1020.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[27]
 File: UMP-EMP.png Graphic file (type bmp)
 <UMP-EMP.png>
- [27]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[28]
 Chapter 5.
-[28
+[29
 
-] [29] [30]
+]
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1244.
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
 
+[30]
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Rightarrow' on input line 1244.
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
 
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1244.
-
-LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/b/it' will be
-(Font)              scaled to size 10.95pt on input line 1263.
 [31]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1266.
+(hyperref)                removing `math shift' on input line 1253.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Rightarrow' on input line 1266.
+(hyperref)                removing `\Rightarrow' on input line 1253.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1266.
+(hyperref)                removing `math shift' on input line 1253.
 
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1266.
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
 
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\subseteq' on input line 1266.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1266.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1266.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\cap' on input line 1266.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1266.
-
-LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/it' will be
-(Font)              scaled to size 8.0pt on input line 1280.
-LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/it' will be
-(Font)              scaled to size 6.0pt on input line 1280.
 [32]
-Underfull \hbox (badness 1281) in paragraph at lines 1373--1376
-[]| \TU/TeXGyreTermesX(0)/m/n/10.95 By strong monotonicity, $\OML/cmm/m/it/10.95 u[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x[] \OT1/cmr/m/n/10.95 + (0\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 0\OML/cmm/m/it/10.95 ; ::; \OT1/cmr/m/n/10.95 0\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 1\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 0\OML/cmm/m/it/10.95 ; ::; \OT1/cmr/m/n/10.95 0)) \OML/cmm/m/it/10.95 > u[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x[]\OT1/cmr/m/n/10.95 )$\TU/TeXGyreTermesX(0)/m/n/10.95 , hence, $\OML/cmm/m/it/10.95 p \OMS/cmsy/m/n/10.95 ^^A \OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x[] \OT1/cmr/m/n/10.95 +
- []
+LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/b/it' will be
+(Font)              scaled to size 10.50003pt on input line 1272.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1275.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\Rightarrow' on input line 1275.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1275.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1275.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\subseteq' on input line 1275.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1275.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1275.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\cap' on input line 1275.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1275.
+
+LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/it' will be
+(Font)              scaled to size 7.35002pt on input line 1289.
+LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/it' will be
+(Font)              scaled to size 5.25002pt on input line 1289.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
 
 [33]
+Underfull \hbox (badness 1072) in paragraph at lines 1382--1385
+[]| \TU/TeXGyreTermesX(0)/m/n/10 By strong monotonicity, $\OML/cmm/m/it/10 u[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[] \OT1/cmr/m/n/10 + (0\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 ; ::; \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 ; ::; \OT1/cmr/m/n/10 0)) \OML/cmm/m/it/10 > u[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]\OT1/cmr/m/n/10 )$\TU/TeXGyreTermesX(0)/m/n/10 , hence, $\OML/cmm/m/it/10 p \OMS/cmsy/m/n/10 ^^A \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[] \OT1/cmr/m/n/10 +
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[34]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1394.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Rightarrow' on input line 1394.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1394.
-
-[34] [35]
-Underfull \hbox (badness 2368) in paragraph at lines 1472--1473
-[]\TU/Palatino(0)/m/n/10.95 An allocation $\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x[]; y[]\OT1/cmr/m/n/10.95 )$ \TU/Palatino(0)/m/n/10.95 and a price vector $\OML/cmm/m/it/10.95 p[] \OMS/cmsy/m/n/10.95 2 \U/msb/m/n/10.95 R[]$ \TU/Palatino(0)/m/n/10.95 are a \TU/Palatino(0)/m/it/10.95 competitive equilibrium \TU/Palatino(0)/m/n/10.95 in a
- []
-
-[36] [37] [38] [39] [40] [41] [42] [43] [44] [45] [46] [47] [48]
-Underfull \hbox (badness 4995) in paragraph at lines 2090--2092
-[]\TU/Palatino(0)/m/n/10.95 A consumption allocation $\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x[]; :::; x[]\OT1/cmr/m/n/10.95 )$\TU/Palatino(0)/m/n/10.95 , portfolio profile $\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 z[]; :::; z[]\OT1/cmr/m/n/10.95 )$\TU/Palatino(0)/m/n/10.95 , spot price vectors
- []
-
-[49] [50]
-Chapter 6.
-[51
-
-] [52] [53] [54]
-Underfull \hbox (badness 1902) in paragraph at lines 2327--2330
-\TU/Palatino(0)/m/n/10.95 A strategy $\OML/cmm/m/it/10.95 ^^[[] \OMS/cmsy/m/n/10.95 2 \OT1/cmr/m/n/10.95 ^^A(\OML/cmm/m/it/10.95 S[]\OT1/cmr/m/n/10.95 )$ \TU/Palatino(0)/m/n/10.95 is the \TU/Palatino(0)/b/n/10.95 best response \TU/Palatino(0)/m/n/10.95 to beliefs $\OML/cmm/m/it/10.95 ^^V$ \TU/Palatino(0)/m/n/10.95 if it solves the problem of
- []
-
-[55] [56] [57] [58] [59] [60] [61] [62] [63] [64] [65] [66] [67]
-Overfull \hbox (72.75078pt too wide) in paragraph at lines 2914--2915
-[]\TU/TeXGyreTermesX(0)/m/n/10.95 We have discussed the extensive form game with perfect information (PIG), which is denoted by $\OML/cmm/m/it/10.95 G \OT1/cmr/m/n/10.95 = \OMS/cmsy/m/n/10.95 f\OML/cmm/m/it/10.95 N; A; H; Z; P; O; o; \OMS/cmsy/m/n/10.95 ^^_[]
- []
-
-[68]
-File: BS.png Graphic file (type bmp)
-<BS.png>
-
-Overfull \hbox (11.6628pt too wide) in paragraph at lines 2932--2939
-[]\TU/TeXGyreTermesX(0)/m/n/10.95 In this example, a mixed strategy of the P1 can be represented by a probability distribution over $\OMS/cmsy/m/n/10.95 f\OML/cmm/m/it/10.95 OU; OD; IU; ID\OMS/cmsy/m/n/10.95 g$\TU/TeXGyreTermesX(0)/m/n/10.95 .
- []
-
-[69]
-Underfull \hbox (badness 5245) in paragraph at lines 2970--2971
-[]\TU/Palatino(0)/m/n/10.95 Formally, the subgame $\OT1/cmr/m/n/10.95 ^^@(\OML/cmm/m/it/10.95 h\OT1/cmr/m/n/10.95 )$ \TU/Palatino(0)/m/n/10.95 associated with $\OML/cmm/m/it/10.95 h \OT1/cmr/m/n/10.95 = (\OML/cmm/m/it/10.95 h[]; :::; h[]\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95 2 \OML/cmm/m/it/10.95 H$ \TU/Palatino(0)/m/n/10.95 is $\OT1/cmr/m/n/10.95 ^^@(\OML/cmm/m/it/10.95 h\OT1/cmr/m/n/10.95 ) =
- []
-
-[70] [71] [72] [73]
-Underfull \hbox (badness 1102) in paragraph at lines 3155--3156
-\TU/Palatino(0)/m/n/10.95 where $\OML/cmm/m/it/10.95 ^^V\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 t\OT1/cmr/m/n/10.95 ; \OML/cmm/m/it/10.95 s\OT1/cmr/m/n/10.95 )$ \TU/Palatino(0)/m/n/10.95 is the $\U/msb/m/n/10.95 R$\TU/Palatino(0)/m/n/10.95 's posterior belief about $\OML/cmm/m/it/10.95 t$ \TU/Palatino(0)/m/n/10.95 given $\OML/cmm/m/it/10.95 s$\TU/Palatino(0)/m/n/10.95 , $\OML/cmm/m/it/10.95 ^^V\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 t\OT1/cmr/m/n/10.95 ; \OML/cmm/m/it/10.95 s\OT1/cmr/m/n/10.95 ) = []$ \TU/Palatino(0)/m/n/10.95 if
- []
-
-[74] [75] [76] [77] [78] [79] [80] [81] [82] [83] [84] [85]
-Chapter 7.
-[86
-
-] [87] [88]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3758.
+(hyperref)                removing `math shift' on input line 1403.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3758.
+(hyperref)                removing `\Rightarrow' on input line 1403.
 
-[89] [90] [91] [92] [93] [94] [95] [96] [97] [98] [99]
-Overfull \hbox (7.74785pt too wide) in paragraph at lines 4389--4390
-[]\TU/TeXGyreTermesX(0)/m/it/10.95 each bidder $\OML/cmm/m/it/10.95 i$\TU/TeXGyreTermesX(0)/m/it/10.95 ’s valuation independently drawn from a strictly increasing c.d.f. $\OML/cmm/m/it/10.95 F[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^R[]\OT1/cmr/m/n/10.95 )$ \TU/TeXGyreTermesX(0)/m/it/10.95 (with p.d.f. $\OML/cmm/m/it/10.95 f[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^R[]\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ; ^^R[] \OMS/cmsy/m/n/10.95 2
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1403.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[35]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[36]
+Underfull \hbox (badness 3568) in paragraph at lines 1481--1482
+[]\TU/Palatino(0)/m/n/10 An allocation $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]; y[]\OT1/cmr/m/n/10 )$ \TU/Palatino(0)/m/n/10 and a price vector $\OML/cmm/m/it/10 p[] \OMS/cmsy/m/n/10 2 \U/msb/m/n/10 R[]$ \TU/Palatino(0)/m/n/10 are a \TU/Palatino(0)/m/it/10 competitive equilibrium \TU/Palatino(0)/m/n/10 in a
  []
 
-[100] [101] [102] [103] [104] [105] [106] [107]
-Underfull \hbox (badness 1231) in paragraph at lines 4919--4920
-[]\TU/Palatino(0)/m/n/10.95 Any two mechanisms that are revenue-equivalent with fixed $\OML/cmm/m/it/10.95 n$ \TU/Palatino(0)/m/n/10.95 and $\OML/cmm/m/it/10.95 R$ \TU/Palatino(0)/m/n/10.95 remain revenue-
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[37]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[38]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[39]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[40]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[41]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[42]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[43]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[44]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[45]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[46]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[47]
+LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/n' will be
+(Font)              scaled to size 15.12003pt on input line 2016.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[48]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[49]
+Underfull \hbox (badness 10000) in paragraph at lines 2099--2101
+[]\TU/Palatino(0)/m/n/10 A consumption allocation $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]; :::; x[]\OT1/cmr/m/n/10 )$\TU/Palatino(0)/m/n/10 , portfolio profile $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 z[]; :::; z[]\OT1/cmr/m/n/10 )$\TU/Palatino(0)/m/n/10 , spot price vectors
  []
 
-[108] [109] [110] [111]
-Chapter 8.
-[112
 
-] [113] [114] [115] [116] [117] [118] [119] [120] [121] [122] [123] [124]
-Underfull \hbox (badness 10000) in paragraph at lines 5755--5756
-[]\TU/Palatino(0)/m/n/10.95 If there exists an agent without substitutes valuation, then we can construct
- []
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
 
-[125] [126] [127] [128] [129] [130] [131] [132] [133] [134] [135] [136] [137] (./Economic Theory.aux)
+[50]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[51] (./Economic Theory.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -1917,12 +2233,12 @@ Package rerunfilecheck Info: File `"Economic Theory".out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 36986 strings out of 474773
- 768393 string characters out of 5757724
- 1963839 words of memory out of 5000000
- 58429 multiletter control sequences out of 15000+600000
- 571492 words of font info for 144 fonts, out of 8000000 for 9000
+ 36072 strings out of 474773
+ 752824 string characters out of 5757724
+ 1952839 words of memory out of 5000000
+ 57518 multiletter control sequences out of 15000+600000
+ 572479 words of font info for 151 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 99i,21n,107p,994b,2091s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,18n,107p,843b,2016s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Economic Theory.pdf (144 pages).
+Output written on Economic Theory.pdf (56 pages).

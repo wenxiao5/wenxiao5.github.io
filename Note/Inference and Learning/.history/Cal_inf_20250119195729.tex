@@ -1,0 +1,207 @@
+\documentclass[11pt]{elegantbook}
+\usepackage{graphicx}
+%\usepackage{float}
+\definecolor{structurecolor}{RGB}{40,58,129}
+\linespread{1.6}
+\setlength{\footskip}{20pt}
+\setlength{\parindent}{0pt}
+\newcommand{\argmax}{\operatornamewithlimits{argmax}}
+\newcommand{\argmin}{\operatornamewithlimits{argmin}}
+\elegantnewtheorem{proof}{Proof}{}{Proof}
+\elegantnewtheorem{claim}{Claim}{prostyle}{Claim}
+\DeclareMathOperator{\col}{col}
+\title{Causal Inference}
+\author{Wenxiao Yang}
+\institute{Haas School of Business, University of California Berkeley}
+\date{2025}
+\setcounter{tocdepth}{2}
+\extrainfo{All models are wrong, but some are useful.}
+
+\cover{cover.png}
+
+% modify the color in the middle of titlepage
+\definecolor{customcolor}{RGB}{32,178,170}
+\colorlet{coverlinecolor}{customcolor}
+\usepackage{cprotect}
+
+
+\bibliographystyle{apalike_three}
+
+\begin{document}
+\maketitle
+
+\frontmatter
+\tableofcontents
+
+\mainmatter
+
+
+
+\chapter{Causal Inference}
+The fundamental problem of causal inference:
+\begin{enumerate}[(a).]
+    \item Never see the same person treated and untreated
+    \item Missing data problem
+    \item "Solve" by finding a comparison group
+\end{enumerate}
+
+\begin{definition}[Notations and Estimands]
+    \normalfont
+    \begin{enumerate}[$\circ$]
+        \item Treatment: $T\in\{0,1\}$
+        \item Potential Outcome with treatment $Y(1), Y(0)$
+        \item Other Variable $X$
+        \item Individual Treatment Effect (ITE) $= Y_i(1)-Y_i(0)$
+        \item Conditional Average Treatment Effect (CATE) $=\mathbb{E}[Y(1)-Y(0)|X=x]:=\tau(x)$
+        \item Average Treatment Effect (ATE) $=\mathbb{E}[Y(1)-Y(0)]:=\tau$
+        \item Average Treatment Effects on Treated (ATT) $=\mathbb{E}[Y(1)-Y(0)\mid T=1]$
+    \end{enumerate}
+\end{definition}
+
+
+\subsection*{Difference in Means}
+\begin{equation}
+    \begin{aligned}
+        \hat{\tau}=\bar{Y}_1-\bar{Y}_0=\frac{1}{n_1}\sum_{i=1}^n Y_i T_i - \frac{1}{n_0}\sum_{i=1}^n Y_i(1-T_i)
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+By the Law of Large Numbers,
+\begin{equation}
+    \begin{aligned}
+        \lim_{n \rightarrow \infty}\frac{1}{n_1}\sum_{i=1}^n Y_i T_i&=\lim_{n \rightarrow \infty}\frac{n}{n_i}\frac{1}{n}\sum_{i=1}^n Y_i T_i\\
+        &=\left(P[T=1]\right)^{-1} \mathbb{E}[YT]\\
+        &= \left(P[T=1]\right)^{-1}\mathbb{E}[YT\mid T=1]P[T=1]\\
+        &=\mathbb{E}[YT\mid T=1]\\
+        \bar{Y}_1 &\stackrel{P}{\longrightarrow} \mathbb{E}[YT\mid T=1]
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+\subsubsection*{Causal Effect}
+\begin{assumption}\quad
+    \begin{enumerate}[(1).]
+        \item SUTVA: Only your treatment matters;
+        \item Consistency: Observed outcome matches treatment "assignment": $Y=TY(1)+(1-T)Y(0)$.
+    \end{enumerate}
+\end{assumption}
+
+Only yields $\hat{\tau}=\bar{Y}_1-\bar{Y}_0\stackrel{P}{\longrightarrow} \mathbb{E}[Y(1)\mid T=1]-\mathbb{E}[Y(0)\mid T=0]$
+
+\begin{equation}
+    \begin{aligned}
+        &\mathbb{E}[Y(1)\mid T=1]-\mathbb{E}[Y(0)\mid T=0]\\
+        =&\underbrace{\mathbb{E}[Y(1)\mid T=1]-\mathbb{E}[Y(0)\mid T=1]}_{\textnormal{ATT}}+\underbrace{\mathbb{E}[Y(0)\mid T=1]-\mathbb{E}[Y(0)\mid T=0]}_{\textnormal{selection bias}}\\
+    \end{aligned}
+    \nonumber
+\end{equation}
+To get the ATT (eliminate the selection bias), we need exclusion/independence: Randomization.
+
+
+Assume $Y(t)=\mu(t)+\epsilon_t$ (SUTVA). Consider the consistency assumption:
+\begin{equation}
+    \begin{aligned}
+        Y&=TY(1)+(1-T)Y(0)\\
+        &=Y(0)+T(Y(1)-Y(0))\\
+        &=\underbrace{\mu_0}_\alpha+T\underbrace{(\mu_1-\mu_0)}_{\beta^T}+\underbrace{\epsilon_0+T(\epsilon_1-\epsilon_0)}_{\epsilon}
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+Consider the covariate between $T$ and $X$. Why important?
+
+\begin{equation}
+    \begin{aligned}
+        &\mathbb{E}[Y|X=1,T=1]-\mathbb{E}[Y|X=1,T=0]\\
+        =& \underbrace{\mathbb{E}[Y(1)|X(1)=1]-\mathbb{E}[Y(0)|X(1)=1]}_{\textnormal{ATE}|X(1)=1} + \underbrace{\mathbb{E}[Y(0)|X(1)=1]-\mathbb{E}[Y(0)|X(0)=1]}_{\textnormal{selection bias}}\\
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+
+$Y(t)=\mu(t,X)+\epsilon_t$. Then,
+\begin{equation}
+    \begin{aligned}
+        Y&=Y(1)T+Y(0)(1-T)\\
+        &=\underbrace{\mu(0,X)}_{\alpha(X)} + T\underbrace{(\mu_1(X)-\mu_0(X))}_{\beta(X)}+\epsilon
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+
+
+\chapter{STAT 256}
+\section{Lecture Zero: Causal Inference vs Association}{Amanda Coston}
+
+\subsection{Causal Inference on the Effect of Red Wine on Health}\label{sec:intro}
+
+\subsection{Is red wine good for heart health?}
+For many years consensus held that red wine improved cardiovascular health. The evidence behind this was largely from studies on people of drinking age that compared the health outcomes of those who self-reported that they drank wine to those who self-reported that they did not. Findings under such a design showed that people who drink  red wine have better cardiovascular outcomes than those who don't drink alcohol.
+
+What are potential problems with this study design? You may be thinking that people who drink wine systematically differ from those who don't in ways that matter for health outcomes. In fact, sociologist Kaye Middleton Fillmore showed that the statistical significance of these findings hinged on the inclusion of \emph{previous} drinkers in the ``non-drinkers" category. That is, some people who said they did not drink red wine previously drank alcohol. Problematically, a common reason these people gave up alcohol was poor health. Therefore the definition of  ``non-drinkers" selected for people who had poorer health outcomes. Fillmore showed that redefining ``non-drinkers" to be ``never-drinkers" eliminated any supposed advantage of drinking wine.
+
+The debate here was one of causal inference -- looking at the cause and effect of red wine on health.
+
+For more details, see \citet{fillmore2007moderate}.
+
+\subsection{Syllabus}
+
+See course syllabi here: \href{https://stat156.berkeley.edu/fall-2024/syllabus.html}{https://stat156.berkeley.edu/fall-2024/syllabus.html}.
+
+\subsection{Association vs Causation}
+
+Association is the focus of much of statistics but in causal inference our focus is, of course, on causation! As a starting point, we will today consider common measures of association and discuss why they may not capture causation. In the next lecture we will see causal analogues of these measures.
+aaa
+We first consider the setting where the outcome $Y$ and treatment $Z$ are both binary. 
+
+\begin{definition}[Risk Difference]
+    The associative risk difference (RD) is $E[Y \mid Z = 1] - E[Y \mid Z = 0]$.
+\end{definition}
+
+
+\begin{definition}[Risk Ratio]
+    The associative risk ratio (RR) is $P[Y =1 \mid Z = 1]/P[Y =1 \mid Z = 0]$.
+\end{definition}
+
+\begin{definition}[Odds Ratio]
+    The associative odds ratio (OR) is $\frac{P[Y =1 \mid Z = 1]}{P[Y =0 \mid Z = 1]}/\frac{P[Y=1 \mid Z = 0]}{P[Y=0 \mid Z = 0]}$.
+\end{definition}
+
+Which measure one chooses depends on their particular setting -- what question they are interested in and what data they have available (odds ratios can be estimated in with outcome-dependent sampling whereas the risk difference and risk ratio generally cannot). The measures are related to each other as follows:
+
+\begin{enumerate}
+    \item $Z \perp Y  \Longleftrightarrow \mathrm{RD} = 0 \Longleftrightarrow \mathrm{RR} = 1 \Longleftrightarrow \mathrm{OR} = 1$
+    \item $\mathrm{RD} > 0 \Longleftrightarrow \mathrm{RR} > 1 \Longleftrightarrow \mathrm{OR} > 1$ assuming all conditional probabilities are non-zero.
+    \item $\mathrm{RR} \approx \mathrm{OR}$ when $P(Y=1)$ is small.
+\end{enumerate}
+
+Next we consider measures of association that can accommodate non-binary outcomes. 
+
+\subsection{Correlation and linear regression}
+Suppose we are now interested in the outcome blood pressure as a measure of cardiovascular health. A natural starting point is to model the relationship between blood pressure ($Y$) and whether one drinks red wine ($Z$) as 
+
+\begin{align*}
+    Y = \beta Z + \alpha + \epsilon
+\end{align*}
+
+where $E[\epsilon] = 0 $ and $E[\epsilon Z ] = 0$.
+
+Recall that we can relate $\beta$ to the Pearson correlation coefficient $\rho$ as follows
+
+\begin{align*}
+    \beta = \rho \frac{\mathrm{var}(Z)}{\mathrm{var}(Y)}.
+\end{align*}
+
+The coefficient $\beta$ describes the change in $Y$ associated with whether one drinks red wine. More generally, the coefficient $\beta$ describes the change in $Y$ associated with one unit increase in $Z$.
+Sometimes people refer to $\beta$ as the ``effect" of $Z$ on $Y$ but this is generally misleading (without further assumptions). We have simply modeled an associative relationship; we can't claim anything causal yet! Next time we will introduce a new language, potential outcomes, so that we can make causal claims. 
+
+
+
+
+
+
+
+\bibliography{ref}
+
+\end{document}

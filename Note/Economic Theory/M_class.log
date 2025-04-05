@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.3.11)  26 NOV 2024 16:56
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.3.11)  31 MAR 2025 10:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -7,7 +7,11 @@ entering extended mode
 (/Users/yangwenxiao/Desktop/个人主页wenxiao5.github.io/Note/Economic Theory/M_class.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
-(./elegantbook.cls
+(./elegantbook_2.cls
+
+LaTeX Warning: You have requested document class `elegantbook_2',
+               but the document class provides `elegantbook'.
+
 Document Class: elegantbook 2022/08/15 v4.4 ElegantBook document class
 (/usr/local/texlive/2023/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
@@ -157,13 +161,13 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 )
 \Hy@SectionHShift=\skip50
 )
-Package hyperref Info: Option `breaklinks' set `true' on input line 116.
-Package hyperref Info: Option `unicode' set `true' on input line 116.
-Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 116.
-Package hyperref Info: Option `bookmarksopen' set `true' on input line 116.
-Package hyperref Info: Option `colorlinks' set `true' on input line 116.
-Package hyperref Info: Option `plainpages' set `false' on input line 116.
-Package hyperref Info: Option `linktocpage' set `true' on input line 116.
+Package hyperref Info: Option `breaklinks' set `true' on input line 107.
+Package hyperref Info: Option `unicode' set `true' on input line 107.
+Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 107.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 107.
+Package hyperref Info: Option `colorlinks' set `true' on input line 107.
+Package hyperref Info: Option `plainpages' set `false' on input line 107.
+Package hyperref Info: Option `linktocpage' set `true' on input line 107.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
  (/usr/local/texlive/2023/texmf-dist/tex/generic/iftex/ifvtex.sty
@@ -218,7 +222,7 @@ Package: fontspec-xetex 2024/02/13 v2.9a Font selection for XeLaTeX and LuaLaTeX
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/fontspec/fontspec.cfg))) (/usr/local/texlive/2023/texmf-dist/tex/latex/newtx/TeXGyreTermesX.fontspec)
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/n' will be
-(Font)              scaled to size 10.95pt on input line 174.
+(Font)              scaled to size 11.49753pt on input line 164.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/anyfontsize/anyfontsize.sty
 Invalid UTF-8 byte or sequence at line 3 replaced by U+FFFD.
 Invalid UTF-8 byte or sequence at line 3 replaced by U+FFFD.
@@ -933,10 +937,9 @@ Package tocloft Info: The document has chapter divisions on input line 51.
 \cfttabnumwidth=\skip110
 )
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/b/n' will be
-(Font)              scaled to size 10.95pt on input line 1477.
+(Font)              scaled to size 11.49753pt on input line 1026.
 )
-\c@tcb@cnt@proof=\count411
-\c@tcb@cnt@claim=\count412
+\c@tcb@cnt@claim=\count411
  (/usr/local/texlive/2023/texmf-dist/tex/latex/cprotect/cprotect.sty
 Package: cprotect 2011/01/27 v1.0e (Bruno Le Floch)
  (/usr/local/texlive/2023/texmf-dist/tex/latex/base/ifthen.sty
@@ -945,40 +948,45 @@ Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
 Package: suffix 2006/07/15 1.5a Variant command support
 )
 \CPT@WriteOut=\write6
-\c@CPT@WriteCount=\count413
-\c@CPT@numB=\count414
+\c@CPT@WriteCount=\count412
+\c@CPT@numB=\count413
 \CPT@commandatend@toks=\toks46
 )
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... none found.
- (./M_class.aux)
+
+
+LaTeX Warning: Unused global option(s):
+    [11.5pt].
+
+(./M_class.aux)
 \openout1 = `M_class.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 30.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 30.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 29.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 29.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-Package hyperref Info: Link coloring ON on input line 30.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+Package hyperref Info: Link coloring ON on input line 29.
  (./M_class.out) (./M_class.out)
 \@outlinefile=\write7
 \openout7 = `M_class.out'.
@@ -992,17 +1000,17 @@ Package hyperref Info: Link coloring ON on input line 30.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(56.9055pt, 483.69687pt, 56.9055pt)
-* v-part:(T,H,B)=(72.26997pt, 700.5069pt, 72.26997pt)
+* h-part:(L,W,R)=(71.13188pt, 455.24411pt, 71.13188pt)
+* v-part:(T,H,B)=(71.13188pt, 702.78308pt, 71.13188pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
-* \textwidth=483.69687pt
-* \textheight=700.5069pt
-* \oddsidemargin=-15.36449pt
-* \evensidemargin=-15.36449pt
-* \topmargin=-73.12352pt
-* \headheight=61.74242pt
-* \headsep=11.38109pt
+* \textwidth=455.24411pt
+* \textheight=702.78308pt
+* \oddsidemargin=-1.1381pt
+* \evensidemargin=-1.1381pt
+* \topmargin=-41.59085pt
+* \headheight=12.0pt
+* \headsep=28.45274pt
 * \topskip=11.0pt
 * \footskip=20.0pt
 * \marginparwidth=53.0pt
@@ -1033,8 +1041,8 @@ Package footmisc Info: Declaring symbol style lamport-robust on input line 724.
 Package footmisc Info: Declaring symbol style lamport* on input line 744.
 Package footmisc Info: Declaring symbol style lamport*-robust on input line 765.
 )
-\c@lstlisting=\count415
-Package hyperref Info: Option `pageanchor' set `false' on input line 31.
+\c@lstlisting=\count414
+Package hyperref Info: Option `pageanchor' set `false' on input line 30.
 *geometry* verbose mode - [ newgeometry ] result:
 * driver: xetex
 * paper: a4paper
@@ -1049,9 +1057,9 @@ Package hyperref Info: Option `pageanchor' set `false' on input line 31.
 * \textheight=845.04684pt
 * \oddsidemargin=-72.26999pt
 * \evensidemargin=-72.26999pt
-* \topmargin=-145.3935pt
-* \headheight=61.74242pt
-* \headsep=11.38109pt
+* \topmargin=-112.72273pt
+* \headheight=12.0pt
+* \headsep=28.45274pt
 * \topskip=11.0pt
 * \footskip=20.0pt
 * \marginparwidth=53.0pt
@@ -1067,136 +1075,441 @@ Package hyperref Info: Option `pageanchor' set `false' on input line 31.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-File: cover.png Graphic file (type bmp)
-<cover.png>
+File: HZ.jpg Graphic file (type bmp)
+<HZ.jpg>
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/b/n' will be
-(Font)              scaled to size 24.88pt on input line 31.
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 31.
+(Font)              scaled to size 26.12407pt on input line 30.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 30.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 31.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 30.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 31.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 30.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/b/n' will be
-(Font)              scaled to size 14.4pt on input line 31.
+(Font)              scaled to size 15.12003pt on input line 30.
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/it' will be
-(Font)              scaled to size 10.95pt on input line 31.
+(Font)              scaled to size 11.49753pt on input line 30.
  [1
 
 
 
+] (./M_class.toc [1
+
+
+
 ]
-LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/b/n' will be
-(Font)              scaled to size 17.28pt on input line 34.
- (./M_class.toc [1
 
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
 
-
-])
+LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/n' will be
+(Font)              scaled to size 10.50003pt on input line 58.
+[2])
 \tf@toc=\write8
 \openout8 = `M_class.toc'.
 
-LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 36.
- [2]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[3]
 Chapter 1.
-LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/b/n' will be
-(Font)              scaled to size 12.0pt on input line 42.
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/n' will be
-(Font)              scaled to size 8.0pt on input line 72.
+(Font)              scaled to size 8.40002pt on input line 71.
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/n' will be
-(Font)              scaled to size 6.0pt on input line 72.
+(Font)              scaled to size 6.30002pt on input line 71.
 [1
 
 
-] [2] [3] [4] [5] [6] [7]
+]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[2]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[3]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[4]
+LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/b/n' will be
+(Font)              scaled to size 10.50003pt on input line 271.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[5]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[6]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[7]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[8]
 Chapter 2.
-[8
+[9
 
 ]
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 513.
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
 
-[9] [10]
+[10]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 624.
+(hyperref)                removing `\@ifnextchar' on input line 512.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
 
 [11]
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 672.
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
 
-[12] [13] [14] [15] [16] [17]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1039.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1039.
-
-[18] [19] [20] [21]
-Chapter 3.
-[22
-
-] [23] [24]
+[12]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1500.
+(hyperref)                removing `\@ifnextchar' on input line 623.
 
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1500.
-
-[25] [26]
-Overfull \hbox (2.65024pt too wide) in paragraph at lines 1569--1570
-\TU/TeXGyreTermesX(0)/m/n/10.95 A refinement: you can only condition actions on payoff relevant state variables. Thus, if $\OT1/cmr/m/n/10.95 ^^E(\OML/cmm/m/it/10.95 a; h[]\OT1/cmr/m/n/10.95 ) = ^^E(\OML/cmm/m/it/10.95 a; h[]\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ; \OMS/cmsy/m/n/10.95 8\OML/cmm/m/it/10.95 a$\TU/TeXGyreTermesX(0)/m/n/10.95 ,
+Overfull \hbox (1.69621pt too wide) in paragraph at lines 642--643
+[]\TU/TeXGyreTermesX(0)/m/n/10.95 Thus, if a seller receives signal $\OML/cmm/m/it/10.95 x[]$\TU/TeXGyreTermesX(0)/m/n/10.95 , he believes the possible other sellers’ signals are $\OMS/cmsy/m/n/10.95 f\OML/cmm/m/it/10.95 f\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x[]\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ; x[]; g\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x[]\OT1/cmr/m/n/10.95 )\OMS/cmsy/m/n/10.95 g$\TU/TeXGyreTermesX(0)/m/n/10.95 . 
  []
 
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 671.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[13]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[14]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[15]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[16]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[17]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[18]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1044.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1044.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[19]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[20]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[21]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[22]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[23]
+Chapter 3.
+[24
+
+]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[25]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[26]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[27]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1507.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1507.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[28]
 
 Package amsmath Warning: Bracket group [V^i(s_t)] at formula start!
 (amsmath)                It could be a misspelled positional argument.
 (amsmath)                If it belongs to the formula add a \relax in
-(amsmath)                front to hide it on input line 1594.
+(amsmath)                front to hide it on input line 1604.
 
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[29]
 
 Package amsmath Warning: Bracket group [a^i] at formula start!
 (amsmath)                It could be a misspelled positional argument.
 (amsmath)                If it belongs to the formula add a \relax in
-(amsmath)                front to hide it on input line 1630.
+(amsmath)                front to hide it on input line 1640.
 
-[27] [28] [29] [30] [31] [32] [33] [34] [35] [36] (./M_class.bbl [37]) [38
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[30]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[31]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[32]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[33]
+Overfull \hbox (9.4721pt too wide) in paragraph at lines 1881--1882
+[]\TU/TeXGyreTermesX(0)/m/n/10.95 Prefect price discrimination: charge price $\OML/cmm/m/it/10.95 p \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 c$ \TU/TeXGyreTermesX(0)/m/n/10.95 and $\OML/cmm/m/it/10.95 A[] \OT1/cmr/m/n/10.95 = []$\TU/TeXGyreTermesX(0)/m/n/10.95 . $\OT1/cmr/m/n/10.95 ^^E = \OML/cmm/m/it/10.95 ^^U[] \OT1/cmr/m/n/10.95 + [] []$\TU/TeXGyreTermesX(0)/m/n/10.95 . 
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[34]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[35]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[36]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[37]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[38]
+LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/n' will be
+(Font)              scaled to size 15.12003pt on input line 2139.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[39] (./M_class.bbl
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.99998pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.99998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.99998pt}.
+
+[40]) [41
 
 ] (./M_class.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
-
-
-Package rerunfilecheck Warning: File `M_class.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `M_class.out':
-(rerunfilecheck)             Before: EF04DD75DB914FCF07978510B756E4D1;12147
-(rerunfilecheck)             After:  D45BE25A17C4CCEFBFE8AE169F376747;12637.
+Package rerunfilecheck Info: File `M_class.out' has not changed.
+(rerunfilecheck)             Checksum: D45BE25A17C4CCEFBFE8AE169F376747;12637.
  ) 
 Here is how much of TeX's memory you used:
- 35770 strings out of 474773
- 747373 string characters out of 5757724
- 1947839 words of memory out of 5000000
- 57227 multiletter control sequences out of 15000+600000
- 567615 words of font info for 123 fonts, out of 8000000 for 9000
+ 35663 strings out of 474773
+ 745462 string characters out of 5757724
+ 1941839 words of memory out of 5000000
+ 57121 multiletter control sequences out of 15000+600000
+ 565905 words of font info for 116 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 99i,23n,107p,689b,1471s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,23n,107p,689b,1461s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on M_class.pdf (41 pages).
+Output written on M_class.pdf (45 pages).

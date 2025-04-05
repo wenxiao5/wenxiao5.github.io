@@ -1,0 +1,45 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{enumitem}
+
+\title{220B Theory Problem Set}
+\author{Matt Backus \and Quitzé Valenzuela-Stookey}
+\date{Spring 2025}
+
+\begin{document}
+\maketitle
+
+\section*{Problems}
+
+\begin{enumerate}
+
+\item Prove that the utilitarian social choice rule, as defined in the slides on social choice, violates IIA.
+
+\item In the slides on auctions, we proved that in a first price auction, a bidder with value $v$ bids
+\[
+b(v) = \mathbb{E} \left[ v^{(2)} \mid v^{(1)} = v \right],
+\]
+where $v^{(2)}$ is the second-order statistic and $v^{(1)}$ is the first-order statistic. Provide some intuition for this expression. (This is an intentionally open-ended question, and I’m not sure that there’s a single right answer. Try going through the steps we used to derive this expression to see if that gives you some intuition.)
+
+\item In Rubinstein’s (1982) alternating-offers bargaining model, two players negotiate over how to divide a “pie” (of size normalized to 1). The game is played in discrete time as follows:
+    \begin{itemize}
+        \item At time 0, player A makes an offer about how to split the pie.
+        \item If player B accepts the offer, the game ends with that division.
+        \item If B rejects, then at time 1, player B makes an offer.
+        \item If A accepts, the game ends; if not, the game continues with the roles switching.
+    \end{itemize}
+    If player $k$ gets a share $x$ of the pie then their payoff in that period is $x$, and that of the other player is $1-x$. In every period in which they don’t agree, then both get 0. Both players discount future payoffs. Let $\delta_A$ and $\delta_B$ be the discount factors for players A and B (with $0 < \delta_i < 1$). Derive a subgame-perfect Nash equilibrium (SPNE), and show that it is characterized by immediate agreement. Bonus: show that this is the unique SPNE.
+
+\item Consider a set of firms that is trying to collude. Imagine that each firm experiences cost shocks. I would like you to think about the implications of these shocks for collusion. Write down a model to tell an interesting story about information and collusion. You might touch on some of the following questions:
+    \begin{enumerate}[label=(\alph*)]
+        \item Suppose that the cost shocks are privately observed by each firm. How do the equilibrium outcomes compare to a world without cost shocks?
+        \item Does transparency (of costs) help or hurt firms’ ability to collude?
+        \item Suppose that firms have the ability to disclose their realized cost shocks to their rivals. How do the results change?
+        \item How does the answer depend on the nature of competition (e.g. Bertrand vs. Cournot)?
+        \item Policy implications?
+    \end{enumerate}
+    This is by no means an exhaustive list of the interesting questions you might ask, nor do you need to touch upon every question. The point of this exercise is for you to be creative, and get a feel for modeling. Feel free to draw on the literature. Don’t feel you need a complicated model, if a simple model will suffice to get your point across.
+
+\end{enumerate}
+
+\end{document}

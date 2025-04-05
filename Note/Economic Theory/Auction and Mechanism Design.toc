@@ -1,0 +1,28 @@
+\contentsline {chapter}{\numberline {1}Mechanism Design}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Social Choice Function/Mechanism}{1}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Arrow's Theorem}{2}{subsection.1.1.1}%
+\contentsline {section}{\numberline {1.2}Mechanism Design}{2}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Implement in Dominant Strategies}{2}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Dominant-Strategy-Incentive-Compatible (DSIC)/Strategy-Proof}{4}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}Bayesian-Incentive-Compatible (BIC)}{4}{subsection.1.2.3}%
+\contentsline {section}{\numberline {1.3}More on Social Choice}{5}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Gibbard-Satterthwaite Theorem: Strategy-proof $f$ $\Leftrightarrow $ Dictatorial}{5}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}Harsanyi's (Possibility) Theorem}{5}{subsection.1.3.2}%
+\contentsline {section}{\numberline {1.4}Quasi-linear Model}{8}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}Vickrey-Clarke-Groves Mechanism}{9}{subsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.4.2}Uniqueness of VCG Mechanism}{11}{subsection.1.4.2}%
+\contentsline {subsection}{\numberline {1.4.3}Budget Balancedness of VCG Mechanism}{13}{subsection.1.4.3}%
+\contentsline {subsection}{\numberline {1.4.4}Expected-externality Mechanism (BIC Mechanism)}{14}{subsection.1.4.4}%
+\contentsline {subsection}{\numberline {1.4.5}Budget-Balanced EE Mechanism}{14}{subsection.1.4.5}%
+\contentsline {subsection}{\numberline {1.4.6}Linear Utility Model}{15}{subsection.1.4.6}%
+\contentsline {chapter}{\numberline {2}Auction}{17}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Auction}{17}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Examples: Auctions with Common-value}{17}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}First / Second Price Sealed-bid Auction}{17}{subsection.2.1.2}%
+\contentsline {section}{\numberline {2.2}Revenue Equivalence Theorem and Optimal Auctions}{21}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}IR, BIC, Direct Mechanism}{22}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Revenue Equivalence Theorem}{23}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Optimal Auctions}{24}{subsection.2.2.3}%
+\contentsline {section}{\numberline {2.3}Additional bidders vs. optimal reserve prices}{25}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Myerson-Satterthwaite Theorem}{25}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Equilibrium in Auctions with Entry}{28}{section.2.5}%
