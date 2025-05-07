@@ -24,11 +24,11 @@
     padding: 0;
   }
   #layout-content {
-    max-width: 800px;
+    max-width: 950px;
     margin: 40px auto 80px auto;
     background: #fff;
     border-radius: 18px;
-    padding: 36px 36px;
+    padding: 48px 48px;
     box-shadow: none;
     border: 1px solid #eee;
   }
@@ -70,22 +70,22 @@
     align-items: flex-start;
   }
   h1 {
-    font-size: 2.6em;
-    font-weight: 800;
+    font-size: 2.5em;
+    font-weight: 700;
     margin: 0 0 0.2em 0;
     letter-spacing: 0.04em;
     color: #222;
   }
   h2.chinese-name {
-    font-family: 'LXGW WenKai', '霞鹜文楷', 'Noto Serif SC', serif;
-    font-size: 1.25em;
-    color: #6a5d4d;
-    font-weight: 500;
+    font-size: 1.3em;
+    color: #888;
+    font-weight: 400;
     margin: 0 0 1.2em 0;
-    letter-spacing: 0.13em;
+    letter-spacing: 0.12em;
+    font-family: 'Noto Serif SC', '思源宋体', 'STSong', 'SimSun', serif;
   }
   .personal-info p {
-    font-size: 1.1em;
+    font-size: 1.08em;
     margin: 0.5em 0 0.2em 0;
     line-height: 1.7;
     color: #333;
@@ -96,113 +96,77 @@
     color: #444;
     border: none;
     padding: 0;
-    font-size: 1.15em;
+    font-size: 1.13em;
     line-height: 1.8;
   }
   .research {
     margin-top: 56px;
   }
   .research h2 {
-    font-size: 1.3em;
-    font-weight: 700;
-    margin-bottom: 1em;
-    color: #065159;
+    font-size: 2em;
+    font-weight: 800;
+    margin-bottom: 1.2em;
+    color: #1a2a2a;
     letter-spacing: 0.04em;
-    border-bottom: 2px solid #e0e0e0;
-    padding-bottom: 6px;
+    font-family: 'EB Garamond', 'Palatino Linotype', 'Book Antiqua', Palatino, 'URW Palladio L', serif;
   }
   .research-item {
     background: none;
     border: none;
     border-radius: 0;
     box-shadow: none;
-    padding: 0 0 28px 0;
+    padding: 0 0 36px 0;
     margin-bottom: 0;
     transition: none;
   }
   .paper-header {
-    margin-bottom: 0.1em;
-    display: block;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
   }
   .paper-title {
-    font-size: 1.1em;
-    color: #222;
-    font-weight: 700;
+    font-size: 1.08em;
+    color: #4a6a7b;
+    font-weight: 500;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 2px;
     text-decoration: none;
     font-family: 'EB Garamond', 'Palatino Linotype', 'Book Antiqua', Palatino, 'URW Palladio L', serif;
     letter-spacing: 0.01em;
     transition: color 0.2s;
-    display: inline-block;
-    margin-bottom: 0.05em;
-    border-bottom: none;
-    position: relative;
   }
   .paper-title:hover {
-    color: #065159;
-  }
-  .paper-title::after {
-    content: '';
-    display: block;
-    position: absolute;
-    left: 0;
-    bottom: -2px;
-    width: 100%;
-    height: 0;
-    border-bottom: 1.5px dotted #065159;
-    opacity: 0;
-    transition: opacity 0.2s;
-    pointer-events: none;
-  }
-  .paper-title:hover::after {
-    opacity: 1;
-    height: 0;
+    color: #09273b;
+    border-bottom: 2px solid #065159;
   }
   .paper-status {
     font-size: 0.98em;
     color: #888;
     font-style: italic;
     margin-left: 8px;
-    display: inline;
   }
   .authors {
-    font-size: 0.98em;
-    color: #888;
-    margin-top: 0.05em;
-    margin-bottom: 0.1em;
+    font-size: 1em;
+    color: #666;
+    margin-top: 2px;
+    margin-bottom: 0.2em;
     letter-spacing: 0.01em;
-    line-height: 1.45;
   }
   .authors a {
     color: #065159;
     text-decoration: none;
-    border-bottom: none;
-    transition: color 0.2s;
-    position: relative;
+    border-bottom: 1px dotted #b2d6e0;
+    transition: color 0.2s, border-bottom-color 0.2s;
   }
   .authors a:hover {
     color: #09273b;
-  }
-  .authors a::after {
-    content: '';
-    display: block;
-    position: absolute;
-    left: 0;
-    bottom: -2px;
-    width: 100%;
-    height: 0;
-    border-bottom: 1px dotted #b2d6e0;
-    opacity: 0;
-    transition: opacity 0.2s;
-    pointer-events: none;
-  }
-  .authors a:hover::after {
-    opacity: 1;
-    height: 0;
+    border-bottom-color: #065159;
   }
   .conference {
-    font-size: 0.93em;
+    font-size: 0.98em;
     color: #065159;
-    margin-top: 0.2em;
+    margin-top: 0.3em;
     padding: 0;
     border: none;
   }
@@ -251,17 +215,12 @@
     h2.chinese-name {
       font-size: 1em;
     }
-  }
-  .research-subtitle {
-    font-size: 1em;
-    color: #b0b0b0;
-    font-weight: 500;
-    letter-spacing: 0.18em;
-    margin-bottom: 0em;
-    margin-top: -2em;
-    border: none;
-    padding: 0;
-    text-transform: uppercase;
+    .research h2 {
+      font-size: 1.3em;
+    }
+    .paper-title {
+      font-size: 0.98em;
+    }
   }
 </style>
 <!-- 保留 KaTeX 数学公式支持 -->
@@ -307,8 +266,6 @@
     });
   });
 </script>
-<!-- 引入霞鹜文楷字体 -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css" />
 </head>
 
 <body>
@@ -322,12 +279,13 @@
       <h2 class="chinese-name">杨文潇</h2>
       <p><b>Email:</b> ywenxiao@berkeley.edu</p>
       <p class="position"></p>
-      <p class="about-text">I am a PhD student at UC Berkeley quant marketing group, interested in game theory, behavioral economics, and industrial organization. Previously, I was an undergraduate student at UIUC (B.S., 2023) and ZJU.</p>
+      <p class="about-text">I am a PhD student in the Quantitative Marketing group at UC Berkeley. I am interested in game theory, behavioral economics, and industrial organization.</p>
     </div>
   </div>
 
   <section class="research">
-    <h2 class="research-subtitle">Research</h2>
+    <h2>Research</h2>
+    
     <div class="research-item">
       <div class="paper-header">
         <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4901012" class="paper-title">Strategic Disinformation Generation and Detection</a>
@@ -348,7 +306,7 @@
 
 <div id="footer">
   <div id="footer-text">
-    
+    <div class="motto">2025.04.05</div>
   </div>
 </div>
 
