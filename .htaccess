@@ -1,0 +1,37 @@
+# Performance optimizations
+<IfModule mod_headers.c>
+  # Enable GZIP compression
+  <IfModule mod_deflate.c>
+    SetOutputFilter DEFLATE
+    SetEnvIfNoCase Request_URI \
+      \.(?:gif|jpe?g|png)$ no-gzip dont-vary
+    SetEnvIfNoCase Request_URI \
+      \.(?:exe|t?gz|zip|bz2|sit|rar)$ no-gzip dont-vary
+  </IfModule>
+  
+  # Cache static assets
+  <FilesMatch "\.(css|js|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)$">
+    ExpiresActive On
+    ExpiresDefault "access plus 1 month"
+  </FilesMatch>
+  
+  # Cache HTML files for 1 hour
+  <FilesMatch "\.html$">
+    ExpiresActive On
+    ExpiresDefault "access plus 1 hour"
+  </FilesMatch>
+  
+  # Security headers
+  Header always set X-Content-Type-Options nosniff
+  Header always set X-Frame-Options DENY
+  Header always set X-XSS-Protection "1; mode=block"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  
+  # Performance headers
+  Header append Vary User-Agent env=!dont-vary
+</IfModule>
+
+# Enable HTTP/2 Server Push (if supported)
+<IfModule mod_http2.c>
+  H2PushResource /optimized-index.html
+</IfModule>

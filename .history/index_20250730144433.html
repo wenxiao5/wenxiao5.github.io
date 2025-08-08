@@ -1,0 +1,356 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LW3J3D2D1L"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LW3J3D2D1L');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Wenxiao Yang - PhD student in Quantitative Marketing at UC Berkeley">
+<meta name="author" content="Wenxiao Yang">
+<title>Wenxiao Yang 杨文潇 - PhD Student at UC Berkeley</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;500&family=Noto+Serif+JP:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; }
+  body {
+    background: #fefefe;
+    font: 300 16px/1.8 'Inter', -apple-system, sans-serif;
+    color: #2d2d2d;
+    letter-spacing: 0;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  main {
+    max-width: 720px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 48px 32px;
+    position: relative;
+  }
+  main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #2d2d2d 0%, #2d2d2d 40px, transparent 40px);
+  }
+  header {
+    margin-bottom: 64px;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+  }
+  .name-block {
+    flex: 1;
+    position: relative;
+    margin-bottom: 24px;
+  }
+  .name-block::before {
+    content: '文潇';
+    position: absolute;
+    right: -16px;
+    top: -8px;
+    font: 300 42px/1 'Noto Sans JP', sans-serif;
+    color: #f5f5f5;
+    writing-mode: vertical-rl;
+    z-index: 0;
+  }
+  .personal-info {
+    position: relative;
+    z-index: 1;
+  }
+  .profile-image {
+    flex: 0 0 160px;
+    position: relative;
+    margin-top: 8px;
+  }
+  .profile-image::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    border: 2px solid transparent;
+    background: linear-gradient(135deg, 
+      #f8f8f8 0%, 
+      #f0f0f0 25%, 
+      #e8e8e8 50%, 
+      #f0f0f0 75%, 
+      #f8f8f8 100%) border-box;
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    z-index: 0;
+  }
+  .profile-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+      rgba(255,248,240,0) 0%, 
+      rgba(255,248,240,0.08) 30%, 
+      rgba(255,252,245,0.15) 70%, 
+      rgba(255,255,255,0.25) 100%);
+    mix-blend-mode: soft-light;
+    z-index: 3;
+    pointer-events: none;
+  }
+  .profile-image img {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    display: block;
+    position: relative;
+    z-index: 1;
+    filter: contrast(1.02) brightness(1.02) saturate(0.95) hue-rotate(2deg) sepia(8%);
+    transition: filter 0.3s ease;
+    mask: radial-gradient(ellipse 85% 100% at center, black 75%, transparent 100%);
+    -webkit-mask: radial-gradient(ellipse 85% 100% at center, black 75%, transparent 100%);
+  }
+  .profile-image:hover img {
+    filter: contrast(1.04) brightness(1.04) saturate(1.0) hue-rotate(1deg) sepia(5%);
+  }
+  .profile-image .texture-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(circle at 20% 30%, rgba(255,255,255,0.08) 1px, transparent 1px),
+      radial-gradient(circle at 70% 60%, rgba(0,0,0,0.02) 1px, transparent 1px),
+      radial-gradient(circle at 90% 20%, rgba(255,255,255,0.06) 1px, transparent 1px),
+      radial-gradient(circle at 30% 80%, rgba(0,0,0,0.01) 1px, transparent 1px);
+    background-size: 18px 18px, 15px 15px, 22px 22px, 17px 17px;
+    z-index: 2;
+    pointer-events: none;
+    opacity: 0.3;
+    mix-blend-mode: multiply;
+  }
+  .profile-image .overlay-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      repeating-linear-gradient(45deg, 
+        transparent 0px, 
+        transparent 1px, 
+        rgba(255,255,255,0.02) 1px, 
+        rgba(255,255,255,0.02) 2px);
+    z-index: 4;
+    pointer-events: none;
+    opacity: 0.4;
+  }
+  h1 {
+    font: 300 32px/1.2 'Inter', sans-serif;
+    margin: 0 0 8px;
+    letter-spacing: -0.02em;
+    color: #1a1a1a;
+  }
+  .chinese-name {
+    font: 400 18px/1.4 'Noto Sans JP', sans-serif;
+    color: #666;
+    margin: 0 0 24px;
+    letter-spacing: 0.1em;
+    position: relative;
+  }
+  .chinese-name::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 24px;
+    height: 1px;
+    background: #ddd;
+  }
+  .about-text {
+    font: 300 15px/1.7 'Inter', sans-serif;
+    color: #555;
+    margin-top: 0;
+    max-width: 380px;
+    letter-spacing: 0.01em;
+  }
+  .research {
+    margin-top: 56px;
+    position: relative;
+  }
+  .research::before {
+    content: '研究';
+    position: absolute;
+    right: -16px;
+    top: -8px;
+    font: 300 42px/1 'Noto Sans JP', sans-serif;
+    color: #f5f5f5;
+    writing-mode: vertical-rl;
+    z-index: 0;
+  }
+  .research h2 {
+    font: 400 18px/1.2 'Inter', sans-serif;
+    margin-bottom: 16px;
+    color: #1a1a1a;
+    letter-spacing: -0.01em;
+    position: relative;
+    z-index: 1;
+  }
+  .research-item {
+    padding: 8px 0;
+    margin-bottom: 2px;
+    position: relative;
+    border-bottom: 1px solid #f8f8f8;
+  }
+  .research-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .research-item::before {
+    content: '';
+    position: absolute;
+    left: -12px;
+    top: 12px;
+    width: 3px;
+    height: 3px;
+    background: #ccc;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .research-item:hover::before {
+    opacity: 1;
+  }
+  .paper-header {
+    margin-bottom: 2px;
+    position: relative;
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .paper-title {
+    font: 400 15px/1.3 'Inter', sans-serif;
+    color: #1a1a1a;
+    text-decoration: none;
+    letter-spacing: -0.01em;
+    transition: color 0.2s ease;
+    flex: 1;
+    min-width: 0;
+  }
+  .paper-title:hover {
+    color: #666;
+  }
+  .paper-status {
+    font: 300 12px/1.3 'Inter', sans-serif;
+    color: #888;
+    font-style: italic;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .authors {
+    font: 300 13px/1.3 'Inter', sans-serif;
+    color: #666;
+    margin: 2px 0 0;
+    letter-spacing: 0.01em;
+  }
+  .authors a {
+    color: #2d2d2d;
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.2s ease;
+  }
+  .authors a:hover {
+    color: #666;
+  }
+  .conference {
+    font: 300 12px/1.3 'Inter', sans-serif;
+    color: #888;
+    margin-top: 2px;
+  }
+  /* Ultra compact research layout */
+  .research-item {
+    padding: 6px 0 4px;
+    margin-bottom: 0;
+  }
+  footer {
+    margin-top: 80px;
+    padding-top: 24px;
+    border-top: 1px solid #f0f0f0;
+    text-align: center;
+    font: 300 12px/1.4 'Inter', sans-serif;
+    color: #aaa;
+    letter-spacing: 0.05em;
+  }
+  @media (max-width: 768px) {
+    main { max-width: 100%; padding: 24px 20px; margin: 20px; }
+    main::before { display: none; }
+    header { flex-direction: column; gap: 20px; }
+    .name-block::before { font-size: 60px; right: 0; }
+    .profile-image { flex: none; align-self: flex-start; }
+    .profile-image img { width: 120px; height: 120px; }
+    .profile-image::before { top: -6px; left: -6px; right: -6px; bottom: -6px; }
+    .texture-overlay { background-size: 14px 14px, 12px 12px, 16px 16px, 13px 13px; }
+    h1 { font-size: 24px; }
+    .chinese-name { font-size: 16px; }
+    .research { margin-top: 40px; }
+    .research::before { font-size: 36px; }
+  }
+</style>
+</head>
+
+<body>
+<main id="layout-content">
+  <header>
+    <div class="name-block">
+      <div class="personal-info">
+        <h1>Wenxiao Yang</h1>
+        <div class="chinese-name">杨文潇</div>
+      </div>
+      <p class="about-text">I am a PhD student in the Quantitative Marketing group at UC Berkeley. I am interested in game theory and industrial organization.</p>
+    </div>
+    <div class="profile-image">
+      <img src="picture/ChatGPT Image 2025年5月6日 10_51_03.png" alt="Portrait of Wenxiao Yang" loading="lazy">
+      <div class="texture-overlay"></div>
+      <div class="overlay-pattern"></div>
+    </div>
+  </header>
+
+  <section class="research">
+    <h2>Research</h2>
+    <article class="research-item">
+      <header class="paper-header">
+        <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4449512" class="paper-title" target="_blank" rel="noopener">On the Role and Design of Resale Royalties</a>
+      </header>
+      <div class="authors">with <a href="https://www.zijunshi.com/" target="_blank" rel="noopener">Zijun (June) Shi</a> and <a href="https://mark.hkust.edu.hk/faculty-and-staff/directory/mksonglin" target="_blank" rel="noopener">Song Lin</a></div>
+    </article>
+    <article class="research-item">
+      <header class="paper-header">
+        <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4901012" class="paper-title" target="_blank" rel="noopener">Strategic Disinformation Generation and Detection</a>
+        <span class="paper-status">-- Major revision at <i>Management Science</i></span>
+      </header>
+      <div class="authors">with <a href="https://www.jesseyao.com/" target="_blank" rel="noopener">Yunfei (Jesse) Yao</a> and Pengxiang Zhou</div>
+    </article>
+  </section>
+</main>
+
+<footer>
+  <p>Last updated: 2025</p>
+</footer>
+
+</body>
+</html>
