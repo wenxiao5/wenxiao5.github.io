@@ -146,14 +146,14 @@
     .container{
       max-width:820px;
       margin:0 auto;
-      padding:0 clamp(18px,3.5vw,28px);
+      padding:0 28px;
       min-height:100vh;
       display:flex;
       flex-direction:column
     }
 
     /* ── Two-column layout ── */
-    .page-layout{display:flex;gap:clamp(24px,4.5vw,52px);align-items:flex-start;padding:clamp(32px,4vw,44px) 0 0;flex:1}
+    .page-layout{display:flex;gap:52px;align-items:flex-start;padding:44px 0 0;flex:1}
     .sidebar{width:188px;flex-shrink:0;padding-bottom:48px}
     .main-content{flex:1;min-width:0;padding-top:4px;padding-bottom:48px}
 
@@ -239,7 +239,12 @@
     .status{font-style:italic;color:var(--blue);margin-left:6px}
     .status-major{font-style:italic;color:#2e7d32;margin-left:6px}
     .new-indicator{
-      font-style:italic;color:#0066cc;margin-left:6px;font-weight:600
+      font-style:italic;color:#0066cc;margin-left:6px;
+      animation:accessiblePulse 2.5s ease-in-out infinite;font-weight:600
+    }
+    @keyframes accessiblePulse{
+      0%,100%{opacity:.85;color:#0066cc}
+      50%{opacity:1;color:#0052a3;text-shadow:0 0 2px rgba(0,102,204,.25)}
     }
     .ssrn-link{
       font:300 12px/1 Spectral,serif;
@@ -273,22 +278,6 @@
     }
     .paper.abstract-open .toggle-icon{transform:rotate(180deg)}
 
-    .paper-hook{
-      display:flex;
-      align-items:flex-start;
-      gap:7px;
-      font:300 italic 13px/1.6 Spectral,serif;
-      color:#777;
-      margin:4px 0 8px;
-      letter-spacing:.01em;
-    }
-    .paper-hook .new-indicator{
-      flex-shrink:0;margin-left:0;
-      font-size:12px;font-weight:600;font-style:italic;
-      color:#2979c8;letter-spacing:.03em;
-      padding-top:.15em;
-    }
-
     .paper-abstract{
       font:300 13.5px/1.68 Spectral,serif;
       color:var(--text-secondary);
@@ -316,36 +305,18 @@
     }
 
     /* ── Responsive ── */
-
-    /* Mid breakpoint: two-column still active but space tightens */
-    @media(max-width:820px) and (min-width:681px){
-      .sidebar{width:170px}
-      .profile-photo{width:148px;height:263px}
-      h1{font-size:27px}
-      .paper-title,.paper-title-plain{font-size:16px}
-    }
-
-    /* Mobile: single-column */
     @media(max-width:680px){
-      .page-layout{flex-direction:column;padding:28px 0 0;gap:16px}
+      .container{padding:0 18px}
+      .page-layout{flex-direction:column;padding:32px 0 0;gap:20px}
       .sidebar{width:100%;display:flex;flex-direction:column;align-items:center;text-align:center;padding-bottom:0}
       .profile-photo{width:120px;height:159px;margin:10px auto 12px}
       .bio{text-align:left;font-size:13px}
       h1{font-size:24px}
       .subtitle{font-size:13px}
-      .paper{padding:14px 0}
-      .paper-title,.paper-title-plain{font-size:15px}
-      .paper-hook{font-size:12.5px}
+      .paper{padding:16px 0}
+      .paper-title{font-size:15px}
       .paper-meta,.paper-authors{font-size:12px}
-      .paper-abstract{font-size:13px;line-height:1.65;text-align:left}
-      footer{padding:22px 0}
-    }
-
-    /* Extra small: ≤400px */
-    @media(max-width:400px){
-      h1{font-size:21px}
-      .paper-title,.paper-title-plain{font-size:14.5px}
-      .paper-abstract{font-size:12.5px}
+      .paper-abstract{font-size:13px;line-height:1.65}
     }
   </style>
 </head>
@@ -376,13 +347,10 @@
 
         <!-- Paper 1: Algorithmic Advice -->
         <article class="paper abstract-open" itemscope itemtype="https://schema.org/ScholarlyArticle">
-          <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6457618" class="paper-title" target="_blank" rel="noopener" itemprop="url">
-            <span itemprop="headline">Algorithmic Advice, Human Review, and Shared Liability</span>
-          </a>
-          <span class="paper-hook"><span class="new-indicator" itemprop="creativeWorkStatus">New!</span><span>Why do algorithms give vague advice?<br>A rational explanation for negative human-AI synergy.</span></span>
+          <span class="paper-title-plain" itemprop="headline">Algorithmic Advice, Human Review, and Shared Liability</span>
           <div class="paper-meta">
             <time itemprop="datePublished" datetime="2026">2026</time>
-            <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6457618" target="_blank" rel="noopener" class="ssrn-link">SSRN ↗</a>
+            <span class="new-indicator" itemprop="creativeWorkStatus">New!</span>
             <button class="abstract-toggle" aria-expanded="true"><span class="toggle-text">Abstract</span><span class="toggle-icon" aria-hidden="true">↓</span></button>
           </div>
           <div class="paper-abstract" itemprop="abstract">

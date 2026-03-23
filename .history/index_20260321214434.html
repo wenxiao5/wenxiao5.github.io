@@ -146,50 +146,56 @@
     .container{
       max-width:820px;
       margin:0 auto;
-      padding:0 clamp(18px,3.5vw,28px);
+      padding:0 28px;
       min-height:100vh;
       display:flex;
       flex-direction:column
     }
 
-    /* ── Two-column layout ── */
-    .page-layout{display:flex;gap:clamp(24px,4.5vw,52px);align-items:flex-start;padding:clamp(32px,4vw,44px) 0 0;flex:1}
-    .sidebar{width:188px;flex-shrink:0;padding-bottom:48px}
-    .main-content{flex:1;min-width:0;padding-top:4px;padding-bottom:48px}
-
+    /* ── Header ── */
+    header{padding:44px 0 20px;position:relative}
+    .header-inner{display:flex;align-items:flex-start;gap:32px}
+    .header-text{flex:1;min-width:0}
+    .profile-photo-wrap{flex-shrink:0;width:138px}
     .profile-photo{
-      width:158px;height:280px;
-      border-radius:4px;
+      width:138px;height:230px;
+      border-radius:6px;
       object-fit:cover;
       object-position:center 30%;
       display:block;
       border:1px solid var(--border-light);
       box-shadow:0 1px 8px rgba(0,0,0,.06);
       filter:saturate(0.8) contrast(1.02);
-      margin:14px 0 12px;
       transition:box-shadow .25s ease,filter .25s ease;
     }
     .profile-photo:hover{box-shadow:0 4px 16px rgba(0,0,0,.10);filter:saturate(0.9) contrast(1.02)}
 
-    h1{font:400 30px/1.5 Spectral,serif;margin:0;letter-spacing:-.02em}
-    .subtitle{font:300 13px/1.5 Spectral,serif;color:var(--text-secondary);margin-bottom:6px}
-    .contact-info{margin-bottom:8px}
+    h1{font:400 40px/1.1 Spectral,serif;margin:0 0 6px;letter-spacing:-.02em}
+    .subtitle{font:300 17px/1.3 Spectral,serif;color:var(--text-secondary);margin-bottom:6px}
+    .contact-info{margin-bottom:10px}
     .contact-info a.email-contact{
-      color:var(--text-secondary);
+      color:var(--text-primary);
       text-decoration:none;
-      font:300 12.5px/1.3 Spectral,serif;
+      font:400 14px/1.3 Spectral,serif;
       display:inline-block;
       padding:2px 0;
       border-bottom:1px solid transparent;
       transition:border-color .2s ease;
+      letter-spacing:.01em
     }
     .contact-info a.email-contact:hover{border-bottom-color:var(--text-secondary)}
-    .bio{font:300 13px/1.6 Spectral,serif;color:var(--text-secondary)}
+    .bio{font:300 15px/1.55 Spectral,serif;color:var(--text-secondary);max-width:520px}
 
     /* ── Main ── */
     main{flex:1;padding-bottom:48px}
     .section{margin-bottom:32px;position:relative}
-
+    .section-title{
+      font:500 20px/1.2 Spectral,serif;
+      margin-bottom:12px;
+      letter-spacing:-.01em;
+      padding-bottom:6px;
+      border-bottom:1px solid var(--border-light)
+    }
 
     /* ── Papers ── */
     .paper{
@@ -239,7 +245,12 @@
     .status{font-style:italic;color:var(--blue);margin-left:6px}
     .status-major{font-style:italic;color:#2e7d32;margin-left:6px}
     .new-indicator{
-      font-style:italic;color:#0066cc;margin-left:6px;font-weight:600
+      font-style:italic;color:#0066cc;margin-left:6px;
+      animation:accessiblePulse 2.5s ease-in-out infinite;font-weight:600
+    }
+    @keyframes accessiblePulse{
+      0%,100%{opacity:.85;color:#0066cc}
+      50%{opacity:1;color:#0052a3;text-shadow:0 0 2px rgba(0,102,204,.25)}
     }
     .ssrn-link{
       font:300 12px/1 Spectral,serif;
@@ -249,8 +260,12 @@
     }
     .ssrn-link:hover{color:var(--text-secondary)}
 
-    /* ── Abstract toggle ── */
-    .abstract-toggle{
+    /* ── Abstract: <details>/<summary> ──
+       Content is always in the DOM → crawlable by all bots without JS */
+    .abstract-details{margin-top:0}
+    .abstract-details[open]{flex-basis:100%}
+    .abstract-details summary{
+      list-style:none;
       display:inline-flex;
       align-items:center;
       gap:3px;
@@ -262,32 +277,15 @@
       transition:all .2s ease;
       user-select:none;
       letter-spacing:.02em;
-      background:none;
-      border:none;
     }
-    .abstract-toggle:hover{background:var(--border-light);color:var(--text-secondary)}
+    .abstract-details summary::-webkit-details-marker{display:none}
+    .abstract-details summary:hover{background:var(--border-light);color:var(--text-secondary)}
     .toggle-icon{
       display:inline-block;
       font-size:9px;
       transition:transform .2s ease;
     }
-    .paper.abstract-open .toggle-icon{transform:rotate(180deg)}
-
-    .paper-hook{
-      display:flex;
-      align-items:flex-start;
-      gap:7px;
-      font:300 italic 13px/1.6 Spectral,serif;
-      color:#777;
-      margin:4px 0 8px;
-      letter-spacing:.01em;
-    }
-    .paper-hook .new-indicator{
-      flex-shrink:0;margin-left:0;
-      font-size:12px;font-weight:600;font-style:italic;
-      color:#2979c8;letter-spacing:.03em;
-      padding-top:.15em;
-    }
+    .abstract-details[open] summary .toggle-icon{transform:rotate(180deg)}
 
     .paper-abstract{
       font:300 13.5px/1.68 Spectral,serif;
@@ -296,9 +294,8 @@
       padding:10px 0 2px;
       text-align:justify;
       border-top:1px solid var(--border-light);
-      display:none;
     }
-    .paper.abstract-open .paper-abstract{display:block;animation:fadeIn .3s ease}
+    .abstract-details[open] .paper-abstract{animation:fadeIn .3s ease}
 
     @keyframes fadeIn{
       from{opacity:0;transform:translateY(-4px)}
@@ -316,77 +313,71 @@
     }
 
     /* ── Responsive ── */
-
-    /* Mid breakpoint: two-column still active but space tightens */
-    @media(max-width:820px) and (min-width:681px){
-      .sidebar{width:170px}
-      .profile-photo{width:148px;height:263px}
-      h1{font-size:27px}
-      .paper-title,.paper-title-plain{font-size:16px}
-    }
-
-    /* Mobile: single-column */
-    @media(max-width:680px){
-      .page-layout{flex-direction:column;padding:28px 0 0;gap:16px}
-      .sidebar{width:100%;display:flex;flex-direction:column;align-items:center;text-align:center;padding-bottom:0}
-      .profile-photo{width:120px;height:159px;margin:10px auto 12px}
-      .bio{text-align:left;font-size:13px}
-      h1{font-size:24px}
-      .subtitle{font-size:13px}
-      .paper{padding:14px 0}
-      .paper-title,.paper-title-plain{font-size:15px}
-      .paper-hook{font-size:12.5px}
+    @media(max-width:640px){
+      .container{padding:0 18px}
+      header{padding:36px 0 20px}
+      .header-inner{flex-direction:column-reverse;gap:20px;align-items:center}
+      .profile-photo-wrap{width:108px}
+      .profile-photo{width:108px;height:135px}
+      .header-text{text-align:center}
+      .bio{max-width:100%}
+      h1{font-size:34px;margin-bottom:8px}
+      .subtitle{font-size:16px;margin-bottom:8px}
+      .section-title{font-size:19px;margin-bottom:14px}
+      .paper{padding:20px 0}
+      .paper-title{font-size:15px;margin-bottom:6px}
       .paper-meta,.paper-authors{font-size:12px}
-      .paper-abstract{font-size:13px;line-height:1.65;text-align:left}
-      footer{padding:22px 0}
+      .paper-abstract{font-size:13px;line-height:1.65}
+      .section{margin-bottom:32px}
+      main{padding-bottom:40px}
     }
-
-    /* Extra small: ≤400px */
-    @media(max-width:400px){
-      h1{font-size:21px}
-      .paper-title,.paper-title-plain{font-size:14.5px}
-      .paper-abstract{font-size:12.5px}
-    }
+    @media(max-width:400px){h1{font-size:29px}.subtitle{font-size:15px}}
   </style>
 </head>
 
 <body>
   <div class="container" itemscope itemtype="https://schema.org/WebPage">
-    <div class="page-layout">
-      <aside class="sidebar" itemscope itemtype="https://schema.org/Person" itemid="https://wenxiao5.github.io/#person">
-        <h1 itemprop="name">Wenxiao Yang</h1>
-        <div class="subtitle">
-          PhD Student,
-          <span itemprop="affiliation" itemscope itemtype="https://schema.org/CollegeOrUniversity">
-            <span itemprop="name">UC Berkeley</span>
-          </span>
+    <header>
+      <div class="header-inner">
+        <div class="profile-photo-wrap">
+          <img src="picture/profile.jpg" alt="Wenxiao Yang" class="profile-photo" itemprop="image">
         </div>
-        <img src="picture/profile.jpg" alt="Wenxiao Yang" class="profile-photo" itemprop="image">
-        <div class="contact-info">
-          <a href="mailto:ywenxiao@berkeley.edu" class="email-contact" itemprop="email">ywenxiao@berkeley.edu</a>
+        <div class="header-text" itemscope itemtype="https://schema.org/Person" itemid="https://wenxiao5.github.io/#person">
+          <h1 itemprop="name">Wenxiao Yang</h1>
+          <div class="subtitle">
+            PhD Student,
+            <span itemprop="affiliation" itemscope itemtype="https://schema.org/CollegeOrUniversity">
+              <span itemprop="name">University of California, Berkeley</span>
+            </span>
+          </div>
+          <div class="contact-info">
+            <a href="mailto:ywenxiao@berkeley.edu" class="email-contact" itemprop="email">ywenxiao@berkeley.edu</a>
+          </div>
+          <p class="bio" itemprop="description">
+            I am a PhD student at UC Berkeley, Haas School of Business.
+            My research is in microeconomic theory with applications to human-algorithm interaction, platform economics, and quantitative marketing.
+          </p>
+          <meta itemprop="image" content="https://wenxiao5.github.io/picture/profile.jpg">
         </div>
-        <p class="bio" itemprop="description">
-          My research is in microeconomic theory with applications to human-algorithm interaction, platform economics, and quantitative marketing.
-        </p>
-        <meta itemprop="image" content="https://wenxiao5.github.io/picture/profile.jpg">
-      </aside>
+      </div>
+    </header>
 
-      <main class="main-content">
-        <section class="section" aria-label="Research papers">
+    <main>
+      <section class="section" aria-label="Research papers">
+        <h2 class="section-title">Research</h2>
 
         <!-- Paper 1: Algorithmic Advice -->
-        <article class="paper abstract-open" itemscope itemtype="https://schema.org/ScholarlyArticle">
-          <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6457618" class="paper-title" target="_blank" rel="noopener" itemprop="url">
-            <span itemprop="headline">Algorithmic Advice, Human Review, and Shared Liability</span>
-          </a>
-          <span class="paper-hook"><span class="new-indicator" itemprop="creativeWorkStatus">New!</span><span>Why do algorithms give vague advice?<br>A rational explanation for negative human-AI synergy.</span></span>
+        <article class="paper" itemscope itemtype="https://schema.org/ScholarlyArticle">
+          <span class="paper-title-plain" itemprop="headline">Algorithmic Advice, Human Review, and Shared Liability</span>
           <div class="paper-meta">
             <time itemprop="datePublished" datetime="2026">2026</time>
-            <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6457618" target="_blank" rel="noopener" class="ssrn-link">SSRN ↗</a>
-            <button class="abstract-toggle" aria-expanded="true"><span class="toggle-text">Abstract</span><span class="toggle-icon" aria-hidden="true">↓</span></button>
-          </div>
-          <div class="paper-abstract" itemprop="abstract">
+            <span class="new-indicator" itemprop="creativeWorkStatus">New!</span>
+            <details class="abstract-details" open>
+              <summary><span class="toggle-text">Abstract</span><span class="toggle-icon" aria-hidden="true">↓</span></summary>
+              <div class="paper-abstract" itemprop="abstract">
 Algorithmic advice is often used not only to guide decisions but also to determine whether cases are escalated for costly review. I study advice design at deployment for an algorithm provider that observes a calibrated internal score and sends advice to a human decision maker who retains final authority, can pay to open review, and shares misclassification losses with the provider. A startup cost of review makes advice part of the escalation rule: optimal advice design targets the posterior beliefs at which review switches on or off, rather than preserving fine distinctions across the score distribution. This endogenous coarsening can pool cases from opposite sides of the immediate-action cutoff and distort which cases receive review. Consequently, the combined human–algorithm system can underperform the better of the human-only and algorithm-only benchmarks, even without any behavioral frictions. Shifting liability toward the decision maker mitigates these deployment-stage distortions.
+              </div>
+            </details>
           </div>
           <meta itemprop="author" content="Wenxiao Yang">
         </article>
@@ -400,16 +391,18 @@ Algorithmic advice is often used not only to guide decisions but also to determi
             <time itemprop="datePublished" datetime="2025">2025</time>
             <span class="status" itemprop="creativeWorkStatus">Major revision at Management Science</span>
             <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4449512" target="_blank" rel="noopener" class="ssrn-link">SSRN ↗</a>
-            <button class="abstract-toggle" aria-expanded="false"><span class="toggle-text">Abstract</span><span class="toggle-icon" aria-hidden="true">↓</span></button>
+            <details class="abstract-details">
+              <summary><span class="toggle-text">Abstract</span><span class="toggle-icon" aria-hidden="true">↓</span></summary>
+              <div class="paper-abstract" itemprop="abstract">
+Resale markets span diverse sectors from physical goods to digital assets, with resale royalties evolving into varied forms through advances in platform economics and blockchain technology. This paper develops a unifying framework to analyze royalty policies under varying degrees of information asymmetry, differentiating three policies—exogenous, adjustable, and committed—based on creators' authority to set and adjust royalty rates. We characterize royalties as creating signaling value through cross-market profit reallocation, transferring value from information-asymmetric primary markets to information-symmetric secondary markets, but at the cost of secondary-market inefficiencies. Under the committed policy, high-quality creators can use both price and royalty rate as signaling instruments. We uncover a lexicographic optimization principle governing this dual-instrument signaling: high-quality creators adopt positive royalty rates to minimize primary-market price distortion regardless of the magnitude of secondary-market inefficiencies. These privately optimal rates are consistently socially excessive, providing rationale for regulatory ceilings. Furthermore, we show that constraining the signaling space with a royalty ceiling can paradoxically benefit high-quality creators in pooling equilibria by preventing escalation to inefficiently high rates. Our welfare analysis shows that committed and exogenous policies generally dominate adjustable policies for both high-quality creators and social welfare, while low-quality creators consistently prefer no royalty. Our findings offer actionable guidance for platforms and regulators on optimal royalty policy design and provide broader insights into multi-instrument signaling under information asymmetry.
+              </div>
+            </details>
           </div>
           <div class="paper-authors" itemprop="author" itemscope itemtype="https://schema.org/Person">
             with
             <a href="https://www.zijunshi.com/" target="_blank" rel="noopener" itemprop="url"><span itemprop="name">Zijun (June) Shi</span></a>
             and
             <a href="https://mark.hkust.edu.hk/faculty-and-staff/directory/mksonglin" target="_blank" rel="noopener" itemprop="url"><span itemprop="name">Song Lin</span></a>
-          </div>
-          <div class="paper-abstract" itemprop="abstract">
-Resale markets span diverse sectors from physical goods to digital assets, with resale royalties evolving into varied forms through advances in platform economics and blockchain technology. This paper develops a unifying framework to analyze royalty policies under varying degrees of information asymmetry, differentiating three policies—exogenous, adjustable, and committed—based on creators' authority to set and adjust royalty rates. We characterize royalties as creating signaling value through cross-market profit reallocation, transferring value from information-asymmetric primary markets to information-symmetric secondary markets, but at the cost of secondary-market inefficiencies. Under the committed policy, high-quality creators can use both price and royalty rate as signaling instruments. We uncover a lexicographic optimization principle governing this dual-instrument signaling: high-quality creators adopt positive royalty rates to minimize primary-market price distortion regardless of the magnitude of secondary-market inefficiencies. These privately optimal rates are consistently socially excessive, providing rationale for regulatory ceilings. Furthermore, we show that constraining the signaling space with a royalty ceiling can paradoxically benefit high-quality creators in pooling equilibria by preventing escalation to inefficiently high rates. Our welfare analysis shows that committed and exogenous policies generally dominate adjustable policies for both high-quality creators and social welfare, while low-quality creators consistently prefer no royalty. Our findings offer actionable guidance for platforms and regulators on optimal royalty policy design and provide broader insights into multi-instrument signaling under information asymmetry.
           </div>
           <meta itemprop="author" content="Wenxiao Yang">
         </article>
@@ -423,35 +416,27 @@ Resale markets span diverse sectors from physical goods to digital assets, with 
             <time itemprop="datePublished" datetime="2025">2025</time>
             <span class="status" itemprop="creativeWorkStatus">Minor revision at Management Science</span>
             <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4901012" target="_blank" rel="noopener" class="ssrn-link">SSRN ↗</a>
-            <button class="abstract-toggle" aria-expanded="false"><span class="toggle-text">Abstract</span><span class="toggle-icon" aria-hidden="true">↓</span></button>
+            <details class="abstract-details">
+              <summary><span class="toggle-text">Abstract</span><span class="toggle-icon" aria-hidden="true">↓</span></summary>
+              <div class="paper-abstract" itemprop="abstract">
+Disinformation detection is becoming increasingly important and relevant because it is easier than ever to create and disseminate disinformation. How does detection ability affect the incentive to generate disinformation? Given the practical constraints of classification technology, how should a detector be designed? To answer these questions, this paper studies the problem where a sender strategically communicates his type (high or low) to a receiver, and a lie detector generates a noisy signal on the truthfulness of the sender's message. The receiver then infers the sender's type both through the message from the sender and through the signal from the detector. We find a non-monotonic relationship between the probability that the low-type sender is lying and the accuracy of detection. More accurate detection (a higher true-positive rate and a lower false-positive rate) increases the probability of lying when the true-positive rate is low, because of a persuasive effect. By contrast, more accurate detection decreases the probability of lying when the true-positive rate is high, because of a dissuasive effect. We also characterize the optimal detector design. The designer always chooses the lowest feasible false-positive rate for any true-positive rate. The possibility of false-positive alarms implies that the designer chooses an intermediate true-positive rate rather than the highest true-positive rate. Counter-intuitively, the optimal detector may raise an alarm about a smaller percentage of disinformation when its underlying classifier is better at distinguishing the sender's type.
+              </div>
+            </details>
           </div>
           <div class="paper-authors" itemprop="author" itemscope itemtype="https://schema.org/Person">
             with
             <a href="https://www.jesseyao.com/" target="_blank" rel="noopener" itemprop="url"><span itemprop="name">Yunfei (Jesse) Yao</span></a>
             and Pengxiang Zhou
           </div>
-          <div class="paper-abstract" itemprop="abstract">
-Disinformation detection is becoming increasingly important and relevant because it is easier than ever to create and disseminate disinformation. How does detection ability affect the incentive to generate disinformation? Given the practical constraints of classification technology, how should a detector be designed? To answer these questions, this paper studies the problem where a sender strategically communicates his type (high or low) to a receiver, and a lie detector generates a noisy signal on the truthfulness of the sender's message. The receiver then infers the sender's type both through the message from the sender and through the signal from the detector. We find a non-monotonic relationship between the probability that the low-type sender is lying and the accuracy of detection. More accurate detection (a higher true-positive rate and a lower false-positive rate) increases the probability of lying when the true-positive rate is low, because of a persuasive effect. By contrast, more accurate detection decreases the probability of lying when the true-positive rate is high, because of a dissuasive effect. We also characterize the optimal detector design. The designer always chooses the lowest feasible false-positive rate for any true-positive rate. The possibility of false-positive alarms implies that the designer chooses an intermediate true-positive rate rather than the highest true-positive rate. Counter-intuitively, the optimal detector may raise an alarm about a smaller percentage of disinformation when its underlying classifier is better at distinguishing the sender's type.
-          </div>
           <meta itemprop="author" content="Wenxiao Yang">
         </article>
 
       </section>
-      </main>
-    </div>
+    </main>
 
     <footer>
       <p>Last updated: March 2026</p>
     </footer>
   </div>
-<script>
-document.querySelectorAll('.abstract-toggle').forEach(function(btn){
-  btn.addEventListener('click',function(){
-    var paper=btn.closest('.paper');
-    var open=paper.classList.toggle('abstract-open');
-    btn.setAttribute('aria-expanded',open);
-  });
-});
-</script>
 </body>
 </html>
